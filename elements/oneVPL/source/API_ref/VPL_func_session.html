@@ -13,7 +13,8 @@ SPDX-License-Identifier: MIT
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Session Management &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
-  <link rel="stylesheet" href="../../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../../_static/css/index.f6b7ca918bee2f46fd9abac01cfb07d5.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -25,10 +26,6 @@ SPDX-License-Identifier: MIT
 
     
       
-  <link rel="stylesheet"
-    href="../../../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -37,7 +34,7 @@ SPDX-License-Identifier: MIT
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
     
-  <link rel="preload" as="script" href="../../../../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../../../../_static/js/index.1e043a052b0af929e4d8.js">
 
     <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
@@ -2599,6 +2596,11 @@ SPDX-License-Identifier: MIT
      Glossary
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../VPL_change_log.html">
+     Change Log
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -4572,12 +4574,11 @@ SPDX-License-Identifier: MIT
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#api">
    API
@@ -4642,8 +4643,7 @@ SPDX-License-Identifier: MIT
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -4681,11 +4681,17 @@ SPDX-License-Identifier: MIT
 <p>Call this function before calling any other API function. If the desired implementation specified by <code class="docutils literal notranslate"><span class="pre">impl</span></code> is MFX_IMPL_AUTO, the function will search for the platform-specific implementation. If the function cannot find the platform-specific implementation, it will use the software implementation instead.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">ver</span></code> argument indicates the desired version of the library implementation. The loaded implementation will have an API version compatible to the specified version (equal in the major version number, and no less in the minor version number.) If the desired version is not specified, the default is to use the API version from the library release with which an application is built.</p>
 <p>Production applications should always specify the minimum API version that meets the functional requirements. For example, if an application uses only H.264 decoding as described in API v1.0, the application should initialize the library with API v1.0. This ensures backward compatibility.</p>
-<p><dl class="simple">
+<p><dl class="xrefsect">
+<dt>
+<em><span class="pre">Deprecated:</span></em></dt>
+<dd><p>Deprecated in API version 2.3. Use MFXLoad and MFXCreateSession to initialize the session. Use MFX_DEPRECATED_OFF macro to turn off the deprecation message visualization. </p>
+</dd></dl>
+
+<dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. The output parameter contains the handle of the session.<p> MFX_ERR_UNSUPPORTED The function cannot find the desired legacy Intel(r) Media SDK implementation or version.</p>
 </p>
 </dd>
-<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0.</p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">impl</span></code>: mfxIMPL enumerator that indicates the desired legacy Intel(r) Media SDK implementation. </p></li>
@@ -4707,12 +4713,18 @@ SPDX-License-Identifier: MIT
 <p>Call this function before calling any other API functions. If the desired implementation specified by <code class="docutils literal notranslate"><span class="pre">par</span></code> is MFX_IMPL_AUTO, the function will search for the platform-specific implementation. If the function cannot find the platform-specific implementation, it will use the software implementation instead.</p>
 <p>The argument <code class="docutils literal notranslate"><span class="pre">par.Version</span></code> indicates the desired version of the implementation. The loaded implementation will have an API version compatible to the specified version (equal in the major version number, and no less in the minor version number.) If the desired version is not specified, the default is to use the API version from the library release with which an application is built.</p>
 <p>Production applications should always specify the minimum API version that meets the functional requirements. For example, if an application uses only H.264 decoding as described in API v1.0, the application should initialize the library with API v1.0. This ensures backward compatibility.</p>
-<p>The argument <code class="docutils literal notranslate"><span class="pre">par.ExternalThreads</span></code> specifies threading mode. Value 0 means that the implementation should create and handle work threads internally (this is essentially the equivalent of the regular MFXInit). I</p>
-<p><dl class="simple">
+<p>The argument <code class="docutils literal notranslate"><span class="pre">par.ExternalThreads</span></code> specifies threading mode. Value 0 means that the implementation should create and handle work threads internally (this is essentially the equivalent of the regular MFXInit).</p>
+<p><dl class="xrefsect">
+<dt>
+<em><span class="pre">Deprecated:</span></em></dt>
+<dd><p>Deprecated in API version 2.3. Use MFXLoad and MFXCreateSession to initialize the session. Use MFX_DEPRECATED_OFF macro to turn off the deprecation message visualization. </p>
+</dd></dl>
+
+<dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. The output parameter contains the handle of the session.<p> MFX_ERR_UNSUPPORTED The function cannot find the desired implementation or version.</p>
 </p>
 </dd>
-<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.14. </p>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.14.</p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">par</span></code>: <a class="reference internal" href="VPL_structs_impl_manage.html#structmfx_init_param"><span class="std std-ref">mfxInitParam</span></a> structure that indicates the desired implementation, minimum library version and desired threading mode. </p></li>
@@ -4969,7 +4981,7 @@ SPDX-License-Identifier: MIT
     </div>
 
     
-  <script src="../../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../../../../_static/js/index.1e043a052b0af929e4d8.js"></script>
 
 
     

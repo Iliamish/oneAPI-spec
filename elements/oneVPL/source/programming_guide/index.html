@@ -13,7 +13,8 @@ SPDX-License-Identifier: MIT
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Programming Guide &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
-  <link rel="stylesheet" href="../../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../../_static/css/index.f6b7ca918bee2f46fd9abac01cfb07d5.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -25,10 +26,6 @@ SPDX-License-Identifier: MIT
 
     
       
-  <link rel="stylesheet"
-    href="../../../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -37,7 +34,7 @@ SPDX-License-Identifier: MIT
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
     
-  <link rel="preload" as="script" href="../../../../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../../../../_static/js/index.1e043a052b0af929e4d8.js">
 
     <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
@@ -2599,6 +2596,11 @@ SPDX-License-Identifier: MIT
      Glossary
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../VPL_change_log.html">
+     Change Log
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -4583,14 +4585,14 @@ SPDX-License-Identifier: MIT
   <div class="section" id="programming-guide">
 <h1>Programming Guide<a class="headerlink" href="#programming-guide" title="Permalink to this headline">¶</a></h1>
 <p>This chapter describes the concepts used in programming with oneVPL.</p>
-<p>The application must use the include file <code class="file docutils literal notranslate"><span class="pre">mfxvideo.h</span></code> for C/C++ programming
-and link the oneVPL dispatcher library <code class="file docutils literal notranslate"><span class="pre">libmfx.so</span></code>.</p>
+<p>The application must use the include file <code class="file docutils literal notranslate"><span class="pre">mfx.h</span></code> for C/C++ programming
+and link the oneVPL dispatcher library <code class="file docutils literal notranslate"><span class="pre">libvpl.so</span></code>.</p>
 <p>Include these files:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;mfxvideo.h&quot;</span><span class="c1">    /* oneVPL include file */</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;mfx.h&quot;</span><span class="c1">    /* oneVPL include file */</span><span class="cp"></span>
 </pre></div>
 </div>
 <p>Link this library:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">libmfx</span><span class="p">.</span><span class="n">so</span>                <span class="cm">/* oneVPL dynamic dispatcher library (Linux\*) */</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">libvpl</span><span class="p">.</span><span class="n">so</span>                <span class="cm">/* oneVPL dynamic dispatcher library (Linux\*) */</span>
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
@@ -4627,7 +4629,7 @@ and link the oneVPL dispatcher library <code class="file docutils literal notran
     </div>
 
     
-  <script src="../../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../../../../_static/js/index.1e043a052b0af929e4d8.js"></script>
 
 
     

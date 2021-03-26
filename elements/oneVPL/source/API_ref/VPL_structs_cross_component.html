@@ -13,7 +13,8 @@ SPDX-License-Identifier: MIT
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cross-component Structures &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
-  <link rel="stylesheet" href="../../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../../_static/css/index.f6b7ca918bee2f46fd9abac01cfb07d5.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -25,10 +26,6 @@ SPDX-License-Identifier: MIT
 
     
       
-  <link rel="stylesheet"
-    href="../../../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -37,7 +34,7 @@ SPDX-License-Identifier: MIT
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
     
-  <link rel="preload" as="script" href="../../../../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../../../../_static/js/index.1e043a052b0af929e4d8.js">
 
     <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
@@ -2599,6 +2596,11 @@ SPDX-License-Identifier: MIT
      Glossary
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../VPL_change_log.html">
+     Change Log
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -4572,12 +4574,11 @@ SPDX-License-Identifier: MIT
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#api">
    API
@@ -4673,12 +4674,16 @@ SPDX-License-Identifier: MIT
      mfxRect
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mfxexthypermodeparam">
+     mfxExtHyperModeParam
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -4712,6 +4717,7 @@ SPDX-License-Identifier: MIT
 <li><p><a class="reference internal" href="#mfxextav1filmgrainparam" id="id16">mfxExtAV1FilmGrainParam</a></p></li>
 <li><p><a class="reference internal" href="#mfxav1filmgrainpoint" id="id17">mfxAV1FilmGrainPoint</a></p></li>
 <li><p><a class="reference internal" href="#mfxrect" id="id18">mfxRect</a></p></li>
+<li><p><a class="reference internal" href="#mfxexthypermodeparam" id="id19">mfxExtHyperModeParam</a></p></li>
 </ul>
 </div>
 <div class="section" id="mfxcomponentinfo">
@@ -6058,6 +6064,30 @@ and the instant bitrate is not capped or padded.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="mfxexthypermodeparam">
+<h3><a class="toc-backref" href="#id19">mfxExtHyperModeParam</a><a class="headerlink" href="#mfxexthypermodeparam" title="Permalink to this headline">¶</a></h3>
+<dl class="cpp struct">
+<dt id="_CPPv420mfxExtHyperModeParam">
+<span id="_CPPv320mfxExtHyperModeParam"></span><span id="_CPPv220mfxExtHyperModeParam"></span><span id="mfxExtHyperModeParam"></span><span class="target" id="structmfx_ext_hyper_mode_param"></span><em class="property"><span class="pre">struct</span> </em><code class="sig-name descname"><span class="pre">mfxExtHyperModeParam</span></code><a class="headerlink" href="#_CPPv420mfxExtHyperModeParam" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The structure is used for HyperMode initialization. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N20mfxExtHyperModeParam6HeaderE">
+<span id="_CPPv3N20mfxExtHyperModeParam6HeaderE"></span><span id="_CPPv2N20mfxExtHyperModeParam6HeaderE"></span><span id="mfxExtHyperModeParam::Header__mfxExtBuffer"></span><span class="target" id="structmfx_ext_hyper_mode_param_1afda748c9dc20586f0c2a319c0065ef99"></span><a class="reference internal" href="VPL_structs_type.html#_CPPv412mfxExtBuffer" title="mfxExtBuffer"><span class="pre">mfxExtBuffer</span></a> <code class="sig-name descname"><span class="pre">Header</span></code><a class="headerlink" href="#_CPPv4N20mfxExtHyperModeParam6HeaderE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Extension buffer header. BufferId must be equal to MFX_EXTBUFF_HYPER_MODE_PARAM. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N20mfxExtHyperModeParam4ModeE">
+<span id="_CPPv3N20mfxExtHyperModeParam4ModeE"></span><span id="_CPPv2N20mfxExtHyperModeParam4ModeE"></span><span id="mfxExtHyperModeParam::Mode__mfxHyperMode"></span><span class="target" id="structmfx_ext_hyper_mode_param_1accc8ec0fd854af970311be7370d7a4a4"></span><span class="pre">mfxHyperMode</span> <code class="sig-name descname"><span class="pre">Mode</span></code><a class="headerlink" href="#_CPPv4N20mfxExtHyperModeParam4ModeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>HyperMode implementation behavior. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
 </div>
 </div>
 
@@ -6091,7 +6121,7 @@ and the instant bitrate is not capped or padded.</p>
     </div>
 
     
-  <script src="../../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../../../../_static/js/index.1e043a052b0af929e4d8.js"></script>
 
 
     
