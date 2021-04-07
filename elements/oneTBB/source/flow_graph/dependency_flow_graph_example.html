@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Dependency Flow Graph Example &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4578,16 +4579,18 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="dependency-flow-graph-example">
+  <section id="dependency-flow-graph-example">
 <h1>Dependency Flow Graph Example<a class="headerlink" href="#dependency-flow-graph-example" title="Permalink to this headline">¶</a></h1>
 <p>In the following example, five computations A-E are set up with the
 partial ordering shown below in “A simple dependency graph.”. For each edge in
 the flow graph, the node at the tail of the edge must complete its execution
 before the node at the head may begin.</p>
-<div class="figure align-center" id="id1">
+<figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../../../../_images/dep_graph.jpg"><img alt="../../../../_images/dep_graph.jpg" src="../../../../_images/dep_graph.jpg" style="width: 249px; height: 409px;" /></a>
-<p class="caption"><span class="caption-text">A simple dependency graph.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">A simple dependency graph.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <div class="code cpp highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;cstdio&gt;</span>
 <span class="c1">#include &quot;tbb/flow_graph.h&quot;</span>
 
@@ -4652,7 +4655,7 @@ the nodes, allowing computation to execute concurrently when possible.</p>
 <li><p><a class="reference internal" href="continue_msg_cls.html"><span class="doc">continue_msg class</span></a></p></li>
 <li><p><a class="reference internal" href="continue_node_cls.html"><span class="doc">continue_node class</span></a></p></li>
 </ul>
-</div>
+</section>
 
 
               </div>

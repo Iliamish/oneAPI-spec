@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>filter &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinxmark.css" />
@@ -4606,7 +4607,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="filter">
+  <section id="filter">
 <h1>filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h1>
 <p><strong>[algorithms.parallel_pipeline.filter]</strong></p>
 <p>A <code class="docutils literal notranslate"><span class="pre">filter</span></code> class template represents a strongly-typed filter in a <code class="docutils literal notranslate"><span class="pre">parallel_pipeline</span></code> algorithm,
@@ -4650,15 +4651,15 @@ A <code class="docutils literal notranslate"><span class="pre">filter</span></co
 <li><p>If <cite>InputType</cite> and <cite>OutputType</cite> are not <code class="docutils literal notranslate"><span class="pre">void</span></code>, a <code class="docutils literal notranslate"><span class="pre">Body</span></code> type must meet the <a class="reference internal" href="../../../named_requirements/algorithms/filter_body.html"><span class="doc">MiddleFilterBody requirements</span></a>.</p></li>
 <li><p>If <cite>InputType</cite> and <cite>OutputType</cite> are <code class="docutils literal notranslate"><span class="pre">void</span></code>, a <code class="docutils literal notranslate"><span class="pre">Body</span></code> type must meet the <a class="reference internal" href="../../../named_requirements/algorithms/filter_body.html"><span class="doc">SingleFilterBody requirements</span></a>.</p></li>
 </ul>
-<div class="section" id="filter-mode-enumeration">
+<section id="filter-mode-enumeration">
 <h2>filter_mode Enumeration<a class="headerlink" href="#filter-mode-enumeration" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="filter_mode_enum.html">filter_mode</a></li>
 </ul>
 </div>
-</div>
-<div class="section" id="member-functions">
+</section>
+<section id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv46filterv">
@@ -4683,8 +4684,8 @@ of type <em>InputType</em> to an output value of type <em>OutputType</em>, and t
 <dd><p>Sets <code class="docutils literal notranslate"><span class="pre">*this</span></code> to an undefined filter.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="non-member-functions">
+</section>
+<section id="non-member-functions">
 <h2>Non-member functions<a class="headerlink" href="#non-member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv4I000E11make_filter6filterI1T1UEN6filter4modeERK4Func">
@@ -4699,8 +4700,8 @@ of type <em>InputType</em> to an output value of type <em>OutputType</em>, and t
 The composition behaves as if the output value of <em>left</em> becomes the input value of <em>right</em>.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="deduction-guides">
+</section>
+<section id="deduction-guides">
 <h2>Deduction Guides<a class="headerlink" href="#deduction-guides" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Body</span><span class="o">&gt;</span>
 <span class="n">filter</span><span class="p">(</span><span class="n">filter_mode</span><span class="p">,</span> <span class="n">Body</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">filter</span><span class="o">&lt;</span><span class="n">filter_input</span><span class="o">&lt;</span><span class="n">Body</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">filter_output</span><span class="o">&lt;</span><span class="n">Body</span><span class="o">&gt;&gt;</span><span class="p">;</span>
@@ -4712,8 +4713,8 @@ The composition behaves as if the output value of <em>left</em> becomes the inpu
 If <code class="docutils literal notranslate"><span class="pre">Body::operator()</span></code> input parameter type is <code class="docutils literal notranslate"><span class="pre">flow_control</span></code> then <code class="docutils literal notranslate"><span class="pre">filter_input&lt;Body&gt;</span></code> is <code class="docutils literal notranslate"><span class="pre">void</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">filter_output&lt;Body&gt;</span></code> is an alias to the <code class="docutils literal notranslate"><span class="pre">Body::operator()</span></code> return type.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

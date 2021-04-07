@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Shuffle &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4634,7 +4635,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="shuffle">
+  <section id="shuffle">
 <h1>Shuffle<a class="headerlink" href="#shuffle" title="Permalink to this headline">¶</a></h1>
 <p>The shuffle primitive shuffles data along the shuffle axis (here is designated
 as <span class="math notranslate nohighlight">\(C\)</span>) with the group parameter <span class="math notranslate nohighlight">\(G\)</span>. Namely, the shuffle axis is
@@ -4642,7 +4643,7 @@ thought to be a 2D tensor of size <span class="math notranslate nohighlight">\((
 being transposed to <span class="math notranslate nohighlight">\((G \times \frac{C}{G})\)</span>. Variable names follow the
 standard <a class="reference internal" href="../conventions.html#conventions-label"><span class="std std-ref">Conventions</span></a>.</p>
 <p>The formal definition is shown below:</p>
-<div class="section" id="forward">
+<section id="forward">
 <h2>Forward<a class="headerlink" href="#forward" title="Permalink to this headline">¶</a></h2>
 <div class="math notranslate nohighlight">
 \[\dst(\overline{ou}, c, \overline{in}) =
@@ -4663,20 +4664,20 @@ axis), and</p></li>
     c' &amp;= u \cdot G + v, \\
 \end{cases}\end{split}\]</div>
 <p>Here, <span class="math notranslate nohighlight">\(0 \leq u &lt; \frac{C}{G}\)</span> and <span class="math notranslate nohighlight">\(0 \leq v &lt; G\)</span>.</p>
-<div class="section" id="difference-between-forward-training-and-forward-inference">
+<section id="difference-between-forward-training-and-forward-inference">
 <h3>Difference Between Forward Training and Forward Inference<a class="headerlink" href="#difference-between-forward-training-and-forward-inference" title="Permalink to this headline">¶</a></h3>
 <p>There is no difference between the <a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kind16forward_trainingE" title="dnnl::prop_kind::forward_training"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">forward_training</span></code></a> and <a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kind17forward_inferenceE" title="dnnl::prop_kind::forward_inference"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">forward_inference</span></code></a>
 propagation kinds.</p>
-</div>
-</div>
-<div class="section" id="backward">
+</section>
+</section>
+<section id="backward">
 <h2>Backward<a class="headerlink" href="#backward" title="Permalink to this headline">¶</a></h2>
 <p>The backward propagation computes <span class="math notranslate nohighlight">\(\diffsrc(ou, c, in)\)</span>, based on
 <span class="math notranslate nohighlight">\(\diffdst(ou, c, in)\)</span>.</p>
 <p>Essentially, backward propagation is the same as forward propagation with
 <span class="math notranslate nohighlight">\(g\)</span> replaced by <span class="math notranslate nohighlight">\(C / g\)</span>.</p>
-</div>
-<div class="section" id="execution-arguments">
+</section>
+<section id="execution-arguments">
 <h2>Execution Arguments<a class="headerlink" href="#execution-arguments" title="Permalink to this headline">¶</a></h2>
 <p>When executed, the inputs and outputs should be mapped to an execution
 argument index as specified by the following table.</p>
@@ -4705,8 +4706,8 @@ argument index as specified by the following table.</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="operation-details">
+</section>
+<section id="operation-details">
 <h2>Operation Details<a class="headerlink" href="#operation-details" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>The memory format and data type for <code class="docutils literal notranslate"><span class="pre">src</span></code> and <code class="docutils literal notranslate"><span class="pre">dst</span></code> are assumed to be
@@ -4715,8 +4716,8 @@ the same, and in the API are typically referred as <code class="docutils literal
 for <code class="docutils literal notranslate"><span class="pre">diff_src</span></code> and <code class="docutils literal notranslate"><span class="pre">diff_dst</span></code>. The corresponding memory descriptors are
 referred to as <code class="docutils literal notranslate"><span class="pre">diff_data_desc</span></code>.</p></li>
 </ol>
-</div>
-<div class="section" id="data-types-support">
+</section>
+<section id="data-types-support">
 <h2>Data Types Support<a class="headerlink" href="#data-types-support" title="Permalink to this headline">¶</a></h2>
 <p>The shuffle primitive supports the following combinations of data types:</p>
 <div class="admonition note">
@@ -4743,8 +4744,8 @@ abbreviated to <a class="reference internal" href="../data_model/data_types/inde
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="data-layouts">
+</section>
+<section id="data-layouts">
 <h2>Data Layouts<a class="headerlink" href="#data-layouts" title="Permalink to this headline">¶</a></h2>
 <p>The shuffle primitive works with arbitrary data tensors. There is no special
 meaning associated with any logical dimensions. However, the shuffle axis is
@@ -4780,12 +4781,12 @@ the shuffle primitive is optimized for the corresponding memory formats:</p>
 </table>
 <p>Here <em>optimized^</em> means the format that comes out of any preceding
 compute-intensive primitive.</p>
-</div>
-<div class="section" id="post-ops-and-attributes">
+</section>
+<section id="post-ops-and-attributes">
 <h2>Post-ops and Attributes<a class="headerlink" href="#post-ops-and-attributes" title="Permalink to this headline">¶</a></h2>
 <p>The shuffle primitive does not have to support any post-ops or attributes.</p>
-</div>
-<div class="section" id="api">
+</section>
+<section id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp struct">
 <dt id="_CPPv4N4dnnl15shuffle_forwardE">
@@ -5001,8 +5002,8 @@ compute-intensive primitive.</p>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>laplace &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4592,7 +4593,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="laplace">
+  <section id="laplace">
 <span id="onemkl-rng-laplace"></span><h1>laplace<a class="headerlink" href="#laplace" title="Permalink to this headline">¶</a></h1>
 <p>Class is used for generation of Laplace distributed real types random numbers.</p>
 <p class="rubric" id="onemkl-rng-laplace-description">Description</p>
@@ -4603,7 +4604,7 @@ SPDX-License-Identifier: MIT
 <p>The cumulative distribution function is as follows:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}F_{a, \beta}(x) = \left\{ \begin{array}{rcl} \frac{1}{2}exp(-\frac{|x - a|}{\beta}), x \ge a \\ 1 - \frac{1}{2}exp(-\frac{|x - a|}{\beta}), x &lt; a \end{array}\right.\end{split}\]</div>
-<div class="section" id="class-laplace">
+<section id="class-laplace">
 <span id="onemkl-rng-laplace-syntax"></span><h2>class laplace<a class="headerlink" href="#class-laplace" title="Permalink to this headline">¶</a></h2>
 <p class="rubric">Syntax</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">RealType</span> <span class="o">=</span> <span class="kt">float</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Method</span> <span class="o">=</span> <span class="n">laplace_method</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
@@ -4745,8 +4746,8 @@ SPDX-License-Identifier: MIT
 </div>
 </div>
 <p><strong>Parent topic:</strong> <a class="reference internal" href="distributions.html#onemkl-rng-distributions"><span class="std std-ref">Distributions</span></a></p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

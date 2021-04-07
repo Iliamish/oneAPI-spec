@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>compute_backward &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4597,7 +4598,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="compute-backward">
+  <section id="compute-backward">
 <span id="onemkl-dft-compute-backward"></span><h1>compute_backward<a class="headerlink" href="#compute-backward" title="Permalink to this headline">¶</a></h1>
 <p>This function computes the backward transform defined by an instantiation of the <a class="reference internal" href="descriptor.html#onemkl-dft-descriptor"><span class="std std-ref">descriptor</span></a> class.</p>
 <p class="rubric" id="onemkl-dft-compute-backward-description">Description</p>
@@ -4607,7 +4608,7 @@ SPDX-License-Identifier: MIT
 <p class="admonition-title">Note</p>
 <p>The compute_backward function may need to access the internals and private/protected members of the <a class="reference internal" href="descriptor.html#onemkl-dft-descriptor"><span class="std std-ref">descriptor</span></a> class.  This could be done, for instance, by labeling it as a friend function to the descriptor class.</p>
 </div>
-<div class="section" id="compute-backward-buffer-version">
+<section id="compute-backward-buffer-version">
 <h2>compute_backward (Buffer version)<a class="headerlink" href="#compute-backward-buffer-version" title="Permalink to this headline">¶</a></h2>
 <p class="rubric">Syntax (In-place transform)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">dft</span> <span class="p">{</span>
@@ -4696,8 +4697,8 @@ SPDX-License-Identifier: MIT
 </dd>
 </dl>
 </div>
-</div>
-<div class="section" id="compute-backward-usm-version">
+</section>
+<section id="compute-backward-usm-version">
 <h2>compute_backward (USM version)<a class="headerlink" href="#compute-backward-usm-version" title="Permalink to this headline">¶</a></h2>
 <p class="rubric">Syntax (In-place transform)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">dft</span> <span class="p">{</span>
@@ -4798,8 +4799,8 @@ SPDX-License-Identifier: MIT
 <p>This function returns a <code class="docutils literal notranslate"><span class="pre">sycl::event</span></code> that allows to track progress of this transformation, and can be passed as a dependency to other routines that may depend on the results of this transformation to be finished before proceeding with the other operations.</p>
 </div>
 <p><strong>Parent topic:</strong> <a class="reference internal" href="dft.html#onemkl-dft"><span class="std std-ref">Discrete Fourier Transform Functions</span></a></p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Matrix Multiplication &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4617,7 +4618,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="matrix-multiplication">
+  <section id="matrix-multiplication">
 <h1>Matrix Multiplication<a class="headerlink" href="#matrix-multiplication" title="Permalink to this headline">¶</a></h1>
 <p>The matrix multiplication (MatMul) primitive computes the product of two 2D
 tensors with optional bias addition. Variable names follow the standard
@@ -4640,7 +4641,7 @@ multiplication operations, in which case the tensors must be 3D:</p>
 its dimensions can be 1 and the same value would be used across the
 corresponding dimension. However, <span class="math notranslate nohighlight">\(\bias\)</span> must have the same number of
 dimensions as the <span class="math notranslate nohighlight">\(\dst\)</span>.</p>
-<div class="section" id="execution-arguments">
+<section id="execution-arguments">
 <h2>Execution Arguments<a class="headerlink" href="#execution-arguments" title="Permalink to this headline">¶</a></h2>
 <p>When executed, the inputs and outputs should be mapped to an execution
 argument index as specified by the following table.</p>
@@ -4669,8 +4670,8 @@ argument index as specified by the following table.</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="operation-details">
+</section>
+<section id="operation-details">
 <h2>Operation Details<a class="headerlink" href="#operation-details" title="Permalink to this headline">¶</a></h2>
 <p>The MatMul primitive supports input and output tensors with run-time specified
 shapes and memory formats. The run-time specified dimensions or strides are
@@ -4684,8 +4685,8 @@ special format tag <a class="reference internal" href="../data_model/memory/form
 appropriate memory format for the corresponding input or output shapes. On the
 other hand, run-time specified shapes enable users to create a primitive once
 and use it in different situations.</p>
-</div>
-<div class="section" id="data-types-support">
+</section>
+<section id="data-types-support">
 <h2>Data Types Support<a class="headerlink" href="#data-types-support" title="Permalink to this headline">¶</a></h2>
 <p>The MatMul primitive supports the following combinations of data types for
 source, destination, weights, and bias tensors.</p>
@@ -4731,8 +4732,8 @@ abbreviated to <a class="reference internal" href="../data_model/data_types/inde
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="data-representation">
+</section>
+<section id="data-representation">
 <h2>Data Representation<a class="headerlink" href="#data-representation" title="Permalink to this headline">¶</a></h2>
 <p>The MatMul primitive expects the following tensors:</p>
 <table class="table">
@@ -4799,8 +4800,8 @@ always be <a class="reference internal" href="../data_model/memory/formats.html#
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="attributes-and-post-ops">
+</section>
+<section id="attributes-and-post-ops">
 <h2>Attributes and Post-ops<a class="headerlink" href="#attributes-and-post-ops" title="Permalink to this headline">¶</a></h2>
 <p>Attributes and post-ops enable modifying the behavior of the MatMul primitive.
 The following attributes and post-ops are supported:</p>
@@ -4853,8 +4854,8 @@ the execution stage, the corresponding memory object needs to be passed in the
 argument with index set to (<code class="docutils literal notranslate"><span class="pre">DNNL_ARG_ATTR_ZERO_POINTS</span> <span class="pre">|</span>
 <span class="pre">DNNL_ARG_${MEMORY}</span></code>). For instance, source tensor zero points memory argument
 would be passed with index (<code class="docutils literal notranslate"><span class="pre">DNNL_ARG_ATTR_ZERO_POINTS</span> <span class="pre">|</span> <span class="pre">DNNL_ARG_SRC</span></code>).</p>
-</div>
-<div class="section" id="api">
+</section>
+<section id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp struct">
 <dt id="_CPPv4N4dnnl6matmulE">
@@ -5017,8 +5018,8 @@ would be passed with index (<code class="docutils literal notranslate"><span cla
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

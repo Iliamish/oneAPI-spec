@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Data management &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4629,7 +4630,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="data-management">
+  <section id="data-management">
 <span id="id1"></span><h1>Data management<a class="headerlink" href="#data-management" title="Permalink to this headline">¶</a></h1>
 <p>This section includes concepts and objects that operate on data. For
 oneDAL, such set of operations, or <strong>data management</strong>, is distributed
@@ -4673,11 +4674,11 @@ computation, it can be done step-by-step using blocks of data. After the
 computation on the current block is completed, the next block should be obtained
 and prepared.</p>
 <a class="reference internal image-reference" href="../../../../_images/data_management_flow.png" id="typical-data-management-flow"><img alt="Typical data management flow" id="typical-data-management-flow" src="../../../../_images/data_management_flow.png" style="width: 800px;" /></a>
-<div class="section" id="key-concepts">
+<section id="key-concepts">
 <h2>Key concepts<a class="headerlink" href="#key-concepts" title="Permalink to this headline">¶</a></h2>
 <p>oneDAL provides a set of concepts to operate on out-of-memory and
 in-memory data during different stages of the <a class="reference internal" href="../introduction.html#data-analytics-pipeline"><span class="std std-ref">data analytics pipeline</span></a>.</p>
-<div class="section" id="dataset">
+<section id="dataset">
 <span id="id2"></span><h3>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h3>
 <p>The main data-related concept that oneDAL works with is a
 <a class="reference internal" href="../glossary.html#term-Dataset"><span class="xref std std-term">dataset</span></a>. It is a tabular view of data, where table rows represent the
@@ -4695,8 +4696,8 @@ representation.</p></li>
 <a class="reference internal" href="../programming_model/operations/index.html#result"><span class="std std-ref">results</span></a> of an algorithm or a <a class="reference internal" href="../programming_model/descriptors.html#descriptors"><span class="std std-ref">descriptor</span></a>
 properties.</p></li>
 </ol>
-</div>
-<div class="section" id="data-source">
+</section>
+<section id="data-source">
 <span id="id3"></span><h3>Data source<a class="headerlink" href="#data-source" title="Permalink to this headline">¶</a></h3>
 <p>Data source is a concept of an out-of-memory storage for a <a class="reference internal" href="../glossary.html#term-Dataset"><span class="xref std std-term">dataset</span></a>.
 It is used at the data acquisition and data preparation stages to:</p>
@@ -4713,8 +4714,8 @@ automatically transform non-numeric <a class="reference internal" href="../gloss
 of the numeric <a class="reference internal" href="../glossary.html#term-Data-format"><span class="xref std std-term">data formats</span></a>.</p></li>
 </ul>
 <p>For details, see <a class="reference internal" href="data_sources.html#data-sources"><span class="std std-ref">data sources</span></a> section.</p>
-</div>
-<div class="section" id="table">
+</section>
+<section id="table">
 <span id="id4"></span><h3>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h3>
 <p>Table is a concept of in-memory numerical data that are organized in a tabular
 view with several rows and columns. It is used at the data preparation and data
@@ -4754,8 +4755,8 @@ compressed-sparse-row format. The number of bytes needed to store the data
 differs from the number of elements <span class="math notranslate nohighlight">\(n \times p\)</span> within a table.</p></li>
 </ul>
 <p>For details, see <a class="reference internal" href="tables.html#tables"><span class="std std-ref">tables</span></a> section.</p>
-</div>
-<div class="section" id="table-metadata">
+</section>
+<section id="table-metadata">
 <span id="id5"></span><h3>Table metadata<a class="headerlink" href="#table-metadata" title="Permalink to this headline">¶</a></h3>
 <p>Table metadata concept provides an additional information about data in the
 table:</p>
@@ -4777,8 +4778,8 @@ of table objects since they affect the structure of a table, its contract, and
 behavior. The list of names of features or columns inside the table is the
 example of metadata property.</p>
 </div>
-</div>
-<div class="section" id="accessor">
+</section>
+<section id="accessor">
 <span id="id6"></span><h3>Accessor<a class="headerlink" href="#accessor" title="Permalink to this headline">¶</a></h3>
 <p>Accessor is a concept that defines a single way to extract the data from a
 <a class="reference internal" href="#table"><span class="std std-ref">table</span></a>. It allows to:</p>
@@ -4793,8 +4794,8 @@ a specific set of operations is defined.</p></li>
 <li><p>Have read-only access to the data.</p></li>
 </ul>
 <p>For details, see <a class="reference internal" href="accessors.html#accessors"><span class="std std-ref">accessors</span></a> section.</p>
-</div>
-<div class="section" id="example-of-interaction-between-table-and-accessor-objects">
+</section>
+<section id="example-of-interaction-between-table-and-accessor-objects">
 <h3>Example of interaction between table and accessor objects<a class="headerlink" href="#example-of-interaction-between-table-and-accessor-objects" title="Permalink to this headline">¶</a></h3>
 <p>This section provides a basic usage scenario of the <a class="reference internal" href="#table"><span class="std std-ref">table</span></a> and
 <a class="reference internal" href="#accessor"><span class="std std-ref">accessor</span></a> concepts and demonstrates the relations between them.
@@ -4815,9 +4816,9 @@ the data.</p>
 <p>Once a table object is created, it can be used as an input in computations or as
 a parameter of some algorithm. The data in the table can be accessed via its own
 interface or via read-only accessor as shown on the diagram.</p>
-</div>
-</div>
-<div class="section" id="details">
+</section>
+</section>
+<section id="details">
 <h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
 <p>This section includes the detailed descriptions of all data management objects in
 oneDAL.</p>
@@ -4891,8 +4892,8 @@ oneDAL.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

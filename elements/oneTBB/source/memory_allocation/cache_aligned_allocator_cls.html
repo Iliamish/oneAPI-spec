@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>cache_aligned_allocator &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4596,7 +4597,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="cache-aligned-allocator">
+  <section id="cache-aligned-allocator">
 <h1>cache_aligned_allocator<a class="headerlink" href="#cache-aligned-allocator" title="Permalink to this headline">¶</a></h1>
 <p><strong>[memory_allocation.cache_aligned_allocator]</strong></p>
 <p>A <code class="docutils literal notranslate"><span class="pre">cache_aligned_allocator</span></code> is a class template that models the allocator requirements from the [allocator.requirements] ISO C++ section.</p>
@@ -4628,7 +4629,7 @@ that <code class="docutils literal notranslate"><span class="pre">cache_aligned_
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="section" id="member-functions">
+<section id="member-functions">
 <h2>Member Functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv48allocate9size_type">
@@ -4651,8 +4652,8 @@ The behavior is undefined if the memory has been already deallocated.</p>
 <dd><p>Returns the largest value <code class="docutils literal notranslate"><span class="pre">n</span></code> for which the call <code class="docutils literal notranslate"><span class="pre">allocate(n)</span></code> might succeed with cache alignment constraints.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="non-member-functions">
+</section>
+<section id="non-member-functions">
 <h2>Non-member Functions<a class="headerlink" href="#non-member-functions" title="Permalink to this headline">¶</a></h2>
 <p>These functions provide comparison operations between two <code class="docutils literal notranslate"><span class="pre">cache_aligned_allocator</span></code> instances.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">U</span><span class="o">&gt;</span>
@@ -4679,8 +4680,8 @@ and define <code class="docutils literal notranslate"><span class="pre">tbb::cac
 <dd><p>Returns <strong>false</strong>.</p>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

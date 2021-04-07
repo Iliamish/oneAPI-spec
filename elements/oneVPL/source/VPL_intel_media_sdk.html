@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>oneVPL for Intel® Media Software Development Kit Users &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinxmark.css" />
@@ -4623,14 +4624,14 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="onevpl-for-msdk-full-name-users">
+  <section id="onevpl-for-msdk-full-name-users">
 <h1>oneVPL for Intel<sup>®</sup> Media Software Development Kit Users<a class="headerlink" href="#onevpl-for-msdk-full-name-users" title="Permalink to this headline">¶</a></h1>
 <p>oneVPL is source compatible with Intel<sup>®</sup> Media Software Development Kit. Applications can use
 Intel<sup>®</sup> Media Software Development Kit to target older hardware and oneVPL to target everything else.
 Some obsolete features of Intel<sup>®</sup> Media Software Development Kit have been omitted from oneVPL.
 Hereinafter the term “Legacy” will be used to describe a behavior when oneVPL
 is called by Intel<sup>®</sup> Media Software Development Kit applications.</p>
-<div class="section" id="onevpl-ease-of-use-enhancements">
+<section id="onevpl-ease-of-use-enhancements">
 <h2>oneVPL Ease of Use Enhancements<a class="headerlink" href="#onevpl-ease-of-use-enhancements" title="Permalink to this headline">¶</a></h2>
 <p>oneVPL provides improved ease of use compared to Intel<sup>®</sup> Media Software Development Kit. Ease of use
 enhancements include the following:</p>
@@ -4642,8 +4643,8 @@ details.</p></li>
 <li><p>New memory management and components (session) interoperability. See
 <a class="reference internal" href="programming_guide/VPL_prg_mem.html#internal-mem-manage"><span class="std std-ref">Internal Memory Management</span></a> and <a class="reference internal" href="programming_guide/VPL_prg_decoding.html#decoding-proc"><span class="std std-ref">Decoding Procedures</span></a> for more details.</p></li>
 </ul>
-</div>
-<div class="section" id="new-apis-in-onevpl">
+</section>
+<section id="new-apis-in-onevpl">
 <span id="new-api"></span><h2>New APIs in oneVPL<a class="headerlink" href="#new-apis-in-onevpl" title="Permalink to this headline">¶</a></h2>
 <p>oneVPL introduces new functions that are not available in Intel<sup>®</sup> Media Software Development Kit.</p>
 <p id="dispatcher-api">New oneVPL dispatcher functions:</p>
@@ -4672,8 +4673,8 @@ details.</p></li>
 <ul class="simple">
 <li><p><a class="reference internal" href="API_ref/VPL_func_session.html#_CPPv413MFXInitialize22mfxInitializationParamP10mfxSession" title="MFXInitialize"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInitialize()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="msdk-full-name-feature-removals">
+</section>
+<section id="msdk-full-name-feature-removals">
 <h2>Intel<sup>®</sup> Media Software Development Kit Feature Removals<a class="headerlink" href="#msdk-full-name-feature-removals" title="Permalink to this headline">¶</a></h2>
 <p>The following Intel<sup>®</sup> Media Software Development Kit features are considered obsolete and are not
 included in oneVPL:</p>
@@ -4700,8 +4701,8 @@ and not commonly used.</p></li>
 <li><p><strong>Surface Type Neutral Transcoding.</strong> Opaque memory support is removed and
 replaced with internal memory allocation concept.</p></li>
 </ul>
-</div>
-<div class="section" id="msdk-full-name-api-removals">
+</section>
+<section id="msdk-full-name-api-removals">
 <span id="deprecated-api"></span><h2>Intel<sup>®</sup> Media Software Development Kit API Removals<a class="headerlink" href="#msdk-full-name-api-removals" title="Permalink to this headline">¶</a></h2>
 <p>The following Intel<sup>®</sup> Media Software Development Kit functions are not included in oneVPL:</p>
 <ul class="simple">
@@ -4789,8 +4790,8 @@ link error when attempting to use a removed API.</p></li>
 runtime will generate an <a class="reference internal" href="API_ref/VPL_enums.html#_CPPv4N9mfxStatus23MFX_ERR_NOT_IMPLEMENTEDE" title="MFX_ERR_NOT_IMPLEMENTED"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_ERR_NOT_IMPLEMENTED</span></code></a> error when
 calling a removed function.</p></li>
 </ul>
-</div>
-<div class="section" id="msdk-full-name-legacy-api">
+</section>
+<section id="msdk-full-name-legacy-api">
 <h2>Intel<sup>®</sup> Media Software Development Kit Legacy API<a class="headerlink" href="#msdk-full-name-legacy-api" title="Permalink to this headline">¶</a></h2>
 <p>oneVPL contains following header files from Intel<sup>®</sup> Media Software Development Kit included for the
 simplification of existing applications migration to oneVPL:</p>
@@ -4803,8 +4804,8 @@ simplification of existing applications migration to oneVPL:</p>
 Code compiled with the oneVPL API headers will generate a compile and/or
 link error when attempting to use a removed API.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

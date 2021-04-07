@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Node handles &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4633,7 +4634,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="node-handles">
+  <section id="node-handles">
 <h1>Node handles<a class="headerlink" href="#node-handles" title="Permalink to this headline">¶</a></h1>
 <p><strong>[containers.node_handles]</strong></p>
 <p>Concurrent associative containers (<code class="docutils literal notranslate"><span class="pre">concurrent_map</span></code>, <code class="docutils literal notranslate"><span class="pre">concurrent_multimap</span></code>, <code class="docutils literal notranslate"><span class="pre">concurrent_set</span></code>, <code class="docutils literal notranslate"><span class="pre">concurrent_multiset</span></code>,
@@ -4641,7 +4642,7 @@ SPDX-License-Identifier: MIT
 and <code class="docutils literal notranslate"><span class="pre">concurrent_unordered_multiset</span></code>) store elements in individually allocated, connected nodes.
 These containers support data transfer between containers with compatible node types by changing the connections
 without copying or moving the actual data.</p>
-<div class="section" id="class-synopsis">
+<section id="class-synopsis">
 <h2>Class synopsis<a class="headerlink" href="#class-synopsis" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">node</span><span class="o">-</span><span class="n">handle</span> <span class="p">{</span> <span class="c1">// Exposition-only name</span>
 <span class="k">public</span><span class="o">:</span>
@@ -4686,10 +4687,10 @@ may exchange nodes:</p>
 A non-empty node handle is typically created when a node is extracted out of a container, for example, with the <code class="docutils literal notranslate"><span class="pre">unsafe_extract</span></code>
 method. It stores the node along with a copy of the container’s allocator.
 Upon assignment or destruction a non-empty node handle destroys the stored data and deallocates the node.</p>
-</div>
-<div class="section" id="member-functions">
+</section>
+<section id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="constructors">
+<section id="constructors">
 <h3>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="o">-</span><span class="n">handle</span><span class="p">();</span>
@@ -4705,8 +4706,8 @@ Upon assignment or destruction a non-empty node handle destroys the stored data 
 <p>Constructs a node handle that takes ownership of the node from <code class="docutils literal notranslate"><span class="pre">other</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">other</span></code> is left in an empty state.</p>
 </div></blockquote>
-</div>
-<div class="section" id="assignment">
+</section>
+<section id="assignment">
 <h3>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="o">-</span><span class="n">handle</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span> <span class="n">node</span><span class="o">-</span><span class="n">handle</span><span class="o">&amp;&amp;</span> <span class="n">other</span> <span class="p">);</span>
@@ -4718,8 +4719,8 @@ If <code class="docutils literal notranslate"><span class="pre">*this</span></co
 is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">other</span></code> is left in an empty state.</p>
 </div></blockquote>
-</div>
-<div class="section" id="destructor">
+</section>
+<section id="destructor">
 <h3>Destructor<a class="headerlink" href="#destructor" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">node</span><span class="o">-</span><span class="n">handle</span><span class="p">();</span>
@@ -4727,8 +4728,8 @@ is <code class="docutils literal notranslate"><span class="pre">true</span></cod
 </div>
 <p>Destroys the node handle. If it is not empty, destroys and deallocates the owned node.</p>
 </div></blockquote>
-</div>
-<div class="section" id="swap">
+</section>
+<section id="swap">
 <h3>Swap<a class="headerlink" href="#swap" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">swap</span><span class="p">(</span> <span class="n">node</span><span class="o">-</span><span class="n">handle</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span>
@@ -4737,8 +4738,8 @@ is <code class="docutils literal notranslate"><span class="pre">true</span></cod
 <p>Exchanges the nodes owned by <code class="docutils literal notranslate"><span class="pre">*this</span></code> and <code class="docutils literal notranslate"><span class="pre">other</span></code>.</p>
 <p>Swaps the stored allocators if <code class="docutils literal notranslate"><span class="pre">std::allocator_traits&lt;allocator_type&gt;::propagate_on_container_swap::value</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
 </div></blockquote>
-</div>
-<div class="section" id="state">
+</section>
+<section id="state">
 <h3>State<a class="headerlink" href="#state" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="nf">empty</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
@@ -4753,8 +4754,8 @@ is <code class="docutils literal notranslate"><span class="pre">true</span></cod
 </div>
 <p>Equivalent to <code class="docutils literal notranslate"><span class="pre">!empty()</span></code>.</p>
 </div></blockquote>
-</div>
-<div class="section" id="access-to-the-stored-element">
+</section>
+<section id="access-to-the-stored-element">
 <h3>Access to the stored element<a class="headerlink" href="#access-to-the-stored-element" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">key_type</span><span class="o">&amp;</span> <span class="nf">key</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
@@ -4782,8 +4783,8 @@ is <code class="docutils literal notranslate"><span class="pre">true</span></cod
 <p><strong>Returns</strong>: a reference to the element stored in the owned node.</p>
 <p>The behavior is undefined if the node handle is empty.</p>
 </div></blockquote>
-</div>
-<div class="section" id="get-allocator">
+</section>
+<section id="get-allocator">
 <h3>get_allocator<a class="headerlink" href="#get-allocator" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">allocator_type</span> <span class="nf">get_allocator</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
@@ -4792,9 +4793,9 @@ is <code class="docutils literal notranslate"><span class="pre">true</span></cod
 <p><strong>Returns</strong>: a copy of the allocator stored in the node handle.</p>
 <p>The behavior is undefined if the node handle is empty.</p>
 </div></blockquote>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
               </div>

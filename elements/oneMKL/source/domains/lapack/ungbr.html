@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>ungbr &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4597,7 +4598,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="ungbr">
+  <section id="ungbr">
 <span id="onemkl-lapack-ungbr"></span><h1>ungbr<a class="headerlink" href="#ungbr" title="Permalink to this headline">¶</a></h1>
 <p>Generates the complex unitary matrix <span class="math notranslate nohighlight">\(Q\)</span> or <span class="math notranslate nohighlight">\(P^{t}\)</span> determined by
 <a class="reference internal" href="gebrd.html#onemkl-lapack-gebrd"><span class="std std-ref">gebrd</span></a>.</p>
@@ -4645,7 +4646,7 @@ most cases you need the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">oneapi</span><span class="p">::</span><span class="n">mkl</span><span class="p">::</span><span class="n">lapack</span><span class="p">::</span><span class="n">ungbr</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">generate</span><span class="p">::</span><span class="n">p</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="section" id="ungbr-buffer-version">
+<section id="ungbr-buffer-version">
 <h2>ungbr (Buffer Version)<a class="headerlink" href="#ungbr-buffer-version" title="Permalink to this headline">¶</a></h2>
 <div class="section docutils container">
 <p class="rubric">Syntax</p>
@@ -4722,8 +4723,8 @@ as specified by <code class="docutils literal notranslate"><span class="pre">gen
 <p>If <span class="math notranslate nohighlight">\(info=-i\)</span>, the <span class="math notranslate nohighlight">\(i\)</span>-th parameter had an illegal value.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">info</span></code> equals to value passed as scratchpad size, and <cite>detail()</cite> returns non zero, then passed scratchpad is of insufficient size, and required size should not be less than value return by <cite>detail()</cite> method of exception object.</p>
 </div></blockquote>
-</div>
-<div class="section" id="ungbr-usm-version">
+</section>
+<section id="ungbr-usm-version">
 <h2>ungbr (USM Version)<a class="headerlink" href="#ungbr-usm-version" title="Permalink to this headline">¶</a></h2>
 <div class="section docutils container">
 <p class="rubric">Syntax</p>
@@ -4807,8 +4808,8 @@ as specified by <code class="docutils literal notranslate"><span class="pre">gen
 </div>
 <p>Output event to wait on to ensure computation is complete.</p>
 <p><strong>Parent topic:</strong> <a class="reference internal" href="lapack.html#onemkl-lapack-singular-value-eigenvalue-routines"><span class="std std-ref">LAPACK Singular Value and Eigenvalue Problem Routines</span></a></p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

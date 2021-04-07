@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>trsv &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4597,7 +4598,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="trsv">
+  <section id="trsv">
 <span id="onemkl-sparse-trsv"></span><h1>trsv<a class="headerlink" href="#trsv" title="Permalink to this headline">¶</a></h1>
 <p>Solves a system of linear equations for a triangular sparse matrix.</p>
 <p class="rubric">Description and Assumptions</p>
@@ -4610,7 +4611,7 @@ for a square matrix:</p>
 <p>where: <code class="docutils literal notranslate"><span class="pre">A</span></code> is a triangular sparse matrix of size <code class="docutils literal notranslate"><span class="pre">m</span></code> rows by
 <code class="docutils literal notranslate"><span class="pre">m</span></code> columns, op is a matrix modifier for matrix <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are dense vectors of length at least
 <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p>
-<div class="section" id="trsv-buffer-version">
+<section id="trsv-buffer-version">
 <span id="onemkl-sparse-trsv-buffer"></span><h2>trsv (Buffer version)<a class="headerlink" href="#trsv-buffer-version" title="Permalink to this headline">¶</a></h2>
 <p class="rubric">Syntax</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">sparse</span> <span class="p">{</span>
@@ -4674,8 +4675,8 @@ in case of error conditions not covered here.</p>
 <div class="line"><a class="reference internal" href="../../architecture/architecture.html#onemkl-exception-unsupported-device"><span class="std std-ref">oneapi::mkl::unsupported_device</span></a></div>
 </div>
 </div>
-</div>
-<div class="section" id="trsv-usm-version">
+</section>
+<section id="trsv-usm-version">
 <span id="onemkl-sparse-trsv-usm"></span><h2>trsv (USM version)<a class="headerlink" href="#trsv-usm-version" title="Permalink to this headline">¶</a></h2>
 <p class="rubric">Syntax</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">sparse</span> <span class="p">{</span>
@@ -4753,8 +4754,8 @@ dependency for the completion of trmv routine.</p>
 <p><strong>Parent topic:</strong> <a class="reference internal" href="spblas.html#onemkl-spblas"><span class="std std-ref">Sparse BLAS</span></a></p>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

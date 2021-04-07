@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Element access &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4596,13 +4597,13 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="element-access">
+  <section id="element-access">
 <h1>Element access<a class="headerlink" href="#element-access" title="Permalink to this headline">¶</a></h1>
 <p>All member functions in this section can be performed concurrently with each other,
 concurrent growth methods and while traversing the container.</p>
 <p>In case of concurrent growth, the element returned by the access method
 can refer to the element that is under construction of the other thread.</p>
-<div class="section" id="access-by-index">
+<section id="access-by-index">
 <h2>Access by index<a class="headerlink" href="#access-by-index" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">value_type</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span> <span class="n">size_type</span> <span class="n">index</span> <span class="p">);</span>
@@ -4630,8 +4631,8 @@ unallocated.</p></li>
 </ul>
 </div></blockquote>
 </div></blockquote>
-</div>
-<div class="section" id="access-the-first-and-the-last-element">
+</section>
+<section id="access-the-first-and-the-last-element">
 <h2>Access the first and the last element<a class="headerlink" href="#access-the-first-and-the-last-element" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">value_type</span><span class="o">&amp;</span> <span class="nf">front</span><span class="p">();</span>
@@ -4650,8 +4651,8 @@ unallocated.</p></li>
 </div>
 <p><strong>Returns</strong>: a reference to the last element in the vector.</p>
 </div></blockquote>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

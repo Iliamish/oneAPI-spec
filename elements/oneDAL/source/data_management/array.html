@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Array &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4602,7 +4603,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="array">
+  <section id="array">
 <h1>Array<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h1>
 <p>The array is a simple concept over the data in oneDAL. It represents
 a storage that:</p>
@@ -4618,7 +4619,7 @@ mutable one.</p></li>
 <li><p>Ownership information on the data can be shared between several arrays. It is
 possible to create a new array from another one without any data copies.</p></li>
 </ol>
-<div class="section" id="usage-example">
+<section id="usage-example">
 <h2>Usage example<a class="headerlink" href="#usage-example" title="Permalink to this headline">¶</a></h2>
 <p>The following listing provides a brief introduction to the array API and an example of basic
 usage scenario:</p>
@@ -4679,8 +4680,8 @@ usage scenario:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="data-ownership-requirements">
+</section>
+<section id="data-ownership-requirements">
 <span id="id1"></span><h2>Data ownership requirements<a class="headerlink" href="#data-ownership-requirements" title="Permalink to this headline">¶</a></h2>
 <p>The array shall support the following requirements on the internal data management:</p>
 <ol class="arabic simple">
@@ -4712,8 +4713,8 @@ array shall call the deleter on this memory block and free the ownership structu
 array when they share the data. An array shall increment the reference count
 for it to be equal to the number of array objects sharing the same data.</p></li>
 </ol>
-</div>
-<div class="section" id="programming-interface">
+</section>
+<section id="programming-interface">
 <span id="id2"></span><h2>Programming interface<a class="headerlink" href="#programming-interface" title="Permalink to this headline">¶</a></h2>
 <p>All types and functions in this section shall be declared in the
 <code class="docutils literal notranslate"><span class="pre">oneapi::dal</span></code> namespace and be available via inclusion of the
@@ -5249,8 +5250,8 @@ memory or by allocating it within a new object.</p></li>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

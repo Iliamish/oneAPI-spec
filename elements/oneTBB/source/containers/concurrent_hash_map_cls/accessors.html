@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>accessor and const_accessor &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4633,12 +4634,12 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="accessor-and-const-accessor">
+  <section id="accessor-and-const-accessor">
 <h1>accessor and const_accessor<a class="headerlink" href="#accessor-and-const-accessor" title="Permalink to this headline">¶</a></h1>
 <p>Member classes <code class="docutils literal notranslate"><span class="pre">concurrent_hash_map::accessor</span></code> and <code class="docutils literal notranslate"><span class="pre">concurrent_hash_map::const_accessor</span></code> are called <cite>accessors</cite>.
 Accessors allow multiple threads to concurrently access the key-value pairs in <code class="docutils literal notranslate"><span class="pre">concurrent_hash_map</span></code>.
 An accessor is called <cite>empty</cite> if it does not point to any item.</p>
-<div class="section" id="accessor-member-class">
+<section id="accessor-member-class">
 <h2><code class="docutils literal notranslate"><span class="pre">accessor</span></code> member class<a class="headerlink" href="#accessor-member-class" title="Permalink to this headline">¶</a></h2>
 <p>Member class <code class="docutils literal notranslate"><span class="pre">concurrent_hash_map::accessor</span></code> provides read-write access to the key-value pair in <code class="docutils literal notranslate"><span class="pre">concurrent_hash_map</span></code>.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">tbb</span> <span class="p">{</span>
@@ -4660,8 +4661,8 @@ An accessor is called <cite>empty</cite> if it does not point to any item.</p>
 <span class="p">}</span> <span class="c1">// namespace tbb</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="const-accessor-member-class">
+</section>
+<section id="const-accessor-member-class">
 <h2><code class="docutils literal notranslate"><span class="pre">const_accessor</span></code> member class<a class="headerlink" href="#const-accessor-member-class" title="Permalink to this headline">¶</a></h2>
 <p>Member class <code class="docutils literal notranslate"><span class="pre">concurrent_hash_map::const_accessor</span></code> provides read only access to the key-value pair in <code class="docutils literal notranslate"><span class="pre">concurrent_hash_map</span></code>.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">tbb</span> <span class="p">{</span>
@@ -4683,10 +4684,10 @@ An accessor is called <cite>empty</cite> if it does not point to any item.</p>
 <span class="p">}</span> <span class="c1">// namespace tbb</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="member-functions">
+</section>
+<section id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="construction-and-destruction">
+<section id="construction-and-destruction">
 <h3>Construction and destruction<a class="headerlink" href="#construction-and-destruction" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">accessor</span><span class="p">();</span>
@@ -4705,8 +4706,8 @@ An accessor is called <cite>empty</cite> if it does not point to any item.</p>
 </div>
 <p>Destroys the accessor. If <code class="docutils literal notranslate"><span class="pre">*this</span></code> is not empty, releases the ownership of the element.</p>
 </div></blockquote>
-</div>
-<div class="section" id="emptiness">
+</section>
+<section id="emptiness">
 <h3>Emptiness<a class="headerlink" href="#emptiness" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="nf">empty</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
@@ -4714,8 +4715,8 @@ An accessor is called <cite>empty</cite> if it does not point to any item.</p>
 </div>
 <p><strong>Returns</strong>: <code class="docutils literal notranslate"><span class="pre">true</span></code> if the accessor is empty; <code class="docutils literal notranslate"><span class="pre">false</span></code>, otherwise.</p>
 </div></blockquote>
-</div>
-<div class="section" id="key-value-pair-access">
+</section>
+<section id="key-value-pair-access">
 <h3>Key-value pair access<a class="headerlink" href="#key-value-pair-access" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">value_type</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
@@ -4732,8 +4733,8 @@ An accessor is called <cite>empty</cite> if it does not point to any item.</p>
 <p><strong>Returns</strong>: a pointer to the key-value pair to which the accessor points.</p>
 <p>The behavior is undefined if the accessor is empty.</p>
 </div></blockquote>
-</div>
-<div class="section" id="releasing">
+</section>
+<section id="releasing">
 <h3>Releasing<a class="headerlink" href="#releasing" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">release</span><span class="p">();</span>
@@ -4741,9 +4742,9 @@ An accessor is called <cite>empty</cite> if it does not point to any item.</p>
 </div>
 <p>If <code class="docutils literal notranslate"><span class="pre">*this</span></code> is not empty, releases the ownership of the element. <code class="docutils literal notranslate"><span class="pre">*this</span></code> becomes empty.</p>
 </div></blockquote>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
               </div>

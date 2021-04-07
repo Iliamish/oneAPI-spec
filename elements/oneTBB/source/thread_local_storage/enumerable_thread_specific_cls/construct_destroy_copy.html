@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Construction, destruction, copying &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4611,9 +4612,9 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="construction-destruction-copying">
+  <section id="construction-destruction-copying">
 <h1>Construction, destruction, copying<a class="headerlink" href="#construction-destruction-copying" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="empty-container-constructors">
+<section id="empty-container-constructors">
 <h2>Empty container constructors<a class="headerlink" href="#empty-container-constructors" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">enumerable_thread_specific</span><span class="p">();</span>
 </pre></div>
@@ -4646,8 +4647,8 @@ internally; however, thread-local elements are always copy-constructed.</p>
 <p>This constructor does not participate in overload resolution if the type of the first argument in <code class="docutils literal notranslate"><span class="pre">args...</span></code> is <code class="docutils literal notranslate"><span class="pre">T</span></code>,
 or <code class="docutils literal notranslate"><span class="pre">enumerable_thread_specific&lt;T&gt;</span></code>, or <code class="docutils literal notranslate"><span class="pre">foo()</span></code> is a valid expression for a value <code class="docutils literal notranslate"><span class="pre">foo</span></code> of that type.</p>
 </div>
-</div>
-<div class="section" id="copying-constructors">
+</section>
+<section id="copying-constructors">
 <h2>Copying constructors<a class="headerlink" href="#copying-constructors" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">enumerable_thread_specific</span> <span class="p">(</span> <span class="k">const</span> <span class="n">enumerable_thread_specific</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">);</span>
 
@@ -4656,8 +4657,8 @@ or <code class="docutils literal notranslate"><span class="pre">enumerable_threa
 </div>
 <p>Constructs an <code class="docutils literal notranslate"><span class="pre">enumerable_thread_specific</span></code> as a copy of <code class="docutils literal notranslate"><span class="pre">other</span></code>.
 The values are copy-constructed from the values in <code class="docutils literal notranslate"><span class="pre">other</span></code> and have same thread correspondence.</p>
-</div>
-<div class="section" id="moving-constructors">
+</section>
+<section id="moving-constructors">
 <h2>Moving constructors<a class="headerlink" href="#moving-constructors" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">enumerable_thread_specific</span> <span class="p">(</span> <span class="n">enumerable_thread_specific</span><span class="o">&amp;&amp;</span> <span class="n">other</span> <span class="p">)</span>
 </pre></div>
@@ -4669,16 +4670,16 @@ The values are copy-constructed from the values in <code class="docutils literal
 </div>
 <p>Constructs an <code class="docutils literal notranslate"><span class="pre">enumerable_thread_specific</span></code> using per-element move construction from the values in <code class="docutils literal notranslate"><span class="pre">other</span></code>, and
 keeping their thread correspondence. <code class="docutils literal notranslate"><span class="pre">other</span></code> is left in an unspecified state, but can be safely destroyed.</p>
-</div>
-<div class="section" id="destructor">
+</section>
+<section id="destructor">
 <h2>Destructor<a class="headerlink" href="#destructor" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">enumerable_thread_specific</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Destroys all elements in <code class="docutils literal notranslate"><span class="pre">*this</span></code>.
 Destroys any native TLS keys that were created for this instance.</p>
-</div>
-<div class="section" id="assignment-operators">
+</section>
+<section id="assignment-operators">
 <h2>Assignment operators<a class="headerlink" href="#assignment-operators" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">enumerable_thread_specific</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span> <span class="k">const</span> <span class="n">enumerable_thread_specific</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">);</span>
 </pre></div>
@@ -4708,8 +4709,8 @@ An <code class="docutils literal notranslate"><span class="pre">other</span></co
 <p class="admonition-title">Note</p>
 <p>The allocator and key usage specialization is unchanged by this call.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

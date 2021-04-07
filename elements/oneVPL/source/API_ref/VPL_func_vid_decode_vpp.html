@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>VideoDECODE_VPP &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4618,11 +4619,11 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="videodecode-vpp">
+  <section id="videodecode-vpp">
 <span id="func-video-decode-vpp"></span><h1>VideoDECODE_VPP<a class="headerlink" href="#videodecode-vpp" title="Permalink to this headline">¶</a></h1>
 <p id="func-vid-decode-vpp-begin">Functions that implement combined operation of decoding and video processing
 with multiple output frame surfaces.</p>
-<div class="section" id="api">
+<section id="api">
 <span id="func-vid-decode-vpp-end"></span><h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -4633,7 +4634,7 @@ with multiple output frame surfaces.</p>
 <li><p><a class="reference internal" href="#mfxvideodecode-vpp-close" id="id5">MFXVideoDECODE_VPP_Close</a></p></li>
 </ul>
 </div>
-<div class="section" id="mfxvideodecode-vpp-init">
+<section id="mfxvideodecode-vpp-init">
 <h3><a class="toc-backref" href="#id1">MFXVideoDECODE_VPP_Init</a><a class="headerlink" href="#mfxvideodecode-vpp-init" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv423MFXVideoDECODE_VPP_Init10mfxSessionP13mfxVideoParamPP20mfxVideoChannelParam6mfxU32">
@@ -4665,8 +4666,8 @@ with multiple output frame surfaces.</p>
 <p class="admonition-title">Important</p>
 <p>The <a class="reference internal" href="#_CPPv423MFXVideoDECODE_VPP_Init10mfxSessionP13mfxVideoParamPP20mfxVideoChannelParam6mfxU32" title="MFXVideoDECODE_VPP_Init"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_VPP_Init()</span></code></a> is mandatory when implementing a combined decode plus vpp.</p>
 </div>
-</div>
-<div class="section" id="mfxvideodecode-vpp-reset">
+</section>
+<section id="mfxvideodecode-vpp-reset">
 <h3><a class="toc-backref" href="#id2">MFXVideoDECODE_VPP_Reset</a><a class="headerlink" href="#mfxvideodecode-vpp-reset" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv424MFXVideoDECODE_VPP_Reset10mfxSessionP13mfxVideoParamPP20mfxVideoChannelParam6mfxU32">
@@ -4691,8 +4692,8 @@ with multiple output frame surfaces.</p>
 </p>
 </dd></dl>
 
-</div>
-<div class="section" id="mfxvideodecode-vpp-getchannelparam">
+</section>
+<section id="mfxvideodecode-vpp-getchannelparam">
 <h3><a class="toc-backref" href="#id3">MFXVideoDECODE_VPP_GetChannelParam</a><a class="headerlink" href="#mfxvideodecode-vpp-getchannelparam" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv434MFXVideoDECODE_VPP_GetChannelParam10mfxSessionP20mfxVideoChannelParam6mfxU32">
@@ -4716,8 +4717,8 @@ with multiple output frame surfaces.</p>
 </p>
 </dd></dl>
 
-</div>
-<div class="section" id="mfxvideodecode-vpp-decodeframeasync">
+</section>
+<section id="mfxvideodecode-vpp-decodeframeasync">
 <h3><a class="toc-backref" href="#id4">MFXVideoDECODE_VPP_DecodeFrameAsync</a><a class="headerlink" href="#mfxvideodecode-vpp-decodeframeasync" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv435MFXVideoDECODE_VPP_DecodeFrameAsync10mfxSessionP12mfxBitstreamP6mfxU326mfxU32PP15mfxSurfaceArray">
@@ -4755,8 +4756,8 @@ with multiple output frame surfaces.</p>
 <p class="admonition-title">Important</p>
 <p>The <a class="reference internal" href="#_CPPv435MFXVideoDECODE_VPP_DecodeFrameAsync10mfxSessionP12mfxBitstreamP6mfxU326mfxU32PP15mfxSurfaceArray" title="MFXVideoDECODE_VPP_DecodeFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_VPP_DecodeFrameAsync()</span></code></a> is mandatory when implementing a combined decode plus vpp.</p>
 </div>
-</div>
-<div class="section" id="mfxvideodecode-vpp-close">
+</section>
+<section id="mfxvideodecode-vpp-close">
 <h3><a class="toc-backref" href="#id5">MFXVideoDECODE_VPP_Close</a><a class="headerlink" href="#mfxvideodecode-vpp-close" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv424MFXVideoDECODE_VPP_Close10mfxSession">
@@ -4779,9 +4780,9 @@ with multiple output frame surfaces.</p>
 <p class="admonition-title">Important</p>
 <p>The <a class="reference internal" href="#_CPPv424MFXVideoDECODE_VPP_Close10mfxSession" title="MFXVideoDECODE_VPP_Close"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_VPP_Close()</span></code></a> is mandatory when implementing a combined decode plus vpp.</p>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
               </div>

@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Binary &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4622,7 +4623,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="binary">
+  <section id="binary">
 <h1>Binary<a class="headerlink" href="#binary" title="Permalink to this headline">¶</a></h1>
 <p>The binary primitive computes a result of a binary elementwise operation
 between tensors source 0 and source 1.</p>
@@ -4631,12 +4632,12 @@ between tensors source 0 and source 1.</p>
 <p>where <span class="math notranslate nohighlight">\(\overline{x} = (x_0, \ldots, x_n)\)</span> and <span class="math notranslate nohighlight">\(op\)</span> is an operator
 like addition, multiplication, maximum or minimum. Variable names follow the
 standard <a class="reference internal" href="../conventions.html#conventions-label"><span class="std std-ref">Conventions</span></a>.</p>
-<div class="section" id="forward-and-backward">
+<section id="forward-and-backward">
 <h2>Forward and Backward<a class="headerlink" href="#forward-and-backward" title="Permalink to this headline">¶</a></h2>
 <p>The binary primitive does not have a notion of forward or backward
 propagations.</p>
-</div>
-<div class="section" id="execution-arguments">
+</section>
+<section id="execution-arguments">
 <h2>Execution Arguments<a class="headerlink" href="#execution-arguments" title="Permalink to this headline">¶</a></h2>
 <p>When executed, the inputs and outputs should be mapped to an execution
 argument index as specified by the following table.</p>
@@ -4662,8 +4663,8 @@ argument index as specified by the following table.</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="operation-details">
+</section>
+<section id="operation-details">
 <h2>Operation Details<a class="headerlink" href="#operation-details" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>The binary primitive requires all source and destination tensors to have
@@ -4681,8 +4682,8 @@ descriptor.</p></li>
 tensor may be used as the destination, in which case its data will be
 overwritten.</p></li>
 </ul>
-</div>
-<div class="section" id="post-ops-and-attributes">
+</section>
+<section id="post-ops-and-attributes">
 <h2>Post-ops and Attributes<a class="headerlink" href="#post-ops-and-attributes" title="Permalink to this headline">¶</a></h2>
 <p>The following attributes should be supported:</p>
 <table class="table">
@@ -4717,18 +4718,18 @@ overwritten.</p></li>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="data-types-support">
+</section>
+<section id="data-types-support">
 <h2>Data Types Support<a class="headerlink" href="#data-types-support" title="Permalink to this headline">¶</a></h2>
 <p>The source and destination tensors may have <a class="reference internal" href="../data_model/data_types/index.html#_CPPv4N4dnnl6memory9data_type3f32E" title="dnnl::memory::data_type::f32"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::memory::data_type::f32</span></code></a>, <a class="reference internal" href="../data_model/data_types/index.html#_CPPv4N4dnnl6memory9data_type4bf16E" title="dnnl::memory::data_type::bf16"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::memory::data_type::bf16</span></code></a>, <a class="reference internal" href="../data_model/data_types/index.html#_CPPv4N4dnnl6memory9data_type2s8E" title="dnnl::memory::data_type::s8"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::memory::data_type::s8</span></code></a> or <a class="reference internal" href="../data_model/data_types/index.html#_CPPv4N4dnnl6memory9data_type2u8E" title="dnnl::memory::data_type::u8"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::memory::data_type::u8</span></code></a>
 data types.</p>
-</div>
-<div class="section" id="data-representation">
+</section>
+<section id="data-representation">
 <h2>Data Representation<a class="headerlink" href="#data-representation" title="Permalink to this headline">¶</a></h2>
 <p>The binary primitive works with arbitrary data tensors. There is no special
 meaning associated with any of tensors dimensions.</p>
-</div>
-<div class="section" id="api">
+</section>
+<section id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp struct">
 <dt id="_CPPv4N4dnnl6binaryE">
@@ -4868,8 +4869,8 @@ meaning associated with any of tensors dimensions.</p>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>write_once_node &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4596,7 +4597,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="write-once-node">
+  <section id="write-once-node">
 <h1>write_once_node<a class="headerlink" href="#write-once-node" title="Permalink to this headline">¶</a></h1>
 <p><strong>[flow_graph.write_once_node]</strong></p>
 <p>A node that is a buffer of a single item that cannot be overwritten.</p>
@@ -4633,7 +4634,7 @@ are non-destructive.</p>
 <p><code class="docutils literal notranslate"><span class="pre">write_once_node</span></code> is a <code class="docutils literal notranslate"><span class="pre">graph_node</span></code>, <code class="docutils literal notranslate"><span class="pre">receiver&lt;T&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">sender&lt;T&gt;</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">write_once_node</span></code> has a <cite>buffering</cite> and <cite>broadcast-push</cite> <a class="reference internal" href="forwarding_and_buffering.html"><span class="doc">properties</span></a>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">write_once_node</span></code> does not allow overwriting its single item buffer.</p>
-<div class="section" id="member-functions">
+<section id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb4flow15write_once_mode15write_once_nodeER5graph">
@@ -4683,8 +4684,8 @@ otherwise.</p>
 <dd><p>Invalidates the value held in the buffer.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="example">
+</section>
+<section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>Usage scenario is similar to <a class="reference internal" href="overwrite_node_cls.html"><span class="doc">overwrite_node</span></a> but an internal buffer can
 be updated only after <code class="docutils literal notranslate"><span class="pre">clear()</span></code> call. The following example shows the possibility to connect the
@@ -4737,8 +4738,8 @@ of the successor node.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

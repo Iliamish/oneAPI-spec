@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Parallel iteration &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4591,14 +4592,14 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="parallel-iteration">
+  <section id="parallel-iteration">
 <h1>Parallel iteration<a class="headerlink" href="#parallel-iteration" title="Permalink to this headline">¶</a></h1>
 <p>Member types <code class="docutils literal notranslate"><span class="pre">concurrent_vector::range_type</span></code> and <code class="docutils literal notranslate"><span class="pre">concurrent_vector::const_range_type</span></code>
 meet the <a class="reference internal" href="../../named_requirements/containers/container_range.html"><span class="doc">ContainerRange requirements</span></a>.</p>
 <p>These types differ only in that the bounds for a <code class="docutils literal notranslate"><span class="pre">concurrent_vector::const_range_type</span></code>
 are of type <code class="docutils literal notranslate"><span class="pre">concurrent_vector::const_iterator</span></code>, whereas the bounds for a <code class="docutils literal notranslate"><span class="pre">concurrent_vector::range_type</span></code>
 are of type <code class="docutils literal notranslate"><span class="pre">concurrent_vector::iterator</span></code>.</p>
-<div class="section" id="range-member-function">
+<section id="range-member-function">
 <h2>range member function<a class="headerlink" href="#range-member-function" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">range_type</span> <span class="nf">range</span><span class="p">(</span> <span class="n">size_type</span> <span class="n">grainsize</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">);</span>
@@ -4608,8 +4609,8 @@ are of type <code class="docutils literal notranslate"><span class="pre">concurr
 </div>
 <p><strong>Returns</strong>: a range object representing all elements in the container.</p>
 </div></blockquote>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

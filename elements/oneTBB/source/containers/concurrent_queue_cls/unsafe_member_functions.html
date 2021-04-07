@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Concurrently unsafe member functions &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4596,11 +4597,11 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="concurrently-unsafe-member-functions">
+  <section id="concurrently-unsafe-member-functions">
 <h1>Concurrently unsafe member functions<a class="headerlink" href="#concurrently-unsafe-member-functions" title="Permalink to this headline">¶</a></h1>
 <p>All member functions in this section can only be performed serially. The behavior is undefined in
 case of concurrent execution of these methods with other (either concurrently safe) methods.</p>
-<div class="section" id="the-number-of-elements">
+<section id="the-number-of-elements">
 <h2>The number of elements<a class="headerlink" href="#the-number-of-elements" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">size_type</span> <span class="nf">unsafe_size</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
@@ -4615,8 +4616,8 @@ case of concurrent execution of these methods with other (either concurrently sa
 </div>
 <p><strong>Returns</strong>: <code class="docutils literal notranslate"><span class="pre">true</span></code> if the container is empty; <code class="docutils literal notranslate"><span class="pre">false</span></code>, otherwise.</p>
 </div></blockquote>
-</div>
-<div class="section" id="clear">
+</section>
+<section id="clear">
 <h2>clear<a class="headerlink" href="#clear" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">clear</span><span class="p">();</span>
@@ -4624,8 +4625,8 @@ case of concurrent execution of these methods with other (either concurrently sa
 </div>
 <p>Removes all elements from the container.</p>
 </div></blockquote>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

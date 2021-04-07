@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>CSV data source &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4648,7 +4649,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="csv-data-source">
+  <section id="csv-data-source">
 <span id="id1"></span><h1>CSV data source<a class="headerlink" href="#csv-data-source" title="Permalink to this headline">¶</a></h1>
 <p>Class <code class="docutils literal notranslate"><span class="pre">csv::data_source</span></code> is an API for accessing the data source represented
 as a <a class="reference internal" href="../glossary.html#term-CSV-file"><span class="xref std std-term">csv file</span></a>. CSV data source shall be used with
@@ -4661,7 +4662,7 @@ source is <code class="xref cpp cpp-expr docutils literal notranslate"><span cla
 <p>CSV data source requires input file name to be set in the constructor, while the
 other parameters of the constructor such as delimiter and read options rely on
 default values.</p>
-<div class="section" id="usage-example">
+<section id="usage-example">
 <h2>Usage example<a class="headerlink" href="#usage-example" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">oneapi</span><span class="p">;</span>
 
@@ -4670,8 +4671,8 @@ default values.</p>
 <span class="k">const</span> <span class="k">auto</span> <span class="n">table</span> <span class="o">=</span> <span class="n">dal</span><span class="o">::</span><span class="n">read</span><span class="o">&lt;</span><span class="n">dal</span><span class="o">::</span><span class="n">table</span><span class="o">&gt;</span><span class="p">(</span><span class="n">data_source</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="programming-interface">
+</section>
+<section id="programming-interface">
 <h2>Programming Interface<a class="headerlink" href="#programming-interface" title="Permalink to this headline">¶</a></h2>
 <p>All types and functions in this section shall be declared in the
 <code class="docutils literal notranslate"><span class="pre">oneapi::dal::csv</span></code> namespace and be available via inclusion of the
@@ -4758,10 +4759,10 @@ input file shall be processed as a header record with features names.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="reading-oneapi-dal-read-object">
+</section>
+<section id="reading-oneapi-dal-read-object">
 <h2>Reading <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">oneapi</span><span class="pre">::</span><span class="pre">dal</span><span class="pre">::</span><a class="reference internal" href="#_CPPv4I00EN6oneapi3dal4readE6ObjectRK10DataSource" title="oneapi::dal::read"><span class="pre">read</span></a><span class="pre">&lt;</span><span class="pre">Object</span><span class="pre">&gt;</span><span class="sig-paren">(</span><span class="pre">...</span><span class="sig-paren">)</span></code><a class="headerlink" href="#reading-oneapi-dal-read-object" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="args">
+<section id="args">
 <h3>Args<a class="headerlink" href="#args" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Object</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">read_args</span> <span class="p">{</span>
@@ -4782,8 +4783,8 @@ values.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="operation">
+</section>
+<section id="operation">
 <h3>Operation<a class="headerlink" href="#operation" title="Permalink to this headline">¶</a></h3>
 <p><code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">oneapi</span><span class="pre">::</span><span class="pre">dal</span><span class="pre">::</span><a class="reference internal" href="tables.html#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table"><span class="pre">table</span></a></code> is the only supported value of the <code class="code docutils literal notranslate"><span class="pre">Object</span></code>
 template parameter for <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4I00EN6oneapi3dal4readE6ObjectRK10DataSource" title="oneapi::dal::read"><span class="pre">read</span></a></code> operation with CSV data source.</p>
@@ -4801,9 +4802,9 @@ reading from the data source.</p></li>
 </dl>
 </dd></dl>
 
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
               </div>

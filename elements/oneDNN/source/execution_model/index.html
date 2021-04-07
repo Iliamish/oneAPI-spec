@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Execution Model &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4596,7 +4597,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="execution-model">
+  <section id="execution-model">
 <h1>Execution Model<a class="headerlink" href="#execution-model" title="Permalink to this headline">¶</a></h1>
 <p>To execute a primitive, a user needs to pass memory arguments and a stream to
 the <a class="reference internal" href="../primitives/general.html#_CPPv4NK4dnnl9primitive7executeERK6streamRKNSt13unordered_mapIi6memoryEE" title="dnnl::primitive::execute"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::primitive::execute()</span></code></a> member function.</p>
@@ -4604,7 +4605,7 @@ the <a class="reference internal" href="../primitives/general.html#_CPPv4NK4dnnl
 <p>The primitive’s computations are executed on the computational device
 corresponding to the engine on which the primitive (and memory arguments) were
 created and happens within the context of the stream.</p>
-<div class="section" id="engine">
+<section id="engine">
 <h2>Engine<a class="headerlink" href="#engine" title="Permalink to this headline">¶</a></h2>
 <p><em>Engine</em> is abstraction of a computational device: a CPU, a specific GPU card
 in the system, etc. Most primitives are created to execute computations on one
@@ -4744,8 +4745,8 @@ itself can create and own the corresponding objects.</p>
 </p>
 </dd></dl>
 
-</div>
-<div class="section" id="stream">
+</section>
+<section id="stream">
 <h2>Stream<a class="headerlink" href="#stream" title="Permalink to this headline">¶</a></h2>
 <p>A <em>stream</em> is an encapsulation of execution context tied to a particular
 engine. They are passed to <a class="reference internal" href="../primitives/general.html#_CPPv4NK4dnnl9primitive7executeERK6streamRKNSt13unordered_mapIi6memoryEE" title="dnnl::primitive::execute"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::primitive::execute()</span></code></a> when executing a
@@ -4856,8 +4857,8 @@ created from a DPC++ queue inherits its behavior.</p>
 </p>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

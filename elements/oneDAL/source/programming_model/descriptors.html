@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Descriptors &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4601,7 +4602,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="descriptors">
+  <section id="descriptors">
 <span id="id1"></span><h1>Descriptors<a class="headerlink" href="#descriptors" title="Permalink to this headline">¶</a></h1>
 <p><strong>A descriptor</strong> is an object that represents an algorithm including all its
 meta-parameters, dependencies on other algorithms, floating-point types,
@@ -4688,7 +4689,7 @@ calls as shown in the example below.</p>
 </div>
 </li>
 </ul>
-<div class="section" id="floating-point-types">
+<section id="floating-point-types">
 <span id="floating-point"></span><h2>Floating-point Types<a class="headerlink" href="#floating-point-types" title="Permalink to this headline">¶</a></h2>
 <p>It is required for each algorithm to support at least one implementation-defined
 floating-point type. Other floating-point types are optional, for example <code class="docutils literal notranslate"><span class="pre">float</span></code>,
@@ -4701,8 +4702,8 @@ implementation-defined and shall be declared within the top-level namespace.</p>
 <span class="p">}</span> <span class="c1">// namespace oneapi::dal</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="computational-methods">
+</section>
+<section id="computational-methods">
 <span id="methods"></span><h2>Computational Methods<a class="headerlink" href="#computational-methods" title="Permalink to this headline">¶</a></h2>
 <p>The supported computational methods are declared within the
 <code class="docutils literal notranslate"><span class="pre">%ALGORITHM%::method</span></code> namespace using tag-types. Algorithm shall support at
@@ -4717,8 +4718,8 @@ the methods as shown in the example below.</p>
 <span class="p">}</span> <span class="c1">// namespace oneapi::dal::%ALGORITHM%</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="computational-tasks">
+</section>
+<section id="computational-tasks">
 <span id="tasks"></span><h2>Computational Tasks<a class="headerlink" href="#computational-tasks" title="Permalink to this headline">¶</a></h2>
 <p>The supported computational tasks are declared within the <code class="docutils literal notranslate"><span class="pre">%ALGORITHM%::task</span></code>
 namespace using tag-types. Algorithm shall support at least one task and declare
@@ -4737,8 +4738,8 @@ only one task.</p>
 <span class="p">}</span> <span class="c1">// namespace oneapi::dal::%ALGORITHM%</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

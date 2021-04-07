@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Resumable tasks &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4591,7 +4592,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="resumable-tasks">
+  <section id="resumable-tasks">
 <h1>Resumable tasks<a class="headerlink" href="#resumable-tasks" title="Permalink to this headline">¶</a></h1>
 <p><strong>[scheduler.resumable_tasks]</strong></p>
 <p>Functions to suspend task execution at a specific point and signal to resume it later.</p>
@@ -4617,7 +4618,7 @@ In this regard, this function acts as a signal for the task scheduler.</p>
 However, these guarantees are provided for the outermost blocking oneTBB calls
 (such as <code class="docutils literal notranslate"><span class="pre">tbb::parallel_for</span></code> and <code class="docutils literal notranslate"><span class="pre">tbb::flow::graph::wait_for_all</span></code>) and <code class="docutils literal notranslate"><span class="pre">tbb::task_arena::execute</span></code> calls.</p>
 </div>
-<div class="section" id="example">
+<section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Parallel computation region</span>
 <span class="n">tbb</span><span class="o">::</span><span class="n">parallel_for</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
@@ -4636,8 +4637,8 @@ However, these guarantees are provided for the outermost blocking oneTBB calls
 <span class="n">tbb</span><span class="o">::</span><span class="n">task</span><span class="o">::</span><span class="n">resume</span><span class="p">(</span><span class="n">tag</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Layer normalization &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4646,7 +4647,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="layer-normalization">
+  <section id="layer-normalization">
 <span id="layer-normalization-label"></span><h1>Layer normalization<a class="headerlink" href="#layer-normalization" title="Permalink to this headline">¶</a></h1>
 <p>The layer normalization primitive performs a forward or backward layer
 normalization operation on a 2-5D data tensor.</p>
@@ -4655,7 +4656,7 @@ axis of the data tensor and is defined by the following formulas. We show
 formulas only for 3D data, which are straightforward to generalize to cases of
 higher dimensions. Variable names follow the standard
 <a class="reference internal" href="../conventions.html#conventions-label"><span class="std std-ref">Conventions</span></a>.</p>
-<div class="section" id="forward">
+<section id="forward">
 <h2>Forward<a class="headerlink" href="#forward" title="Permalink to this headline">¶</a></h2>
 <div class="math notranslate nohighlight">
 \[\dst(t, n, c) =
@@ -4678,7 +4679,7 @@ variance are computed at runtime, the following formulas are used:</p>
 \mu(t, n))^2\)</span>.</p></li>
 </ul>
 <p>The <span class="math notranslate nohighlight">\(\gamma(c)\)</span> and <span class="math notranslate nohighlight">\(\beta(c)\)</span> tensors are considered learnable.</p>
-<div class="section" id="difference-between-forward-training-and-forward-inference">
+<section id="difference-between-forward-training-and-forward-inference">
 <h3>Difference Between Forward Training and Forward Inference<a class="headerlink" href="#difference-between-forward-training-and-forward-inference" title="Permalink to this headline">¶</a></h3>
 <p>If mean and variance are computed at runtime (i.e., <a class="reference internal" href="general.html#_CPPv4N4dnnl19normalization_flags16use_global_statsE" title="dnnl::normalization_flags::use_global_stats"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">use_global_stats</span></code></a> is not
 set), they become outputs for the propagation kind <a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kind16forward_trainingE" title="dnnl::prop_kind::forward_training"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">forward_training</span></code></a> (because
@@ -4688,9 +4689,9 @@ normalization descriptor by passing the memory descriptor for statistics
 (e.g., by passing <code class="docutils literal notranslate"><span class="pre">stat_desc</span></code> in
 <a class="reference internal" href="#_CPPv4N4dnnl27layer_normalization_forward4desc4descE9prop_kindRKN6memory4descERKN6memory4descEf19normalization_flags" title="dnnl::layer_normalization_forward::desc::desc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::layer_normalization_forward::desc::desc()</span></code></a>). Mean and variance are
 not exposed for the propagation kind <a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kind17forward_inferenceE" title="dnnl::prop_kind::forward_inference"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">forward_inference</span></code></a>.</p>
-</div>
-</div>
-<div class="section" id="backward">
+</section>
+</section>
+<section id="backward">
 <h2>Backward<a class="headerlink" href="#backward" title="Permalink to this headline">¶</a></h2>
 <p>The backward propagation computes <span class="math notranslate nohighlight">\(\diffsrc(t, n, c)\)</span>,
 <span class="math notranslate nohighlight">\(\diffgamma(c)^*\)</span>, and <span class="math notranslate nohighlight">\(\diffbeta(c)^*\)</span> based on
@@ -4699,8 +4700,8 @@ not exposed for the propagation kind <a class="reference internal" href="general
 <p>The tensors marked with an asterisk are used only when the primitive is
 configured to use <span class="math notranslate nohighlight">\(\gamma(c)\)</span>, and <span class="math notranslate nohighlight">\(\beta(c)\)</span> (i.e.,
 <code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">use_scaleshift</span></code> is set).</p>
-</div>
-<div class="section" id="execution-arguments">
+</section>
+<section id="execution-arguments">
 <h2>Execution Arguments<a class="headerlink" href="#execution-arguments" title="Permalink to this headline">¶</a></h2>
 <p>Depending on the flags and propagation kind, the layer normalization primitive
 requires different inputs and outputs. For clarity, a summary is shown below.</p>
@@ -4786,8 +4787,8 @@ argument index as specified by the following table.</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="operation-details">
+</section>
+<section id="operation-details">
 <h2>Operation Details<a class="headerlink" href="#operation-details" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>The different flavors of the primitive are partially controlled by the
@@ -4813,8 +4814,8 @@ overwritten. Note, however, that backward propagation requires original
 <span class="math notranslate nohighlight">\(\src\)</span>, hence the corresponding forward propagation should not be
 performed in-place.</p></li>
 </ol>
-</div>
-<div class="section" id="data-types-support">
+</section>
+<section id="data-types-support">
 <h2>Data Types Support<a class="headerlink" href="#data-types-support" title="Permalink to this headline">¶</a></h2>
 <p>The layer normalization supports the following combinations of data types.</p>
 <div class="admonition note">
@@ -4845,10 +4846,10 @@ abbreviated to <a class="reference internal" href="../data_model/data_types/inde
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="data-representation">
+</section>
+<section id="data-representation">
 <h2>Data Representation<a class="headerlink" href="#data-representation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="mean-and-variance">
+<section id="mean-and-variance">
 <h3>Mean and Variance<a class="headerlink" href="#mean-and-variance" title="Permalink to this headline">¶</a></h3>
 <p>The mean (<span class="math notranslate nohighlight">\(\mu\)</span>) and variance (<span class="math notranslate nohighlight">\(\sigma^2\)</span>) are separate tensors
 with number of dimensions equal to (<span class="math notranslate nohighlight">\(data\_ndims - 1\)</span>) and size
@@ -4861,14 +4862,14 @@ normalization descriptor. For best performance, it is advised to use the
 memory format that follows the data memory format; i.e., if the data format is
 <a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag3tncE" title="dnnl::memory::format_tag::tnc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">tnc</span></code></a>, the best performance can be expected for statistics with the <a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag2tnE" title="dnnl::memory::format_tag::tn"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">tn</span></code></a>
 format and suboptimal for statistics with the <a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag2ntE" title="dnnl::memory::format_tag::nt"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">nt</span></code></a> format.</p>
-</div>
-<div class="section" id="scale-and-shift">
+</section>
+<section id="scale-and-shift">
 <h3>Scale and Shift<a class="headerlink" href="#scale-and-shift" title="Permalink to this headline">¶</a></h3>
 <p>If used, the scale (<span class="math notranslate nohighlight">\(\gamma\)</span>) and shift (<span class="math notranslate nohighlight">\(\beta\)</span>) are combined in
 a single 2D tensor of shape <span class="math notranslate nohighlight">\(2 \times C\)</span>.</p>
 <p>The format of the corresponding memory object must be <a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag2ncE" title="dnnl::memory::format_tag::nc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">nc</span></code></a> (<a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag2abE" title="dnnl::memory::format_tag::ab"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">ab</span></code></a>).</p>
-</div>
-<div class="section" id="source-destination-and-their-gradients">
+</section>
+<section id="source-destination-and-their-gradients">
 <h3>Source, Destination, and Their Gradients<a class="headerlink" href="#source-destination-and-their-gradients" title="Permalink to this headline">¶</a></h3>
 <p>The layer normalization primitive works with an arbitrary data tensor;
 however, it was designed for RNN data tensors (i.e., <a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag2ncE" title="dnnl::memory::format_tag::nc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">nc</span></code></a>, <a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag3tncE" title="dnnl::memory::format_tag::tnc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">tnc</span></code></a>, <a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag4ldncE" title="dnnl::memory::format_tag::ldnc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">ldnc</span></code></a>).
@@ -4898,9 +4899,9 @@ Layer normalization performs normalization over the last logical dimension
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="section" id="api">
+</section>
+</section>
+<section id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp struct">
 <dt id="_CPPv4N4dnnl27layer_normalization_forwardE">
@@ -5308,8 +5309,8 @@ Layer normalization performs normalization over the last logical dimension
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>queue_node &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4596,7 +4597,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="queue-node">
+  <section id="queue-node">
 <h1>queue_node<a class="headerlink" href="#queue-node" title="Permalink to this headline">¶</a></h1>
 <p><strong>[flow_graph.queue_node]</strong></p>
 <p>A node that forwards messages in a first-in first-out (FIFO) order.</p>
@@ -4629,7 +4630,7 @@ SPDX-License-Identifier: MIT
 its successor set.</p>
 <p><code class="docutils literal notranslate"><span class="pre">queue_node</span></code> is a <code class="docutils literal notranslate"><span class="pre">graph_node</span></code>, <code class="docutils literal notranslate"><span class="pre">receiver</span></code> and <code class="docutils literal notranslate"><span class="pre">sender</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">queue_node</span></code> has a <cite>buffering</cite> and <cite>single-push</cite> <a class="reference internal" href="forwarding_and_buffering.html"><span class="doc">properties</span></a>.</p>
-<div class="section" id="member-functions">
+<section id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb4flow10queue_node10queue_nodeER5graph">
@@ -4659,13 +4660,13 @@ added item to a successor.</p>
 <code class="docutils literal notranslate"><span class="pre">false</span></code> if there is no item currently in the <code class="docutils literal notranslate"><span class="pre">queue_node</span></code> or if the node is reserved.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="example">
+</section>
+<section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>Usage scenario is similar to <a class="reference internal" href="buffer_node_cls.html"><span class="doc">buffer_node</span></a> except that messages are passed
 in first-in first-out (FIFO) order.</p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

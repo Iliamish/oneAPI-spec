@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Forwarding and Buffering &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4596,10 +4597,10 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="forwarding-and-buffering">
+  <section id="forwarding-and-buffering">
 <h1>Forwarding and Buffering<a class="headerlink" href="#forwarding-and-buffering" title="Permalink to this headline">¶</a></h1>
 <p><strong>[flow_graph.forwarding_and_buffering]</strong></p>
-<div class="section" id="forwarding">
+<section id="forwarding">
 <h2>Forwarding<a class="headerlink" href="#forwarding" title="Permalink to this headline">¶</a></h2>
 <p>In a <code class="docutils literal notranslate"><span class="pre">flow::graph</span></code>, nodes that forward messages to successors have
 one of two possible forwarding policies, which are a property of the node:</p>
@@ -4613,8 +4614,8 @@ This continues until a successor accepts the message, or all successors have bee
 If no successor accepts the message, it will be retained for a possible future resend.
 Message that is successfully transferred to a successor is removed from the node.</p></li>
 </ul>
-</div>
-<div class="section" id="buffering">
+</section>
+<section id="buffering">
 <h2>Buffering<a class="headerlink" href="#buffering" title="Permalink to this headline">¶</a></h2>
 <p>There are two policies for handling a message that cannot be pushed to any successor:</p>
 <ul class="simple">
@@ -4734,8 +4735,8 @@ further effect on graph execution. Nodes that discard outputs have “no” in t
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>parallel_scan &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4601,7 +4602,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="parallel-scan">
+  <section id="parallel-scan">
 <h1>parallel_scan<a class="headerlink" href="#parallel-scan" title="Permalink to this headline">¶</a></h1>
 <p><strong>[algorithms.parallel_scan]</strong></p>
 <p>Function template that computes a parallel prefix.</p>
@@ -4666,7 +4667,7 @@ to use with functors and lambda expressions, hiding some complexities of the imp
 It uses the same <em>scan</em> functor in both passes, differentiating them via a boolean parameter,
 combines summaries with <em>combine</em> functor, and returns the summary computed over the whole <em>range</em>.
 The <em>identity</em> argument is the left identity element for <code class="docutils literal notranslate"><span class="pre">Scan::operator()</span></code>.</p>
-<div class="section" id="pre-scan-and-final-scan-classes">
+<section id="pre-scan-and-final-scan-classes">
 <h2>pre_scan and final_scan Classes<a class="headerlink" href="#pre-scan-and-final-scan-classes" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -4678,8 +4679,8 @@ When executed serially, <code class="docutils literal notranslate"><span class="
 by processing the subranges from left to right using final scans.
 That is why final scans must compute a summary as well as the final scan result.
 The summary might be needed to process the next subrange if no other thread has pre-scanned it yet.</p>
-</div>
-<div class="section" id="example-imperative-form">
+</section>
+<section id="example-imperative-form">
 <h2>Example (Imperative Form)<a class="headerlink" href="#example-imperative-form" title="Permalink to this headline">¶</a></h2>
 <p>The following code demonstrates how <code class="docutils literal notranslate"><span class="pre">Body</span></code> could be implemented for <code class="docutils literal notranslate"><span class="pre">parallel_scan</span></code>
 to compute the same result as in the earlier sequential example.</p>
@@ -4734,8 +4735,8 @@ The code below shows how to do this for the grain size of 1000:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">parallel_scan</span><span class="p">(</span> <span class="n">blocked_range</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="mi">1000</span><span class="p">),</span> <span class="n">total</span><span class="p">,</span> <span class="n">simple_partitioner</span><span class="p">()</span> <span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="example-with-lambda-expressions">
+</section>
+<section id="example-with-lambda-expressions">
 <h2>Example with Lambda Expressions<a class="headerlink" href="#example-with-lambda-expressions" title="Permalink to this headline">¶</a></h2>
 <p>The following is analogous to the previous example,
 but written using lambda expressions and the functional form of <code class="docutils literal notranslate"><span class="pre">parallel_scan</span></code>:</p>
@@ -4764,8 +4765,8 @@ but written using lambda expressions and the functional form of <code class="doc
 <li><p><a class="reference internal" href="../blocked_ranges/blocked_range_cls.html"><span class="doc">blocked_range class</span></a></p></li>
 <li><p><a class="reference internal" href="parallel_reduce_func.html"><span class="doc">parallel_reduce algorithm</span></a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Attributes &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4667,7 +4668,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="attributes">
+  <section id="attributes">
 <span id="attributes-link"></span><h1>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h1>
 <p>The parameters passed to create a primitive descriptor specify the problem. An
 engine specifies where the primitive will be executed. An operation descriptor
@@ -4687,7 +4688,7 @@ the primitive.</p>
 <li class="toctree-l1"><a class="reference internal" href="post-ops.html">Post-ops</a></li>
 </ul>
 </div>
-<div class="section" id="scratchpad-mode">
+<section id="scratchpad-mode">
 <h2>Scratchpad Mode<a class="headerlink" href="#scratchpad-mode" title="Permalink to this headline">¶</a></h2>
 <p>Some primitives might require a temporary buffer while performing their
 computations. For instance, the operations that do not have enough independent
@@ -4746,9 +4747,9 @@ execution fully thread-safe is to use the <a class="reference internal" href="#_
 not pass the same scratchpad memory to two primitives that are executed
 concurrently.</p>
 </div>
-<div class="section" id="examples">
+<section id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="library-manages-scratchpad">
+<section id="library-manages-scratchpad">
 <h4>Library Manages Scratchpad<a class="headerlink" href="#library-manages-scratchpad" title="Permalink to this headline">¶</a></h4>
 <p>As mentioned above, this is a default behavior. We only want to highlight how a
 user can query the amount of memory consumed by a primitive due to a scratchpad.</p>
@@ -4765,8 +4766,8 @@ user can query the amount of memory consumed by a primitive due to a scratchpad.
 <span class="k">auto</span> <span class="n">zero_md</span> <span class="o">=</span> <span class="n">dnnl</span><span class="o">::</span><span class="n">memory</span><span class="o">::</span><span class="n">desc</span><span class="p">();</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="user-manages-scratchpad">
+</section>
+<section id="user-manages-scratchpad">
 <h4>User Manages Scratchpad<a class="headerlink" href="#user-manages-scratchpad" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create an empty (default) attributes</span>
 <span class="n">dnnl</span><span class="o">::</span><span class="n">primitive_attr</span> <span class="n">attr</span><span class="p">;</span>
@@ -4804,14 +4805,14 @@ user can query the amount of memory consumed by a primitive due to a scratchpad.
         <span class="p">{</span><span class="n">DNNL_ARG_SCRATCHPAD</span><span class="p">,</span> <span class="n">scratchpad</span><span class="p">}});</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="quantization">
+</section>
+</section>
+</section>
+<section id="quantization">
 <span id="attributes-quantization-label"></span><h2>Quantization<a class="headerlink" href="#quantization" title="Permalink to this headline">¶</a></h2>
 <p>Primitives may support reduced precision computations which require
 quantization.</p>
-<div class="section" id="quantization-model">
+<section id="quantization-model">
 <h3>Quantization Model<a class="headerlink" href="#quantization-model" title="Permalink to this headline">¶</a></h3>
 <p>The primary quantization model that the library assumes is the following:</p>
 <div class="math notranslate nohighlight">
@@ -4835,7 +4836,7 @@ value is mapped to the zero for quantized values; that is, <span class="math not
 <a class="reference internal" href="../inner-product.html#inner-product-label"><span class="std std-ref">Inner Product</span></a> currently support. The <a class="reference internal" href="../rnn.html#rnn-label"><span class="std std-ref">RNN</span></a> primitives
 have limited support of shifted zero.</p>
 <p>For the rest of this section we that <span class="math notranslate nohighlight">\(0_{x_{int8}} = 0\)</span>.</p>
-<div class="section" id="example-convolution-quantization-workflow">
+<section id="example-convolution-quantization-workflow">
 <h4>Example: Convolution Quantization Workflow<a class="headerlink" href="#example-convolution-quantization-workflow" title="Permalink to this headline">¶</a></h4>
 <p>Consider a convolution without bias. The tensors are represented as:</p>
 <ul class="simple">
@@ -4869,8 +4870,8 @@ scaling factors for all the tensors; it is enough to know only the
 <cite>output_scale</cite>. The library utilizes this fact: a user needs to provide only
 this one extra parameter to the convolution primitive (see the
 <a class="reference internal" href="#output-scaling-label"><span class="std std-ref">Output Scaling Attribute</span></a> section below).</p>
-</div>
-<div class="section" id="per-channel-scaling">
+</section>
+<section id="per-channel-scaling">
 <h4>Per-Channel Scaling<a class="headerlink" href="#per-channel-scaling" title="Permalink to this headline">¶</a></h4>
 <p>Primitives may have limited support of multiple scales for a quantized tensor.
 The most popular use case is the <a class="reference internal" href="../convolution.html#convolution-label"><span class="std std-ref">Convolution and Deconvolution</span></a> primitives that
@@ -4906,9 +4907,9 @@ oneDNN provides reorders that can perform per-channel scaling:</p>
 <p>where</p>
 <div class="math notranslate nohighlight">
 \[output\_scale(oc) := \frac{1}{\alpha_{\weights}(oc_{})}.\]</div>
-</div>
-</div>
-<div class="section" id="output-scaling-attribute">
+</section>
+</section>
+<section id="output-scaling-attribute">
 <span id="output-scaling-label"></span><h3>Output Scaling Attribute<a class="headerlink" href="#output-scaling-attribute" title="Permalink to this headline">¶</a></h3>
 <p>oneDNN provides <a class="reference internal" href="#_CPPv4N4dnnl14primitive_attr17set_output_scalesEiRKNSt6vectorIfEE" title="dnnl::primitive_attr::set_output_scales"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::primitive_attr::set_output_scales()</span></code></a> for setting scaling factors
 for most of the primitives.</p>
@@ -4933,7 +4934,7 @@ be <span class="math notranslate nohighlight">\(\mathtt{scales.size()} = \prod \
 Before it is stored, the result is converted to the destination data type with
 saturation if required. The rounding happens according to the current hardware
 setting.</p>
-<div class="section" id="example-1-weights-quantization-with-per-output-channel-and-group-scaling">
+<section id="example-1-weights-quantization-with-per-output-channel-and-group-scaling">
 <h4>Example 1: weights quantization with per-output-channel-and-group scaling<a class="headerlink" href="#example-1-weights-quantization-with-per-output-channel-and-group-scaling" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// weights dimensions</span>
 <span class="k">const</span> <span class="kt">int</span> <span class="n">G</span><span class="p">,</span> <span class="n">OC</span><span class="p">,</span> <span class="n">IC</span><span class="p">,</span> <span class="n">KH</span><span class="p">,</span> <span class="n">KW</span><span class="p">;</span>
@@ -4978,8 +4979,8 @@ setting.</p>
 <span class="k">auto</span> <span class="n">wei_reorder</span> <span class="o">=</span> <span class="n">dnnl</span><span class="o">::</span><span class="n">reorder</span><span class="p">(</span><span class="n">wei_reorder_pd</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="example-2-convolution-with-groups-with-per-output-channel-quantization">
+</section>
+<section id="example-2-convolution-with-groups-with-per-output-channel-quantization">
 <h4>Example 2: convolution with groups, with per-output-channel quantization<a class="headerlink" href="#example-2-convolution-with-groups-with-per-output-channel-quantization" title="Permalink to this headline">¶</a></h4>
 <p>This example is complementary to the previous example (which should ideally be
 the first one). Let’s say we want to create an int8 convolution with per-output
@@ -5039,8 +5040,8 @@ channel scaling.</p>
         <span class="n">engine</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="interplay-of-output-scales-with-post-ops">
+</section>
+<section id="interplay-of-output-scales-with-post-ops">
 <h4>Interplay of Output Scales with Post-ops<a class="headerlink" href="#interplay-of-output-scales-with-post-ops" title="Permalink to this headline">¶</a></h4>
 <p>In general, the <a class="reference internal" href="post-ops.html#post-ops-label"><span class="std std-ref">Post-ops</span></a> are independent from the output scales.
 The output scales are applied to the result first; then post-ops will take
@@ -5065,10 +5066,10 @@ i.e. there is no division by <span class="math notranslate nohighlight">\(scale_
 <li><p>And the post-ops scale for <span class="math notranslate nohighlight">\(\tanh\)</span> is set to
 <span class="math notranslate nohighlight">\(scale\_tanh\_post\_op = \frac{1}{scale_{\dst}}\)</span>.</p></li>
 </ul>
-</div>
-</div>
-</div>
-<div class="section" id="attribute-related-error-handling">
+</section>
+</section>
+</section>
+<section id="attribute-related-error-handling">
 <span id="attributes-error-handling-link"></span><h2>Attribute Related Error Handling<a class="headerlink" href="#attribute-related-error-handling" title="Permalink to this headline">¶</a></h2>
 <p>Since the attributes are created separately from the corresponding primitive
 descriptor, consistency checks are delayed.  Users can successfully set
@@ -5076,8 +5077,8 @@ attributes in whatever configuration they want.  However, when they try to
 create a primitive descriptor with the attributes they set, it might happen that
 there is no primitive implementation that supports such a configuration. In this
 case the library will throw the <a class="reference internal" href="../../introduction.html#_CPPv4N4dnnl5errorE" title="dnnl::error"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::error</span></code></a> exception.</p>
-</div>
-<div class="section" id="api">
+</section>
+<section id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp struct">
 <dt id="_CPPv4N4dnnl14primitive_attrE">
@@ -5306,8 +5307,8 @@ case the library will throw the <a class="reference internal" href="../../introd
 </div>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

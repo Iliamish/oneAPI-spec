@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>INPUT_STRIDES and OUTPUT_STRIDES &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinxmark.css" />
@@ -4579,7 +4580,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="input-strides-and-output-strides">
+  <section id="input-strides-and-output-strides">
 <span id="onemkl-dft-config-strides"></span><h1>INPUT_STRIDES and OUTPUT_STRIDES<a class="headerlink" href="#input-strides-and-output-strides" title="Permalink to this headline">¶</a></h1>
 <p>The FFT interface provides configuration parameters that define the layout of multidimensional data in the computer memory. For d-dimensional data set, <span class="math notranslate nohighlight">\(X\)</span>, defined by dimensions <span class="math notranslate nohighlight">\(n_1\times n_2 \times\dots\times n_d\)</span> , the layout describes where a particular element <span class="math notranslate nohighlight">\(X(k_1, k_2, \dots, k_d )\)</span> of the data set is located. The memory address of the element <span class="math notranslate nohighlight">\(X(k_1, k_2, \dots, k_d )\)</span> is expressed by the formula:
 <span class="math notranslate nohighlight">\(X(k_1, k_2, \dots, k_d ) =\)</span> the <span class="math notranslate nohighlight">\(+ s_0 + k_1*s_1 + k_2*s_2 + \dots + k_d*s_d\)</span>-th element of the container (<code class="docutils literal notranslate"><span class="pre">sycl::buffer</span></code> or USM pointer) provided to the compute function,
@@ -4655,7 +4656,7 @@ where <span class="math notranslate nohighlight">\(s_0\)</span> is the displacem
 <p>The <code class="docutils literal notranslate"><span class="pre">config_param::INPUT_STRIDES</span></code> configuration parameter defines the layout of the input data, while the element type is defined by the forward domain for the <a class="reference internal" href="../compute_forward.html#onemkl-dft-compute-forward"><span class="std std-ref">compute_forward</span></a> function and by the backward domain for the <a class="reference internal" href="../compute_backward.html#onemkl-dft-compute-backward"><span class="std std-ref">compute_backward</span></a> function. The <code class="docutils literal notranslate"><span class="pre">config_param::OUTPUT_STRIDES</span></code> configuration parameter defines the layout of the output data, while the element type is defined by the backward domain for the <a class="reference internal" href="../compute_forward.html#onemkl-dft-compute-forward"><span class="std std-ref">compute_forward</span></a> function and by the forward domain for <a class="reference internal" href="../compute_backward.html#onemkl-dft-compute-backward"><span class="std std-ref">compute_backward</span></a> function.</p>
 <p>For in-place transforms ( <code class="docutils literal notranslate"><span class="pre">config_param::PLACEMENT=config_value::INPLACE</span></code> ), the configuration set by <code class="docutils literal notranslate"><span class="pre">config_param::OUTPUT_STRIDES</span></code> is ignored when the element types in the forward and backward domains are the same. If they are different, set <code class="docutils literal notranslate"><span class="pre">config_param::OUTPUT_STRIDES</span></code> explicitly (even though the transform is in-place). Ensure a consistent configuration for in-place transforms, that is, the locations of the first elements on input and output must coincide in each dimension.</p>
 <p><strong>Parent topic</strong> <a class="reference internal" href="../enums_and_config_params.html#onemkl-dft-enums"><span class="std std-ref">Configuration Parameters and Enums</span></a></p>
-</div>
+</section>
 
 
               </div>

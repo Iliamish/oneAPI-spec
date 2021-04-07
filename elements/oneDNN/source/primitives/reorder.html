@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Reorder &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4617,7 +4618,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="reorder">
+  <section id="reorder">
 <h1>Reorder<a class="headerlink" href="#reorder" title="Permalink to this headline">¶</a></h1>
 <p>A primitive to copy data between two memory objects. This primitive is typically
 used to change the way that the data is laid out in memory.</p>
@@ -4635,7 +4636,7 @@ is currently kept in. In this case a user can use reorder primitive to copy
 (reorder) the data between the memory formats.</p>
 <p>Using the attributes and post-ops users can also use reorder primitive to
 quantize the data (and if necessary change the memory format simultaneously).</p>
-<div class="section" id="execution-arguments">
+<section id="execution-arguments">
 <h2>Execution Arguments<a class="headerlink" href="#execution-arguments" title="Permalink to this headline">¶</a></h2>
 <p>When executed, the inputs and outputs should be mapped to an execution
 argument index as specified by the following table.</p>
@@ -4658,8 +4659,8 @@ argument index as specified by the following table.</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="operation-details">
+</section>
+<section id="operation-details">
 <h2>Operation Details<a class="headerlink" href="#operation-details" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>The reorder primitive requires the source and destination tensors to have
@@ -4681,8 +4682,8 @@ be dequantized back to the #dnnl_f32 data type;</p></li>
 original plain memory format and user’s data type to the <em>optimized</em> format
 with chosen data type should be always implemented.</p></li>
 </ol>
-</div>
-<div class="section" id="data-types-support">
+</section>
+<section id="data-types-support">
 <h2>Data Types Support<a class="headerlink" href="#data-types-support" title="Permalink to this headline">¶</a></h2>
 <p>The reorder primitive supports arbitrary data types for the source and
 destination.</p>
@@ -4695,13 +4696,13 @@ used. For instance:</p>
 <span class="o">//</span> <span class="n">dst</span> <span class="o">==</span> <span class="p">{</span><span class="mi">0</span><span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="data-representation">
+</section>
+<section id="data-representation">
 <h2>Data Representation<a class="headerlink" href="#data-representation" title="Permalink to this headline">¶</a></h2>
 <p>The reorder primitive works with arbitrary data tensors. There is no special
 meaning associated with any logical dimensions.</p>
-</div>
-<div class="section" id="post-ops-and-attributes">
+</section>
+<section id="post-ops-and-attributes">
 <h2>Post-ops and Attributes<a class="headerlink" href="#post-ops-and-attributes" title="Permalink to this headline">¶</a></h2>
 <p>The reorder primitive should support the following attributes and post-ops:</p>
 <table class="table">
@@ -4751,8 +4752,8 @@ meaning associated with any logical dimensions.</p>
 <p>The intermediate operations are being done using single precision floating
 point data type.</p>
 </div>
-</div>
-<div class="section" id="api">
+</section>
+<section id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp struct">
 <dt id="_CPPv4N4dnnl7reorderE">
@@ -4906,8 +4907,8 @@ point data type.</p>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Feature Macros &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4596,11 +4597,11 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="feature-macros">
+  <section id="feature-macros">
 <h1>Feature Macros<a class="headerlink" href="#feature-macros" title="Permalink to this headline">¶</a></h1>
 <p><strong>[configuration.feature_macros]</strong></p>
 <p>Macros in this section control optional features of the library.</p>
-<div class="section" id="tbb-use-exceptions-macro">
+<section id="tbb-use-exceptions-macro">
 <h2>TBB_USE_EXCEPTIONS macro<a class="headerlink" href="#tbb-use-exceptions-macro" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">TBB_USE_EXCEPTIONS</span></code> macro controls whether the library headers use exception-handling
 constructs such as <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">catch</span></code>, and <code class="docutils literal notranslate"><span class="pre">throw</span></code>. The headers do not use these constructs when
@@ -4611,8 +4612,8 @@ exception handling constructs are enabled in the compiler, and 0, otherwise.</p>
 <p class="admonition-title">Caution</p>
 <p>The runtime library may still throw an exception when <code class="docutils literal notranslate"><span class="pre">TBB_USE_EXCEPTIONS=0</span></code>.</p>
 </div>
-</div>
-<div class="section" id="tbb-use-glibcxx-version-macro">
+</section>
+<section id="tbb-use-glibcxx-version-macro">
 <h2>TBB_USE_GLIBCXX_VERSION macro<a class="headerlink" href="#tbb-use-glibcxx-version-macro" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">TBB_USE_GLIBCXX_VERSION</span></code> macro can be used to specify
 the proper version of GNU libstdc++ if the detection fails. Define the value
@@ -4621,8 +4622,8 @@ where Major.Minor.Patch is the actual GCC/libstdc++ version (if unknown,
 it can be obtained with the <code class="docutils literal notranslate"><span class="pre">'gcc</span> <span class="pre">-dumpversion'</span></code> command).
 For example, if you use libstdc++ from GCC 4.9.2, define
 <code class="docutils literal notranslate"><span class="pre">TBB_USE_GLIBCXX_VERSION=40902</span></code>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

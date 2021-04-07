@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Video Processing Procedures &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4601,7 +4602,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="video-processing-procedures">
+  <section id="video-processing-procedures">
 <span id="vid-process-procedure"></span><h1>Video Processing Procedures<a class="headerlink" href="#video-processing-procedures" title="Permalink to this headline">¶</a></h1>
 <p>The following pseudo code shows the video processing procedure:</p>
 <div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
@@ -4686,7 +4687,7 @@ a NULL input at the end of the sequence to drain any remaining frames.</p></li>
 </ul>
 </li>
 </ul>
-<div class="section" id="configuration">
+<section id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>oneVPL configures the video processing pipeline operation based on the
 difference between the input and output formats, specified in the
@@ -4811,15 +4812,17 @@ list of configurable filters.</p>
 <span class="n">MFXVideoVPP_Init</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">conf</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-</div>
-<div class="section" id="region-of-interest">
+</section>
+<section id="region-of-interest">
 <h2>Region of Interest<a class="headerlink" href="#region-of-interest" title="Permalink to this headline">¶</a></h2>
 <p>During video processing operations, the application can specify a region of
 interest for each frame as shown in the following figure:</p>
-<div class="figure align-default" id="id2">
+<figure class="align-default" id="id2">
 <img alt="VPP region of interest operation" src="../../../../_images/vpp_region_of_interest_operation.png" />
-<p class="caption"><span class="caption-text">VPP region of interest operation</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">VPP region of interest operation</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>Specifying a region of interest guides the resizing function to achieve special
 effects, such as resizing from 16:9 to 4:3, while keeping the aspect ratio intact.
 Use the <code class="docutils literal notranslate"><span class="pre">CropX</span></code>, <code class="docutils literal notranslate"><span class="pre">CropY</span></code>, <code class="docutils literal notranslate"><span class="pre">CropW</span></code>, and <code class="docutils literal notranslate"><span class="pre">CropH</span></code> parameters in the
@@ -4901,8 +4904,8 @@ examples of VPP operations applied to a region of interest.</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="multi-view-video-processing">
+</section>
+<section id="multi-view-video-processing">
 <h2>Multi-view Video Processing<a class="headerlink" href="#multi-view-video-processing" title="Permalink to this headline">¶</a></h2>
 <p>oneVPL video processing supports processing multiple views. For video processing
 initialization, the application needs to attach the <a class="reference internal" href="../API_ref/VPL_structs_cross_component.html#_CPPv416mfxExtMVCSeqDesc" title="mfxExtMVCSeqDesc"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">mfxExtMVCSeqDesc</span></code></a>
@@ -4953,8 +4956,8 @@ function. This is shown in the following pseudo code:</p>
 <span class="n">MFXVideoVPP_Close</span><span class="p">(</span><span class="n">session</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

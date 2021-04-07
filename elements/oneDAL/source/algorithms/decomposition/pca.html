@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Principal Components Analysis (PCA) &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4759,7 +4760,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="principal-components-analysis-pca">
+  <section id="principal-components-analysis-pca">
 <span id="alg-pca"></span><h1>Principal Components Analysis (PCA)<a class="headerlink" href="#principal-components-analysis-pca" title="Permalink to this headline">¶</a></h1>
 <p>Principal Component Analysis (PCA) is an algorithm for exploratory data analysis
 and <a class="reference internal" href="../../glossary.html#term-Dimensionality-reduction"><span class="xref std std-term">dimensionality reduction</span></a>. PCA transforms a set of feature vectors
@@ -4796,9 +4797,9 @@ variance, that is, the directions where the data is mostly spread out.</p>
 </tr>
 </tbody>
 </table>
-<div class="section" id="mathematical-formulation">
+<section id="mathematical-formulation">
 <h2>Mathematical formulation<a class="headerlink" href="#mathematical-formulation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="training">
+<section id="training">
 <span id="pca-t-math"></span><h3>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h3>
 <p>Given the training set <span class="math notranslate nohighlight">\(X = \{ x_1, \ldots, x_n \}\)</span> of
 <span class="math notranslate nohighlight">\(p\)</span>-dimensional feature vectors and the number of principal components
@@ -4806,7 +4807,7 @@ variance, that is, the directions where the data is mostly spread out.</p>
 (<span class="math notranslate nohighlight">\(p\)</span>-dimensional eigenvectors <a class="reference internal" href="../../bibliography.html#lang87" id="id1"><span>[Lang87]</span></a>) for the training set. The
 eigenvectors can be grouped into the <span class="math notranslate nohighlight">\(r \times p\)</span> matrix <span class="math notranslate nohighlight">\(T\)</span> that
 contains one eigenvector in each row.</p>
-<div class="section" id="training-method-covariance">
+<section id="training-method-covariance">
 <span id="pca-t-math-cov"></span><h4>Training method: <em>Covariance</em><a class="headerlink" href="#training-method-covariance" title="Permalink to this headline">¶</a></h4>
 <p>This method uses eigenvalue decomposition of the covariance matrix to compute
 the principal components of the datasets. The method relies on the following
@@ -4828,8 +4829,8 @@ method such as <a class="reference internal" href="../../bibliography.html#ping1
 the descending order by <span class="math notranslate nohighlight">\(\lambda_i\)</span> and form the resulting matrix <span class="math notranslate nohighlight">\(T
 = (\upsilon_{i,1}, \cdots, \upsilon_{i,r}), \quad 1 \leq i \leq p\)</span>.
 Additionally, the means and variances of the initial dataset shall be returned.</p>
-</div>
-<div class="section" id="training-method-svd">
+</section>
+<section id="training-method-svd">
 <span id="pca-t-math-svd"></span><h4>Training method: <em>SVD</em><a class="headerlink" href="#training-method-svd" title="Permalink to this headline">¶</a></h4>
 <p>This method uses singular value decomposition of the dataset to compute its
 principal components. The method relies on the following steps:</p>
@@ -4844,8 +4845,8 @@ and <span class="math notranslate nohighlight">\(v_i\)</span>, the implementer c
 descending order by <span class="math notranslate nohighlight">\(\lambda_i\)</span> and form the resulting matrix <span class="math notranslate nohighlight">\(T =
 (v_{i,1}, \cdots, v_{i,r}), \quad 1 \leq i \leq p\)</span>. Additionally, the means and
 variances of the initial dataset shall be returned.</p>
-</div>
-<div class="section" id="sign-flip-technique">
+</section>
+<section id="sign-flip-technique">
 <h4>Sign-flip technique<a class="headerlink" href="#sign-flip-technique" title="Permalink to this headline">¶</a></h4>
 <p>Eigenvectors computed by some eigenvalue solvers are not uniquely defined due to
 sign ambiguity. To get the deterministic result, a sign-flip technique should be
@@ -4869,9 +4870,9 @@ signum function,</p>
 require implementation of this sign-flip technique. Implementer can choose an
 arbitrary technique that modifies the eigenvectors’ signs.</p>
 </div>
-</div>
-</div>
-<div class="section" id="inference">
+</section>
+</section>
+<section id="inference">
 <span id="pca-i-math"></span><h3>Inference<a class="headerlink" href="#inference" title="Permalink to this headline">¶</a></h3>
 <p>Given the inference set <span class="math notranslate nohighlight">\(X' = \{ x_1', \ldots, x_m' \}\)</span> of
 <span class="math notranslate nohighlight">\(p\)</span>-dimensional feature vectors and the <span class="math notranslate nohighlight">\(r \times p\)</span> matrix
@@ -4883,16 +4884,16 @@ transformation <a class="reference internal" href="../../bibliography.html#lang8
 <span class="math notranslate nohighlight">\(x_{j}'\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-x-transform">
 <span class="eqno">(1)<a class="headerlink" href="#equation-x-transform" title="Permalink to this equation">¶</a></span>\[x_{j}'' = T x_{j}', \quad 1 \leq j \leq m.\]</div>
-<div class="section" id="inference-methods-covariance-and-svd">
+<section id="inference-methods-covariance-and-svd">
 <span id="pca-i-math-svd"></span><span id="pca-i-math-cov"></span><h4>Inference methods: <em>Covariance</em> and <em>SVD</em><a class="headerlink" href="#inference-methods-covariance-and-svd" title="Permalink to this headline">¶</a></h4>
 <p>Covariance and SVD inference methods compute <span class="math notranslate nohighlight">\(x_{j}''\)</span> according to
 <a class="reference internal" href="#equation-x-transform">(1)</a>.</p>
-</div>
-</div>
-</div>
-<div class="section" id="usage-example">
+</section>
+</section>
+</section>
+<section id="usage-example">
 <h2>Usage example<a class="headerlink" href="#usage-example" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id6">
+<section id="id6">
 <h3>Training<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">pca</span><span class="o">::</span><span class="n">model</span><span class="o">&lt;&gt;</span> <span class="n">run_training</span><span class="p">(</span><span class="k">const</span> <span class="n">table</span><span class="o">&amp;</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">const</span> <span class="k">auto</span> <span class="n">pca_desc</span> <span class="o">=</span> <span class="n">pca</span><span class="o">::</span><span class="n">descriptor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">{}</span>
@@ -4910,8 +4911,8 @@ transformation <a class="reference internal" href="../../bibliography.html#lang8
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h3>Inference<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="nf">run_inference</span><span class="p">(</span><span class="k">const</span> <span class="n">pca</span><span class="o">::</span><span class="n">model</span><span class="o">&lt;&gt;&amp;</span> <span class="n">model</span><span class="p">,</span>
                     <span class="k">const</span> <span class="n">table</span><span class="o">&amp;</span> <span class="n">new_data</span><span class="p">)</span> <span class="p">{</span>
@@ -4924,14 +4925,14 @@ transformation <a class="reference internal" href="../../bibliography.html#lang8
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="programming-interface">
+</section>
+</section>
+<section id="programming-interface">
 <h2>Programming Interface<a class="headerlink" href="#programming-interface" title="Permalink to this headline">¶</a></h2>
 <p>All types and functions in this section shall be declared in the
 <code class="docutils literal notranslate"><span class="pre">oneapi::dal::pca</span></code> namespace and be available via inclusion of the
 <code class="docutils literal notranslate"><span class="pre">oneapi/dal/algo/pca.hpp</span></code> header file.</p>
-<div class="section" id="descriptor">
+<section id="descriptor">
 <h3>Descriptor<a class="headerlink" href="#descriptor" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Float</span> <span class="o">=</span> <span class="kt">float</span><span class="p">,</span>
           <span class="k">typename</span> <span class="nc">Method</span> <span class="o">=</span> <span class="n">method</span><span class="o">::</span><span class="n">by_default</span><span class="p">,</span>
@@ -5000,7 +5001,7 @@ transformation <a class="reference internal" href="../../bibliography.html#lang8
 
 </dd></dl>
 
-<div class="section" id="method-tags">
+<section id="method-tags">
 <h4>Method tags<a class="headerlink" href="#method-tags" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">method</span> <span class="p">{</span>
    <span class="k">struct</span> <span class="nc">cov</span> <span class="p">{};</span>
@@ -5027,8 +5028,8 @@ transformation <a class="reference internal" href="../../bibliography.html#lang8
 <dd><p>Alias tag-type for <a class="reference internal" href="#pca-t-math-cov">Covariance</a> computational method.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="task-tags">
+</section>
+<section id="task-tags">
 <h4>Task tags<a class="headerlink" href="#task-tags" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">task</span> <span class="p">{</span>
    <span class="k">struct</span> <span class="nc">dim_reduction</span> <span class="p">{};</span>
@@ -5048,9 +5049,9 @@ transformation <a class="reference internal" href="../../bibliography.html#lang8
 <dd><p>Alias tag-type for dimensionality reduction task.</p>
 </dd></dl>
 
-</div>
-</div>
-<div class="section" id="model">
+</section>
+</section>
+<section id="model">
 <h3>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">model</span> <span class="p">{</span>
@@ -5109,10 +5110,10 @@ transformation <a class="reference internal" href="../../bibliography.html#lang8
 
 </dd></dl>
 
-</div>
-<div class="section" id="training-train">
+</section>
+<section id="training-train">
 <span id="pca-t-api"></span><h3>Training <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4I000EN6oneapi3dal3pca5trainE12train_resultI4TaskERK10descriptorI5Float6Method4TaskERK11train_inputI4TaskE" title="oneapi::dal::pca::train"><span class="pre">train</span></a><span class="sig-paren">(</span><span class="pre">...</span><span class="sig-paren">)</span></code><a class="headerlink" href="#training-train" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="input">
+<section id="input">
 <span id="pca-t-api-input"></span><h4>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">train_input</span> <span class="p">{</span>
@@ -5155,8 +5156,8 @@ transformation <a class="reference internal" href="../../bibliography.html#lang8
 
 </dd></dl>
 
-</div>
-<div class="section" id="result">
+</section>
+<section id="result">
 <span id="pca-t-api-result"></span><h4>Result<a class="headerlink" href="#result" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">train_result</span> <span class="p">{</span>
@@ -5257,8 +5258,8 @@ transformation <a class="reference internal" href="../../bibliography.html#lang8
 
 </dd></dl>
 
-</div>
-<div class="section" id="operation">
+</section>
+<section id="operation">
 <h4>Operation<a class="headerlink" href="#operation" title="Permalink to this headline">¶</a></h4>
 <dl class="cpp function">
 <dt id="_CPPv4I000EN6oneapi3dal3pca5trainE12train_resultI4TaskERK10descriptorI5Float6Method4TaskERK11train_inputI4TaskE">
@@ -5300,11 +5301,11 @@ transformation <a class="reference internal" href="../../bibliography.html#lang8
 </dl>
 </dd></dl>
 
-</div>
-</div>
-<div class="section" id="inference-infer">
+</section>
+</section>
+<section id="inference-infer">
 <span id="pca-i-api"></span><h3>Inference <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4I000EN6oneapi3dal3pca5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::pca::infer"><span class="pre">infer</span></a><span class="sig-paren">(</span><span class="pre">...</span><span class="sig-paren">)</span></code><a class="headerlink" href="#inference-infer" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="pca-i-api-input">
+<section id="pca-i-api-input">
 <span id="id8"></span><h4>Input<a class="headerlink" href="#pca-i-api-input" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">infer_input</span> <span class="p">{</span>
@@ -5364,8 +5365,8 @@ transformation <a class="reference internal" href="../../bibliography.html#lang8
 
 </dd></dl>
 
-</div>
-<div class="section" id="pca-i-api-result">
+</section>
+<section id="pca-i-api-result">
 <span id="id9"></span><h4>Result<a class="headerlink" href="#pca-i-api-result" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">infer_result</span> <span class="p">{</span>
@@ -5406,8 +5407,8 @@ transformation <a class="reference internal" href="../../bibliography.html#lang8
 
 </dd></dl>
 
-</div>
-<div class="section" id="id10">
+</section>
+<section id="id10">
 <h4>Operation<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <dl class="cpp function">
 <dt id="_CPPv4I000EN6oneapi3dal3pca5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE">
@@ -5443,10 +5444,10 @@ transformation <a class="reference internal" href="../../bibliography.html#lang8
 </dl>
 </dd></dl>
 
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
               </div>

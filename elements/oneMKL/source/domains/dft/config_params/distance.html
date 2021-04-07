@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>FORWARD_DISTANCE and BACKWARD_DISTANCE &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinxmark.css" />
@@ -4578,14 +4579,14 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="forward-distance-and-backward-distance">
+  <section id="forward-distance-and-backward-distance">
 <span id="onemkl-dft-config-distance"></span><h1>FORWARD_DISTANCE and BACKWARD_DISTANCE<a class="headerlink" href="#forward-distance-and-backward-distance" title="Permalink to this headline">¶</a></h1>
 <p>The FFT interface enables computation of multiple transforms. To compute multiple transforms, you need to specify the data distribution of the multiple sets of data. The distance between the first data elements of consecutive data sets, <code class="docutils literal notranslate"><span class="pre">FORWARD_DISTANCE</span></code> for forward <a class="reference internal" href="../enums_and_config_params.html#onemkl-dft-enum-domain"><span class="std std-ref">domain</span></a> data or <code class="docutils literal notranslate"><span class="pre">BACKWARD_DISTANCE</span></code> for backward <a class="reference internal" href="../enums_and_config_params.html#onemkl-dft-enum-domain"><span class="std std-ref">domain</span></a> data, specifies the distribution. The configuration setting is a value of <code class="docutils literal notranslate"><span class="pre">std::int64_t</span></code> data type.</p>
 <p>The default value for both configuration settings is one. You must set this parameter explicitly if the number of transforms is greater than one (see <a class="reference internal" href="number_of_transforms.html#onemkl-dft-config-number-of-transforms"><span class="std std-ref">Number of Transforms</span></a> ).</p>
 <p>The distance is counted in elements of the data type defined by the descriptor configuration (rather than by the type of the variable passed to the computation functions). Specifically, the <a class="reference internal" href="../enums_and_config_params.html#onemkl-dft-enum-domain"><span class="std std-ref">domain</span></a> template parameter, and the <code class="docutils literal notranslate"><span class="pre">COMPLEX_STORAGE</span></code>, <code class="docutils literal notranslate"><span class="pre">REAL_STORAGE</span></code> and <code class="docutils literal notranslate"><span class="pre">CONJUGATE_EVEN_STORAGE</span></code> configuration parameters described in <a class="reference internal" href="storage_formats.html#onemkl-dft-config-storage-formats"><span class="std std-ref">Storage Formats</span></a> define the type of the elements as shown in the <a class="reference internal" href="strides.html#onemkl-dft-config-data-element-types-complex"><span class="std std-ref">complex_storage</span></a>, <a class="reference internal" href="strides.html#onemkl-dft-config-data-element-types-real"><span class="std std-ref">real_storage</span></a> and <a class="reference internal" href="strides.html#onemkl-dft-config-data-element-types-conjugate-even"><span class="std std-ref">conjugate_even_storage</span></a> tables.</p>
 <p>For in-place transforms ( <code class="docutils literal notranslate"><span class="pre">PLACEMENT=INPLACE</span></code> ), the configuration set by <code class="docutils literal notranslate"><span class="pre">FORWARD_DISTANCE</span></code> and <code class="docutils literal notranslate"><span class="pre">BACKWARD_DISTANCE</span></code> should be consistent, that is, the locations of the data sets for input and output must coincide.</p>
 <p><strong>Parent topic:</strong> <a class="reference internal" href="../enums_and_config_params.html#onemkl-dft-enums"><span class="std std-ref">Configuration Parameters and Enums</span></a></p>
-</div>
+</section>
 
 
               </div>

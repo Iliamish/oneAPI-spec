@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Inner Product &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4636,12 +4637,12 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="inner-product">
+  <section id="inner-product">
 <span id="inner-product-label"></span><h1>Inner Product<a class="headerlink" href="#inner-product" title="Permalink to this headline">¶</a></h1>
 <p>The inner product primitive (sometimes called <em>fully connected layer</em>) treats
 each activation in the minibatch as a vector and computes its product with a
 weights 2D tensor producing a 2D tensor as an output.</p>
-<div class="section" id="forward">
+<section id="forward">
 <h2>Forward<a class="headerlink" href="#forward" title="Permalink to this headline">¶</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(\src\)</span>, <span class="math notranslate nohighlight">\(\weights\)</span>, <span class="math notranslate nohighlight">\(\bias\)</span> and <span class="math notranslate nohighlight">\(\dst\)</span> be <span class="math notranslate nohighlight">\(N
 \times IC\)</span>, <span class="math notranslate nohighlight">\(OC \times IC\)</span>, <span class="math notranslate nohighlight">\(OC\)</span>, and <span class="math notranslate nohighlight">\(N \times OC\)</span> tensors,
@@ -4650,13 +4651,13 @@ Then:</p>
 <div class="math notranslate nohighlight">
 \[\dst(n, oc) = \bias(oc) + \sum_{ic=0}^{IC-1} \src(n, ic) \cdot \weights(oc, ic)\]</div>
 <p>In cases where the <span class="math notranslate nohighlight">\(\src\)</span> and <span class="math notranslate nohighlight">\(\weights\)</span> tensors have spatial dimensions, they are flattened to 2D. For example, if they are 4D <span class="math notranslate nohighlight">\(N \times IC' \times IH \times IW\)</span> and <span class="math notranslate nohighlight">\(OC \times IC' \times KH \times KW\)</span> tensors, then the formula above is applied with <span class="math notranslate nohighlight">\(IC = IC' \cdot IH \cdot IW\)</span>. In such cases, the <span class="math notranslate nohighlight">\(\src\)</span> and <span class="math notranslate nohighlight">\(\weights\)</span> tensors must have equal spatial dimensions (e.g. <span class="math notranslate nohighlight">\(KH = IH\)</span> and <span class="math notranslate nohighlight">\(KW = IW\)</span> for 4D tensors).</p>
-<div class="section" id="difference-between-forward-training-and-forward-inference">
+<section id="difference-between-forward-training-and-forward-inference">
 <h3>Difference Between Forward Training and Forward Inference<a class="headerlink" href="#difference-between-forward-training-and-forward-inference" title="Permalink to this headline">¶</a></h3>
 <p>There is no difference between the <a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kind16forward_trainingE" title="dnnl::prop_kind::forward_training"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">forward_training</span></code></a> and <a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kind17forward_inferenceE" title="dnnl::prop_kind::forward_inference"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">forward_inference</span></code></a>
 propagation kinds.</p>
-</div>
-</div>
-<div class="section" id="backward">
+</section>
+</section>
+<section id="backward">
 <h2>Backward<a class="headerlink" href="#backward" title="Permalink to this headline">¶</a></h2>
 <p>The backward propagation computes <span class="math notranslate nohighlight">\(\diffsrc\)</span> based on <span class="math notranslate nohighlight">\(\diffdst\)</span>
 and <span class="math notranslate nohighlight">\(\weights\)</span>.</p>
@@ -4667,7 +4668,7 @@ on <span class="math notranslate nohighlight">\(\diffdst\)</span> and <span clas
 <p>The <em>optimized</em> memory formats <span class="math notranslate nohighlight">\(\src\)</span> and <span class="math notranslate nohighlight">\(\weights\)</span> might be
 different on forward propagation, backward propagation, and weights update.</p>
 </div>
-<div class="section" id="execution-arguments">
+<section id="execution-arguments">
 <h3>Execution Arguments<a class="headerlink" href="#execution-arguments" title="Permalink to this headline">¶</a></h3>
 <p>When executed, the inputs and outputs should be mapped to an execution
 argument index as specified by the following table.</p>
@@ -4708,13 +4709,13 @@ argument index as specified by the following table.</p>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="section" id="operation-details">
+</section>
+</section>
+<section id="operation-details">
 <h2>Operation Details<a class="headerlink" href="#operation-details" title="Permalink to this headline">¶</a></h2>
 <p>N/A</p>
-</div>
-<div class="section" id="data-types-support">
+</section>
+<section id="data-types-support">
 <h2>Data Types Support<a class="headerlink" href="#data-types-support" title="Permalink to this headline">¶</a></h2>
 <p>Inner product primitive supports the following combination of data types for
 source, destination, weights, and bias.</p>
@@ -4778,8 +4779,8 @@ abbreviated to <a class="reference internal" href="../data_model/data_types/inde
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="data-representation">
+</section>
+<section id="data-representation">
 <h2>Data Representation<a class="headerlink" href="#data-representation" title="Permalink to this headline">¶</a></h2>
 <p>Like other CNN primitives, the inner product primitive expects the following
 tensors:</p>
@@ -4872,8 +4873,8 @@ always <span class="math notranslate nohighlight">\(N \times C\)</span>) the mem
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="post-ops-and-attributes">
+</section>
+<section id="post-ops-and-attributes">
 <h2>Post-ops and Attributes<a class="headerlink" href="#post-ops-and-attributes" title="Permalink to this headline">¶</a></h2>
 <p>The following post-ops should be supported by inner product primitives:</p>
 <table class="table">
@@ -4913,8 +4914,8 @@ always <span class="math notranslate nohighlight">\(N \times C\)</span>) the mem
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="api">
+</section>
+<section id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp struct">
 <dt id="_CPPv4N4dnnl21inner_product_forwardE">
@@ -5387,8 +5388,8 @@ always <span class="math notranslate nohighlight">\(N \times C\)</span>) the mem
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

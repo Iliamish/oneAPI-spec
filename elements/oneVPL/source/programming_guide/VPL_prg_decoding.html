@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Decoding Procedures &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4616,7 +4617,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="decoding-procedures">
+  <section id="decoding-procedures">
 <span id="decoding-proc"></span><h1>Decoding Procedures<a class="headerlink" href="#decoding-procedures" title="Permalink to this headline">¶</a></h1>
 <p>There are several approaches to decode video frames. The first one is based on
 the internal allocation mechanism presented here:</p>
@@ -4915,7 +4916,7 @@ these steps implicitly during decoding of the first frame. This change also
 requires setting the additional field <a class="reference internal" href="../API_ref/VPL_structs_memory.html#_CPPv4N12mfxBitstream7CodecIdE" title="mfxBitstream::CodecId"><code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">mfxBitstream::CodecId</span></code></a> to indicate
 codec type. In this mode the decoder allocates <a class="reference internal" href="../API_ref/VPL_structs_memory.html#_CPPv416mfxFrameSurface1" title="mfxFrameSurface1"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">mfxFrameSurface1</span></code></a>
 internally, so users should set the input surface to zero.</p>
-<div class="section" id="bitstream-repositioning">
+<section id="bitstream-repositioning">
 <h2>Bitstream Repositioning<a class="headerlink" href="#bitstream-repositioning" title="Permalink to this headline">¶</a></h2>
 <p>The application can use the following procedure for bitstream reposition during
 decoding:</p>
@@ -4929,8 +4930,8 @@ sequence header to the bitstream buffer.</p></li>
 previous steps, the oneVPL decoder searches for a new sequence header before
 starting decoding.</p></li>
 </ol>
-</div>
-<div class="section" id="broken-streams-handling">
+</section>
+<section id="broken-streams-handling">
 <h2>Broken Streams Handling<a class="headerlink" href="#broken-streams-handling" title="Permalink to this headline">¶</a></h2>
 <p>Robustness and the capability to handle a broken input stream is an important
 part of the decoder.</p>
@@ -4993,15 +4994,15 @@ applies the Sliding Window (ITU-T H.264 8.2.5.3) marking process. Fake frames
 are marked as reference, but since they are marked as non-existing, they are
 not used for inter-prediction.</p></li>
 </ul>
-</div>
-<div class="section" id="vp8-specific-details">
+</section>
+<section id="vp8-specific-details">
 <h2>VP8 Specific Details<a class="headerlink" href="#vp8-specific-details" title="Permalink to this headline">¶</a></h2>
 <p>Unlike other oneVPL supported decoders, VP8 can accept only a complete frame as
 input. The application should provide the complete frame accompanied by the
 <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv428MFX_BITSTREAM_COMPLETE_FRAME" title="MFX_BITSTREAM_COMPLETE_FRAME"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_BITSTREAM_COMPLETE_FRAME</span></code></a> flag. This is the single specific
 difference.</p>
-</div>
-<div class="section" id="jpeg">
+</section>
+<section id="jpeg">
 <h2>JPEG<a class="headerlink" href="#jpeg" title="Permalink to this headline">¶</a></h2>
 <p>The application can use the same decoding procedures for JPEG/motion JPEG decoding,
 as shown in the following pseudo code:</p>
@@ -5068,8 +5069,8 @@ the tables specified by the application. The application can also retrieve these
 tables by attaching the same buffers to <a class="reference internal" href="../API_ref/VPL_structs_cross_component.html#_CPPv413mfxVideoParam" title="mfxVideoParam"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">mfxVideoParam</span></code></a> and calling
 <a class="reference internal" href="../API_ref/VPL_func_vid_decode.html#_CPPv428MFXVideoDECODE_GetVideoParam10mfxSessionP13mfxVideoParam" title="MFXVideoDECODE_GetVideoParam"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_GetVideoParam()</span></code></a> or <a class="reference internal" href="../API_ref/VPL_func_vid_decode.html#_CPPv427MFXVideoDECODE_DecodeHeader10mfxSessionP12mfxBitstreamP13mfxVideoParam" title="MFXVideoDECODE_DecodeHeader"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_DecodeHeader()</span></code></a>
 functions.</p>
-</div>
-<div class="section" id="multi-view-video-decoding">
+</section>
+<section id="multi-view-video-decoding">
 <h2>Multi-view Video Decoding<a class="headerlink" href="#multi-view-video-decoding" title="Permalink to this headline">¶</a></h2>
 <p>The oneVPL MVC decoder operates on complete MVC streams that contain all
 view and temporal configurations. The application can configure the oneVPL decoder
@@ -5165,8 +5166,8 @@ structure.</p>
 <span class="n">MFXVideoDECODE_Close</span><span class="p">(</span><span class="n">session</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-</div>
-<div class="section" id="combined-decode-with-multi-channel-video-processing">
+</section>
+<section id="combined-decode-with-multi-channel-video-processing">
 <h2>Combined Decode with Multi-channel Video Processing<a class="headerlink" href="#combined-decode-with-multi-channel-video-processing" title="Permalink to this headline">¶</a></h2>
 <p>The oneVPL exposes interface for making decode and video processing operations in one call.
 Users can specify a number of output processing channels and multiple video filters per each channel.
@@ -5241,8 +5242,8 @@ If application doesn’t need to disable any channels it sets <cite>num_skip_cha
 <p class="admonition-title">Note</p>
 <p>Even if more than one input compressed frame is consumed, the <a class="reference internal" href="../API_ref/VPL_func_vid_decode_vpp.html#_CPPv435MFXVideoDECODE_VPP_DecodeFrameAsync10mfxSessionP12mfxBitstreamP6mfxU326mfxU32PP15mfxSurfaceArray" title="MFXVideoDECODE_VPP_DecodeFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_VPP_DecodeFrameAsync()</span></code></a> produces only           one decoded frame and correspondent frames from VPP channels.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

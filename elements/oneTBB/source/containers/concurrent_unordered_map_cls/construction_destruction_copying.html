@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Construction, destruction, copying &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4616,9 +4617,9 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="construction-destruction-copying">
+  <section id="construction-destruction-copying">
 <h1>Construction, destruction, copying<a class="headerlink" href="#construction-destruction-copying" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="empty-container-constructors">
+<section id="empty-container-constructors">
 <h2>Empty container constructors<a class="headerlink" href="#empty-container-constructors" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">concurrent_unordered_map</span><span class="p">();</span>
@@ -4647,8 +4648,8 @@ buckets is unspecified.</p>
 <p>If provided, uses the hash function <code class="docutils literal notranslate"><span class="pre">hasher</span></code>, predicate <code class="docutils literal notranslate"><span class="pre">equal</span></code> to compare <code class="docutils literal notranslate"><span class="pre">key_type</span></code>
 objects for equality, and the allocator <code class="docutils literal notranslate"><span class="pre">alloc</span></code> to allocate the memory.</p>
 </div></blockquote>
-</div>
-<div class="section" id="constructors-from-the-sequence-of-elements">
+</section>
+<section id="constructors-from-the-sequence-of-elements">
 <h2>Constructors from the sequence of elements<a class="headerlink" href="#constructors-from-the-sequence-of-elements" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">InputIterator</span><span class="o">&gt;</span>
@@ -4705,8 +4706,8 @@ from the [input.iterators] ISO C++ Standard section.</p>
 </div>
 <p>Equivalent to <code class="docutils literal notranslate"><span class="pre">concurrent_unordered_map(init.begin(),</span> <span class="pre">init.end(),</span> <span class="pre">bucket_count,</span> <span class="pre">hash,</span> <span class="pre">alloc)</span></code>.</p>
 </div></blockquote>
-</div>
-<div class="section" id="copying-constructors">
+</section>
+<section id="copying-constructors">
 <h2>Copying constructors<a class="headerlink" href="#copying-constructors" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">concurrent_unordered_map</span><span class="p">(</span> <span class="k">const</span> <span class="n">concurrent_unordered_map</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">);</span>
@@ -4720,8 +4721,8 @@ from the [input.iterators] ISO C++ Standard section.</p>
 <code class="docutils literal notranslate"><span class="pre">std::allocator_traits&lt;allocator_type&gt;::select_on_container_copy_construction(other.get_allocator())</span></code>.</p>
 <p>The behavior is undefined in case of concurrent operations with <code class="docutils literal notranslate"><span class="pre">other</span></code>.</p>
 </div></blockquote>
-</div>
-<div class="section" id="moving-constructors">
+</section>
+<section id="moving-constructors">
 <h2>Moving constructors<a class="headerlink" href="#moving-constructors" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">concurrent_unordered_map</span><span class="p">(</span> <span class="n">concurrent_unordered_map</span><span class="o">&amp;&amp;</span> <span class="n">other</span> <span class="p">);</span>
@@ -4735,8 +4736,8 @@ from the [input.iterators] ISO C++ Standard section.</p>
 <p>If the allocator argument is not provided, it is obtained by calling <code class="docutils literal notranslate"><span class="pre">std::move(other.get_allocator())</span></code>.</p>
 <p>The behavior is undefined in case of concurrent operations with <code class="docutils literal notranslate"><span class="pre">other</span></code>.</p>
 </div></blockquote>
-</div>
-<div class="section" id="destructor">
+</section>
+<section id="destructor">
 <h2>Destructor<a class="headerlink" href="#destructor" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">concurrent_unordered_map</span><span class="p">();</span>
@@ -4746,8 +4747,8 @@ from the [input.iterators] ISO C++ Standard section.</p>
 deallocates the used storage.</p>
 <p>The behavior is undefined in case of concurrent operations with <code class="docutils literal notranslate"><span class="pre">*this</span></code>.</p>
 </div></blockquote>
-</div>
-<div class="section" id="assignment-operators">
+</section>
+<section id="assignment-operators">
 <h2>Assignment operators<a class="headerlink" href="#assignment-operators" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">concurrent_unordered_map</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span> <span class="k">const</span> <span class="n">concurrent_unordered_map</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">);</span>
@@ -4789,8 +4790,8 @@ is <code class="docutils literal notranslate"><span class="pre">true</span></cod
 <p>The behavior is undefined in case of concurrent operations with <code class="docutils literal notranslate"><span class="pre">*this</span></code>.</p>
 <p><strong>Returns</strong>: a reference to <code class="docutils literal notranslate"><span class="pre">*this</span></code>.</p>
 </div></blockquote>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

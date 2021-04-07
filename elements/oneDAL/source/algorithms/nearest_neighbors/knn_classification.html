@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>k-Nearest Neighbors Classification (k-NN) &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4758,7 +4759,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="k-nearest-neighbors-classification-k-nn">
+  <section id="k-nearest-neighbors-classification-k-nn">
 <span id="alg-knn"></span><h1>k-Nearest Neighbors Classification (k-NN)<a class="headerlink" href="#k-nearest-neighbors-classification-k-nn" title="Permalink to this headline">¶</a></h1>
 <p><span class="math notranslate nohighlight">\(k\)</span>-NN <a class="reference internal" href="../../glossary.html#term-Classification"><span class="xref std std-term">classification</span></a> algorithm infers the class for the new
 feature vector by computing majority vote of the <span class="math notranslate nohighlight">\(k\)</span> nearest observations
@@ -4793,9 +4794,9 @@ from the training set.</p>
 </tr>
 </tbody>
 </table>
-<div class="section" id="mathematical-formulation">
+<section id="mathematical-formulation">
 <h2>Mathematical formulation<a class="headerlink" href="#mathematical-formulation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="training">
+<section id="training">
 <span id="knn-t-math"></span><h3>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(X = \{ x_1, \ldots, x_n \}\)</span> be the training set of
 <span class="math notranslate nohighlight">\(p\)</span>-dimensional feature vectors, let <span class="math notranslate nohighlight">\(Y = \{ y_1, \ldots, y_n \}\)</span> be
@@ -4804,18 +4805,18 @@ the set of class labels, where <span class="math notranslate nohighlight">\(y_i 
 <span class="math notranslate nohighlight">\(k\)</span>, the problem is to build a model that allows distance computation
 between the feature vectors in training and inference sets at the inference
 stage.</p>
-<div class="section" id="training-method-brute-force">
+<section id="training-method-brute-force">
 <span id="knn-t-math-brute-force"></span><h4>Training method: <em>brute-force</em><a class="headerlink" href="#training-method-brute-force" title="Permalink to this headline">¶</a></h4>
 <p>The training operation produces the model that stores all the feature vectors
 from the initial training set <span class="math notranslate nohighlight">\(X\)</span>.</p>
-</div>
-<div class="section" id="training-method-k-d-tree">
+</section>
+<section id="training-method-k-d-tree">
 <span id="knn-t-math-kd-tree"></span><h4>Training method: <em>k-d tree</em><a class="headerlink" href="#training-method-k-d-tree" title="Permalink to this headline">¶</a></h4>
 <p>The training operation builds a <span class="math notranslate nohighlight">\(k\)</span>-<span class="math notranslate nohighlight">\(d\)</span> tree that partitions the
 training set <span class="math notranslate nohighlight">\(X\)</span> (for more details, see <a class="reference internal" href="../../appendix/kd_tree.html#kd-tree"><span class="std std-ref">k-d Tree</span></a>).</p>
-</div>
-</div>
-<div class="section" id="inference">
+</section>
+</section>
+<section id="inference">
 <span id="knn-i-math"></span><h3>Inference<a class="headerlink" href="#inference" title="Permalink to this headline">¶</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(X' = \{ x_1', \ldots, x_m' \}\)</span> be the inference set of
 <span class="math notranslate nohighlight">\(p\)</span>-dimensional feature vectors. Given <span class="math notranslate nohighlight">\(X'\)</span>, the model produced at
@@ -4840,15 +4841,15 @@ fraction of vectors in <span class="math notranslate nohighlight">\(N(x_j')\)</s
 \quad 1 \leq j \leq m.\]</div>
 </li>
 </ol>
-<div class="section" id="inference-method-brute-force">
+<section id="inference-method-brute-force">
 <span id="knn-i-math-brute-force"></span><h4>Inference method: <em>brute-force</em><a class="headerlink" href="#inference-method-brute-force" title="Permalink to this headline">¶</a></h4>
 <p>Brute-force inference method determines the set <span class="math notranslate nohighlight">\(N(x_j')\)</span> of the
 nearest feature vectors by iterating over all the pairs <span class="math notranslate nohighlight">\((x_j', x_i)\)</span> in
 the implementation defined order, <span class="math notranslate nohighlight">\(1 \leq i \leq n\)</span>, <span class="math notranslate nohighlight">\(1 \leq j \leq
 m\)</span>. The final prediction is computed according to the equations <a class="reference internal" href="#equation-p-predict">(1)</a>
 and <a class="reference internal" href="#equation-y-predict">(2)</a>.</p>
-</div>
-<div class="section" id="inference-method-k-d-tree">
+</section>
+<section id="inference-method-k-d-tree">
 <span id="knn-i-math-kd-tree"></span><h4>Inference method: <em>k-d tree</em><a class="headerlink" href="#inference-method-k-d-tree" title="Permalink to this headline">¶</a></h4>
 <p>K-d tree inference method traverses the <span class="math notranslate nohighlight">\(k\)</span>-<span class="math notranslate nohighlight">\(d\)</span> tree to find feature
 vectors associated with a leaf node that are closest to <span class="math notranslate nohighlight">\(x_j'\)</span>, <span class="math notranslate nohighlight">\(1
@@ -4860,12 +4861,12 @@ distance between <span class="math notranslate nohighlight">\(x_j'\)</span> and 
 <span class="math notranslate nohighlight">\(\tilde{n}(x_j')\)</span>. Once tree traversal is finished, <span class="math notranslate nohighlight">\(\tilde{n}(x_j')
 \equiv N(x_j')\)</span>. The final prediction is computed according to the equations
 <a class="reference internal" href="#equation-p-predict">(1)</a> and <a class="reference internal" href="#equation-y-predict">(2)</a>.</p>
-</div>
-</div>
-</div>
-<div class="section" id="usage-example">
+</section>
+</section>
+</section>
+<section id="usage-example">
 <h2>Usage example<a class="headerlink" href="#usage-example" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
+<section id="id1">
 <h3>Training<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">knn</span><span class="o">::</span><span class="n">model</span><span class="o">&lt;&gt;</span> <span class="n">run_training</span><span class="p">(</span><span class="k">const</span> <span class="n">table</span><span class="o">&amp;</span> <span class="n">data</span><span class="p">,</span>
                           <span class="k">const</span> <span class="n">table</span><span class="o">&amp;</span> <span class="n">labels</span><span class="p">)</span> <span class="p">{</span>
@@ -4879,8 +4880,8 @@ distance between <span class="math notranslate nohighlight">\(x_j'\)</span> and 
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h3>Inference<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="nf">run_inference</span><span class="p">(</span><span class="k">const</span> <span class="n">knn</span><span class="o">::</span><span class="n">model</span><span class="o">&lt;&gt;&amp;</span> <span class="n">model</span><span class="p">,</span>
                     <span class="k">const</span> <span class="n">table</span><span class="o">&amp;</span> <span class="n">new_data</span><span class="p">)</span> <span class="p">{</span>
@@ -4894,14 +4895,14 @@ distance between <span class="math notranslate nohighlight">\(x_j'\)</span> and 
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="programming-interface">
+</section>
+</section>
+<section id="programming-interface">
 <h2>Programming Interface<a class="headerlink" href="#programming-interface" title="Permalink to this headline">¶</a></h2>
 <p>All types and functions in this section shall be declared in the
 <code class="docutils literal notranslate"><span class="pre">oneapi::dal::knn</span></code> namespace and be available via inclusion of the
 <code class="docutils literal notranslate"><span class="pre">oneapi/dal/algo/knn.hpp</span></code> header file.</p>
-<div class="section" id="descriptor">
+<section id="descriptor">
 <h3>Descriptor<a class="headerlink" href="#descriptor" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Float</span> <span class="o">=</span> <span class="kt">float</span><span class="p">,</span>
           <span class="k">typename</span> <span class="nc">Method</span> <span class="o">=</span> <span class="n">method</span><span class="o">::</span><span class="n">by_default</span><span class="p">,</span>
@@ -4975,7 +4976,7 @@ distance between <span class="math notranslate nohighlight">\(x_j'\)</span> and 
 
 </dd></dl>
 
-<div class="section" id="method-tags">
+<section id="method-tags">
 <h4>Method tags<a class="headerlink" href="#method-tags" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">method</span> <span class="p">{</span>
    <span class="k">struct</span> <span class="nc">bruteforce</span> <span class="p">{};</span>
@@ -5002,8 +5003,8 @@ distance between <span class="math notranslate nohighlight">\(x_j'\)</span> and 
 <dd><p>Alias tag-type for <a class="reference internal" href="#knn-t-math-brute-force">brute-force</a> computational method.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="task-tags">
+</section>
+<section id="task-tags">
 <h4>Task tags<a class="headerlink" href="#task-tags" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">task</span> <span class="p">{</span>
    <span class="k">struct</span> <span class="nc">classification</span> <span class="p">{};</span>
@@ -5023,9 +5024,9 @@ distance between <span class="math notranslate nohighlight">\(x_j'\)</span> and 
 <dd><p>Alias tag-type for classification task.</p>
 </dd></dl>
 
-</div>
-</div>
-<div class="section" id="model">
+</section>
+</section>
+<section id="model">
 <h3>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">model</span> <span class="p">{</span>
@@ -5051,10 +5052,10 @@ distance between <span class="math notranslate nohighlight">\(x_j'\)</span> and 
 
 </dd></dl>
 
-</div>
-<div class="section" id="training-train">
+</section>
+<section id="training-train">
 <span id="knn-t-api"></span><h3>Training <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4I000EN6oneapi3dal3knn5trainE12train_resultI4TaskERK10descriptorI5Float6Method4TaskERK11train_inputI4TaskE" title="oneapi::dal::knn::train"><span class="pre">train</span></a><span class="sig-paren">(</span><span class="pre">...</span><span class="sig-paren">)</span></code><a class="headerlink" href="#training-train" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="input">
+<section id="input">
 <span id="knn-t-api-input"></span><h4>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">train_input</span> <span class="p">{</span>
@@ -5114,8 +5115,8 @@ distance between <span class="math notranslate nohighlight">\(x_j'\)</span> and 
 
 </dd></dl>
 
-</div>
-<div class="section" id="result">
+</section>
+<section id="result">
 <span id="knn-t-api-result"></span><h4>Result<a class="headerlink" href="#result" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">train_result</span> <span class="p">{</span>
@@ -5156,8 +5157,8 @@ distance between <span class="math notranslate nohighlight">\(x_j'\)</span> and 
 
 </dd></dl>
 
-</div>
-<div class="section" id="operation">
+</section>
+<section id="operation">
 <h4>Operation<a class="headerlink" href="#operation" title="Permalink to this headline">¶</a></h4>
 <dl class="cpp function">
 <dt id="_CPPv4I000EN6oneapi3dal3knn5trainE12train_resultI4TaskERK10descriptorI5Float6Method4TaskERK11train_inputI4TaskE">
@@ -5191,11 +5192,11 @@ distance between <span class="math notranslate nohighlight">\(x_j'\)</span> and 
 </dl>
 </dd></dl>
 
-</div>
-</div>
-<div class="section" id="inference-infer">
+</section>
+</section>
+<section id="inference-infer">
 <span id="knn-i-api"></span><h3>Inference <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4I000EN6oneapi3dal3knn5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::knn::infer"><span class="pre">infer</span></a><span class="sig-paren">(</span><span class="pre">...</span><span class="sig-paren">)</span></code><a class="headerlink" href="#inference-infer" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="knn-i-api-input">
+<section id="knn-i-api-input">
 <span id="id3"></span><h4>Input<a class="headerlink" href="#knn-i-api-input" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">infer_input</span> <span class="p">{</span>
@@ -5255,8 +5256,8 @@ distance between <span class="math notranslate nohighlight">\(x_j'\)</span> and 
 
 </dd></dl>
 
-</div>
-<div class="section" id="knn-i-api-result">
+</section>
+<section id="knn-i-api-result">
 <span id="id4"></span><h4>Result<a class="headerlink" href="#knn-i-api-result" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">infer_result</span> <span class="p">{</span>
@@ -5297,8 +5298,8 @@ distance between <span class="math notranslate nohighlight">\(x_j'\)</span> and 
 
 </dd></dl>
 
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h4>Operation<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <dl class="cpp function">
 <dt id="_CPPv4I000EN6oneapi3dal3knn5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE">
@@ -5334,10 +5335,10 @@ distance between <span class="math notranslate nohighlight">\(x_j'\)</span> and 
 </dl>
 </dd></dl>
 
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
               </div>

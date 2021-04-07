@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Data Sources &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4623,10 +4624,10 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="data-sources">
+  <section id="data-sources">
 <span id="id1"></span><h1>Data Sources<a class="headerlink" href="#data-sources" title="Permalink to this headline">¶</a></h1>
 <p>This section describes the types related to the <a class="reference internal" href="index.html#data-source"><span class="std std-ref">data source</span></a> concept.</p>
-<div class="section" id="read">
+<section id="read">
 <h2>Read<a class="headerlink" href="#read" title="Permalink to this headline">¶</a></h2>
 <p><strong>Read operation</strong> is a function that transforms a data source and other
 arguments represented via <a class="reference internal" href="#args">an args</a> object to <a class="reference internal" href="#result">a result</a>
@@ -4636,7 +4637,7 @@ object. The operation is responsible for:</p>
 source.</p></li>
 <li><p>Passing a SYCL* queue to the data retrieval and transformation routines.</p></li>
 </ul>
-<div class="section" id="read-operation-definition">
+<section id="read-operation-definition">
 <span id="id2"></span><h3>Read operation definition<a class="headerlink" href="#read-operation-definition" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="#read-operation-template">The following code sample</a> shows the declaration for a
 read operation.</p>
@@ -4670,8 +4671,8 @@ read operation.</p>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">read_args_t</span></code> and <code class="docutils literal notranslate"><span class="pre">read_result_t</span></code> alias
 templates shall be used for inference of the args and return types.</p></li>
 </ul>
-</div>
-<div class="section" id="read-operation-shortcuts">
+</section>
+<section id="read-operation-shortcuts">
 <h3>Read operation shortcuts<a class="headerlink" href="#read-operation-shortcuts" title="Permalink to this headline">¶</a></h3>
 <p>In order to make the code on user side less verbose, oneDAL defines the
 following overloaded functions called <em>shortcuts</em> for a read operation in addition
@@ -4706,8 +4707,8 @@ combination of two previous shortcuts.</p>
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="args">
+</section>
+<section id="args">
 <span id="id3"></span><h3>Args<a class="headerlink" href="#args" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>The string <code class="docutils literal notranslate"><span class="pre">%DATA_SOURCE%</span></code> should be substituted with the name of the data source, for example, <code class="docutils literal notranslate"><span class="pre">csv</span></code>.</p></li>
@@ -4735,14 +4736,14 @@ of the data source args properties.</p></li>
 <span class="p">}</span> <span class="c1">// namespace oneapi::dal::%DATA_SOURCE%</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="result">
+</section>
+<section id="result">
 <h3>Result<a class="headerlink" href="#result" title="Permalink to this headline">¶</a></h3>
 <p>The result of a <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">read</span></code> operation is an instance of an in-memory object
 with <code class="code docutils literal notranslate"><span class="pre">Object</span></code> type.</p>
-</div>
-</div>
-<div class="section" id="data-source-types">
+</section>
+</section>
+<section id="data-source-types">
 <h2>Data Source Types<a class="headerlink" href="#data-source-types" title="Permalink to this headline">¶</a></h2>
 <p>oneDAL defines a set of classes.</p>
 <table class="colwidths-given table">
@@ -4761,8 +4762,8 @@ with <code class="code docutils literal notranslate"><span class="pre">Object</s
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="details">
+</section>
+<section id="details">
 <h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -4778,8 +4779,8 @@ with <code class="code docutils literal notranslate"><span class="pre">Object</s
 </li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

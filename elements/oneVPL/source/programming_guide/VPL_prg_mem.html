@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Memory Allocation and External Allocators &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4601,10 +4602,10 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="memory-allocation-and-external-allocators">
+  <section id="memory-allocation-and-external-allocators">
 <span id="mem-alloc-ext-alloc"></span><h1>Memory Allocation and External Allocators<a class="headerlink" href="#memory-allocation-and-external-allocators" title="Permalink to this headline">¶</a></h1>
 <p>There are two models of memory management in oneVPL: internal and external.</p>
-<div class="section" id="external-memory-management">
+<section id="external-memory-management">
 <h2>External Memory Management<a class="headerlink" href="#external-memory-management" title="Permalink to this headline">¶</a></h2>
 <p>In the external memory model, the application must allocate sufficient memory for
 input and output parameters and buffers and deallocate it when oneVPL functions
@@ -4729,8 +4730,8 @@ frame allocator can respond accordingly.</p>
 </td></tr></table></div>
 <p>For system memory, it is highly recommended to allocate memory for all
 planes of the same frame as a single buffer (using one single malloc call).</p>
-</div>
-<div class="section" id="internal-memory-management">
+</section>
+<section id="internal-memory-management">
 <span id="internal-mem-manage"></span><h2>Internal Memory Management<a class="headerlink" href="#internal-memory-management" title="Permalink to this headline">¶</a></h2>
 <p>In the internal memory management model, oneVPL provides interface functions for
 frames allocation:</p>
@@ -4751,8 +4752,8 @@ does not need to create and set the external allocator to oneVPL.</p>
 this scenario, the decoder will allocate a new refcountable
 <a class="reference internal" href="../API_ref/VPL_structs_memory.html#_CPPv416mfxFrameSurface1" title="mfxFrameSurface1"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">mfxFrameSurface1</span></code></a> and return it to the user. All assumed contracts
 with the user are similar to the <strong>MFXMemory_GetSurfaceForXXX</strong> functions.</p>
-</div>
-<div class="section" id="mfxframesurfaceinterface">
+</section>
+<section id="mfxframesurfaceinterface">
 <h2>mfxFrameSurfaceInterface<a class="headerlink" href="#mfxframesurfaceinterface" title="Permalink to this headline">¶</a></h2>
 <p>oneVPL API version 2.0 introduces <a class="reference internal" href="../API_ref/VPL_structs_memory.html#_CPPv424mfxFrameSurfaceInterface" title="mfxFrameSurfaceInterface"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">mfxFrameSurfaceInterface</span></code></a>. This
 interface is a set of callback functions to manage the lifetime of allocated
@@ -4818,8 +4819,8 @@ for memory sharing:</p>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

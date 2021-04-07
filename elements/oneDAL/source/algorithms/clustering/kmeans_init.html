@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>K-Means initialization &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4679,7 +4680,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="k-means-initialization">
+  <section id="k-means-initialization">
 <span id="alg-kmeans-init"></span><h1>K-Means initialization<a class="headerlink" href="#k-means-initialization" title="Permalink to this headline">¶</a></h1>
 <p>The K-Means initialization algorithm receives <span class="math notranslate nohighlight">\(n\)</span> feature vectors as input
 and chooses <span class="math notranslate nohighlight">\(k\)</span> initial centroids. After initialization, K-Means algorithm
@@ -4705,24 +4706,24 @@ uses the initialization result to partition input data into <span class="math no
 </tr>
 </tbody>
 </table>
-<div class="section" id="mathematical-formulation">
+<section id="mathematical-formulation">
 <h2>Mathematical formulation<a class="headerlink" href="#mathematical-formulation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="computing">
+<section id="computing">
 <span id="kmeans-init-c-math"></span><h3>Computing<a class="headerlink" href="#computing" title="Permalink to this headline">¶</a></h3>
 <p>Given the training set <span class="math notranslate nohighlight">\(X = \{ x_1, \ldots, x_n \}\)</span> of
 <span class="math notranslate nohighlight">\(p\)</span>-dimensional feature vectors and a positive integer <span class="math notranslate nohighlight">\(k\)</span>, the
 problem is to find a set <span class="math notranslate nohighlight">\(C = \{ c_1, \ldots, c_k \}\)</span> of
 <span class="math notranslate nohighlight">\(p\)</span>-dimensional initial centroids.</p>
-</div>
-<div class="section" id="computing-method-dense">
+</section>
+<section id="computing-method-dense">
 <span id="kmeans-init-c-math-dense"></span><h3>Computing method: <em>dense</em><a class="headerlink" href="#computing-method-dense" title="Permalink to this headline">¶</a></h3>
 <p>The method chooses first <span class="math notranslate nohighlight">\(k\)</span> feature vectors from the training set
 <span class="math notranslate nohighlight">\(X\)</span>.</p>
-</div>
-</div>
-<div class="section" id="usage-example">
+</section>
+</section>
+<section id="usage-example">
 <h2>Usage example<a class="headerlink" href="#usage-example" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
+<section id="id1">
 <h3>Computing<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="nf">run_compute</span><span class="p">(</span><span class="k">const</span> <span class="n">table</span><span class="o">&amp;</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">const</span> <span class="k">auto</span> <span class="n">kmeans_desc</span> <span class="o">=</span> <span class="n">kmeans_init</span><span class="o">::</span><span class="n">descriptor</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span>
@@ -4737,14 +4738,14 @@ problem is to find a set <span class="math notranslate nohighlight">\(C = \{ c_1
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="programming-interface">
+</section>
+</section>
+<section id="programming-interface">
 <h2>Programming Interface<a class="headerlink" href="#programming-interface" title="Permalink to this headline">¶</a></h2>
 <p>All types and functions in this section shall be declared in the
 <code class="docutils literal notranslate"><span class="pre">oneapi::dal::kmeans_init</span></code> namespace and be available via inclusion of the
 <code class="docutils literal notranslate"><span class="pre">oneapi/dal/algo/kmeans_init.hpp</span></code> header file.</p>
-<div class="section" id="descriptor">
+<section id="descriptor">
 <h3>Descriptor<a class="headerlink" href="#descriptor" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Float</span> <span class="o">=</span> <span class="kt">float</span><span class="p">,</span>
           <span class="k">typename</span> <span class="nc">Method</span> <span class="o">=</span> <span class="n">method</span><span class="o">::</span><span class="n">by_default</span><span class="p">,</span>
@@ -4799,7 +4800,7 @@ problem is to find a set <span class="math notranslate nohighlight">\(C = \{ c_1
 
 </dd></dl>
 
-<div class="section" id="method-tags">
+<section id="method-tags">
 <h4>Method tags<a class="headerlink" href="#method-tags" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">method</span> <span class="p">{</span>
    <span class="k">struct</span> <span class="nc">dense</span> <span class="p">{};</span>
@@ -4818,8 +4819,8 @@ problem is to find a set <span class="math notranslate nohighlight">\(C = \{ c_1
 <span id="_CPPv3N6oneapi3dal11kmeans_init6method10by_defaultE"></span><span id="_CPPv2N6oneapi3dal11kmeans_init6method10by_defaultE"></span><em class="property"><span class="pre">using</span> </em><code class="sig-name descname"><span class="pre">by_default</span></code> <span class="pre">=</span> <a class="reference internal" href="#_CPPv4N6oneapi3dal11kmeans_init6method5denseE" title="oneapi::dal::kmeans_init::method::dense"><span class="pre">dense</span></a><a class="headerlink" href="#_CPPv4N6oneapi3dal11kmeans_init6method10by_defaultE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</div>
-<div class="section" id="task-tags">
+</section>
+<section id="task-tags">
 <h4>Task tags<a class="headerlink" href="#task-tags" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">task</span> <span class="p">{</span>
    <span class="k">struct</span> <span class="nc">init</span> <span class="p">{};</span>
@@ -4839,11 +4840,11 @@ problem is to find a set <span class="math notranslate nohighlight">\(C = \{ c_1
 <dd><p>Alias tag-type for the initialization task.</p>
 </dd></dl>
 
-</div>
-</div>
-<div class="section" id="computing-compute">
+</section>
+</section>
+<section id="computing-compute">
 <h3>Computing <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4I000EN6oneapi3dal11kmeans_init7computeE14compute_resultI4TaskERK10descriptorI5Float6Method4TaskERK13compute_inputI4TaskE" title="oneapi::dal::kmeans_init::compute"><span class="pre">compute</span></a><span class="sig-paren">(</span><span class="pre">...</span><span class="sig-paren">)</span></code><a class="headerlink" href="#computing-compute" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="input">
+<section id="input">
 <span id="kmeans-init-c-api-input"></span><h4>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">compute_input</span> <span class="p">{</span>
@@ -4887,8 +4888,8 @@ problem is to find a set <span class="math notranslate nohighlight">\(C = \{ c_1
 
 </dd></dl>
 
-</div>
-<div class="section" id="result">
+</section>
+<section id="result">
 <span id="kmeans-init-c-api-result"></span><h4>Result<a class="headerlink" href="#result" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">compute_result</span> <span class="p">{</span>
@@ -4930,8 +4931,8 @@ problem is to find a set <span class="math notranslate nohighlight">\(C = \{ c_1
 
 </dd></dl>
 
-</div>
-<div class="section" id="operation">
+</section>
+<section id="operation">
 <span id="kmeans-init-c-api"></span><h4>Operation<a class="headerlink" href="#operation" title="Permalink to this headline">¶</a></h4>
 <dl class="cpp function">
 <dt id="_CPPv4I000EN6oneapi3dal11kmeans_init7computeE14compute_resultI4TaskERK10descriptorI5Float6Method4TaskERK13compute_inputI4TaskE">
@@ -4967,10 +4968,10 @@ problem is to find a set <span class="math notranslate nohighlight">\(C = \{ c_1
 </dl>
 </dd></dl>
 
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
               </div>

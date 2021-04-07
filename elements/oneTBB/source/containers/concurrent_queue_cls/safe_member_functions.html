@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Concurrently safe member functions &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4601,10 +4602,10 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="concurrently-safe-member-functions">
+  <section id="concurrently-safe-member-functions">
 <h1>Concurrently safe member functions<a class="headerlink" href="#concurrently-safe-member-functions" title="Permalink to this headline">¶</a></h1>
 <p>All member functions in this section can be performed concurrently with each other.</p>
-<div class="section" id="pushing-elements">
+<section id="pushing-elements">
 <h2>Pushing elements<a class="headerlink" href="#pushing-elements" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">push</span><span class="p">(</span> <span class="k">const</span> <span class="n">value_type</span><span class="o">&amp;</span> <span class="n">value</span> <span class="p">);</span>
@@ -4634,8 +4635,8 @@ SPDX-License-Identifier: MIT
 <p><strong>Requirements</strong>: the type <code class="docutils literal notranslate"><span class="pre">T</span></code> must meet the <code class="docutils literal notranslate"><span class="pre">EmplaceConstructible</span></code> requirements from the
 [container.requirements] ISO C++ Standard section.</p>
 </div></blockquote>
-</div>
-<div class="section" id="popping-elements">
+</section>
+<section id="popping-elements">
 <h2>Popping elements<a class="headerlink" href="#popping-elements" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="nf">try_pop</span><span class="p">(</span> <span class="n">value_type</span><span class="o">&amp;</span> <span class="n">value</span> <span class="p">);</span>
@@ -4648,8 +4649,8 @@ The popped element is destroyed.</p>
 ISO C++ Standard section.</p>
 <p><strong>Returns</strong>: <code class="docutils literal notranslate"><span class="pre">true</span></code> if the element was popped; <code class="docutils literal notranslate"><span class="pre">false</span></code>, otherwise.</p>
 </div></blockquote>
-</div>
-<div class="section" id="get-allocator">
+</section>
+<section id="get-allocator">
 <h2>get_allocator<a class="headerlink" href="#get-allocator" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">allocator_type</span> <span class="nf">get_allocator</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
@@ -4657,8 +4658,8 @@ ISO C++ Standard section.</p>
 </div>
 <p><strong>Returns</strong>: a copy of the allocator, associated with <code class="docutils literal notranslate"><span class="pre">*this</span></code>.</p>
 </div></blockquote>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

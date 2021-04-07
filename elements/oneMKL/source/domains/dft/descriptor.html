@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>descriptor &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4614,7 +4615,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="descriptor">
+  <section id="descriptor">
 <span id="onemkl-dft-descriptor"></span><h1>descriptor<a class="headerlink" href="#descriptor" title="Permalink to this headline">¶</a></h1>
 <p>The descriptor class defines a discrete Fourier transform problem to be computed.</p>
 <p class="rubric">Description</p>
@@ -4624,7 +4625,7 @@ SPDX-License-Identifier: MIT
 <p class="admonition-title">Note</p>
 <p>The <a class="reference internal" href="compute_forward.html#onemkl-dft-compute-forward"><span class="std std-ref">compute_forward</span></a> and <a class="reference internal" href="compute_backward.html#onemkl-dft-compute-backward"><span class="std std-ref">compute_backward</span></a> functions may need to be able to access the internals of the descriptor to apply the transform, this could be done for instance, by labeling them as friend functions of the descriptor class.</p>
 </div>
-<div class="section" id="descriptor-class">
+<section id="descriptor-class">
 <h2>descriptor class<a class="headerlink" href="#descriptor-class" title="Permalink to this headline">¶</a></h2>
 <p class="rubric">Syntax</p>
 <p>The descriptor class lives in the <code class="docutils literal notranslate"><span class="pre">oneapi::mkl::dft</span></code> namespace.</p>
@@ -4692,7 +4693,7 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 </div>
-<div class="section" id="descriptor-class-constructors">
+<section id="descriptor-class-constructors">
 <span id="onemkl-dft-descriptor-constructor"></span><h3>Descriptor class constructors<a class="headerlink" href="#descriptor-class-constructors" title="Permalink to this headline">¶</a></h3>
 <p>The constructors for the discrete Fourier transform <code class="docutils literal notranslate"><span class="pre">descriptor</span></code> class with default
 configuration settings for a given precision, forward <a class="reference internal" href="enums_and_config_params.html#onemkl-dft-enum-domain"><span class="std std-ref">domain</span></a> type
@@ -4743,8 +4744,8 @@ of all necessary parameters.</p>
 </dl>
 </div>
 <p><strong>Descriptor class member table:</strong> <a class="reference internal" href="#onemkl-dft-descriptor-member-table"><span class="std std-ref">Descriptor class member functions</span></a></p>
-</div>
-<div class="section" id="set-value">
+</section>
+<section id="set-value">
 <span id="onemkl-dft-descriptor-set-value"></span><h3>set_value<a class="headerlink" href="#set-value" title="Permalink to this headline">¶</a></h3>
 <p>Sets DFT configuration values before <a class="reference internal" href="#onemkl-dft-descriptor-commit"><span class="std std-ref">commit</span></a>.</p>
 <p class="rubric">Description</p>
@@ -4786,8 +4787,8 @@ All calls to <code class="docutils literal notranslate"><span class="pre">set_pa
 </dl>
 </div>
 <p><strong>Descriptor class member table:</strong> <a class="reference internal" href="#onemkl-dft-descriptor-member-table"><span class="std std-ref">Descriptor class member functions</span></a></p>
-</div>
-<div class="section" id="get-value">
+</section>
+<section id="get-value">
 <span id="onemkl-dft-descriptor-get-value"></span><h3>get_value<a class="headerlink" href="#get-value" title="Permalink to this headline">¶</a></h3>
 <p>Retrieves current DFT configuration values.</p>
 <p class="rubric">Description</p>
@@ -4826,8 +4827,8 @@ corresponding configuration values, see <a class="reference internal" href="enum
 </dl>
 </div>
 <p><strong>Descriptor class member table:</strong> <a class="reference internal" href="#onemkl-dft-descriptor-member-table"><span class="std std-ref">Descriptor class member functions</span></a></p>
-</div>
-<div class="section" id="commit">
+</section>
+<section id="commit">
 <span id="onemkl-dft-descriptor-commit"></span><h3>commit<a class="headerlink" href="#commit" title="Permalink to this headline">¶</a></h3>
 <p>Finalizes DFT descriptor after all configuration parameters have been set.</p>
 <p class="rubric">Description</p>
@@ -4875,9 +4876,9 @@ function call (see <a class="reference internal" href="compute_forward.html#onem
 </div>
 <p><strong>Descriptor class member table:</strong> <a class="reference internal" href="#onemkl-dft-descriptor-member-table"><span class="std std-ref">Descriptor class member functions</span></a></p>
 <p><strong>Parent topic:</strong> <a class="reference internal" href="dft.html#onemkl-dft"><span class="std std-ref">Discrete Fourier Transform Functions</span></a></p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
               </div>

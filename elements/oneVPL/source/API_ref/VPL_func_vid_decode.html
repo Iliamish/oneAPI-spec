@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>VideoDECODE &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4648,11 +4649,11 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="videodecode">
+  <section id="videodecode">
 <span id="func-video-decode"></span><h1>VideoDECODE<a class="headerlink" href="#videodecode" title="Permalink to this headline">¶</a></h1>
 <p id="func-vid-decode-begin">Functions that implement a complete decoder that decompresses input bitstreams
 directly to output frame surfaces.</p>
-<div class="section" id="api">
+<section id="api">
 <span id="func-vid-decode-end"></span><h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -4669,7 +4670,7 @@ directly to output frame surfaces.</p>
 <li><p><a class="reference internal" href="#mfxvideodecode-decodeframeasync" id="id11">MFXVideoDECODE_DecodeFrameAsync</a></p></li>
 </ul>
 </div>
-<div class="section" id="mfxvideodecode-query">
+<section id="mfxvideodecode-query">
 <h3><a class="toc-backref" href="#id1">MFXVideoDECODE_Query</a><a class="headerlink" href="#mfxvideodecode-query" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv420MFXVideoDECODE_Query10mfxSessionP13mfxVideoParamP13mfxVideoParam">
@@ -4705,8 +4706,8 @@ directly to output frame surfaces.</p>
 <p class="admonition-title">Important</p>
 <p>The <a class="reference internal" href="#_CPPv420MFXVideoDECODE_Query10mfxSessionP13mfxVideoParamP13mfxVideoParam" title="MFXVideoDECODE_Query"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_Query()</span></code></a> is mandatory when implementing a decoder.</p>
 </div>
-</div>
-<div class="section" id="mfxvideodecode-decodeheader">
+</section>
+<section id="mfxvideodecode-decodeheader">
 <h3><a class="toc-backref" href="#id2">MFXVideoDECODE_DecodeHeader</a><a class="headerlink" href="#mfxvideodecode-decodeheader" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv427MFXVideoDECODE_DecodeHeader10mfxSessionP12mfxBitstreamP13mfxVideoParam">
@@ -4738,8 +4739,8 @@ directly to output frame surfaces.</p>
 </p>
 </dd></dl>
 
-</div>
-<div class="section" id="mfxvideodecode-queryiosurf">
+</section>
+<section id="mfxvideodecode-queryiosurf">
 <h3><a class="toc-backref" href="#id3">MFXVideoDECODE_QueryIOSurf</a><a class="headerlink" href="#mfxvideodecode-queryiosurf" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv426MFXVideoDECODE_QueryIOSurf10mfxSessionP13mfxVideoParamP20mfxFrameAllocRequest">
@@ -4767,8 +4768,8 @@ directly to output frame surfaces.</p>
 </p>
 </dd></dl>
 
-</div>
-<div class="section" id="mfxvideodecode-init">
+</section>
+<section id="mfxvideodecode-init">
 <h3><a class="toc-backref" href="#id4">MFXVideoDECODE_Init</a><a class="headerlink" href="#mfxvideodecode-init" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv419MFXVideoDECODE_Init10mfxSessionP13mfxVideoParam">
@@ -4797,8 +4798,8 @@ directly to output frame surfaces.</p>
 <p class="admonition-title">Important</p>
 <p>The <a class="reference internal" href="#_CPPv419MFXVideoDECODE_Init10mfxSessionP13mfxVideoParam" title="MFXVideoDECODE_Init"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_Init()</span></code></a> is mandatory when implementing a decoder.</p>
 </div>
-</div>
-<div class="section" id="mfxvideodecode-reset">
+</section>
+<section id="mfxvideodecode-reset">
 <h3><a class="toc-backref" href="#id5">MFXVideoDECODE_Reset</a><a class="headerlink" href="#mfxvideodecode-reset" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv420MFXVideoDECODE_Reset10mfxSessionP13mfxVideoParam">
@@ -4828,8 +4829,8 @@ directly to output frame surfaces.</p>
 </p>
 </dd></dl>
 
-</div>
-<div class="section" id="mfxvideodecode-close">
+</section>
+<section id="mfxvideodecode-close">
 <h3><a class="toc-backref" href="#id6">MFXVideoDECODE_Close</a><a class="headerlink" href="#mfxvideodecode-close" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv420MFXVideoDECODE_Close10mfxSession">
@@ -4852,8 +4853,8 @@ directly to output frame surfaces.</p>
 <p class="admonition-title">Important</p>
 <p>The <a class="reference internal" href="#_CPPv420MFXVideoDECODE_Close10mfxSession" title="MFXVideoDECODE_Close"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_Close()</span></code></a> is mandatory when implementing a decoder.</p>
 </div>
-</div>
-<div class="section" id="mfxvideodecode-getvideoparam">
+</section>
+<section id="mfxvideodecode-getvideoparam">
 <h3><a class="toc-backref" href="#id7">MFXVideoDECODE_GetVideoParam</a><a class="headerlink" href="#mfxvideodecode-getvideoparam" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv428MFXVideoDECODE_GetVideoParam10mfxSessionP13mfxVideoParam">
@@ -4874,8 +4875,8 @@ directly to output frame surfaces.</p>
 </p>
 </dd></dl>
 
-</div>
-<div class="section" id="mfxvideodecode-getdecodestat">
+</section>
+<section id="mfxvideodecode-getdecodestat">
 <h3><a class="toc-backref" href="#id8">MFXVideoDECODE_GetDecodeStat</a><a class="headerlink" href="#mfxvideodecode-getdecodestat" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv428MFXVideoDECODE_GetDecodeStat10mfxSessionP13mfxDecodeStat">
@@ -4895,8 +4896,8 @@ directly to output frame surfaces.</p>
 </p>
 </dd></dl>
 
-</div>
-<div class="section" id="mfxvideodecode-setskipmode">
+</section>
+<section id="mfxvideodecode-setskipmode">
 <h3><a class="toc-backref" href="#id9">MFXVideoDECODE_SetSkipMode</a><a class="headerlink" href="#mfxvideodecode-setskipmode" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv426MFXVideoDECODE_SetSkipMode10mfxSession11mfxSkipMode">
@@ -4918,8 +4919,8 @@ directly to output frame surfaces.</p>
 </p>
 </dd></dl>
 
-</div>
-<div class="section" id="mfxvideodecode-getpayload">
+</section>
+<section id="mfxvideodecode-getpayload">
 <h3><a class="toc-backref" href="#id10">MFXVideoDECODE_GetPayload</a><a class="headerlink" href="#mfxvideodecode-getpayload" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv425MFXVideoDECODE_GetPayload10mfxSessionP6mfxU64P10mfxPayload">
@@ -4943,8 +4944,8 @@ directly to output frame surfaces.</p>
 </p>
 </dd></dl>
 
-</div>
-<div class="section" id="mfxvideodecode-decodeframeasync">
+</section>
+<section id="mfxvideodecode-decodeframeasync">
 <h3><a class="toc-backref" href="#id11">MFXVideoDECODE_DecodeFrameAsync</a><a class="headerlink" href="#mfxvideodecode-decodeframeasync" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv431MFXVideoDECODE_DecodeFrameAsync10mfxSessionP12mfxBitstreamP16mfxFrameSurface1PP16mfxFrameSurface1P12mfxSyncPoint">
@@ -4988,9 +4989,9 @@ directly to output frame surfaces.</p>
 <p class="admonition-title">Important</p>
 <p>The <a class="reference internal" href="#_CPPv431MFXVideoDECODE_DecodeFrameAsync10mfxSessionP12mfxBitstreamP16mfxFrameSurface1PP16mfxFrameSurface1P12mfxSyncPoint" title="MFXVideoDECODE_DecodeFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_DecodeFrameAsync()</span></code></a> is mandatory when implementing a decoder.</p>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
               </div>

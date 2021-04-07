@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Configuration Parameters and Enums &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4607,7 +4608,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="configuration-parameters-and-enums">
+  <section id="configuration-parameters-and-enums">
 <span id="onemkl-dft-enums"></span><h1>Configuration Parameters and Enums<a class="headerlink" href="#configuration-parameters-and-enums" title="Permalink to this headline">¶</a></h1>
 <p>The following enum classes are defined in the <code class="docutils literal notranslate"><span class="pre">oneapi::mkl::dft</span></code> namespace which are used for configuring the discrete Fourier transform problem in the <a class="reference internal" href="descriptor.html#onemkl-dft-descriptor"><span class="std std-ref">descriptor</span></a> class prior to a call to <a class="reference internal" href="descriptor.html#onemkl-dft-descriptor-commit"><span class="std std-ref">commit</span></a>.</p>
 <table class="table">
@@ -4635,7 +4636,7 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-<div class="section" id="precision">
+<section id="precision">
 <span id="onemkl-dft-enum-precision"></span><h2>precision<a class="headerlink" href="#precision" title="Permalink to this headline">¶</a></h2>
 <p>The floating-point precision in which the transform is to be carried out.  The data must be presented in this precision, the computation is carried out in this precision, and the result is delivered in this precision.</p>
 <div class="section docutils container">
@@ -4666,8 +4667,8 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="domain">
+</section>
+<section id="domain">
 <span id="onemkl-dft-enum-domain"></span><h2>domain<a class="headerlink" href="#domain" title="Permalink to this headline">¶</a></h2>
 <p>The discrete Fourier transform supports forward transformations on input sequences of two domains, from the forward domain to the backward domain. The backward transformation operates on input sequences from the backward domain to the forward domain.  This <code class="docutils literal notranslate"><span class="pre">domain</span></code> value defines the forward domain and the backward domain is always implied to be complex-valued.</p>
 <div class="section docutils container">
@@ -4706,8 +4707,8 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="config-param">
+</section>
+<section id="config-param">
 <span id="onemkl-dft-enum-config-param"></span><h2>config_param<a class="headerlink" href="#config-param" title="Permalink to this headline">¶</a></h2>
 <div class="section docutils container">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="k">class</span> <span class="nc">config_param</span> <span class="p">{</span>
@@ -4817,8 +4818,8 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="config-value">
+</section>
+<section id="config-value">
 <span id="onemkl-dft-enum-config-value"></span><h2>config_value<a class="headerlink" href="#config-value" title="Permalink to this headline">¶</a></h2>
 <p>These are some of the non-integer/floating-point values that the <a class="reference internal" href="#onemkl-dft-enum-config-param"><span class="std std-ref">config_param</span></a> configuration parameters can take on.</p>
 <div class="section docutils container">
@@ -4858,8 +4859,8 @@ SPDX-License-Identifier: MIT
 <p><strong>Parent topic:</strong> <a class="reference internal" href="dft.html#onemkl-dft"><span class="std std-ref">Discrete Fourier Transform Functions</span></a></p>
 <div class="toctree-wrapper compound">
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>getrf &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4597,7 +4598,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="getrf">
+  <section id="getrf">
 <span id="onemkl-lapack-getrf"></span><h1>getrf<a class="headerlink" href="#getrf" title="Permalink to this headline">¶</a></h1>
 <p>Computes the LU factorization of a general <span class="math notranslate nohighlight">\(m \times n\)</span> matrix.</p>
 <div class="section docutils container">
@@ -4631,7 +4632,7 @@ SPDX-License-Identifier: MIT
 unit diagonal elements (lower trapezoidal if <span class="math notranslate nohighlight">\(m &gt; n\)</span>) and <span class="math notranslate nohighlight">\(U\)</span> is
 upper triangular (upper trapezoidal if <span class="math notranslate nohighlight">\(m &lt; n\)</span>). The routine uses
 partial pivoting, with row interchanges.</p>
-<div class="section" id="getrf-buffer-version">
+<section id="getrf-buffer-version">
 <h2>getrf (BUFFER Version)<a class="headerlink" href="#getrf-buffer-version" title="Permalink to this headline">¶</a></h2>
 <div class="section docutils container">
 <p class="rubric">Syntax</p>
@@ -4686,8 +4687,8 @@ Size should not be less than the value returned by <a class="reference internal"
 <p>If <span class="math notranslate nohighlight">\(\text{info}=i\)</span>, <span class="math notranslate nohighlight">\(u_{ii}\)</span> is 0. The factorization has been completed, but   <span class="math notranslate nohighlight">\(U\)</span> is exactly singular. Division by 0 will occur if you use the factor <span class="math notranslate nohighlight">\(U\)</span> for solving a system of linear equations.</p>
 <p>If <span class="math notranslate nohighlight">\(\text{info}\)</span> equals to value passed as scratchpad size, and <cite>detail()</cite> returns non zero, then passed scratchpad is of insufficient size, and required size should not be less than value return by <cite>detail()</cite> method of exception object.</p>
 </div></blockquote>
-</div>
-<div class="section" id="getrf-usm-version">
+</section>
+<section id="getrf-usm-version">
 <h2>getrf (USM Version)<a class="headerlink" href="#getrf-usm-version" title="Permalink to this headline">¶</a></h2>
 <div class="section docutils container">
 <p class="rubric">Syntax</p>
@@ -4749,8 +4750,8 @@ Size should not be less than the value returned by <a class="reference internal"
 </div>
 <p>Output event to wait on to ensure computation is complete.</p>
 <p><strong>Parent topic:</strong> <a class="reference internal" href="lapack.html#onemkl-lapack-linear-equation-routines"><span class="std std-ref">LAPACK Linear Equation Routines</span></a></p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

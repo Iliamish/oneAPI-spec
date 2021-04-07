@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Memory Descriptors and Objects &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4601,9 +4602,9 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="memory-descriptors-and-objects">
+  <section id="memory-descriptors-and-objects">
 <h1>Memory Descriptors and Objects<a class="headerlink" href="#memory-descriptors-and-objects" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="descriptors">
+<section id="descriptors">
 <h2>Descriptors<a class="headerlink" href="#descriptors" title="Permalink to this headline">¶</a></h2>
 <p>Memory descriptor is an engine-agnostic logical description of data (number of
 dimensions, dimension sizes, and data type), and, optionally, the information
@@ -4839,8 +4840,8 @@ is no clear definition on what the output values should be.</p></li>
 </div>
 </dd></dl>
 
-</div>
-<div class="section" id="objects">
+</section>
+<section id="objects">
 <h2>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h2>
 <p>Memory objects combine memory descriptors with storage for data (a data handle).
 With USM, the data handle is simply a pointer to <code class="docutils literal notranslate"><span class="pre">void</span></code>. The data handle can
@@ -4849,8 +4850,8 @@ be queried using <a class="reference internal" href="#_CPPv4NK4dnnl6memory15get_
 using <a class="reference internal" href="#_CPPv4I0_iEN4dnnl12sycl_interop10get_bufferEN2cl4sycl6bufferI1T5ndimsEERK6memory" title="dnnl::sycl_interop::get_buffer"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::sycl_interop::get_buffer()</span></code></a> and set using <a class="reference internal" href="#_CPPv4I0_iEN4dnnl12sycl_interop10set_bufferEvR6memoryN2cl4sycl6bufferI1T5ndimsEE" title="dnnl::sycl_interop::set_buffer"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::sycl_interop::set_buffer()</span></code></a>. In
 addition, the memory descriptor and the engine underlying a memory object can
 be queried using <a class="reference internal" href="#_CPPv4NK4dnnl6memory8get_descEv" title="dnnl::memory::get_desc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::memory::get_desc()</span></code></a> and <a class="reference internal" href="#_CPPv4NK4dnnl6memory10get_engineEv" title="dnnl::memory::get_engine"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::memory::get_engine()</span></code></a> respectively.</p>
-</div>
-<div class="section" id="api">
+</section>
+<section id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp struct">
 <dt id="_CPPv4N4dnnl6memoryE">
@@ -5190,8 +5191,8 @@ be queried using <a class="reference internal" href="#_CPPv4NK4dnnl6memory8get_d
 <dd><p>Special pointer value that indicates that the library needs to allocate an underlying buffer for a memory object. </p>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

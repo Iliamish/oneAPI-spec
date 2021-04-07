@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Concurrent growth &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4606,11 +4607,11 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="concurrent-growth">
+  <section id="concurrent-growth">
 <h1>Concurrent growth<a class="headerlink" href="#concurrent-growth" title="Permalink to this headline">¶</a></h1>
 <p>All member functions in this section can be performed concurrently with each other,
 element access methods and while traversing the container.</p>
-<div class="section" id="grow-by">
+<section id="grow-by">
 <h2>grow_by<a class="headerlink" href="#grow-by" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">iterator</span> <span class="nf">grow_by</span><span class="p">(</span> <span class="n">size_type</span> <span class="n">delta</span> <span class="p">);</span>
@@ -4651,8 +4652,8 @@ meets the requirements of <cite>InputIterator</cite> from the [input.iterators] 
 </div>
 <p>Equivalent to <code class="docutils literal notranslate"><span class="pre">grow_by(init.begin(),</span> <span class="pre">init.end())</span></code>.</p>
 </div></blockquote>
-</div>
-<div class="section" id="grow-to-at-least">
+</section>
+<section id="grow-to-at-least">
 <h2>grow_to_at_least<a class="headerlink" href="#grow-to-at-least" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">iterator</span> <span class="nf">grow_to_at_least</span><span class="p">(</span> <span class="n">size_type</span> <span class="n">n</span> <span class="p">);</span>
@@ -4673,8 +4674,8 @@ from [defaultconstructible] and [container.requirements] ISO C++ sections.</p>
 <p><strong>Requirements</strong>: the type <code class="docutils literal notranslate"><span class="pre">value_type</span></code> must meet the <code class="docutils literal notranslate"><span class="pre">CopyInsertable</span></code> requirements from the
 [container.requirements] ISO C++ Standard section.</p>
 </div></blockquote>
-</div>
-<div class="section" id="push-back">
+</section>
+<section id="push-back">
 <h2>push_back<a class="headerlink" href="#push-back" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">iterator</span> <span class="nf">push_back</span><span class="p">(</span> <span class="k">const</span> <span class="n">value_type</span><span class="o">&amp;</span> <span class="n">value</span> <span class="p">);</span>
@@ -4696,8 +4697,8 @@ from [defaultconstructible] and [container.requirements] ISO C++ sections.</p>
 <p><strong>Requirements</strong>: the type <code class="docutils literal notranslate"><span class="pre">value_type</span></code> must meet the <code class="docutils literal notranslate"><span class="pre">MoveInsertable</span></code> requirements from the
 [container.requirements] ISO C++ Standard section.</p>
 </div></blockquote>
-</div>
-<div class="section" id="emplace-back">
+</section>
+<section id="emplace-back">
 <h2>emplace_back<a class="headerlink" href="#emplace-back" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
@@ -4709,8 +4710,8 @@ from [defaultconstructible] and [container.requirements] ISO C++ sections.</p>
 <p><strong>Requirements</strong>: the type <code class="docutils literal notranslate"><span class="pre">value_type</span></code> must meet the <code class="docutils literal notranslate"><span class="pre">EmplaceConstructible</span></code> requirements
 from the [container.requirements] ISO C++ section.</p>
 </div></blockquote>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

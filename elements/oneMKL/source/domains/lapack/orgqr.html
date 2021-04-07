@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>orgqr &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4597,7 +4598,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="orgqr">
+  <section id="orgqr">
 <span id="onemkl-lapack-orgqr"></span><h1>orgqr<a class="headerlink" href="#orgqr" title="Permalink to this headline">¶</a></h1>
 <p>Generates the real orthogonal matrix <span class="math notranslate nohighlight">\(Q\)</span> of the QR factorization formed
 by <a class="reference internal" href="geqrf.html#onemkl-lapack-geqrf"><span class="std std-ref">geqrf</span></a>.</p>
@@ -4647,7 +4648,7 @@ the matrix <span class="math notranslate nohighlight">\(A\)</span>):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">oneapi</span><span class="p">::</span><span class="n">mkl</span><span class="p">::</span><span class="n">lapack</span><span class="p">::</span><span class="n">orgqr</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">lda</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="n">scratchpad</span><span class="p">,</span> <span class="n">scratchpad_size</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="section" id="orgqr-buffer-version">
+<section id="orgqr-buffer-version">
 <h2>orgqr (Buffer Version)<a class="headerlink" href="#orgqr-buffer-version" title="Permalink to this headline">¶</a></h2>
 <div class="section docutils container">
 <p class="rubric">Syntax</p>
@@ -4707,8 +4708,8 @@ Size should not be less than the value returned by <a class="reference internal"
 <p>If <span class="math notranslate nohighlight">\(\text{info}=-i\)</span>, the <span class="math notranslate nohighlight">\(i\)</span>-th parameter had an illegal value.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">info</span></code> equals to value passed as scratchpad size, and <cite>detail()</cite> returns non zero, then passed scratchpad is of insufficient size, and required size should not be less than value return by <cite>detail()</cite> method of exception object.</p>
 </div></blockquote>
-</div>
-<div class="section" id="orgqr-usm-version">
+</section>
+<section id="orgqr-usm-version">
 <h2>orgqr (USM Version)<a class="headerlink" href="#orgqr-usm-version" title="Permalink to this headline">¶</a></h2>
 <div class="section docutils container">
 <p class="rubric">Syntax</p>
@@ -4775,8 +4776,8 @@ Size should not be less than the value returned by <a class="reference internal"
 </div>
 <p>Output event to wait on to ensure computation is complete.</p>
 <p><strong>Parent topic:</strong> <a class="reference internal" href="lapack.html#onemkl-lapack-linear-equation-routines"><span class="std std-ref">LAPACK Linear Equation Routines</span></a></p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

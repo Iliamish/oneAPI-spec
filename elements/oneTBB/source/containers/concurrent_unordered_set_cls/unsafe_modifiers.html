@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Concurrently unsafe modifiers &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4611,12 +4612,12 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="concurrently-unsafe-modifiers">
+  <section id="concurrently-unsafe-modifiers">
 <h1>Concurrently unsafe modifiers<a class="headerlink" href="#concurrently-unsafe-modifiers" title="Permalink to this headline">¶</a></h1>
 <p>All member functions in this section can only be performed serially.
 The behavior is undefined in case of concurrent execution of these member functions
 with other (either concurrently safe) methods.</p>
-<div class="section" id="clearing">
+<section id="clearing">
 <h2>Clearing<a class="headerlink" href="#clearing" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">clear</span><span class="p">();</span>
@@ -4624,8 +4625,8 @@ with other (either concurrently safe) methods.</p>
 </div>
 <p>Removes all elements from the container.</p>
 </div></blockquote>
-</div>
-<div class="section" id="erasing-elements">
+</section>
+<section id="erasing-elements">
 <h2>Erasing elements<a class="headerlink" href="#erasing-elements" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">iterator</span> <span class="nf">unsafe_erase</span><span class="p">(</span> <span class="n">const_iterator</span> <span class="n">pos</span> <span class="p">);</span>
@@ -4666,8 +4667,8 @@ if it exists in the container.</p>
 <p><strong>Returns</strong>: <code class="docutils literal notranslate"><span class="pre">1</span></code> if an element equivalent to <code class="docutils literal notranslate"><span class="pre">key</span></code> exists;
 <code class="docutils literal notranslate"><span class="pre">0</span></code>, otherwise.</p>
 </div></blockquote>
-</div>
-<div class="section" id="erasing-sequences">
+</section>
+<section id="erasing-sequences">
 <h2>Erasing sequences<a class="headerlink" href="#erasing-sequences" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">iterator</span> <span class="nf">unsafe_erase</span><span class="p">(</span> <span class="n">const_iterator</span> <span class="n">first</span><span class="p">,</span> <span class="n">const_iterator</span> <span class="n">last</span> <span class="p">);</span>
@@ -4677,8 +4678,8 @@ if it exists in the container.</p>
 <p><strong>Returns</strong>: <code class="docutils literal notranslate"><span class="pre">iterator</span></code> that follows the last removed element.</p>
 <p><strong>Requirements</strong>: the range <code class="docutils literal notranslate"><span class="pre">[first,</span> <span class="pre">last)</span></code> must be a valid subrange in <code class="docutils literal notranslate"><span class="pre">*this</span></code>.</p>
 </div></blockquote>
-</div>
-<div class="section" id="extracting-nodes">
+</section>
+<section id="extracting-nodes">
 <h2>Extracting nodes<a class="headerlink" href="#extracting-nodes" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">node_type</span> <span class="nf">unsafe_extract</span><span class="p">(</span> <span class="n">iterator</span> <span class="n">pos</span> <span class="p">);</span>
@@ -4726,8 +4727,8 @@ extracted element remain valid.</p>
 <p><strong>Returns</strong>: the node handle that owns the extracted element or an empty node handle if
 an element equivalent to <code class="docutils literal notranslate"><span class="pre">key</span></code> was not found.</p>
 </div></blockquote>
-</div>
-<div class="section" id="swap">
+</section>
+<section id="swap">
 <h2>swap<a class="headerlink" href="#swap" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span> <span class="n">concurrent_unordered_set</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span> <span class="k">noexcept</span><span class="p">(</span><span class="cm">/*See below*/</span><span class="p">);</span>
@@ -4745,8 +4746,8 @@ an element equivalent to <code class="docutils literal notranslate"><span class=
 </div>
 </div></blockquote>
 </div></blockquote>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

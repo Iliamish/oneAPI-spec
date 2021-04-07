@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Batch Normalization &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4646,7 +4647,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="batch-normalization">
+  <section id="batch-normalization">
 <span id="batch-normalization-label"></span><h1>Batch Normalization<a class="headerlink" href="#batch-normalization" title="Permalink to this headline">¶</a></h1>
 <p>The batch normalization primitive performs a forward or backward batch
 normalization operation on tensors with number of dimensions equal to 2 or
@@ -4658,7 +4659,7 @@ to cases of higher and lower dimensions.</p>
 parameter that is passed to the operation descriptor initialization function
 like <a class="reference internal" href="#_CPPv4N4dnnl27batch_normalization_forward4desc4descE9prop_kindRKN6memory4descEf19normalization_flags" title="dnnl::batch_normalization_forward::desc::desc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::batch_normalization_forward::desc::desc()</span></code></a>. Multiple flags can
 be combined using the bitwise OR operator (<code class="docutils literal notranslate"><span class="pre">|</span></code>).</p>
-<div class="section" id="forward">
+<section id="forward">
 <h2>Forward<a class="headerlink" href="#forward" title="Permalink to this headline">¶</a></h2>
 <div class="math notranslate nohighlight">
 \[\dst(n, c, h, w) =
@@ -4696,7 +4697,7 @@ computed as:</p>
 \[\begin{split}\hat\mu_{i+1} = \alpha \cdot \hat\mu_i + (1 - \alpha) \cdot \mu, \\
 \hat\sigma^2_{i+1} = \alpha \cdot \hat\sigma^2_i + (1 - \alpha) \cdot \sigma^2.\end{split}\]</div>
 </div>
-<div class="section" id="difference-between-forward-training-and-forward-inference">
+<section id="difference-between-forward-training-and-forward-inference">
 <h3>Difference Between Forward Training and Forward Inference<a class="headerlink" href="#difference-between-forward-training-and-forward-inference" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>If mean and variance are computed at runtime (i.e., <a class="reference internal" href="general.html#_CPPv4N4dnnl19normalization_flags16use_global_statsE" title="dnnl::normalization_flags::use_global_stats"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">use_global_stats</span></code></a> is
@@ -4711,9 +4712,9 @@ propagation kind <a class="reference internal" href="general.html#_CPPv4N4dnnl9p
 Behavior would be the same as creating a batch normalization primitive with
 ReLU as a post-op (see section below).</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="backward">
+</section>
+</section>
+<section id="backward">
 <h2>Backward<a class="headerlink" href="#backward" title="Permalink to this headline">¶</a></h2>
 <p>The backward propagation computes <span class="math notranslate nohighlight">\(\diffsrc(n, c, h, w)\)</span>,
 <span class="math notranslate nohighlight">\(\diffgamma(c)^*\)</span>, and <span class="math notranslate nohighlight">\(\diffbeta(c)^*\)</span> based on
@@ -4722,8 +4723,8 @@ ReLU as a post-op (see section below).</p></li>
 <p>The tensors marked with an asterisk are used only when the primitive is
 configured to use <span class="math notranslate nohighlight">\(\gamma(c)\)</span> and <span class="math notranslate nohighlight">\(\beta(c)\)</span> (i.e.,
 <code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">use_scaleshift</span></code> is set).</p>
-</div>
-<div class="section" id="execution-arguments">
+</section>
+<section id="execution-arguments">
 <h2>Execution Arguments<a class="headerlink" href="#execution-arguments" title="Permalink to this headline">¶</a></h2>
 <p>Depending on the flags and propagation kind, the batch normalization primitive
 requires different inputs and outputs. For clarity, a summary is shown below.</p>
@@ -4818,8 +4819,8 @@ argument index as specified by the following table.</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="operation-details">
+</section>
+<section id="operation-details">
 <h2>Operation Details<a class="headerlink" href="#operation-details" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>For forward propagation, the mean and variance might be either computed at
@@ -4844,8 +4845,8 @@ ReLU activation even in the training mode. In this case, on the forward
 propagation the primitive has one additional output, <code class="docutils literal notranslate"><span class="pre">workspace</span></code>, that
 should be passed during the backward propagation.</p></li>
 </ol>
-</div>
-<div class="section" id="data-types-support">
+</section>
+<section id="data-types-support">
 <h2>Data Types Support<a class="headerlink" href="#data-types-support" title="Permalink to this headline">¶</a></h2>
 <p>The operation supports the following combinations of data types.</p>
 <div class="admonition note">
@@ -4880,10 +4881,10 @@ abbreviated to <a class="reference internal" href="../data_model/data_types/inde
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="data-representation">
+</section>
+<section id="data-representation">
 <h2>Data Representation<a class="headerlink" href="#data-representation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="source-destination-and-their-gradients">
+<section id="source-destination-and-their-gradients">
 <h3>Source, Destination, and Their Gradients<a class="headerlink" href="#source-destination-and-their-gradients" title="Permalink to this headline">¶</a></h3>
 <p>Like other CNN primitives, the batch normalization primitive expects data to
 be <span class="math notranslate nohighlight">\(N \times C \times SP_n \times \cdots \times SP_0\)</span> tensor.</p>
@@ -4922,8 +4923,8 @@ formats:</p>
 </table>
 <p>Here <em>optimized</em> means the format chosen by the preceding compute-intensive
 primitive.</p>
-</div>
-<div class="section" id="statistics-tensors">
+</section>
+<section id="statistics-tensors">
 <h3>Statistics Tensors<a class="headerlink" href="#statistics-tensors" title="Permalink to this headline">¶</a></h3>
 <p>The mean (<span class="math notranslate nohighlight">\(\mu\)</span>) and variance (<span class="math notranslate nohighlight">\(\sigma^2\)</span>) are separate 1D tensors
 of size <span class="math notranslate nohighlight">\(C\)</span>.</p>
@@ -4931,9 +4932,9 @@ of size <span class="math notranslate nohighlight">\(C\)</span>.</p>
 <p>If used, the scale (<span class="math notranslate nohighlight">\(\gamma\)</span>) and shift (<span class="math notranslate nohighlight">\(\beta\)</span>) are combined in
 a single 2D tensor of shape <span class="math notranslate nohighlight">\(2 \times C\)</span>.</p>
 <p>The format of the corresponding memory object must be <a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag2ncE" title="dnnl::memory::format_tag::nc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">nc</span></code></a> (<a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag2abE" title="dnnl::memory::format_tag::ab"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">ab</span></code></a>).</p>
-</div>
-</div>
-<div class="section" id="post-ops-and-attributes">
+</section>
+</section>
+<section id="post-ops-and-attributes">
 <h2>Post-ops and Attributes<a class="headerlink" href="#post-ops-and-attributes" title="Permalink to this headline">¶</a></h2>
 <table class="table">
 <colgroup>
@@ -4963,8 +4964,8 @@ a single 2D tensor of shape <span class="math notranslate nohighlight">\(2 \time
 <code class="docutils literal notranslate"><span class="pre">workspace</span></code> that is required to compute backward propagation correctly.
 Hence, one should use the <a class="reference internal" href="general.html#_CPPv4N4dnnl19normalization_flags14fuse_norm_reluE" title="dnnl::normalization_flags::fuse_norm_relu"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">fuse_norm_relu</span></code></a> flag for training.</p>
 </div>
-</div>
-<div class="section" id="api">
+</section>
+<section id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp struct">
 <dt id="_CPPv4N4dnnl27batch_normalization_forwardE">
@@ -5339,8 +5340,8 @@ Hence, one should use the <a class="reference internal" href="general.html#_CPPv
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>function_node &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4601,7 +4602,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="function-node">
+  <section id="function-node">
 <h1>function_node<a class="headerlink" href="#function-node" title="Permalink to this headline">¶</a></h1>
 <p><strong>[flow_graph.function_node]</strong></p>
 <p>A node that executes a user-provided body on incoming messages.</p>
@@ -4650,7 +4651,7 @@ the <cite>Policy</cite> template argument.</p>
 <p>The body object passed to a <code class="docutils literal notranslate"><span class="pre">function_node</span></code> is copied. Updates to member variables do
 not affect the original object used to construct the node. If the state held within a body object must be
 inspected from outside of the node, the <a class="reference internal" href="copy_body_func.html"><span class="doc">copy_body</span></a> function can be used to obtain an updated copy.</p>
-<div class="section" id="member-functions">
+<section id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Body</span><span class="o">&gt;</span>
 <span class="n">function_node</span><span class="p">(</span> <span class="n">graph</span> <span class="o">&amp;</span><span class="n">g</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">concurrency</span><span class="p">,</span> <span class="n">Body</span> <span class="n">body</span><span class="p">,</span>
@@ -4693,8 +4694,8 @@ it.</p>
 </pre></div>
 </div>
 <p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
-</div>
-<div class="section" id="deduction-guides">
+</section>
+<section id="deduction-guides">
 <h2>Deduction Guides<a class="headerlink" href="#deduction-guides" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Body</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Policy</span><span class="o">&gt;</span>
 <span class="n">function_node</span><span class="p">(</span><span class="n">graph</span><span class="o">&amp;</span><span class="p">,</span> <span class="kt">size_t</span><span class="p">,</span> <span class="n">Body</span><span class="p">,</span> <span class="n">Policy</span><span class="p">,</span> <span class="n">node_priority_t</span> <span class="o">=</span> <span class="n">no_priority</span><span class="p">)</span>
@@ -4710,13 +4711,13 @@ it.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">input_t</span></code> is an alias to <code class="docutils literal notranslate"><span class="pre">Body</span></code> input argument type.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">output_t</span></code> is an alias to <code class="docutils literal notranslate"><span class="pre">Body</span></code> return type.</p></li>
 </ul>
-</div>
-<div class="section" id="example">
+</section>
+<section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="message_flow_graph_example.html"><span class="doc">Data Flow Graph example</span></a> illustrates how <code class="docutils literal notranslate"><span class="pre">function_node</span></code> performs
 computation on input data and passes the result to successors.</p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

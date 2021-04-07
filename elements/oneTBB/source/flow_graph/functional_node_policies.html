@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Function Nodes Policies &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4608,7 +4609,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="function-nodes-policies">
+  <section id="function-nodes-policies">
 <h1>Function Nodes Policies<a class="headerlink" href="#function-nodes-policies" title="Permalink to this headline">¶</a></h1>
 <p><strong>[flow_graph.function_node_policies]</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">function_node</span></code>, <code class="docutils literal notranslate"><span class="pre">multifunction_node</span></code>, <code class="docutils literal notranslate"><span class="pre">async_node</span></code> and <code class="docutils literal notranslate"><span class="pre">continue_node</span></code> can be specified
@@ -4631,18 +4632,18 @@ of node execution.</p>
 </div>
 <p>Each policy class satisfies the <cite>CopyConstructible</cite> requirements from [copyconstructible]
 ISO C++ Standard sections.</p>
-<div class="section" id="queueing">
+<section id="queueing">
 <h2>Queueing<a class="headerlink" href="#queueing" title="Permalink to this headline">¶</a></h2>
 <p>This policy defines behavior for input messages acceptance. The <code class="docutils literal notranslate"><span class="pre">queueing</span></code> policy means that input
 messages that cannot be processed right away are kept to be processed when possible.</p>
-</div>
-<div class="section" id="rejecting">
+</section>
+<section id="rejecting">
 <h2>Rejecting<a class="headerlink" href="#rejecting" title="Permalink to this headline">¶</a></h2>
 <p>This policy defines behavior for input messages acceptance. The <code class="docutils literal notranslate"><span class="pre">rejecting</span></code> policy means that input
 messages that cannot be processed right away are not accepted by the node and it is responsibility
 of a predecessor to handle this.</p>
-</div>
-<div class="section" id="lightweight">
+</section>
+<section id="lightweight">
 <h2>Lightweight<a class="headerlink" href="#lightweight" title="Permalink to this headline">¶</a></h2>
 <p>This policy helps to reduce the overhead associated with the execution scheduling of the node.</p>
 <p>For functional nodes that have a default value for the <code class="docutils literal notranslate"><span class="pre">Policy</span></code> template parameter, specifying
@@ -4650,7 +4651,7 @@ the <code class="docutils literal notranslate"><span class="pre">lightweight</sp
 with the behavior defined by the <code class="docutils literal notranslate"><span class="pre">lightweight</span></code> policy. For example, if the default value of
 <code class="docutils literal notranslate"><span class="pre">Policy</span></code> is <code class="docutils literal notranslate"><span class="pre">queueing</span></code>, specifying <code class="docutils literal notranslate"><span class="pre">lightweight</span></code> as the <code class="docutils literal notranslate"><span class="pre">Policy</span></code> value is equivalent to
 specifying <code class="docutils literal notranslate"><span class="pre">queueing_lightweight</span></code>.</p>
-<div class="section" id="example">
+<section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <p>The example below shows the application of the <code class="docutils literal notranslate"><span class="pre">lightweight</span></code> policy to a
 graph with a pipeline topology. It is reasonable to apply the <code class="docutils literal notranslate"><span class="pre">lightweight</span></code>
@@ -4686,9 +4687,9 @@ concurrent invocations of the graph.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
               </div>

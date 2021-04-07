@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Concurrently unsafe operations &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4611,12 +4612,12 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="concurrently-unsafe-operations">
+  <section id="concurrently-unsafe-operations">
 <h1>Concurrently unsafe operations<a class="headerlink" href="#concurrently-unsafe-operations" title="Permalink to this headline">¶</a></h1>
 <p>All member functions in this section can only be performed serially.
 The behavior is undefined in case of concurrent execution of these member functions
 with other (either concurrently safe) methods.</p>
-<div class="section" id="reserving">
+<section id="reserving">
 <h2>Reserving<a class="headerlink" href="#reserving" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">reserve</span><span class="p">(</span> <span class="n">size_type</span> <span class="n">n</span> <span class="p">);</span>
@@ -4625,8 +4626,8 @@ with other (either concurrently safe) methods.</p>
 <p>Reserves memory for at least <code class="docutils literal notranslate"><span class="pre">n</span></code> elements.</p>
 <p><strong>Throws</strong>: <code class="docutils literal notranslate"><span class="pre">std::length_error</span></code> if <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">max_size()</span></code>.</p>
 </div></blockquote>
-</div>
-<div class="section" id="resizing">
+</section>
+<section id="resizing">
 <h2>Resizing<a class="headerlink" href="#resizing" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">resize</span><span class="p">(</span> <span class="n">size_type</span> <span class="n">n</span> <span class="p">);</span>
@@ -4645,8 +4646,8 @@ the end of the vector.</p>
 <p>Otherwise, appends <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">-</span> <span class="pre">size()</span></code> copies of <code class="docutils literal notranslate"><span class="pre">value</span></code> to
 the end of the vector.</p>
 </div></blockquote>
-</div>
-<div class="section" id="shrink-to-fit">
+</section>
+<section id="shrink-to-fit">
 <h2>shrink_to_fit<a class="headerlink" href="#shrink-to-fit" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">shrink_to_fit</span><span class="p">();</span>
@@ -4655,8 +4656,8 @@ the end of the vector.</p>
 <p>Removes the unused capacity of the vector.</p>
 <p>Call for this method can also reorganize the internal vector representation in the memory.</p>
 </div></blockquote>
-</div>
-<div class="section" id="clear">
+</section>
+<section id="clear">
 <h2>clear<a class="headerlink" href="#clear" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">clear</span><span class="p">();</span>
@@ -4664,8 +4665,8 @@ the end of the vector.</p>
 </div>
 <p>Removes all elements from the container.</p>
 </div></blockquote>
-</div>
-<div class="section" id="swap">
+</section>
+<section id="swap">
 <h2>swap<a class="headerlink" href="#swap" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span> <span class="n">concurrent_vector</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span> <span class="k">noexcept</span><span class="p">(</span><span class="cm">/*See below*/</span><span class="p">);</span>
@@ -4682,8 +4683,8 @@ the end of the vector.</p>
 </div>
 </div></blockquote>
 </div></blockquote>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

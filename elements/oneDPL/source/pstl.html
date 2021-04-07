@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Extensions to Parallel STL &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinxmark.css" />
@@ -4608,10 +4609,10 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="extensions-to-parallel-stl">
+  <section id="extensions-to-parallel-stl">
 <h1>Extensions to Parallel STL<a class="headerlink" href="#extensions-to-parallel-stl" title="Permalink to this headline">¶</a></h1>
 <p>oneDPL extends Parallel STL with the following APIs.</p>
-<div class="section" id="dpc-execution-policy">
+<section id="dpc-execution-policy">
 <h2>DPC++ Execution Policy<a class="headerlink" href="#dpc-execution-policy" title="Permalink to this headline">¶</a></h2>
 <p>A DPC++ execution policy specifies where and how an algorithm runs.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Defined in &lt;oneapi/dpl/execution&gt;</span>
@@ -4642,7 +4643,7 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">dpcpp_default</span></code> is a predefined execution policy object to run algorithms on the default DPC++ device.</p>
-<div class="section" id="device-policy-class">
+<section id="device-policy-class">
 <h3>device_policy class<a class="headerlink" href="#device-policy-class" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">KernelName</span> <span class="o">=</span> <span class="cm">/*unspecified*/</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">device_policy</span>
@@ -4691,8 +4692,8 @@ the kernel name of the given policy to <code class="docutils literal notranslate
 </pre></div>
 </div>
 <p>Allow implicit conversion of the policy to a <code class="docutils literal notranslate"><span class="pre">sycl::queue</span></code> object.</p>
-</div>
-<div class="section" id="make-device-policy-function">
+</section>
+<section id="make-device-policy-function">
 <h3>make_device_policy function<a class="headerlink" href="#make-device-policy-function" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">make_device_policy</span></code> function templates simplify <code class="docutils literal notranslate"><span class="pre">device_policy</span></code> creation.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">KernelName</span> <span class="o">=</span> <span class="cm">/*unspecified*/</span><span class="o">&gt;</span>
@@ -4716,9 +4717,9 @@ as the template argument, otherwise unspecified.</p>
 </div>
 <p>Return a policy object constructed from <code class="docutils literal notranslate"><span class="pre">policy</span></code>, with a new kernel name provided as the template
 argument. If no policy object is provided, the new policy is constructed from <code class="docutils literal notranslate"><span class="pre">dpcpp_default</span></code>.</p>
-</div>
-</div>
-<div class="section" id="buffer-wrappers">
+</section>
+</section>
+<section id="buffer-wrappers">
 <h2>Buffer wrappers<a class="headerlink" href="#buffer-wrappers" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Defined in &lt;oneapi/dpl/iterator&gt;</span>
 
@@ -4782,8 +4783,8 @@ for <code class="docutils literal notranslate"><span class="pre">begin</span></c
 <span class="n">dpl</span><span class="o">::</span><span class="n">fill</span><span class="p">(</span><span class="n">dpl</span><span class="o">::</span><span class="n">dpcpp_default</span><span class="p">,</span> <span class="n">buf_begin</span><span class="p">,</span> <span class="n">buf_end_2</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span> <span class="c1">// not allowed</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

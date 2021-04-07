@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>oneMKL Summary Statistics Usage Model &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4596,7 +4597,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="onemkl-summary-statistics-usage-model">
+  <section id="onemkl-summary-statistics-usage-model">
 <span id="onemkl-stats-usage-model"></span><h1>oneMKL Summary Statistics Usage Model<a class="headerlink" href="#onemkl-summary-statistics-usage-model" title="Permalink to this headline">¶</a></h1>
 <p class="rubric">Description</p>
 <p>A typical algorithm for summary statistics is as follows:</p>
@@ -4605,7 +4606,7 @@ SPDX-License-Identifier: MIT
 <li><p>Call the summary statistics routine to calculate the appropriate estimate.</p></li>
 </ol>
 <p>The following example demonstrates how to calculate mean values for a 3-dimensional dataset filled with random numbers. For dataset creation, the <a class="reference internal" href="onemkl_stats_make_dataset.html#onemkl-stats-make-dataset"><span class="std std-ref">make_dataset</span></a> helper function is used.</p>
-<div class="section" id="buffer-based-example">
+<section id="buffer-based-example">
 <h2>Buffer-based example<a class="headerlink" href="#buffer-based-example" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
@@ -4647,8 +4648,8 @@ SPDX-License-Identifier: MIT
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="usm-based-example">
+</section>
+<section id="usm-based-example">
 <h2>USM-based example<a class="headerlink" href="#usm-based-example" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
@@ -4687,8 +4688,8 @@ SPDX-License-Identifier: MIT
 <p class="rubric">USM usage</p>
 <p>You can also use USM with raw pointers by using the sycl::malloc_shared/malloc_device functions.</p>
 <p><strong>Parent topic:</strong> <a class="reference internal" href="../domains.html#onemkl-stats"><span class="std std-ref">Summary Statistics</span></a></p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

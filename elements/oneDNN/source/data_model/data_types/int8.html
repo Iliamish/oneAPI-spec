@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Int8 &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4596,7 +4597,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="int8">
+  <section id="int8">
 <h1>Int8<a class="headerlink" href="#int8" title="Permalink to this headline">¶</a></h1>
 <p>To push higher performance during inference computations, recent work has
 focused on computations that use activations and weights stored at lower
@@ -4604,17 +4605,17 @@ precision to achieve higher throughput. Int8 computations offer improved
 performance over higher-precision types because they enable packing more
 computations into a single instruction, at the cost of reduced (but
 acceptable) accuracy.</p>
-<div class="section" id="workflow">
+<section id="workflow">
 <h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="../../primitives/attributes/index.html#attributes-quantization-label"><span class="std std-ref">Quantization</span></a> describes what kind of quantization
 model oneDNN supports.</p>
-</div>
-<div class="section" id="support">
+</section>
+<section id="support">
 <h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
 <p>oneDNN supports int8 computations for inference by allowing to specify that
 primitives input and output memory objects use int8 data types.</p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

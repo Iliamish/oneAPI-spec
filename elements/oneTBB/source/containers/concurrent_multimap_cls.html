@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>concurrent_multimap &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxmark.css" />
@@ -4611,13 +4612,13 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="concurrent-multimap">
+  <section id="concurrent-multimap">
 <h1>concurrent_multimap<a class="headerlink" href="#concurrent-multimap" title="Permalink to this headline">¶</a></h1>
 <p><strong>[containers.concurrent_multimap]</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">tbb::concurrent_multimap</span></code> is a class template that represents a sorted associative container.
 It supports concurrent insertion, lookup, and traversal, but does not support concurrent erasure.
 In this container, multiple elements with equal keys can be stored.</p>
-<div class="section" id="class-template-synopsis">
+<section id="class-template-synopsis">
 <h2>Class Template Synopsis<a class="headerlink" href="#class-template-synopsis" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">tbb</span> <span class="p">{</span>
 
@@ -4834,16 +4835,16 @@ Member functions can impose stricter requirements depending on the type of the o
 <li><p>The type <code class="docutils literal notranslate"><span class="pre">Compare</span></code> must meet the <code class="docutils literal notranslate"><span class="pre">Compare</span></code> requirements from the [alg.sorting] ISO C++ Standard section.</p></li>
 <li><p>The type <code class="docutils literal notranslate"><span class="pre">Allocator</span></code> must meet the <code class="docutils literal notranslate"><span class="pre">Allocator</span></code> requirements from the [allocator.requirements] ISO C++ Standard section.</p></li>
 </ul>
-</div>
-<div class="section" id="member-classes">
+</section>
+<section id="member-classes">
 <h2>Member classes<a class="headerlink" href="#member-classes" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="concurrent_multimap_cls/value_compare_cls.html">value_compare</a></li>
 </ul>
 </div>
-</div>
-<div class="section" id="member-functions">
+</section>
+<section id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -4857,8 +4858,8 @@ Member functions can impose stricter requirements depending on the type of the o
 <li class="toctree-l1"><a class="reference internal" href="concurrent_multimap_cls/parallel_iteration.html">Parallel iteration</a></li>
 </ul>
 </div>
-</div>
-<div class="section" id="non-member-functions">
+</section>
+<section id="non-member-functions">
 <h2>Non-member functions<a class="headerlink" href="#non-member-functions" title="Permalink to this headline">¶</a></h2>
 <p>These functions provide binary and lexicographical comparison and swap operations
 on <code class="docutils literal notranslate"><span class="pre">tbb::concurrent_multimap</span></code> objects.</p>
@@ -4902,16 +4903,16 @@ the non-member functions are reachable only via argument-dependent lookup.</p>
 <li class="toctree-l1"><a class="reference internal" href="concurrent_multimap_cls/non_member_lexicographical_comparisons.html">Non-member lexicographical comparisons</a></li>
 </ul>
 </div>
-</div>
-<div class="section" id="other">
+</section>
+<section id="other">
 <h2>Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="concurrent_multimap_cls/deduction_guides.html">Deduction guides</a></li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

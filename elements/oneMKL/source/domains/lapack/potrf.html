@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>potrf &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4597,7 +4598,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="potrf">
+  <section id="potrf">
 <span id="onemkl-lapack-potrf"></span><h1>potrf<a class="headerlink" href="#potrf" title="Permalink to this headline">¶</a></h1>
 <p>Computes the Cholesky factorization of a symmetric (Hermitian)
 positive-definite matrix.</p>
@@ -4649,7 +4650,7 @@ matrix <span class="math notranslate nohighlight">\(A\)</span>:</p>
 </div></blockquote>
 <p>where <span class="math notranslate nohighlight">\(L\)</span> is a lower triangular matrix and <span class="math notranslate nohighlight">\(U\)</span> is upper
 triangular.</p>
-<div class="section" id="potrf-buffer-version">
+<section id="potrf-buffer-version">
 <h2>potrf (Buffer Version)<a class="headerlink" href="#potrf-buffer-version" title="Permalink to this headline">¶</a></h2>
 <div class="section docutils container">
 <p class="rubric">Syntax</p>
@@ -4716,8 +4717,8 @@ factorization could not be completed. This may indicate an error
 in forming the matrix <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">info</span></code> equals to value passed as scratchpad size, and <cite>detail()</cite> returns non zero, then passed scratchpad is of insufficient size, and required size should not be less than value return by <cite>detail()</cite> method of exception object.</p>
 </div></blockquote>
-</div>
-<div class="section" id="potrf-usm-version">
+</section>
+<section id="potrf-usm-version">
 <h2>potrf (USM Version)<a class="headerlink" href="#potrf-usm-version" title="Permalink to this headline">¶</a></h2>
 <div class="section docutils container">
 <p class="rubric">Syntax</p>
@@ -4791,8 +4792,8 @@ in forming the matrix <span class="math notranslate nohighlight">\(A\)</span>.</
 </div>
 <p>Output event to wait on to ensure computation is complete.</p>
 <p><strong>Parent topic:</strong> <a class="reference internal" href="lapack.html#onemkl-lapack-linear-equation-routines"><span class="std std-ref">LAPACK Linear Equation Routines</span></a></p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

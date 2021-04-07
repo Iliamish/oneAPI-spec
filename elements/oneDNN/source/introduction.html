@@ -10,7 +10,8 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Introduction &#8212; oneAPI Specification 1.1-provisional-draft documentation</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinxmark.css" />
@@ -4601,7 +4602,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="introduction">
+  <section id="introduction">
 <span id="introduction-label"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <p>Although the origins of this specification are in the existing <a class="reference external" href="https://github.com/oneapi-src/oneDNN">open source
 implementation</a>, its goal is to define a <em>portable</em> set of APIs.  To this
@@ -4695,7 +4696,7 @@ instantiate a primitive.</p></li>
 </tr>
 </tbody>
 </table>
-<div class="section" id="general-api-notes">
+<section id="general-api-notes">
 <h2>General API notes<a class="headerlink" href="#general-api-notes" title="Permalink to this headline">¶</a></h2>
 <p>There are certain assumptions on how oneDNN objects behave:</p>
 <ul class="simple">
@@ -4708,8 +4709,8 @@ regarded as <em>zero</em> memory descriptors that can be used to indicate absenc
 memory descriptor. Empty objects are usually created using default constructors,
 but also may be a result of an error during object construction (see the next
 section).</p>
-</div>
-<div class="section" id="error-handling">
+</section>
+<section id="error-handling">
 <h2>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">¶</a></h2>
 <p>All oneDNN functions throw the following exception in case of error.</p>
 <dl class="cpp struct">
@@ -4722,16 +4723,16 @@ section).</p>
 a boolean <code class="docutils literal notranslate"><span class="pre">allow_empty</span></code> parameter that defaults to <code class="docutils literal notranslate"><span class="pre">false</span></code> and that makes
 the library to return an empty object (a zero object in case of memory
 descriptors) when an object cannot be constructed instead of throwing an error.</p>
-</div>
-<div class="section" id="namespaces">
+</section>
+<section id="namespaces">
 <h2>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h2>
 <p>All oneDNN functions and classes reside in <code class="docutils literal notranslate"><span class="pre">::dnnl</span></code> namespace. The functions
 that accept or return DPC++ objects such as command queues or buffers reside in
 <code class="docutils literal notranslate"><span class="pre">::dnnl::sycl_interop</span></code> namespace.</p>
 <p>Furthermore, oneDNN defines <code class="docutils literal notranslate"><span class="pre">::oneapi::dnnl</span></code> namespace, that is an alias for
 the <code class="docutils literal notranslate"><span class="pre">::dnnl</span></code> namespace.</p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
