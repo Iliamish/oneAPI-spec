@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Concurrently safe member functions &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4614,10 +4613,10 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="concurrently-safe-member-functions">
+  <div class="section" id="concurrently-safe-member-functions">
 <h1>Concurrently safe member functions<a class="headerlink" href="#concurrently-safe-member-functions" title="Permalink to this headline">¶</a></h1>
 <p>All member functions in this section can be performed concurrently with each other.</p>
-<section id="pushing-elements">
+<div class="section" id="pushing-elements">
 <h2>Pushing elements<a class="headerlink" href="#pushing-elements" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">push</span><span class="p">(</span> <span class="k">const</span> <span class="n">value_type</span><span class="o">&amp;</span> <span class="n">value</span> <span class="p">);</span>
@@ -4685,8 +4684,8 @@ new element constructed from <code class="docutils literal notranslate"><span cl
 [container.requirements] ISO C++ Standard section.</p>
 <p><strong>Returns</strong>: <code class="docutils literal notranslate"><span class="pre">true</span></code> if the item was pushed; <code class="docutils literal notranslate"><span class="pre">false</span></code>, otherwise.</p>
 </div></blockquote>
-</section>
-<section id="popping-elements">
+</div>
+<div class="section" id="popping-elements">
 <h2>Popping elements<a class="headerlink" href="#popping-elements" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">pop</span><span class="p">(</span> <span class="n">value_type</span><span class="o">&amp;</span> <span class="n">value</span> <span class="p">);</span>
@@ -4709,8 +4708,8 @@ The popped element is destroyed.</p>
 ISO C++ Standard section.</p>
 <p><strong>Returns</strong>: <code class="docutils literal notranslate"><span class="pre">true</span></code> if the element was popped; <code class="docutils literal notranslate"><span class="pre">false</span></code>, otherwise.</p>
 </div></blockquote>
-</section>
-<section id="abort">
+</div>
+<div class="section" id="abort">
 <h2>abort<a class="headerlink" href="#abort" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">abort</span><span class="p">();</span>
@@ -4719,8 +4718,8 @@ ISO C++ Standard section.</p>
 <p>Wakes up any threads that are waiting on the queue via <code class="docutils literal notranslate"><span class="pre">push</span></code>, <code class="docutils literal notranslate"><span class="pre">pop</span></code>, or <code class="docutils literal notranslate"><span class="pre">emplace</span></code>
 operations and raises the <code class="docutils literal notranslate"><span class="pre">tbb::user_abort</span></code> exception on those threads.</p>
 </div></blockquote>
-</section>
-<section id="capacity-of-the-queue">
+</div>
+<div class="section" id="capacity-of-the-queue">
 <h2>Capacity of the queue<a class="headerlink" href="#capacity-of-the-queue" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">size_type</span> <span class="nf">capacity</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
@@ -4735,8 +4734,8 @@ operations and raises the <code class="docutils literal notranslate"><span class
 </div>
 <p>Sets the maximum number of items that the queue can hold to <code class="docutils literal notranslate"><span class="pre">new_capacity</span></code>.</p>
 </div></blockquote>
-</section>
-<section id="get-allocator">
+</div>
+<div class="section" id="get-allocator">
 <h2>get_allocator<a class="headerlink" href="#get-allocator" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">allocator_type</span> <span class="nf">get_allocator</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
@@ -4744,8 +4743,8 @@ operations and raises the <code class="docutils literal notranslate"><span class
 </div>
 <p><strong>Returns</strong>: a copy of the allocator, associated with <code class="docutils literal notranslate"><span class="pre">*this</span></code>.</p>
 </div></blockquote>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

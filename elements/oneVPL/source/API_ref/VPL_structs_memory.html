@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Memory Structures &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4636,10 +4635,10 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="memory-structures">
+  <div class="section" id="memory-structures">
 <span id="struct-memory"></span><h1>Memory Structures<a class="headerlink" href="#memory-structures" title="Permalink to this headline">¶</a></h1>
 <p id="struct-memory-begin">Structures used for memory.</p>
-<section id="api">
+<div class="section" id="api">
 <span id="struct-memory-end"></span><h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -4653,7 +4652,7 @@ SPDX-License-Identifier: MIT
 <li><p><a class="reference internal" href="#mfxframesurfaceinterface" id="id8">mfxFrameSurfaceInterface</a></p></li>
 </ul>
 </div>
-<section id="mfxbitstream">
+<div class="section" id="mfxbitstream">
 <h3><a class="toc-backref" href="#id1">mfxBitstream</a><a class="headerlink" href="#mfxbitstream" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv412mfxBitstream">
@@ -4749,8 +4748,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxframeallocator">
+</div>
+<div class="section" id="mfxframeallocator">
 <h3><a class="toc-backref" href="#id2">mfxFrameAllocator</a><a class="headerlink" href="#mfxframeallocator" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv417mfxFrameAllocator">
@@ -4772,98 +4771,102 @@ SPDX-License-Identifier: MIT
 <dt id="_CPPv4N17mfxFrameAllocator5AllocE">
 <span id="_CPPv3N17mfxFrameAllocator5AllocE"></span><span id="_CPPv2N17mfxFrameAllocator5AllocE"></span><span class="target" id="structmfx_frame_allocator_1ab7f27ce364fbc04ac11c86fd020b4b5b"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">Alloc</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxHDL" title="mfxHDL"><span class="pre">mfxHDL</span></a> <span class="pre">pthis</span>, <a class="reference internal" href="#_CPPv420mfxFrameAllocRequest" title="mfxFrameAllocRequest"><span class="pre">mfxFrameAllocRequest</span></a> <span class="pre">*</span><span class="pre">request</span>, <a class="reference internal" href="#_CPPv421mfxFrameAllocResponse" title="mfxFrameAllocResponse"><span class="pre">mfxFrameAllocResponse</span></a> <span class="pre">*</span><span class="pre">response</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N17mfxFrameAllocator5AllocE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Allocates surface frames. For decoders, MFXVideoDECODE_Init calls Alloc only once. That call includes all frame allocation requests. For encoders, MFXVideoENCODE_Init calls Alloc twice: once for the input surfaces and again for the internal reconstructed surfaces. </p>
-<p>If two library components must share DirectX* surfaces, this function should pass the pre-allocated surface chain to the library instead of allocating new DirectX surfaces. <p><p>See the <a class="reference internal" href="../programming_guide/VPL_prg_transcoding.html#surface-pool-alloc"><span class="std std-ref">Surface Pool Allocation section</span></a> for additional information.</p>
+<p>If two library components must share DirectX* surfaces, this function should pass the pre-allocated surface chain to the library instead of allocating new DirectX surfaces. <p>See the <a class="reference internal" href="../programming_guide/VPL_prg_transcoding.html#surface-pool-alloc"><span class="std std-ref">Surface Pool Allocation section</span></a> for additional information.</p>
 </p>
-</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function successfully allocated the memory block. <p> MFX_ERR_MEMORY_ALLOC The function failed to allocate the video frames. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] pthis</strong> – Pointer to the allocator object. </p></li>
+<li><p><strong>[in] request</strong> – Pointer to the <a class="reference internal" href="#structmfx_frame_alloc_request"><span class="std std-ref">mfxFrameAllocRequest</span></a> structure that specifies the type and number of required frames. </p></li>
+<li><p><strong>[out] response</strong> – Pointer to the <a class="reference internal" href="#structmfx_frame_alloc_response"><span class="std std-ref">mfxFrameAllocResponse</span></a> structure that retrieves frames actually allocated. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function successfully allocated the memory block. <p> MFX_ERR_MEMORY_ALLOC The function failed to allocate the video frames. </p>
 <p> MFX_ERR_UNSUPPORTED The function does not support allocating the specified type of memory. </p>
 </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">pthis</span></code>: Pointer to the allocator object. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">request</span></code>: Pointer to the <a class="reference internal" href="#structmfx_frame_alloc_request"><span class="std std-ref">mfxFrameAllocRequest</span></a> structure that specifies the type and number of required frames. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">response</span></code>: Pointer to the <a class="reference internal" href="#structmfx_frame_alloc_response"><span class="std std-ref">mfxFrameAllocResponse</span></a> structure that retrieves frames actually allocated. </p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N17mfxFrameAllocator4LockE">
 <span id="_CPPv3N17mfxFrameAllocator4LockE"></span><span id="_CPPv2N17mfxFrameAllocator4LockE"></span><span class="target" id="structmfx_frame_allocator_1a1abc6f7429fe537e727abdf91b14108f"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">Lock</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxHDL" title="mfxHDL"><span class="pre">mfxHDL</span></a> <span class="pre">pthis</span>, <a class="reference internal" href="VPL_ref_types.html#_CPPv48mfxMemId" title="mfxMemId"><span class="pre">mfxMemId</span></a> <span class="pre">mid</span>, <a class="reference internal" href="#_CPPv412mfxFrameData" title="mfxFrameData"><span class="pre">mfxFrameData</span></a> <span class="pre">*</span><span class="pre">ptr</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N17mfxFrameAllocator4LockE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Locks a frame and returns its pointer. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function successfully locked the memory block. <p> MFX_ERR_LOCK_MEMORY This function failed to lock the frame. </p>
-</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">pthis</span></code>: Pointer to the allocator object. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">mid</span></code>: Memory block ID. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">ptr</span></code>: Pointer to the returned frame structure. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] pthis</strong> – Pointer to the allocator object. </p></li>
+<li><p><strong>[in] mid</strong> – Memory block ID. </p></li>
+<li><p><strong>[out] ptr</strong> – Pointer to the returned frame structure. </p></li>
 </ul>
 </dd>
-</dl>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function successfully locked the memory block. <p> MFX_ERR_LOCK_MEMORY This function failed to lock the frame. </p>
 </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N17mfxFrameAllocator6UnlockE">
 <span id="_CPPv3N17mfxFrameAllocator6UnlockE"></span><span id="_CPPv2N17mfxFrameAllocator6UnlockE"></span><span class="target" id="structmfx_frame_allocator_1a38d05a9d02645c74d73f63df1c17d7a1"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">Unlock</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxHDL" title="mfxHDL"><span class="pre">mfxHDL</span></a> <span class="pre">pthis</span>, <a class="reference internal" href="VPL_ref_types.html#_CPPv48mfxMemId" title="mfxMemId"><span class="pre">mfxMemId</span></a> <span class="pre">mid</span>, <a class="reference internal" href="#_CPPv412mfxFrameData" title="mfxFrameData"><span class="pre">mfxFrameData</span></a> <span class="pre">*</span><span class="pre">ptr</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N17mfxFrameAllocator6UnlockE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Unlocks a frame and invalidates the specified frame structure. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function successfully locked the memory block. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">pthis</span></code>: Pointer to the allocator object. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">mid</span></code>: Memory block ID. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">ptr</span></code>: Pointer to the frame structure. This pointer can be NULL. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] pthis</strong> – Pointer to the allocator object. </p></li>
+<li><p><strong>[in] mid</strong> – Memory block ID. </p></li>
+<li><p><strong>[out] ptr</strong> – Pointer to the frame structure. This pointer can be NULL. </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function successfully locked the memory block. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N17mfxFrameAllocator6GetHDLE">
 <span id="_CPPv3N17mfxFrameAllocator6GetHDLE"></span><span id="_CPPv2N17mfxFrameAllocator6GetHDLE"></span><span class="target" id="structmfx_frame_allocator_1aaa14bb3405fb272fb9853bfd811ccb08"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">GetHDL</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxHDL" title="mfxHDL"><span class="pre">mfxHDL</span></a> <span class="pre">pthis</span>, <a class="reference internal" href="VPL_ref_types.html#_CPPv48mfxMemId" title="mfxMemId"><span class="pre">mfxMemId</span></a> <span class="pre">mid</span>, <a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxHDL" title="mfxHDL"><span class="pre">mfxHDL</span></a> <span class="pre">*</span><span class="pre">handle</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N17mfxFrameAllocator6GetHDLE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the OS-specific handle associated with a video frame. If the handle is a COM interface, the reference counter must increase. The library will release the interface afterward. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function successfully returned the OS-specific handle. <p> MFX_ERR_UNSUPPORTED The function does not support obtaining OS-specific handle.. </p>
-</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">pthis</span></code>: Pointer to the allocator object. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">mid</span></code>: Memory block ID. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">handle</span></code>: Pointer to the returned OS-specific handle. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] pthis</strong> – Pointer to the allocator object. </p></li>
+<li><p><strong>[in] mid</strong> – Memory block ID. </p></li>
+<li><p><strong>[out] handle</strong> – Pointer to the returned OS-specific handle. </p></li>
 </ul>
 </dd>
-</dl>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function successfully returned the OS-specific handle. <p> MFX_ERR_UNSUPPORTED The function does not support obtaining OS-specific handle.. </p>
 </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N17mfxFrameAllocator4FreeE">
 <span id="_CPPv3N17mfxFrameAllocator4FreeE"></span><span id="_CPPv2N17mfxFrameAllocator4FreeE"></span><span class="target" id="structmfx_frame_allocator_1aaf424f6215d5528f29d07caa7e5d16ca"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">Free</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxHDL" title="mfxHDL"><span class="pre">mfxHDL</span></a> <span class="pre">pthis</span>, <a class="reference internal" href="#_CPPv421mfxFrameAllocResponse" title="mfxFrameAllocResponse"><span class="pre">mfxFrameAllocResponse</span></a> <span class="pre">*</span><span class="pre">response</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N17mfxFrameAllocator4FreeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>De-allocates all allocated frames. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function successfully de-allocated the memory block. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">pthis</span></code>: Pointer to the allocator object. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">response</span></code>: Pointer to the <a class="reference internal" href="#structmfx_frame_alloc_response"><span class="std std-ref">mfxFrameAllocResponse</span></a> structure returned by the Alloc function. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] pthis</strong> – Pointer to the allocator object. </p></li>
+<li><p><strong>[in] response</strong> – Pointer to the <a class="reference internal" href="#structmfx_frame_alloc_response"><span class="std std-ref">mfxFrameAllocResponse</span></a> structure returned by the Alloc function. </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function successfully de-allocated the memory block. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxframeallocrequest">
+</div>
+<div class="section" id="mfxframeallocrequest">
 <h3><a class="toc-backref" href="#id3">mfxFrameAllocRequest</a><a class="headerlink" href="#mfxframeallocrequest" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv420mfxFrameAllocRequest">
@@ -4904,8 +4907,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxframeallocresponse">
+</div>
+<div class="section" id="mfxframeallocresponse">
 <h3><a class="toc-backref" href="#id4">mfxFrameAllocResponse</a><a class="headerlink" href="#mfxframeallocresponse" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv421mfxFrameAllocResponse">
@@ -4934,8 +4937,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxframedata">
+</div>
+<div class="section" id="mfxframedata">
 <h3><a class="toc-backref" href="#id5">mfxFrameData</a><a class="headerlink" href="#mfxframedata" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv47mfxY410">
@@ -5244,8 +5247,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxframeinfo">
+</div>
+<div class="section" id="mfxframeinfo">
 <h3><a class="toc-backref" href="#id6">mfxFrameInfo</a><a class="headerlink" href="#mfxframeinfo" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv412mfxFrameInfo">
@@ -5338,32 +5341,31 @@ SPDX-License-Identifier: MIT
 <dl class="cpp var">
 <dt id="_CPPv4N12mfxFrameInfo12BitDepthLumaE">
 <span id="_CPPv3N12mfxFrameInfo12BitDepthLumaE"></span><span id="_CPPv2N12mfxFrameInfo12BitDepthLumaE"></span><span id="mfxFrameInfo::BitDepthLuma__mfxU16"></span><span class="target" id="structmfx_frame_info_1a8c4e5877bae0c169c775eb0085a2b6fe"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16"><span class="pre">mfxU16</span></a> <code class="sig-name descname"><span class="pre">BitDepthLuma</span></code><a class="headerlink" href="#_CPPv4N12mfxFrameInfo12BitDepthLumaE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Number of bits used to represent luma samples. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Number of bits used to represent luma samples. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N12mfxFrameInfo14BitDepthChromaE">
 <span id="_CPPv3N12mfxFrameInfo14BitDepthChromaE"></span><span id="_CPPv2N12mfxFrameInfo14BitDepthChromaE"></span><span id="mfxFrameInfo::BitDepthChroma__mfxU16"></span><span class="target" id="structmfx_frame_info_1a7e965325710b332c95829ddb0ba4a741"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16"><span class="pre">mfxU16</span></a> <code class="sig-name descname"><span class="pre">BitDepthChroma</span></code><a class="headerlink" href="#_CPPv4N12mfxFrameInfo14BitDepthChromaE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Number of bits used to represent chroma samples. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Number of bits used to represent chroma samples. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N12mfxFrameInfo5ShiftE">
 <span id="_CPPv3N12mfxFrameInfo5ShiftE"></span><span id="_CPPv2N12mfxFrameInfo5ShiftE"></span><span id="mfxFrameInfo::Shift__mfxU16"></span><span class="target" id="structmfx_frame_info_1ae6848aabffe6bc80071c8cd8f11c0cd3"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16"><span class="pre">mfxU16</span></a> <code class="sig-name descname"><span class="pre">Shift</span></code><a class="headerlink" href="#_CPPv4N12mfxFrameInfo5ShiftE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>When the value is not zero, indicates that values of luma and chroma samples are shifted. Use BitDepthLuma and BitDepthChroma to calculate shift size. Use zero value to indicate absence of shift. See example data alignment below.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
-</dd>
-</dl>
-</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
@@ -5439,8 +5441,8 @@ SPDX-License-Identifier: MIT
        &lt;/TABLE&gt;&gt;];
 }" class="graphviz" /></div>
 </div>
-</section>
-<section id="mfxframesurface1">
+</div>
+<div class="section" id="mfxframesurface1">
 <h3><a class="toc-backref" href="#id7">mfxFrameSurface1</a><a class="headerlink" href="#mfxframesurface1" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv416mfxFrameSurface1">
@@ -5469,8 +5471,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxframesurfaceinterface">
+</div>
+<div class="section" id="mfxframesurfaceinterface">
 <h3><a class="toc-backref" href="#id8">mfxFrameSurfaceInterface</a><a class="headerlink" href="#mfxframesurfaceinterface" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv424mfxFrameSurfaceInterface">
@@ -5493,56 +5495,55 @@ SPDX-License-Identifier: MIT
 <dt id="_CPPv4N24mfxFrameSurfaceInterface6AddRefE">
 <span id="_CPPv3N24mfxFrameSurfaceInterface6AddRefE"></span><span id="_CPPv2N24mfxFrameSurfaceInterface6AddRefE"></span><span class="target" id="structmfx_frame_surface_interface_1ab4c555eb34611706a258e5aed99ca042"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">AddRef</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv416mfxFrameSurface1" title="mfxFrameSurface1"><span class="pre">mfxFrameSurface1</span></a> <span class="pre">*</span><span class="pre">surface</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N24mfxFrameSurfaceInterface6AddRefE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Increments the internal reference counter of the surface. The surface is not destroyed until the surface is released using the (*Release) function. (*AddRef) should be used each time a new link to the surface is created (for example, copy structure) for proper surface management. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface is NULL. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>[in] surface</strong> – Valid surface.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface is NULL. </p>
 <p> MFX_ERR_INVALID_HANDLE If mfxFrameSurfaceInterface-&gt;Context is invalid (for example NULL). </p>
 <p> MFX_ERR_UNKNOWN Any internal error. </p>
 </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">surface</span></code>: Valid surface.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N24mfxFrameSurfaceInterface7ReleaseE">
 <span id="_CPPv3N24mfxFrameSurfaceInterface7ReleaseE"></span><span id="_CPPv2N24mfxFrameSurfaceInterface7ReleaseE"></span><span class="target" id="structmfx_frame_surface_interface_1aa3dc7c5bbc373044bdf5fedffeeb87a3"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">Release</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv416mfxFrameSurface1" title="mfxFrameSurface1"><span class="pre">mfxFrameSurface1</span></a> <span class="pre">*</span><span class="pre">surface</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N24mfxFrameSurfaceInterface7ReleaseE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Decrements the internal reference counter of the surface. (*Release) should be called after using the (*AddRef) function to add a surface or when allocation logic requires it. For example, call (*Release) to release a surface obtained with the GetSurfaceForXXX function. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface is NULL. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>[in] surface</strong> – Valid surface.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface is NULL. </p>
 <p> MFX_ERR_INVALID_HANDLE If mfxFrameSurfaceInterface-&gt;Context is invalid (for example NULL). </p>
 <p> MFX_ERR_UNDEFINED_BEHAVIOR If Reference Counter of surface is zero before call. </p>
 <p> MFX_ERR_UNKNOWN Any internal error. </p>
 </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">surface</span></code>: Valid surface.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N24mfxFrameSurfaceInterface13GetRefCounterE">
 <span id="_CPPv3N24mfxFrameSurfaceInterface13GetRefCounterE"></span><span id="_CPPv2N24mfxFrameSurfaceInterface13GetRefCounterE"></span><span class="target" id="structmfx_frame_surface_interface_1a02ab149ce658e46bc6e35e662bebfb89"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">GetRefCounter</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv416mfxFrameSurface1" title="mfxFrameSurface1"><span class="pre">mfxFrameSurface1</span></a> <span class="pre">*</span><span class="pre">surface</span>, <a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU32" title="mfxU32"><span class="pre">mfxU32</span></a> <span class="pre">*</span><span class="pre">counter</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N24mfxFrameSurfaceInterface13GetRefCounterE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns current reference counter of <a class="reference internal" href="#structmfx_frame_surface1"><span class="std std-ref">mfxFrameSurface1</span></a> structure. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface or counter is NULL. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] surface</strong> – Valid surface. </p></li>
+<li><p><strong>[out] counter</strong> – Sets counter to the current reference counter value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface or counter is NULL. </p>
 <p> MFX_ERR_INVALID_HANDLE If mfxFrameSurfaceInterface-&gt;Context is invalid (for example NULL). </p>
 <p> MFX_ERR_UNKNOWN Any internal error. </p>
 </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">surface</span></code>: Valid surface. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">counter</span></code>: Sets counter to the current reference counter value.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -5558,86 +5559,92 @@ SPDX-License-Identifier: MIT
 </p>
 <p>If MFX_MAP_NOWAIT was set and the surface is not ready yet (for example the surface has unresolved data dependencies or active processing), the read access request exits immediately with error.</p>
 <p>Read-write access with MFX_MAP_READ_WRITE provides exclusive simultaneous reading and writing access.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Bitwise copying of <a class="reference internal" href="#structmfx_frame_surface1"><span class="std std-ref">mfxFrameSurface1</span></a> object between map / unmap calls may result in having dangling data pointers in copies.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Bitwise copying of <a class="reference internal" href="#structmfx_frame_surface1"><span class="std std-ref">mfxFrameSurface1</span></a> object between map / unmap calls may result in having dangling data pointers in copies.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] surface</strong> – Valid surface. </p></li>
+<li><p><strong>[out] flags</strong> – Specify mapping mode. </p></li>
+<li><p><strong>[out] surface-&gt;Info.Data</strong> – Pointers set to actual pixel data.</p></li>
+</ul>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface is NULL. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface is NULL. </p>
 <p> MFX_ERR_INVALID_HANDLE If mfxFrameSurfaceInterface-&gt;Context is invalid (for example NULL). </p>
 <p> MFX_ERR_UNSUPPORTED If flags are invalid. </p>
 <p> MFX_ERR_LOCK_MEMORY If user wants to map the surface for write and surface-&gt;Data.Locked does not equal to 0. </p>
 <p> MFX_ERR_UNKNOWN Any internal error. </p>
 </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">surface</span></code>: Valid surface. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">flags</span></code>: Specify mapping mode. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">surface-&gt;Info.Data</span></code>: Pointers set to actual pixel data.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N24mfxFrameSurfaceInterface5UnmapE">
 <span id="_CPPv3N24mfxFrameSurfaceInterface5UnmapE"></span><span id="_CPPv2N24mfxFrameSurfaceInterface5UnmapE"></span><span class="target" id="structmfx_frame_surface_interface_1a0f86cecff25b6ec575711f4abc786fa3"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">Unmap</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv416mfxFrameSurface1" title="mfxFrameSurface1"><span class="pre">mfxFrameSurface1</span></a> <span class="pre">*</span><span class="pre">surface</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N24mfxFrameSurfaceInterface5UnmapE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Invalidates pointers of surface-&gt;Info.Data and sets them to NULL. In case of video memory, the underlying texture becomes unmapped after last reader or writer unmap. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface is NULL. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] surface</strong> – Valid surface. </p></li>
+<li><p><strong>[out] surface-&gt;Info.Data</strong> – Pointers set to NULL.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface is NULL. </p>
 <p> MFX_ERR_INVALID_HANDLE If mfxFrameSurfaceInterface-&gt;Context is invalid (for example NULL). </p>
 <p> MFX_ERR_UNSUPPORTED If surface is already unmapped. </p>
 <p> MFX_ERR_UNKNOWN Any internal error. </p>
 </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">surface</span></code>: Valid surface. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">surface-&gt;Info.Data</span></code>: Pointers set to NULL.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N24mfxFrameSurfaceInterface15GetNativeHandleE">
 <span id="_CPPv3N24mfxFrameSurfaceInterface15GetNativeHandleE"></span><span id="_CPPv2N24mfxFrameSurfaceInterface15GetNativeHandleE"></span><span class="target" id="structmfx_frame_surface_interface_1a4a6345594e2620f6ec6621ab1603a820"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">GetNativeHandle</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv416mfxFrameSurface1" title="mfxFrameSurface1"><span class="pre">mfxFrameSurface1</span></a> <span class="pre">*</span><span class="pre">surface</span>, <a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxHDL" title="mfxHDL"><span class="pre">mfxHDL</span></a> <span class="pre">*</span><span class="pre">resource</span>, <a class="reference internal" href="VPL_enums.html#_CPPv415mfxResourceType" title="mfxResourceType"><span class="pre">mfxResourceType</span></a> <span class="pre">*</span><span class="pre">resource_type</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N24mfxFrameSurfaceInterface15GetNativeHandleE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns a native resource’s handle and type. The handle is returned <em>as-is</em>, meaning that the reference counter of base resources is not incremented. The native resource is not detached from surface and the library still owns the resource. User must not destroy the native resource or assume that the resource will be alive after (*Release). </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If any of surface, resource or resource_type is NULL. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] surface</strong> – Valid surface. </p></li>
+<li><p><strong>[out] resource</strong> – Pointer is set to the native handle of the resource. </p></li>
+<li><p><strong>[out] resource_type</strong> – Type of native resource. See mfxResourceType enumeration).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If any of surface, resource or resource_type is NULL. </p>
 <p> MFX_ERR_INVALID_HANDLE If any of surface, resource or resource_type is not valid object (no native resource was allocated). </p>
 <p> MFX_ERR_UNSUPPORTED If surface is in system memory. </p>
 <p> MFX_ERR_UNKNOWN Any internal error. </p>
 </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">surface</span></code>: Valid surface. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">resource</span></code>: Pointer is set to the native handle of the resource. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">resource_type</span></code>: Type of native resource. See mfxResourceType enumeration).</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N24mfxFrameSurfaceInterface15GetDeviceHandleE">
 <span id="_CPPv3N24mfxFrameSurfaceInterface15GetDeviceHandleE"></span><span id="_CPPv2N24mfxFrameSurfaceInterface15GetDeviceHandleE"></span><span class="target" id="structmfx_frame_surface_interface_1a85cbefce472f9fe87b4057a39f8d6515"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">GetDeviceHandle</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv416mfxFrameSurface1" title="mfxFrameSurface1"><span class="pre">mfxFrameSurface1</span></a> <span class="pre">*</span><span class="pre">surface</span>, <a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxHDL" title="mfxHDL"><span class="pre">mfxHDL</span></a> <span class="pre">*</span><span class="pre">device_handle</span>, <a class="reference internal" href="VPL_enums.html#_CPPv413mfxHandleType" title="mfxHandleType"><span class="pre">mfxHandleType</span></a> <span class="pre">*</span><span class="pre">device_type</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N24mfxFrameSurfaceInterface15GetDeviceHandleE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns a device abstraction that was used to create that resource. The handle is returned <em>as-is</em>, meaning that the reference counter for the device abstraction is not incremented. The native resource is not detached from the surface and the library still has a reference to the resource. User must not destroy the device or assume that the device will be alive after (*Release). </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If any of surface, device_handle or device_type is NULL. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] surface</strong> – Valid surface. </p></li>
+<li><p><strong>[out] device_handle</strong> – Pointer is set to the device which created the resource </p></li>
+<li><p><strong>[out] device_type</strong> – Type of device (see mfxHandleType enumeration).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If any of surface, device_handle or device_type is NULL. </p>
 <p> MFX_ERR_INVALID_HANDLE If any of surface, resource or resource_type is not valid object (no native resource was allocated). </p>
 <p> MFX_ERR_UNSUPPORTED If surface is in system memory. </p>
 <p> MFX_ERR_UNKNOWN Any internal error. </p>
 </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">surface</span></code>: Valid surface. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">device_handle</span></code>: Pointer is set to the device which created the resource </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">device_type</span></code>: Type of device (see mfxHandleType enumeration).</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -5649,21 +5656,23 @@ SPDX-License-Identifier: MIT
 <li><p>The main processing functions return MFX_ERR_NONE. </p></li>
 <li><p>A valid <a class="reference internal" href="#structmfx_frame_surface1"><span class="std std-ref">mfxFrameSurface1</span></a> object.</p></li>
 </ul>
-<dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface is NULL. </p>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] surface</strong> – Valid surface. </p></li>
+<li><p><strong>[out] wait</strong> – Wait time in milliseconds.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface is NULL. </p>
 <p> MFX_ERR_INVALID_HANDLE If any of surface is not valid object . </p>
 <p> MFX_WRN_IN_EXECUTION If the given timeout is expired and the surface is not ready. </p>
 <p> MFX_ERR_ABORTED If the specified asynchronous function aborted due to data dependency on a previous asynchronous function that did not complete. </p>
 <p> MFX_ERR_UNKNOWN Any internal error. </p>
 </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">surface</span></code>: Valid surface. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">wait</span></code>: Wait time in milliseconds.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -5676,21 +5685,19 @@ SPDX-License-Identifier: MIT
 </dd>
 </dl>
 </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">sts</span></code>: The status of completed operation. </p></li>
-</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>[in] sts</strong> – The status of completed operation. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
 </dd></dl>
 
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tables &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4627,7 +4626,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="tables">
+  <div class="section" id="tables">
 <span id="id1"></span><h1>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h1>
 <p>This section describes the types related to the <a class="reference internal" href="index.html#table"><span class="std std-ref">table</span></a> concept.</p>
 <table class="colwidths-given table">
@@ -4658,7 +4657,7 @@ define set of available operations onto the data.</p></td>
 </tr>
 </tbody>
 </table>
-<section id="requirements-on-table-types">
+<div class="section" id="requirements-on-table-types">
 <h2>Requirements on table types<a class="headerlink" href="#requirements-on-table-types" title="Permalink to this headline">¶</a></h2>
 <p>Each implementation of <a class="reference internal" href="index.html#table"><span class="std std-ref">table</span></a> concept shall:</p>
 <ol class="arabic simple">
@@ -4692,8 +4691,8 @@ and copy-assignment operation:</p>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">table2</span><span class="p">.</span><span class="n">get_kind</span><span class="p">()</span> <span class="o">==</span> <span class="n">table3</span><span class="p">.</span><span class="n">get_kind</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// true</span>
 </pre></div>
 </div>
-</section>
-<section id="table-types">
+</div>
+<div class="section" id="table-types">
 <h2>Table types<a class="headerlink" href="#table-types" title="Permalink to this headline">¶</a></h2>
 <p>oneDAL defines a set of classes that implement the
 <a class="reference internal" href="index.html#table"><span class="std std-ref">table</span></a> concept for a specific data format:</p>
@@ -4714,13 +4713,13 @@ and copy-assignment operation:</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="programming-interface">
+</div>
+<div class="section" id="programming-interface">
 <span id="table-programming-interface"></span><h2>Programming interface<a class="headerlink" href="#programming-interface" title="Permalink to this headline">¶</a></h2>
 <p>All types and functions in this section shall be declared in the
 <code class="docutils literal notranslate"><span class="pre">oneapi::dal</span></code> namespace and be available via inclusion of the
 <code class="docutils literal notranslate"><span class="pre">oneapi/dal/table/common.hpp</span></code> header file.</p>
-<section id="table">
+<div class="section" id="table">
 <h3>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h3>
 <p>A base implementation of the <a class="reference internal" href="index.html#table"><span class="std std-ref">table</span></a> concept.
 The <code class="docutils literal notranslate"><span class="pre">table</span></code> type and all of its subtypes shall be <a class="reference internal" href="../glossary.html#term-Reference-counted-object"><span class="xref std std-term">reference-counted</span></a>:</p>
@@ -4864,8 +4863,8 @@ free its implementation.</p></li>
 
 </dd></dl>
 
-</section>
-<section id="table-metadata">
+</div>
+<div class="section" id="table-metadata">
 <span id="metadata-programming-interface"></span><h3>Table metadata<a class="headerlink" href="#table-metadata" title="Permalink to this headline">¶</a></h3>
 <p>An implementation of the <a class="reference internal" href="index.html#table-metadata"><span class="std std-ref">table metadata</span></a> concept. Holds additional
 information about data within the table. The objects of <code class="docutils literal notranslate"><span class="pre">table_metadata</span></code> shall
@@ -4953,8 +4952,8 @@ be <a class="reference internal" href="../glossary.html#term-Reference-counted-o
 
 </dd></dl>
 
-</section>
-<section id="data-layout">
+</div>
+<div class="section" id="data-layout">
 <span id="id2"></span><h3>Data layout<a class="headerlink" href="#data-layout" title="Permalink to this headline">¶</a></h3>
 <p>An implementation of the <a class="reference internal" href="../glossary.html#term-Data-layout"><span class="xref std std-term">data layout</span></a> concept.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="k">class</span> <span class="nc">data_layout</span> <span class="p">{</span> <span class="n">unknown</span><span class="p">,</span> <span class="n">row_major</span><span class="p">,</span> <span class="n">column_major</span> <span class="p">};</span>
@@ -4973,8 +4972,8 @@ be <a class="reference internal" href="../glossary.html#term-Reference-counted-o
 </dl>
 </dd></dl>
 
-</section>
-<section id="feature-type">
+</div>
+<div class="section" id="feature-type">
 <span id="id3"></span><h3>Feature type<a class="headerlink" href="#feature-type" title="Permalink to this headline">¶</a></h3>
 <p>An implementation of the logical data types.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="k">class</span> <span class="nc">feature_type</span> <span class="p">{</span> <span class="n">nominal</span><span class="p">,</span> <span class="n">ordinal</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">ratio</span> <span class="p">};</span>
@@ -5003,9 +5002,9 @@ be <a class="reference internal" href="../glossary.html#term-Reference-counted-o
 </li>
 </ul>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

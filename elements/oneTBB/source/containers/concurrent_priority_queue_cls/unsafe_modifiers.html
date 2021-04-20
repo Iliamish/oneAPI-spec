@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Concurrently unsafe modifiers &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4599,11 +4598,11 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="concurrently-unsafe-modifiers">
+  <div class="section" id="concurrently-unsafe-modifiers">
 <h1>Concurrently unsafe modifiers<a class="headerlink" href="#concurrently-unsafe-modifiers" title="Permalink to this headline">¶</a></h1>
 <p>All member functions in this section can only be performed serially. The behavior is undefined in
 case of concurrent execution of these methods with other (either concurrently safe) methods.</p>
-<section id="clear">
+<div class="section" id="clear">
 <h2>clear<a class="headerlink" href="#clear" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">clear</span><span class="p">();</span>
@@ -4611,8 +4610,8 @@ case of concurrent execution of these methods with other (either concurrently sa
 </div>
 <p>Removes all elements from the container.</p>
 </div></blockquote>
-</section>
-<section id="swap">
+</div>
+<div class="section" id="swap">
 <h2>swap<a class="headerlink" href="#swap" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span> <span class="n">concurrent_priority_queue</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">);</span>
@@ -4622,8 +4621,8 @@ case of concurrent execution of these methods with other (either concurrently sa
 <p>Swaps allocators if <code class="docutils literal notranslate"><span class="pre">std::allocator_traits&lt;allocator_type&gt;::propagate_on_container_swap::value</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
 <p>Otherwise if <code class="docutils literal notranslate"><span class="pre">get_allocator()</span> <span class="pre">!=</span> <span class="pre">other.get_allocator()</span></code> the behavior is undefined.</p>
 </div></blockquote>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

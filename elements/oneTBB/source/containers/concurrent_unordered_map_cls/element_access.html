@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Element access &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4599,9 +4598,9 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="element-access">
+  <div class="section" id="element-access">
 <h1>Element access<a class="headerlink" href="#element-access" title="Permalink to this headline">¶</a></h1>
-<section id="at">
+<div class="section" id="at">
 <h2>at<a class="headerlink" href="#at" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">value_type</span><span class="o">&amp;</span> <span class="nf">at</span><span class="p">(</span> <span class="k">const</span> <span class="n">key_type</span><span class="o">&amp;</span> <span class="n">key</span> <span class="p">);</span>
@@ -4612,8 +4611,8 @@ SPDX-License-Identifier: MIT
 <p><strong>Returns</strong>: a reference to <code class="docutils literal notranslate"><span class="pre">item.second</span></code>, where <code class="docutils literal notranslate"><span class="pre">item</span></code> is the element with the key equivalent to <code class="docutils literal notranslate"><span class="pre">key</span></code>.</p>
 <p><strong>Throws</strong>: <code class="docutils literal notranslate"><span class="pre">std::out_of_range</span></code> exception if the element with the key equivalent to <code class="docutils literal notranslate"><span class="pre">key</span></code> is not presented in the container.</p>
 </div></blockquote>
-</section>
-<section id="operator">
+</div>
+<div class="section" id="operator">
 <h2>operator[]<a class="headerlink" href="#operator" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">value_type</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span> <span class="k">const</span> <span class="n">key_type</span><span class="o">&amp;</span> <span class="n">key</span> <span class="p">);</span>
@@ -4638,8 +4637,8 @@ inserts a new element constructed in-place from
 from the [container.requirements] ISO C++ Standard section.</p>
 <p><strong>Returns</strong>: a reference to <code class="docutils literal notranslate"><span class="pre">item.second</span></code> where <code class="docutils literal notranslate"><span class="pre">item</span></code> is the element with the key equivalent to <code class="docutils literal notranslate"><span class="pre">key</span></code>.</p>
 </div></blockquote>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

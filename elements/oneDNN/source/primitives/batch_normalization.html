@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Batch Normalization &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4649,7 +4648,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="batch-normalization">
+  <div class="section" id="batch-normalization">
 <span id="batch-normalization-label"></span><h1>Batch Normalization<a class="headerlink" href="#batch-normalization" title="Permalink to this headline">¶</a></h1>
 <p>The batch normalization primitive performs a forward or backward batch
 normalization operation on tensors with number of dimensions equal to 2 or
@@ -4661,7 +4660,7 @@ to cases of higher and lower dimensions.</p>
 parameter that is passed to the operation descriptor initialization function
 like <a class="reference internal" href="#_CPPv4N4dnnl27batch_normalization_forward4desc4descE9prop_kindRKN6memory4descEf19normalization_flags" title="dnnl::batch_normalization_forward::desc::desc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::batch_normalization_forward::desc::desc()</span></code></a>. Multiple flags can
 be combined using the bitwise OR operator (<code class="docutils literal notranslate"><span class="pre">|</span></code>).</p>
-<section id="forward">
+<div class="section" id="forward">
 <h2>Forward<a class="headerlink" href="#forward" title="Permalink to this headline">¶</a></h2>
 <div class="math notranslate nohighlight">
 \[\dst(n, c, h, w) =
@@ -4699,7 +4698,7 @@ computed as:</p>
 \[\begin{split}\hat\mu_{i+1} = \alpha \cdot \hat\mu_i + (1 - \alpha) \cdot \mu, \\
 \hat\sigma^2_{i+1} = \alpha \cdot \hat\sigma^2_i + (1 - \alpha) \cdot \sigma^2.\end{split}\]</div>
 </div>
-<section id="difference-between-forward-training-and-forward-inference">
+<div class="section" id="difference-between-forward-training-and-forward-inference">
 <h3>Difference Between Forward Training and Forward Inference<a class="headerlink" href="#difference-between-forward-training-and-forward-inference" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>If mean and variance are computed at runtime (i.e., <a class="reference internal" href="general.html#_CPPv4N4dnnl19normalization_flags16use_global_statsE" title="dnnl::normalization_flags::use_global_stats"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">use_global_stats</span></code></a> is
@@ -4714,9 +4713,9 @@ propagation kind <a class="reference internal" href="general.html#_CPPv4N4dnnl9p
 Behavior would be the same as creating a batch normalization primitive with
 ReLU as a post-op (see section below).</p></li>
 </ul>
-</section>
-</section>
-<section id="backward">
+</div>
+</div>
+<div class="section" id="backward">
 <h2>Backward<a class="headerlink" href="#backward" title="Permalink to this headline">¶</a></h2>
 <p>The backward propagation computes <span class="math notranslate nohighlight">\(\diffsrc(n, c, h, w)\)</span>,
 <span class="math notranslate nohighlight">\(\diffgamma(c)^*\)</span>, and <span class="math notranslate nohighlight">\(\diffbeta(c)^*\)</span> based on
@@ -4725,8 +4724,8 @@ ReLU as a post-op (see section below).</p></li>
 <p>The tensors marked with an asterisk are used only when the primitive is
 configured to use <span class="math notranslate nohighlight">\(\gamma(c)\)</span> and <span class="math notranslate nohighlight">\(\beta(c)\)</span> (i.e.,
 <code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">use_scaleshift</span></code> is set).</p>
-</section>
-<section id="execution-arguments">
+</div>
+<div class="section" id="execution-arguments">
 <h2>Execution Arguments<a class="headerlink" href="#execution-arguments" title="Permalink to this headline">¶</a></h2>
 <p>Depending on the flags and propagation kind, the batch normalization primitive
 requires different inputs and outputs. For clarity, a summary is shown below.</p>
@@ -4821,8 +4820,8 @@ argument index as specified by the following table.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="operation-details">
+</div>
+<div class="section" id="operation-details">
 <h2>Operation Details<a class="headerlink" href="#operation-details" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>For forward propagation, the mean and variance might be either computed at
@@ -4847,8 +4846,8 @@ ReLU activation even in the training mode. In this case, on the forward
 propagation the primitive has one additional output, <code class="docutils literal notranslate"><span class="pre">workspace</span></code>, that
 should be passed during the backward propagation.</p></li>
 </ol>
-</section>
-<section id="data-types-support">
+</div>
+<div class="section" id="data-types-support">
 <h2>Data Types Support<a class="headerlink" href="#data-types-support" title="Permalink to this headline">¶</a></h2>
 <p>The operation supports the following combinations of data types.</p>
 <div class="admonition note">
@@ -4883,10 +4882,10 @@ abbreviated to <a class="reference internal" href="../data_model/data_types/inde
 </tr>
 </tbody>
 </table>
-</section>
-<section id="data-representation">
+</div>
+<div class="section" id="data-representation">
 <h2>Data Representation<a class="headerlink" href="#data-representation" title="Permalink to this headline">¶</a></h2>
-<section id="source-destination-and-their-gradients">
+<div class="section" id="source-destination-and-their-gradients">
 <h3>Source, Destination, and Their Gradients<a class="headerlink" href="#source-destination-and-their-gradients" title="Permalink to this headline">¶</a></h3>
 <p>Like other CNN primitives, the batch normalization primitive expects data to
 be <span class="math notranslate nohighlight">\(N \times C \times SP_n \times \cdots \times SP_0\)</span> tensor.</p>
@@ -4925,8 +4924,8 @@ formats:</p>
 </table>
 <p>Here <em>optimized</em> means the format chosen by the preceding compute-intensive
 primitive.</p>
-</section>
-<section id="statistics-tensors">
+</div>
+<div class="section" id="statistics-tensors">
 <h3>Statistics Tensors<a class="headerlink" href="#statistics-tensors" title="Permalink to this headline">¶</a></h3>
 <p>The mean (<span class="math notranslate nohighlight">\(\mu\)</span>) and variance (<span class="math notranslate nohighlight">\(\sigma^2\)</span>) are separate 1D tensors
 of size <span class="math notranslate nohighlight">\(C\)</span>.</p>
@@ -4934,9 +4933,9 @@ of size <span class="math notranslate nohighlight">\(C\)</span>.</p>
 <p>If used, the scale (<span class="math notranslate nohighlight">\(\gamma\)</span>) and shift (<span class="math notranslate nohighlight">\(\beta\)</span>) are combined in
 a single 2D tensor of shape <span class="math notranslate nohighlight">\(2 \times C\)</span>.</p>
 <p>The format of the corresponding memory object must be <a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag2ncE" title="dnnl::memory::format_tag::nc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">nc</span></code></a> (<a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag2abE" title="dnnl::memory::format_tag::ab"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">ab</span></code></a>).</p>
-</section>
-</section>
-<section id="post-ops-and-attributes">
+</div>
+</div>
+<div class="section" id="post-ops-and-attributes">
 <h2>Post-ops and Attributes<a class="headerlink" href="#post-ops-and-attributes" title="Permalink to this headline">¶</a></h2>
 <table class="table">
 <colgroup>
@@ -4966,8 +4965,8 @@ a single 2D tensor of shape <span class="math notranslate nohighlight">\(2 \time
 <code class="docutils literal notranslate"><span class="pre">workspace</span></code> that is required to compute backward propagation correctly.
 Hence, one should use the <a class="reference internal" href="general.html#_CPPv4N4dnnl19normalization_flags14fuse_norm_reluE" title="dnnl::normalization_flags::fuse_norm_relu"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">fuse_norm_relu</span></code></a> flag for training.</p>
 </div>
-</section>
-<section id="api">
+</div>
+<div class="section" id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp struct">
 <dt id="_CPPv4N4dnnl27batch_normalization_forwardE">
@@ -4984,13 +4983,12 @@ Hence, one should use the <a class="reference internal" href="general.html#_CPPv
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl27batch_normalization_forward27batch_normalization_forwardERK14primitive_desc">
 <span id="_CPPv3N4dnnl27batch_normalization_forward27batch_normalization_forwardERK14primitive_desc"></span><span id="_CPPv2N4dnnl27batch_normalization_forward27batch_normalization_forwardERK14primitive_desc"></span><span id="dnnl::batch_normalization_forward::batch_normalization_forward__primitive_descCR"></span><span class="target" id="structdnnl_1_1batch__normalization__forward_1af42e870bd82918d29d0e851882d7d65a"></span><code class="sig-name descname"><span class="pre">batch_normalization_forward</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl27batch_normalization_forward14primitive_descE" title="dnnl::batch_normalization_forward::primitive_desc"><span class="pre">primitive_desc</span></a> <span class="pre">&amp;</span><em><span class="pre">pd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl27batch_normalization_forward27batch_normalization_forwardERK14primitive_desc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Constructs a batch normalization forward propagation primitive. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pd</span></code>: Primitive descriptor for a batch normalization forward propagation primitive. </p></li>
-</ul>
+<dd><p>Constructs a batch normalization forward propagation primitive. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pd</strong> – Primitive descriptor for a batch normalization forward propagation primitive. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -5004,18 +5002,20 @@ Hence, one should use the <a class="reference internal" href="general.html#_CPPv
 <dt id="_CPPv4N4dnnl27batch_normalization_forward4desc4descE9prop_kindRKN6memory4descEf19normalization_flags">
 <span id="_CPPv3N4dnnl27batch_normalization_forward4desc4descE9prop_kindRKN6memory4descEf19normalization_flags"></span><span id="_CPPv2N4dnnl27batch_normalization_forward4desc4descE9prop_kindRKN6memory4descEf19normalization_flags"></span><span id="dnnl::batch_normalization_forward::desc::desc__prop_kind.memory::descCR.float.normalization_flags"></span><span class="target" id="structdnnl_1_1batch__normalization__forward_1_1desc_1a93769b0a95b08e31ace5fe9d3e3ac974"></span><code class="sig-name descname"><span class="pre">desc</span></code><span class="sig-paren">(</span><a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kindE" title="dnnl::prop_kind"><span class="pre">prop_kind</span></a> <em><span class="pre">aprop_kind</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">data_desc</span></em>, <span class="pre">float</span> <em><span class="pre">epsilon</span></em>, <a class="reference internal" href="general.html#_CPPv4N4dnnl19normalization_flagsE" title="dnnl::normalization_flags"><span class="pre">normalization_flags</span></a> <em><span class="pre">flags</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl27batch_normalization_forward4desc4descE9prop_kindRKN6memory4descEf19normalization_flags" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a batch normalization descriptor for forward propagation.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>In-place operation is supported: the dst can refer to the same memory as the src.</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">aprop_kind</span></code>: Propagation kind. Possible values are <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb"><span class="std std-ref">dnnl::prop_kind::forward_training</span></a> and <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c"><span class="std std-ref">dnnl::prop_kind::forward_inference</span></a>. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">data_desc</span></code>: Source and destination memory descriptors. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">epsilon</span></code>: Batch normalization epsilon parameter. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">flags</span></code>: Batch normalization flags (<a class="reference internal" href="general.html#group__dnnl__api__primitives__common_1gad8ef0fcbb7b10cae3d67dd46892002be"><span class="std std-ref">dnnl::normalization_flags</span></a>). </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In-place operation is supported: the dst can refer to the same memory as the src.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aprop_kind</strong> – Propagation kind. Possible values are <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb"><span class="std std-ref">dnnl::prop_kind::forward_training</span></a> and <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c"><span class="std std-ref">dnnl::prop_kind::forward_inference</span></a>. </p></li>
+<li><p><strong>data_desc</strong> – Source and destination memory descriptors. </p></li>
+<li><p><strong>epsilon</strong> – Batch normalization epsilon parameter. </p></li>
+<li><p><strong>flags</strong> – Batch normalization flags (<a class="reference internal" href="general.html#group__dnnl__api__primitives__common_1gad8ef0fcbb7b10cae3d67dd46892002be"><span class="std std-ref">dnnl::normalization_flags</span></a>). </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -5037,99 +5037,109 @@ Hence, one should use the <a class="reference internal" href="general.html#_CPPv
 <dt id="_CPPv4N4dnnl27batch_normalization_forward14primitive_desc14primitive_descERK4descRK6engineb">
 <span id="_CPPv3N4dnnl27batch_normalization_forward14primitive_desc14primitive_descERK4descRK6engineb"></span><span id="_CPPv2N4dnnl27batch_normalization_forward14primitive_desc14primitive_descERK4descRK6engineb"></span><span id="dnnl::batch_normalization_forward::primitive_desc::primitive_desc__descCR.engineCR.b"></span><span class="target" id="structdnnl_1_1batch__normalization__forward_1_1primitive__desc_1a61640e59ec637bf8943cbcd8e8c1751b"></span><code class="sig-name descname"><span class="pre">primitive_desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl27batch_normalization_forward4descE" title="dnnl::batch_normalization_forward::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl27batch_normalization_forward14primitive_desc14primitive_descERK4descRK6engineb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a primitive descriptor for a batch normalization forward propagation primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Descriptor for a batch normalization forward propagation primitive. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adesc</strong> – Descriptor for a batch normalization forward propagation primitive. </p></li>
+<li><p><strong>aengine</strong> – Engine to use. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl27batch_normalization_forward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb">
 <span id="_CPPv3N4dnnl27batch_normalization_forward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb"></span><span id="_CPPv2N4dnnl27batch_normalization_forward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb"></span><span id="dnnl::batch_normalization_forward::primitive_desc::primitive_desc__descCR.primitive_attrCR.engineCR.b"></span><span class="target" id="structdnnl_1_1batch__normalization__forward_1_1primitive__desc_1a6fd7a0b403225997cabd27a9e856d8e6"></span><code class="sig-name descname"><span class="pre">primitive_desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl27batch_normalization_forward4descE" title="dnnl::batch_normalization_forward::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="attributes/index.html#_CPPv4N4dnnl14primitive_attrE" title="dnnl::primitive_attr"><span class="pre">primitive_attr</span></a> <span class="pre">&amp;</span><em><span class="pre">attr</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl27batch_normalization_forward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a primitive descriptor for a batch normalization forward propagation primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Descriptor for a batch normalization forward propagation primitive. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">attr</span></code>: Primitive attributes to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adesc</strong> – Descriptor for a batch normalization forward propagation primitive. </p></li>
+<li><p><strong>attr</strong> – Primitive attributes to use. </p></li>
+<li><p><strong>aengine</strong> – Engine to use. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl27batch_normalization_forward14primitive_desc8src_descEv">
 <span id="_CPPv3NK4dnnl27batch_normalization_forward14primitive_desc8src_descEv"></span><span id="_CPPv2NK4dnnl27batch_normalization_forward14primitive_desc8src_descEv"></span><span id="dnnl::batch_normalization_forward::primitive_desc::src_descC"></span><span class="target" id="structdnnl_1_1batch__normalization__forward_1_1primitive__desc_1a106fc3376b5c0f5e67b0e92633600b9f"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">src_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl27batch_normalization_forward14primitive_desc8src_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a source memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Source memory descriptor. </p>
+<dd><p>Returns a source memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Source memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a source parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a source parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl27batch_normalization_forward14primitive_desc8dst_descEv">
 <span id="_CPPv3NK4dnnl27batch_normalization_forward14primitive_desc8dst_descEv"></span><span id="_CPPv2NK4dnnl27batch_normalization_forward14primitive_desc8dst_descEv"></span><span id="dnnl::batch_normalization_forward::primitive_desc::dst_descC"></span><span class="target" id="structdnnl_1_1batch__normalization__forward_1_1primitive__desc_1af669f0f68951673f4ceba14eb631b7fa"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">dst_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl27batch_normalization_forward14primitive_desc8dst_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a destination memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Destination memory descriptor. </p>
+<dd><p>Returns a destination memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Destination memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a destination parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a destination parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl27batch_normalization_forward14primitive_desc12weights_descEv">
 <span id="_CPPv3NK4dnnl27batch_normalization_forward14primitive_desc12weights_descEv"></span><span id="_CPPv2NK4dnnl27batch_normalization_forward14primitive_desc12weights_descEv"></span><span id="dnnl::batch_normalization_forward::primitive_desc::weights_descC"></span><span class="target" id="structdnnl_1_1batch__normalization__forward_1_1primitive__desc_1a33cc89eb552f12861e9e622a92986e50"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">weights_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl27batch_normalization_forward14primitive_desc12weights_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a weights memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Weights memory descriptor. </p>
+<dd><p>Returns a weights memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Weights memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a weights parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a weights parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl27batch_normalization_forward14primitive_desc14workspace_descEv">
 <span id="_CPPv3NK4dnnl27batch_normalization_forward14primitive_desc14workspace_descEv"></span><span id="_CPPv2NK4dnnl27batch_normalization_forward14primitive_desc14workspace_descEv"></span><span id="dnnl::batch_normalization_forward::primitive_desc::workspace_descC"></span><span class="target" id="structdnnl_1_1batch__normalization__forward_1_1primitive__desc_1a863e40b42e49a970b3c564709c3ce64f"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">workspace_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl27batch_normalization_forward14primitive_desc14workspace_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the workspace memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Workspace memory descriptor. </p>
+<dd><p>Returns the workspace memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Workspace memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not require workspace parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not require workspace parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl27batch_normalization_forward14primitive_desc9mean_descEv">
 <span id="_CPPv3NK4dnnl27batch_normalization_forward14primitive_desc9mean_descEv"></span><span id="_CPPv2NK4dnnl27batch_normalization_forward14primitive_desc9mean_descEv"></span><span id="dnnl::batch_normalization_forward::primitive_desc::mean_descC"></span><span class="target" id="structdnnl_1_1batch__normalization__forward_1_1primitive__desc_1a4b5dd117d1f71776d8bff086c41ced41"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">mean_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl27batch_normalization_forward14primitive_desc9mean_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns memory descriptor for mean. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Memory descriptor for mean. </p>
+<dd><p>Returns memory descriptor for mean. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Memory descriptor for mean. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl27batch_normalization_forward14primitive_desc13variance_descEv">
 <span id="_CPPv3NK4dnnl27batch_normalization_forward14primitive_desc13variance_descEv"></span><span id="_CPPv2NK4dnnl27batch_normalization_forward14primitive_desc13variance_descEv"></span><span id="dnnl::batch_normalization_forward::primitive_desc::variance_descC"></span><span class="target" id="structdnnl_1_1batch__normalization__forward_1_1primitive__desc_1add11ea349ccd74483990b612fc4b8f15"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">variance_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl27batch_normalization_forward14primitive_desc13variance_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns memory descriptor for variance. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Memory descriptor for variance. </p>
+<dd><p>Returns memory descriptor for variance. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Memory descriptor for variance. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -5152,13 +5162,12 @@ Hence, one should use the <a class="reference internal" href="general.html#_CPPv
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl28batch_normalization_backward28batch_normalization_backwardERK14primitive_desc">
 <span id="_CPPv3N4dnnl28batch_normalization_backward28batch_normalization_backwardERK14primitive_desc"></span><span id="_CPPv2N4dnnl28batch_normalization_backward28batch_normalization_backwardERK14primitive_desc"></span><span id="dnnl::batch_normalization_backward::batch_normalization_backward__primitive_descCR"></span><span class="target" id="structdnnl_1_1batch__normalization__backward_1a8bbb84e1762b1d3c70846dba72a2d2a0"></span><code class="sig-name descname"><span class="pre">batch_normalization_backward</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl28batch_normalization_backward14primitive_descE" title="dnnl::batch_normalization_backward::primitive_desc"><span class="pre">primitive_desc</span></a> <span class="pre">&amp;</span><em><span class="pre">pd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl28batch_normalization_backward28batch_normalization_backwardERK14primitive_desc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Constructs a batch normalization backward propagation primitive. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pd</span></code>: Primitive descriptor for a batch normalization backward propagation primitive. </p></li>
-</ul>
+<dd><p>Constructs a batch normalization backward propagation primitive. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pd</strong> – Primitive descriptor for a batch normalization backward propagation primitive. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -5172,17 +5181,17 @@ Hence, one should use the <a class="reference internal" href="general.html#_CPPv
 <dt id="_CPPv4N4dnnl28batch_normalization_backward4desc4descE9prop_kindRKN6memory4descERKN6memory4descEf19normalization_flags">
 <span id="_CPPv3N4dnnl28batch_normalization_backward4desc4descE9prop_kindRKN6memory4descERKN6memory4descEf19normalization_flags"></span><span id="_CPPv2N4dnnl28batch_normalization_backward4desc4descE9prop_kindRKN6memory4descERKN6memory4descEf19normalization_flags"></span><span id="dnnl::batch_normalization_backward::desc::desc__prop_kind.memory::descCR.memory::descCR.float.normalization_flags"></span><span class="target" id="structdnnl_1_1batch__normalization__backward_1_1desc_1a3074a8fda3a8a60bfe6ed3ccf425bb15"></span><code class="sig-name descname"><span class="pre">desc</span></code><span class="sig-paren">(</span><a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kindE" title="dnnl::prop_kind"><span class="pre">prop_kind</span></a> <em><span class="pre">aprop_kind</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">diff_data_desc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">data_desc</span></em>, <span class="pre">float</span> <em><span class="pre">epsilon</span></em>, <a class="reference internal" href="general.html#_CPPv4N4dnnl19normalization_flagsE" title="dnnl::normalization_flags"><span class="pre">normalization_flags</span></a> <em><span class="pre">flags</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl28batch_normalization_backward4desc4descE9prop_kindRKN6memory4descERKN6memory4descEf19normalization_flags" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a batch normalization descriptor for backward propagation.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">aprop_kind</span></code>: Propagation kind. Possible values are <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438faa12627cacf73ecb7ef088beedd650e96"><span class="std std-ref">dnnl::prop_kind::backward_data</span></a> and <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa195fe59b6f103787a914aead0f3db502"><span class="std std-ref">dnnl::prop_kind::backward</span></a> (diffs for all parameters are computed in this case). </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">diff_data_desc</span></code>: Diff source and diff destination memory descriptor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">data_desc</span></code>: Source memory descriptor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">epsilon</span></code>: Batch normalization epsilon parameter. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">flags</span></code>: Batch normalization flags (<a class="reference internal" href="general.html#group__dnnl__api__primitives__common_1gad8ef0fcbb7b10cae3d67dd46892002be"><span class="std std-ref">dnnl::normalization_flags</span></a>). </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aprop_kind</strong> – Propagation kind. Possible values are <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438faa12627cacf73ecb7ef088beedd650e96"><span class="std std-ref">dnnl::prop_kind::backward_data</span></a> and <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa195fe59b6f103787a914aead0f3db502"><span class="std std-ref">dnnl::prop_kind::backward</span></a> (diffs for all parameters are computed in this case). </p></li>
+<li><p><strong>diff_data_desc</strong> – Diff source and diff destination memory descriptor. </p></li>
+<li><p><strong>data_desc</strong> – Source memory descriptor. </p></li>
+<li><p><strong>epsilon</strong> – Batch normalization epsilon parameter. </p></li>
+<li><p><strong>flags</strong> – Batch normalization flags (<a class="reference internal" href="general.html#group__dnnl__api__primitives__common_1gad8ef0fcbb7b10cae3d67dd46892002be"><span class="std std-ref">dnnl::normalization_flags</span></a>). </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -5204,137 +5213,153 @@ Hence, one should use the <a class="reference internal" href="general.html#_CPPv
 <dt id="_CPPv4N4dnnl28batch_normalization_backward14primitive_desc14primitive_descERK4descRK6engineRKN27batch_normalization_forward14primitive_descEb">
 <span id="_CPPv3N4dnnl28batch_normalization_backward14primitive_desc14primitive_descERK4descRK6engineRKN27batch_normalization_forward14primitive_descEb"></span><span id="_CPPv2N4dnnl28batch_normalization_backward14primitive_desc14primitive_descERK4descRK6engineRKN27batch_normalization_forward14primitive_descEb"></span><span id="dnnl::batch_normalization_backward::primitive_desc::primitive_desc__descCR.engineCR.batch_normalization_forward::primitive_descCR.b"></span><span class="target" id="structdnnl_1_1batch__normalization__backward_1_1primitive__desc_1a0479f2583f6c8174946c9ec847fe1325"></span><code class="sig-name descname"><span class="pre">primitive_desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl28batch_normalization_backward4descE" title="dnnl::batch_normalization_backward::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl27batch_normalization_forwardE" title="dnnl::batch_normalization_forward"><span class="pre">batch_normalization_forward</span></a><span class="pre">::</span><a class="reference internal" href="#_CPPv4N4dnnl27batch_normalization_forward14primitive_descE" title="dnnl::batch_normalization_forward::primitive_desc"><span class="pre">primitive_desc</span></a> <span class="pre">&amp;</span><em><span class="pre">hint_fwd_pd</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl28batch_normalization_backward14primitive_desc14primitive_descERK4descRK6engineRKN27batch_normalization_forward14primitive_descEb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a primitive descriptor for a batch normalization backward propagation primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Descriptor for a batch normalization backward propagation primitive. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">hint_fwd_pd</span></code>: Primitive descriptor for a batch normalization forward propagation primitive. It is used as a hint for deciding which memory format to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adesc</strong> – Descriptor for a batch normalization backward propagation primitive. </p></li>
+<li><p><strong>aengine</strong> – Engine to use. </p></li>
+<li><p><strong>hint_fwd_pd</strong> – Primitive descriptor for a batch normalization forward propagation primitive. It is used as a hint for deciding which memory format to use. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl28batch_normalization_backward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineRKN27batch_normalization_forward14primitive_descEb">
 <span id="_CPPv3N4dnnl28batch_normalization_backward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineRKN27batch_normalization_forward14primitive_descEb"></span><span id="_CPPv2N4dnnl28batch_normalization_backward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineRKN27batch_normalization_forward14primitive_descEb"></span><span id="dnnl::batch_normalization_backward::primitive_desc::primitive_desc__descCR.primitive_attrCR.engineCR.batch_normalization_forward::primitive_descCR.b"></span><span class="target" id="structdnnl_1_1batch__normalization__backward_1_1primitive__desc_1ab3263aa84d99467f0913361d7e51c3f4"></span><code class="sig-name descname"><span class="pre">primitive_desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl28batch_normalization_backward4descE" title="dnnl::batch_normalization_backward::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="attributes/index.html#_CPPv4N4dnnl14primitive_attrE" title="dnnl::primitive_attr"><span class="pre">primitive_attr</span></a> <span class="pre">&amp;</span><em><span class="pre">attr</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl27batch_normalization_forwardE" title="dnnl::batch_normalization_forward"><span class="pre">batch_normalization_forward</span></a><span class="pre">::</span><a class="reference internal" href="#_CPPv4N4dnnl27batch_normalization_forward14primitive_descE" title="dnnl::batch_normalization_forward::primitive_desc"><span class="pre">primitive_desc</span></a> <span class="pre">&amp;</span><em><span class="pre">hint_fwd_pd</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl28batch_normalization_backward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineRKN27batch_normalization_forward14primitive_descEb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a primitive descriptor for a batch normalization backward propagation primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Descriptor for a batch normalization backward propagation primitive. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">attr</span></code>: Primitive attributes to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">hint_fwd_pd</span></code>: Primitive descriptor for a batch normalization forward propagation primitive. It is used as a hint for deciding which memory format to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adesc</strong> – Descriptor for a batch normalization backward propagation primitive. </p></li>
+<li><p><strong>attr</strong> – Primitive attributes to use. </p></li>
+<li><p><strong>aengine</strong> – Engine to use. </p></li>
+<li><p><strong>hint_fwd_pd</strong> – Primitive descriptor for a batch normalization forward propagation primitive. It is used as a hint for deciding which memory format to use. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl28batch_normalization_backward14primitive_desc8src_descEv">
 <span id="_CPPv3NK4dnnl28batch_normalization_backward14primitive_desc8src_descEv"></span><span id="_CPPv2NK4dnnl28batch_normalization_backward14primitive_desc8src_descEv"></span><span id="dnnl::batch_normalization_backward::primitive_desc::src_descC"></span><span class="target" id="structdnnl_1_1batch__normalization__backward_1_1primitive__desc_1acfb04f3de67e2b14b5f9eb8bbfa321ad"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">src_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl28batch_normalization_backward14primitive_desc8src_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a source memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Source memory descriptor. </p>
+<dd><p>Returns a source memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Source memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a source parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a source parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl28batch_normalization_backward14primitive_desc12weights_descEv">
 <span id="_CPPv3NK4dnnl28batch_normalization_backward14primitive_desc12weights_descEv"></span><span id="_CPPv2NK4dnnl28batch_normalization_backward14primitive_desc12weights_descEv"></span><span id="dnnl::batch_normalization_backward::primitive_desc::weights_descC"></span><span class="target" id="structdnnl_1_1batch__normalization__backward_1_1primitive__desc_1a46068cc421d7482f38436764e5d4cb47"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">weights_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl28batch_normalization_backward14primitive_desc12weights_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a weights memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Weights memory descriptor. </p>
+<dd><p>Returns a weights memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Weights memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a weights parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a weights parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl28batch_normalization_backward14primitive_desc8dst_descEv">
 <span id="_CPPv3NK4dnnl28batch_normalization_backward14primitive_desc8dst_descEv"></span><span id="_CPPv2NK4dnnl28batch_normalization_backward14primitive_desc8dst_descEv"></span><span id="dnnl::batch_normalization_backward::primitive_desc::dst_descC"></span><span class="target" id="structdnnl_1_1batch__normalization__backward_1_1primitive__desc_1abf7da869049513ff6eee318582c99bc7"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">dst_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl28batch_normalization_backward14primitive_desc8dst_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a destination memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Destination memory descriptor. </p>
+<dd><p>Returns a destination memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Destination memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a destination parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a destination parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl28batch_normalization_backward14primitive_desc13diff_src_descEv">
 <span id="_CPPv3NK4dnnl28batch_normalization_backward14primitive_desc13diff_src_descEv"></span><span id="_CPPv2NK4dnnl28batch_normalization_backward14primitive_desc13diff_src_descEv"></span><span id="dnnl::batch_normalization_backward::primitive_desc::diff_src_descC"></span><span class="target" id="structdnnl_1_1batch__normalization__backward_1_1primitive__desc_1aa1e00ff3e132d9cc6fb68556d07d1f27"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">diff_src_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl28batch_normalization_backward14primitive_desc13diff_src_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a diff source memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Diff source memory descriptor. </p>
+<dd><p>Returns a diff source memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Diff source memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a diff source memory with. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a diff source memory with. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl28batch_normalization_backward14primitive_desc13diff_dst_descEv">
 <span id="_CPPv3NK4dnnl28batch_normalization_backward14primitive_desc13diff_dst_descEv"></span><span id="_CPPv2NK4dnnl28batch_normalization_backward14primitive_desc13diff_dst_descEv"></span><span id="dnnl::batch_normalization_backward::primitive_desc::diff_dst_descC"></span><span class="target" id="structdnnl_1_1batch__normalization__backward_1_1primitive__desc_1ad03474044a0dbaf76019ca5d61c95346"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">diff_dst_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl28batch_normalization_backward14primitive_desc13diff_dst_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a diff destination memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Diff destination memory descriptor. </p>
+<dd><p>Returns a diff destination memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Diff destination memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a diff destination parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a diff destination parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl28batch_normalization_backward14primitive_desc17diff_weights_descEv">
 <span id="_CPPv3NK4dnnl28batch_normalization_backward14primitive_desc17diff_weights_descEv"></span><span id="_CPPv2NK4dnnl28batch_normalization_backward14primitive_desc17diff_weights_descEv"></span><span id="dnnl::batch_normalization_backward::primitive_desc::diff_weights_descC"></span><span class="target" id="structdnnl_1_1batch__normalization__backward_1_1primitive__desc_1ada439dfc183dfc84d86474c3de542cae"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">diff_weights_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl28batch_normalization_backward14primitive_desc17diff_weights_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a diff weights memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Diff weights memory descriptor. </p>
+<dd><p>Returns a diff weights memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Diff weights memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a diff weights parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a diff weights parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl28batch_normalization_backward14primitive_desc9mean_descEv">
 <span id="_CPPv3NK4dnnl28batch_normalization_backward14primitive_desc9mean_descEv"></span><span id="_CPPv2NK4dnnl28batch_normalization_backward14primitive_desc9mean_descEv"></span><span id="dnnl::batch_normalization_backward::primitive_desc::mean_descC"></span><span class="target" id="structdnnl_1_1batch__normalization__backward_1_1primitive__desc_1ae16d35998de069d54e0ce7391654d6db"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">mean_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl28batch_normalization_backward14primitive_desc9mean_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns memory descriptor for mean. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Memory descriptor for mean. </p>
+<dd><p>Returns memory descriptor for mean. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Memory descriptor for mean. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl28batch_normalization_backward14primitive_desc13variance_descEv">
 <span id="_CPPv3NK4dnnl28batch_normalization_backward14primitive_desc13variance_descEv"></span><span id="_CPPv2NK4dnnl28batch_normalization_backward14primitive_desc13variance_descEv"></span><span id="dnnl::batch_normalization_backward::primitive_desc::variance_descC"></span><span class="target" id="structdnnl_1_1batch__normalization__backward_1_1primitive__desc_1aa8585406f7445e214698e7f6e629acc9"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">variance_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl28batch_normalization_backward14primitive_desc13variance_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns memory descriptor for variance. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Memory descriptor for variance. </p>
+<dd><p>Returns memory descriptor for variance. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Memory descriptor for variance. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl28batch_normalization_backward14primitive_desc14workspace_descEv">
 <span id="_CPPv3NK4dnnl28batch_normalization_backward14primitive_desc14workspace_descEv"></span><span id="_CPPv2NK4dnnl28batch_normalization_backward14primitive_desc14workspace_descEv"></span><span id="dnnl::batch_normalization_backward::primitive_desc::workspace_descC"></span><span class="target" id="structdnnl_1_1batch__normalization__backward_1_1primitive__desc_1a915a39691088ddec35bb160094b293a6"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">workspace_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl28batch_normalization_backward14primitive_desc14workspace_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the workspace memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Workspace memory descriptor. </p>
+<dd><p>Returns the workspace memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Workspace memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not require workspace parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not require workspace parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -5342,8 +5367,8 @@ Hence, one should use the <a class="reference internal" href="general.html#_CPPv
 
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

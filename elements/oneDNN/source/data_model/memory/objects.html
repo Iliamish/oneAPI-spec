@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Memory Descriptors and Objects &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4604,9 +4603,9 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="memory-descriptors-and-objects">
+  <div class="section" id="memory-descriptors-and-objects">
 <h1>Memory Descriptors and Objects<a class="headerlink" href="#memory-descriptors-and-objects" title="Permalink to this headline">¶</a></h1>
-<section id="descriptors">
+<div class="section" id="descriptors">
 <h2>Descriptors<a class="headerlink" href="#descriptors" title="Permalink to this headline">¶</a></h2>
 <p>Memory descriptor is an engine-agnostic logical description of data (number of
 dimensions, dimension sizes, and data type), and, optionally, the information
@@ -4659,52 +4658,58 @@ is no clear definition on what the output values should be.</p></li>
 <dt id="_CPPv4N4dnnl6memory4desc4descERK4dims9data_type10format_tagb">
 <span id="_CPPv3N4dnnl6memory4desc4descERK4dims9data_type10format_tagb"></span><span id="_CPPv2N4dnnl6memory4desc4descERK4dims9data_type10format_tagb"></span><span id="dnnl::memory::desc::desc__dimsCR.data_type.format_tag.b"></span><span class="target" id="structdnnl_1_1memory_1_1desc_1a03f068d5a2e5b2d043d2f203717a0ceb"></span><code class="sig-name descname"><span class="pre">desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4NK4dnnl6memory4desc4dimsEv" title="dnnl::memory::desc::dims"><span class="pre">dims</span></a> <span class="pre">&amp;</span><em><span class="pre">adims</span></em>, <a class="reference internal" href="#_CPPv4NK4dnnl6memory4desc9data_typeEv" title="dnnl::memory::desc::data_type"><span class="pre">data_type</span></a> <em><span class="pre">adata_type</span></em>, <a class="reference internal" href="formats.html#_CPPv4N4dnnl6memory10format_tagE" title="dnnl::memory::format_tag"><span class="pre">format_tag</span></a> <em><span class="pre">aformat_tag</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl6memory4desc4descERK4dims9data_type10format_tagb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a memory descriptor.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>The logical order of dimensions corresponds to the <code class="docutils literal notranslate"><span class="pre">abc...</span></code> format tag, and the physical meaning of the dimensions depends both on the primitive that would operate on this memory and the operation context.</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adims</span></code>: Tensor dimensions. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">adata_type</span></code>: Data precision/type. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aformat_tag</span></code>: Memory format tag. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case a zero memory descriptor will be constructed. This flag is optional and defaults to false. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The logical order of dimensions corresponds to the <code class="docutils literal notranslate"><span class="pre">abc...</span></code> format tag, and the physical meaning of the dimensions depends both on the primitive that would operate on this memory and the operation context.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adims</strong> – Tensor dimensions. </p></li>
+<li><p><strong>adata_type</strong> – Data precision/type. </p></li>
+<li><p><strong>aformat_tag</strong> – Memory format tag. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case a zero memory descriptor will be constructed. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl6memory4desc4descERK4dims9data_typeRK4dimsb">
 <span id="_CPPv3N4dnnl6memory4desc4descERK4dims9data_typeRK4dimsb"></span><span id="_CPPv2N4dnnl6memory4desc4descERK4dims9data_typeRK4dimsb"></span><span id="dnnl::memory::desc::desc__dimsCR.data_type.dimsCR.b"></span><span class="target" id="structdnnl_1_1memory_1_1desc_1ac0471538db2d230492a07356929c859c"></span><code class="sig-name descname"><span class="pre">desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4NK4dnnl6memory4desc4dimsEv" title="dnnl::memory::desc::dims"><span class="pre">dims</span></a> <span class="pre">&amp;</span><em><span class="pre">adims</span></em>, <a class="reference internal" href="#_CPPv4NK4dnnl6memory4desc9data_typeEv" title="dnnl::memory::desc::data_type"><span class="pre">data_type</span></a> <em><span class="pre">adata_type</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4NK4dnnl6memory4desc4dimsEv" title="dnnl::memory::desc::dims"><span class="pre">dims</span></a> <span class="pre">&amp;</span><em><span class="pre">strides</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl6memory4desc4descERK4dims9data_typeRK4dimsb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a memory descriptor by strides.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>The logical order of dimensions corresponds to the <code class="docutils literal notranslate"><span class="pre">abc...</span></code> format tag, and the physical meaning of the dimensions depends both on the primitive that would operate on this memory and the operation context.</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adims</span></code>: Tensor dimensions. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">adata_type</span></code>: Data precision/type. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">strides</span></code>: Strides for each dimension. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case a zero memory descriptor will be constructed. This flag is optional and defaults to false. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The logical order of dimensions corresponds to the <code class="docutils literal notranslate"><span class="pre">abc...</span></code> format tag, and the physical meaning of the dimensions depends both on the primitive that would operate on this memory and the operation context.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adims</strong> – Tensor dimensions. </p></li>
+<li><p><strong>adata_type</strong> – Data precision/type. </p></li>
+<li><p><strong>strides</strong> – Strides for each dimension. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case a zero memory descriptor will be constructed. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl6memory4desc14submemory_descERK4dimsRK4dimsb">
 <span id="_CPPv3NK4dnnl6memory4desc14submemory_descERK4dimsRK4dimsb"></span><span id="_CPPv2NK4dnnl6memory4desc14submemory_descERK4dimsRK4dimsb"></span><span id="dnnl::memory::desc::submemory_desc__dimsCR.dimsCR.bC"></span><span class="target" id="structdnnl_1_1memory_1_1desc_1a7de2abef3b34e94c5dfa16e1fc3f3aab"></span><a class="reference internal" href="#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">submemory_desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4NK4dnnl6memory4desc4dimsEv" title="dnnl::memory::desc::dims"><span class="pre">dims</span></a> <span class="pre">&amp;</span><em><span class="pre">adims</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4NK4dnnl6memory4desc4dimsEv" title="dnnl::memory::desc::dims"><span class="pre">dims</span></a> <span class="pre">&amp;</span><em><span class="pre">offsets</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl6memory4desc14submemory_descERK4dimsRK4dimsb" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Constructs a memory descriptor for a region inside an area described by this memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>A memory descriptor for the region. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adims</span></code>: Sizes of the region. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">offsets</span></code>: Offsets to the region from the encompassing memory object in each dimension. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case a zero memory descriptor will be returned. This flag is optional and defaults to false. </p></li>
+<dd><p>Constructs a memory descriptor for a region inside an area described by this memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adims</strong> – Sizes of the region. </p></li>
+<li><p><strong>offsets</strong> – Offsets to the region from the encompassing memory object in each dimension. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case a zero memory descriptor will be returned. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A memory descriptor for the region. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -4723,18 +4728,21 @@ is no clear definition on what the output values should be.</p></li>
 </p></li>
 </ol>
 </p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Reshape may fail for optimized memory formats.</p>
-</dd>
-<dt><strong>Return</strong></dt><dd><p>A new memory descriptor with new dimensions. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adims</span></code>: New dimensions. The product of dimensions must remain constant. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case a zero memory descriptor will be returned. This flag is optional and defaults to false. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Reshape may fail for optimized memory formats.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adims</strong> – New dimensions. The product of dimensions must remain constant. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case a zero memory descriptor will be returned. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new memory descriptor with new dimensions. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -4758,92 +4766,97 @@ is no clear definition on what the output values should be.</p></li>
 </pre></div>
 </div>
 </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>A new memory descriptor with new dimensions. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">permutation</span></code>: Axes permutation. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case a zero memory descriptor will be returned. This flag is optional and defaults to false. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>permutation</strong> – Axes permutation. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case a zero memory descriptor will be returned. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new memory descriptor with new dimensions. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl6memory4desc4dimsEv">
 <span id="_CPPv3NK4dnnl6memory4desc4dimsEv"></span><span id="_CPPv2NK4dnnl6memory4desc4dimsEv"></span><span id="dnnl::memory::desc::dimsC"></span><span class="target" id="structdnnl_1_1memory_1_1desc_1aaf95c174b7d7f5ea59646886719d0a2b"></span><a class="reference internal" href="#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="index.html#_CPPv4N4dnnl6memory4dimsE" title="dnnl::memory::dims"><span class="pre">dims</span></a> <code class="sig-name descname"><span class="pre">dims</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl6memory4desc4dimsEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns dimensions of the memory descriptor.</p>
-<p>Potentially expensive due to the data copy involved. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>A copy of the dimensions vector. </p>
+<p>Potentially expensive due to the data copy involved. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A copy of the dimensions vector. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl6memory4desc9data_typeEv">
 <span id="_CPPv3NK4dnnl6memory4desc9data_typeEv"></span><span id="_CPPv2NK4dnnl6memory4desc9data_typeEv"></span><span id="dnnl::memory::desc::data_typeC"></span><span class="target" id="structdnnl_1_1memory_1_1desc_1ab3cb5e5f28d660a0105eb7580e5ab213"></span><a class="reference internal" href="#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_types/index.html#_CPPv4N4dnnl6memory9data_typeE" title="dnnl::memory::data_type"><span class="pre">data_type</span></a> <code class="sig-name descname"><span class="pre">data_type</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl6memory4desc9data_typeEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the data type of the memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>The data type. </p>
+<dd><p>Returns the data type of the memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The data type. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl6memory4desc8get_sizeEv">
 <span id="_CPPv3NK4dnnl6memory4desc8get_sizeEv"></span><span id="_CPPv2NK4dnnl6memory4desc8get_sizeEv"></span><span id="dnnl::memory::desc::get_sizeC"></span><span class="target" id="structdnnl_1_1memory_1_1desc_1ac20108bc192912382aa4a95ae27df804"></span><span class="pre">size_t</span> <code class="sig-name descname"><span class="pre">get_size</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl6memory4desc8get_sizeEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns size of the memory descriptor in bytes. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>The number of bytes required to allocate a memory buffer for the memory object described by this memory descriptor. </p>
+<dd><p>Returns size of the memory descriptor in bytes. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The number of bytes required to allocate a memory buffer for the memory object described by this memory descriptor. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl6memory4desc7is_zeroEv">
 <span id="_CPPv3NK4dnnl6memory4desc7is_zeroEv"></span><span id="_CPPv2NK4dnnl6memory4desc7is_zeroEv"></span><span id="dnnl::memory::desc::is_zeroC"></span><span class="target" id="structdnnl_1_1memory_1_1desc_1aa162a1ba5621a799c8a909c726f021a2"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">is_zero</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl6memory4desc7is_zeroEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Checks whether the memory descriptor is zero (empty). <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">true</span></code> if the memory descriptor describes an empty memory and <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise. </p>
+<dd><p>Checks whether the memory descriptor is zero (empty). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">true</span></code> if the memory descriptor describes an empty memory and <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl6memory4desceqERK4desc">
 <span id="_CPPv3NK4dnnl6memory4desceqERK4desc"></span><span id="_CPPv2NK4dnnl6memory4desceqERK4desc"></span><span id="dnnl::memory::desc::eq-operator__descCRC"></span><span class="target" id="structdnnl_1_1memory_1_1desc_1a9d623dab6f8a8ebc34b0da95814e3728"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">operator==</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">other</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl6memory4desceqERK4desc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>An equality operator. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Whether this and the other memory descriptors have the same format tag, dimensions, strides, etc. </p>
+<dd><p>An equality operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> – Another memory descriptor. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: Another memory descriptor. </p></li>
-</ul>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Whether this and the other memory descriptors have the same format tag, dimensions, strides, etc. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl6memory4descneERK4desc">
 <span id="_CPPv3NK4dnnl6memory4descneERK4desc"></span><span id="_CPPv2NK4dnnl6memory4descneERK4desc"></span><span id="dnnl::memory::desc::neq-operator__descCRC"></span><span class="target" id="structdnnl_1_1memory_1_1desc_1a5a1bc8d3b88a2c304fd9535ea45fbb72"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">operator!=</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">other</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl6memory4descneERK4desc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>An inequality operator. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Whether this and the other memory descriptors describe different memory. </p>
+<dd><p>An inequality operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> – Another memory descriptor. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: Another memory descriptor. </p></li>
-</ul>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Whether this and the other memory descriptors describe different memory. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
 </dd></dl>
 
-</section>
-<section id="objects">
+</div>
+<div class="section" id="objects">
 <h2>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h2>
 <p>Memory objects combine memory descriptors with storage for data (a data handle).
 With USM, the data handle is simply a pointer to <code class="docutils literal notranslate"><span class="pre">void</span></code>. The data handle can
@@ -4852,8 +4865,8 @@ be queried using <a class="reference internal" href="#_CPPv4NK4dnnl6memory15get_
 using <a class="reference internal" href="#_CPPv4I0_iEN4dnnl12sycl_interop10get_bufferEN2cl4sycl6bufferI1T5ndimsEERK6memory" title="dnnl::sycl_interop::get_buffer"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::sycl_interop::get_buffer()</span></code></a> and set using <a class="reference internal" href="#_CPPv4I0_iEN4dnnl12sycl_interop10set_bufferEvR6memoryN2cl4sycl6bufferI1T5ndimsEE" title="dnnl::sycl_interop::set_buffer"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::sycl_interop::set_buffer()</span></code></a>. In
 addition, the memory descriptor and the engine underlying a memory object can
 be queried using <a class="reference internal" href="#_CPPv4NK4dnnl6memory8get_descEv" title="dnnl::memory::get_desc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::memory::get_desc()</span></code></a> and <a class="reference internal" href="#_CPPv4NK4dnnl6memory10get_engineEv" title="dnnl::memory::get_engine"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::memory::get_engine()</span></code></a> respectively.</p>
-</section>
-<section id="api">
+</div>
+<div class="section" id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp struct">
 <dt id="_CPPv4N4dnnl6memoryE">
@@ -4877,10 +4890,14 @@ be queried using <a class="reference internal" href="#_CPPv4NK4dnnl6memory8get_d
 <p><dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#structdnnl_1_1memory_1a85e09cd887ce741cfde662aba28919e4"><span class="std std-ref">memory::set_data_handle()</span></a></p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">md</span></code>: Memory descriptor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to store the data on. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">handle</span></code>: Handle of the memory buffer to use.<ul>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>md</strong> – Memory descriptor. </p></li>
+<li><p><strong>aengine</strong> – Engine to store the data on. </p></li>
+<li><p><strong>handle</strong> – Handle of the memory buffer to use.<ul>
 <li><p>A pointer to the user-allocated buffer. In this case the library doesn’t own the buffer.</p></li>
 <li><p>The <a class="reference internal" href="#dnnl__types_8h_1af19cbfbf1f0a9508283f2a25561ae0e4"><span class="std std-ref">DNNL_MEMORY_ALLOCATE</span></a> special value. Instructs the library to allocate the buffer for the memory object. In this case the library owns the buffer and the memory allocation kind of the underlying buffer is <a class="reference internal" href="#namespacednnl_1_1sycl__interop_1a9c7def46b2c0556f56e2f0aab5fbffeba81e61a0cab904f0e620dd3226f7f6582"><span class="std std-ref">dnnl::sycl_interop::memory_kind::usm</span></a>.</p></li>
 <li><p><a class="reference internal" href="#dnnl__types_8h_1a96c8752fb3cb4f01cf64bf56190b1343"><span class="std std-ref">DNNL_MEMORY_NONE</span></a> to create <a class="reference internal" href="#structdnnl_1_1memory"><span class="std std-ref">dnnl::memory</span></a> without an underlying buffer. </p></li>
@@ -4889,7 +4906,6 @@ be queried using <a class="reference internal" href="#_CPPv4NK4dnnl6memory8get_d
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -4897,14 +4913,14 @@ be queried using <a class="reference internal" href="#_CPPv4NK4dnnl6memory8get_d
 <span id="_CPPv3N4dnnl6memory6memoryERK4descRK6engine"></span><span id="_CPPv2N4dnnl6memory6memoryERK4descRK6engine"></span><span id="dnnl::memory::memory__descCR.engineCR"></span><span class="target" id="structdnnl_1_1memory_1ab0892880e22c2cced48c44f405ced029"></span><code class="sig-name descname"><span class="pre">memory</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">md</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl6memory6memoryERK4descRK6engine" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a memory object.</p>
 <p>The underlying buffer for the memory will be allocated by the library. The memory allocation kind of the underlying buffer is <a class="reference internal" href="#namespacednnl_1_1sycl__interop_1a9c7def46b2c0556f56e2f0aab5fbffeba81e61a0cab904f0e620dd3226f7f6582"><span class="std std-ref">dnnl::sycl_interop::memory_kind::usm</span></a>.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">md</span></code>: Memory descriptor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to store the data on. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>md</strong> – Memory descriptor. </p></li>
+<li><p><strong>aengine</strong> – Engine to store the data on. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -4931,16 +4947,18 @@ be queried using <a class="reference internal" href="#_CPPv4NK4dnnl6memory8get_d
 <span id="_CPPv3NK4dnnl6memory15set_data_handleEPvRK6stream"></span><span id="_CPPv2NK4dnnl6memory15set_data_handleEPvRK6stream"></span><span id="dnnl::memory::set_data_handle__voidP.streamCRC"></span><span class="target" id="structdnnl_1_1memory_1a85e09cd887ce741cfde662aba28919e4"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">set_data_handle</span></code><span class="sig-paren">(</span><span class="pre">void</span> <span class="pre">*</span><em><span class="pre">handle</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../../execution_model/index.html#_CPPv4N4dnnl6streamE" title="dnnl::stream"><span class="pre">stream</span></a> <span class="pre">&amp;</span><em><span class="pre">astream</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl6memory15set_data_handleEPvRK6stream" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the underlying memory buffer.</p>
 <p>This function may write zero values to the memory specified by the <code class="docutils literal notranslate"><span class="pre">handle</span></code> if the memory object has a zero padding area. This may be time consuming and happens each time this function is called. The operation is always blocking and the stream parameter is a hint.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Even when the memory object is used to hold values that stay constant during the execution of the program (pre-packed weights during inference, for example), the function will still write zeroes to the padding area if it exists. Hence, the <code class="docutils literal notranslate"><span class="pre">handle</span></code> parameter cannot and does not have a const qualifier.</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">handle</span></code>: Memory buffer to use. On the CPU engine or when USM is used, the memory buffer is a pointer to the actual data. It must have at least <a class="reference internal" href="#structdnnl_1_1memory_1_1desc_1ac20108bc192912382aa4a95ae27df804"><span class="std std-ref">dnnl::memory::desc::get_size()</span></a> bytes allocated. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">astream</span></code>: Stream to use to execute padding in. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Even when the memory object is used to hold values that stay constant during the execution of the program (pre-packed weights during inference, for example), the function will still write zeroes to the padding area if it exists. Hence, the <code class="docutils literal notranslate"><span class="pre">handle</span></code> parameter cannot and does not have a const qualifier.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>handle</strong> – Memory buffer to use. On the CPU engine or when USM is used, the memory buffer is a pointer to the actual data. It must have at least <a class="reference internal" href="#structdnnl_1_1memory_1_1desc_1ac20108bc192912382aa4a95ae27df804"><span class="std std-ref">dnnl::memory::desc::get_size()</span></a> bytes allocated. </p></li>
+<li><p><strong>astream</strong> – Stream to use to execute padding in. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -4948,13 +4966,11 @@ be queried using <a class="reference internal" href="#_CPPv4NK4dnnl6memory8get_d
 <span id="_CPPv3NK4dnnl6memory15set_data_handleEPv"></span><span id="_CPPv2NK4dnnl6memory15set_data_handleEPv"></span><span id="dnnl::memory::set_data_handle__voidPC"></span><span class="target" id="structdnnl_1_1memory_1ab0ca87db309b17d747ec8e0d3adcdd15"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">set_data_handle</span></code><span class="sig-paren">(</span><span class="pre">void</span> <span class="pre">*</span><em><span class="pre">handle</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl6memory15set_data_handleEPv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the underlying memory buffer.</p>
 <p>See documentation for <a class="reference internal" href="#structdnnl_1_1memory_1a85e09cd887ce741cfde662aba28919e4"><span class="std std-ref">dnnl::memory::set_data_handle(void *, const stream &amp;) const</span></a> for more information.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">handle</span></code>: Memory buffer to use. For the CPU engine, the memory buffer is a pointer to the actual data. It must have at least <a class="reference internal" href="#structdnnl_1_1memory_1_1desc_1ac20108bc192912382aa4a95ae27df804"><span class="std std-ref">dnnl::memory::desc::get_size()</span></a> bytes allocated. </p></li>
-</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>handle</strong> – Memory buffer to use. For the CPU engine, the memory buffer is a pointer to the actual data. It must have at least <a class="reference internal" href="#structdnnl_1_1memory_1_1desc_1ac20108bc192912382aa4a95ae27df804"><span class="std std-ref">dnnl::memory::desc::get_size()</span></a> bytes allocated. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -4963,34 +4979,37 @@ be queried using <a class="reference internal" href="#_CPPv4NK4dnnl6memory8get_d
 <dd><p>Maps a memory object and returns a host-side pointer to a memory buffer with a copy of its contents.</p>
 <p>Mapping enables read/write directly from/to the memory contents for engines that do not support direct memory access.</p>
 <p>Mapping is an exclusive operation - a memory object cannot be used in other operations until it is unmapped via <a class="reference internal" href="#structdnnl_1_1memory_1a0472a5894892a6cdbc0a4b01f66b2285"><span class="std std-ref">dnnl::memory::unmap_data()</span></a> call.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Any primitives working with the memory should be completed before the memory is mapped. Use <a class="reference internal" href="../../execution_model/index.html#structdnnl_1_1stream_1a59985fa8746436057cf51a820ef8929c"><span class="std std-ref">dnnl::stream::wait()</span></a> to synchronize the corresponding execution stream.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Any primitives working with the memory should be completed before the memory is mapped. Use <a class="reference internal" href="../../execution_model/index.html#structdnnl_1_1stream_1a59985fa8746436057cf51a820ef8929c"><span class="std std-ref">dnnl::stream::wait()</span></a> to synchronize the corresponding execution stream.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The map_data and unmap_data functions are provided mainly for debug and testing purposes and their performance may be suboptimal.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters</dt>
+<dd class="field-odd"><p><strong>T</strong> – Data type to return a pointer to. </p>
 </dd>
-<dt><strong>Note</strong></dt><dd><p>The map_data and unmap_data functions are provided mainly for debug and testing purposes and their performance may be suboptimal.</p>
-</dd>
-<dt><strong>Return</strong></dt><dd><p>Pointer to the mapped memory. </p>
-</dd>
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: Data type to return a pointer to. </p></li>
-</ul>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pointer to the mapped memory. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl6memory10unmap_dataEPv">
 <span id="_CPPv3NK4dnnl6memory10unmap_dataEPv"></span><span id="_CPPv2NK4dnnl6memory10unmap_dataEPv"></span><span id="dnnl::memory::unmap_data__voidPC"></span><span class="target" id="structdnnl_1_1memory_1a0472a5894892a6cdbc0a4b01f66b2285"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">unmap_data</span></code><span class="sig-paren">(</span><span class="pre">void</span> <span class="pre">*</span><em><span class="pre">mapped_ptr</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl6memory10unmap_dataEPv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Unmaps a memory object and writes back any changes made to the previously mapped memory buffer.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>The map_data and unmap_data functions are provided mainly for debug and testing purposes and their performance may be suboptimal.</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">mapped_ptr</span></code>: A pointer previously returned by <a class="reference internal" href="#structdnnl_1_1memory_1a29e3bef532289619be100d07fb04e3f0"><span class="std std-ref">dnnl::memory::map_data()</span></a>. </p></li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The map_data and unmap_data functions are provided mainly for debug and testing purposes and their performance may be suboptimal.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mapped_ptr</strong> – A pointer previously returned by <a class="reference internal" href="#structdnnl_1_1memory_1a29e3bef532289619be100d07fb04e3f0"><span class="std std-ref">dnnl::memory::map_data()</span></a>. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -5019,166 +5038,185 @@ be queried using <a class="reference internal" href="#_CPPv4NK4dnnl6memory8get_d
 <dt id="_CPPv4N4dnnl12sycl_interop11make_memoryERKN6memory4descERK6engine11memory_kindPv">
 <span id="_CPPv3N4dnnl12sycl_interop11make_memoryERKN6memory4descERK6engine11memory_kindPv"></span><span id="_CPPv2N4dnnl12sycl_interop11make_memoryERKN6memory4descERK6engine11memory_kindPv"></span><span id="dnnl::sycl_interop::make_memory__memory::descCR.engineCR.memory_kind.voidP"></span><span class="target" id="group__dnnl__sycl__interop__api__memory_1gafad181f13cb45788254d421d5f15e408"></span><a class="reference internal" href="#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a> <code class="sig-prename descclassname"><span class="pre">dnnl</span><span class="pre">::</span><span class="pre">sycl_interop</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">make_memory</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em>, <a class="reference internal" href="#_CPPv4N4dnnl12sycl_interop11memory_kindE" title="dnnl::sycl_interop::memory_kind"><span class="pre">memory_kind</span></a> <em><span class="pre">akind</span></em>, <span class="pre">void</span> <span class="pre">*</span><em><span class="pre">ahandle</span></em> <span class="pre">=</span> <span class="pre">DNNL_MEMORY_ALLOCATE</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl12sycl_interop11make_memoryERKN6memory4descERK6engine11memory_kindPv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Creates a memory object of a specified description and of a specified memory allocation kind, for a specified engine.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">akind</span></code> is <a class="reference internal" href="#namespacednnl_1_1sycl__interop_1a9c7def46b2c0556f56e2f0aab5fbffeba7f2db423a49b305459147332fb01cf87"><span class="std std-ref">dnnl::sycl_interop::memory_kind::buffer</span></a>, and <code class="docutils literal notranslate"><span class="pre">ahandle</span></code> is not <a class="reference internal" href="#dnnl__types_8h_1af19cbfbf1f0a9508283f2a25561ae0e4"><span class="std std-ref">DNNL_MEMORY_ALLOCATE</span></a> or <a class="reference internal" href="#dnnl__types_8h_1a96c8752fb3cb4f01cf64bf56190b1343"><span class="std std-ref">DNNL_MEMORY_NONE</span></a>, an exception is thrown.</p>
-</dd>
-<dt><strong>Return</strong></dt><dd><p>Memory object described by <code class="docutils literal notranslate"><span class="pre">adesc</span></code> memory descriptor, which has <code class="docutils literal notranslate"><span class="pre">akind</span></code> memory allocation kind, and is attached to the <code class="docutils literal notranslate"><span class="pre">aengine</span></code> engine. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Memory descriptor that describes the data. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to store the data on. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">akind</span></code>: Memory allocation kind. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ahandle</span></code>: Handle of the memory data to use. This parameter is optional. By default, the underlying memory buffer is allocated internally, its memory allocation kind is <a class="reference internal" href="#namespacednnl_1_1sycl__interop_1a9c7def46b2c0556f56e2f0aab5fbffeba81e61a0cab904f0e620dd3226f7f6582"><span class="std std-ref">dnnl::sycl_interop::memory_kind::usm</span></a>, and the library owns the buffer. If <code class="docutils literal notranslate"><span class="pre">handle</span></code> is provided, the library does not own the buffer.</p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">akind</span></code> is <a class="reference internal" href="#namespacednnl_1_1sycl__interop_1a9c7def46b2c0556f56e2f0aab5fbffeba7f2db423a49b305459147332fb01cf87"><span class="std std-ref">dnnl::sycl_interop::memory_kind::buffer</span></a>, and <code class="docutils literal notranslate"><span class="pre">ahandle</span></code> is not <a class="reference internal" href="#dnnl__types_8h_1af19cbfbf1f0a9508283f2a25561ae0e4"><span class="std std-ref">DNNL_MEMORY_ALLOCATE</span></a> or <a class="reference internal" href="#dnnl__types_8h_1a96c8752fb3cb4f01cf64bf56190b1343"><span class="std std-ref">DNNL_MEMORY_NONE</span></a>, an exception is thrown.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adesc</strong> – Memory descriptor that describes the data. </p></li>
+<li><p><strong>aengine</strong> – Engine to store the data on. </p></li>
+<li><p><strong>akind</strong> – Memory allocation kind. </p></li>
+<li><p><strong>ahandle</strong> – Handle of the memory data to use. This parameter is optional. By default, the underlying memory buffer is allocated internally, its memory allocation kind is <a class="reference internal" href="#namespacednnl_1_1sycl__interop_1a9c7def46b2c0556f56e2f0aab5fbffeba81e61a0cab904f0e620dd3226f7f6582"><span class="std std-ref">dnnl::sycl_interop::memory_kind::usm</span></a>, and the library owns the buffer. If <code class="docutils literal notranslate"><span class="pre">handle</span></code> is provided, the library does not own the buffer.</p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Memory object described by <code class="docutils literal notranslate"><span class="pre">adesc</span></code> memory descriptor, which has <code class="docutils literal notranslate"><span class="pre">akind</span></code> memory allocation kind, and is attached to the <code class="docutils literal notranslate"><span class="pre">aengine</span></code> engine. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl12sycl_interop11make_memoryERKN6memory4descERK6stream11memory_kindPv">
 <span id="_CPPv3N4dnnl12sycl_interop11make_memoryERKN6memory4descERK6stream11memory_kindPv"></span><span id="_CPPv2N4dnnl12sycl_interop11make_memoryERKN6memory4descERK6stream11memory_kindPv"></span><span id="dnnl::sycl_interop::make_memory__memory::descCR.streamCR.memory_kind.voidP"></span><span class="target" id="group__dnnl__sycl__interop__api__memory_1gacb4fd077df77b7493d62cf12d6542eba"></span><a class="reference internal" href="#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a> <code class="sig-prename descclassname"><span class="pre">dnnl</span><span class="pre">::</span><span class="pre">sycl_interop</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">make_memory</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../../execution_model/index.html#_CPPv4N4dnnl6streamE" title="dnnl::stream"><span class="pre">stream</span></a> <span class="pre">&amp;</span><em><span class="pre">astream</span></em>, <a class="reference internal" href="#_CPPv4N4dnnl12sycl_interop11memory_kindE" title="dnnl::sycl_interop::memory_kind"><span class="pre">memory_kind</span></a> <em><span class="pre">akind</span></em>, <span class="pre">void</span> <span class="pre">*</span><em><span class="pre">ahandle</span></em> <span class="pre">=</span> <span class="pre">DNNL_MEMORY_ALLOCATE</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl12sycl_interop11make_memoryERKN6memory4descERK6stream11memory_kindPv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Creates a memory object of a specified description and of a specified memory allocation kind, for a specified stream.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">akind</span></code> is <a class="reference internal" href="#namespacednnl_1_1sycl__interop_1a9c7def46b2c0556f56e2f0aab5fbffeba7f2db423a49b305459147332fb01cf87"><span class="std std-ref">dnnl::sycl_interop::memory_kind::buffer</span></a>, and <code class="docutils literal notranslate"><span class="pre">ahandle</span></code> is not <a class="reference internal" href="#dnnl__types_8h_1af19cbfbf1f0a9508283f2a25561ae0e4"><span class="std std-ref">DNNL_MEMORY_ALLOCATE</span></a> or <a class="reference internal" href="#dnnl__types_8h_1a96c8752fb3cb4f01cf64bf56190b1343"><span class="std std-ref">DNNL_MEMORY_NONE</span></a>, an exception is thrown.</p>
-</dd>
-<dt><strong>Return</strong></dt><dd><p>Memory object described by <code class="docutils literal notranslate"><span class="pre">adesc</span></code> memory descriptor, which has <code class="docutils literal notranslate"><span class="pre">akind</span></code> memory allocation kind, and used withing the <code class="docutils literal notranslate"><span class="pre">astream</span></code> stream. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Memory descriptor that describes the data. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">astream</span></code>: Stream object where the data is used. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">akind</span></code>: Memory allocation kind. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ahandle</span></code>: Handle of the memory data to use. This parameter is optional. By default, the underlying memory buffer is allocated internally, its memory allocation kind is <a class="reference internal" href="#namespacednnl_1_1sycl__interop_1a9c7def46b2c0556f56e2f0aab5fbffeba81e61a0cab904f0e620dd3226f7f6582"><span class="std std-ref">dnnl::sycl_interop::memory_kind::usm</span></a>, and the library owns the buffer. If <code class="docutils literal notranslate"><span class="pre">handle</span></code> is provided, the library does not own the buffer.</p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">akind</span></code> is <a class="reference internal" href="#namespacednnl_1_1sycl__interop_1a9c7def46b2c0556f56e2f0aab5fbffeba7f2db423a49b305459147332fb01cf87"><span class="std std-ref">dnnl::sycl_interop::memory_kind::buffer</span></a>, and <code class="docutils literal notranslate"><span class="pre">ahandle</span></code> is not <a class="reference internal" href="#dnnl__types_8h_1af19cbfbf1f0a9508283f2a25561ae0e4"><span class="std std-ref">DNNL_MEMORY_ALLOCATE</span></a> or <a class="reference internal" href="#dnnl__types_8h_1a96c8752fb3cb4f01cf64bf56190b1343"><span class="std std-ref">DNNL_MEMORY_NONE</span></a>, an exception is thrown.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adesc</strong> – Memory descriptor that describes the data. </p></li>
+<li><p><strong>astream</strong> – Stream object where the data is used. </p></li>
+<li><p><strong>akind</strong> – Memory allocation kind. </p></li>
+<li><p><strong>ahandle</strong> – Handle of the memory data to use. This parameter is optional. By default, the underlying memory buffer is allocated internally, its memory allocation kind is <a class="reference internal" href="#namespacednnl_1_1sycl__interop_1a9c7def46b2c0556f56e2f0aab5fbffeba81e61a0cab904f0e620dd3226f7f6582"><span class="std std-ref">dnnl::sycl_interop::memory_kind::usm</span></a>, and the library owns the buffer. If <code class="docutils literal notranslate"><span class="pre">handle</span></code> is provided, the library does not own the buffer.</p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Memory object described by <code class="docutils literal notranslate"><span class="pre">adesc</span></code> memory descriptor, which has <code class="docutils literal notranslate"><span class="pre">akind</span></code> memory allocation kind, and used withing the <code class="docutils literal notranslate"><span class="pre">astream</span></code> stream. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4I0_iEN4dnnl12sycl_interop11make_memoryE6memoryRKN6memory4descERK6engineN2cl4sycl6bufferI1T5ndimsEE">
 <span id="_CPPv3I0_iEN4dnnl12sycl_interop11make_memoryERKN6memory4descERK6engineN2cl4sycl6bufferI1T5ndimsEE"></span><span id="_CPPv2I0_iEN4dnnl12sycl_interop11make_memoryERKN6memory4descERK6engineN2cl4sycl6bufferI1T5ndimsEE"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">T</span></code><span class="pre">,</span> <span class="pre">int</span> <code class="sig-name descname"><span class="pre">ndims</span></code><span class="pre">&gt;</span><br /><span class="target" id="group__dnnl__sycl__interop__api__memory_1ga540ec9e39945442c57e862ae3a34280b"></span><a class="reference internal" href="#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a> <code class="sig-prename descclassname"><span class="pre">dnnl</span><span class="pre">::</span><span class="pre">sycl_interop</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">make_memory</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em>, <span class="pre">cl</span><span class="pre">::</span><span class="pre">sycl</span><span class="pre">::</span><span class="pre">buffer</span><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I0_iEN4dnnl12sycl_interop11make_memoryE6memoryRKN6memory4descERK6engineN2cl4sycl6bufferI1T5ndimsEE" title="dnnl::sycl_interop::make_memory::T"><span class="pre">T</span></a><span class="pre">,</span> <a class="reference internal" href="#_CPPv4I0_iEN4dnnl12sycl_interop11make_memoryE6memoryRKN6memory4descERK6engineN2cl4sycl6bufferI1T5ndimsEE" title="dnnl::sycl_interop::make_memory::ndims"><span class="pre">ndims</span></a><span class="pre">&gt;</span> <em><span class="pre">abuffer</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0_iEN4dnnl12sycl_interop11make_memoryE6memoryRKN6memory4descERK6engineN2cl4sycl6bufferI1T5ndimsEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Creates a memory object using a specified SYCL buffer.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>When such memory object is created, it is implied that its memory allocation kind is <a class="reference internal" href="#namespacednnl_1_1sycl__interop_1a9c7def46b2c0556f56e2f0aab5fbffeba7f2db423a49b305459147332fb01cf87"><span class="std std-ref">dnnl::sycl_interop::memory_kind::buffer</span></a>.</p>
-</dd>
-<dt><strong>Return</strong></dt><dd><p>Memory object which holds a <code class="docutils literal notranslate"><span class="pre">abuffer</span></code> SYCL buffer described by the <code class="docutils literal notranslate"><span class="pre">adesc</span></code> memory descriptor and attached to the <code class="docutils literal notranslate"><span class="pre">aengine</span></code> engine. </p>
-</dd>
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: Data type of the specified SYCL buffer. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ndims</span></code>: Number of dimensions of the specified SYCL buffer. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When such memory object is created, it is implied that its memory allocation kind is <a class="reference internal" href="#namespacednnl_1_1sycl__interop_1a9c7def46b2c0556f56e2f0aab5fbffeba7f2db423a49b305459147332fb01cf87"><span class="std std-ref">dnnl::sycl_interop::memory_kind::buffer</span></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> – Data type of the specified SYCL buffer. </p></li>
+<li><p><strong>ndims</strong> – Number of dimensions of the specified SYCL buffer. </p></li>
 </ul>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Memory descriptor that describes the data within the specified buffer. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to store the data on. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">abuffer</span></code>: SYCL buffer. </p></li>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>adesc</strong> – Memory descriptor that describes the data within the specified buffer. </p></li>
+<li><p><strong>aengine</strong> – Engine to store the data on. </p></li>
+<li><p><strong>abuffer</strong> – SYCL buffer. </p></li>
 </ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Memory object which holds a <code class="docutils literal notranslate"><span class="pre">abuffer</span></code> SYCL buffer described by the <code class="docutils literal notranslate"><span class="pre">adesc</span></code> memory descriptor and attached to the <code class="docutils literal notranslate"><span class="pre">aengine</span></code> engine. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4I0_iEN4dnnl12sycl_interop11make_memoryE6memoryRKN6memory4descERK6streamN2cl4sycl6bufferI1T5ndimsEE">
 <span id="_CPPv3I0_iEN4dnnl12sycl_interop11make_memoryERKN6memory4descERK6streamN2cl4sycl6bufferI1T5ndimsEE"></span><span id="_CPPv2I0_iEN4dnnl12sycl_interop11make_memoryERKN6memory4descERK6streamN2cl4sycl6bufferI1T5ndimsEE"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">T</span></code><span class="pre">,</span> <span class="pre">int</span> <code class="sig-name descname"><span class="pre">ndims</span></code><span class="pre">&gt;</span><br /><span class="target" id="group__dnnl__sycl__interop__api__memory_1gac07839723bce50c8adba25dc2f95c1f9"></span><a class="reference internal" href="#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a> <code class="sig-prename descclassname"><span class="pre">dnnl</span><span class="pre">::</span><span class="pre">sycl_interop</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">make_memory</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../../execution_model/index.html#_CPPv4N4dnnl6streamE" title="dnnl::stream"><span class="pre">stream</span></a> <span class="pre">&amp;</span><em><span class="pre">astream</span></em>, <span class="pre">cl</span><span class="pre">::</span><span class="pre">sycl</span><span class="pre">::</span><span class="pre">buffer</span><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I0_iEN4dnnl12sycl_interop11make_memoryE6memoryRKN6memory4descERK6streamN2cl4sycl6bufferI1T5ndimsEE" title="dnnl::sycl_interop::make_memory::T"><span class="pre">T</span></a><span class="pre">,</span> <a class="reference internal" href="#_CPPv4I0_iEN4dnnl12sycl_interop11make_memoryE6memoryRKN6memory4descERK6streamN2cl4sycl6bufferI1T5ndimsEE" title="dnnl::sycl_interop::make_memory::ndims"><span class="pre">ndims</span></a><span class="pre">&gt;</span> <em><span class="pre">abuffer</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0_iEN4dnnl12sycl_interop11make_memoryE6memoryRKN6memory4descERK6streamN2cl4sycl6bufferI1T5ndimsEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Creates a memory object using a specified SYCL buffer.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>When such memory object is created, it is implied that its memory allocation kind is <a class="reference internal" href="#namespacednnl_1_1sycl__interop_1a9c7def46b2c0556f56e2f0aab5fbffeba7f2db423a49b305459147332fb01cf87"><span class="std std-ref">dnnl::sycl_interop::memory_kind::buffer</span></a>.</p>
-</dd>
-<dt><strong>Return</strong></dt><dd><p>Memory object which holds a <code class="docutils literal notranslate"><span class="pre">abuffer</span></code> SYCL buffer described by the <code class="docutils literal notranslate"><span class="pre">adesc</span></code> memory descriptor and used within the <code class="docutils literal notranslate"><span class="pre">astream</span></code> stream. </p>
-</dd>
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: Data type of the specified SYCL buffer. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ndims</span></code>: Number of dimensions of the specified SYCL buffer. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When such memory object is created, it is implied that its memory allocation kind is <a class="reference internal" href="#namespacednnl_1_1sycl__interop_1a9c7def46b2c0556f56e2f0aab5fbffeba7f2db423a49b305459147332fb01cf87"><span class="std std-ref">dnnl::sycl_interop::memory_kind::buffer</span></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> – Data type of the specified SYCL buffer. </p></li>
+<li><p><strong>ndims</strong> – Number of dimensions of the specified SYCL buffer. </p></li>
 </ul>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Memory descriptor that describes the data within the specified buffer. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">astream</span></code>: Stream object where the data is used. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">abuffer</span></code>: SYCL buffer. </p></li>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>adesc</strong> – Memory descriptor that describes the data within the specified buffer. </p></li>
+<li><p><strong>astream</strong> – Stream object where the data is used. </p></li>
+<li><p><strong>abuffer</strong> – SYCL buffer. </p></li>
 </ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Memory object which holds a <code class="docutils literal notranslate"><span class="pre">abuffer</span></code> SYCL buffer described by the <code class="docutils literal notranslate"><span class="pre">adesc</span></code> memory descriptor and used within the <code class="docutils literal notranslate"><span class="pre">astream</span></code> stream. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl12sycl_interop15get_memory_kindERK6memory">
 <span id="_CPPv3N4dnnl12sycl_interop15get_memory_kindERK6memory"></span><span id="_CPPv2N4dnnl12sycl_interop15get_memory_kindERK6memory"></span><span id="dnnl::sycl_interop::get_memory_kind__memoryCR"></span><span class="target" id="group__dnnl__sycl__interop__api__memory_1ga9859fd3ed9a833cc88cb02882051cffb"></span><a class="reference internal" href="#_CPPv4N4dnnl12sycl_interop11memory_kindE" title="dnnl::sycl_interop::memory_kind"><span class="pre">memory_kind</span></a> <code class="sig-prename descclassname"><span class="pre">dnnl</span><span class="pre">::</span><span class="pre">sycl_interop</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">get_memory_kind</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a> <span class="pre">&amp;</span><em><span class="pre">amemory</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl12sycl_interop15get_memory_kindERK6memory" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the memory allocation kind of a specified memory object.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>The memory allocation kind of a memory object could be changed during its lifetime, by setting the USM handle or SYCL buffer of said memory object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The memory allocation kind of a memory object could be changed during its lifetime, by setting the USM handle or SYCL buffer of said memory object.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>amemory</strong> – Memory object. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>Memory allocation kind of the <code class="docutils literal notranslate"><span class="pre">amemory</span></code> memory object. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">amemory</span></code>: Memory object. </p></li>
-</ul>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Memory allocation kind of the <code class="docutils literal notranslate"><span class="pre">amemory</span></code> memory object. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4I0_iEN4dnnl12sycl_interop10set_bufferEvR6memoryN2cl4sycl6bufferI1T5ndimsEE">
 <span id="_CPPv3I0_iEN4dnnl12sycl_interop10set_bufferER6memoryN2cl4sycl6bufferI1T5ndimsEE"></span><span id="_CPPv2I0_iEN4dnnl12sycl_interop10set_bufferER6memoryN2cl4sycl6bufferI1T5ndimsEE"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">T</span></code><span class="pre">,</span> <span class="pre">int</span> <code class="sig-name descname"><span class="pre">ndims</span></code><span class="pre">&gt;</span><br /><span class="target" id="group__dnnl__sycl__interop__api__memory_1ga95fbcf3df9014691905ca7a0515ea5df"></span><span class="pre">void</span> <code class="sig-prename descclassname"><span class="pre">dnnl</span><span class="pre">::</span><span class="pre">sycl_interop</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">set_buffer</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a> <span class="pre">&amp;</span><em><span class="pre">amemory</span></em>, <span class="pre">cl</span><span class="pre">::</span><span class="pre">sycl</span><span class="pre">::</span><span class="pre">buffer</span><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I0_iEN4dnnl12sycl_interop10set_bufferEvR6memoryN2cl4sycl6bufferI1T5ndimsEE" title="dnnl::sycl_interop::set_buffer::T"><span class="pre">T</span></a><span class="pre">,</span> <a class="reference internal" href="#_CPPv4I0_iEN4dnnl12sycl_interop10set_bufferEvR6memoryN2cl4sycl6bufferI1T5ndimsEE" title="dnnl::sycl_interop::set_buffer::ndims"><span class="pre">ndims</span></a><span class="pre">&gt;</span> <em><span class="pre">abuffer</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0_iEN4dnnl12sycl_interop10set_bufferEvR6memoryN2cl4sycl6bufferI1T5ndimsEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the SYCL buffer underlying a specified memory object.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>By setting the SYCL buffer of a memory object its memory allocation kind will be changed to <a class="reference internal" href="#namespacednnl_1_1sycl__interop_1a9c7def46b2c0556f56e2f0aab5fbffeba7f2db423a49b305459147332fb01cf87"><span class="std std-ref">dnnl::sycl_interop::memory_kind::buffer</span></a>.</p>
-</dd>
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: Data type of the specified SYCL buffer. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ndims</span></code>: Number of dimensions of the specified SYCL buffer. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By setting the SYCL buffer of a memory object its memory allocation kind will be changed to <a class="reference internal" href="#namespacednnl_1_1sycl__interop_1a9c7def46b2c0556f56e2f0aab5fbffeba7f2db423a49b305459147332fb01cf87"><span class="std std-ref">dnnl::sycl_interop::memory_kind::buffer</span></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> – Data type of the specified SYCL buffer. </p></li>
+<li><p><strong>ndims</strong> – Number of dimensions of the specified SYCL buffer. </p></li>
 </ul>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">amemory</span></code>: Memory object that will store the <code class="docutils literal notranslate"><span class="pre">abuffer</span></code> SYCL buffer. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">abuffer</span></code>: SYCL buffer to be stored in the <code class="docutils literal notranslate"><span class="pre">amemory</span></code> memory object. </p></li>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>amemory</strong> – Memory object that will store the <code class="docutils literal notranslate"><span class="pre">abuffer</span></code> SYCL buffer. </p></li>
+<li><p><strong>abuffer</strong> – SYCL buffer to be stored in the <code class="docutils literal notranslate"><span class="pre">amemory</span></code> memory object. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4I0_iEN4dnnl12sycl_interop10set_bufferEvR6memoryN2cl4sycl6bufferI1T5ndimsEER6stream">
 <span id="_CPPv3I0_iEN4dnnl12sycl_interop10set_bufferER6memoryN2cl4sycl6bufferI1T5ndimsEER6stream"></span><span id="_CPPv2I0_iEN4dnnl12sycl_interop10set_bufferER6memoryN2cl4sycl6bufferI1T5ndimsEER6stream"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">T</span></code><span class="pre">,</span> <span class="pre">int</span> <code class="sig-name descname"><span class="pre">ndims</span></code><span class="pre">&gt;</span><br /><span class="target" id="group__dnnl__sycl__interop__api__memory_1ga38fdf4a6dde732187a5b25d83a3d66d4"></span><span class="pre">void</span> <code class="sig-prename descclassname"><span class="pre">dnnl</span><span class="pre">::</span><span class="pre">sycl_interop</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">set_buffer</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a> <span class="pre">&amp;</span><em><span class="pre">amemory</span></em>, <span class="pre">cl</span><span class="pre">::</span><span class="pre">sycl</span><span class="pre">::</span><span class="pre">buffer</span><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I0_iEN4dnnl12sycl_interop10set_bufferEvR6memoryN2cl4sycl6bufferI1T5ndimsEER6stream" title="dnnl::sycl_interop::set_buffer::T"><span class="pre">T</span></a><span class="pre">,</span> <a class="reference internal" href="#_CPPv4I0_iEN4dnnl12sycl_interop10set_bufferEvR6memoryN2cl4sycl6bufferI1T5ndimsEER6stream" title="dnnl::sycl_interop::set_buffer::ndims"><span class="pre">ndims</span></a><span class="pre">&gt;</span> <em><span class="pre">abuffer</span></em>, <a class="reference internal" href="../../execution_model/index.html#_CPPv4N4dnnl6streamE" title="dnnl::stream"><span class="pre">stream</span></a> <span class="pre">&amp;</span><em><span class="pre">astream</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0_iEN4dnnl12sycl_interop10set_bufferEvR6memoryN2cl4sycl6bufferI1T5ndimsEER6stream" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the SYCL buffer underlying a specified memory object in a specified stream.</p>
-<p><dl class="simple">
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: Data type of the specified SYCL buffer. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ndims</span></code>: Number of dimensions of the specified SYCL buffer. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> – Data type of the specified SYCL buffer. </p></li>
+<li><p><strong>ndims</strong> – Number of dimensions of the specified SYCL buffer. </p></li>
 </ul>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">amemory</span></code>: Memory object that will store the <code class="docutils literal notranslate"><span class="pre">abuffer</span></code> SYCL buffer. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">abuffer</span></code>: SYCL buffer to be stored in the <code class="docutils literal notranslate"><span class="pre">amemory</span></code> memory object and used in the <code class="docutils literal notranslate"><span class="pre">astream</span></code> stream. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">astream</span></code>: Stream object within which the <code class="docutils literal notranslate"><span class="pre">amemory</span></code> memory object is used. </p></li>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>amemory</strong> – Memory object that will store the <code class="docutils literal notranslate"><span class="pre">abuffer</span></code> SYCL buffer. </p></li>
+<li><p><strong>abuffer</strong> – SYCL buffer to be stored in the <code class="docutils literal notranslate"><span class="pre">amemory</span></code> memory object and used in the <code class="docutils literal notranslate"><span class="pre">astream</span></code> stream. </p></li>
+<li><p><strong>astream</strong> – Stream object within which the <code class="docutils literal notranslate"><span class="pre">amemory</span></code> memory object is used. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4I0_iEN4dnnl12sycl_interop10get_bufferEN2cl4sycl6bufferI1T5ndimsEERK6memory">
 <span id="_CPPv3I0_iEN4dnnl12sycl_interop10get_bufferERK6memory"></span><span id="_CPPv2I0_iEN4dnnl12sycl_interop10get_bufferERK6memory"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">T</span></code><span class="pre">,</span> <span class="pre">int</span> <code class="sig-name descname"><span class="pre">ndims</span></code> <span class="pre">=</span> <span class="pre">1</span><span class="pre">&gt;</span><br /><span class="target" id="group__dnnl__sycl__interop__api__memory_1gaa79e54806e23001f638483f5cd3319b4"></span><span class="pre">cl</span><span class="pre">::</span><span class="pre">sycl</span><span class="pre">::</span><span class="pre">buffer</span><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I0_iEN4dnnl12sycl_interop10get_bufferEN2cl4sycl6bufferI1T5ndimsEERK6memory" title="dnnl::sycl_interop::get_buffer::T"><span class="pre">T</span></a><span class="pre">,</span> <a class="reference internal" href="#_CPPv4I0_iEN4dnnl12sycl_interop10get_bufferEN2cl4sycl6bufferI1T5ndimsEERK6memory" title="dnnl::sycl_interop::get_buffer::ndims"><span class="pre">ndims</span></a><span class="pre">&gt;</span> <code class="sig-prename descclassname"><span class="pre">dnnl</span><span class="pre">::</span><span class="pre">sycl_interop</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">get_buffer</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a> <span class="pre">&amp;</span><em><span class="pre">amemory</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0_iEN4dnnl12sycl_interop10get_bufferEN2cl4sycl6bufferI1T5ndimsEERK6memory" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the SYCL buffer underlying a specified memory object.</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>SYCL buffer of type <code class="docutils literal notranslate"><span class="pre">T</span></code> with <code class="docutils literal notranslate"><span class="pre">ndims</span></code> dimensions, underlying the <code class="docutils literal notranslate"><span class="pre">amemory</span></code> memory object. </p>
-</dd>
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: Data type of the specified SYCL buffer. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ndims</span></code>: Number of dimensions of the specified buffer. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> – Data type of the specified SYCL buffer. </p></li>
+<li><p><strong>ndims</strong> – Number of dimensions of the specified buffer. </p></li>
 </ul>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">amemory</span></code>: Memory object. </p></li>
-</ul>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>amemory</strong> – Memory object. </p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>SYCL buffer of type <code class="docutils literal notranslate"><span class="pre">T</span></code> with <code class="docutils literal notranslate"><span class="pre">ndims</span></code> dimensions, underlying the <code class="docutils literal notranslate"><span class="pre">amemory</span></code> memory object. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -5193,8 +5231,8 @@ be queried using <a class="reference internal" href="#_CPPv4NK4dnnl6memory8get_d
 <dd><p>Special pointer value that indicates that the library needs to allocate an underlying buffer for a memory object. </p>
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

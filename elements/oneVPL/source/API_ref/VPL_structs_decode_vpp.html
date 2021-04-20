@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DECODDE_VPP Structures &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4611,10 +4610,10 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="decodde-vpp-structures">
+  <div class="section" id="decodde-vpp-structures">
 <span id="struct-decode-vpp"></span><h1>DECODDE_VPP Structures<a class="headerlink" href="#decodde-vpp-structures" title="Permalink to this headline">¶</a></h1>
 <p id="struct-decode-vpp-begin">Structures used by <a class="reference internal" href="../architecture/index.html#term-DECODE_VPP"><span class="xref std std-term">DECODE_VPP</span></a> only.</p>
-<section id="api">
+<div class="section" id="api">
 <span id="struct-decode-vpp-end"></span><h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -4623,7 +4622,7 @@ SPDX-License-Identifier: MIT
 <li><p><a class="reference internal" href="#mfxextincrops" id="id3">mfxExtInCrops</a></p></li>
 </ul>
 </div>
-<section id="mfxsurfacearray">
+<div class="section" id="mfxsurfacearray">
 <h3><a class="toc-backref" href="#id1">mfxSurfaceArray</a><a class="headerlink" href="#mfxsurfacearray" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv415mfxSurfaceArray">
@@ -4647,56 +4646,55 @@ SPDX-License-Identifier: MIT
 <dt id="_CPPv4N15mfxSurfaceArray6AddRefE">
 <span id="_CPPv3N15mfxSurfaceArray6AddRefE"></span><span id="_CPPv2N15mfxSurfaceArray6AddRefE"></span><span class="target" id="structmfx_surface_array_1ad9f9b5c24edc6941aae317f9e7239e1b"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">AddRef</span></code><span class="pre">)</span><span class="sig-paren">(</span><em class="property"><span class="pre">struct</span></em> <a class="reference internal" href="#_CPPv415mfxSurfaceArray" title="mfxSurfaceArray"><span class="pre">mfxSurfaceArray</span></a> <span class="pre">*</span><span class="pre">surface_array</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15mfxSurfaceArray6AddRefE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Increments the internal reference counter of the surface. The surface is not destroyed until the surface is released using the (*Release) function. (*AddRef) should be used each time a new link to the surface is created (for example, copy structure) for proper surface management. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface is NULL. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>[in] surface</strong> – Valid <a class="reference internal" href="#structmfx_surface_array"><span class="std std-ref">mfxSurfaceArray</span></a>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface is NULL. </p>
 <p> MFX_ERR_INVALID_HANDLE If mfxSurfaceArray-&gt;Context is invalid (for example NULL). </p>
 <p> MFX_ERR_UNKNOWN Any internal error. </p>
 </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">surface</span></code>: Valid <a class="reference internal" href="#structmfx_surface_array"><span class="std std-ref">mfxSurfaceArray</span></a>.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N15mfxSurfaceArray7ReleaseE">
 <span id="_CPPv3N15mfxSurfaceArray7ReleaseE"></span><span id="_CPPv2N15mfxSurfaceArray7ReleaseE"></span><span class="target" id="structmfx_surface_array_1aa74a5c07a2d92e724ccee159922fa198"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">Release</span></code><span class="pre">)</span><span class="sig-paren">(</span><em class="property"><span class="pre">struct</span></em> <a class="reference internal" href="#_CPPv415mfxSurfaceArray" title="mfxSurfaceArray"><span class="pre">mfxSurfaceArray</span></a> <span class="pre">*</span><span class="pre">surface_array</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15mfxSurfaceArray7ReleaseE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Decrements the internal reference counter of the surface. (*Release) should be called after using the (*AddRef) function to add a surface or when allocation logic requires it. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface is NULL. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>[in] surface_array</strong> – Valid <a class="reference internal" href="#structmfx_surface_array"><span class="std std-ref">mfxSurfaceArray</span></a>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface is NULL. </p>
 <p> MFX_ERR_INVALID_HANDLE If mfxSurfaceArray-&gt;Context is invalid (for example NULL). </p>
 <p> MFX_ERR_UNDEFINED_BEHAVIOR If Reference Counter of surface is zero before call. </p>
 <p> MFX_ERR_UNKNOWN Any internal error. </p>
 </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">surface_array</span></code>: Valid <a class="reference internal" href="#structmfx_surface_array"><span class="std std-ref">mfxSurfaceArray</span></a>.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N15mfxSurfaceArray13GetRefCounterE">
 <span id="_CPPv3N15mfxSurfaceArray13GetRefCounterE"></span><span id="_CPPv2N15mfxSurfaceArray13GetRefCounterE"></span><span class="target" id="structmfx_surface_array_1a6d38ec535ed5c85639e225b038f91b9e"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">GetRefCounter</span></code><span class="pre">)</span><span class="sig-paren">(</span><em class="property"><span class="pre">struct</span></em> <a class="reference internal" href="#_CPPv415mfxSurfaceArray" title="mfxSurfaceArray"><span class="pre">mfxSurfaceArray</span></a> <span class="pre">*</span><span class="pre">surface_array</span>, <a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU32" title="mfxU32"><span class="pre">mfxU32</span></a> <span class="pre">*</span><span class="pre">counter</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15mfxSurfaceArray13GetRefCounterE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns current reference counter of <a class="reference internal" href="#structmfx_surface_array"><span class="std std-ref">mfxSurfaceArray</span></a> structure. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface or counter is NULL. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] surface</strong> – Valid surface_array. </p></li>
+<li><p><strong>[out] counter</strong> – Sets counter to the current reference counter value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface or counter is NULL. </p>
 <p> MFX_ERR_INVALID_HANDLE If mfxSurfaceArray-&gt;Context is invalid (for example NULL). </p>
 <p> MFX_ERR_UNKNOWN Any internal error. </p>
 </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">surface</span></code>: Valid surface_array. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">counter</span></code>: Sets counter to the current reference counter value.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -4714,8 +4712,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxvideochannelparam">
+</div>
+<div class="section" id="mfxvideochannelparam">
 <h3><a class="toc-backref" href="#id2">mfxVideoChannelParam</a><a class="headerlink" href="#mfxvideochannelparam" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv420mfxVideoChannelParam">
@@ -4756,8 +4754,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextincrops">
+</div>
+<div class="section" id="mfxextincrops">
 <h3><a class="toc-backref" href="#id3">mfxExtInCrops</a><a class="headerlink" href="#mfxextincrops" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv413mfxExtInCrops">
@@ -4774,9 +4772,9 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

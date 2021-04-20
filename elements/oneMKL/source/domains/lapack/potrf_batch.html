@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>potrf_batch &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4600,7 +4599,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="potrf-batch">
+  <div class="section" id="potrf-batch">
 <span id="onemkl-lapack-potrf-batch"></span><h1>potrf_batch<a class="headerlink" href="#potrf-batch" title="Permalink to this headline">¶</a></h1>
 <p>Computes the LU factorizations of a batch of general matrices.</p>
 <div class="section docutils container">
@@ -4628,7 +4627,7 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 </div></blockquote>
-<section id="potrf-batch-buffer-version">
+<div class="section" id="potrf-batch-buffer-version">
 <span id="onemkl-lapack-potrf-batch-buffer"></span><h2>potrf_batch (Buffer Version)<a class="headerlink" href="#potrf-batch-buffer-version" title="Permalink to this headline">¶</a></h2>
 <div class="section docutils container">
 <p class="rubric">Description</p>
@@ -4700,8 +4699,8 @@ SPDX-License-Identifier: MIT
 <p>If <code class="docutils literal notranslate"><span class="pre">info</span></code> is not zero and <cite>detail()</cite> returns zero, then there were some errors for some of the problems in the supplied batch and <code class="docutils literal notranslate"><span class="pre">info</span></code> code contains the number of failed calculations in a batch.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">info</span></code> is zero, then the leading minors of some of matrices (and therefore some matrices <span class="math notranslate nohighlight">\(A_i\)</span> themselves) are not positive-definite, and the factorizations could not be completed for these matrices from the batch. The indices of such matrices in the batch can be obtained with <cite>ids()</cite> method of the exception object. The orders of corresponding not positive-definite leading minors of these matrices can be obtained by <cite>exceptions()</cite> method of exception object.</p>
 </div></blockquote>
-</section>
-<section id="potrf-batch-usm-version">
+</div>
+<div class="section" id="potrf-batch-usm-version">
 <span id="onemkl-lapack-potrf-batch-usm"></span><h2>potrf_batch (USM Version)<a class="headerlink" href="#potrf-batch-usm-version" title="Permalink to this headline">¶</a></h2>
 <div class="section docutils container">
 <p class="rubric">Description</p>
@@ -4852,8 +4851,8 @@ SPDX-License-Identifier: MIT
 <p>If <code class="docutils literal notranslate"><span class="pre">info</span></code> is zero, then the leading minors of some of matrices (and therefore some matrices <span class="math notranslate nohighlight">\(A_i\)</span> themselves) are not positive-definite, and the factorizations could not be completed for these matrices from the batch. The indices of such matrices in the batch can be obtained with <cite>ids()</cite> method of the exception object. The orders of corresponding not positive-definite leading minors of these matrices can be obtained by <cite>exceptions()</cite> method of exception object.</p>
 </div></blockquote>
 <p><strong>Parent topic:</strong> <a class="reference internal" href="lapack.html#onemkl-lapack-like-extensions-routines"><span class="std std-ref">LAPACK-like Extensions Routines</span></a></p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

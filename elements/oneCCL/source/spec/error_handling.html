@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Error handling &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4599,18 +4598,18 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="error-handling">
+  <div class="section" id="error-handling">
 <h1>Error handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">¶</a></h1>
 <p>oneCCL error handling relies on the mechanism of C++ exceptions. If an error
 occurs, it shall be propagated at the point of a function call where it is
 caught using standard C++ error handling mechanism.</p>
-<section id="exception-classification">
+<div class="section" id="exception-classification">
 <h2>Exception classification<a class="headerlink" href="#exception-classification" title="Permalink to this headline">¶</a></h2>
 <p>Exception classification in oneCCL is aligned with C++ Standard Library classification. oneCCL introduces class that defines the base class in the hierarchy of oneCCL exception classes. All oneCCL routines throw exceptions inherited from this base class.</p>
 <p>In the hierarchy of oneCCL exceptions, <code class="docutils literal notranslate"><span class="pre">ccl::exception</span></code> is the base class inherited from <code class="docutils literal notranslate"><span class="pre">std::exception</span></code> class. All other oneCCL exception classes are derived from this base class.</p>
 <p>This specification does not require implementations to perform error-checking. However, if an implementation does provide error-checking, it shall use the following exception classes. Additional implementation-specific exception classes can be used for exceptional conditions not fitting any of these classes.</p>
-</section>
-<section id="common-exceptions">
+</div>
+<div class="section" id="common-exceptions">
 <h2>Common exceptions<a class="headerlink" href="#common-exceptions" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-given table">
 <colgroup>
@@ -4645,8 +4644,8 @@ caught using standard C++ error handling mechanism.</p>
 </tr>
 </tbody>
 </table>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Operations &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4614,7 +4613,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="operations">
+  <div class="section" id="operations">
 <span id="id1"></span><h1>Operations<a class="headerlink" href="#operations" title="Permalink to this headline">¶</a></h1>
 <p><strong>An operation</strong> is a function that transforms <a class="reference internal" href="../descriptors.html#descriptors"><span class="std std-ref">a descriptor</span></a> and other arguments represented via <a class="reference internal" href="#input">an input</a> object
 to <a class="reference internal" href="#result">a result</a> object. An operation is responsible for:</p>
@@ -4625,7 +4624,7 @@ descriptor.</p></li>
 <li><p>Verifying preconditions and postconditions before and after the execution
 of computational routines.</p></li>
 </ul>
-<section id="general-operation-definition">
+<div class="section" id="general-operation-definition">
 <span id="general-operation"></span><h2>General operation definition<a class="headerlink" href="#general-operation-definition" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="#operation-template">The following code sample</a> shows the declaration of an
 abstract operation. To declare a particular operation, the <code class="docutils literal notranslate"><span class="pre">%OPERATION%</span></code> shall
@@ -4668,8 +4667,8 @@ reported at compile-time.</p></li>
 <li><p>The exact list of compatible operations and pre-/post- conditions shall be
 defined by <a class="reference internal" href="../../algorithms/index.html#algorithms"><span class="std std-ref">a particular algorithm specification</span></a>.</p></li>
 </ul>
-</section>
-<section id="operation-shortcuts">
+</div>
+<div class="section" id="operation-shortcuts">
 <h2>Operation shortcuts<a class="headerlink" href="#operation-shortcuts" title="Permalink to this headline">¶</a></h2>
 <p>In order to make the code on user side less verbose, oneDAL defines the
 following overloaded functions called <em>shortcuts</em> for each operation in addition
@@ -4704,8 +4703,8 @@ combination of two previous shortcuts.</p>
 </div>
 </li>
 </ul>
-</section>
-<section id="input">
+</div>
+<div class="section" id="input">
 <span id="id2"></span><h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
 <p>An input object aggregates all the data that the algorithm requires for
 performing a specific operation. The data is represented via <a class="reference internal" href="../../data_management/index.html#table"><span class="std std-ref">tables</span></a>, so, typically, an input is a collection of tables, but not limited to
@@ -4748,8 +4747,8 @@ of the input’s properties.</p></li>
 <code class="docutils literal notranslate"><span class="pre">%ALGORITHM%</span></code>-<code class="docutils literal notranslate"><span class="pre">%OPERATION%</span></code> pair shall define its own set of the
 properties.</p>
 </div>
-</section>
-<section id="result">
+</div>
+<div class="section" id="result">
 <span id="id3"></span><h2>Result<a class="headerlink" href="#result" title="Permalink to this headline">¶</a></h2>
 <p>A result object aggregates all output values computed by the algorithm. All
 assumptions about <a class="reference internal" href="#input">an input</a> are applied to a result as well.</p>
@@ -4772,15 +4771,15 @@ assumptions about <a class="reference internal" href="#input">an input</a> are a
 <span class="p">}</span> <span class="c1">// namespace oneapi::dal::%ALGORITHM%</span>
 </pre></div>
 </div>
-</section>
-<section id="supported-operation">
+</div>
+<div class="section" id="supported-operation">
 <h2>Supported operation<a class="headerlink" href="#supported-operation" title="Permalink to this headline">¶</a></h2>
 <p>Refer to the <a class="reference internal" href="support.html#op-supported"><span class="std std-ref">Supported operations</span></a> section for
 more information about particular operations.</p>
 <div class="toctree-wrapper compound">
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

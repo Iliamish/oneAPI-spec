@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VideoVPP &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4641,10 +4640,10 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="videovpp">
+  <div class="section" id="videovpp">
 <span id="func-video-vpp"></span><h1>VideoVPP<a class="headerlink" href="#videovpp" title="Permalink to this headline">¶</a></h1>
 <p id="func-vid-vpp-begin">Functions that perform video processing before encoding, rendering, or standalone.</p>
-<section id="api">
+<div class="section" id="api">
 <span id="func-vid-vpp-end"></span><h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -4659,7 +4658,7 @@ SPDX-License-Identifier: MIT
 <li><p><a class="reference internal" href="#mfxvideovpp-processframeasync" id="id9">MFXVideoVPP_ProcessFrameAsync</a></p></li>
 </ul>
 </div>
-<section id="mfxvideovpp-query">
+<div class="section" id="mfxvideovpp-query">
 <h3><a class="toc-backref" href="#id1">MFXVideoVPP_Query</a><a class="headerlink" href="#mfxvideovpp-query" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv417MFXVideoVPP_Query10mfxSessionP13mfxVideoParamP13mfxVideoParam">
@@ -4674,58 +4673,65 @@ SPDX-License-Identifier: MIT
 <p>The application can call this function before or after it initializes the preprocessor.</p>
 </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_UNSUPPORTED The implementation does not support the specified configuration. </p>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] session</strong> – Session handle. </p></li>
+<li><p><strong>[in] in</strong> – Pointer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure as input. </p></li>
+<li><p><strong>[out] out</strong> – Pointer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure as output.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_UNSUPPORTED The implementation does not support the specified configuration. </p>
 <p>MFX_WRN_PARTIAL_ACCELERATION The underlying hardware does not fully support the specified video parameters. The video processing may be partially accelerated. Only hardware implementations may return this status code. </p>
 <p>MFX_WRN_INCOMPATIBLE_VIDEO_PARAM The function detected some video parameters were incompatible with others; incompatibility resolved.</p>
 </p>
 </dd>
-<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">in</span></code>: Pointer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure as input. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">out</span></code>: Pointer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure as output.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The <a class="reference internal" href="#_CPPv417MFXVideoVPP_Query10mfxSessionP13mfxVideoParamP13mfxVideoParam" title="MFXVideoVPP_Query"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoVPP_Query()</span></code></a> function is mandatory when implementing a VPP filter.</p>
 </div>
-</section>
-<section id="mfxvideovpp-queryiosurf">
+</div>
+<div class="section" id="mfxvideovpp-queryiosurf">
 <h3><a class="toc-backref" href="#id2">MFXVideoVPP_QueryIOSurf</a><a class="headerlink" href="#mfxvideovpp-queryiosurf" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv423MFXVideoVPP_QueryIOSurf10mfxSessionP13mfxVideoParamAL2E_20mfxFrameAllocRequest">
 <span id="_CPPv323MFXVideoVPP_QueryIOSurf10mfxSessionP13mfxVideoParamAL2E_20mfxFrameAllocRequest"></span><span id="_CPPv223MFXVideoVPP_QueryIOSurf10mfxSessionP13mfxVideoParamA2_20mfxFrameAllocRequest"></span><span id="MFXVideoVPP_QueryIOSurf__mfxSession.mfxVideoParamP.mfxFrameAllocRequestA"></span><span class="target" id="mfxvideo_8h_1afd761ad8c451076996e8c26c0d9b6927"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <code class="sig-name descname"><span class="pre">MFXVideoVPP_QueryIOSurf</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv410mfxSession" title="mfxSession"><span class="pre">mfxSession</span></a> <em><span class="pre">session</span></em>, <a class="reference internal" href="VPL_structs_cross_component.html#_CPPv413mfxVideoParam" title="mfxVideoParam"><span class="pre">mfxVideoParam</span></a> <span class="pre">*</span><em><span class="pre">par</span></em>, <a class="reference internal" href="VPL_structs_memory.html#_CPPv420mfxFrameAllocRequest" title="mfxFrameAllocRequest"><span class="pre">mfxFrameAllocRequest</span></a> <em><span class="pre">request</span></em><span class="pre">[</span><span class="pre">2</span><span class="pre">]</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423MFXVideoVPP_QueryIOSurf10mfxSessionP13mfxVideoParamAL2E_20mfxFrameAllocRequest" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns minimum and suggested numbers of the input frame surfaces required for video processing initialization and their type. </p>
 <p>The parameter <code class="docutils literal notranslate"><span class="pre">request[0]</span></code> refers to the input requirements; <code class="docutils literal notranslate"><span class="pre">request[1]</span></code> refers to output requirements. Init will call the external allocator for the required frames with the same set of numbers. This function does not validate I/O parameters except those used in calculating the number of input surfaces.</p>
-<p>The use of this function is recommended. <p><p>For more information, see the <a class="reference internal" href="../programming_guide/VPL_prg_hw.html#hw-acceleration"><span class="std std-ref">Working with Hardware Acceleration section</span></a>.</p>
-</p>
+<p>The use of this function is recommended. <p>For more information, see the <a class="reference internal" href="../programming_guide/VPL_prg_hw.html#hw-acceleration"><span class="std std-ref">Working with Hardware Acceleration section</span></a>.</p>
 </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_INVALID_VIDEO_PARAM The function detected invalid video parameters. These parameters may be out of the valid range, or the combination of them resulted in incompatibility. Incompatibility not resolved. </p>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] session</strong> – Session handle. </p></li>
+<li><p><strong>[in] par</strong> – Pointer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure as input. </p></li>
+<li><p><strong>[in] request</strong> – Pointer to the <a class="reference internal" href="VPL_structs_memory.html#structmfx_frame_alloc_request"><span class="std std-ref">mfxFrameAllocRequest</span></a> structure; use <code class="docutils literal notranslate"><span class="pre">request[0]</span></code> for input requirements and <code class="docutils literal notranslate"><span class="pre">request[1]</span></code> for output requirements for video processing.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_INVALID_VIDEO_PARAM The function detected invalid video parameters. These parameters may be out of the valid range, or the combination of them resulted in incompatibility. Incompatibility not resolved. </p>
 <p>MFX_WRN_PARTIAL_ACCELERATION The underlying hardware does not fully support the specified video parameters. The video processing may be partially accelerated. Only hardware implementations may return this status code. </p>
 <p>MFX_WRN_INCOMPATIBLE_VIDEO_PARAM The function detected some video parameters were incompatible with others; incompatibility resolved.</p>
 </p>
 </dd>
-<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">par</span></code>: Pointer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure as input. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">request</span></code>: Pointer to the <a class="reference internal" href="VPL_structs_memory.html#structmfx_frame_alloc_request"><span class="std std-ref">mfxFrameAllocRequest</span></a> structure; use <code class="docutils literal notranslate"><span class="pre">request[0]</span></code> for input requirements and <code class="docutils literal notranslate"><span class="pre">request[1]</span></code> for output requirements for video processing.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
-</section>
-<section id="mfxvideovpp-init">
+</div>
+<div class="section" id="mfxvideovpp-init">
 <h3><a class="toc-backref" href="#id3">MFXVideoVPP_Init</a><a class="headerlink" href="#mfxvideovpp-init" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv416MFXVideoVPP_Init10mfxSessionP13mfxVideoParam">
@@ -4733,78 +4739,88 @@ SPDX-License-Identifier: MIT
 <dd><p>Allocates memory and prepares tables and necessary structures for video processing. </p>
 <p>This function also does extensive validation to ensure if the configuration, as specified in the input parameters, is supported.</p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_INVALID_VIDEO_PARAM The function detected invalid video parameters. These parameters may be out of the valid range, or the combination of them resulted in incompatibility. Incompatibility not resolved. </p>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] session</strong> – Session handle. </p></li>
+<li><p><strong>[in] par</strong> – Pointer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_INVALID_VIDEO_PARAM The function detected invalid video parameters. These parameters may be out of the valid range, or the combination of them resulted in incompatibility. Incompatibility not resolved. </p>
 <p>MFX_WRN_PARTIAL_ACCELERATION The underlying hardware does not fully support the specified video parameters. The video processing may be partially accelerated. Only hardware implementations may return this status code. </p>
 <p>MFX_WRN_INCOMPATIBLE_VIDEO_PARAM The function detected some video parameters were incompatible with others; incompatibility resolved. </p>
 <p>MFX_ERR_UNDEFINED_BEHAVIOR The function is called twice without a close. </p>
 <p>MFX_WRN_FILTER_SKIPPED The VPP skipped one or more filters requested by the application.</p>
 </p>
 </dd>
-<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">par</span></code>: Pointer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The <a class="reference internal" href="#_CPPv416MFXVideoVPP_Init10mfxSessionP13mfxVideoParam" title="MFXVideoVPP_Init"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoVPP_Init()</span></code></a> function is mandatory when implementing a VPP filter.</p>
 </div>
-</section>
-<section id="mfxvideovpp-reset">
+</div>
+<div class="section" id="mfxvideovpp-reset">
 <h3><a class="toc-backref" href="#id4">MFXVideoVPP_Reset</a><a class="headerlink" href="#mfxvideovpp-reset" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv417MFXVideoVPP_Reset10mfxSessionP13mfxVideoParam">
 <span id="_CPPv317MFXVideoVPP_Reset10mfxSessionP13mfxVideoParam"></span><span id="_CPPv217MFXVideoVPP_Reset10mfxSessionP13mfxVideoParam"></span><span id="MFXVideoVPP_Reset__mfxSession.mfxVideoParamP"></span><span class="target" id="mfxvideo_8h_1a919b05286f9d71ef196e2be47c4b482d"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <code class="sig-name descname"><span class="pre">MFXVideoVPP_Reset</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv410mfxSession" title="mfxSession"><span class="pre">mfxSession</span></a> <em><span class="pre">session</span></em>, <a class="reference internal" href="VPL_structs_cross_component.html#_CPPv413mfxVideoParam" title="mfxVideoParam"><span class="pre">mfxVideoParam</span></a> <span class="pre">*</span><em><span class="pre">par</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417MFXVideoVPP_Reset10mfxSessionP13mfxVideoParam" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Stops the current video processing operation and restores internal structures or parameters for a new operation. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_INVALID_VIDEO_PARAM The function detected that video parameters are wrong or they conflict with initialization parameters. Reset is impossible. </p>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] session</strong> – Session handle. </p></li>
+<li><p><strong>[in] par</strong> – Pointer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_INVALID_VIDEO_PARAM The function detected that video parameters are wrong or they conflict with initialization parameters. Reset is impossible. </p>
 <p>MFX_ERR_INCOMPATIBLE_VIDEO_PARAM The function detected that video parameters provided by the application are incompatible with initialization parameters. Reset requires additional memory allocation and cannot be executed. The application should close the component and then reinitialize it. </p>
 <p>MFX_WRN_INCOMPATIBLE_VIDEO_PARAM The function detected some video parameters were incompatible with others; incompatibility resolved.</p>
 </p>
 </dd>
-<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">par</span></code>: Pointer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
-</section>
-<section id="mfxvideovpp-close">
+</div>
+<div class="section" id="mfxvideovpp-close">
 <h3><a class="toc-backref" href="#id5">MFXVideoVPP_Close</a><a class="headerlink" href="#mfxvideovpp-close" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv417MFXVideoVPP_Close10mfxSession">
 <span id="_CPPv317MFXVideoVPP_Close10mfxSession"></span><span id="_CPPv217MFXVideoVPP_Close10mfxSession"></span><span id="MFXVideoVPP_Close__mfxSession"></span><span class="target" id="mfxvideo_8h_1a51c243b94e66e18ed4afe0e73c4236e8"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <code class="sig-name descname"><span class="pre">MFXVideoVPP_Close</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv410mfxSession" title="mfxSession"><span class="pre">mfxSession</span></a> <em><span class="pre">session</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417MFXVideoVPP_Close10mfxSession" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Terminates the current video processing operation and de-allocates any internal tables or structures. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. </p>
-</dd>
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle.</p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>[in] session</strong> – Session handle.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The <a class="reference internal" href="#_CPPv417MFXVideoVPP_Close10mfxSession" title="MFXVideoVPP_Close"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoVPP_Close()</span></code></a> function is mandatory when implementing a VPP filter.</p>
 </div>
-</section>
-<section id="mfxvideovpp-getvideoparam">
+</div>
+<div class="section" id="mfxvideovpp-getvideoparam">
 <h3><a class="toc-backref" href="#id6">MFXVideoVPP_GetVideoParam</a><a class="headerlink" href="#mfxvideovpp-getvideoparam" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv425MFXVideoVPP_GetVideoParam10mfxSessionP13mfxVideoParam">
@@ -4812,54 +4828,76 @@ SPDX-License-Identifier: MIT
 <dd><p>Retrieves current working parameters to the specified output structure. </p>
 <p>If extended buffers are to be returned, the application must allocate those extended buffers and attach them as part of the output structure.</p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. </p>
-</dd>
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">par</span></code>: Pointer to the corresponding parameter structure.</p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] session</strong> – Session handle. </p></li>
+<li><p><strong>[in] par</strong> – Pointer to the corresponding parameter structure.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. </p>
+</dd>
+</dl>
 </dd></dl>
 
-</section>
-<section id="mfxvideovpp-getvppstat">
+</div>
+<div class="section" id="mfxvideovpp-getvppstat">
 <h3><a class="toc-backref" href="#id7">MFXVideoVPP_GetVPPStat</a><a class="headerlink" href="#mfxvideovpp-getvppstat" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv422MFXVideoVPP_GetVPPStat10mfxSessionP10mfxVPPStat">
 <span id="_CPPv322MFXVideoVPP_GetVPPStat10mfxSessionP10mfxVPPStat"></span><span id="_CPPv222MFXVideoVPP_GetVPPStat10mfxSessionP10mfxVPPStat"></span><span id="MFXVideoVPP_GetVPPStat__mfxSession.mfxVPPStatP"></span><span class="target" id="mfxvideo_8h_1a7101693364abdfd6c98a0232b30a717a"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <code class="sig-name descname"><span class="pre">MFXVideoVPP_GetVPPStat</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv410mfxSession" title="mfxSession"><span class="pre">mfxSession</span></a> <em><span class="pre">session</span></em>, <a class="reference internal" href="VPL_structs_vpp.html#_CPPv410mfxVPPStat" title="mfxVPPStat"><span class="pre">mfxVPPStat</span></a> <span class="pre">*</span><em><span class="pre">stat</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422MFXVideoVPP_GetVPPStat10mfxSessionP10mfxVPPStat" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Obtains statistics collected during video processing. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. </p>
-</dd>
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">stat</span></code>: Pointer to the <a class="reference internal" href="VPL_structs_vpp.html#structmfx_v_p_p_stat"><span class="std std-ref">mfxVPPStat</span></a> structure.</p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] session</strong> – Session handle. </p></li>
+<li><p><strong>[in] stat</strong> – Pointer to the <a class="reference internal" href="VPL_structs_vpp.html#structmfx_v_p_p_stat"><span class="std std-ref">mfxVPPStat</span></a> structure.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. </p>
+</dd>
+</dl>
 </dd></dl>
 
-</section>
-<section id="mfxvideovpp-runframevppasync">
+</div>
+<div class="section" id="mfxvideovpp-runframevppasync">
 <h3><a class="toc-backref" href="#id8">MFXVideoVPP_RunFrameVPPAsync</a><a class="headerlink" href="#mfxvideovpp-runframevppasync" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv428MFXVideoVPP_RunFrameVPPAsync10mfxSessionP16mfxFrameSurface1P16mfxFrameSurface1P16mfxExtVppAuxDataP12mfxSyncPoint">
 <span id="_CPPv328MFXVideoVPP_RunFrameVPPAsync10mfxSessionP16mfxFrameSurface1P16mfxFrameSurface1P16mfxExtVppAuxDataP12mfxSyncPoint"></span><span id="_CPPv228MFXVideoVPP_RunFrameVPPAsync10mfxSessionP16mfxFrameSurface1P16mfxFrameSurface1P16mfxExtVppAuxDataP12mfxSyncPoint"></span><span id="MFXVideoVPP_RunFrameVPPAsync__mfxSession.mfxFrameSurface1P.mfxFrameSurface1P.mfxExtVppAuxDataP.mfxSyncPointP"></span><span class="target" id="mfxvideo_8h_1a1583449411845a45727749022e8126ed"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <code class="sig-name descname"><span class="pre">MFXVideoVPP_RunFrameVPPAsync</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv410mfxSession" title="mfxSession"><span class="pre">mfxSession</span></a> <em><span class="pre">session</span></em>, <a class="reference internal" href="VPL_structs_memory.html#_CPPv416mfxFrameSurface1" title="mfxFrameSurface1"><span class="pre">mfxFrameSurface1</span></a> <span class="pre">*</span><em><span class="pre">in</span></em>, <a class="reference internal" href="VPL_structs_memory.html#_CPPv416mfxFrameSurface1" title="mfxFrameSurface1"><span class="pre">mfxFrameSurface1</span></a> <span class="pre">*</span><em><span class="pre">out</span></em>, <a class="reference internal" href="VPL_structs_vpp.html#_CPPv416mfxExtVppAuxData" title="mfxExtVppAuxData"><span class="pre">mfxExtVppAuxData</span></a> <span class="pre">*</span><em><span class="pre">aux</span></em>, <a class="reference internal" href="VPL_ref_types.html#_CPPv412mfxSyncPoint" title="mfxSyncPoint"><span class="pre">mfxSyncPoint</span></a> <span class="pre">*</span><em><span class="pre">syncp</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428MFXVideoVPP_RunFrameVPPAsync10mfxSessionP16mfxFrameSurface1P16mfxFrameSurface1P16mfxExtVppAuxDataP12mfxSyncPoint" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Processes a single input frame to a single output frame. </p>
-<p>Retrieval of the auxiliary data is optional; the encoding process may use it. The video processing process may not generate an instant output given an input. <p><p>See the <a class="reference internal" href="../programming_guide/VPL_prg_vpp.html#vid-process-procedure"><span class="std std-ref">Video Processing Procedures section</span></a> for details on how to
+<p>Retrieval of the auxiliary data is optional; the encoding process may use it. The video processing process may not generate an instant output given an input. <p>See the <a class="reference internal" href="../programming_guide/VPL_prg_vpp.html#vid-process-procedure"><span class="std std-ref">Video Processing Procedures section</span></a> for details on how to
 correctly send input and retrieve output.</p>
-</p>
 </p>
 <p>At the end of the stream, call this function with the input argument <code class="docutils literal notranslate"><span class="pre">in=NULL</span></code> to retrieve any remaining frames, until the function returns MFX_ERR_MORE_DATA. This function is asynchronous.</p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The output frame is ready after synchronization. <p>MFX_ERR_MORE_DATA Need more input frames before VPP can produce an output. </p>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] session</strong> – Session handle. </p></li>
+<li><p><strong>[in] in</strong> – Pointer to the input video surface structure. </p></li>
+<li><p><strong>[out] out</strong> – Pointer to the output video surface structure. </p></li>
+<li><p><strong>[in] aux</strong> – Optional pointer to the auxiliary data structure. </p></li>
+<li><p><strong>[out] syncp</strong> – Pointer to the output sync point.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The output frame is ready after synchronization. <p>MFX_ERR_MORE_DATA Need more input frames before VPP can produce an output. </p>
 <p>MFX_ERR_MORE_SURFACE The output frame is ready after synchronization. Need more surfaces at output for additional output frames available. </p>
 <p>MFX_ERR_DEVICE_LOST Hardware device was lost. </p>
 <p><p>See the <a class="reference internal" href="../programming_guide/VPL_prg_hw.html#work-ms-directx-app"><span class="std std-ref">Working with Microsoft* DirectX* Applications section</span></a> for further information.</p>
@@ -4867,22 +4905,11 @@ correctly send input and retrieve output.</p>
  <p>MFX_WRN_DEVICE_BUSY Hardware device is currently busy. Call this function again after MFXVideoCORE_SyncOperation or in a few milliseconds.</p>
 </p>
 </dd>
-<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">in</span></code>: Pointer to the input video surface structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">out</span></code>: Pointer to the output video surface structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">aux</span></code>: Optional pointer to the auxiliary data structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">syncp</span></code>: Pointer to the output sync point.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
-</section>
-<section id="mfxvideovpp-processframeasync">
+</div>
+<div class="section" id="mfxvideovpp-processframeasync">
 <h3><a class="toc-backref" href="#id9">MFXVideoVPP_ProcessFrameAsync</a><a class="headerlink" href="#mfxvideovpp-processframeasync" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv429MFXVideoVPP_ProcessFrameAsync10mfxSessionP16mfxFrameSurface1PP16mfxFrameSurface1">
@@ -4890,7 +4917,20 @@ correctly send input and retrieve output.</p>
 <dd><p>The function processes a single input frame to a single output frame with internal allocation of output frame. </p>
 <p>At the end of the stream, call this function with the input argument <code class="docutils literal notranslate"><span class="pre">in=NULL</span></code> to retrieve any remaining frames, until the function returns MFX_ERR_MORE_DATA. This function is asynchronous.</p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The output frame is ready after synchronization. <p>MFX_ERR_MORE_DATA Need more input frames before VPP can produce an output. </p>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.1. </p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] session</strong> – Session handle. </p></li>
+<li><p><strong>[in] in</strong> – Pointer to the input video surface structure. </p></li>
+<li><p><strong>[out] out</strong> – Pointer to the output video surface structure which is reference counted object allocated by the library.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The output frame is ready after synchronization. <p>MFX_ERR_MORE_DATA Need more input frames before VPP can produce an output. </p>
 <p>MFX_ERR_MEMORY_ALLOC The function failed to allocate output videoframe. </p>
 <p> MFX_ERR_DEVICE_LOST Hardware device was lost. </p>
 <p><p>See the <a class="reference internal" href="../programming_guide/VPL_prg_hw.html#work-ms-directx-app"><span class="std std-ref">Working with Microsoft* DirectX* Applications section</span></a> for further information.</p>
@@ -4898,25 +4938,16 @@ correctly send input and retrieve output.</p>
  <p>MFX_WRN_DEVICE_BUSY Hardware device is currently busy. Call this function again after MFXVideoCORE_SyncOperation or in a few milliseconds.</p>
 </p>
 </dd>
-<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.1. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">in</span></code>: Pointer to the input video surface structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">out</span></code>: Pointer to the output video surface structure which is reference counted object allocated by the library.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Either <a class="reference internal" href="#_CPPv428MFXVideoVPP_RunFrameVPPAsync10mfxSessionP16mfxFrameSurface1P16mfxFrameSurface1P16mfxExtVppAuxDataP12mfxSyncPoint" title="MFXVideoVPP_RunFrameVPPAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoVPP_RunFrameVPPAsync()</span></code></a> or  <a class="reference internal" href="#_CPPv429MFXVideoVPP_ProcessFrameAsync10mfxSessionP16mfxFrameSurface1PP16mfxFrameSurface1" title="MFXVideoVPP_ProcessFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoVPP_ProcessFrameAsync()</span></code></a> function is                  mandatory when implementing a VPP filter.</p>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

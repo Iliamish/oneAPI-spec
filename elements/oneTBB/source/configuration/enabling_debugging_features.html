@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Enabling Debugging Features &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4599,7 +4598,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="enabling-debugging-features">
+  <div class="section" id="enabling-debugging-features">
 <h1>Enabling Debugging Features<a class="headerlink" href="#enabling-debugging-features" title="Permalink to this headline">¶</a></h1>
 <p><strong>[configuration.debug_features]</strong></p>
 <p>The following macros control certain debugging features. In general, it is useful to compile with
@@ -4639,23 +4638,23 @@ value of 1 enables the corresponding feature; a value of 0 disables the feature.
 </tr>
 </tbody>
 </table>
-<section id="tbb-use-assert-macro">
+<div class="section" id="tbb-use-assert-macro">
 <h2>TBB_USE_ASSERT Macro<a class="headerlink" href="#tbb-use-assert-macro" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">TBB_USE_ASSERT</span></code> macro controls whether error checking is enabled in the
 header files. Define <code class="docutils literal notranslate"><span class="pre">TBB_USE_ASSERT</span></code> as <code class="docutils literal notranslate"><span class="pre">1</span></code> to enable error checking.</p>
 <p>If an error is detected, the library prints an error message on <code class="docutils literal notranslate"><span class="pre">stderr</span></code> and
 calls the standard C routine <code class="docutils literal notranslate"><span class="pre">abort</span></code>. To stop a program when internal error
 checking detects a failure, place a breakpoint on <code class="docutils literal notranslate"><span class="pre">tbb::assertion_failure</span></code>.</p>
-</section>
-<section id="tbb-use-profiling-tools-macro">
+</div>
+<div class="section" id="tbb-use-profiling-tools-macro">
 <h2>TBB_USE_PROFILING_TOOLS Macro<a class="headerlink" href="#tbb-use-profiling-tools-macro" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">TBB_USE_PROFILING_TOOLS</span></code> macro controls support for Intel®
 Inspector XE, Intel® VTune™ Amplifier XE and Intel® Advisor.</p>
 <p>Define <code class="docutils literal notranslate"><span class="pre">TBB_USE_PROFILING_TOOLS</span></code> as <code class="docutils literal notranslate"><span class="pre">1</span></code> to enable full support
 for these tools. Leave <code class="docutils literal notranslate"><span class="pre">TBB_USE_PROFILING_TOOLS</span></code> undefined or equal to zero to enable
 top performance in release builds, at the expense of turning off some support for tools.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

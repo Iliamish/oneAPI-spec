@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>scalable_allocator &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4599,7 +4598,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="scalable-allocator">
+  <div class="section" id="scalable-allocator">
 <h1>scalable_allocator<a class="headerlink" href="#scalable-allocator" title="Permalink to this headline">¶</a></h1>
 <p><strong>[memory_allocation.scalable_allocator]</strong></p>
 <p>A <code class="docutils literal notranslate"><span class="pre">scalable_allocator</span></code> is a class template that models the allocator requirements from the [allocator.requirements] ISO C++ section.</p>
@@ -4630,7 +4629,7 @@ Memory allocated by a <code class="docutils literal notranslate"><span class="pr
 <p>The <code class="docutils literal notranslate"><span class="pre">scalable_allocator</span></code> requires the memory allocator library. If the library is missing, calls to the scalable allocator fail. In
 contrast to <code class="docutils literal notranslate"><span class="pre">scalable_allocator</span></code>, if the memory allocator library is not available, <code class="docutils literal notranslate"><span class="pre">tbb_allocator</span></code> falls back on <code class="docutils literal notranslate"><span class="pre">std::malloc</span></code> and <code class="docutils literal notranslate"><span class="pre">std::free</span></code>.</p>
 </div>
-<section id="member-functions">
+<div class="section" id="member-functions">
 <h2>Member Functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb18scalable_allocator8allocateE9size_type">
@@ -4646,8 +4645,8 @@ The behavior is undefined if the pointer <code class="docutils literal notransla
 The behavior is undefined if the memory has been already deallocated.</p>
 </dd></dl>
 
-</section>
-<section id="non-member-functions">
+</div>
+<div class="section" id="non-member-functions">
 <h2>Non-member Functions<a class="headerlink" href="#non-member-functions" title="Permalink to this headline">¶</a></h2>
 <p>These functions provide comparison operations between two <code class="docutils literal notranslate"><span class="pre">scalable_allocator</span></code> instances.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">tbb</span> <span class="p">{</span>
@@ -4676,8 +4675,8 @@ and define <code class="docutils literal notranslate"><span class="pre">tbb::sca
 <dd><p>Returns <strong>false</strong>.</p>
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

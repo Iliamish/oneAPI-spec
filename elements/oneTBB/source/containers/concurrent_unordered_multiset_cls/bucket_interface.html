@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bucket interface &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4609,7 +4608,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="bucket-interface">
+  <div class="section" id="bucket-interface">
 <h1>Bucket interface<a class="headerlink" href="#bucket-interface" title="Permalink to this headline">¶</a></h1>
 <p>The types <code class="docutils literal notranslate"><span class="pre">concurrent_unordered_multiset::local_iterator</span></code>
 and <code class="docutils literal notranslate"><span class="pre">concurrent_unordered_multiset::const_local_iterator</span></code> meet the requirements
@@ -4617,7 +4616,7 @@ of <code class="docutils literal notranslate"><span class="pre">ForwardIterator<
 <p>These iterators are used to traverse the certain bucket.</p>
 <p>All methods in this section can only be executed serially. The behavior is undefined in case of
 concurrent execution of these member functions with other (either concurrently safe) methods.</p>
-<section id="bucket-begin-and-bucket-end">
+<div class="section" id="bucket-begin-and-bucket-end">
 <h2>Bucket begin and bucket end<a class="headerlink" href="#bucket-begin-and-bucket-end" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">local_iterator</span> <span class="nf">unsafe_begin</span><span class="p">(</span> <span class="n">size_type</span> <span class="n">n</span> <span class="p">);</span>
@@ -4641,8 +4640,8 @@ concurrent execution of these member functions with other (either concurrently s
 <p><strong>Returns</strong>: an iterator to the element that follows the last element in
 the bucket number <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
 </div></blockquote>
-</section>
-<section id="the-number-of-buckets">
+</div>
+<div class="section" id="the-number-of-buckets">
 <h2>The number of buckets<a class="headerlink" href="#the-number-of-buckets" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">size_type</span> <span class="nf">unsafe_bucket_count</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
@@ -4657,8 +4656,8 @@ the bucket number <code class="docutils literal notranslate"><span class="pre">n
 </div>
 <p><strong>Returns</strong>: the maximum number of buckets that container can hold.</p>
 </div></blockquote>
-</section>
-<section id="size-of-the-bucket">
+</div>
+<div class="section" id="size-of-the-bucket">
 <h2>Size of the bucket<a class="headerlink" href="#size-of-the-bucket" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">size_type</span> <span class="nf">unsafe_bucket_size</span><span class="p">(</span> <span class="n">size_type</span> <span class="n">n</span> <span class="p">)</span> <span class="k">const</span><span class="p">;</span>
@@ -4666,8 +4665,8 @@ the bucket number <code class="docutils literal notranslate"><span class="pre">n
 </div>
 <p><strong>Returns</strong>: the number of elements in the bucket number <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
 </div></blockquote>
-</section>
-<section id="bucket-number">
+</div>
+<div class="section" id="bucket-number">
 <h2>Bucket number<a class="headerlink" href="#bucket-number" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">size_type</span> <span class="nf">unsafe_bucket</span><span class="p">(</span> <span class="k">const</span> <span class="n">key_type</span><span class="o">&amp;</span> <span class="n">key</span> <span class="p">)</span> <span class="k">const</span><span class="p">;</span>
@@ -4675,8 +4674,8 @@ the bucket number <code class="docutils literal notranslate"><span class="pre">n
 </div>
 <p><strong>Returns</strong>: the number of the bucket in which the element with the key <code class="docutils literal notranslate"><span class="pre">key</span></code> is stored.</p>
 </div></blockquote>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

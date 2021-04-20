@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Open VKL API &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet" />
@@ -4739,7 +4738,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="open-vkl-api">
+  <div class="section" id="open-vkl-api">
 <h1>Open VKL API<a class="headerlink" href="#open-vkl-api" title="Permalink to this headline">¶</a></h1>
 <p>To access the Open VKL API you first need to include the Open VKL header. For C99 or C++:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;openvkl/openvkl.h&gt;</span>
@@ -4750,7 +4749,7 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p>This documentation will discuss the C99/C++ API. The ISPC version has the same functionality and flavor. Looking at the headers, the <code class="docutils literal notranslate"><span class="pre">vklTutorialISPC</span></code> example, and this documentation should be enough to figure it out.</p>
-<section id="initialization-and-shutdown">
+<div class="section" id="initialization-and-shutdown">
 <h2>Initialization and shutdown<a class="headerlink" href="#initialization-and-shutdown" title="Permalink to this headline">¶</a></h2>
 <p>To use the API, one of the implemented backends must be loaded. Currently the only one that exists is the ISPC driver. ISPC in the name here just refers to the implementation language – it can also be used from the C99/C++ APIs. To load the module that implements the ISPC driver:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vklLoadModule</span><span class="p">(</span><span class="s2">&quot;ispc_driver&quot;</span><span class="p">);</span>
@@ -4823,7 +4822,7 @@ SPDX-License-Identifier: MIT
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vklShutdown</span><span class="p">();</span>
 </pre></div>
 </div>
-<section id="environment-variables">
+<div class="section" id="environment-variables">
 <h3>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h3>
 <p>The generic driver parameters can be overridden via environment variables for easy changes to Open VKL’s behavior without needing to change the application (variables are prefixed by convention with “<code class="docutils literal notranslate"><span class="pre">OPENVKL_</span></code>”):</p>
 <table class="table" id="id2">
@@ -4856,8 +4855,8 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>Note that these environment variables take precedence over values set through the <code class="docutils literal notranslate"><span class="pre">vklDriverSet*()</span></code> functions.</p>
-</section>
-<section id="error-handling-and-log-messages">
+</div>
+<div class="section" id="error-handling-and-log-messages">
 <h3>Error handling and log messages<a class="headerlink" href="#error-handling-and-log-messages" title="Permalink to this headline">¶</a></h3>
 <p>The following errors are currently used by Open VKL:</p>
 <table class="table" id="id3">
@@ -4917,9 +4916,9 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p>which Open VKL will use to emit log messages. Applications can clear either callback by passing <code class="docutils literal notranslate"><span class="pre">nullptr</span></code> instead of an actual function pointer. By default, Open VKL uses <code class="docutils literal notranslate"><span class="pre">cout</span></code> and <code class="docutils literal notranslate"><span class="pre">cerr</span></code> to emit log and error messages, respectively. The last parameter to <code class="docutils literal notranslate"><span class="pre">vklDriverSetErrorCallback</span></code> and <code class="docutils literal notranslate"><span class="pre">vklDriverSetLogCallback</span></code> is a user data pointer. Open VKL passes this pointer to the callback functions as the first parameter. Note that in addition to setting the above callbacks, this behavior can be changed via the driver parameters and environment variables described previously.</p>
-</section>
-</section>
-<section id="basic-data-types">
+</div>
+</div>
+<div class="section" id="basic-data-types">
 <h2>Basic data types<a class="headerlink" href="#basic-data-types" title="Permalink to this headline">¶</a></h2>
 <p>Open VKL defines 3-component vectors of integer and vector types:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span>
@@ -4959,8 +4958,8 @@ SPDX-License-Identifier: MIT
 <span class="p">}</span> <span class="n">vkl_box3f</span><span class="p">;</span>
 </pre></div>
 </div>
-</section>
-<section id="object-model">
+</div>
+<div class="section" id="object-model">
 <h2>Object model<a class="headerlink" href="#object-model" title="Permalink to this headline">¶</a></h2>
 <p>Objects in Open VKL are exposed to the APIs as handles with internal reference counting for lifetime determination. Objects are created with particular type’s <code class="docutils literal notranslate"><span class="pre">vklNew...</span></code> API entry point. For example, <code class="docutils literal notranslate"><span class="pre">vklNewData</span></code> and <code class="docutils literal notranslate"><span class="pre">vklNewVolume</span></code>.</p>
 <p>In general, modifiable parameters to objects are modified using <code class="docutils literal notranslate"><span class="pre">vklSet...</span></code> functions based on the type of the parameter being set. The parameter name is passed as a string. Below are all variants of <code class="docutils literal notranslate"><span class="pre">vklSet...</span></code>.</p>
@@ -4981,8 +4980,8 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p>This decreases the object’s reference count. If the count reaches <code class="docutils literal notranslate"><span class="pre">0</span></code> the object will automatically be deleted.</p>
-</section>
-<section id="managed-data">
+</div>
+<div class="section" id="managed-data">
 <h2>Managed data<a class="headerlink" href="#managed-data" title="Permalink to this headline">¶</a></h2>
 <p>Large data is passed to Open VKL via a <code class="docutils literal notranslate"><span class="pre">VKLData</span></code> handle created with <code class="docutils literal notranslate"><span class="pre">vklNewData</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VKLData</span> <span class="n">vklNewData</span><span class="p">(</span><span class="n">size_t</span> <span class="n">numItems</span><span class="p">,</span>
@@ -4996,8 +4995,8 @@ SPDX-License-Identifier: MIT
 <p>Data objects can be created as Open VKL owned (<code class="docutils literal notranslate"><span class="pre">dataCreationFlags</span> <span class="pre">=</span> <span class="pre">VKL_DATA_DEFAULT</span></code>), in which the library will make a copy of the data for its use, or shared (<code class="docutils literal notranslate"><span class="pre">dataCreationFlags</span> <span class="pre">=</span> <span class="pre">VKL_DATA_SHARED_BUFFER</span></code>), which will try to use the passed pointer for usage. The library is allowed to copy data when a volume is committed.</p>
 <p>The distance between consecutive elements in <code class="docutils literal notranslate"><span class="pre">source</span></code> is given in bytes with <code class="docutils literal notranslate"><span class="pre">byteStride</span></code>. If the provided <code class="docutils literal notranslate"><span class="pre">byteStride</span></code> is zero, then it will be determined automatically as <code class="docutils literal notranslate"><span class="pre">sizeof(type)</span></code>. Open VKL owned data will be compacted into a naturally-strided array on copy, regardless of the original <code class="docutils literal notranslate"><span class="pre">byteStride</span></code>.</p>
 <p>As with other object types, when data objects are no longer needed they should be released via <code class="docutils literal notranslate"><span class="pre">vklRelease</span></code>.</p>
-</section>
-<section id="observers">
+</div>
+<div class="section" id="observers">
 <h2>Observers<a class="headerlink" href="#observers" title="Permalink to this headline">¶</a></h2>
 <p>Volumes and samplers in Open VKL may provide observers to communicate data back to the application. Observers may be created with</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VKLObserver</span> <span class="n">vklNewSamplerObserver</span><span class="p">(</span><span class="n">VKLSampler</span> <span class="n">sampler</span><span class="p">,</span>
@@ -5027,8 +5026,8 @@ SPDX-License-Identifier: MIT
 <p>so that the observer may be mapped again.</p>
 <p>When an observer is no longer needed, it should be released using <code class="docutils literal notranslate"><span class="pre">vklRelease</span></code>.</p>
 <p>The observer API is not thread safe, and these functions should not be called concurrently on the same object.</p>
-</section>
-<section id="volume-types">
+</div>
+<div class="section" id="volume-types">
 <h2>Volume types<a class="headerlink" href="#volume-types" title="Permalink to this headline">¶</a></h2>
 <p>Open VKL currently supports structured volumes on regular and spherical grids; unstructured volumes with tetrahedral, wedge, pyramid, and hexaderal primitive types; adaptive mesh refinement (AMR) volumes; sparse VDB volumes; and particle volumes. These volumes are created with <code class="docutils literal notranslate"><span class="pre">vklNewVolume</span></code> with the appropriate type string.</p>
 <p>In addition to the usual <code class="docutils literal notranslate"><span class="pre">vklSet...()</span></code> and <code class="docutils literal notranslate"><span class="pre">vklCommit()</span></code> APIs, the volume bounding box can be queried:</p>
@@ -5043,10 +5042,10 @@ SPDX-License-Identifier: MIT
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vkl_range1f</span> <span class="n">vklGetValueRange</span><span class="p">(</span><span class="n">VKLVolume</span> <span class="n">volume</span><span class="p">);</span>
 </pre></div>
 </div>
-<section id="structured-volumes">
+<div class="section" id="structured-volumes">
 <h3>Structured Volumes<a class="headerlink" href="#structured-volumes" title="Permalink to this headline">¶</a></h3>
 <p>Structured volumes only need to store the values of the samples, because their addresses in memory can be easily computed from a 3D position. The dimensions for all structured volume types are in units of vertices, not cells. For example, a volume with dimensions <span class="math notranslate nohighlight">\((x, y, z)\)</span> will have <span class="math notranslate nohighlight">\((x-1, y-1, z-1)\)</span> cells in each dimension. Voxel data provided is assumed vertex-centered, so <span class="math notranslate nohighlight">\(x*y*z\)</span> values must be provided.</p>
-<section id="structured-regular-volumes">
+<div class="section" id="structured-regular-volumes">
 <h4>Structured Regular Volumes<a class="headerlink" href="#structured-regular-volumes" title="Permalink to this headline">¶</a></h4>
 <p>A common type of structured volumes are regular grids, which are created by passing a type string of <code class="docutils literal notranslate"><span class="pre">&quot;structuredRegular&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">vklNewVolume</span></code>. The parameters understood by structured regular volumes are summarized in the table below.</p>
 <table class="table" id="id4">
@@ -5164,16 +5163,14 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-</section>
-<section id="structured-spherical-volumes">
+</div>
+<div class="section" id="structured-spherical-volumes">
 <h4>Structured Spherical Volumes<a class="headerlink" href="#structured-spherical-volumes" title="Permalink to this headline">¶</a></h4>
 <p>Structured spherical volumes are also supported, which are created by passing a type string of <code class="docutils literal notranslate"><span class="pre">&quot;structuredSpherical&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">vklNewVolume</span></code>. The grid dimensions and parameters are defined in terms of radial distance (<span class="math notranslate nohighlight">\(r\)</span>), inclination angle (<span class="math notranslate nohighlight">\(\theta\)</span>), and azimuthal angle (<span class="math notranslate nohighlight">\(\phi\)</span>), conforming with the ISO convention for spherical coordinate systems. The coordinate system and parameters understood by structured spherical volumes are summarized below.</p>
-<figure class="align-default" id="id6">
+<div class="figure align-default" id="id6">
 <img alt="Structured spherical volume coordinate system: radial distance (:math:`r`), inclination angle (:math:`\theta`), and azimuthal angle (:math:`\phi`)." src="../../../_images/structured_spherical_coords.png" />
-<figcaption>
-<p><span class="caption-text">Structured spherical volume coordinate system: radial distance (<span class="math notranslate nohighlight">\(r\)</span>), inclination angle (<span class="math notranslate nohighlight">\(\theta\)</span>), and azimuthal angle (<span class="math notranslate nohighlight">\(\phi\)</span>).</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">Structured spherical volume coordinate system: radial distance (<span class="math notranslate nohighlight">\(r\)</span>), inclination angle (<span class="math notranslate nohighlight">\(\theta\)</span>), and azimuthal angle (<span class="math notranslate nohighlight">\(\phi\)</span>).</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
 <table class="table" id="id7">
 <caption><span class="caption-text">Configuration parameters for structured spherical (<code class="docutils literal notranslate"><span class="pre">&quot;structuredSpherical&quot;</span></code>) volumes.</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -5277,9 +5274,9 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="adaptive-mesh-refinement-amr-volumes">
+</div>
+</div>
+<div class="section" id="adaptive-mesh-refinement-amr-volumes">
 <h3>Adaptive Mesh Refinement (AMR) Volumes<a class="headerlink" href="#adaptive-mesh-refinement-amr-volumes" title="Permalink to this headline">¶</a></h3>
 <p>Open VKL currently supports block-structured (Berger-Colella) AMR volumes. Volumes are specified as a list of blocks, which exist at levels of refinement in potentially overlapping regions. Blocks exist in a tree structure, with coarser refinement level blocks containing finer blocks. The cell width is equal for all blocks at the same refinement level, though blocks at a coarser level have a larger cell width than finer levels.</p>
 <p>There can be any number of refinement levels and any number of blocks at any level of refinement.</p>
@@ -5398,8 +5395,8 @@ SPDX-License-Identifier: MIT
 </ol>
 </li>
 </ol>
-</section>
-<section id="unstructured-volumes">
+</div>
+<div class="section" id="unstructured-volumes">
 <h3>Unstructured Volumes<a class="headerlink" href="#unstructured-volumes" title="Permalink to this headline">¶</a></h3>
 <p>Unstructured volumes can have their topology and geometry freely defined. Geometry can be composed of tetrahedral, hexahedral, wedge or pyramid cell types. The data format used is compatible with VTK and consists of multiple arrays: vertex positions and values, vertex indices, cell start indices, cell types, and cell values.</p>
 <p>Sampled cell values can be specified either per-vertex (<code class="docutils literal notranslate"><span class="pre">vertex.data</span></code>) or per-cell (<code class="docutils literal notranslate"><span class="pre">cell.data</span></code>). If both arrays are set, <code class="docutils literal notranslate"><span class="pre">cell.data</span></code> takes precedence.</p>
@@ -5517,19 +5514,17 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-</section>
-<section id="vdb-volumes">
+</div>
+<div class="section" id="vdb-volumes">
 <h3>VDB Volumes<a class="headerlink" href="#vdb-volumes" title="Permalink to this headline">¶</a></h3>
 <p>VDB volumes implement a data structure that is very similar to the data structure outlined in Museth [1].</p>
 <p>The data structure is a hierarchical regular grid at its core: Nodes are regular grids, and each grid cell may either store a constant value (this is called a tile), or child pointers.</p>
 <p>Nodes in VDB trees are wide: Nodes on the first level have a resolution of 32^3 voxels by default, on the next level 16^3, and on the leaf level 8^3 voxels. All nodes on a given level have the same resolution. This makes it easy to find the node containing a coordinate using shift operations (cp. [1]).</p>
 <p>VDB leaf nodes are implicit in Open VKL: they are stored as pointers to user-provided data.</p>
-<figure class="align-default" id="id13">
+<div class="figure align-default" id="id13">
 <img alt="Structure of ``&quot;vdb&quot;`` volumes in the default configuration" src="../../../_images/vdb_structure.png" />
-<figcaption>
-<p><span class="caption-text">Structure of <code class="docutils literal notranslate"><span class="pre">&quot;vdb&quot;</span></code> volumes in the default configuration</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">Structure of <code class="docutils literal notranslate"><span class="pre">&quot;vdb&quot;</span></code> volumes in the default configuration</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
 <p>VDB volumes interpret input data as constant cells (which are then potentially filtered). This is in contrast to <code class="docutils literal notranslate"><span class="pre">structuredRegular</span></code> volumes, which have a vertex-centered interpretation.</p>
 <p>The VDB implementation in Open VKL follows the following goals:</p>
 <ul class="simple">
@@ -5642,7 +5637,7 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-<section id="major-differences-to-openvdb">
+<div class="section" id="major-differences-to-openvdb">
 <h4>Major differences to OpenVDB<a class="headerlink" href="#major-differences-to-openvdb" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Open VKL implements sampling in ISPC, and can exploit wide SIMD architectures.</p></li>
@@ -5657,8 +5652,8 @@ SPDX-License-Identifier: MIT
 </ul>
 </li>
 </ul>
-</section>
-<section id="loading-openvdb-vdb-files">
+</div>
+<div class="section" id="loading-openvdb-vdb-files">
 <h4>Loading OpenVDB .vdb files<a class="headerlink" href="#loading-openvdb-vdb-files" title="Permalink to this headline">¶</a></h4>
 <p>Files generated with OpenVDB can be loaded easily since Open VKL <code class="docutils literal notranslate"><span class="pre">vdb</span></code> volumes implement the same leaf data layout. This means that OpenVDB leaf data pointers can be passed to Open VKL using shared data buffers, avoiding copy operations.</p>
 <p>An example of this can be found in <code class="docutils literal notranslate"><span class="pre">vdb_util/include/openvkl/OpenVdbGrid.h</span></code>, where the class <code class="docutils literal notranslate"><span class="pre">OpenVdbFloatGrid</span></code> encapsulates the necessary operations. This class is also accessible through the <code class="docutils literal notranslate"><span class="pre">vklExamples</span></code> application using the <code class="docutils literal notranslate"><span class="pre">-file</span></code> and <code class="docutils literal notranslate"><span class="pre">-field</span></code> command line arguments.</p>
@@ -5666,9 +5661,9 @@ SPDX-License-Identifier: MIT
 <ol class="arabic simple">
 <li><p>Museth, K. VDB: High-Resolution Sparse Volumes with Dynamic Topology. ACM Transactions on Graphics 32(3), 2013. DOI: 10.1145/2487228.2487235</p></li>
 </ol>
-</section>
-</section>
-<section id="particle-volumes">
+</div>
+</div>
+<div class="section" id="particle-volumes">
 <h3>Particle Volumes<a class="headerlink" href="#particle-volumes" title="Permalink to this headline">¶</a></h3>
 <p>Particle volumes consist of a set of points in space. Each point has a position, a radius, and a weight typically associated with an attribute. A radial basis function defines the contribution of that particle. Currently, we use the Gaussian radial basis function,</p>
 <p>phi(P) = w * exp( -0.5 * ((P - p) / r)^2 )</p>
@@ -5756,17 +5751,17 @@ SPDX-License-Identifier: MIT
 </ol>
 </li>
 </ol>
-</section>
-</section>
-<section id="sampler-objects">
+</div>
+</div>
+<div class="section" id="sampler-objects">
 <h2>Sampler Objects<a class="headerlink" href="#sampler-objects" title="Permalink to this headline">¶</a></h2>
 <p>Computing the value of a volume at an object space coordinate is done using the sampling API, and sampler objects. Sampler objects can be created using</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VKLSampler</span> <span class="n">vklNewSampler</span><span class="p">(</span><span class="n">VKLVolume</span> <span class="n">volume</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Sampler objects may then be parametrized with traversal parameters. Available parameters are defined by volumes, and are a subset of the volume parameters. As an example, <code class="docutils literal notranslate"><span class="pre">filter</span></code> can be set on both <code class="docutils literal notranslate"><span class="pre">vdb</span></code> volumes and their sampler objects. The volume parameter is used as the default for sampler objects. The sampler object parameter provides an override per ray. More detail on parameters can be found in the sections on volumes. Use <code class="docutils literal notranslate"><span class="pre">vklCommit()</span></code> to commit parameters to the sampler object.</p>
-</section>
-<section id="sampling">
+</div>
+<div class="section" id="sampling">
 <h2>Sampling<a class="headerlink" href="#sampling" title="Permalink to this headline">¶</a></h2>
 <p>The scalar API takes a volume and coordinate, and returns a float value. NaN is returned for probe points outside the volume. The attribute index selects the scalar attribute of interest; not all volumes support multiple attributes. The time value, which must be between 0 and 1, specifies the sampling time. For temporally constant volumes, this value has no effect.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">vklComputeSample</span><span class="p">(</span><span class="n">VKLSampler</span> <span class="n">sampler</span><span class="p">,</span>
@@ -5808,7 +5803,7 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p>All of the above sampling APIs can be used, regardless of the driver’s native SIMD width.</p>
-<section id="sampling-multiple-attributes">
+<div class="section" id="sampling-multiple-attributes">
 <h3>Sampling Multiple Attributes<a class="headerlink" href="#sampling-multiple-attributes" title="Permalink to this headline">¶</a></h3>
 <p>Open VKL provides additional APIs for sampling multiple scalar attributes in a single call through the <code class="docutils literal notranslate"><span class="pre">vklComputeSampleM*()</span></code> interfaces. Beyond convenience, these can give improved performance relative to the single attribute sampling APIs. As with the single attribute APIs, sampling time values may be specified; note that these are provided per object coordinate only (rather than separately per attribute).</p>
 <p>A scalar API supports sampling <code class="docutils literal notranslate"><span class="pre">M</span></code> attributes specified by <code class="docutils literal notranslate"><span class="pre">attributeIndices</span></code> on a single object space coordinate:</p>
@@ -5871,9 +5866,9 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p>All of the above sampling APIs can be used, regardless of the driver’s native SIMD width.</p>
-</section>
-</section>
-<section id="gradients">
+</div>
+</div>
+<div class="section" id="gradients">
 <h2>Gradients<a class="headerlink" href="#gradients" title="Permalink to this headline">¶</a></h2>
 <p>In a very similar API to <code class="docutils literal notranslate"><span class="pre">vklComputeSample</span></code>, <code class="docutils literal notranslate"><span class="pre">vklComputeGradient</span></code> queries the value gradient at an object space coordinate. Again, a scalar API, now returning a vec3f instead of a float. NaN values are returned for points outside the volume. The time value, which must be between 0 and 1, specifies the sampling time. For temporally constant volumes, this value has no effect.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vkl_vec3f</span> <span class="n">vklComputeGradient</span><span class="p">(</span><span class="n">VKLSampler</span> <span class="n">sampler</span><span class="p">,</span>
@@ -5915,8 +5910,8 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p>All of the above gradient APIs can be used, regardless of the driver’s native SIMD width.</p>
-</section>
-<section id="iterators">
+</div>
+<div class="section" id="iterators">
 <h2>Iterators<a class="headerlink" href="#iterators" title="Permalink to this headline">¶</a></h2>
 <p>Open VKL has APIs to search for particular volume values along a ray. Queries can be for ranges of volume values (<code class="docutils literal notranslate"><span class="pre">vklIterateInterval</span></code>) or for particular values (<code class="docutils literal notranslate"><span class="pre">vklIterateHit</span></code>). Only the first volume attribute is currently considered in the iterator APIs.</p>
 <p>The desired values are set in a <code class="docutils literal notranslate"><span class="pre">VKLValueSelector</span></code>, which needs to be created, filled in with values, and then committed.</p>
@@ -6125,11 +6120,11 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p>For both interval and hit iterators, only the vector-wide API for the native SIMD width (determined via <code class="docutils literal notranslate"><span class="pre">vklGetNativeSIMDWidth</span></code> can be called. The scalar versions are always valid. This restriction will likely be lifted in the future.</p>
-</section>
-</section>
-<section id="performance-recommendations">
+</div>
+</div>
+<div class="section" id="performance-recommendations">
 <h1>Performance Recommendations<a class="headerlink" href="#performance-recommendations" title="Permalink to this headline">¶</a></h1>
-<section id="mxcsr-control-and-status-register">
+<div class="section" id="mxcsr-control-and-status-register">
 <h2>MXCSR control and status register<a class="headerlink" href="#mxcsr-control-and-status-register" title="Permalink to this headline">¶</a></h2>
 <p>It is strongly recommended to have the <code class="docutils literal notranslate"><span class="pre">Flush</span> <span class="pre">to</span> <span class="pre">Zero</span></code> and <code class="docutils literal notranslate"><span class="pre">Denormals</span> <span class="pre">are</span> <span class="pre">Zero</span></code> mode of the MXCSR control and status register enabled for each thread before calling the sampling, gradient, or interval API functions. Otherwise, under some circumstances special handling of denormalized floating point numbers can significantly reduce application and Open VKL performance. The driver parameter <code class="docutils literal notranslate"><span class="pre">flushDenormals</span></code> or environment variable <code class="docutils literal notranslate"><span class="pre">OPENVKL_FLUSH_DENORMALS</span></code> can be used to toggle this mode; by default it is enabled. Alternatively, when using Open VKL together with the Intel® Threading Building Blocks, it is sufficient to execute the following code at the beginning of the application main thread (before the creation of the <code class="docutils literal notranslate"><span class="pre">tbb::task_scheduler_init</span></code> object):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;xmmintrin.h&gt;</span>
@@ -6140,8 +6135,8 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p>If using a different tasking system, make sure each thread calling into Open VKL has the proper mode set.</p>
-</section>
-<section id="iterator-allocation">
+</div>
+<div class="section" id="iterator-allocation">
 <h2>Iterator Allocation<a class="headerlink" href="#iterator-allocation" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">vklInitIntervalIterator</span></code> and <code class="docutils literal notranslate"><span class="pre">vklInitHitIterator</span></code> expect a user allocated buffer. While this buffer can be allocated by any means, we expect iterators to be used in inner loops and advise against heap allocation in that case. Applications may provide high performance memory pools, but as a preferred alternative we recommend stack allocated buffers.</p>
 <p>In C99, variable length arrays provide an easy way to achieve this:</p>
@@ -6162,8 +6157,8 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p>These values are majorants over all drivers and volume types. Note that Open VKL attempts to detect the target SIMD width using <code class="docutils literal notranslate"><span class="pre">TARGET_WIDTH</span></code>, returning smaller buffer sizes for narrow architectures. However, Open VKL may fall back to the largest buffer size over all targets.</p>
-</section>
-<section id="multi-attribute-volume-data-layout">
+</div>
+<div class="section" id="multi-attribute-volume-data-layout">
 <h2>Multi-attribute Volume Data Layout<a class="headerlink" href="#multi-attribute-volume-data-layout" title="Permalink to this headline">¶</a></h2>
 <p>Open VKL provides flexible managed data APIs that allow applications to specify input data in various formats and layouts. When shared buffers are used (<code class="docutils literal notranslate"><span class="pre">dataCreationFlags</span> <span class="pre">=</span> <span class="pre">VKL_DATA_SHARED_BUFFER</span></code>), Open VKL will use the application-owned memory directly, respecting the input data layout. Shared buffers therefore allow applications to strategically select the best layout for multi-attribute volume data and expected sampling behavior.</p>
 <p>For volume attributes that are sampled individually (e.g. using <code class="docutils literal notranslate"><span class="pre">vklComputeSample[4,8,16,N]()</span></code>), it is recommended to use a structure-of-arrays layout. That is, each attribute’s data should be compact in contiguous memory. This can be accomplished by simply using Open VKL owned data objects (<code class="docutils literal notranslate"><span class="pre">dataCreationFlags</span> <span class="pre">=</span> <span class="pre">VKL_DATA_DEFAULT</span></code>), or by using a natural <code class="docutils literal notranslate"><span class="pre">byteStride</span></code> for shared buffers.</p>
@@ -6214,8 +6209,8 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p>These are general recommendations for common scenarios; it is still recommended to evaluate performance of different volume data layouts for your application’s particular use case.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

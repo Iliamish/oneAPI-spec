@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Binary &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4625,7 +4624,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="binary">
+  <div class="section" id="binary">
 <h1>Binary<a class="headerlink" href="#binary" title="Permalink to this headline">¶</a></h1>
 <p>The binary primitive computes a result of a binary elementwise operation
 between tensors source 0 and source 1.</p>
@@ -4634,12 +4633,12 @@ between tensors source 0 and source 1.</p>
 <p>where <span class="math notranslate nohighlight">\(\overline{x} = (x_0, \ldots, x_n)\)</span> and <span class="math notranslate nohighlight">\(op\)</span> is an operator
 like addition, multiplication, maximum or minimum. Variable names follow the
 standard <a class="reference internal" href="../conventions.html#conventions-label"><span class="std std-ref">Conventions</span></a>.</p>
-<section id="forward-and-backward">
+<div class="section" id="forward-and-backward">
 <h2>Forward and Backward<a class="headerlink" href="#forward-and-backward" title="Permalink to this headline">¶</a></h2>
 <p>The binary primitive does not have a notion of forward or backward
 propagations.</p>
-</section>
-<section id="execution-arguments">
+</div>
+<div class="section" id="execution-arguments">
 <h2>Execution Arguments<a class="headerlink" href="#execution-arguments" title="Permalink to this headline">¶</a></h2>
 <p>When executed, the inputs and outputs should be mapped to an execution
 argument index as specified by the following table.</p>
@@ -4665,8 +4664,8 @@ argument index as specified by the following table.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="operation-details">
+</div>
+<div class="section" id="operation-details">
 <h2>Operation Details<a class="headerlink" href="#operation-details" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>The binary primitive requires all source and destination tensors to have
@@ -4684,8 +4683,8 @@ descriptor.</p></li>
 tensor may be used as the destination, in which case its data will be
 overwritten.</p></li>
 </ul>
-</section>
-<section id="post-ops-and-attributes">
+</div>
+<div class="section" id="post-ops-and-attributes">
 <h2>Post-ops and Attributes<a class="headerlink" href="#post-ops-and-attributes" title="Permalink to this headline">¶</a></h2>
 <p>The following attributes should be supported:</p>
 <table class="table">
@@ -4720,18 +4719,18 @@ overwritten.</p></li>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="data-types-support">
+</div>
+<div class="section" id="data-types-support">
 <h2>Data Types Support<a class="headerlink" href="#data-types-support" title="Permalink to this headline">¶</a></h2>
 <p>The source and destination tensors may have <a class="reference internal" href="../data_model/data_types/index.html#_CPPv4N4dnnl6memory9data_type3f32E" title="dnnl::memory::data_type::f32"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::memory::data_type::f32</span></code></a>, <a class="reference internal" href="../data_model/data_types/index.html#_CPPv4N4dnnl6memory9data_type4bf16E" title="dnnl::memory::data_type::bf16"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::memory::data_type::bf16</span></code></a>, <a class="reference internal" href="../data_model/data_types/index.html#_CPPv4N4dnnl6memory9data_type2s8E" title="dnnl::memory::data_type::s8"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::memory::data_type::s8</span></code></a> or <a class="reference internal" href="../data_model/data_types/index.html#_CPPv4N4dnnl6memory9data_type2u8E" title="dnnl::memory::data_type::u8"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::memory::data_type::u8</span></code></a>
 data types.</p>
-</section>
-<section id="data-representation">
+</div>
+<div class="section" id="data-representation">
 <h2>Data Representation<a class="headerlink" href="#data-representation" title="Permalink to this headline">¶</a></h2>
 <p>The binary primitive works with arbitrary data tensors. There is no special
 meaning associated with any of tensors dimensions.</p>
-</section>
-<section id="api">
+</div>
+<div class="section" id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp struct">
 <dt id="_CPPv4N4dnnl6binaryE">
@@ -4748,13 +4747,12 @@ meaning associated with any of tensors dimensions.</p>
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl6binary6binaryERK14primitive_desc">
 <span id="_CPPv3N4dnnl6binary6binaryERK14primitive_desc"></span><span id="_CPPv2N4dnnl6binary6binaryERK14primitive_desc"></span><span id="dnnl::binary::binary__primitive_descCR"></span><span class="target" id="structdnnl_1_1binary_1ad1c3928248051918ab44b523165e312e"></span><code class="sig-name descname"><span class="pre">binary</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl6binary14primitive_descE" title="dnnl::binary::primitive_desc"><span class="pre">primitive_desc</span></a> <span class="pre">&amp;</span><em><span class="pre">pd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl6binary6binaryERK14primitive_desc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Constructs an elementwise binary operation primitive. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pd</span></code>: Primitive descriptor for an elementwise binary operation primitive. </p></li>
-</ul>
+<dd><p>Constructs an elementwise binary operation primitive. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pd</strong> – Primitive descriptor for an elementwise binary operation primitive. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -4768,16 +4766,16 @@ meaning associated with any of tensors dimensions.</p>
 <dt id="_CPPv4N4dnnl6binary4desc4descE9algorithmRKN6memory4descERKN6memory4descERKN6memory4descE">
 <span id="_CPPv3N4dnnl6binary4desc4descE9algorithmRKN6memory4descERKN6memory4descERKN6memory4descE"></span><span id="_CPPv2N4dnnl6binary4desc4descE9algorithmRKN6memory4descERKN6memory4descERKN6memory4descE"></span><span id="dnnl::binary::desc::desc__algorithm.memory::descCR.memory::descCR.memory::descCR"></span><span class="target" id="structdnnl_1_1binary_1_1desc_1abd0389268eaf3594dbaf5a27dd99e1f6"></span><code class="sig-name descname"><span class="pre">desc</span></code><span class="sig-paren">(</span><a class="reference internal" href="general.html#_CPPv4N4dnnl9algorithmE" title="dnnl::algorithm"><span class="pre">algorithm</span></a> <em><span class="pre">aalgorithm</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">src0</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">src1</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">dst</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl6binary4desc4descE9algorithmRKN6memory4descERKN6memory4descERKN6memory4descE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a descriptor for an elementwise binary operator primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">aalgorithm</span></code>: Elementwise algorithm. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">src0</span></code>: Memory descriptor for source tensor #0. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">src1</span></code>: Memory descriptor for source tensor #1. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dst</span></code>: Memory descriptor for destination tensor. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aalgorithm</strong> – Elementwise algorithm. </p></li>
+<li><p><strong>src0</strong> – Memory descriptor for source tensor #0. </p></li>
+<li><p><strong>src1</strong> – Memory descriptor for source tensor #1. </p></li>
+<li><p><strong>dst</strong> – Memory descriptor for destination tensor. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -4799,47 +4797,48 @@ meaning associated with any of tensors dimensions.</p>
 <dt id="_CPPv4N4dnnl6binary14primitive_desc14primitive_descERK4descRK6engineb">
 <span id="_CPPv3N4dnnl6binary14primitive_desc14primitive_descERK4descRK6engineb"></span><span id="_CPPv2N4dnnl6binary14primitive_desc14primitive_descERK4descRK6engineb"></span><span id="dnnl::binary::primitive_desc::primitive_desc__descCR.engineCR.b"></span><span class="target" id="structdnnl_1_1binary_1_1primitive__desc_1aff62ff34e4c4ff6a6003d5b8444b207c"></span><code class="sig-name descname"><span class="pre">primitive_desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl6binary4descE" title="dnnl::binary::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl6binary14primitive_desc14primitive_descERK4descRK6engineb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a primitive descriptor for an elementwise binary operator primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Descriptor for an elementwise binary operator primitive. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adesc</strong> – Descriptor for an elementwise binary operator primitive. </p></li>
+<li><p><strong>aengine</strong> – Engine to use. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl6binary14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb">
 <span id="_CPPv3N4dnnl6binary14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb"></span><span id="_CPPv2N4dnnl6binary14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb"></span><span id="dnnl::binary::primitive_desc::primitive_desc__descCR.primitive_attrCR.engineCR.b"></span><span class="target" id="structdnnl_1_1binary_1_1primitive__desc_1a65e6290e4f4aa68eb6ca3c3789b7846a"></span><code class="sig-name descname"><span class="pre">primitive_desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl6binary4descE" title="dnnl::binary::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="attributes/index.html#_CPPv4N4dnnl14primitive_attrE" title="dnnl::primitive_attr"><span class="pre">primitive_attr</span></a> <span class="pre">&amp;</span><em><span class="pre">attr</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl6binary14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a primitive descriptor for an elementwise binary operator primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Descriptor for an elementwise binary operator primitive. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">attr</span></code>: Primitive attributes to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adesc</strong> – Descriptor for an elementwise binary operator primitive. </p></li>
+<li><p><strong>aengine</strong> – Engine to use. </p></li>
+<li><p><strong>attr</strong> – Primitive attributes to use. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl6binary14primitive_desc8src_descEi">
 <span id="_CPPv3NK4dnnl6binary14primitive_desc8src_descEi"></span><span id="_CPPv2NK4dnnl6binary14primitive_desc8src_descEi"></span><span id="dnnl::binary::primitive_desc::src_desc__iC"></span><span class="target" id="structdnnl_1_1binary_1_1primitive__desc_1a69618bf51de3aab412db31dffa8784b3"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">src_desc</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">idx</span></em> <span class="pre">=</span> <span class="pre">0</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl6binary14primitive_desc8src_descEi" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a source memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Source memory descriptor. </p>
+<dd><p>Returns a source memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>idx</strong> – Source index. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a source parameter with index <code class="docutils literal notranslate"><span class="pre">pdx</span></code>. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Source memory descriptor. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">idx</span></code>: Source index. </p></li>
-</ul>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A zero memory descriptor if the primitive does not have a source parameter with index <code class="docutils literal notranslate"><span class="pre">pdx</span></code>. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -4857,13 +4856,15 @@ meaning associated with any of tensors dimensions.</p>
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl6binary14primitive_desc8dst_descEv">
 <span id="_CPPv3NK4dnnl6binary14primitive_desc8dst_descEv"></span><span id="_CPPv2NK4dnnl6binary14primitive_desc8dst_descEv"></span><span id="dnnl::binary::primitive_desc::dst_descC"></span><span class="target" id="structdnnl_1_1binary_1_1primitive__desc_1ac552b6afc7e7e422e28d477d6c1218e5"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">dst_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl6binary14primitive_desc8dst_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a destination memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Destination memory descriptor. </p>
+<dd><p>Returns a destination memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Destination memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a destination parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a destination parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -4871,8 +4872,8 @@ meaning associated with any of tensors dimensions.</p>
 
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

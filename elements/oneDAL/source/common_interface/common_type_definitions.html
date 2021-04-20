@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Common type definitions &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4617,15 +4616,15 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="common-type-definitions">
+  <div class="section" id="common-type-definitions">
 <h1>Common type definitions<a class="headerlink" href="#common-type-definitions" title="Permalink to this headline">¶</a></h1>
 <p>This section describes common types used in oneDAL.</p>
-<section id="programming-interface">
+<div class="section" id="programming-interface">
 <h2>Programming interface<a class="headerlink" href="#programming-interface" title="Permalink to this headline">¶</a></h2>
 <p>All types and functions in this section shall be declared in the
 <code class="docutils literal notranslate"><span class="pre">oneapi::dal</span></code> namespace and be available via inclusion of the
 <code class="docutils literal notranslate"><span class="pre">oneapi/dal/common.hpp</span></code> header file.</p>
-<section id="scalar-types">
+<div class="section" id="scalar-types">
 <span id="id1"></span><h3>Scalar types<a class="headerlink" href="#scalar-types" title="Permalink to this headline">¶</a></h3>
 <p>oneDAL relies on the use of integral types defined in <code class="docutils literal notranslate"><span class="pre">&lt;cstdint&gt;</span></code>.
 This file shall be included in <code class="docutils literal notranslate"><span class="pre">oneapi/dal/common.hpp</span></code> and all
@@ -4633,14 +4632,14 @@ oneDAL types shall use these data types.</p>
 <p>The interfaces of the library shall use <code class="docutils literal notranslate"><span class="pre">std::int64_t</span></code> data type to represent
 dimensionality (for example, the number of rows and columns in the table).</p>
 <p>It is recommended to use standard C++ types for applications as well.</p>
-</section>
-<section id="enum-classes">
+</div>
+<div class="section" id="enum-classes">
 <h3>Enum classes<a class="headerlink" href="#enum-classes" title="Permalink to this headline">¶</a></h3>
 <p>Which base type to use when defining <code class="docutils literal notranslate"><span class="pre">enum</span></code> or <code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">class</span></code> representing a
 oneDAL concept is up to the implementer unless specification requires
 a specific base type.</p>
-</section>
-<section id="data-type">
+</div>
+<div class="section" id="data-type">
 <h3>Data type<a class="headerlink" href="#data-type" title="Permalink to this headline">¶</a></h3>
 <p>The implementation of <a class="reference internal" href="../glossary.html#term-Data-type"><span class="xref std std-term">data type</span></a> concept. It shall enumerate all the
 data types supported by oneDAL to perform computations. The
@@ -4691,8 +4690,8 @@ extend them. Base scalar types include the types whose names follow the pattern
 </dl>
 </dd></dl>
 
-</section>
-<section id="range">
+</div>
+<div class="section" id="range">
 <h3>Range<a class="headerlink" href="#range" title="Permalink to this headline">¶</a></h3>
 <p>A range <code class="docutils literal notranslate"><span class="pre">[start_index,</span> <span class="pre">end_index)</span></code> in an array or any other container that
 supports value indexing.</p>
@@ -4741,9 +4740,9 @@ supports value indexing.</p>
 
 </dd></dl>
 
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

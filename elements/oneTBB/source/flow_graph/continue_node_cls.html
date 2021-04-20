@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>continue_node &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4604,7 +4603,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="continue-node">
+  <div class="section" id="continue-node">
 <h1>continue_node<a class="headerlink" href="#continue-node" title="Permalink to this headline">¶</a></h1>
 <p><strong>[flow_graph.continue_node]</strong></p>
 <p>A node that executes a specified body object when triggered.</p>
@@ -4662,7 +4661,7 @@ and the node starts counting the number of <code class="docutils literal notrans
 not affect the original object used to construct the node. If the state held within a body object
 must be inspected from outside of the node, the <a class="reference internal" href="copy_body_func.html"><span class="doc">copy_body function</span></a> can be
 used to obtain an updated copy.</p>
-<section id="member-functions">
+<div class="section" id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Body</span><span class="o">&gt;</span>
 <span class="n">continue_node</span><span class="p">(</span> <span class="n">graph</span> <span class="o">&amp;</span><span class="n">g</span><span class="p">,</span> <span class="n">Body</span> <span class="n">body</span><span class="p">,</span> <span class="n">node_priority_t</span> <span class="n">priority</span> <span class="o">=</span> <span class="n">no_priority</span> <span class="p">);</span>
@@ -4728,8 +4727,8 @@ for the execution of the body to complete.</p>
 </pre></div>
 </div>
 <p><strong>Returns</strong>: <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
-</section>
-<section id="deduction-guides">
+</div>
+<div class="section" id="deduction-guides">
 <h2>Deduction Guides<a class="headerlink" href="#deduction-guides" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Body</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Policy</span><span class="o">&gt;</span>
 <span class="n">continue_node</span><span class="p">(</span><span class="n">graph</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">Body</span><span class="p">,</span> <span class="n">Policy</span><span class="p">,</span> <span class="n">node_priority_t</span> <span class="o">=</span> <span class="n">no_priority</span><span class="p">)</span>
@@ -4753,12 +4752,12 @@ for the execution of the body to complete.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">continue_output_t&lt;Output&gt;</span></code> is an alias to <cite>Output</cite> template argument type. If <cite>Output</cite> specified
 as <code class="docutils literal notranslate"><span class="pre">void</span></code>, <code class="docutils literal notranslate"><span class="pre">continue_output_t&lt;Output&gt;</span></code> is an alias to <code class="docutils literal notranslate"><span class="pre">continue_msg</span></code> type.</p></li>
 </ul>
-</section>
-<section id="example">
+</div>
+<div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>A set of <code class="docutils literal notranslate"><span class="pre">continue_nodes</span></code> forms a <a class="reference internal" href="dependency_flow_graph_example.html"><span class="doc">Dependency Flow Graph</span></a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

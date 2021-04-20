@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>concurrent_vector &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4624,11 +4623,11 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="concurrent-vector">
+  <div class="section" id="concurrent-vector">
 <h1>concurrent_vector<a class="headerlink" href="#concurrent-vector" title="Permalink to this headline">¶</a></h1>
 <p><strong>[containers.concurrent_vector]</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">concurrent_vector</span></code> is a class template for a vector that can be concurrently grown and accessed.</p>
-<section id="class-template-synopsis">
+<div class="section" id="class-template-synopsis">
 <h2>Class Template Synopsis<a class="headerlink" href="#class-template-synopsis" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Defined in header &lt;tbb/concurrent_vector.h&gt;</span>
 
@@ -4775,8 +4774,8 @@ SPDX-License-Identifier: MIT
 <span class="p">}</span> <span class="c1">// namespace tbb</span>
 </pre></div>
 </div>
-</section>
-<section id="requirements">
+</div>
+<div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>The type <code class="docutils literal notranslate"><span class="pre">T</span></code> must meet the following requirements:</p>
@@ -4792,8 +4791,8 @@ the destructor must be non-virtual and work correctly on zero-filled memory.</p>
 </li>
 <li><p>The type <code class="docutils literal notranslate"><span class="pre">Allocator</span></code> must meet the <code class="docutils literal notranslate"><span class="pre">Allocator</span></code> requirements from the [allocator.requirements] ISO C++ section.</p></li>
 </ul>
-</section>
-<section id="description">
+</div>
+<div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">tbb::concurrent_vector</span></code> is a class template that represents a sequence container with the following features:</p>
 <ul class="simple">
@@ -4801,8 +4800,8 @@ the destructor must be non-virtual and work correctly on zero-filled memory.</p>
 <li><p>Random access by index. The index of the first element is zero.</p></li>
 <li><p>Growing the container does not invalidate any existing iterators or indices.</p></li>
 </ul>
-</section>
-<section id="exception-safety">
+</div>
+<div class="section" id="exception-safety">
 <h2>Exception Safety<a class="headerlink" href="#exception-safety" title="Permalink to this headline">¶</a></h2>
 <p>Concurrent growing is fundamentally incompatible with ideal exception safety. Nonetheless,
 <code class="docutils literal notranslate"><span class="pre">tbb::concurrent_vector</span></code> offers a practical level of exception safety.</p>
@@ -4838,8 +4837,8 @@ decrease.</p></li>
 </ul>
 <p>If a concurrent growth operation successfully completes, the appended sequence remains valid
 and accessible even if a subsequent growth operations fails.</p>
-</section>
-<section id="member-functions">
+</div>
+<div class="section" id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -4852,8 +4851,8 @@ and accessible even if a subsequent growth operations fails.</p>
 <li class="toctree-l1"><a class="reference internal" href="concurrent_vector_cls/parallel_iteration.html">Parallel iteration</a></li>
 </ul>
 </div>
-</section>
-<section id="non-member-functions">
+</div>
+<div class="section" id="non-member-functions">
 <h2>Non-member functions<a class="headerlink" href="#non-member-functions" title="Permalink to this headline">¶</a></h2>
 <p>These functions provide binary and lexicographical comparison and swap operations
 on <code class="docutils literal notranslate"><span class="pre">tbb::concurrent_vector</span></code> objects.</p>
@@ -4897,16 +4896,16 @@ the non-member functions are reachable only via argument-dependent lookup.</p>
 <li class="toctree-l1"><a class="reference internal" href="concurrent_vector_cls/non_member_swap.html">Non-member swap</a></li>
 </ul>
 </div>
-</section>
-<section id="other">
+</div>
+<div class="section" id="other">
 <h2>Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="concurrent_vector_cls/deduction_guides.html">Deduction guides</a></li>
 </ul>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

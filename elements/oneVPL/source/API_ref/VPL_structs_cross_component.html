@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cross-component Structures &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4691,10 +4690,10 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="cross-component-structures">
+  <div class="section" id="cross-component-structures">
 <span id="struct-cross-component"></span><h1>Cross-component Structures<a class="headerlink" href="#cross-component-structures" title="Permalink to this headline">¶</a></h1>
 <p id="struct-cross-comp-begin">Structures used across library components.</p>
-<section id="api">
+<div class="section" id="api">
 <span id="struct-cross-comp-end"></span><h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -4719,7 +4718,7 @@ SPDX-License-Identifier: MIT
 <li><p><a class="reference internal" href="#mfxexthypermodeparam" id="id19">mfxExtHyperModeParam</a></p></li>
 </ul>
 </div>
-<section id="mfxcomponentinfo">
+<div class="section" id="mfxcomponentinfo">
 <h3><a class="toc-backref" href="#id1">mfxComponentInfo</a><a class="headerlink" href="#mfxcomponentinfo" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv416mfxComponentInfo">
@@ -4742,8 +4741,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxexthevcparam">
+</div>
+<div class="section" id="mfxexthevcparam">
 <h3><a class="toc-backref" href="#id2">mfxExtHEVCParam</a><a class="headerlink" href="#mfxexthevcparam" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv415mfxExtHEVCParam">
@@ -4789,8 +4788,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextjpeghuffmantables">
+</div>
+<div class="section" id="mfxextjpeghuffmantables">
 <h3><a class="toc-backref" href="#id3">mfxExtJPEGHuffmanTables</a><a class="headerlink" href="#mfxextjpeghuffmantables" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv423mfxExtJPEGHuffmanTables">
@@ -4871,8 +4870,8 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-</section>
-<section id="mfxextjpegquanttables">
+</div>
+<div class="section" id="mfxextjpegquanttables">
 <h3><a class="toc-backref" href="#id4">mfxExtJPEGQuantTables</a><a class="headerlink" href="#mfxextjpegquanttables" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv421mfxExtJPEGQuantTables">
@@ -4938,8 +4937,8 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-</section>
-<section id="mfxextmvcseqdesc">
+</div>
+<div class="section" id="mfxextmvcseqdesc">
 <h3><a class="toc-backref" href="#id5">mfxExtMVCSeqDesc</a><a class="headerlink" href="#mfxextmvcseqdesc" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv416mfxExtMVCSeqDesc">
@@ -5016,8 +5015,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextmvctargetviews">
+</div>
+<div class="section" id="mfxextmvctargetviews">
 <h3><a class="toc-backref" href="#id6">mfxExtMVCTargetViews</a><a class="headerlink" href="#mfxextmvctargetviews" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv420mfxExtMVCTargetViews">
@@ -5052,8 +5051,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextvideosignalinfo">
+</div>
+<div class="section" id="mfxextvideosignalinfo">
 <h3><a class="toc-backref" href="#id7">mfxExtVideoSignalInfo</a><a class="headerlink" href="#mfxextvideosignalinfo" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv421mfxExtVideoSignalInfo">
@@ -5062,10 +5061,10 @@ SPDX-License-Identifier: MIT
 <p>For H.264, see Annex E of the ISO/IEC 14496-10 specification for the definition of these parameters.</p>
 <p>For MPEG-2, see section 6.3.6 of the ITU* H.262 specification for the definition of these parameters. The field VideoFullRange is ignored.</p>
 <p>For VC-1, see section 6.1.14.5 of the SMPTE* 421M specification. The fields VideoFormat and VideoFullRange are ignored.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>If ColourDescriptionPresent is zero, the color description information (including ColourPrimaries, TransferCharacteristics, and MatrixCoefficients) does not present in the bitstream. </p>
-</dd>
-</dl>
+<p><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If ColourDescriptionPresent is zero, the color description information (including ColourPrimaries, TransferCharacteristics, and MatrixCoefficients) does not present in the bitstream. </p>
+</div>
 </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
@@ -5108,8 +5107,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextvp9param">
+</div>
+<div class="section" id="mfxextvp9param">
 <h3><a class="toc-backref" href="#id8">mfxExtVP9Param</a><a class="headerlink" href="#mfxextvp9param" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv414mfxExtVP9Param">
@@ -5177,8 +5176,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxframeid">
+</div>
+<div class="section" id="mfxframeid">
 <h3><a class="toc-backref" href="#id9">mfxFrameId</a><a class="headerlink" href="#mfxframeid" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv410mfxFrameId">
@@ -5219,8 +5218,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxinfomfx">
+</div>
+<div class="section" id="mfxinfomfx">
 <h3><a class="toc-backref" href="#id10">mfxInfoMFX</a><a class="headerlink" href="#mfxinfomfx" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv410mfxInfoMFX">
@@ -5345,21 +5344,21 @@ SPDX-License-Identifier: MIT
 <dl class="cpp var">
 <dt id="_CPPv4N10mfxInfoMFX16InitialDelayInKBE">
 <span id="_CPPv3N10mfxInfoMFX16InitialDelayInKBE"></span><span id="_CPPv2N10mfxInfoMFX16InitialDelayInKBE"></span><span id="mfxInfoMFX::InitialDelayInKB__mfxU16"></span><span class="target" id="structmfx_info_m_f_x_1af1f2b9a054eaa9f59cac96b113407ded"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16"><span class="pre">mfxU16</span></a> <code class="sig-name descname"><span class="pre">InitialDelayInKB</span></code><a class="headerlink" href="#_CPPv4N10mfxInfoMFX16InitialDelayInKBE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Initial size of the Video Buffering Verifier (VBV) buffer. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>In this context, KB is 1000 bytes and Kbps is 1000 bps. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Initial size of the Video Buffering Verifier (VBV) buffer. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this context, KB is 1000 bytes and Kbps is 1000 bps. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N10mfxInfoMFX3QPIE">
 <span id="_CPPv3N10mfxInfoMFX3QPIE"></span><span id="_CPPv2N10mfxInfoMFX3QPIE"></span><span id="mfxInfoMFX::QPI__mfxU16"></span><span class="target" id="structmfx_info_m_f_x_1aa3b18c1c9e6dd791247c10d51953e572"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16"><span class="pre">mfxU16</span></a> <code class="sig-name descname"><span class="pre">QPI</span></code><a class="headerlink" href="#_CPPv4N10mfxInfoMFX3QPIE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Quantization Parameter (QP) for I-frames for constant QP mode (CQP). Zero QP is not valid and means that the default value is assigned by the library. Non-zero QPI might be clipped to supported QPI range. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Default QPI value is implementation dependent and subject to change without additional notice in this document. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Quantization Parameter (QP) for I-frames for constant QP mode (CQP). Zero QP is not valid and means that the default value is assigned by the library. Non-zero QPI might be clipped to supported QPI range. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default QPI value is implementation dependent and subject to change without additional notice in this document. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
@@ -5383,11 +5382,11 @@ SPDX-License-Identifier: MIT
 <dl class="cpp var">
 <dt id="_CPPv4N10mfxInfoMFX3QPPE">
 <span id="_CPPv3N10mfxInfoMFX3QPPE"></span><span id="_CPPv2N10mfxInfoMFX3QPPE"></span><span id="mfxInfoMFX::QPP__mfxU16"></span><span class="target" id="structmfx_info_m_f_x_1ae16325b32678da5efd482e51dd8513af"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16"><span class="pre">mfxU16</span></a> <code class="sig-name descname"><span class="pre">QPP</span></code><a class="headerlink" href="#_CPPv4N10mfxInfoMFX3QPPE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Quantization Parameter (QP) for P-frames for constant QP mode (CQP). Zero QP is not valid and means that the default value is assigned by the library. Non-zero QPP might be clipped to supported QPI range. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Default QPP value is implementation dependent and subject to change without additional notice in this document. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Quantization Parameter (QP) for P-frames for constant QP mode (CQP). Zero QP is not valid and means that the default value is assigned by the library. Non-zero QPP might be clipped to supported QPI range. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default QPP value is implementation dependent and subject to change without additional notice in this document. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
@@ -5405,11 +5404,11 @@ SPDX-License-Identifier: MIT
 <dl class="cpp var">
 <dt id="_CPPv4N10mfxInfoMFX3QPBE">
 <span id="_CPPv3N10mfxInfoMFX3QPBE"></span><span id="_CPPv2N10mfxInfoMFX3QPBE"></span><span id="mfxInfoMFX::QPB__mfxU16"></span><span class="target" id="structmfx_info_m_f_x_1aa299b95fa161f9ab328388418e22b323"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16"><span class="pre">mfxU16</span></a> <code class="sig-name descname"><span class="pre">QPB</span></code><a class="headerlink" href="#_CPPv4N10mfxInfoMFX3QPBE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Quantization Parameter (QP) for B-frames for constant QP mode (CQP). Zero QP is not valid and means that the default value is assigned by the library. Non-zero QPI might be clipped to supported QPB range. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Default QPB value is implementation dependent and subject to change without additional notice in this document. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Quantization Parameter (QP) for B-frames for constant QP mode (CQP). Zero QP is not valid and means that the default value is assigned by the library. Non-zero QPI might be clipped to supported QPB range. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default QPB value is implementation dependent and subject to change without additional notice in this document. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
@@ -5577,8 +5576,8 @@ quality while meeting the specified bitrate, TargetKbps, within the accuracy
 range, Accuracy, after a Convergence period. This method does not follow HRD
 and the instant bitrate is not capped or padded.</p>
 </div>
-</section>
-<section id="mfxmvcoperationpoint">
+</div>
+<div class="section" id="mfxmvcoperationpoint">
 <h3><a class="toc-backref" href="#id11">mfxMVCOperationPoint</a><a class="headerlink" href="#mfxmvcoperationpoint" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv420mfxMVCOperationPoint">
@@ -5619,8 +5618,8 @@ and the instant bitrate is not capped or padded.</p>
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxmvcviewdependency">
+</div>
+<div class="section" id="mfxmvcviewdependency">
 <h3><a class="toc-backref" href="#id12">mfxMVCViewDependency</a><a class="headerlink" href="#mfxmvcviewdependency" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv420mfxMVCViewDependency">
@@ -5679,8 +5678,8 @@ and the instant bitrate is not capped or padded.</p>
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxpayload">
+</div>
+<div class="section" id="mfxpayload">
 <h3><a class="toc-backref" href="#id13">mfxPayload</a><a class="headerlink" href="#mfxpayload" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv410mfxPayload">
@@ -5762,8 +5761,8 @@ and the instant bitrate is not capped or padded.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="mfxvideoparam">
+</div>
+<div class="section" id="mfxvideoparam">
 <h3><a class="toc-backref" href="#id14">mfxVideoParam</a><a class="headerlink" href="#mfxvideoparam" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv413mfxVideoParam">
@@ -5822,8 +5821,8 @@ and the instant bitrate is not capped or padded.</p>
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxvp9segmentparam">
+</div>
+<div class="section" id="mfxvp9segmentparam">
 <h3><a class="toc-backref" href="#id15">mfxVP9SegmentParam</a><a class="headerlink" href="#mfxvp9segmentparam" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv418mfxVP9SegmentParam">
@@ -5858,8 +5857,8 @@ and the instant bitrate is not capped or padded.</p>
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextav1filmgrainparam">
+</div>
+<div class="section" id="mfxextav1filmgrainparam">
 <h3><a class="toc-backref" href="#id16">mfxExtAV1FilmGrainParam</a><a class="headerlink" href="#mfxextav1filmgrainparam" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv423mfxExtAV1FilmGrainParam">
@@ -6002,8 +6001,8 @@ and the instant bitrate is not capped or padded.</p>
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxav1filmgrainpoint">
+</div>
+<div class="section" id="mfxav1filmgrainpoint">
 <h3><a class="toc-backref" href="#id17">mfxAV1FilmGrainPoint</a><a class="headerlink" href="#mfxav1filmgrainpoint" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv420mfxAV1FilmGrainPoint">
@@ -6026,8 +6025,8 @@ and the instant bitrate is not capped or padded.</p>
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxrect">
+</div>
+<div class="section" id="mfxrect">
 <h3><a class="toc-backref" href="#id18">mfxRect</a><a class="headerlink" href="#mfxrect" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv47mfxRect">
@@ -6062,8 +6061,8 @@ and the instant bitrate is not capped or padded.</p>
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxexthypermodeparam">
+</div>
+<div class="section" id="mfxexthypermodeparam">
 <h3><a class="toc-backref" href="#id19">mfxExtHyperModeParam</a><a class="headerlink" href="#mfxexthypermodeparam" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv420mfxExtHyperModeParam">
@@ -6086,9 +6085,9 @@ and the instant bitrate is not capped or padded.</p>
 </div>
 </dd></dl>
 
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

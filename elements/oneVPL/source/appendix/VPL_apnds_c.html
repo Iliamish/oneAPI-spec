@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Streaming and Video Conferencing Features &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4634,13 +4633,13 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="streaming-and-video-conferencing-features">
+  <div class="section" id="streaming-and-video-conferencing-features">
 <span id="stream-vid-conf-features"></span><h1>Streaming and Video Conferencing Features<a class="headerlink" href="#streaming-and-video-conferencing-features" title="Permalink to this headline">¶</a></h1>
 <p>The following sections address some aspects of additional requirements that
 streaming or video conferencing applications may use in the encoding or
 transcoding process. See the <a class="reference internal" href="../programming_guide/VPL_prg_encoding.html#config-change"><span class="std std-ref">Configuration Change</span></a> section for additional
 information.</p>
-<section id="dynamic-bitrate-change">
+<div class="section" id="dynamic-bitrate-change">
 <h2>Dynamic Bitrate Change<a class="headerlink" href="#dynamic-bitrate-change" title="Permalink to this headline">¶</a></h2>
 <p>The oneVPL encoder supports dynamic bitrate change according to bitrate control mode
 and HRD conformance requirements. If HRD conformance is required, for example if
@@ -4673,8 +4672,8 @@ up with the specified bitrate is implementation dependent.</p>
 <p>Alternatively, the application may use the <a class="reference internal" href="../VPL_acronyms.html#term-CQP"><span class="xref std std-term">CQP</span></a> encoding mode to perform
 customized bitrate adjustment on a per-frame base. The application may use any
 of the encoded or display order modes to use per-frame CQP.</p>
-</section>
-<section id="dynamic-resolution-change">
+</div>
+<div class="section" id="dynamic-resolution-change">
 <h2>Dynamic Resolution Change<a class="headerlink" href="#dynamic-resolution-change" title="Permalink to this headline">¶</a></h2>
 <p>The oneVPL encoder supports dynamic resolution change in all bitrate control modes.
 The application may change resolution by calling the <a class="reference internal" href="../API_ref/VPL_func_vid_encode.html#_CPPv420MFXVideoENCODE_Reset10mfxSessionP13mfxVideoParam" title="MFXVideoENCODE_Reset"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoENCODE_Reset()</span></code></a>
@@ -4691,8 +4690,8 @@ used by the encoder. Due to this potential incompatibility, it is strongly
 recommended to retrieve the actual working parameters set by
 <a class="reference internal" href="../API_ref/VPL_func_vid_encode.html#_CPPv428MFXVideoENCODE_GetVideoParam10mfxSessionP13mfxVideoParam" title="MFXVideoENCODE_GetVideoParam"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoENCODE_GetVideoParam()</span></code></a> function before making any resolution
 change.</p>
-</section>
-<section id="dynamic-reference-frame-scaling">
+</div>
+<div class="section" id="dynamic-reference-frame-scaling">
 <h2>Dynamic Reference Frame Scaling<a class="headerlink" href="#dynamic-reference-frame-scaling" title="Permalink to this headline">¶</a></h2>
 <p>The VP9 standard allows changing the resolution without the insertion of a
 keyframe. This is possible because the VP9 encoder has the built-in capability
@@ -4724,8 +4723,8 @@ multiref (<a class="reference internal" href="../API_ref/VPL_structs_cross_compo
 configuration, the oneVPL VP9 encoder uses multiple references within stream pieces
 of the same resolution and uses a single reference at the place of resolution
 change.</p>
-</section>
-<section id="forced-keyframe-generation">
+</div>
+<div class="section" id="forced-keyframe-generation">
 <h2>Forced Keyframe Generation<a class="headerlink" href="#forced-keyframe-generation" title="Permalink to this headline">¶</a></h2>
 <p>oneVPL supports forced keyframe generation during encoding. The application
 can set the FrameType parameter of the <a class="reference internal" href="../API_ref/VPL_structs_encode.html#_CPPv413mfxEncodeCtrl" title="mfxEncodeCtrl"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">mfxEncodeCtrl</span></code></a> structure to
@@ -4738,8 +4737,8 @@ of already buffered frames inside the encoder.</p></li>
 exact frame type for every frame. In this way, the application can enforce the
 current frame to have any frame type that the particular coding standard allows.</p></li>
 </ul>
-</section>
-<section id="reference-list-selection">
+</div>
+<div class="section" id="reference-list-selection">
 <span id="sec-reference-list-selection"></span><h2>Reference List Selection<a class="headerlink" href="#reference-list-selection" title="Permalink to this headline">¶</a></h2>
 <p>During streaming or video conferencing, if the application can obtain feedback
 about how well the client receives certain frames, the application may need to
@@ -4774,8 +4773,8 @@ using any reference frames.</p></li>
 <li><p>If the GOP pattern contains B-frames, the oneVPL encoder may not be able to follow
 the <a class="reference internal" href="../API_ref/VPL_structs_encode.html#_CPPv420mfxExtAVCRefListCtrl" title="mfxExtAVCRefListCtrl"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">mfxExtAVCRefListCtrl</span></code></a> instructions.</p></li>
 </ul>
-</section>
-<section id="low-latency-encoding-and-decoding">
+</div>
+<div class="section" id="low-latency-encoding-and-decoding">
 <h2>Low Latency Encoding and Decoding<a class="headerlink" href="#low-latency-encoding-and-decoding" title="Permalink to this headline">¶</a></h2>
 <p>The application can set <a class="reference internal" href="../API_ref/VPL_structs_cross_component.html#_CPPv4N13mfxVideoParam10AsyncDepthE" title="mfxVideoParam::AsyncDepth"><code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">mfxVideoParam::AsyncDepth</span></code></a> = 1 to disable
 any decoder buffering of output frames, which is aimed to improve the transcoding
@@ -4784,8 +4783,8 @@ must synchronize after the decoding or transcoding operation of each frame.</p>
 <p>The application can adjust <a class="reference internal" href="../API_ref/VPL_structs_encode.html#_CPPv4N18mfxExtCodingOption20MaxDecFrameBufferingE" title="mfxExtCodingOption::MaxDecFrameBuffering"><code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">mfxExtCodingOption::MaxDecFrameBuffering</span></code></a>
 during encoding initialization to improve decoding latency. It is recommended to
 set this value equal to the number of reference frames.</p>
-</section>
-<section id="reference-picture-marking-repetition-sei-message">
+</div>
+<div class="section" id="reference-picture-marking-repetition-sei-message">
 <h2>Reference Picture Marking Repetition SEI Message<a class="headerlink" href="#reference-picture-marking-repetition-sei-message" title="Permalink to this headline">¶</a></h2>
 <p>The application can request writing the reference picture marking repetition SEI
 message during encoding initialization by setting <code class="docutils literal notranslate"><span class="pre">RefPicMarkRep</span></code> of the
@@ -4797,8 +4796,8 @@ message if the message exists in the bitstream and compare it to the reference
 list information specified in the sequence/picture headers. The decoder will
 report any mismatch of the SEI message with the reference list information in
 the <a class="reference internal" href="../API_ref/VPL_structs_memory.html#_CPPv4N12mfxFrameData9CorruptedE" title="mfxFrameData::Corrupted"><code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">mfxFrameData::Corrupted</span></code></a> field.</p>
-</section>
-<section id="long-term-reference-frame">
+</div>
+<div class="section" id="long-term-reference-frame">
 <span id="sec-long-term-reference-frame"></span><h2>Long Term Reference Frame<a class="headerlink" href="#long-term-reference-frame" title="Permalink to this headline">¶</a></h2>
 <p>The application may use long term reference frames to improve coding efficiency
 or robustness for video conferencing applications. The application controls the
@@ -4825,8 +4824,8 @@ reference frames. The application may avoid this by providing a list of preferre
 reference frames in the <code class="docutils literal notranslate"><span class="pre">PreferredRefList</span></code> list in the
 <a class="reference internal" href="../API_ref/VPL_structs_encode.html#_CPPv420mfxExtAVCRefListCtrl" title="mfxExtAVCRefListCtrl"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">mfxExtAVCRefListCtrl</span></code></a> extended buffer. In this case, the encoder
 reorders the reference list based on the specified list.</p>
-</section>
-<section id="temporal-scalability">
+</div>
+<div class="section" id="temporal-scalability">
 <h2>Temporal Scalability<a class="headerlink" href="#temporal-scalability" title="Permalink to this headline">¶</a></h2>
 <p>The application may specify the temporal hierarchy of frames by using the
 <a class="reference internal" href="../API_ref/VPL_structs_encode.html#_CPPv423mfxExtAvcTemporalLayers" title="mfxExtAvcTemporalLayers"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">mfxExtAvcTemporalLayers</span></code></a> extended buffer during the encoder
@@ -4851,8 +4850,8 @@ temporal layers.</p>
 three temporal layers that can be decoded as 7.5 fps (base layer), 15 fps (base
 and first temporal layer) and 30 fps (all three layers). In this scenario,
 <code class="docutils literal notranslate"><span class="pre">Scale</span></code> should have the values {1,2,4,0,0,0,0,0}.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

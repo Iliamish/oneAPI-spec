@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>K-Means &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4745,7 +4744,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="k-means">
+  <div class="section" id="k-means">
 <span id="alg-kmeans"></span><h1>K-Means<a class="headerlink" href="#k-means" title="Permalink to this headline">¶</a></h1>
 <p>The K-Means algorithm solves <a class="reference internal" href="../../glossary.html#term-Clustering"><span class="xref std std-term">clustering</span></a> problem by partitioning
 <span class="math notranslate nohighlight">\(n\)</span> feature vectors into <span class="math notranslate nohighlight">\(k\)</span> clusters minimizing some criterion.
@@ -4777,9 +4776,9 @@ Each cluster is characterized by a representative point, called <em>a centroid</
 </tr>
 </tbody>
 </table>
-<section id="mathematical-formulation">
+<div class="section" id="mathematical-formulation">
 <h2>Mathematical formulation<a class="headerlink" href="#mathematical-formulation" title="Permalink to this headline">¶</a></h2>
-<section id="training">
+<div class="section" id="training">
 <span id="kmeans-t-math"></span><h3>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h3>
 <p>Given the training set <span class="math notranslate nohighlight">\(X = \{ x_1, \ldots, x_n \}\)</span> of
 <span class="math notranslate nohighlight">\(p\)</span>-dimensional feature vectors and a positive integer <span class="math notranslate nohighlight">\(k\)</span>, the
@@ -4797,7 +4796,7 @@ the closest centroid in <span class="math notranslate nohighlight">\(C\)</span>,
 <p>In the general case, <span class="math notranslate nohighlight">\(d\)</span> may be an arbitrary distance function. Current
 version of the oneDAL spec defines only Euclidean distance case.</p>
 </div>
-<section id="training-method-lloyd-s">
+<div class="section" id="training-method-lloyd-s">
 <span id="kmeans-t-math-lloyd"></span><h4>Training method: <em>Lloyd’s</em><a class="headerlink" href="#training-method-lloyd-s" title="Permalink to this headline">¶</a></h4>
 <p>The Lloyd’s method <a class="reference internal" href="../../bibliography.html#lloyd82" id="id1"><span>[Lloyd82]</span></a> consists in iterative updates of centroids by
 applying the alternating <em>Assignment</em> and <em>Update</em> steps, where <span class="math notranslate nohighlight">\(t\)</span>
@@ -4823,27 +4822,27 @@ to each cluster.</p>
 \[\sum_{j=1}^k \big\| c_j^{(t)} - c_j^{(t+1)} \big\|^2 &lt; \varepsilon,\]</div>
 <p>is satisfied or number of iterations exceeds the maximal value <span class="math notranslate nohighlight">\(T\)</span> defined
 by the user.</p>
-</section>
-</section>
-<section id="inference">
+</div>
+</div>
+<div class="section" id="inference">
 <span id="kmeans-i-math"></span><h3>Inference<a class="headerlink" href="#inference" title="Permalink to this headline">¶</a></h3>
 <p>Given the inference set <span class="math notranslate nohighlight">\(X' = \{ x_1', \ldots, x_m' \}\)</span> of
 <span class="math notranslate nohighlight">\(p\)</span>-dimensional feature vectors and the set <span class="math notranslate nohighlight">\(C = \{ c_1, \ldots, c_k
 \}\)</span> of centroids produced at the training stage, the problem is to predict the
 index <span class="math notranslate nohighlight">\(y_j' \in \{ 0, \ldots, k-1 \}\)</span>, <span class="math notranslate nohighlight">\(1 \leq j \leq m\)</span>, of the
 centroid in accordance with a method-defined rule.</p>
-<section id="inference-method-lloyd-s">
+<div class="section" id="inference-method-lloyd-s">
 <span id="kmeans-i-math-lloyd"></span><h4>Inference method: <em>Lloyd’s</em><a class="headerlink" href="#inference-method-lloyd-s" title="Permalink to this headline">¶</a></h4>
 <p>Lloyd’s inference method computes the <span class="math notranslate nohighlight">\(y_j'\)</span> as an index of the centroid
 closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[y_j' = \mathrm{arg}\min_{1 \leq l \leq k} \| x_j' - c_l \|^2, \quad 1 \leq j \leq m.\]</div>
-</section>
-</section>
-</section>
-<section id="usage-example">
+</div>
+</div>
+</div>
+<div class="section" id="usage-example">
 <h2>Usage example<a class="headerlink" href="#usage-example" title="Permalink to this headline">¶</a></h2>
-<section id="id2">
+<div class="section" id="id2">
 <h3>Training<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">kmeans</span><span class="o">::</span><span class="n">model</span><span class="o">&lt;&gt;</span> <span class="n">run_training</span><span class="p">(</span><span class="k">const</span> <span class="n">table</span><span class="o">&amp;</span> <span class="n">data</span><span class="p">,</span>
                              <span class="k">const</span> <span class="n">table</span><span class="o">&amp;</span> <span class="n">initial_centroids</span><span class="p">)</span> <span class="p">{</span>
@@ -4862,8 +4861,8 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="id3">
+</div>
+<div class="section" id="id3">
 <h3>Inference<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="nf">run_inference</span><span class="p">(</span><span class="k">const</span> <span class="n">kmeans</span><span class="o">::</span><span class="n">model</span><span class="o">&lt;&gt;&amp;</span> <span class="n">model</span><span class="p">,</span>
                     <span class="k">const</span> <span class="n">table</span><span class="o">&amp;</span> <span class="n">new_data</span><span class="p">)</span> <span class="p">{</span>
@@ -4876,14 +4875,14 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="programming-interface">
+</div>
+</div>
+<div class="section" id="programming-interface">
 <h2>Programming Interface<a class="headerlink" href="#programming-interface" title="Permalink to this headline">¶</a></h2>
 <p>All types and functions in this section shall be declared in the
 <code class="docutils literal notranslate"><span class="pre">oneapi::dal::kmeans</span></code> namespace and be available via inclusion of the
 <code class="docutils literal notranslate"><span class="pre">oneapi/dal/algo/kmeans.hpp</span></code> header file.</p>
-<section id="descriptor">
+<div class="section" id="descriptor">
 <h3>Descriptor<a class="headerlink" href="#descriptor" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Float</span> <span class="o">=</span> <span class="kt">float</span><span class="p">,</span>
           <span class="k">typename</span> <span class="nc">Method</span> <span class="o">=</span> <span class="n">method</span><span class="o">::</span><span class="n">by_default</span><span class="p">,</span>
@@ -4976,7 +4975,7 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 
 </dd></dl>
 
-<section id="method-tags">
+<div class="section" id="method-tags">
 <h4>Method tags<a class="headerlink" href="#method-tags" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">method</span> <span class="p">{</span>
    <span class="k">struct</span> <span class="nc">lloyd</span> <span class="p">{};</span>
@@ -4996,8 +4995,8 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 <dd><p>Alias tag-type for <a class="reference internal" href="#kmeans-t-math-lloyd">Lloyd’s</a> computational method.</p>
 </dd></dl>
 
-</section>
-<section id="task-tags">
+</div>
+<div class="section" id="task-tags">
 <h4>Task tags<a class="headerlink" href="#task-tags" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">task</span> <span class="p">{</span>
    <span class="k">struct</span> <span class="nc">clustering</span> <span class="p">{};</span>
@@ -5017,9 +5016,9 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 <dd><p>Alias tag-type for the clustering task.</p>
 </dd></dl>
 
-</section>
-</section>
-<section id="model">
+</div>
+</div>
+<div class="section" id="model">
 <h3>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">model</span> <span class="p">{</span>
@@ -5078,10 +5077,10 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 
 </dd></dl>
 
-</section>
-<section id="training-train">
+</div>
+<div class="section" id="training-train">
 <span id="kmeans-t-api"></span><h3>Training <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans5trainE12train_resultI4TaskERK10descriptorI5Float6Method4TaskERK11train_inputI4TaskE" title="oneapi::dal::kmeans::train"><span class="pre">train</span></a><span class="sig-paren">(</span><span class="pre">...</span><span class="sig-paren">)</span></code><a class="headerlink" href="#training-train" title="Permalink to this headline">¶</a></h3>
-<section id="input">
+<div class="section" id="input">
 <span id="kmeans-t-api-input"></span><h4>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">train_input</span> <span class="p">{</span>
@@ -5141,8 +5140,8 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 
 </dd></dl>
 
-</section>
-<section id="result">
+</div>
+<div class="section" id="result">
 <span id="kmeans-t-api-result"></span><h4>Result<a class="headerlink" href="#result" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">train_result</span> <span class="p">{</span>
@@ -5233,8 +5232,8 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 
 </dd></dl>
 
-</section>
-<section id="operation">
+</div>
+<div class="section" id="operation">
 <h4>Operation<a class="headerlink" href="#operation" title="Permalink to this headline">¶</a></h4>
 <dl class="cpp function">
 <dt id="_CPPv4I000EN6oneapi3dal6kmeans5trainE12train_resultI4TaskERK10descriptorI5Float6Method4TaskERK11train_inputI4TaskE">
@@ -5275,11 +5274,11 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 </dl>
 </dd></dl>
 
-</section>
-</section>
-<section id="inference-infer">
+</div>
+</div>
+<div class="section" id="inference-infer">
 <span id="kmeans-i-api"></span><h3>Inference <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::kmeans::infer"><span class="pre">infer</span></a><span class="sig-paren">(</span><span class="pre">...</span><span class="sig-paren">)</span></code><a class="headerlink" href="#inference-infer" title="Permalink to this headline">¶</a></h3>
-<section id="kmeans-i-api-input">
+<div class="section" id="kmeans-i-api-input">
 <span id="id4"></span><h4>Input<a class="headerlink" href="#kmeans-i-api-input" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">infer_input</span> <span class="p">{</span>
@@ -5339,8 +5338,8 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 
 </dd></dl>
 
-</section>
-<section id="kmeans-i-api-result">
+</div>
+<div class="section" id="kmeans-i-api-result">
 <span id="id5"></span><h4>Result<a class="headerlink" href="#kmeans-i-api-result" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">infer_result</span> <span class="p">{</span>
@@ -5399,8 +5398,8 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 
 </dd></dl>
 
-</section>
-<section id="id6">
+</div>
+<div class="section" id="id6">
 <h4>Operation<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <dl class="cpp function">
 <dt id="_CPPv4I000EN6oneapi3dal6kmeans5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE">
@@ -5439,10 +5438,10 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 </dl>
 </dd></dl>
 
-</section>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
 
 
               </div>

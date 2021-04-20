@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Video Processing &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4581,13 +4580,13 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="video-processing">
+  <div class="section" id="video-processing">
 <h1>Video Processing<a class="headerlink" href="#video-processing" title="Permalink to this headline">¶</a></h1>
 <p>Video processing functions (<a class="reference internal" href="index.html#term-VPP"><span class="xref std std-term">VPP</span></a>) take raw frames as input and provide
 raw frames as output.</p>
 <p>The actual conversion process is a chain operation with many single-function
 filters.</p>
-<figure class="align-default" id="id1">
+<div class="figure align-default" id="id1">
 <div class="graphviz"><img src="../../../../_images/graphviz-791be0cd51f839971dd94c448aaaa288de2c70aa.png" alt="digraph {
   rankdir=LR;
   F1 [shape=record label=&quot;Function 1&quot; ];
@@ -4597,10 +4596,8 @@ filters.</p>
   F5 [shape=record  label=&quot;Function N&quot;];
   F1-&gt;F2-&gt;F3-&gt;F4-&gt;F5;
 }" class="graphviz" /></div>
-<figcaption>
-<p><span class="caption-text">Video processing operation pipeline</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">Video processing operation pipeline</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
 <p>The application specifies the input and output format; oneVPL configures the
 pipeline according to the specified input and output formats. The application
 can also attach one or more hint structures
@@ -4666,7 +4663,7 @@ on how to configure optional filters.</p>
 </tr>
 </tbody>
 </table>
-</section>
+</div>
 
 
               </div>

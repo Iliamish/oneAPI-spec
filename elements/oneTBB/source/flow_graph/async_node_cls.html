@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>async_node &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4599,7 +4598,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="async-node">
+  <div class="section" id="async-node">
 <h1>async_node<a class="headerlink" href="#async-node" title="Permalink to this headline">¶</a></h1>
 <p><strong>[flow_graph.async_node]</strong></p>
 <p>A node that enables communication between a flow graph and an external activity managed by
@@ -4651,11 +4650,11 @@ The user can also provide a value of type <code class="docutils literal notransl
 <p>The body object passed to a <code class="docutils literal notranslate"><span class="pre">async_node</span></code> is copied. Updates to member variables do not affect the original object used to construct the node.
 If the state held within a body object must be inspected from outside of the node,
 the <a class="reference internal" href="copy_body_func.html"><span class="doc">copy_body</span></a> function can be used to obtain an updated copy.</p>
-<section id="member-types">
+<div class="section" id="member-types">
 <h2>Member types<a class="headerlink" href="#member-types" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">gateway_type</span></code> meets the <a class="reference internal" href="../named_requirements/flow_graph/gateway_type.html"><span class="doc">GatewayType requirements</span></a>.</p>
-</section>
-<section id="member-functions">
+</div>
+<div class="section" id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Body</span><span class="o">&gt;</span>
 <span class="n">async_node</span><span class="p">(</span> <span class="n">graph</span> <span class="o">&amp;</span><span class="n">g</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">concurrency</span><span class="p">,</span> <span class="n">Body</span> <span class="n">body</span><span class="p">,</span>
@@ -4703,8 +4702,8 @@ it.</p>
 </pre></div>
 </div>
 <p><strong>Returns</strong>: <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>parallel_reduce &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4599,7 +4598,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="parallel-reduce">
+  <div class="section" id="parallel-reduce">
 <h1>parallel_reduce<a class="headerlink" href="#parallel-reduce" title="Permalink to this headline">¶</a></h1>
 <p><strong>[algorithms.parallel_reduce]</strong></p>
 <p>Function template that computes reduction over a range.</p>
@@ -4669,7 +4668,7 @@ so that the algorithm’s tasks are executed in this group. By default, the algo
 <p><strong>Complexity</strong></p>
 <p>If the range and body take <em>O(1)</em> space, and the range splits into nearly equal pieces,
 the space complexity is <em>O(P×log(N))</em>, where <em>N</em> is the size of the range and <em>P</em> is the number of threads.</p>
-<section id="example-imperative-form">
+<div class="section" id="example-imperative-form">
 <h2>Example (Imperative Form)<a class="headerlink" href="#example-imperative-form" title="Permalink to this headline">¶</a></h2>
 <p>The following code sums the values in an array.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;tbb/parallel_reduce.h&quot;</span><span class="cp"></span>
@@ -4705,8 +4704,8 @@ the space complexity is <em>O(P×log(N))</em>, where <em>N</em> is the size of t
 <li><p>Change the name <code class="docutils literal notranslate"><span class="pre">Sum</span></code> to something more appropriate for <em>op</em>.</p></li>
 </ul>
 <p>The operation may be noncommutative. For example, <em>op</em> could be matrix multiplication.</p>
-</section>
-<section id="example-with-lambda-expressions">
+</div>
+<div class="section" id="example-with-lambda-expressions">
 <h2>Example with Lambda Expressions<a class="headerlink" href="#example-with-lambda-expressions" title="Permalink to this headline">¶</a></h2>
 <p>The following is similar to the previous example, but written using lambda
 expressions and the functional form of <code class="docutils literal notranslate"><span class="pre">parallel_reduce</span></code>.</p>
@@ -4735,8 +4734,8 @@ expressions and the functional form of <code class="docutils literal notranslate
 <ul class="simple">
 <li><p><a class="reference internal" href="../../algorithms.html#partitioners"><span class="std std-ref">Partitioners</span></a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

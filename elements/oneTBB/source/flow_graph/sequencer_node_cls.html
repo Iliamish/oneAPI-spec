@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sequencer_node &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4604,7 +4603,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="sequencer-node">
+  <div class="section" id="sequencer-node">
 <h1>sequencer_node<a class="headerlink" href="#sequencer-node" title="Permalink to this headline">¶</a></h1>
 <p><strong>[flow_graph.sequencer_node]</strong></p>
 <p>A node that forwards messages in a sequence order.</p>
@@ -4645,7 +4644,7 @@ user-provided <code class="docutils literal notranslate"><span class="pre">Seque
 <p class="admonition-title">Note</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">sequencer_node</span></code> rejects duplicate sequencer numbers.</p>
 </div>
-<section id="member-functions">
+<div class="section" id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv4I0EN3tbb4flow14sequencer_node14sequencer_nodeER5graphRK9Sequencer">
@@ -4684,8 +4683,8 @@ If so, it is removed from the node and assigned to <code class="docutils literal
 in sequencer order is not available or if the node is reserved.</p>
 </dd></dl>
 
-</section>
-<section id="deduction-guides">
+</div>
+<div class="section" id="deduction-guides">
 <h2>Deduction Guides<a class="headerlink" href="#deduction-guides" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Body</span><span class="o">&gt;</span>
 <span class="n">sequencer_node</span><span class="p">(</span><span class="n">graph</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">Body</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">input_node</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">decay_t</span><span class="o">&lt;</span><span class="n">input_t</span><span class="o">&lt;</span><span class="n">Body</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
@@ -4695,8 +4694,8 @@ in sequencer order is not available or if the node is reserved.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">input_t</span></code> is an alias to <code class="docutils literal notranslate"><span class="pre">Body</span></code> input argument type.</p></li>
 </ul>
-</section>
-<section id="example">
+</div>
+<div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>The example demonstrates ordering capabilities of the <code class="docutils literal notranslate"><span class="pre">sequencer_node</span></code>.
 While being processed in parallel, the data is passed to the successor node in the exact same order
@@ -4737,8 +4736,8 @@ it was read.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

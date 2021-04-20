@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Configuration Parameter Constraints &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4614,13 +4613,13 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="configuration-parameter-constraints">
+  <div class="section" id="configuration-parameter-constraints">
 <h1>Configuration Parameter Constraints<a class="headerlink" href="#configuration-parameter-constraints" title="Permalink to this headline">¶</a></h1>
 <p>The <a class="reference internal" href="../API_ref/VPL_structs_memory.html#_CPPv412mfxFrameInfo" title="mfxFrameInfo"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">mfxFrameInfo</span></code></a> structure is used by both the <a class="reference internal" href="../API_ref/VPL_structs_cross_component.html#_CPPv413mfxVideoParam" title="mfxVideoParam"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">mfxVideoParam</span></code></a>
 structure during oneVPL class initialization and the <a class="reference internal" href="../API_ref/VPL_structs_memory.html#_CPPv416mfxFrameSurface1" title="mfxFrameSurface1"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">mfxFrameSurface1</span></code></a>
 structure during the actual oneVPL class operation. The parameter constraints
 described in the following tables apply.</p>
-<section id="decode-encode-and-vpp-constraints">
+<div class="section" id="decode-encode-and-vpp-constraints">
 <h2>DECODE, ENCODE, and VPP Constraints<a class="headerlink" href="#decode-encode-and-vpp-constraints" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="#common-constraint-table"><span class="std std-ref">DECODE, ENCODE, and VPP Constraints table</span></a>
 lists parameter constraints common to <a class="reference internal" href="../architecture/index.html#term-DECODE"><span class="xref std std-term">DECODE</span></a>, <a class="reference internal" href="../architecture/index.html#term-ENCODE"><span class="xref std std-term">ENCODE</span></a>, and
@@ -4649,8 +4648,8 @@ lists parameter constraints common to <a class="reference internal" href="../arc
 </tr>
 </tbody>
 </table>
-</section>
-<section id="decode-constraints">
+</div>
+<div class="section" id="decode-constraints">
 <h2>DECODE Constraints<a class="headerlink" href="#decode-constraints" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="#decode-constraint-table"><span class="std std-ref">DECODE Constraints table</span></a> lists <a class="reference internal" href="../architecture/index.html#term-DECODE"><span class="xref std std-term">DECODE</span></a>
 parameter constraints.</p>
@@ -4710,8 +4709,8 @@ use these values during decoding regardless of the values from bitstream
 and does not update them on new SPS. If the application sets them to 0,
 then the decoder uses values from the stream and updates them on each SPS.</p>
 </div>
-</section>
-<section id="encode-constraints">
+</div>
+<div class="section" id="encode-constraints">
 <h2>ENCODE Constraints<a class="headerlink" href="#encode-constraints" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="#encode-constraint-table"><span class="std std-ref">ENCODE Constraints table</span></a> lists <a class="reference internal" href="../architecture/index.html#term-ENCODE"><span class="xref std std-term">ENCODE</span></a>
 parameter constraints.</p>
@@ -4775,8 +4774,8 @@ parameter constraints.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="vpp-constraints">
+</div>
+<div class="section" id="vpp-constraints">
 <h2>VPP Constraints<a class="headerlink" href="#vpp-constraints" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="#vpp-constraint-table"><span class="std std-ref">VPP Constraints table</span></a> lists <a class="reference internal" href="../architecture/index.html#term-VPP"><span class="xref std std-term">VPP</span></a>
 parameter constraints.</p>
@@ -4840,8 +4839,8 @@ needed. See the <a class="reference internal" href="../API_ref/VPL_enums.html#pi
 </tr>
 </tbody>
 </table>
-</section>
-<section id="specifying-configuration-parameters">
+</div>
+<div class="section" id="specifying-configuration-parameters">
 <h2>Specifying Configuration Parameters<a class="headerlink" href="#specifying-configuration-parameters" title="Permalink to this headline">¶</a></h2>
 <p>The following <a class="reference internal" href="#config-param-table"><span class="std std-ref">Configuration Parameters tables</span></a>
 summarize how to specify the configuration parameters during initialization,
@@ -5594,8 +5593,8 @@ profiles and optional for other cases. If the application does not
 explicitly set CodecProfile during initialization, the HEVC decoder
 will use a profile up to Main10.</p>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

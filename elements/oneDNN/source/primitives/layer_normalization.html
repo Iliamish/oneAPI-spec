@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Layer normalization &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4649,7 +4648,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="layer-normalization">
+  <div class="section" id="layer-normalization">
 <span id="layer-normalization-label"></span><h1>Layer normalization<a class="headerlink" href="#layer-normalization" title="Permalink to this headline">¶</a></h1>
 <p>The layer normalization primitive performs a forward or backward layer
 normalization operation on a 2-5D data tensor.</p>
@@ -4658,7 +4657,7 @@ axis of the data tensor and is defined by the following formulas. We show
 formulas only for 3D data, which are straightforward to generalize to cases of
 higher dimensions. Variable names follow the standard
 <a class="reference internal" href="../conventions.html#conventions-label"><span class="std std-ref">Conventions</span></a>.</p>
-<section id="forward">
+<div class="section" id="forward">
 <h2>Forward<a class="headerlink" href="#forward" title="Permalink to this headline">¶</a></h2>
 <div class="math notranslate nohighlight">
 \[\dst(t, n, c) =
@@ -4681,7 +4680,7 @@ variance are computed at runtime, the following formulas are used:</p>
 \mu(t, n))^2\)</span>.</p></li>
 </ul>
 <p>The <span class="math notranslate nohighlight">\(\gamma(c)\)</span> and <span class="math notranslate nohighlight">\(\beta(c)\)</span> tensors are considered learnable.</p>
-<section id="difference-between-forward-training-and-forward-inference">
+<div class="section" id="difference-between-forward-training-and-forward-inference">
 <h3>Difference Between Forward Training and Forward Inference<a class="headerlink" href="#difference-between-forward-training-and-forward-inference" title="Permalink to this headline">¶</a></h3>
 <p>If mean and variance are computed at runtime (i.e., <a class="reference internal" href="general.html#_CPPv4N4dnnl19normalization_flags16use_global_statsE" title="dnnl::normalization_flags::use_global_stats"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">use_global_stats</span></code></a> is not
 set), they become outputs for the propagation kind <a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kind16forward_trainingE" title="dnnl::prop_kind::forward_training"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">forward_training</span></code></a> (because
@@ -4691,9 +4690,9 @@ normalization descriptor by passing the memory descriptor for statistics
 (e.g., by passing <code class="docutils literal notranslate"><span class="pre">stat_desc</span></code> in
 <a class="reference internal" href="#_CPPv4N4dnnl27layer_normalization_forward4desc4descE9prop_kindRKN6memory4descERKN6memory4descEf19normalization_flags" title="dnnl::layer_normalization_forward::desc::desc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::layer_normalization_forward::desc::desc()</span></code></a>). Mean and variance are
 not exposed for the propagation kind <a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kind17forward_inferenceE" title="dnnl::prop_kind::forward_inference"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">forward_inference</span></code></a>.</p>
-</section>
-</section>
-<section id="backward">
+</div>
+</div>
+<div class="section" id="backward">
 <h2>Backward<a class="headerlink" href="#backward" title="Permalink to this headline">¶</a></h2>
 <p>The backward propagation computes <span class="math notranslate nohighlight">\(\diffsrc(t, n, c)\)</span>,
 <span class="math notranslate nohighlight">\(\diffgamma(c)^*\)</span>, and <span class="math notranslate nohighlight">\(\diffbeta(c)^*\)</span> based on
@@ -4702,8 +4701,8 @@ not exposed for the propagation kind <a class="reference internal" href="general
 <p>The tensors marked with an asterisk are used only when the primitive is
 configured to use <span class="math notranslate nohighlight">\(\gamma(c)\)</span>, and <span class="math notranslate nohighlight">\(\beta(c)\)</span> (i.e.,
 <code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">use_scaleshift</span></code> is set).</p>
-</section>
-<section id="execution-arguments">
+</div>
+<div class="section" id="execution-arguments">
 <h2>Execution Arguments<a class="headerlink" href="#execution-arguments" title="Permalink to this headline">¶</a></h2>
 <p>Depending on the flags and propagation kind, the layer normalization primitive
 requires different inputs and outputs. For clarity, a summary is shown below.</p>
@@ -4789,8 +4788,8 @@ argument index as specified by the following table.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="operation-details">
+</div>
+<div class="section" id="operation-details">
 <h2>Operation Details<a class="headerlink" href="#operation-details" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>The different flavors of the primitive are partially controlled by the
@@ -4816,8 +4815,8 @@ overwritten. Note, however, that backward propagation requires original
 <span class="math notranslate nohighlight">\(\src\)</span>, hence the corresponding forward propagation should not be
 performed in-place.</p></li>
 </ol>
-</section>
-<section id="data-types-support">
+</div>
+<div class="section" id="data-types-support">
 <h2>Data Types Support<a class="headerlink" href="#data-types-support" title="Permalink to this headline">¶</a></h2>
 <p>The layer normalization supports the following combinations of data types.</p>
 <div class="admonition note">
@@ -4848,10 +4847,10 @@ abbreviated to <a class="reference internal" href="../data_model/data_types/inde
 </tr>
 </tbody>
 </table>
-</section>
-<section id="data-representation">
+</div>
+<div class="section" id="data-representation">
 <h2>Data Representation<a class="headerlink" href="#data-representation" title="Permalink to this headline">¶</a></h2>
-<section id="mean-and-variance">
+<div class="section" id="mean-and-variance">
 <h3>Mean and Variance<a class="headerlink" href="#mean-and-variance" title="Permalink to this headline">¶</a></h3>
 <p>The mean (<span class="math notranslate nohighlight">\(\mu\)</span>) and variance (<span class="math notranslate nohighlight">\(\sigma^2\)</span>) are separate tensors
 with number of dimensions equal to (<span class="math notranslate nohighlight">\(data\_ndims - 1\)</span>) and size
@@ -4864,14 +4863,14 @@ normalization descriptor. For best performance, it is advised to use the
 memory format that follows the data memory format; i.e., if the data format is
 <a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag3tncE" title="dnnl::memory::format_tag::tnc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">tnc</span></code></a>, the best performance can be expected for statistics with the <a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag2tnE" title="dnnl::memory::format_tag::tn"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">tn</span></code></a>
 format and suboptimal for statistics with the <a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag2ntE" title="dnnl::memory::format_tag::nt"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">nt</span></code></a> format.</p>
-</section>
-<section id="scale-and-shift">
+</div>
+<div class="section" id="scale-and-shift">
 <h3>Scale and Shift<a class="headerlink" href="#scale-and-shift" title="Permalink to this headline">¶</a></h3>
 <p>If used, the scale (<span class="math notranslate nohighlight">\(\gamma\)</span>) and shift (<span class="math notranslate nohighlight">\(\beta\)</span>) are combined in
 a single 2D tensor of shape <span class="math notranslate nohighlight">\(2 \times C\)</span>.</p>
 <p>The format of the corresponding memory object must be <a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag2ncE" title="dnnl::memory::format_tag::nc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">nc</span></code></a> (<a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag2abE" title="dnnl::memory::format_tag::ab"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">ab</span></code></a>).</p>
-</section>
-<section id="source-destination-and-their-gradients">
+</div>
+<div class="section" id="source-destination-and-their-gradients">
 <h3>Source, Destination, and Their Gradients<a class="headerlink" href="#source-destination-and-their-gradients" title="Permalink to this headline">¶</a></h3>
 <p>The layer normalization primitive works with an arbitrary data tensor;
 however, it was designed for RNN data tensors (i.e., <a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag2ncE" title="dnnl::memory::format_tag::nc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">nc</span></code></a>, <a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag3tncE" title="dnnl::memory::format_tag::tnc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">tnc</span></code></a>, <a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag4ldncE" title="dnnl::memory::format_tag::ldnc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">ldnc</span></code></a>).
@@ -4901,9 +4900,9 @@ Layer normalization performs normalization over the last logical dimension
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="api">
+</div>
+</div>
+<div class="section" id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp struct">
 <dt id="_CPPv4N4dnnl27layer_normalization_forwardE">
@@ -4920,13 +4919,12 @@ Layer normalization performs normalization over the last logical dimension
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl27layer_normalization_forward27layer_normalization_forwardERK14primitive_desc">
 <span id="_CPPv3N4dnnl27layer_normalization_forward27layer_normalization_forwardERK14primitive_desc"></span><span id="_CPPv2N4dnnl27layer_normalization_forward27layer_normalization_forwardERK14primitive_desc"></span><span id="dnnl::layer_normalization_forward::layer_normalization_forward__primitive_descCR"></span><span class="target" id="structdnnl_1_1layer__normalization__forward_1aff43626ba95cf18f0d1aa599d8e3c034"></span><code class="sig-name descname"><span class="pre">layer_normalization_forward</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl27layer_normalization_forward14primitive_descE" title="dnnl::layer_normalization_forward::primitive_desc"><span class="pre">primitive_desc</span></a> <span class="pre">&amp;</span><em><span class="pre">pd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl27layer_normalization_forward27layer_normalization_forwardERK14primitive_desc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Constructs a layer normalization forward propagation primitive. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pd</span></code>: Primitive descriptor for a layer normalization forward propagation primitive. </p></li>
-</ul>
+<dd><p>Constructs a layer normalization forward propagation primitive. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pd</strong> – Primitive descriptor for a layer normalization forward propagation primitive. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -4940,33 +4938,33 @@ Layer normalization performs normalization over the last logical dimension
 <dt id="_CPPv4N4dnnl27layer_normalization_forward4desc4descE9prop_kindRKN6memory4descERKN6memory4descEf19normalization_flags">
 <span id="_CPPv3N4dnnl27layer_normalization_forward4desc4descE9prop_kindRKN6memory4descERKN6memory4descEf19normalization_flags"></span><span id="_CPPv2N4dnnl27layer_normalization_forward4desc4descE9prop_kindRKN6memory4descERKN6memory4descEf19normalization_flags"></span><span id="dnnl::layer_normalization_forward::desc::desc__prop_kind.memory::descCR.memory::descCR.float.normalization_flags"></span><span class="target" id="structdnnl_1_1layer__normalization__forward_1_1desc_1a4a7cdc2f605d5be0ab33d5ec2d8a7339"></span><code class="sig-name descname"><span class="pre">desc</span></code><span class="sig-paren">(</span><a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kindE" title="dnnl::prop_kind"><span class="pre">prop_kind</span></a> <em><span class="pre">aprop_kind</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">data_desc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">stat_desc</span></em>, <span class="pre">float</span> <em><span class="pre">epsilon</span></em>, <a class="reference internal" href="general.html#_CPPv4N4dnnl19normalization_flagsE" title="dnnl::normalization_flags"><span class="pre">normalization_flags</span></a> <em><span class="pre">flags</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl27layer_normalization_forward4desc4descE9prop_kindRKN6memory4descERKN6memory4descEf19normalization_flags" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a descriptor for layer normalization forward propagation primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">aprop_kind</span></code>: Propagation kind. Possible values are <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb"><span class="std std-ref">dnnl::prop_kind::forward_training</span></a>, and <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c"><span class="std std-ref">dnnl::prop_kind::forward_inference</span></a>. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">data_desc</span></code>: Source and destination memory descriptor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stat_desc</span></code>: Statistics memory descriptors. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">epsilon</span></code>: Layer normalization epsilon parameter. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">flags</span></code>: Layer normalization flags (<a class="reference internal" href="general.html#group__dnnl__api__primitives__common_1gad8ef0fcbb7b10cae3d67dd46892002be"><span class="std std-ref">dnnl::normalization_flags</span></a>). </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aprop_kind</strong> – Propagation kind. Possible values are <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb"><span class="std std-ref">dnnl::prop_kind::forward_training</span></a>, and <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c"><span class="std std-ref">dnnl::prop_kind::forward_inference</span></a>. </p></li>
+<li><p><strong>data_desc</strong> – Source and destination memory descriptor. </p></li>
+<li><p><strong>stat_desc</strong> – Statistics memory descriptors. </p></li>
+<li><p><strong>epsilon</strong> – Layer normalization epsilon parameter. </p></li>
+<li><p><strong>flags</strong> – Layer normalization flags (<a class="reference internal" href="general.html#group__dnnl__api__primitives__common_1gad8ef0fcbb7b10cae3d67dd46892002be"><span class="std std-ref">dnnl::normalization_flags</span></a>). </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl27layer_normalization_forward4desc4descE9prop_kindRKN6memory4descEf19normalization_flags">
 <span id="_CPPv3N4dnnl27layer_normalization_forward4desc4descE9prop_kindRKN6memory4descEf19normalization_flags"></span><span id="_CPPv2N4dnnl27layer_normalization_forward4desc4descE9prop_kindRKN6memory4descEf19normalization_flags"></span><span id="dnnl::layer_normalization_forward::desc::desc__prop_kind.memory::descCR.float.normalization_flags"></span><span class="target" id="structdnnl_1_1layer__normalization__forward_1_1desc_1a9132ed5dfb1f316bfe7b9e828a05a24d"></span><code class="sig-name descname"><span class="pre">desc</span></code><span class="sig-paren">(</span><a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kindE" title="dnnl::prop_kind"><span class="pre">prop_kind</span></a> <em><span class="pre">aprop_kind</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">data_desc</span></em>, <span class="pre">float</span> <em><span class="pre">epsilon</span></em>, <a class="reference internal" href="general.html#_CPPv4N4dnnl19normalization_flagsE" title="dnnl::normalization_flags"><span class="pre">normalization_flags</span></a> <em><span class="pre">flags</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl27layer_normalization_forward4desc4descE9prop_kindRKN6memory4descEf19normalization_flags" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a descriptor for layer normalization forward propagation primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">aprop_kind</span></code>: Propagation kind. Possible values are <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb"><span class="std std-ref">dnnl::prop_kind::forward_training</span></a>, and <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c"><span class="std std-ref">dnnl::prop_kind::forward_inference</span></a>. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">data_desc</span></code>: Source and destination memory descriptor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">epsilon</span></code>: Layer normalization epsilon parameter. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">flags</span></code>: Layer normalization flags (<a class="reference internal" href="general.html#group__dnnl__api__primitives__common_1gad8ef0fcbb7b10cae3d67dd46892002be"><span class="std std-ref">dnnl::normalization_flags</span></a>). </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aprop_kind</strong> – Propagation kind. Possible values are <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb"><span class="std std-ref">dnnl::prop_kind::forward_training</span></a>, and <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c"><span class="std std-ref">dnnl::prop_kind::forward_inference</span></a>. </p></li>
+<li><p><strong>data_desc</strong> – Source and destination memory descriptor. </p></li>
+<li><p><strong>epsilon</strong> – Layer normalization epsilon parameter. </p></li>
+<li><p><strong>flags</strong> – Layer normalization flags (<a class="reference internal" href="general.html#group__dnnl__api__primitives__common_1gad8ef0fcbb7b10cae3d67dd46892002be"><span class="std std-ref">dnnl::normalization_flags</span></a>). </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -4988,99 +4986,109 @@ Layer normalization performs normalization over the last logical dimension
 <dt id="_CPPv4N4dnnl27layer_normalization_forward14primitive_desc14primitive_descERK4descRK6engineb">
 <span id="_CPPv3N4dnnl27layer_normalization_forward14primitive_desc14primitive_descERK4descRK6engineb"></span><span id="_CPPv2N4dnnl27layer_normalization_forward14primitive_desc14primitive_descERK4descRK6engineb"></span><span id="dnnl::layer_normalization_forward::primitive_desc::primitive_desc__descCR.engineCR.b"></span><span class="target" id="structdnnl_1_1layer__normalization__forward_1_1primitive__desc_1a08cef21327ab8e6159f16f9cedba7743"></span><code class="sig-name descname"><span class="pre">primitive_desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl27layer_normalization_forward4descE" title="dnnl::layer_normalization_forward::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl27layer_normalization_forward14primitive_desc14primitive_descERK4descRK6engineb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a primitive descriptor for a layer normalization forward propagation primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Descriptor for a layer normalization forward propagation primitive. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adesc</strong> – Descriptor for a layer normalization forward propagation primitive. </p></li>
+<li><p><strong>aengine</strong> – Engine to use. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl27layer_normalization_forward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb">
 <span id="_CPPv3N4dnnl27layer_normalization_forward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb"></span><span id="_CPPv2N4dnnl27layer_normalization_forward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb"></span><span id="dnnl::layer_normalization_forward::primitive_desc::primitive_desc__descCR.primitive_attrCR.engineCR.b"></span><span class="target" id="structdnnl_1_1layer__normalization__forward_1_1primitive__desc_1a67a48bf1498629db9db3d6dca32392ad"></span><code class="sig-name descname"><span class="pre">primitive_desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl27layer_normalization_forward4descE" title="dnnl::layer_normalization_forward::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="attributes/index.html#_CPPv4N4dnnl14primitive_attrE" title="dnnl::primitive_attr"><span class="pre">primitive_attr</span></a> <span class="pre">&amp;</span><em><span class="pre">attr</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl27layer_normalization_forward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a primitive descriptor for a layer normalization forward propagation primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Descriptor for a layer normalization forward propagation primitive. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">attr</span></code>: Primitive attributes to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adesc</strong> – Descriptor for a layer normalization forward propagation primitive. </p></li>
+<li><p><strong>attr</strong> – Primitive attributes to use. </p></li>
+<li><p><strong>aengine</strong> – Engine to use. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl27layer_normalization_forward14primitive_desc8src_descEv">
 <span id="_CPPv3NK4dnnl27layer_normalization_forward14primitive_desc8src_descEv"></span><span id="_CPPv2NK4dnnl27layer_normalization_forward14primitive_desc8src_descEv"></span><span id="dnnl::layer_normalization_forward::primitive_desc::src_descC"></span><span class="target" id="structdnnl_1_1layer__normalization__forward_1_1primitive__desc_1a15f2d8ad523655199b6b9eed1a906e16"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">src_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl27layer_normalization_forward14primitive_desc8src_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a source memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Source memory descriptor. </p>
+<dd><p>Returns a source memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Source memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a source parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a source parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl27layer_normalization_forward14primitive_desc8dst_descEv">
 <span id="_CPPv3NK4dnnl27layer_normalization_forward14primitive_desc8dst_descEv"></span><span id="_CPPv2NK4dnnl27layer_normalization_forward14primitive_desc8dst_descEv"></span><span id="dnnl::layer_normalization_forward::primitive_desc::dst_descC"></span><span class="target" id="structdnnl_1_1layer__normalization__forward_1_1primitive__desc_1a0f9a0d3bfab1851f4f1ed6af9e7bc511"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">dst_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl27layer_normalization_forward14primitive_desc8dst_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a destination memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Destination memory descriptor. </p>
+<dd><p>Returns a destination memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Destination memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a destination parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a destination parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl27layer_normalization_forward14primitive_desc12weights_descEv">
 <span id="_CPPv3NK4dnnl27layer_normalization_forward14primitive_desc12weights_descEv"></span><span id="_CPPv2NK4dnnl27layer_normalization_forward14primitive_desc12weights_descEv"></span><span id="dnnl::layer_normalization_forward::primitive_desc::weights_descC"></span><span class="target" id="structdnnl_1_1layer__normalization__forward_1_1primitive__desc_1a8449344876675993b5dcea83612fcc60"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">weights_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl27layer_normalization_forward14primitive_desc12weights_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a weights memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Weights memory descriptor. </p>
+<dd><p>Returns a weights memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Weights memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a weights parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a weights parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl27layer_normalization_forward14primitive_desc14workspace_descEv">
 <span id="_CPPv3NK4dnnl27layer_normalization_forward14primitive_desc14workspace_descEv"></span><span id="_CPPv2NK4dnnl27layer_normalization_forward14primitive_desc14workspace_descEv"></span><span id="dnnl::layer_normalization_forward::primitive_desc::workspace_descC"></span><span class="target" id="structdnnl_1_1layer__normalization__forward_1_1primitive__desc_1a1f0dd45d979923e85cc2fa81de24d772"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">workspace_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl27layer_normalization_forward14primitive_desc14workspace_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the workspace memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Workspace memory descriptor. </p>
+<dd><p>Returns the workspace memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Workspace memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not require workspace parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not require workspace parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl27layer_normalization_forward14primitive_desc9mean_descEv">
 <span id="_CPPv3NK4dnnl27layer_normalization_forward14primitive_desc9mean_descEv"></span><span id="_CPPv2NK4dnnl27layer_normalization_forward14primitive_desc9mean_descEv"></span><span id="dnnl::layer_normalization_forward::primitive_desc::mean_descC"></span><span class="target" id="structdnnl_1_1layer__normalization__forward_1_1primitive__desc_1ae0ad9c407ce41e013def79956309881e"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">mean_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl27layer_normalization_forward14primitive_desc9mean_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns memory descriptor for mean. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Memory descriptor for mean. </p>
+<dd><p>Returns memory descriptor for mean. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Memory descriptor for mean. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl27layer_normalization_forward14primitive_desc13variance_descEv">
 <span id="_CPPv3NK4dnnl27layer_normalization_forward14primitive_desc13variance_descEv"></span><span id="_CPPv2NK4dnnl27layer_normalization_forward14primitive_desc13variance_descEv"></span><span id="dnnl::layer_normalization_forward::primitive_desc::variance_descC"></span><span class="target" id="structdnnl_1_1layer__normalization__forward_1_1primitive__desc_1a5446956542a78e8bdee3bde838c6e9b1"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">variance_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl27layer_normalization_forward14primitive_desc13variance_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns memory descriptor for variance. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Memory descriptor for variance. </p>
+<dd><p>Returns memory descriptor for variance. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Memory descriptor for variance. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -5103,13 +5111,12 @@ Layer normalization performs normalization over the last logical dimension
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl28layer_normalization_backward28layer_normalization_backwardERK14primitive_desc">
 <span id="_CPPv3N4dnnl28layer_normalization_backward28layer_normalization_backwardERK14primitive_desc"></span><span id="_CPPv2N4dnnl28layer_normalization_backward28layer_normalization_backwardERK14primitive_desc"></span><span id="dnnl::layer_normalization_backward::layer_normalization_backward__primitive_descCR"></span><span class="target" id="structdnnl_1_1layer__normalization__backward_1a36cbbc365c0f37c4725d44f68bc180d3"></span><code class="sig-name descname"><span class="pre">layer_normalization_backward</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl28layer_normalization_backward14primitive_descE" title="dnnl::layer_normalization_backward::primitive_desc"><span class="pre">primitive_desc</span></a> <span class="pre">&amp;</span><em><span class="pre">pd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl28layer_normalization_backward28layer_normalization_backwardERK14primitive_desc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Constructs a layer normalization backward propagation primitive. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pd</span></code>: Primitive descriptor for a layer normalization backward propagation primitive. </p></li>
-</ul>
+<dd><p>Constructs a layer normalization backward propagation primitive. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pd</strong> – Primitive descriptor for a layer normalization backward propagation primitive. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -5123,35 +5130,35 @@ Layer normalization performs normalization over the last logical dimension
 <dt id="_CPPv4N4dnnl28layer_normalization_backward4desc4descE9prop_kindRKN6memory4descERKN6memory4descERKN6memory4descEf19normalization_flags">
 <span id="_CPPv3N4dnnl28layer_normalization_backward4desc4descE9prop_kindRKN6memory4descERKN6memory4descERKN6memory4descEf19normalization_flags"></span><span id="_CPPv2N4dnnl28layer_normalization_backward4desc4descE9prop_kindRKN6memory4descERKN6memory4descERKN6memory4descEf19normalization_flags"></span><span id="dnnl::layer_normalization_backward::desc::desc__prop_kind.memory::descCR.memory::descCR.memory::descCR.float.normalization_flags"></span><span class="target" id="structdnnl_1_1layer__normalization__backward_1_1desc_1ac29473459e26afc6d6e5292a6f9d5c7e"></span><code class="sig-name descname"><span class="pre">desc</span></code><span class="sig-paren">(</span><a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kindE" title="dnnl::prop_kind"><span class="pre">prop_kind</span></a> <em><span class="pre">aprop_kind</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">diff_data_desc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">data_desc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">stat_desc</span></em>, <span class="pre">float</span> <em><span class="pre">epsilon</span></em>, <a class="reference internal" href="general.html#_CPPv4N4dnnl19normalization_flagsE" title="dnnl::normalization_flags"><span class="pre">normalization_flags</span></a> <em><span class="pre">flags</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl28layer_normalization_backward4desc4descE9prop_kindRKN6memory4descERKN6memory4descERKN6memory4descEf19normalization_flags" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a descriptor for layer normalization backward propagation primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">aprop_kind</span></code>: Propagation kind. Possible values are <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438faa12627cacf73ecb7ef088beedd650e96"><span class="std std-ref">dnnl::prop_kind::backward_data</span></a> and <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa195fe59b6f103787a914aead0f3db502"><span class="std std-ref">dnnl::prop_kind::backward</span></a> (diffs for all parameters are computed in this case). </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">diff_data_desc</span></code>: Diff source and diff destination memory descriptor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">data_desc</span></code>: Source memory descriptor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stat_desc</span></code>: Statistics memory descriptors. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">epsilon</span></code>: Layer normalization epsilon parameter. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">flags</span></code>: Layer normalization flags (<a class="reference internal" href="general.html#group__dnnl__api__primitives__common_1gad8ef0fcbb7b10cae3d67dd46892002be"><span class="std std-ref">dnnl::normalization_flags</span></a>). </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aprop_kind</strong> – Propagation kind. Possible values are <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438faa12627cacf73ecb7ef088beedd650e96"><span class="std std-ref">dnnl::prop_kind::backward_data</span></a> and <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa195fe59b6f103787a914aead0f3db502"><span class="std std-ref">dnnl::prop_kind::backward</span></a> (diffs for all parameters are computed in this case). </p></li>
+<li><p><strong>diff_data_desc</strong> – Diff source and diff destination memory descriptor. </p></li>
+<li><p><strong>data_desc</strong> – Source memory descriptor. </p></li>
+<li><p><strong>stat_desc</strong> – Statistics memory descriptors. </p></li>
+<li><p><strong>epsilon</strong> – Layer normalization epsilon parameter. </p></li>
+<li><p><strong>flags</strong> – Layer normalization flags (<a class="reference internal" href="general.html#group__dnnl__api__primitives__common_1gad8ef0fcbb7b10cae3d67dd46892002be"><span class="std std-ref">dnnl::normalization_flags</span></a>). </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl28layer_normalization_backward4desc4descE9prop_kindRKN6memory4descERKN6memory4descEf19normalization_flags">
 <span id="_CPPv3N4dnnl28layer_normalization_backward4desc4descE9prop_kindRKN6memory4descERKN6memory4descEf19normalization_flags"></span><span id="_CPPv2N4dnnl28layer_normalization_backward4desc4descE9prop_kindRKN6memory4descERKN6memory4descEf19normalization_flags"></span><span id="dnnl::layer_normalization_backward::desc::desc__prop_kind.memory::descCR.memory::descCR.float.normalization_flags"></span><span class="target" id="structdnnl_1_1layer__normalization__backward_1_1desc_1aac8a60f845b222f007692be17649b56c"></span><code class="sig-name descname"><span class="pre">desc</span></code><span class="sig-paren">(</span><a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kindE" title="dnnl::prop_kind"><span class="pre">prop_kind</span></a> <em><span class="pre">aprop_kind</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">diff_data_desc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">data_desc</span></em>, <span class="pre">float</span> <em><span class="pre">epsilon</span></em>, <a class="reference internal" href="general.html#_CPPv4N4dnnl19normalization_flagsE" title="dnnl::normalization_flags"><span class="pre">normalization_flags</span></a> <em><span class="pre">flags</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl28layer_normalization_backward4desc4descE9prop_kindRKN6memory4descERKN6memory4descEf19normalization_flags" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a descriptor for layer normalization backward propagation primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">aprop_kind</span></code>: Propagation kind. Possible values are <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438faa12627cacf73ecb7ef088beedd650e96"><span class="std std-ref">dnnl::prop_kind::backward_data</span></a> and <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa195fe59b6f103787a914aead0f3db502"><span class="std std-ref">dnnl::prop_kind::backward</span></a> (diffs for all parameters are computed in this case). </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">diff_data_desc</span></code>: Diff source and diff destination memory descriptor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">data_desc</span></code>: Source memory descriptor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">epsilon</span></code>: Layer normalization epsilon parameter. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">flags</span></code>: Layer normalization flags (<a class="reference internal" href="general.html#group__dnnl__api__primitives__common_1gad8ef0fcbb7b10cae3d67dd46892002be"><span class="std std-ref">dnnl::normalization_flags</span></a>). </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aprop_kind</strong> – Propagation kind. Possible values are <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438faa12627cacf73ecb7ef088beedd650e96"><span class="std std-ref">dnnl::prop_kind::backward_data</span></a> and <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa195fe59b6f103787a914aead0f3db502"><span class="std std-ref">dnnl::prop_kind::backward</span></a> (diffs for all parameters are computed in this case). </p></li>
+<li><p><strong>diff_data_desc</strong> – Diff source and diff destination memory descriptor. </p></li>
+<li><p><strong>data_desc</strong> – Source memory descriptor. </p></li>
+<li><p><strong>epsilon</strong> – Layer normalization epsilon parameter. </p></li>
+<li><p><strong>flags</strong> – Layer normalization flags (<a class="reference internal" href="general.html#group__dnnl__api__primitives__common_1gad8ef0fcbb7b10cae3d67dd46892002be"><span class="std std-ref">dnnl::normalization_flags</span></a>). </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -5173,137 +5180,153 @@ Layer normalization performs normalization over the last logical dimension
 <dt id="_CPPv4N4dnnl28layer_normalization_backward14primitive_desc14primitive_descERK4descRK6engineRKN27layer_normalization_forward14primitive_descEb">
 <span id="_CPPv3N4dnnl28layer_normalization_backward14primitive_desc14primitive_descERK4descRK6engineRKN27layer_normalization_forward14primitive_descEb"></span><span id="_CPPv2N4dnnl28layer_normalization_backward14primitive_desc14primitive_descERK4descRK6engineRKN27layer_normalization_forward14primitive_descEb"></span><span id="dnnl::layer_normalization_backward::primitive_desc::primitive_desc__descCR.engineCR.layer_normalization_forward::primitive_descCR.b"></span><span class="target" id="structdnnl_1_1layer__normalization__backward_1_1primitive__desc_1acd264ecbdeccd9c27f89549e84ee3712"></span><code class="sig-name descname"><span class="pre">primitive_desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl28layer_normalization_backward4descE" title="dnnl::layer_normalization_backward::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl27layer_normalization_forwardE" title="dnnl::layer_normalization_forward"><span class="pre">layer_normalization_forward</span></a><span class="pre">::</span><a class="reference internal" href="#_CPPv4N4dnnl27layer_normalization_forward14primitive_descE" title="dnnl::layer_normalization_forward::primitive_desc"><span class="pre">primitive_desc</span></a> <span class="pre">&amp;</span><em><span class="pre">hint_fwd_pd</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl28layer_normalization_backward14primitive_desc14primitive_descERK4descRK6engineRKN27layer_normalization_forward14primitive_descEb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a primitive descriptor for a layer normalization backward propagation primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Descriptor for a layer normalization backward propagation primitive. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">hint_fwd_pd</span></code>: Primitive descriptor for a layer normalization forward propagation primitive. It is used as a hint for deciding which memory format to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adesc</strong> – Descriptor for a layer normalization backward propagation primitive. </p></li>
+<li><p><strong>aengine</strong> – Engine to use. </p></li>
+<li><p><strong>hint_fwd_pd</strong> – Primitive descriptor for a layer normalization forward propagation primitive. It is used as a hint for deciding which memory format to use. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl28layer_normalization_backward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineRKN27layer_normalization_forward14primitive_descEb">
 <span id="_CPPv3N4dnnl28layer_normalization_backward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineRKN27layer_normalization_forward14primitive_descEb"></span><span id="_CPPv2N4dnnl28layer_normalization_backward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineRKN27layer_normalization_forward14primitive_descEb"></span><span id="dnnl::layer_normalization_backward::primitive_desc::primitive_desc__descCR.primitive_attrCR.engineCR.layer_normalization_forward::primitive_descCR.b"></span><span class="target" id="structdnnl_1_1layer__normalization__backward_1_1primitive__desc_1aa44970cbbd82fea85771057cf65d7732"></span><code class="sig-name descname"><span class="pre">primitive_desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl28layer_normalization_backward4descE" title="dnnl::layer_normalization_backward::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="attributes/index.html#_CPPv4N4dnnl14primitive_attrE" title="dnnl::primitive_attr"><span class="pre">primitive_attr</span></a> <span class="pre">&amp;</span><em><span class="pre">attr</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl27layer_normalization_forwardE" title="dnnl::layer_normalization_forward"><span class="pre">layer_normalization_forward</span></a><span class="pre">::</span><a class="reference internal" href="#_CPPv4N4dnnl27layer_normalization_forward14primitive_descE" title="dnnl::layer_normalization_forward::primitive_desc"><span class="pre">primitive_desc</span></a> <span class="pre">&amp;</span><em><span class="pre">hint_fwd_pd</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl28layer_normalization_backward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineRKN27layer_normalization_forward14primitive_descEb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a primitive descriptor for a layer normalization backward propagation primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Descriptor for a layer normalization backward propagation primitive. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">attr</span></code>: Primitive attributes to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">hint_fwd_pd</span></code>: Primitive descriptor for a layer normalization forward propagation primitive. It is used as a hint for deciding which memory format to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adesc</strong> – Descriptor for a layer normalization backward propagation primitive. </p></li>
+<li><p><strong>attr</strong> – Primitive attributes to use. </p></li>
+<li><p><strong>aengine</strong> – Engine to use. </p></li>
+<li><p><strong>hint_fwd_pd</strong> – Primitive descriptor for a layer normalization forward propagation primitive. It is used as a hint for deciding which memory format to use. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl28layer_normalization_backward14primitive_desc8src_descEv">
 <span id="_CPPv3NK4dnnl28layer_normalization_backward14primitive_desc8src_descEv"></span><span id="_CPPv2NK4dnnl28layer_normalization_backward14primitive_desc8src_descEv"></span><span id="dnnl::layer_normalization_backward::primitive_desc::src_descC"></span><span class="target" id="structdnnl_1_1layer__normalization__backward_1_1primitive__desc_1ae18d68c7b8ed354031031146b9c9b396"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">src_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl28layer_normalization_backward14primitive_desc8src_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a source memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Source memory descriptor. </p>
+<dd><p>Returns a source memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Source memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a source parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a source parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl28layer_normalization_backward14primitive_desc12weights_descEv">
 <span id="_CPPv3NK4dnnl28layer_normalization_backward14primitive_desc12weights_descEv"></span><span id="_CPPv2NK4dnnl28layer_normalization_backward14primitive_desc12weights_descEv"></span><span id="dnnl::layer_normalization_backward::primitive_desc::weights_descC"></span><span class="target" id="structdnnl_1_1layer__normalization__backward_1_1primitive__desc_1a9d1aca510d293af15665f20c5f8250f2"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">weights_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl28layer_normalization_backward14primitive_desc12weights_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a weights memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Weights memory descriptor. </p>
+<dd><p>Returns a weights memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Weights memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a weights parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a weights parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl28layer_normalization_backward14primitive_desc8dst_descEv">
 <span id="_CPPv3NK4dnnl28layer_normalization_backward14primitive_desc8dst_descEv"></span><span id="_CPPv2NK4dnnl28layer_normalization_backward14primitive_desc8dst_descEv"></span><span id="dnnl::layer_normalization_backward::primitive_desc::dst_descC"></span><span class="target" id="structdnnl_1_1layer__normalization__backward_1_1primitive__desc_1a7161632174cf25ba1095fb349c89abee"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">dst_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl28layer_normalization_backward14primitive_desc8dst_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a destination memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Destination memory descriptor. </p>
+<dd><p>Returns a destination memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Destination memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a destination parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a destination parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl28layer_normalization_backward14primitive_desc13diff_src_descEv">
 <span id="_CPPv3NK4dnnl28layer_normalization_backward14primitive_desc13diff_src_descEv"></span><span id="_CPPv2NK4dnnl28layer_normalization_backward14primitive_desc13diff_src_descEv"></span><span id="dnnl::layer_normalization_backward::primitive_desc::diff_src_descC"></span><span class="target" id="structdnnl_1_1layer__normalization__backward_1_1primitive__desc_1a38933c147bf1f8ab11ce77737f4a7e3a"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">diff_src_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl28layer_normalization_backward14primitive_desc13diff_src_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a diff source memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Diff source memory descriptor. </p>
+<dd><p>Returns a diff source memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Diff source memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a diff source memory with. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a diff source memory with. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl28layer_normalization_backward14primitive_desc13diff_dst_descEv">
 <span id="_CPPv3NK4dnnl28layer_normalization_backward14primitive_desc13diff_dst_descEv"></span><span id="_CPPv2NK4dnnl28layer_normalization_backward14primitive_desc13diff_dst_descEv"></span><span id="dnnl::layer_normalization_backward::primitive_desc::diff_dst_descC"></span><span class="target" id="structdnnl_1_1layer__normalization__backward_1_1primitive__desc_1a676cc7c7737c4ae08f340747033fb6c0"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">diff_dst_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl28layer_normalization_backward14primitive_desc13diff_dst_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a diff destination memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Diff destination memory descriptor. </p>
+<dd><p>Returns a diff destination memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Diff destination memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a diff destination parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a diff destination parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl28layer_normalization_backward14primitive_desc17diff_weights_descEv">
 <span id="_CPPv3NK4dnnl28layer_normalization_backward14primitive_desc17diff_weights_descEv"></span><span id="_CPPv2NK4dnnl28layer_normalization_backward14primitive_desc17diff_weights_descEv"></span><span id="dnnl::layer_normalization_backward::primitive_desc::diff_weights_descC"></span><span class="target" id="structdnnl_1_1layer__normalization__backward_1_1primitive__desc_1aab2ef19d90df6c0334cbb4031d2ecf38"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">diff_weights_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl28layer_normalization_backward14primitive_desc17diff_weights_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a diff weights memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Diff weights memory descriptor. </p>
+<dd><p>Returns a diff weights memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Diff weights memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a diff weights parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a diff weights parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl28layer_normalization_backward14primitive_desc9mean_descEv">
 <span id="_CPPv3NK4dnnl28layer_normalization_backward14primitive_desc9mean_descEv"></span><span id="_CPPv2NK4dnnl28layer_normalization_backward14primitive_desc9mean_descEv"></span><span id="dnnl::layer_normalization_backward::primitive_desc::mean_descC"></span><span class="target" id="structdnnl_1_1layer__normalization__backward_1_1primitive__desc_1a3942862c9c754407d4dd2cc09e34c6b3"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">mean_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl28layer_normalization_backward14primitive_desc9mean_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns memory descriptor for mean. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Memory descriptor for mean. </p>
+<dd><p>Returns memory descriptor for mean. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Memory descriptor for mean. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl28layer_normalization_backward14primitive_desc13variance_descEv">
 <span id="_CPPv3NK4dnnl28layer_normalization_backward14primitive_desc13variance_descEv"></span><span id="_CPPv2NK4dnnl28layer_normalization_backward14primitive_desc13variance_descEv"></span><span id="dnnl::layer_normalization_backward::primitive_desc::variance_descC"></span><span class="target" id="structdnnl_1_1layer__normalization__backward_1_1primitive__desc_1a83855eaf5a4b1f9cf99f82db527bef16"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">variance_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl28layer_normalization_backward14primitive_desc13variance_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns memory descriptor for variance. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Memory descriptor for variance. </p>
+<dd><p>Returns memory descriptor for variance. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Memory descriptor for variance. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl28layer_normalization_backward14primitive_desc14workspace_descEv">
 <span id="_CPPv3NK4dnnl28layer_normalization_backward14primitive_desc14workspace_descEv"></span><span id="_CPPv2NK4dnnl28layer_normalization_backward14primitive_desc14workspace_descEv"></span><span id="dnnl::layer_normalization_backward::primitive_desc::workspace_descC"></span><span class="target" id="structdnnl_1_1layer__normalization__backward_1_1primitive__desc_1a4a859f92c4cc99b57510b6135eff5e8e"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">workspace_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl28layer_normalization_backward14primitive_desc14workspace_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the workspace memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Workspace memory descriptor. </p>
+<dd><p>Returns the workspace memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Workspace memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not require workspace parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not require workspace parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -5311,8 +5334,8 @@ Layer normalization performs normalization over the last logical dimension
 
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

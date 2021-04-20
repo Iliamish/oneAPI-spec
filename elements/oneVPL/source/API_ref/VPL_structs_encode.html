@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encode Structures &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4806,10 +4805,10 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="encode-structures">
+  <div class="section" id="encode-structures">
 <span id="struct-encode"></span><h1>Encode Structures<a class="headerlink" href="#encode-structures" title="Permalink to this headline">¶</a></h1>
 <p id="struct-encode-begin">Structures used by Encode only.</p>
-<section id="api">
+<div class="section" id="api">
 <span id="struct-encode-end"></span><h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -4857,7 +4856,7 @@ SPDX-License-Identifier: MIT
 <li><p><a class="reference internal" href="#mfxvp9temporallayer" id="id42">mfxVP9TemporalLayer</a></p></li>
 </ul>
 </div>
-<section id="mfxbrcframectrl">
+<div class="section" id="mfxbrcframectrl">
 <h3><a class="toc-backref" href="#id1">mfxBRCFrameCtrl</a><a class="headerlink" href="#mfxbrcframectrl" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv415mfxBRCFrameCtrl">
@@ -4916,8 +4915,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxbrcframeparam">
+</div>
+<div class="section" id="mfxbrcframeparam">
 <h3><a class="toc-backref" href="#id2">mfxBRCFrameParam</a><a class="headerlink" href="#mfxbrcframeparam" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv416mfxBRCFrameParam">
@@ -4996,8 +4995,8 @@ SPDX-License-Identifier: MIT
 
 <p>Frame spatial complexity is calculated according to the following formula:</p>
 <img alt="Frame spatial complexity" src="../../../../_images/frame_cmplx.png" />
-</section>
-<section id="mfxbrcframestatus">
+</div>
+<div class="section" id="mfxbrcframestatus">
 <h3><a class="toc-backref" href="#id3">mfxBRCFrameStatus</a><a class="headerlink" href="#mfxbrcframestatus" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv417mfxBRCFrameStatus">
@@ -5020,8 +5019,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxencodectrl">
+</div>
+<div class="section" id="mfxencodectrl">
 <h3><a class="toc-backref" href="#id4">mfxEncodeCtrl</a><a class="headerlink" href="#mfxencodectrl" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv413mfxEncodeCtrl">
@@ -5040,11 +5039,10 @@ SPDX-License-Identifier: MIT
 <span id="_CPPv3N13mfxEncodeCtrl14MfxNalUnitTypeE"></span><span id="_CPPv2N13mfxEncodeCtrl14MfxNalUnitTypeE"></span><span id="mfxEncodeCtrl::MfxNalUnitType__mfxU16"></span><span class="target" id="structmfx_encode_ctrl_1a1aa155f87335360c11504978ff045fe0"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16"><span class="pre">mfxU16</span></a> <code class="sig-name descname"><span class="pre">MfxNalUnitType</span></code><a class="headerlink" href="#_CPPv4N13mfxEncodeCtrl14MfxNalUnitTypeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Type of NAL unit that contains encoding frame. All supported values are defined by MfxNalUnitType enumerator. Other values defined in ITU-T H.265 specification are not supported.</p>
 <p>The encoder uses this field only if application sets <a class="reference internal" href="#structmfx_ext_coding_option3_1a25774f8d9266d37a3e8d05b89e3ca02e"><span class="std std-ref">mfxExtCodingOption3::EnableNalUnitType</span></a> option to ON during encoder initialization.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Only encoded order is supported. If application specifies this value in display order or uses value inappropriate for current frame or invalid value, then the encoder silently ignores it. </p>
-</dd>
-</dl>
-</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only encoded order is supported. If application specifies this value in display order or uses value inappropriate for current frame or invalid value, then the encoder silently ignores it. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
@@ -5092,8 +5090,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxencodedunitinfo">
+</div>
+<div class="section" id="mfxencodedunitinfo">
 <h3><a class="toc-backref" href="#id5">mfxEncodedUnitInfo</a><a class="headerlink" href="#mfxencodedunitinfo" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv418mfxEncodedUnitInfo">
@@ -5122,8 +5120,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxencodestat">
+</div>
+<div class="section" id="mfxencodestat">
 <h3><a class="toc-backref" href="#id6">mfxEncodeStat</a><a class="headerlink" href="#mfxencodestat" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv413mfxEncodeStat">
@@ -5152,17 +5150,17 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextavcencodedframeinfo">
+</div>
+<div class="section" id="mfxextavcencodedframeinfo">
 <h3><a class="toc-backref" href="#id7">mfxExtAVCEncodedFrameInfo</a><a class="headerlink" href="#mfxextavcencodedframeinfo" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv425mfxExtAVCEncodedFrameInfo">
 <span id="_CPPv325mfxExtAVCEncodedFrameInfo"></span><span id="_CPPv225mfxExtAVCEncodedFrameInfo"></span><span id="mfxExtAVCEncodedFrameInfo"></span><span class="target" id="structmfx_ext_a_v_c_encoded_frame_info"></span><em class="property"><span class="pre">struct</span> </em><code class="sig-name descname"><span class="pre">mfxExtAVCEncodedFrameInfo</span></code><a class="headerlink" href="#_CPPv425mfxExtAVCEncodedFrameInfo" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Used by the encoder to report additional information about the encoded picture. The application can attach this buffer to the <a class="reference internal" href="VPL_structs_memory.html#structmfx_bitstream"><span class="std std-ref">mfxBitstream</span></a> structure before calling MFXVideoENCODE_EncodeFrameAsync function. For interlaced content the encoder requires two such structures. They correspond to fields in encoded order.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all implementations of the encoder support this extended buffer. The application must use query mode 1 to determine if the functionality is supported. To do this, the application must attach this extended buffer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure and call the MFXVideoENCODE_Query function. If the function returns MFX_ERR_NONE then the functionality is supported. </p>
-</dd>
-</dl>
+<p><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all implementations of the encoder support this extended buffer. The application must use query mode 1 to determine if the functionality is supported. To do this, the application must attach this extended buffer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure and call the MFXVideoENCODE_Query function. If the function returns MFX_ERR_NONE then the functionality is supported. </p>
+</div>
 </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-reference-lists">Reference Lists</p>
@@ -5241,8 +5239,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextavcreflistctrl">
+</div>
+<div class="section" id="mfxextavcreflistctrl">
 <h3><a class="toc-backref" href="#id8">mfxExtAVCRefListCtrl</a><a class="headerlink" href="#mfxextavcreflistctrl" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv420mfxExtAVCRefListCtrl">
@@ -5250,10 +5248,10 @@ SPDX-License-Identifier: MIT
 <dd><p>Configures reference frame options for the H.264 encoder. <p><p>See the <a class="reference internal" href="../appendix/VPL_apnds_c.html#sec-reference-list-selection"><span class="std std-ref">Reference List Selection</span></a> and <a class="reference internal" href="../appendix/VPL_apnds_c.html#sec-long-term-reference-frame"><span class="std std-ref">Long Term Reference Frame</span></a> sections for more details.</p>
 </p>
 </p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all implementations of the encoder support LongTermIdx and ApplyLongTermIdx fields in this structure. The application must use query mode 1 to determine if such functionality is supported. To do this, the application must attach this extended buffer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure and call the MFXVideoENCODE_Query function. If the function returns MFX_ERR_NONE and these fields were set to one, then the functionality is supported. If the function fails or sets fields to zero, then the functionality is not supported. </p>
-</dd>
-</dl>
+<p><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all implementations of the encoder support LongTermIdx and ApplyLongTermIdx fields in this structure. The application must use query mode 1 to determine if such functionality is supported. To do this, the application must attach this extended buffer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure and call the MFXVideoENCODE_Query function. If the function returns MFX_ERR_NONE and these fields were set to one, then the functionality is supported. If the function fails or sets fields to zero, then the functionality is not supported. </p>
+</div>
 </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-reference-lists">Reference Lists</p>
@@ -5336,17 +5334,17 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextavcreflists">
+</div>
+<div class="section" id="mfxextavcreflists">
 <h3><a class="toc-backref" href="#id9">mfxExtAVCRefLists</a><a class="headerlink" href="#mfxextavcreflists" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv417mfxExtAVCRefLists">
 <span id="_CPPv317mfxExtAVCRefLists"></span><span id="_CPPv217mfxExtAVCRefLists"></span><span id="mfxExtAVCRefLists"></span><span class="target" id="structmfx_ext_a_v_c_ref_lists"></span><em class="property"><span class="pre">struct</span> </em><code class="sig-name descname"><span class="pre">mfxExtAVCRefLists</span></code><a class="headerlink" href="#_CPPv417mfxExtAVCRefLists" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Specifies reference lists for the encoder. It may be used together with the <a class="reference internal" href="#structmfx_ext_a_v_c_ref_list_ctrl"><span class="std std-ref">mfxExtAVCRefListCtrl</span></a> structure to create customized reference lists. If both structures are used together, then the encoder takes reference lists from the <a class="reference internal" href="#structmfx_ext_a_v_c_ref_lists"><span class="std std-ref">mfxExtAVCRefLists</span></a> structure and modifies them according to the <a class="reference internal" href="#structmfx_ext_a_v_c_ref_list_ctrl"><span class="std std-ref">mfxExtAVCRefListCtrl</span></a> instructions. In case of interlaced coding, the first <a class="reference internal" href="#structmfx_ext_a_v_c_ref_lists"><span class="std std-ref">mfxExtAVCRefLists</span></a> structure affects TOP field and the second – BOTTOM field.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all implementations of the encoder support this structure. The application must use the Query API function to determine if it is supported. </p>
-</dd>
-</dl>
+<p><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all implementations of the encoder support this structure. The application must use the Query API function to determine if it is supported. </p>
+</div>
 </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
@@ -5404,8 +5402,8 @@ SPDX-License-Identifier: MIT
 
 </dd></dl>
 
-</section>
-<section id="mfxextavcroundingoffset">
+</div>
+<div class="section" id="mfxextavcroundingoffset">
 <h3><a class="toc-backref" href="#id10">mfxExtAVCRoundingOffset</a><a class="headerlink" href="#mfxextavcroundingoffset" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv423mfxExtAVCRoundingOffset">
@@ -5446,8 +5444,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextavctemporallayers">
+</div>
+<div class="section" id="mfxextavctemporallayers">
 <h3><a class="toc-backref" href="#id11">mfxExtAvcTemporalLayers</a><a class="headerlink" href="#mfxextavctemporallayers" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv423mfxExtAvcTemporalLayers">
@@ -5478,8 +5476,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextbrc">
+</div>
+<div class="section" id="mfxextbrc">
 <h3><a class="toc-backref" href="#id12">mfxExtBRC</a><a class="headerlink" href="#mfxextbrc" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv49mfxExtBRC">
@@ -5503,92 +5501,95 @@ SPDX-License-Identifier: MIT
 <dt id="_CPPv4N9mfxExtBRC4InitE">
 <span id="_CPPv3N9mfxExtBRC4InitE"></span><span id="_CPPv2N9mfxExtBRC4InitE"></span><span class="target" id="structmfx_ext_b_r_c_1aa6e57f52abe6e68a5730f21d222f07f9"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">Init</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxHDL" title="mfxHDL"><span class="pre">mfxHDL</span></a> <span class="pre">pthis</span>, <a class="reference internal" href="VPL_structs_cross_component.html#_CPPv413mfxVideoParam" title="mfxVideoParam"><span class="pre">mfxVideoParam</span></a> <span class="pre">*</span><span class="pre">par</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9mfxExtBRC4InitE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Initializes the BRC session according to parameters from input <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> and attached structures. It does not modify the input <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> and attached structures. Invoked during MFXVideoENCODE_Init. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p> MFX_ERR_UNSUPPORTED The function detected unsupported video parameters. </p>
-</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">pthis</span></code>: Pointer to the BRC object. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">par</span></code>: Pointer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure that was used for the encoder initialization.</p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] pthis</strong> – Pointer to the BRC object. </p></li>
+<li><p><strong>[in] par</strong> – Pointer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure that was used for the encoder initialization.</p></li>
 </ul>
 </dd>
-</dl>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. <p> MFX_ERR_UNSUPPORTED The function detected unsupported video parameters. </p>
 </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N9mfxExtBRC5ResetE">
 <span id="_CPPv3N9mfxExtBRC5ResetE"></span><span id="_CPPv2N9mfxExtBRC5ResetE"></span><span class="target" id="structmfx_ext_b_r_c_1a370a717d4dbc313d64baf54242269257"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">Reset</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxHDL" title="mfxHDL"><span class="pre">mfxHDL</span></a> <span class="pre">pthis</span>, <a class="reference internal" href="VPL_structs_cross_component.html#_CPPv413mfxVideoParam" title="mfxVideoParam"><span class="pre">mfxVideoParam</span></a> <span class="pre">*</span><span class="pre">par</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9mfxExtBRC5ResetE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Resets BRC session according to new parameters. It does not modify the input <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> and attached structures. Invoked during MFXVideoENCODE_Reset. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p> MFX_ERR_UNSUPPORTED The function detected unsupported video parameters. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] pthis</strong> – Pointer to the BRC object. </p></li>
+<li><p><strong>[in] par</strong> – Pointer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure that was used for the encoder initialization.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. <p> MFX_ERR_UNSUPPORTED The function detected unsupported video parameters. </p>
 <p> MFX_ERR_INCOMPATIBLE_VIDEO_PARAM The function detected that the video parameters provided by the application are incompatible with initialization parameters. Reset requires additional memory allocation and cannot be executed. </p>
 </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">pthis</span></code>: Pointer to the BRC object. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">par</span></code>: Pointer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure that was used for the encoder initialization.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N9mfxExtBRC5CloseE">
 <span id="_CPPv3N9mfxExtBRC5CloseE"></span><span id="_CPPv2N9mfxExtBRC5CloseE"></span><span class="target" id="structmfx_ext_b_r_c_1a9b32a2aec058e67ef927c4ae36092e71"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">Close</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxHDL" title="mfxHDL"><span class="pre">mfxHDL</span></a> <span class="pre">pthis</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9mfxExtBRC5CloseE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Deallocates any internal resources acquired in Init for this BRC session. Invoked during MFXVideoENCODE_Close. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>[in] pthis</strong> – Pointer to the BRC object.</p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">pthis</span></code>: Pointer to the BRC object.</p></li>
-</ul>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N9mfxExtBRC12GetFrameCtrlE">
 <span id="_CPPv3N9mfxExtBRC12GetFrameCtrlE"></span><span id="_CPPv2N9mfxExtBRC12GetFrameCtrlE"></span><span class="target" id="structmfx_ext_b_r_c_1abd591eac1abb414f3967f379b78d8e22"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">GetFrameCtrl</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxHDL" title="mfxHDL"><span class="pre">mfxHDL</span></a> <span class="pre">pthis</span>, <a class="reference internal" href="#_CPPv416mfxBRCFrameParam" title="mfxBRCFrameParam"><span class="pre">mfxBRCFrameParam</span></a> <span class="pre">*</span><span class="pre">par</span>, <a class="reference internal" href="#_CPPv415mfxBRCFrameCtrl" title="mfxBRCFrameCtrl"><span class="pre">mfxBRCFrameCtrl</span></a> <span class="pre">*</span><span class="pre">ctrl</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9mfxExtBRC12GetFrameCtrlE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns controls (<code class="docutils literal notranslate"><span class="pre">ctrl</span></code>) to encode next frame based on info from input <a class="reference internal" href="#structmfx_b_r_c_frame_param"><span class="std std-ref">mfxBRCFrameParam</span></a> structure (<code class="docutils literal notranslate"><span class="pre">par</span></code>) and internal BRC state. Invoked asynchronously before each frame encoding or recoding. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">pthis</span></code>: Pointer to the BRC object. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">par</span></code>: Pointer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure that was used for the encoder initialization. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">ctrl</span></code>: Pointer to the output <a class="reference internal" href="#structmfx_b_r_c_frame_ctrl"><span class="std std-ref">mfxBRCFrameCtrl</span></a> structure.</p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] pthis</strong> – Pointer to the BRC object. </p></li>
+<li><p><strong>[in] par</strong> – Pointer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure that was used for the encoder initialization. </p></li>
+<li><p><strong>[out] ctrl</strong> – Pointer to the output <a class="reference internal" href="#structmfx_b_r_c_frame_ctrl"><span class="std std-ref">mfxBRCFrameCtrl</span></a> structure.</p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N9mfxExtBRC6UpdateE">
 <span id="_CPPv3N9mfxExtBRC6UpdateE"></span><span id="_CPPv2N9mfxExtBRC6UpdateE"></span><span class="target" id="structmfx_ext_b_r_c_1afba3f93dcbe0aa4b05f6d3d9b2242a9f"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">Update</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxHDL" title="mfxHDL"><span class="pre">mfxHDL</span></a> <span class="pre">pthis</span>, <a class="reference internal" href="#_CPPv416mfxBRCFrameParam" title="mfxBRCFrameParam"><span class="pre">mfxBRCFrameParam</span></a> <span class="pre">*</span><span class="pre">par</span>, <a class="reference internal" href="#_CPPv415mfxBRCFrameCtrl" title="mfxBRCFrameCtrl"><span class="pre">mfxBRCFrameCtrl</span></a> <span class="pre">*</span><span class="pre">ctrl</span>, <a class="reference internal" href="#_CPPv417mfxBRCFrameStatus" title="mfxBRCFrameStatus"><span class="pre">mfxBRCFrameStatus</span></a> <span class="pre">*</span><span class="pre">status</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9mfxExtBRC6UpdateE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Updates internal BRC state and returns status to instruct encoder whether it should recode the previous frame, skip the previous frame, do padding, or proceed to next frame based on info from input <a class="reference internal" href="#structmfx_b_r_c_frame_param"><span class="std std-ref">mfxBRCFrameParam</span></a> and <a class="reference internal" href="#structmfx_b_r_c_frame_ctrl"><span class="std std-ref">mfxBRCFrameCtrl</span></a> structures. Invoked asynchronously after each frame encoding or recoding. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">pthis</span></code>: Pointer to the BRC object. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">par</span></code>: Pointer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure that was used for the encoder initialization. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">ctrl</span></code>: Pointer to the output <a class="reference internal" href="#structmfx_b_r_c_frame_ctrl"><span class="std std-ref">mfxBRCFrameCtrl</span></a> structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">status</span></code>: Pointer to the output <a class="reference internal" href="#structmfx_b_r_c_frame_status"><span class="std std-ref">mfxBRCFrameStatus</span></a> structure.</p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] pthis</strong> – Pointer to the BRC object. </p></li>
+<li><p><strong>[in] par</strong> – Pointer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure that was used for the encoder initialization. </p></li>
+<li><p><strong>[in] ctrl</strong> – Pointer to the output <a class="reference internal" href="#structmfx_b_r_c_frame_ctrl"><span class="std std-ref">mfxBRCFrameCtrl</span></a> structure. </p></li>
+<li><p><strong>[in] status</strong> – Pointer to the output <a class="reference internal" href="#structmfx_b_r_c_frame_status"><span class="std std-ref">mfxBRCFrameStatus</span></a> structure.</p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextchromalocinfo">
+</div>
+<div class="section" id="mfxextchromalocinfo">
 <h3><a class="toc-backref" href="#id13">mfxExtChromaLocInfo</a><a class="headerlink" href="#mfxextchromalocinfo" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv419mfxExtChromaLocInfo">
@@ -5626,8 +5627,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextcodingoption">
+</div>
+<div class="section" id="mfxextcodingoption">
 <h3><a class="toc-backref" href="#id14">mfxExtCodingOption</a><a class="headerlink" href="#mfxextcodingoption" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv418mfxExtCodingOption">
@@ -5790,8 +5791,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextcodingoption2">
+</div>
+<div class="section" id="mfxextcodingoption2">
 <h3><a class="toc-backref" href="#id15">mfxExtCodingOption2</a><a class="headerlink" href="#mfxextcodingoption2" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv419mfxExtCodingOption2">
@@ -5840,11 +5841,10 @@ SPDX-License-Identifier: MIT
 <dt id="_CPPv4N19mfxExtCodingOption212MaxSliceSizeE">
 <span id="_CPPv3N19mfxExtCodingOption212MaxSliceSizeE"></span><span id="_CPPv2N19mfxExtCodingOption212MaxSliceSizeE"></span><span id="mfxExtCodingOption2::MaxSliceSize__mfxU32"></span><span class="target" id="structmfx_ext_coding_option2_1afb69f3becdc749a982404d24fc50fcb7"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU32" title="mfxU32"><span class="pre">mfxU32</span></a> <code class="sig-name descname"><span class="pre">MaxSliceSize</span></code><a class="headerlink" href="#_CPPv4N19mfxExtCodingOption212MaxSliceSizeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Specify maximum slice size in bytes. If this parameter is specified other controls over number of slices are ignored.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
-</dd>
-</dl>
-</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
@@ -5918,101 +5918,101 @@ SPDX-License-Identifier: MIT
 <dl class="cpp var">
 <dt id="_CPPv4N19mfxExtCodingOption29SkipFrameE">
 <span id="_CPPv3N19mfxExtCodingOption29SkipFrameE"></span><span id="_CPPv2N19mfxExtCodingOption29SkipFrameE"></span><span id="mfxExtCodingOption2::SkipFrame__mfxU16"></span><span class="target" id="structmfx_ext_coding_option2_1a5f59d62542f5e84868124d83affe5359"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16"><span class="pre">mfxU16</span></a> <code class="sig-name descname"><span class="pre">SkipFrame</span></code><a class="headerlink" href="#_CPPv4N19mfxExtCodingOption29SkipFrameE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Enables usage of mfxEncodeCtrl::SkipFrameparameter. See the SkipFrame enumerator for values of this option. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Enables usage of mfxEncodeCtrl::SkipFrameparameter. See the SkipFrame enumerator for values of this option. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N19mfxExtCodingOption26MinQPIE">
 <span id="_CPPv3N19mfxExtCodingOption26MinQPIE"></span><span id="_CPPv2N19mfxExtCodingOption26MinQPIE"></span><span id="mfxExtCodingOption2::MinQPI__mfxU8"></span><span class="target" id="structmfx_ext_coding_option2_1ab7312959955e977719d2d2554d74cd1f"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8"><span class="pre">mfxU8</span></a> <code class="sig-name descname"><span class="pre">MinQPI</span></code><a class="headerlink" href="#_CPPv4N19mfxExtCodingOption26MinQPIE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Minimum allowed QP value for I-frame types. Valid range is 1 to 51 inclusive. Zero means default value, that is, no limitations on QP. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Minimum allowed QP value for I-frame types. Valid range is 1 to 51 inclusive. Zero means default value, that is, no limitations on QP. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N19mfxExtCodingOption26MaxQPIE">
 <span id="_CPPv3N19mfxExtCodingOption26MaxQPIE"></span><span id="_CPPv2N19mfxExtCodingOption26MaxQPIE"></span><span id="mfxExtCodingOption2::MaxQPI__mfxU8"></span><span class="target" id="structmfx_ext_coding_option2_1a4d7d20db8dc8e3b6652204b3719fb6c4"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8"><span class="pre">mfxU8</span></a> <code class="sig-name descname"><span class="pre">MaxQPI</span></code><a class="headerlink" href="#_CPPv4N19mfxExtCodingOption26MaxQPIE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Maximum allowed QP value for I-frame types. Valid range is 1 to 51 inclusive. Zero means default value, that is, no limitations on QP. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Maximum allowed QP value for I-frame types. Valid range is 1 to 51 inclusive. Zero means default value, that is, no limitations on QP. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N19mfxExtCodingOption26MinQPPE">
 <span id="_CPPv3N19mfxExtCodingOption26MinQPPE"></span><span id="_CPPv2N19mfxExtCodingOption26MinQPPE"></span><span id="mfxExtCodingOption2::MinQPP__mfxU8"></span><span class="target" id="structmfx_ext_coding_option2_1af921918148f7f77a845d5bbf2a928b7f"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8"><span class="pre">mfxU8</span></a> <code class="sig-name descname"><span class="pre">MinQPP</span></code><a class="headerlink" href="#_CPPv4N19mfxExtCodingOption26MinQPPE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Minimum allowed QP value for P-frame types. Valid range is 1 to 51 inclusive. Zero means default value, that is, no limitations on QP. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Minimum allowed QP value for P-frame types. Valid range is 1 to 51 inclusive. Zero means default value, that is, no limitations on QP. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N19mfxExtCodingOption26MaxQPPE">
 <span id="_CPPv3N19mfxExtCodingOption26MaxQPPE"></span><span id="_CPPv2N19mfxExtCodingOption26MaxQPPE"></span><span id="mfxExtCodingOption2::MaxQPP__mfxU8"></span><span class="target" id="structmfx_ext_coding_option2_1aeda262e90282de369cbd047f588269d4"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8"><span class="pre">mfxU8</span></a> <code class="sig-name descname"><span class="pre">MaxQPP</span></code><a class="headerlink" href="#_CPPv4N19mfxExtCodingOption26MaxQPPE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Maximum allowed QP value for P-frame types. Valid range is 1 to 51 inclusive. Zero means default value, that is, no limitations on QP. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Maximum allowed QP value for P-frame types. Valid range is 1 to 51 inclusive. Zero means default value, that is, no limitations on QP. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N19mfxExtCodingOption26MinQPBE">
 <span id="_CPPv3N19mfxExtCodingOption26MinQPBE"></span><span id="_CPPv2N19mfxExtCodingOption26MinQPBE"></span><span id="mfxExtCodingOption2::MinQPB__mfxU8"></span><span class="target" id="structmfx_ext_coding_option2_1a33fa742369aa9f8708888cf5c532e63c"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8"><span class="pre">mfxU8</span></a> <code class="sig-name descname"><span class="pre">MinQPB</span></code><a class="headerlink" href="#_CPPv4N19mfxExtCodingOption26MinQPBE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Minimum allowed QP value for B-frame types. Valid range is 1 to 51 inclusive. Zero means default value, that is, no limitations on QP. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Minimum allowed QP value for B-frame types. Valid range is 1 to 51 inclusive. Zero means default value, that is, no limitations on QP. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N19mfxExtCodingOption26MaxQPBE">
 <span id="_CPPv3N19mfxExtCodingOption26MaxQPBE"></span><span id="_CPPv2N19mfxExtCodingOption26MaxQPBE"></span><span id="mfxExtCodingOption2::MaxQPB__mfxU8"></span><span class="target" id="structmfx_ext_coding_option2_1af499d7e2c591f430277ab3ac069860d0"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8"><span class="pre">mfxU8</span></a> <code class="sig-name descname"><span class="pre">MaxQPB</span></code><a class="headerlink" href="#_CPPv4N19mfxExtCodingOption26MaxQPBE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Maximum allowed QP value for B-frame types. Valid range is 1 to 51 inclusive. Zero means default value, that is, no limitations on QP. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Maximum allowed QP value for B-frame types. Valid range is 1 to 51 inclusive. Zero means default value, that is, no limitations on QP. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N19mfxExtCodingOption214FixedFrameRateE">
 <span id="_CPPv3N19mfxExtCodingOption214FixedFrameRateE"></span><span id="_CPPv2N19mfxExtCodingOption214FixedFrameRateE"></span><span id="mfxExtCodingOption2::FixedFrameRate__mfxU16"></span><span class="target" id="structmfx_ext_coding_option2_1a93be0b4120175361fe640fdcc96a50f1"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16"><span class="pre">mfxU16</span></a> <code class="sig-name descname"><span class="pre">FixedFrameRate</span></code><a class="headerlink" href="#_CPPv4N19mfxExtCodingOption214FixedFrameRateE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets fixed_frame_rate_flag in VUI. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Sets fixed_frame_rate_flag in VUI. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N19mfxExtCodingOption220DisableDeblockingIdcE">
 <span id="_CPPv3N19mfxExtCodingOption220DisableDeblockingIdcE"></span><span id="_CPPv2N19mfxExtCodingOption220DisableDeblockingIdcE"></span><span id="mfxExtCodingOption2::DisableDeblockingIdc__mfxU16"></span><span class="target" id="structmfx_ext_coding_option2_1af36cd5935d88ee7472c0a18c6ba85685"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16"><span class="pre">mfxU16</span></a> <code class="sig-name descname"><span class="pre">DisableDeblockingIdc</span></code><a class="headerlink" href="#_CPPv4N19mfxExtCodingOption220DisableDeblockingIdcE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Disables deblocking. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Disables deblocking. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N19mfxExtCodingOption210DisableVUIE">
 <span id="_CPPv3N19mfxExtCodingOption210DisableVUIE"></span><span id="_CPPv2N19mfxExtCodingOption210DisableVUIE"></span><span id="mfxExtCodingOption2::DisableVUI__mfxU16"></span><span class="target" id="structmfx_ext_coding_option2_1ab97077ad33226afc2581a1c46dcd465a"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16"><span class="pre">mfxU16</span></a> <code class="sig-name descname"><span class="pre">DisableVUI</span></code><a class="headerlink" href="#_CPPv4N19mfxExtCodingOption210DisableVUIE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Completely disables VUI in the output bitstream. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Completely disables VUI in the output bitstream. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
@@ -6032,18 +6032,18 @@ SPDX-License-Identifier: MIT
 <dl class="cpp var">
 <dt id="_CPPv4N19mfxExtCodingOption29UseRawRefE">
 <span id="_CPPv3N19mfxExtCodingOption29UseRawRefE"></span><span id="_CPPv2N19mfxExtCodingOption29UseRawRefE"></span><span id="mfxExtCodingOption2::UseRawRef__mfxU16"></span><span class="target" id="structmfx_ext_coding_option2_1af84aea84488a5889e775ffb526770de5"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16"><span class="pre">mfxU16</span></a> <code class="sig-name descname"><span class="pre">UseRawRef</span></code><a class="headerlink" href="#_CPPv4N19mfxExtCodingOption29UseRawRefE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set this flag to ON to use raw frames for reference instead of reconstructed frames. This parameter is valid during initialization and runtime (only if was turned ON during initialization). <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Set this flag to ON to use raw frames for reference instead of reconstructed frames. This parameter is valid during initialization and runtime (only if was turned ON during initialization). </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
+</div>
 </dd></dl>
 
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextcodingoption3">
+</div>
+<div class="section" id="mfxextcodingoption3">
 <h3><a class="toc-backref" href="#id16">mfxExtCodingOption3</a><a class="headerlink" href="#mfxextcodingoption3" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv419mfxExtCodingOption3">
@@ -6060,31 +6060,31 @@ SPDX-License-Identifier: MIT
 <dl class="cpp var">
 <dt id="_CPPv4N19mfxExtCodingOption39NumSliceIE">
 <span id="_CPPv3N19mfxExtCodingOption39NumSliceIE"></span><span id="_CPPv2N19mfxExtCodingOption39NumSliceIE"></span><span id="mfxExtCodingOption3::NumSliceI__mfxU16"></span><span class="target" id="structmfx_ext_coding_option3_1a5ff83b04d9ffd88337f8406ab2d88bc8"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16"><span class="pre">mfxU16</span></a> <code class="sig-name descname"><span class="pre">NumSliceI</span></code><a class="headerlink" href="#_CPPv4N19mfxExtCodingOption39NumSliceIE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The number of slices for I-frames. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support these values. Use the Query API function to check if this feature is supported </p>
-</dd>
-</dl>
-</p>
+<dd><p>The number of slices for I-frames. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support these values. Use the Query API function to check if this feature is supported </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N19mfxExtCodingOption39NumSlicePE">
 <span id="_CPPv3N19mfxExtCodingOption39NumSlicePE"></span><span id="_CPPv2N19mfxExtCodingOption39NumSlicePE"></span><span id="mfxExtCodingOption3::NumSliceP__mfxU16"></span><span class="target" id="structmfx_ext_coding_option3_1a7567459fb4870e6f3730b77eb203d018"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16"><span class="pre">mfxU16</span></a> <code class="sig-name descname"><span class="pre">NumSliceP</span></code><a class="headerlink" href="#_CPPv4N19mfxExtCodingOption39NumSlicePE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The number of slices for P-frames. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support these values. Use the Query API function to check if this feature is supported </p>
-</dd>
-</dl>
-</p>
+<dd><p>The number of slices for P-frames. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support these values. Use the Query API function to check if this feature is supported </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N19mfxExtCodingOption39NumSliceBE">
 <span id="_CPPv3N19mfxExtCodingOption39NumSliceBE"></span><span id="_CPPv2N19mfxExtCodingOption39NumSliceBE"></span><span id="mfxExtCodingOption3::NumSliceB__mfxU16"></span><span class="target" id="structmfx_ext_coding_option3_1a286b30f51ffcbf6c3a36a677f5ab2087"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16"><span class="pre">mfxU16</span></a> <code class="sig-name descname"><span class="pre">NumSliceB</span></code><a class="headerlink" href="#_CPPv4N19mfxExtCodingOption39NumSliceBE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The number of slices for B-frames. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support these values. Use the Query API function to check if this feature is supported </p>
-</dd>
-</dl>
-</p>
+<dd><p>The number of slices for B-frames. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support these values. Use the Query API function to check if this feature is supported </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
@@ -6372,11 +6372,11 @@ SPDX-License-Identifier: MIT
 <dl class="cpp var">
 <dt id="_CPPv4N19mfxExtCodingOption317EnableNalUnitTypeE">
 <span id="_CPPv3N19mfxExtCodingOption317EnableNalUnitTypeE"></span><span id="_CPPv2N19mfxExtCodingOption317EnableNalUnitTypeE"></span><span id="mfxExtCodingOption3::EnableNalUnitType__mfxU16"></span><span class="target" id="structmfx_ext_coding_option3_1a25774f8d9266d37a3e8d05b89e3ca02e"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16"><span class="pre">mfxU16</span></a> <code class="sig-name descname"><span class="pre">EnableNalUnitType</span></code><a class="headerlink" href="#_CPPv4N19mfxExtCodingOption317EnableNalUnitTypeE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>If this flag is set to ON, the HEVC encoder uses the NAL unit type provided by the application in the <a class="reference internal" href="#structmfx_encode_ctrl_1a1aa155f87335360c11504978ff045fe0"><span class="std std-ref">mfxEncodeCtrl::MfxNalUnitType</span></a> field. This parameter is valid only during initialization. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
-</dd>
-</dl>
-</p>
+<dd><p>If this flag is set to ON, the HEVC encoder uses the NAL unit type provided by the application in the <a class="reference internal" href="#structmfx_encode_ctrl_1a1aa155f87335360c11504978ff045fe0"><span class="std std-ref">mfxEncodeCtrl::MfxNalUnitType</span></a> field. This parameter is valid only during initialization. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp var">
@@ -6399,8 +6399,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextcodingoptionspspps">
+</div>
+<div class="section" id="mfxextcodingoptionspspps">
 <h3><a class="toc-backref" href="#id17">mfxExtCodingOptionSPSPPS</a><a class="headerlink" href="#mfxextcodingoptionspspps" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv424mfxExtCodingOptionSPSPPS">
@@ -6457,8 +6457,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextcodingoptionvps">
+</div>
+<div class="section" id="mfxextcodingoptionvps">
 <h3><a class="toc-backref" href="#id18">mfxExtCodingOptionVPS</a><a class="headerlink" href="#mfxextcodingoptionvps" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv421mfxExtCodingOptionVPS">
@@ -6495,8 +6495,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextcontentlightlevelinfo">
+</div>
+<div class="section" id="mfxextcontentlightlevelinfo">
 <h3><a class="toc-backref" href="#id19">mfxExtContentLightLevelInfo</a><a class="headerlink" href="#mfxextcontentlightlevelinfo" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv427mfxExtContentLightLevelInfo">
@@ -6534,8 +6534,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextdirtyrect">
+</div>
+<div class="section" id="mfxextdirtyrect">
 <h3><a class="toc-backref" href="#id20">mfxExtDirtyRect</a><a class="headerlink" href="#mfxextdirtyrect" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv415mfxExtDirtyRect">
@@ -6595,8 +6595,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextencodedunitsinfo">
+</div>
+<div class="section" id="mfxextencodedunitsinfo">
 <h3><a class="toc-backref" href="#id21">mfxExtEncodedUnitsInfo</a><a class="headerlink" href="#mfxextencodedunitsinfo" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv422mfxExtEncodedUnitsInfo">
@@ -6620,10 +6620,10 @@ SPDX-License-Identifier: MIT
   <span class="n">ExpectedAmount</span> <span class="o">=</span> <span class="n">ExpectedAmount</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
 </pre></div>
 </div>
- <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Only supported by the AVC encoder. </p>
-</dd>
-</dl>
+ <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only supported by the AVC encoder. </p>
+</div>
 </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
@@ -6654,17 +6654,17 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextencodercapability">
+</div>
+<div class="section" id="mfxextencodercapability">
 <h3><a class="toc-backref" href="#id22">mfxExtEncoderCapability</a><a class="headerlink" href="#mfxextencodercapability" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv423mfxExtEncoderCapability">
 <span id="_CPPv323mfxExtEncoderCapability"></span><span id="_CPPv223mfxExtEncoderCapability"></span><span id="mfxExtEncoderCapability"></span><span class="target" id="structmfx_ext_encoder_capability"></span><em class="property"><span class="pre">struct</span> </em><code class="sig-name descname"><span class="pre">mfxExtEncoderCapability</span></code><a class="headerlink" href="#_CPPv423mfxExtEncoderCapability" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Used to retrieve encoder capability. See the description of mode 4 of the MFXVideoENCODE_Query function for details on how to use this structure.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all implementations of the encoder support this extended buffer. The application must use query mode 1 to determine if the functionality is supported. To do this, the application must attach this extended buffer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure and call the MFXVideoENCODE_Query function. If the function returns MFX_ERR_NONE then the functionality is supported. </p>
-</dd>
-</dl>
+<p><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all implementations of the encoder support this extended buffer. The application must use query mode 1 to determine if the functionality is supported. To do this, the application must attach this extended buffer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure and call the MFXVideoENCODE_Query function. If the function returns MFX_ERR_NONE then the functionality is supported. </p>
+</div>
 </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
@@ -6683,8 +6683,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextencoderipcmarea">
+</div>
+<div class="section" id="mfxextencoderipcmarea">
 <h3><a class="toc-backref" href="#id23">mfxExtEncoderIPCMArea</a><a class="headerlink" href="#mfxextencoderipcmarea" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv421mfxExtEncoderIPCMArea">
@@ -6740,8 +6740,8 @@ SPDX-License-Identifier: MIT
 
 </dd></dl>
 
-</section>
-<section id="mfxextencoderresetoption">
+</div>
+<div class="section" id="mfxextencoderresetoption">
 <h3><a class="toc-backref" href="#id24">mfxExtEncoderResetOption</a><a class="headerlink" href="#mfxextencoderresetoption" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv424mfxExtEncoderResetOption">
@@ -6778,10 +6778,10 @@ SPDX-License-Identifier: MIT
 </p>
 <p><p><p>See the <a class="reference internal" href="../appendix/VPL_apnds_c.html#stream-vid-conf-features"><span class="std std-ref">Streaming and Video Conferencing Features</span></a> section for more information.</p>
 </p>
- <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all implementations of the encoder support this extended buffer. The application must use query mode 1 to determine if the functionality is supported. To do this, the application must attach this extended buffer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure and call the MFXVideoENCODE_Query function. If the function returns MFX_ERR_NONE, then the functionality is supported.</p>
-</dd>
-</dl>
+ <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all implementations of the encoder support this extended buffer. The application must use query mode 1 to determine if the functionality is supported. To do this, the application must attach this extended buffer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure and call the MFXVideoENCODE_Query function. If the function returns MFX_ERR_NONE, then the functionality is supported.</p>
+</div>
 </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
@@ -6810,8 +6810,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextencoderroi">
+</div>
+<div class="section" id="mfxextencoderroi">
 <h3><a class="toc-backref" href="#id25">mfxExtEncoderROI</a><a class="headerlink" href="#mfxextencoderroi" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv416mfxExtEncoderROI">
@@ -6886,8 +6886,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxexthevcregion">
+</div>
+<div class="section" id="mfxexthevcregion">
 <h3><a class="toc-backref" href="#id26">mfxExtHEVCRegion</a><a class="headerlink" href="#mfxexthevcregion" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv416mfxExtHEVCRegion">
@@ -6922,8 +6922,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxexthevctiles">
+</div>
+<div class="section" id="mfxexthevctiles">
 <h3><a class="toc-backref" href="#id27">mfxExtHEVCTiles</a><a class="headerlink" href="#mfxexthevctiles" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv415mfxExtHEVCTiles">
@@ -6952,8 +6952,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextinsertheaders">
+</div>
+<div class="section" id="mfxextinsertheaders">
 <h3><a class="toc-backref" href="#id28">mfxExtInsertHeaders</a><a class="headerlink" href="#mfxextinsertheaders" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv419mfxExtInsertHeaders">
@@ -6987,8 +6987,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextmasteringdisplaycolourvolume">
+</div>
+<div class="section" id="mfxextmasteringdisplaycolourvolume">
 <h3><a class="toc-backref" href="#id29">mfxExtMasteringDisplayColourVolume</a><a class="headerlink" href="#mfxextmasteringdisplaycolourvolume" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv434mfxExtMasteringDisplayColourVolume">
@@ -7050,8 +7050,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextmbdisableskipmap">
+</div>
+<div class="section" id="mfxextmbdisableskipmap">
 <h3><a class="toc-backref" href="#id30">mfxExtMBDisableSkipMap</a><a class="headerlink" href="#mfxextmbdisableskipmap" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv422mfxExtMBDisableSkipMap">
@@ -7080,8 +7080,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextmbforceintra">
+</div>
+<div class="section" id="mfxextmbforceintra">
 <h3><a class="toc-backref" href="#id31">mfxExtMBForceIntra</a><a class="headerlink" href="#mfxextmbforceintra" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv418mfxExtMBForceIntra">
@@ -7110,8 +7110,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextmbqp">
+</div>
+<div class="section" id="mfxextmbqp">
 <h3><a class="toc-backref" href="#id32">mfxExtMBQP</a><a class="headerlink" href="#mfxextmbqp" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv410mfxExtMBQP">
@@ -7167,8 +7167,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextmoverect">
+</div>
+<div class="section" id="mfxextmoverect">
 <h3><a class="toc-backref" href="#id33">mfxExtMoveRect</a><a class="headerlink" href="#mfxextmoverect" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv414mfxExtMoveRect">
@@ -7238,8 +7238,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextmvoverpicboundaries">
+</div>
+<div class="section" id="mfxextmvoverpicboundaries">
 <h3><a class="toc-backref" href="#id34">mfxExtMVOverPicBoundaries</a><a class="headerlink" href="#mfxextmvoverpicboundaries" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv425mfxExtMVOverPicBoundaries">
@@ -7280,18 +7280,18 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextpartialbitstreamparam">
+</div>
+<div class="section" id="mfxextpartialbitstreamparam">
 <h3><a class="toc-backref" href="#id35">mfxExtPartialBitstreamParam</a><a class="headerlink" href="#mfxextpartialbitstreamparam" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv427mfxExtPartialBitstreamParam">
 <span id="_CPPv327mfxExtPartialBitstreamParam"></span><span id="_CPPv227mfxExtPartialBitstreamParam"></span><span id="mfxExtPartialBitstreamParam"></span><span class="target" id="structmfx_ext_partial_bitstream_param"></span><em class="property"><span class="pre">struct</span> </em><code class="sig-name descname"><span class="pre">mfxExtPartialBitstreamParam</span></code><a class="headerlink" href="#_CPPv427mfxExtPartialBitstreamParam" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Used by an encoder to output parts of the bitstream as soon as they are ready. The application can attach this extended buffer to the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure at initialization. If this option is turned ON (Granularity != MFX_PARTIAL_BITSTREAM_NONE), then the encoder can output bitstream by part based on the required granularity.</p>
 <p>This parameter is valid only during initialization and reset. Absence of this buffer means default or previously configured bitstream output behavior.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this feature. Use the Query API function to check if this feature is supported. </p>
-</dd>
-</dl>
+<p><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all codecs and implementations support this feature. Use the Query API function to check if this feature is supported. </p>
+</div>
 </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
@@ -7316,8 +7316,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextpicturetimingsei">
+</div>
+<div class="section" id="mfxextpicturetimingsei">
 <h3><a class="toc-backref" href="#id36">mfxExtPictureTimingSEI</a><a class="headerlink" href="#mfxextpicturetimingsei" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv422mfxExtPictureTimingSEI">
@@ -7423,8 +7423,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextpredweighttable">
+</div>
+<div class="section" id="mfxextpredweighttable">
 <h3><a class="toc-backref" href="#id37">mfxExtPredWeightTable</a><a class="headerlink" href="#mfxextpredweighttable" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv421mfxExtPredWeightTable">
@@ -7481,8 +7481,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextvp8codingoption">
+</div>
+<div class="section" id="mfxextvp8codingoption">
 <h3><a class="toc-backref" href="#id38">mfxExtVP8CodingOption</a><a class="headerlink" href="#mfxextvp8codingoption" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv421mfxExtVP8CodingOption">
@@ -7571,8 +7571,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextvp9segmentation">
+</div>
+<div class="section" id="mfxextvp9segmentation">
 <h3><a class="toc-backref" href="#id39">mfxExtVP9Segmentation</a><a class="headerlink" href="#mfxextvp9segmentation" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv421mfxExtVP9Segmentation">
@@ -7622,8 +7622,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxextvp9temporallayers">
+</div>
+<div class="section" id="mfxextvp9temporallayers">
 <h3><a class="toc-backref" href="#id40">mfxExtVP9TemporalLayers</a><a class="headerlink" href="#mfxextvp9temporallayers" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv423mfxExtVP9TemporalLayers">
@@ -7653,8 +7653,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxqpandmode">
+</div>
+<div class="section" id="mfxqpandmode">
 <h3><a class="toc-backref" href="#id41">mfxQPandMode</a><a class="headerlink" href="#mfxqpandmode" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv412mfxQPandMode">
@@ -7687,8 +7687,8 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-<section id="mfxvp9temporallayer">
+</div>
+<div class="section" id="mfxvp9temporallayer">
 <h3><a class="toc-backref" href="#id42">mfxVP9TemporalLayer</a><a class="headerlink" href="#mfxvp9temporallayer" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp struct">
 <dt id="_CPPv419mfxVP9TemporalLayer">
@@ -7711,9 +7711,9 @@ SPDX-License-Identifier: MIT
 </div>
 </dd></dl>
 
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

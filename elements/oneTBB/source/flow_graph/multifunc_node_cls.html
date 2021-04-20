@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>multifunction_node &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4599,7 +4598,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="multifunction-node">
+  <div class="section" id="multifunction-node">
 <h1>multifunction_node<a class="headerlink" href="#multifunction-node" title="Permalink to this headline">¶</a></h1>
 <p><strong>[flow_graph.multifunction_node]</strong></p>
 <p>A node that used for nodes that receive messages at a single input port and may generate
@@ -4650,11 +4649,11 @@ The body can create one or more output messages and broadcast them to successors
 not affect the original object used to construct the node. If the state held within a body object
 must be inspected from outside of the node, the <a class="reference internal" href="copy_body_func.html"><span class="doc">copy_body function</span></a> can be
 used to obtain an updated copy.</p>
-<section id="member-types">
+<div class="section" id="member-types">
 <h2>Member types<a class="headerlink" href="#member-types" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">output_ports_type</span></code> is an alias to a tuple of output ports.</p>
-</section>
-<section id="member-functions">
+</div>
+<div class="section" id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Body</span><span class="o">&gt;</span>
 <span class="n">multifunction_node</span><span class="p">(</span> <span class="n">graph</span> <span class="o">&amp;</span><span class="n">g</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">concurrency</span><span class="p">,</span> <span class="n">Body</span> <span class="n">body</span><span class="p">,</span>
@@ -4701,8 +4700,8 @@ it.</p>
 </pre></div>
 </div>
 <p><strong>Returns:</strong> a tuple of output ports.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

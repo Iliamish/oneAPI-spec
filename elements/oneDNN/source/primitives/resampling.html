@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resampling &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4642,7 +4641,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="resampling">
+  <div class="section" id="resampling">
 <h1>Resampling<a class="headerlink" href="#resampling" title="Permalink to this headline">¶</a></h1>
 <p>The resampling primitive computes forward or backward resampling operation on
 1D, 2D, or 3D spatial data. Resampling performs spatial scaling of original
@@ -4671,9 +4670,9 @@ we assume the following:</p>
 <li><p><span class="math notranslate nohighlight">\(\src(n, ic, ih, iw) = \src(n, ic, IH - 1, iw)\)</span> if <span class="math notranslate nohighlight">\(ih \geq IH\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\src(n, ic, ih, iw) = \src(n, ic, ih, IW - 1)\)</span> if <span class="math notranslate nohighlight">\(iw \geq IW\)</span>.</p></li>
 </ul>
-<section id="forward">
+<div class="section" id="forward">
 <h2>Forward<a class="headerlink" href="#forward" title="Permalink to this headline">¶</a></h2>
-<section id="nearest-neighbor-resampling">
+<div class="section" id="nearest-neighbor-resampling">
 <h3>Nearest Neighbor Resampling<a class="headerlink" href="#nearest-neighbor-resampling" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[\dst(n, c, oh, ow) =  \src(n, c, ih, iw)\]</div>
@@ -4682,8 +4681,8 @@ we assume the following:</p>
 <li><p><span class="math notranslate nohighlight">\(ih = [\frac{oh + 0.5} {F_h} - 0.5]\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(iw = [\frac{ow + 0.5} {F_w} - 0.5]\)</span>.</p></li>
 </ul>
-</section>
-<section id="bilinear-resampling">
+</div>
+<div class="section" id="bilinear-resampling">
 <h3>Bilinear Resampling<a class="headerlink" href="#bilinear-resampling" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}\dst(n, c, oh, ow) =
@@ -4700,18 +4699,18 @@ we assume the following:</p>
 <li><p><span class="math notranslate nohighlight">\(W_{ih} = \frac{oh + 0.5}{F_h} - 0.5 - ih_0\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(W_{iw} = \frac{ow + 0.5}{F_w} - 0.5 - iw_0\)</span>.</p></li>
 </ul>
-</section>
-<section id="difference-between-forward-training-and-forward-inference">
+</div>
+<div class="section" id="difference-between-forward-training-and-forward-inference">
 <h3>Difference Between Forward Training and Forward Inference<a class="headerlink" href="#difference-between-forward-training-and-forward-inference" title="Permalink to this headline">¶</a></h3>
 <p>There is no difference between the <a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kind16forward_trainingE" title="dnnl::prop_kind::forward_training"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">forward_training</span></code></a> and <a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kind17forward_inferenceE" title="dnnl::prop_kind::forward_inference"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">forward_inference</span></code></a>
 propagation kinds.</p>
-</section>
-</section>
-<section id="backward">
+</div>
+</div>
+<div class="section" id="backward">
 <h2>Backward<a class="headerlink" href="#backward" title="Permalink to this headline">¶</a></h2>
 <p>The backward propagation computes <span class="math notranslate nohighlight">\(\diffsrc\)</span> based on <span class="math notranslate nohighlight">\(\diffdst\)</span>.</p>
-</section>
-<section id="execution-arguments">
+</div>
+<div class="section" id="execution-arguments">
 <h2>Execution Arguments<a class="headerlink" href="#execution-arguments" title="Permalink to this headline">¶</a></h2>
 <p>When executed, the inputs and outputs should be mapped to an execution
 argument index as specified by the following table.</p>
@@ -4740,8 +4739,8 @@ argument index as specified by the following table.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="operation-details">
+</div>
+<div class="section" id="operation-details">
 <h2>Operation Details<a class="headerlink" href="#operation-details" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Resampling implementation supports data with arbitrary data tag (<a class="reference internal" href="../data_model/memory/formats.html#_CPPv4N4dnnl6memory10format_tag4nchwE" title="dnnl::memory::format_tag::nchw"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">nchw</span></code></a>,
@@ -4761,8 +4760,8 @@ the destination dimensions are deduced using the factors:
 \frac{output\_spatial\_size} {input\_spatial\_size}\)</span> that do not
 necessarily equal to the ones passed by the user.</p>
 </div>
-</section>
-<section id="data-types-support">
+</div>
+<div class="section" id="data-types-support">
 <h2>Data Types Support<a class="headerlink" href="#data-types-support" title="Permalink to this headline">¶</a></h2>
 <p>Resampling primitive supports the following combination of data types for
 source and destination memory objects.</p>
@@ -4790,12 +4789,12 @@ abbreviated to <a class="reference internal" href="../data_model/data_types/inde
 </tr>
 </tbody>
 </table>
-</section>
-<section id="post-ops-and-attributes">
+</div>
+<div class="section" id="post-ops-and-attributes">
 <h2>Post-ops and Attributes<a class="headerlink" href="#post-ops-and-attributes" title="Permalink to this headline">¶</a></h2>
 <p>The resampling primitive does not support any post-ops or attributes.</p>
-</section>
-<section id="api">
+</div>
+<div class="section" id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp struct">
 <dt id="_CPPv4N4dnnl18resampling_forwardE">
@@ -4812,13 +4811,12 @@ abbreviated to <a class="reference internal" href="../data_model/data_types/inde
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl18resampling_forward18resampling_forwardERK14primitive_desc">
 <span id="_CPPv3N4dnnl18resampling_forward18resampling_forwardERK14primitive_desc"></span><span id="_CPPv2N4dnnl18resampling_forward18resampling_forwardERK14primitive_desc"></span><span id="dnnl::resampling_forward::resampling_forward__primitive_descCR"></span><span class="target" id="structdnnl_1_1resampling__forward_1ae78e079af6300bd2523c99a2c590b3f3"></span><code class="sig-name descname"><span class="pre">resampling_forward</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl18resampling_forward14primitive_descE" title="dnnl::resampling_forward::primitive_desc"><span class="pre">primitive_desc</span></a> <span class="pre">&amp;</span><em><span class="pre">pd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl18resampling_forward18resampling_forwardERK14primitive_desc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Constructs a resampling forward propagation primitive. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pd</span></code>: Primitive descriptor for a resampling forward propagation primitive. </p></li>
-</ul>
+<dd><p>Constructs a resampling forward propagation primitive. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pd</strong> – Primitive descriptor for a resampling forward propagation primitive. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -4832,53 +4830,57 @@ abbreviated to <a class="reference internal" href="../data_model/data_types/inde
 <dt id="_CPPv4N4dnnl18resampling_forward4desc4descE9prop_kind9algorithmRKN6memory4descERKN6memory4descE">
 <span id="_CPPv3N4dnnl18resampling_forward4desc4descE9prop_kind9algorithmRKN6memory4descERKN6memory4descE"></span><span id="_CPPv2N4dnnl18resampling_forward4desc4descE9prop_kind9algorithmRKN6memory4descERKN6memory4descE"></span><span id="dnnl::resampling_forward::desc::desc__prop_kind.algorithm.memory::descCR.memory::descCR"></span><span class="target" id="structdnnl_1_1resampling__forward_1_1desc_1a3e4ba459a390370629921e99dadf3468"></span><code class="sig-name descname"><span class="pre">desc</span></code><span class="sig-paren">(</span><a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kindE" title="dnnl::prop_kind"><span class="pre">prop_kind</span></a> <em><span class="pre">aprop_kind</span></em>, <a class="reference internal" href="general.html#_CPPv4N4dnnl9algorithmE" title="dnnl::algorithm"><span class="pre">algorithm</span></a> <em><span class="pre">aalgorithm</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">src_desc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">dst_desc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl18resampling_forward4desc4descE9prop_kind9algorithmRKN6memory4descERKN6memory4descE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a descriptor for a resampling forward propagation primitive using source and destination memory descriptors.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>The destination memory descriptor may be initialized with <a class="reference internal" href="../data_model/memory/formats.html#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec"><span class="std std-ref">dnnl::memory::format_tag::any</span></a> value of <code class="docutils literal notranslate"><span class="pre">format_tag</span></code>.</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">aprop_kind</span></code>: Propagation kind. Possible values are <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb"><span class="std std-ref">dnnl::prop_kind::forward_training</span></a>, and <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c"><span class="std std-ref">dnnl::prop_kind::forward_inference</span></a>. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aalgorithm</span></code>: resampling algorithm kind: either <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a091b262cfae5e610fcad1490bfb79431"><span class="std std-ref">dnnl::algorithm::resampling_nearest</span></a>, or <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a05731680a83c6dccd19a758b72a4ecbd"><span class="std std-ref">dnnl::algorithm::resampling_linear</span></a> </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">src_desc</span></code>: Source memory descriptor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dst_desc</span></code>: Destination memory descriptor. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The destination memory descriptor may be initialized with <a class="reference internal" href="../data_model/memory/formats.html#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec"><span class="std std-ref">dnnl::memory::format_tag::any</span></a> value of <code class="docutils literal notranslate"><span class="pre">format_tag</span></code>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aprop_kind</strong> – Propagation kind. Possible values are <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb"><span class="std std-ref">dnnl::prop_kind::forward_training</span></a>, and <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c"><span class="std std-ref">dnnl::prop_kind::forward_inference</span></a>. </p></li>
+<li><p><strong>aalgorithm</strong> – resampling algorithm kind: either <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a091b262cfae5e610fcad1490bfb79431"><span class="std std-ref">dnnl::algorithm::resampling_nearest</span></a>, or <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a05731680a83c6dccd19a758b72a4ecbd"><span class="std std-ref">dnnl::algorithm::resampling_linear</span></a> </p></li>
+<li><p><strong>src_desc</strong> – Source memory descriptor. </p></li>
+<li><p><strong>dst_desc</strong> – Destination memory descriptor. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl18resampling_forward4desc4descE9prop_kind9algorithmRKNSt6vectorIfEERKN6memory4descE">
 <span id="_CPPv3N4dnnl18resampling_forward4desc4descE9prop_kind9algorithmRKNSt6vectorIfEERKN6memory4descE"></span><span id="_CPPv2N4dnnl18resampling_forward4desc4descE9prop_kind9algorithmRKNSt6vectorIfEERKN6memory4descE"></span><span id="dnnl::resampling_forward::desc::desc__prop_kind.algorithm.std::vector:float:CR.memory::descCR"></span><span class="target" id="structdnnl_1_1resampling__forward_1_1desc_1a470b216f4b325eb45c4d2bcfbe503125"></span><code class="sig-name descname"><span class="pre">desc</span></code><span class="sig-paren">(</span><a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kindE" title="dnnl::prop_kind"><span class="pre">prop_kind</span></a> <em><span class="pre">aprop_kind</span></em>, <a class="reference internal" href="general.html#_CPPv4N4dnnl9algorithmE" title="dnnl::algorithm"><span class="pre">algorithm</span></a> <em><span class="pre">aalgorithm</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">std</span><span class="pre">::</span><span class="pre">vector</span><span class="pre">&lt;</span><span class="pre">float</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">factors</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">src_desc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl18resampling_forward4desc4descE9prop_kind9algorithmRKNSt6vectorIfEERKN6memory4descE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a descriptor for a resampling forward propagation primitive using source memory descriptor and factors.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">aprop_kind</span></code>: Propagation kind. Possible values are <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb"><span class="std std-ref">dnnl::prop_kind::forward_training</span></a>, and <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c"><span class="std std-ref">dnnl::prop_kind::forward_inference</span></a>. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aalgorithm</span></code>: resampling algorithm kind: either <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a091b262cfae5e610fcad1490bfb79431"><span class="std std-ref">dnnl::algorithm::resampling_nearest</span></a>, or <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a05731680a83c6dccd19a758b72a4ecbd"><span class="std std-ref">dnnl::algorithm::resampling_linear</span></a> </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">factors</span></code>: Vector of scaling factors for spatial dimension. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">src_desc</span></code>: Source memory descriptor. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aprop_kind</strong> – Propagation kind. Possible values are <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb"><span class="std std-ref">dnnl::prop_kind::forward_training</span></a>, and <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c"><span class="std std-ref">dnnl::prop_kind::forward_inference</span></a>. </p></li>
+<li><p><strong>aalgorithm</strong> – resampling algorithm kind: either <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a091b262cfae5e610fcad1490bfb79431"><span class="std std-ref">dnnl::algorithm::resampling_nearest</span></a>, or <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a05731680a83c6dccd19a758b72a4ecbd"><span class="std std-ref">dnnl::algorithm::resampling_linear</span></a> </p></li>
+<li><p><strong>factors</strong> – Vector of scaling factors for spatial dimension. </p></li>
+<li><p><strong>src_desc</strong> – Source memory descriptor. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl18resampling_forward4desc4descE9prop_kind9algorithmRKNSt6vectorIfEERKN6memory4descERKN6memory4descE">
 <span id="_CPPv3N4dnnl18resampling_forward4desc4descE9prop_kind9algorithmRKNSt6vectorIfEERKN6memory4descERKN6memory4descE"></span><span id="_CPPv2N4dnnl18resampling_forward4desc4descE9prop_kind9algorithmRKNSt6vectorIfEERKN6memory4descERKN6memory4descE"></span><span id="dnnl::resampling_forward::desc::desc__prop_kind.algorithm.std::vector:float:CR.memory::descCR.memory::descCR"></span><span class="target" id="structdnnl_1_1resampling__forward_1_1desc_1aaef30e659aa7dccaaf51bf0569a3cde6"></span><code class="sig-name descname"><span class="pre">desc</span></code><span class="sig-paren">(</span><a class="reference internal" href="general.html#_CPPv4N4dnnl9prop_kindE" title="dnnl::prop_kind"><span class="pre">prop_kind</span></a> <em><span class="pre">aprop_kind</span></em>, <a class="reference internal" href="general.html#_CPPv4N4dnnl9algorithmE" title="dnnl::algorithm"><span class="pre">algorithm</span></a> <em><span class="pre">aalgorithm</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">std</span><span class="pre">::</span><span class="pre">vector</span><span class="pre">&lt;</span><span class="pre">float</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">factors</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">src_desc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">dst_desc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl18resampling_forward4desc4descE9prop_kind9algorithmRKNSt6vectorIfEERKN6memory4descERKN6memory4descE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a descriptor for a resampling forward propagation primitive.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>The destination memory descriptor may be initialized with <a class="reference internal" href="../data_model/memory/formats.html#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec"><span class="std std-ref">dnnl::memory::format_tag::any</span></a> value of <code class="docutils literal notranslate"><span class="pre">format_tag</span></code>.</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">aprop_kind</span></code>: Propagation kind. Possible values are <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb"><span class="std std-ref">dnnl::prop_kind::forward_training</span></a>, and <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c"><span class="std std-ref">dnnl::prop_kind::forward_inference</span></a>. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aalgorithm</span></code>: resampling algorithm kind: either <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a091b262cfae5e610fcad1490bfb79431"><span class="std std-ref">dnnl::algorithm::resampling_nearest</span></a>, or <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a05731680a83c6dccd19a758b72a4ecbd"><span class="std std-ref">dnnl::algorithm::resampling_linear</span></a> </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">factors</span></code>: Vector of scaling factors for spatial dimension. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">src_desc</span></code>: Source memory descriptor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dst_desc</span></code>: Destination memory descriptor. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The destination memory descriptor may be initialized with <a class="reference internal" href="../data_model/memory/formats.html#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec"><span class="std std-ref">dnnl::memory::format_tag::any</span></a> value of <code class="docutils literal notranslate"><span class="pre">format_tag</span></code>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aprop_kind</strong> – Propagation kind. Possible values are <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb"><span class="std std-ref">dnnl::prop_kind::forward_training</span></a>, and <a class="reference internal" href="general.html#group__dnnl__api__attributes_1ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c"><span class="std std-ref">dnnl::prop_kind::forward_inference</span></a>. </p></li>
+<li><p><strong>aalgorithm</strong> – resampling algorithm kind: either <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a091b262cfae5e610fcad1490bfb79431"><span class="std std-ref">dnnl::algorithm::resampling_nearest</span></a>, or <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a05731680a83c6dccd19a758b72a4ecbd"><span class="std std-ref">dnnl::algorithm::resampling_linear</span></a> </p></li>
+<li><p><strong>factors</strong> – Vector of scaling factors for spatial dimension. </p></li>
+<li><p><strong>src_desc</strong> – Source memory descriptor. </p></li>
+<li><p><strong>dst_desc</strong> – Destination memory descriptor. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -4900,55 +4902,59 @@ abbreviated to <a class="reference internal" href="../data_model/data_types/inde
 <dt id="_CPPv4N4dnnl18resampling_forward14primitive_desc14primitive_descERK4descRK6engineb">
 <span id="_CPPv3N4dnnl18resampling_forward14primitive_desc14primitive_descERK4descRK6engineb"></span><span id="_CPPv2N4dnnl18resampling_forward14primitive_desc14primitive_descERK4descRK6engineb"></span><span id="dnnl::resampling_forward::primitive_desc::primitive_desc__descCR.engineCR.b"></span><span class="target" id="structdnnl_1_1resampling__forward_1_1primitive__desc_1a200532e615581a52bd8e2dcd980050a4"></span><code class="sig-name descname"><span class="pre">primitive_desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl18resampling_forward4descE" title="dnnl::resampling_forward::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl18resampling_forward14primitive_desc14primitive_descERK4descRK6engineb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a primitive descriptor for a resampling forward propagation primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Descriptor for a resampling forward propagation primitive. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adesc</strong> – Descriptor for a resampling forward propagation primitive. </p></li>
+<li><p><strong>aengine</strong> – Engine to use. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl18resampling_forward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb">
 <span id="_CPPv3N4dnnl18resampling_forward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb"></span><span id="_CPPv2N4dnnl18resampling_forward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb"></span><span id="dnnl::resampling_forward::primitive_desc::primitive_desc__descCR.primitive_attrCR.engineCR.b"></span><span class="target" id="structdnnl_1_1resampling__forward_1_1primitive__desc_1aa9d737cc9d7da6fb4246dc20a8f166d8"></span><code class="sig-name descname"><span class="pre">primitive_desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl18resampling_forward4descE" title="dnnl::resampling_forward::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="attributes/index.html#_CPPv4N4dnnl14primitive_attrE" title="dnnl::primitive_attr"><span class="pre">primitive_attr</span></a> <span class="pre">&amp;</span><em><span class="pre">attr</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl18resampling_forward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a primitive descriptor for a resampling forward propagation primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Descriptor for a resampling forward propagation primitive. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">attr</span></code>: Primitive attributes to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adesc</strong> – Descriptor for a resampling forward propagation primitive. </p></li>
+<li><p><strong>aengine</strong> – Engine to use. </p></li>
+<li><p><strong>attr</strong> – Primitive attributes to use. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl18resampling_forward14primitive_desc8src_descEv">
 <span id="_CPPv3NK4dnnl18resampling_forward14primitive_desc8src_descEv"></span><span id="_CPPv2NK4dnnl18resampling_forward14primitive_desc8src_descEv"></span><span id="dnnl::resampling_forward::primitive_desc::src_descC"></span><span class="target" id="structdnnl_1_1resampling__forward_1_1primitive__desc_1a866c89ad7ad348ec2da25e9aeac44a80"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">src_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl18resampling_forward14primitive_desc8src_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a source memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Source memory descriptor. </p>
+<dd><p>Returns a source memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Source memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a source parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a source parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl18resampling_forward14primitive_desc8dst_descEv">
 <span id="_CPPv3NK4dnnl18resampling_forward14primitive_desc8dst_descEv"></span><span id="_CPPv2NK4dnnl18resampling_forward14primitive_desc8dst_descEv"></span><span id="dnnl::resampling_forward::primitive_desc::dst_descC"></span><span class="target" id="structdnnl_1_1resampling__forward_1_1primitive__desc_1a2ce7a2319ca0f068131c4d32690c96f7"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">dst_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl18resampling_forward14primitive_desc8dst_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a destination memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Destination memory descriptor. </p>
+<dd><p>Returns a destination memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Destination memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a destination parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a destination parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -4971,13 +4977,12 @@ abbreviated to <a class="reference internal" href="../data_model/data_types/inde
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl19resampling_backward19resampling_backwardERK14primitive_desc">
 <span id="_CPPv3N4dnnl19resampling_backward19resampling_backwardERK14primitive_desc"></span><span id="_CPPv2N4dnnl19resampling_backward19resampling_backwardERK14primitive_desc"></span><span id="dnnl::resampling_backward::resampling_backward__primitive_descCR"></span><span class="target" id="structdnnl_1_1resampling__backward_1a30f9341cbd8e18fac629a25b68010c4d"></span><code class="sig-name descname"><span class="pre">resampling_backward</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl19resampling_backward14primitive_descE" title="dnnl::resampling_backward::primitive_desc"><span class="pre">primitive_desc</span></a> <span class="pre">&amp;</span><em><span class="pre">pd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl19resampling_backward19resampling_backwardERK14primitive_desc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Constructs a resampling backward propagation primitive. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pd</span></code>: Primitive descriptor for a resampling backward propagation primitive. </p></li>
-</ul>
+<dd><p>Constructs a resampling backward propagation primitive. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pd</strong> – Primitive descriptor for a resampling backward propagation primitive. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -4991,31 +4996,31 @@ abbreviated to <a class="reference internal" href="../data_model/data_types/inde
 <dt id="_CPPv4N4dnnl19resampling_backward4desc4descE9algorithmRKN6memory4descERKN6memory4descE">
 <span id="_CPPv3N4dnnl19resampling_backward4desc4descE9algorithmRKN6memory4descERKN6memory4descE"></span><span id="_CPPv2N4dnnl19resampling_backward4desc4descE9algorithmRKN6memory4descERKN6memory4descE"></span><span id="dnnl::resampling_backward::desc::desc__algorithm.memory::descCR.memory::descCR"></span><span class="target" id="structdnnl_1_1resampling__backward_1_1desc_1ab07740cc68c779297cded54bb7787be8"></span><code class="sig-name descname"><span class="pre">desc</span></code><span class="sig-paren">(</span><a class="reference internal" href="general.html#_CPPv4N4dnnl9algorithmE" title="dnnl::algorithm"><span class="pre">algorithm</span></a> <em><span class="pre">aalgorithm</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">diff_src_desc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">diff_dst_desc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl19resampling_backward4desc4descE9algorithmRKN6memory4descERKN6memory4descE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a descriptor for a resampling backward propagation primitive using source and destination memory descriptors.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">aalgorithm</span></code>: resampling algorithm kind: either <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a091b262cfae5e610fcad1490bfb79431"><span class="std std-ref">dnnl::algorithm::resampling_nearest</span></a>, or <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a05731680a83c6dccd19a758b72a4ecbd"><span class="std std-ref">dnnl::algorithm::resampling_linear</span></a> </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">diff_src_desc</span></code>: Diff source memory descriptor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">diff_dst_desc</span></code>: Diff destination memory descriptor. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aalgorithm</strong> – resampling algorithm kind: either <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a091b262cfae5e610fcad1490bfb79431"><span class="std std-ref">dnnl::algorithm::resampling_nearest</span></a>, or <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a05731680a83c6dccd19a758b72a4ecbd"><span class="std std-ref">dnnl::algorithm::resampling_linear</span></a> </p></li>
+<li><p><strong>diff_src_desc</strong> – Diff source memory descriptor. </p></li>
+<li><p><strong>diff_dst_desc</strong> – Diff destination memory descriptor. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl19resampling_backward4desc4descE9algorithmRKNSt6vectorIfEERKN6memory4descERKN6memory4descE">
 <span id="_CPPv3N4dnnl19resampling_backward4desc4descE9algorithmRKNSt6vectorIfEERKN6memory4descERKN6memory4descE"></span><span id="_CPPv2N4dnnl19resampling_backward4desc4descE9algorithmRKNSt6vectorIfEERKN6memory4descERKN6memory4descE"></span><span id="dnnl::resampling_backward::desc::desc__algorithm.std::vector:float:CR.memory::descCR.memory::descCR"></span><span class="target" id="structdnnl_1_1resampling__backward_1_1desc_1af261675bea957340e584ee788ed21263"></span><code class="sig-name descname"><span class="pre">desc</span></code><span class="sig-paren">(</span><a class="reference internal" href="general.html#_CPPv4N4dnnl9algorithmE" title="dnnl::algorithm"><span class="pre">algorithm</span></a> <em><span class="pre">aalgorithm</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">std</span><span class="pre">::</span><span class="pre">vector</span><span class="pre">&lt;</span><span class="pre">float</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">factors</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">diff_src_desc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">diff_dst_desc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl19resampling_backward4desc4descE9algorithmRKNSt6vectorIfEERKN6memory4descERKN6memory4descE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a descriptor for resampling backward propagation primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">aalgorithm</span></code>: resampling algorithm kind: either <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a091b262cfae5e610fcad1490bfb79431"><span class="std std-ref">dnnl::algorithm::resampling_nearest</span></a>, or <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a05731680a83c6dccd19a758b72a4ecbd"><span class="std std-ref">dnnl::algorithm::resampling_linear</span></a> </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">factors</span></code>: Vector of scaling factors for spatial dimension. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">diff_src_desc</span></code>: Diff source memory descriptor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">diff_dst_desc</span></code>: Diff destination memory descriptor. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aalgorithm</strong> – resampling algorithm kind: either <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a091b262cfae5e610fcad1490bfb79431"><span class="std std-ref">dnnl::algorithm::resampling_nearest</span></a>, or <a class="reference internal" href="general.html#group__dnnl__api__attributes_1gga00377dd4982333e42e8ae1d09a309640a05731680a83c6dccd19a758b72a4ecbd"><span class="std std-ref">dnnl::algorithm::resampling_linear</span></a> </p></li>
+<li><p><strong>factors</strong> – Vector of scaling factors for spatial dimension. </p></li>
+<li><p><strong>diff_src_desc</strong> – Diff source memory descriptor. </p></li>
+<li><p><strong>diff_dst_desc</strong> – Diff destination memory descriptor. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -5037,57 +5042,61 @@ abbreviated to <a class="reference internal" href="../data_model/data_types/inde
 <dt id="_CPPv4N4dnnl19resampling_backward14primitive_desc14primitive_descERK4descRK6engineRKN18resampling_forward14primitive_descEb">
 <span id="_CPPv3N4dnnl19resampling_backward14primitive_desc14primitive_descERK4descRK6engineRKN18resampling_forward14primitive_descEb"></span><span id="_CPPv2N4dnnl19resampling_backward14primitive_desc14primitive_descERK4descRK6engineRKN18resampling_forward14primitive_descEb"></span><span id="dnnl::resampling_backward::primitive_desc::primitive_desc__descCR.engineCR.resampling_forward::primitive_descCR.b"></span><span class="target" id="structdnnl_1_1resampling__backward_1_1primitive__desc_1a37e58df265e148caccb413df7612c3e1"></span><code class="sig-name descname"><span class="pre">primitive_desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl19resampling_backward4descE" title="dnnl::resampling_backward::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl18resampling_forwardE" title="dnnl::resampling_forward"><span class="pre">resampling_forward</span></a><span class="pre">::</span><a class="reference internal" href="#_CPPv4N4dnnl18resampling_forward14primitive_descE" title="dnnl::resampling_forward::primitive_desc"><span class="pre">primitive_desc</span></a> <span class="pre">&amp;</span><em><span class="pre">hint_fwd_pd</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl19resampling_backward14primitive_desc14primitive_descERK4descRK6engineRKN18resampling_forward14primitive_descEb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a primitive descriptor for a resampling backward propagation primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Descriptor for a resampling backward propagation primitive. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">hint_fwd_pd</span></code>: Primitive descriptor for a resampling forward propagation primitive. It is used as a hint for deciding which memory format to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adesc</strong> – Descriptor for a resampling backward propagation primitive. </p></li>
+<li><p><strong>aengine</strong> – Engine to use. </p></li>
+<li><p><strong>hint_fwd_pd</strong> – Primitive descriptor for a resampling forward propagation primitive. It is used as a hint for deciding which memory format to use. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl19resampling_backward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineRKN18resampling_forward14primitive_descEb">
 <span id="_CPPv3N4dnnl19resampling_backward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineRKN18resampling_forward14primitive_descEb"></span><span id="_CPPv2N4dnnl19resampling_backward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineRKN18resampling_forward14primitive_descEb"></span><span id="dnnl::resampling_backward::primitive_desc::primitive_desc__descCR.primitive_attrCR.engineCR.resampling_forward::primitive_descCR.b"></span><span class="target" id="structdnnl_1_1resampling__backward_1_1primitive__desc_1afe4fc14044d145d38688ba54147d638f"></span><code class="sig-name descname"><span class="pre">primitive_desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl19resampling_backward4descE" title="dnnl::resampling_backward::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="attributes/index.html#_CPPv4N4dnnl14primitive_attrE" title="dnnl::primitive_attr"><span class="pre">primitive_attr</span></a> <span class="pre">&amp;</span><em><span class="pre">attr</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl18resampling_forwardE" title="dnnl::resampling_forward"><span class="pre">resampling_forward</span></a><span class="pre">::</span><a class="reference internal" href="#_CPPv4N4dnnl18resampling_forward14primitive_descE" title="dnnl::resampling_forward::primitive_desc"><span class="pre">primitive_desc</span></a> <span class="pre">&amp;</span><em><span class="pre">hint_fwd_pd</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl19resampling_backward14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineRKN18resampling_forward14primitive_descEb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a primitive descriptor for a resampling backward propagation primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Descriptor for a resampling backward propagation primitive. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">attr</span></code>: Primitive attributes to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">hint_fwd_pd</span></code>: Primitive descriptor for a resampling forward propagation primitive. It is used as a hint for deciding which memory format to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adesc</strong> – Descriptor for a resampling backward propagation primitive. </p></li>
+<li><p><strong>attr</strong> – Primitive attributes to use. </p></li>
+<li><p><strong>aengine</strong> – Engine to use. </p></li>
+<li><p><strong>hint_fwd_pd</strong> – Primitive descriptor for a resampling forward propagation primitive. It is used as a hint for deciding which memory format to use. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl19resampling_backward14primitive_desc13diff_src_descEv">
 <span id="_CPPv3NK4dnnl19resampling_backward14primitive_desc13diff_src_descEv"></span><span id="_CPPv2NK4dnnl19resampling_backward14primitive_desc13diff_src_descEv"></span><span id="dnnl::resampling_backward::primitive_desc::diff_src_descC"></span><span class="target" id="structdnnl_1_1resampling__backward_1_1primitive__desc_1a34b6453d3ffa6b0b4fddd5aaf14341dd"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">diff_src_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl19resampling_backward14primitive_desc13diff_src_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a diff source memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Diff source memory descriptor. </p>
+<dd><p>Returns a diff source memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Diff source memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a diff source memory with. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a diff source memory with. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl19resampling_backward14primitive_desc13diff_dst_descEv">
 <span id="_CPPv3NK4dnnl19resampling_backward14primitive_desc13diff_dst_descEv"></span><span id="_CPPv2NK4dnnl19resampling_backward14primitive_desc13diff_dst_descEv"></span><span id="dnnl::resampling_backward::primitive_desc::diff_dst_descC"></span><span class="target" id="structdnnl_1_1resampling__backward_1_1primitive__desc_1ae6b102a2549d6e850249a3880db22c3e"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">diff_dst_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl19resampling_backward14primitive_desc13diff_dst_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a diff destination memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Diff destination memory descriptor. </p>
+<dd><p>Returns a diff destination memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Diff destination memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a diff destination parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a diff destination parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -5095,8 +5104,8 @@ abbreviated to <a class="reference internal" href="../data_model/data_types/inde
 
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

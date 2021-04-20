@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>tbb_hash_compare &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4599,13 +4598,13 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="tbb-hash-compare">
+  <div class="section" id="tbb-hash-compare">
 <h1>tbb_hash_compare<a class="headerlink" href="#tbb-hash-compare" title="Permalink to this headline">¶</a></h1>
 <p><strong>[containers.tbb_hash_compare]</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">tbb::tbb_hash_compare</span></code> is a class template for hash support. Use it with the <code class="docutils literal notranslate"><span class="pre">tbb::concurrent_hash_map</span></code>
 associative container to calculate hash codes and compare keys for equality.</p>
 <p><code class="docutils literal notranslate"><span class="pre">tbb_hash_compare</span></code> meets the <a class="reference internal" href="../../named_requirements/containers/hash_compare.html"><span class="doc">HashCompare requirements</span></a>.</p>
-<section id="class-template-synopsis">
+<div class="section" id="class-template-synopsis">
 <h2>Class Template Synopsis<a class="headerlink" href="#class-template-synopsis" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Defined in header &lt;tbb/concurrent_hash_map.h&gt;</span>
 
@@ -4620,8 +4619,8 @@ associative container to calculate hash codes and compare keys for equality.</p>
 <span class="p">}</span> <span class="c1">// namespace tbb</span>
 </pre></div>
 </div>
-</section>
-<section id="member-functions">
+</div>
+<div class="section" id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">hash</span><span class="p">(</span> <span class="k">const</span> <span class="n">Key</span><span class="o">&amp;</span> <span class="n">k</span> <span class="p">);</span>
 </pre></div>
@@ -4633,8 +4632,8 @@ associative container to calculate hash codes and compare keys for equality.</p>
 </div>
 <p>Equivalent to <code class="docutils literal notranslate"><span class="pre">k1</span> <span class="pre">==</span> <span class="pre">k2</span></code>.</p>
 <p><strong>Returns</strong>: <code class="docutils literal notranslate"><span class="pre">true</span></code> if the keys are equal; <code class="docutils literal notranslate"><span class="pre">false</span></code>, otherwise.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

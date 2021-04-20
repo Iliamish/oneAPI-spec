@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flow Graph &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet" />
@@ -4643,7 +4642,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="flow-graph">
+  <div class="section" id="flow-graph">
 <h1>Flow Graph<a class="headerlink" href="#flow-graph" title="Permalink to this headline">¶</a></h1>
 <p><strong>[flow_graph]</strong></p>
 <p>In addition to loop parallelism, the oneAPI Threading Building Blocks (oneTBB) library also supports graph
@@ -4654,7 +4653,7 @@ parallelism. With this feature, highly scalable and completely sequential graphs
 <li><p>Nodes</p></li>
 <li><p>Ports and edges</p></li>
 </ul>
-<section id="graph-class">
+<div class="section" id="graph-class">
 <h2>Graph Class<a class="headerlink" href="#graph-class" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">graph</span></code> class instance owns all the tasks created on behalf of the flow graph. Users can wait
 on the <code class="docutils literal notranslate"><span class="pre">graph</span></code> if they need to wait for the completion of all of the tasks related to the flow
@@ -4668,10 +4667,10 @@ the ownership of the flow graph.</p>
 </li>
 </ul>
 </div>
-</section>
-<section id="nodes">
+</div>
+<div class="section" id="nodes">
 <h2>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline">¶</a></h2>
-<section id="abstract-interfaces">
+<div class="section" id="abstract-interfaces">
 <h3>Abstract Interfaces<a class="headerlink" href="#abstract-interfaces" title="Permalink to this headline">¶</a></h3>
 <p>To be used as a graph node type, a class needs to inherit certain abstract types and implement the
 corresponding interfaces. <code class="docutils literal notranslate"><span class="pre">graph_node</span></code> is the base class for any other node type; its interfaces
@@ -4685,8 +4684,8 @@ inputs and/or outputs, each input port is a <code class="docutils literal notran
 <li class="toctree-l1"><a class="reference internal" href="flow_graph/receiver.html">receiver</a></li>
 </ul>
 </div>
-</section>
-<section id="properties">
+</div>
+<div class="section" id="properties">
 <h3>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h3>
 <p>Every node in a flow graph has its own properties.</p>
 <div class="toctree-wrapper compound">
@@ -4694,8 +4693,8 @@ inputs and/or outputs, each input port is a <code class="docutils literal notran
 <li class="toctree-l1"><a class="reference internal" href="flow_graph/forwarding_and_buffering.html">Forwarding and Buffering</a></li>
 </ul>
 </div>
-</section>
-<section id="functional-nodes">
+</div>
+<div class="section" id="functional-nodes">
 <h3>Functional Nodes<a class="headerlink" href="#functional-nodes" title="Permalink to this headline">¶</a></h3>
 <p>Functional nodes do computations in response to input messages (if any), and send the result or a
 signal to their successors.</p>
@@ -4717,8 +4716,8 @@ signal to their successors.</p>
 <li class="toctree-l1"><a class="reference internal" href="flow_graph/copy_body_func.html">copy_body</a></li>
 </ul>
 </div>
-</section>
-<section id="buffering-nodes">
+</div>
+<div class="section" id="buffering-nodes">
 <h3>Buffering Nodes<a class="headerlink" href="#buffering-nodes" title="Permalink to this headline">¶</a></h3>
 <p>Buffering nodes are designed to accumulate input messages and pass them to successors in a predefined order, depending on the node type.</p>
 <div class="toctree-wrapper compound">
@@ -4731,8 +4730,8 @@ signal to their successors.</p>
 <li class="toctree-l1"><a class="reference internal" href="flow_graph/sequencer_node_cls.html">sequencer_node</a></li>
 </ul>
 </div>
-</section>
-<section id="service-nodes">
+</div>
+<div class="section" id="service-nodes">
 <h3>Service Nodes<a class="headerlink" href="#service-nodes" title="Permalink to this headline">¶</a></h3>
 <p>These nodes are designed for advanced control of the message flow, such as combining
 messages from different paths in a graph or limiting the number of simultaneously processed
@@ -4750,9 +4749,9 @@ messages, as well as for creating reusable custom nodes.</p>
 <li class="toctree-l1"><a class="reference internal" href="flow_graph/composite_node_cls.html">composite_node</a></li>
 </ul>
 </div>
-</section>
-</section>
-<section id="ports-and-edges">
+</div>
+</div>
+<div class="section" id="ports-and-edges">
 <h2>Ports and Edges<a class="headerlink" href="#ports-and-edges" title="Permalink to this headline">¶</a></h2>
 <p>Flow Graph provides an API to manage connections between the nodes.
 For nodes that have more than one input or output ports (for example, <code class="docutils literal notranslate"><span class="pre">join_node</span></code>),
@@ -4765,8 +4764,8 @@ making a connection requires to specify a certain port by using special helper f
 <li class="toctree-l1"><a class="reference internal" href="flow_graph/remove_edge_func.html">remove_edge</a></li>
 </ul>
 </div>
-</section>
-<section id="special-messages-types">
+</div>
+<div class="section" id="special-messages-types">
 <h2>Special Messages Types<a class="headerlink" href="#special-messages-types" title="Permalink to this headline">¶</a></h2>
 <p>Flow Graph supports a set of specific message types.</p>
 <div class="toctree-wrapper compound">
@@ -4775,8 +4774,8 @@ making a connection requires to specify a certain port by using special helper f
 <li class="toctree-l1"><a class="reference internal" href="flow_graph/tagged_msg_cls.html">tagged_msg</a></li>
 </ul>
 </div>
-</section>
-<section id="examples">
+</div>
+<div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -4784,8 +4783,8 @@ making a connection requires to specify a certain port by using special helper f
 <li class="toctree-l1"><a class="reference internal" href="flow_graph/message_flow_graph_example.html">Message Flow Graph Example</a></li>
 </ul>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

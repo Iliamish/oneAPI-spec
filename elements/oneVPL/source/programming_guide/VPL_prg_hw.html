@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hardware Acceleration &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4621,11 +4620,11 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="hardware-acceleration">
+  <div class="section" id="hardware-acceleration">
 <span id="hw-acceleration"></span><h1>Hardware Acceleration<a class="headerlink" href="#hardware-acceleration" title="Permalink to this headline">¶</a></h1>
 <p>oneVPL provides a new model for working with hardware acceleration while
 continuing to support hardware acceleration in legacy mode.</p>
-<section id="new-model-to-work-with-hardware-acceleration">
+<div class="section" id="new-model-to-work-with-hardware-acceleration">
 <h2>New Model to Work with Hardware Acceleration<a class="headerlink" href="#new-model-to-work-with-hardware-acceleration" title="Permalink to this headline">¶</a></h2>
 <p>oneVPL API version 2.0 introduces a new memory model: internal allocation where
 oneVPL is responsible for video memory allocation. In this mode,
@@ -4678,10 +4677,10 @@ like shown in the code below:</p>
 <span class="n">MFXCreateSession</span><span class="p">(</span><span class="n">loader</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">session</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-</section>
-<section id="work-with-hardware-acceleration-in-legacy-mode">
+</div>
+<div class="section" id="work-with-hardware-acceleration-in-legacy-mode">
 <h2>Work with Hardware Acceleration in Legacy Mode<a class="headerlink" href="#work-with-hardware-acceleration-in-legacy-mode" title="Permalink to this headline">¶</a></h2>
-<section id="work-with-multiple-media-devices">
+<div class="section" id="work-with-multiple-media-devices">
 <h3>Work with Multiple Media Devices<a class="headerlink" href="#work-with-multiple-media-devices" title="Permalink to this headline">¶</a></h3>
 <p>If your system has multiple graphics adapters, you may need hints on which
 adapter is better suited to process a particular workload. The legacy mode of
@@ -4905,8 +4904,8 @@ the most suitable adapter for a particular encode workload:</p>
 </pre></div>
 </td></tr></table></div>
 <p>See the <a class="reference internal" href="../API_ref/VPL_func_adapters.html#_CPPv416MFXQueryAdaptersP16mfxComponentInfoP15mfxAdaptersInfo" title="MFXQueryAdapters"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXQueryAdapters()</span></code></a> description for adapter priority rules.</p>
-</section>
-<section id="work-with-video-memory">
+</div>
+<div class="section" id="work-with-video-memory">
 <h3>Work with Video Memory<a class="headerlink" href="#work-with-video-memory" title="Permalink to this headline">¶</a></h3>
 <p>To fully utilize the oneVPL acceleration capability, the application should support
 OS specific infrastructures. If using Microsoft* Windows*, the application
@@ -4963,8 +4962,8 @@ acceleration device handle. This handle is also used by the oneVPL component to
 query hardware capabilities. The application can share its device with oneVPL
 by passing the device handle through the <a class="reference internal" href="../API_ref/VPL_func_vidcore.html#_CPPv422MFXVideoCORE_SetHandle10mfxSession13mfxHandleType6mfxHDL" title="MFXVideoCORE_SetHandle"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoCORE_SetHandle()</span></code></a>
 function. It is recommended to share the handle before any actual usage of oneVPL.</p>
-</section>
-<section id="work-with-microsoft-directx-applications">
+</div>
+<div class="section" id="work-with-microsoft-directx-applications">
 <span id="work-ms-directx-app"></span><h3>Work with Microsoft DirectX* Applications<a class="headerlink" href="#work-with-microsoft-directx-applications" title="Permalink to this headline">¶</a></h3>
 <p>oneVPL supports two different infrastructures for hardware acceleration on the
 Microsoft Windows OS: the Direct3D* 9 DXVA2 and Direct3D 11 Video API. If Direct3D 9
@@ -5026,8 +5025,8 @@ It is strongly recommended to call the <a class="reference internal" href="../AP
 function, the <a class="reference internal" href="../API_ref/VPL_func_vid_decode.html#_CPPv426MFXVideoDECODE_QueryIOSurf10mfxSessionP13mfxVideoParamP20mfxFrameAllocRequest" title="MFXVideoDECODE_QueryIOSurf"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_QueryIOSurf()</span></code></a> function, or the
 <a class="reference internal" href="../API_ref/VPL_func_vid_vpp.html#_CPPv423MFXVideoVPP_QueryIOSurf10mfxSessionP13mfxVideoParamAL2E_20mfxFrameAllocRequest" title="MFXVideoVPP_QueryIOSurf"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoVPP_QueryIOSurf()</span></code></a> function to determine the appropriate type in
 the external allocation mode.</p>
-</section>
-<section id="work-with-va-api-applications">
+</div>
+<div class="section" id="work-with-va-api-applications">
 <h3>Work with VA API Applications<a class="headerlink" href="#work-with-va-api-applications" title="Permalink to this headline">¶</a></h3>
 <p>oneVPL supports the VA API infrastructure for hardware acceleration on Linux.
 The application should use the <cite>VADisplay</cite> interface as the acceleration device
@@ -5085,9 +5084,9 @@ use either <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv43
 or <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv441MFX_MEMTYPE_VIDEO_MEMORY_PROCESSOR_TARGET" title="MFX_MEMTYPE_VIDEO_MEMORY_PROCESSOR_TARGET"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_MEMTYPE_VIDEO_MEMORY_PROCESSOR_TARGET</span></code></a> to indicate data in video
 memory.</p>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

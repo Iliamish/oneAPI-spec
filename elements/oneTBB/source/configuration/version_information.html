@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Version Information &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4604,7 +4603,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="version-information">
+  <div class="section" id="version-information">
 <h1>Version Information<a class="headerlink" href="#version-information" title="Permalink to this headline">¶</a></h1>
 <p><strong>[configuration.version_information]</strong></p>
 <p>oneTBB has macros, an environment variable, and a function that reveal
@@ -4637,7 +4636,7 @@ major interface version number.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">TBB_INTERFACE_VERSION_MINOR</span></code> macro defined to <code class="docutils literal notranslate"><span class="pre">TBB_INTERFACE_VERSION%1000/10</span></code>, which is the
 minor interface version number.</p></li>
 </ul>
-<section id="tbb-runtime-interface-version-function">
+<div class="section" id="tbb-runtime-interface-version-function">
 <h2>TBB_runtime_interface_version Function<a class="headerlink" href="#tbb-runtime-interface-version-function" title="Permalink to this headline">¶</a></h2>
 <p>Function that returns the interface version of the oneTBB library that was loaded at runtime.</p>
 <p>The value returned by <code class="docutils literal notranslate"><span class="pre">TBB_runtime_interface_version()</span></code> may differ from the value of
@@ -4646,14 +4645,14 @@ application was compiled against a compatible version of the oneTBB headers.</p>
 <p>In general, the run-time value <code class="docutils literal notranslate"><span class="pre">TBB_runtime_interface_version()</span></code> must be greater than
 or equal to the compile-time value of <code class="docutils literal notranslate"><span class="pre">TBB_INTERFACE_VERSION</span></code>. Otherwise, the application may fail to
 resolve all symbols at run time.</p>
-</section>
-<section id="tbb-runtime-version-function">
+</div>
+<div class="section" id="tbb-runtime-version-function">
 <h2>TBB_runtime_version Function<a class="headerlink" href="#tbb-runtime-version-function" title="Permalink to this headline">¶</a></h2>
 <p>Function that returns the version string of the oneTBB library that was loaded at runtime.</p>
 <p>The value returned by <code class="docutils literal notranslate"><span class="pre">TBB_runtime_version()</span></code> may differ from the value of
 <code class="docutils literal notranslate"><span class="pre">TBB_VERSION_STRING</span></code> obtained at compile time.</p>
-</section>
-<section id="tbb-version-environment-variable">
+</div>
+<div class="section" id="tbb-version-environment-variable">
 <h2>TBB_VERSION Environment Variable<a class="headerlink" href="#tbb-version-environment-variable" title="Permalink to this headline">¶</a></h2>
 <p>Set the environment variable <code class="docutils literal notranslate"><span class="pre">TBB_VERSION</span></code> to <code class="docutils literal notranslate"><span class="pre">1</span></code> to cause the library to print information on
 <code class="docutils literal notranslate"><span class="pre">stderr</span></code>. Each line is of the form <code class="docutils literal notranslate"><span class="pre">“TBB:</span> <span class="pre">tag</span> <span class="pre">value”</span></code>, where <em>tag</em> and <em>value</em> provide additional
@@ -4662,8 +4661,8 @@ library information below.</p>
 <p class="admonition-title">Caution</p>
 <p>This output is implementation specific and may change at any time.</p>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

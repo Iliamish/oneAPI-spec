@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>concurrent_unordered_set &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4614,12 +4613,12 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="concurrent-unordered-set">
+  <div class="section" id="concurrent-unordered-set">
 <h1>concurrent_unordered_set<a class="headerlink" href="#concurrent-unordered-set" title="Permalink to this headline">¶</a></h1>
 <p><strong>[containers.concurrent_unordered_set]</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">tbb::concurrent_unordered_set</span></code> is a class template that represents an unordered sequence of unique elements.
 It supports concurrent insertion, lookup, and traversal, but does not support concurrent erasure.</p>
-<section id="class-template-synopsis">
+<div class="section" id="class-template-synopsis">
 <h2>Class Template Synopsis<a class="headerlink" href="#class-template-synopsis" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Defined in header &lt;tbb/concurrent_unordered_set.h&gt;</span>
 
@@ -4863,8 +4862,8 @@ Member functions can impose stricter requirements depending on the type of the o
 <li><p>The type <code class="docutils literal notranslate"><span class="pre">KeyEqual</span></code> must meet the <code class="docutils literal notranslate"><span class="pre">BinaryPredicate</span></code> requirements from the [algorithms.general] ISO C++ Standard section.</p></li>
 <li><p>The type <code class="docutils literal notranslate"><span class="pre">Allocator</span></code> must meet the <code class="docutils literal notranslate"><span class="pre">Allocator</span></code> requirements from the [allocator.requirements] ISO C++ Standard section.</p></li>
 </ul>
-</section>
-<section id="description">
+</div>
+<div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">tbb::concurrent_unordered_set</span></code> is an unordered sequence, which elements are organized into
 buckets. The value of the hash function <code class="docutils literal notranslate"><span class="pre">Hash</span></code> for <code class="docutils literal notranslate"><span class="pre">Key</span></code> object determines the number of the bucket
@@ -4878,8 +4877,8 @@ In this case, the program is ill-formed if any of the following conditions are m
 </ul>
 <p>Otherwise, the member type <code class="docutils literal notranslate"><span class="pre">concurrent_unordered_set::key_equal</span></code> is defined as the value of the
 template parameter <code class="docutils literal notranslate"><span class="pre">KeyEqual</span></code>.</p>
-</section>
-<section id="member-functions">
+</div>
+<div class="section" id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -4895,8 +4894,8 @@ template parameter <code class="docutils literal notranslate"><span class="pre">
 <li class="toctree-l1"><a class="reference internal" href="concurrent_unordered_set_cls/parallel_iteration.html">Parallel iteration</a></li>
 </ul>
 </div>
-</section>
-<section id="non-member-functions">
+</div>
+<div class="section" id="non-member-functions">
 <h2>Non-member functions<a class="headerlink" href="#non-member-functions" title="Permalink to this headline">¶</a></h2>
 <p>These functions provide binary comparison and swap operations
 on <code class="docutils literal notranslate"><span class="pre">tbb::concurrent_unordered_set</span></code> objects.</p>
@@ -4926,16 +4925,16 @@ the non-member functions are reachable only via argument-dependent lookup.</p>
 <li class="toctree-l1"><a class="reference internal" href="concurrent_unordered_set_cls/non_member_binary_comparisons.html">Non-member binary comparisons</a></li>
 </ul>
 </div>
-</section>
-<section id="other">
+</div>
+<div class="section" id="other">
 <h2>Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="concurrent_unordered_set_cls/deduction_guides.html">Deduction guides</a></li>
 </ul>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

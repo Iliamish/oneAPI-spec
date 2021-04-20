@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Function Nodes Policies &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4611,7 +4610,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="function-nodes-policies">
+  <div class="section" id="function-nodes-policies">
 <h1>Function Nodes Policies<a class="headerlink" href="#function-nodes-policies" title="Permalink to this headline">¶</a></h1>
 <p><strong>[flow_graph.function_node_policies]</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">function_node</span></code>, <code class="docutils literal notranslate"><span class="pre">multifunction_node</span></code>, <code class="docutils literal notranslate"><span class="pre">async_node</span></code> and <code class="docutils literal notranslate"><span class="pre">continue_node</span></code> can be specified
@@ -4634,18 +4633,18 @@ of node execution.</p>
 </div>
 <p>Each policy class satisfies the <cite>CopyConstructible</cite> requirements from [copyconstructible]
 ISO C++ Standard sections.</p>
-<section id="queueing">
+<div class="section" id="queueing">
 <h2>Queueing<a class="headerlink" href="#queueing" title="Permalink to this headline">¶</a></h2>
 <p>This policy defines behavior for input messages acceptance. The <code class="docutils literal notranslate"><span class="pre">queueing</span></code> policy means that input
 messages that cannot be processed right away are kept to be processed when possible.</p>
-</section>
-<section id="rejecting">
+</div>
+<div class="section" id="rejecting">
 <h2>Rejecting<a class="headerlink" href="#rejecting" title="Permalink to this headline">¶</a></h2>
 <p>This policy defines behavior for input messages acceptance. The <code class="docutils literal notranslate"><span class="pre">rejecting</span></code> policy means that input
 messages that cannot be processed right away are not accepted by the node and it is responsibility
 of a predecessor to handle this.</p>
-</section>
-<section id="lightweight">
+</div>
+<div class="section" id="lightweight">
 <h2>Lightweight<a class="headerlink" href="#lightweight" title="Permalink to this headline">¶</a></h2>
 <p>This policy helps to reduce the overhead associated with the execution scheduling of the node.</p>
 <p>For functional nodes that have a default value for the <code class="docutils literal notranslate"><span class="pre">Policy</span></code> template parameter, specifying
@@ -4653,7 +4652,7 @@ the <code class="docutils literal notranslate"><span class="pre">lightweight</sp
 with the behavior defined by the <code class="docutils literal notranslate"><span class="pre">lightweight</span></code> policy. For example, if the default value of
 <code class="docutils literal notranslate"><span class="pre">Policy</span></code> is <code class="docutils literal notranslate"><span class="pre">queueing</span></code>, specifying <code class="docutils literal notranslate"><span class="pre">lightweight</span></code> as the <code class="docutils literal notranslate"><span class="pre">Policy</span></code> value is equivalent to
 specifying <code class="docutils literal notranslate"><span class="pre">queueing_lightweight</span></code>.</p>
-<section id="example">
+<div class="section" id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <p>The example below shows the application of the <code class="docutils literal notranslate"><span class="pre">lightweight</span></code> policy to a
 graph with a pipeline topology. It is reasonable to apply the <code class="docutils literal notranslate"><span class="pre">lightweight</span></code>
@@ -4689,9 +4688,9 @@ concurrent invocations of the graph.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

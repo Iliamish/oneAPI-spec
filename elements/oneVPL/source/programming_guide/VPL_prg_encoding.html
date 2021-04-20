@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encoding Procedures &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4619,11 +4618,11 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="encoding-procedures">
+  <div class="section" id="encoding-procedures">
 <h1>Encoding Procedures<a class="headerlink" href="#encoding-procedures" title="Permalink to this headline">¶</a></h1>
 <p>There are two methods for shared memory allocation and handling in oneVPL:
 external and internal.</p>
-<section id="external-memory">
+<div class="section" id="external-memory">
 <h2>External Memory<a class="headerlink" href="#external-memory" title="Permalink to this headline">¶</a></h2>
 <p>The following pseudo code shows the encoding procedure with external memory
 (legacy mode):</p>
@@ -4696,8 +4695,8 @@ crop window when it is smaller than the frame to be encoded, especially
 in cases when crops are not aligned to minimum coding block size (16
 for AVC and 8 for HEVC and VP9).</p>
 </div>
-</section>
-<section id="internal-memory">
+</div>
+<div class="section" id="internal-memory">
 <h2>Internal Memory<a class="headerlink" href="#internal-memory" title="Permalink to this headline">¶</a></h2>
 <p>The following pseudo code shows the encoding procedure with internal memory:</p>
 <div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
@@ -4750,8 +4749,8 @@ to get a free surface for the subsequent encode operation.</p></li>
 function to decrement the reference counter of the obtained surface after
 the call to the <a class="reference internal" href="../API_ref/VPL_func_vid_encode.html#_CPPv431MFXVideoENCODE_EncodeFrameAsync10mfxSessionP13mfxEncodeCtrlP16mfxFrameSurface1P12mfxBitstreamP12mfxSyncPoint" title="MFXVideoENCODE_EncodeFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoENCODE_EncodeFrameAsync()</span></code></a> function.</p></li>
 </ul>
-</section>
-<section id="configuration-change">
+</div>
+<div class="section" id="configuration-change">
 <span id="config-change"></span><h2>Configuration Change<a class="headerlink" href="#configuration-change" title="Permalink to this headline">¶</a></h2>
 <p>The application changes configuration during encoding by calling the
 <a class="reference internal" href="../API_ref/VPL_func_vid_encode.html#_CPPv420MFXVideoENCODE_Reset10mfxSessionP13mfxVideoParam" title="MFXVideoENCODE_Reset"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoENCODE_Reset()</span></code></a> function. Depending on the difference in
@@ -4785,8 +4784,8 @@ procedure with the new configuration.</p></li>
 </ul>
 </li>
 </ol>
-</section>
-<section id="external-bitrate-control">
+</div>
+<div class="section" id="external-bitrate-control">
 <h2>External Bitrate Control<a class="headerlink" href="#external-bitrate-control" title="Permalink to this headline">¶</a></h2>
 <p>The application can make the encoder use the external Bitrate Control (BRC)
 instead of the native bitrate control. To make the encoder use the external BRC,
@@ -4798,12 +4797,10 @@ corresponding functions: <a class="reference internal" href="../API_ref/VPL_func
 <a class="reference internal" href="../API_ref/VPL_func_vid_encode.html#_CPPv420MFXVideoENCODE_Reset10mfxSessionP13mfxVideoParam" title="MFXVideoENCODE_Reset"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoENCODE_Reset()</span></code></a>, and <a class="reference internal" href="../API_ref/VPL_func_vid_encode.html#_CPPv420MFXVideoENCODE_Close10mfxSession" title="MFXVideoENCODE_Close"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoENCODE_Close()</span></code></a>. The
 following figure shows asynchronous encoding flow with external BRC (using
 <code class="docutils literal notranslate"><span class="pre">GetFrameCtrl</span></code> and <code class="docutils literal notranslate"><span class="pre">Update</span></code>):</p>
-<figure class="align-default" id="id1">
+<div class="figure align-default" id="id1">
 <img alt="Asynchronous encoding flow with external BRC" src="../../../../_images/extbrc_async.png" />
-<figcaption>
-<p><span class="caption-text">Asynchronous encoding flow with external BRC</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">Asynchronous encoding flow with external BRC</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">IntAsyncDepth</span></code> is the oneVPL max internal asynchronous encoding queue
@@ -5389,8 +5386,8 @@ size. It is always less than or equal to <a class="reference internal" href="../
    <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-</section>
-<section id="jpeg">
+</div>
+<div class="section" id="jpeg">
 <h2>JPEG<a class="headerlink" href="#jpeg" title="Permalink to this headline">¶</a></h2>
 <p>The application can use the same encoding procedures for JPEG/motion JPEG
 encoding, as shown in the following pseudo code:</p>
@@ -5442,8 +5439,8 @@ where <strong>Width</strong> and <strong>Height</strong> are width and height of
 <p>The equation equals 1 for a monochrome picture, 1.5 for NV12 and YV12 color
 formats, 2 for YUY2 color format, and 3 for RGB32 color format (alpha channel is
 not encoded).</p>
-</section>
-<section id="multi-view-video-encoding">
+</div>
+<div class="section" id="multi-view-video-encoding">
 <h2>Multi-view Video Encoding<a class="headerlink" href="#multi-view-video-encoding" title="Permalink to this headline">¶</a></h2>
 <p>Similar to the decoding and video processing initialization procedures, the
 application attaches the <a class="reference internal" href="../API_ref/VPL_structs_cross_component.html#_CPPv416mfxExtMVCSeqDesc" title="mfxExtMVCSeqDesc"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">mfxExtMVCSeqDesc</span></code></a> structure to the
@@ -5525,8 +5522,8 @@ already been submitted.</p>
 <span class="n">MFXVideoENCODE_Close</span><span class="p">(</span><span class="n">session</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

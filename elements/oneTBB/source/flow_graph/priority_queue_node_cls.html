@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>priority_queue_node &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4599,7 +4598,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="priority-queue-node">
+  <div class="section" id="priority-queue-node">
 <h1>priority_queue_node<a class="headerlink" href="#priority-queue-node" title="Permalink to this headline">¶</a></h1>
 <p><strong>[flow_graph.priority_queue_node]</strong></p>
 <p>A class template that forwards messages in a priority order.</p>
@@ -4634,7 +4633,7 @@ Standard section. If <code class="docutils literal notranslate"><span class="pre
 <p>The next message to be forwarded has the largest priority as determined by the <code class="docutils literal notranslate"><span class="pre">Compare</span></code> template argument.</p>
 <p><code class="docutils literal notranslate"><span class="pre">priority_queue_node</span></code> is a <code class="docutils literal notranslate"><span class="pre">graph_node</span></code>, <code class="docutils literal notranslate"><span class="pre">receiver&lt;T&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">sender&lt;T&gt;</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">priority_queue_node</span></code> has a <cite>buffering</cite> and <cite>single-push</cite> <a class="reference internal" href="forwarding_and_buffering.html"><span class="doc">properties</span></a>.</p>
-<section id="member-functions">
+<div class="section" id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb4flow19priority_node_queue19priority_queue_nodeER5graph">
@@ -4667,15 +4666,15 @@ Otherwise, returns <code class="docutils literal notranslate"><span class="pre">
 priority is copied to <code class="docutils literal notranslate"><span class="pre">v</span></code>.</p>
 </dd></dl>
 
-</section>
-<section id="example">
+</div>
+<div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>Usage scenario is similar to <a class="reference internal" href="sequencer_node_cls.html"><span class="doc">sequencer_node</span></a> except that the
 <code class="docutils literal notranslate"><span class="pre">priority_queue_node</span></code> provides local order, passing the message with highest priority of all
 stored at the moment, while <code class="docutils literal notranslate"><span class="pre">sequencer_node</span></code> enforces global order and does not allow a
 “smaller priority” message to pass through before all preceding messages.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

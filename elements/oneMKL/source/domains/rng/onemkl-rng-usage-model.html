@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>oneMKL RNG Usage Model &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4599,7 +4598,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="onemkl-rng-usage-model">
+  <div class="section" id="onemkl-rng-usage-model">
 <span id="id1"></span><h1>oneMKL RNG Usage Model<a class="headerlink" href="#onemkl-rng-usage-model" title="Permalink to this headline">¶</a></h1>
 <p class="rubric">Description</p>
 <p>A typical algorithm for random number generators is as follows:</p>
@@ -4632,7 +4631,7 @@ equal to 777. The generator is used to generate 10,000 normally
 distributed random numbers with parameters <code class="docutils literal notranslate"><span class="pre">a</span></code> = 5 and <code class="docutils literal notranslate"><span class="pre">sigma</span></code>=
 2. The purpose of the example is to calculate the sample mean for
 normal distribution with the given parameters.</p>
-<section id="buffer-based-example">
+<div class="section" id="buffer-based-example">
 <h2>Buffer-based example<a class="headerlink" href="#buffer-based-example" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
@@ -4666,8 +4665,8 @@ normal distribution with the given parameters.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="usm-based-example">
+</div>
+<div class="section" id="usm-based-example">
 <h2>USM-based example<a class="headerlink" href="#usm-based-example" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
@@ -4707,8 +4706,8 @@ normal distribution with the given parameters.</p>
 <p class="rubric">USM usage</p>
 <p>You can also use USM with raw pointers by using the sycl::malloc_shared/malloc_device functions.</p>
 <p><strong>Parent topic:</strong> <a class="reference internal" href="../domains.html#onemkl-rng"><span class="std std-ref">Random Number Generators</span></a></p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

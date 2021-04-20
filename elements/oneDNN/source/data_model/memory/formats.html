@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Memory Formats &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4615,13 +4614,13 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="memory-formats">
+  <div class="section" id="memory-formats">
 <span id="memory-formats-label"></span><h1>Memory Formats<a class="headerlink" href="#memory-formats" title="Permalink to this headline">¶</a></h1>
 <p>In oneDNN memory format is how a multidimensional tensor is stored in
 1-dimensional linear memory address space. oneDNN specifies two kinds of memory
 formats: <em>plain</em> which correspond to traditional multidimensional arrays, and
 <em>optimized</em> which are completely opaque.</p>
-<section id="plain-memory-formats">
+<div class="section" id="plain-memory-formats">
 <h2>Plain Memory Formats<a class="headerlink" href="#plain-memory-formats" title="Permalink to this headline">¶</a></h2>
 <p>Plain memory formats describe how multidimensional tensors are laid out in
 memory using an array of <span class="math notranslate nohighlight">\(\operatorname{dimensions}\)</span> and an array of <span class="math notranslate nohighlight">\(\operatorname{strides}\)</span> both of which
@@ -4684,8 +4683,8 @@ order.</p>
         <span class="n">strides_transposed</span><span class="p">};</span>
 </pre></div>
 </div>
-</section>
-<section id="format-tags">
+</div>
+<div class="section" id="format-tags">
 <h2>Format Tags<a class="headerlink" href="#format-tags" title="Permalink to this headline">¶</a></h2>
 <p>In addition to strides, oneDNN provides named <em>format tags</em> via the
 <a class="reference internal" href="#_CPPv4N4dnnl6memory10format_tagE" title="dnnl::memory::format_tag"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::memory::format_tag</span></code></a> enum type. The enumerators of this type can be used instead
@@ -4729,8 +4728,8 @@ for CNNs discussed above).</p></li>
 <li><p><a class="reference internal" href="#_CPPv4N4dnnl6memory10format_tag4ldioE" title="dnnl::memory::format_tag::ldio"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">ldio</span></code></a> is an alias for <a class="reference internal" href="#_CPPv4N4dnnl6memory10format_tag4abcdE" title="dnnl::memory::format_tag::abcd"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">abcd</span></code></a>.</p></li>
 <li><p><a class="reference internal" href="#_CPPv4N4dnnl6memory10format_tag4ldoiE" title="dnnl::memory::format_tag::ldoi"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">ldoi</span></code></a> is an alias for <a class="reference internal" href="#_CPPv4N4dnnl6memory10format_tag4abdcE" title="dnnl::memory::format_tag::abdc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">abdc</span></code></a>.</p></li>
 </ul>
-</section>
-<section id="optimized-format-any">
+</div>
+<div class="section" id="optimized-format-any">
 <h2>Optimized Format ‘any’<a class="headerlink" href="#optimized-format-any" title="Permalink to this headline">¶</a></h2>
 <p>Another kind of format that oneDNN supports is an opaque <em>optimized</em> memory
 format that cannot be created directly from <span class="math notranslate nohighlight">\(\operatorname{strides}\)</span> and <span class="math notranslate nohighlight">\(\operatorname{dimensions}\)</span> arrays. A
@@ -4746,8 +4745,8 @@ general operations like <a class="reference internal" href="objects.html#_CPPv4N
 <a class="reference internal" href="objects.html#_CPPv4NK4dnnl6memory4desc14submemory_descERK4dimsRK4dimsb" title="dnnl::memory::desc::submemory_desc"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::memory::desc::submemory_desc()</span></code></a> may fail. It is in general incorrect to use
 product of dimension sizes to calculate amount of memory required to store data:
 <a class="reference internal" href="objects.html#_CPPv4NK4dnnl6memory4desc8get_sizeEv" title="dnnl::memory::desc::get_size"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::memory::desc::get_size()</span></code></a> must be used instead.</p>
-</section>
-<section id="memory-format-propagation">
+</div>
+<div class="section" id="memory-format-propagation">
 <span id="memory-format-propagation-label"></span><h2>Memory Format Propagation<a class="headerlink" href="#memory-format-propagation" title="Permalink to this headline">¶</a></h2>
 <p>Memory format propagation is one of the central notions that needs to be
 well-understood to use oneDNN correctly.</p>
@@ -4804,8 +4803,8 @@ operation description initialization:</p>
 propagation when running training workloads. This is achieved via the
 <code class="docutils literal notranslate"><span class="pre">hint_pd</span></code> arguments of primitive descriptor constructors for primitives that
 implement backward propagation.</p>
-</section>
-<section id="api">
+</div>
+<div class="section" id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enum">
 <dt id="_CPPv4N4dnnl6memory10format_tagE">
@@ -5275,8 +5274,8 @@ implement backward propagation.</p>
 
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

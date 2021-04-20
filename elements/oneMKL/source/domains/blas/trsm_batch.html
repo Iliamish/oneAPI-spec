@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>trsm_batch &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4600,7 +4599,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="trsm-batch">
+  <div class="section" id="trsm-batch">
 <span id="onemkl-blas-trsm-batch"></span><h1>trsm_batch<a class="headerlink" href="#trsm-batch" title="Permalink to this headline">¶</a></h1>
 <p>Computes a group of <code class="docutils literal notranslate"><span class="pre">trsm</span></code> operations.</p>
 <p class="rubric" id="onemkl-blas-trsm-batch-description">Description</p>
@@ -4629,7 +4628,7 @@ solves an equation of the form op(A) * X = alpha * B or X * op(A) = alpha * B.</
 </tbody>
 </table>
 </div></blockquote>
-<section id="trsm-batch-buffer-version">
+<div class="section" id="trsm-batch-buffer-version">
 <span id="onemkl-blas-trsm-batch-buffer"></span><h2>trsm_batch (Buffer Version)<a class="headerlink" href="#trsm-batch-buffer-version" title="Permalink to this headline">¶</a></h2>
 <p class="rubric">Description</p>
 <p>The buffer version of <code class="docutils literal notranslate"><span class="pre">trsm_batch</span></code> supports only the strided API.</p>
@@ -4753,8 +4752,8 @@ least <code class="docutils literal notranslate"><span class="pre">n</span></cod
 <p>If <code class="docutils literal notranslate"><span class="pre">alpha</span></code> = 0, matrix <code class="docutils literal notranslate"><span class="pre">B</span></code> is set to zero and the matrices <code class="docutils literal notranslate"><span class="pre">A</span></code>
 and <code class="docutils literal notranslate"><span class="pre">B</span></code> do not need to be initialized before calling <code class="docutils literal notranslate"><span class="pre">trsm_batch</span></code>.</p>
 </div>
-</section>
-<section id="trsm-batch-usm-version">
+</div>
+<div class="section" id="trsm-batch-usm-version">
 <h2>trsm_batch (USM Version)<a class="headerlink" href="#trsm-batch-usm-version" title="Permalink to this headline">¶</a></h2>
 <p class="rubric">Description</p>
 <p>The USM version of <code class="docutils literal notranslate"><span class="pre">trsm_batch</span></code> supports the group API and strided API.</p>
@@ -5032,8 +5031,8 @@ and <code class="docutils literal notranslate"><span class="pre">B</span></code>
 <p><a class="reference internal" href="../../architecture/architecture.html#onemkl-exception-unimplemented"><span class="std std-ref">oneapi::mkl::unimplemented</span></a></p>
 <p><strong>Parent topic:</strong> <a class="reference internal" href="blas-like-extensions.html#blas-like-extensions"><span class="std std-ref">BLAS-like Extensions</span></a></p>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

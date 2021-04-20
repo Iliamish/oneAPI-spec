@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OSPRay API &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet" />
@@ -5017,17 +5016,17 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="ospray-api">
+  <div class="section" id="ospray-api">
 <h1>OSPRay API<a class="headerlink" href="#ospray-api" title="Permalink to this headline">¶</a></h1>
 <p>To access the OSPRay API you first need to include the OSPRay header</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;ospray/ospray.h&quot;</span><span class="cp"></span>
 </pre></div>
 </div>
 <p>where the API is compatible with C99 and C++.</p>
-<section id="initialization-and-shutdown">
+<div class="section" id="initialization-and-shutdown">
 <h2>Initialization and Shutdown<a class="headerlink" href="#initialization-and-shutdown" title="Permalink to this headline">¶</a></h2>
 <p>To use the API, OSPRay must be initialized with a “device”. A device is the object which implements the API. Creating and initializing a device can be done in either of two ways: command line arguments using <code class="docutils literal notranslate"><span class="pre">ospInit</span></code> or manually instantiating a device and setting parameters on it.</p>
-<section id="command-line-arguments">
+<div class="section" id="command-line-arguments">
 <h3>Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this headline">¶</a></h3>
 <p>The first is to do so by giving OSPRay the command line from <code class="docutils literal notranslate"><span class="pre">main()</span></code> by calling</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">OSPError</span> <span class="nf">ospInit</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">);</span>
@@ -5084,8 +5083,8 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-</section>
-<section id="manual-device-instantiation">
+</div>
+<div class="section" id="manual-device-instantiation">
 <h3>Manual Device Instantiation<a class="headerlink" href="#manual-device-instantiation" title="Permalink to this headline">¶</a></h3>
 <p>The second method of initialization is to explicitly create the device and possibly set parameters. This method looks almost identical to how other <a class="reference external" href="#objects">objects</a> are created and used by OSPRay (described in later sections). The first step is to create the device with</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">OSPDevice</span> <span class="nf">ospNewDevice</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">type</span><span class="p">);</span>
@@ -5176,8 +5175,8 @@ SPDX-License-Identifier: MIT
 <span class="n">OSP_DEVICE_SO_VERSION</span>
 </pre></div>
 </div>
-</section>
-<section id="environment-variables">
+</div>
+<div class="section" id="environment-variables">
 <h3>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h3>
 <p>OSPRay’s generic device parameters can be overridden via environment variables for easy changes to OSPRay’s behavior without needing to change the application (variables are prefixed by convention with “<code class="docutils literal notranslate"><span class="pre">OSPRAY_</span></code>”):</p>
 <table class="table" id="id17">
@@ -5222,8 +5221,8 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>Note that these environment variables take precedence over values specified through <code class="docutils literal notranslate"><span class="pre">ospInit</span></code> or manually set device parameters.</p>
-</section>
-<section id="error-handling-and-status-messages">
+</div>
+<div class="section" id="error-handling-and-status-messages">
 <h3>Error Handling and Status Messages<a class="headerlink" href="#error-handling-and-status-messages" title="Permalink to this headline">¶</a></h3>
 <p>The following errors are currently used by OSPRay:</p>
 <table class="table" id="id18">
@@ -5288,25 +5287,25 @@ SPDX-License-Identifier: MIT
 </div>
 <p>which OSPRay will use to emit status messages. By default, OSPRay uses a callback which does nothing, so any output desired by an application will require that a callback is provided. Note that callbacks for C++ <code class="docutils literal notranslate"><span class="pre">std::cout</span></code> and <code class="docutils literal notranslate"><span class="pre">std::cerr</span></code> can be alternatively set through <code class="docutils literal notranslate"><span class="pre">ospInit()</span></code> or the <code class="docutils literal notranslate"><span class="pre">OSPRAY_LOG_OUTPUT</span></code> environment variable.</p>
 <p>Applications can clear either callback by passing <code class="docutils literal notranslate"><span class="pre">NULL</span></code> instead of an actual function pointer.</p>
-</section>
-<section id="loading-ospray-extensions-at-runtime">
+</div>
+<div class="section" id="loading-ospray-extensions-at-runtime">
 <h3>Loading OSPRay Extensions at Runtime<a class="headerlink" href="#loading-ospray-extensions-at-runtime" title="Permalink to this headline">¶</a></h3>
 <p>OSPRay’s functionality can be extended via plugins (which we call “modules”), which are implemented in shared libraries. To load module <code class="docutils literal notranslate"><span class="pre">name</span></code> from <code class="docutils literal notranslate"><span class="pre">libospray_module_&lt;name&gt;.so</span></code> (on Linux and Mac OS X) or <code class="docutils literal notranslate"><span class="pre">ospray_module_&lt;name&gt;.dll</span></code> (on Windows) use</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">OSPError</span> <span class="nf">ospLoadModule</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Modules are searched in OS-dependent paths. <code class="docutils literal notranslate"><span class="pre">ospLoadModule</span></code> returns <code class="docutils literal notranslate"><span class="pre">OSP_NO_ERROR</span></code> if the plugin could be successfully loaded.</p>
-</section>
-<section id="shutting-down-ospray">
+</div>
+<div class="section" id="shutting-down-ospray">
 <h3>Shutting Down OSPRay<a class="headerlink" href="#shutting-down-ospray" title="Permalink to this headline">¶</a></h3>
 <p>When the application is finished using OSPRay (typically on application exit), the OSPRay API should be finalized with</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">ospShutdown</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>This API call ensures that the current device is cleaned up appropriately. Due to static object allocation having non-deterministic ordering, it is recommended that applications call <code class="docutils literal notranslate"><span class="pre">ospShutdown()</span></code> before the calling application process terminates.</p>
-</section>
-</section>
-<section id="objects">
+</div>
+</div>
+<div class="section" id="objects">
 <h2>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h2>
 <p>All entities of OSPRay (the <a class="reference external" href="#renderers">renderer</a>, <a class="reference external" href="#volumes">volumes</a>, <a class="reference external" href="#geometries">geometries</a>, <a class="reference external" href="#lights">lights</a>, <a class="reference external" href="#cameras">cameras</a>, …) are a logical specialization of <code class="docutils literal notranslate"><span class="pre">OSPObject</span></code> and share common mechanism to deal with parameters and lifetime.</p>
 <p>An important aspect of object parameters is that parameters do not get passed to objects immediately. Instead, parameters are not visible at all to objects until they get explicitly committed to a given object via a call to</p>
@@ -5325,7 +5324,7 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p>It is important to note that this is only necessary if the application wants to call <code class="docutils literal notranslate"><span class="pre">ospRelease</span></code> on an object more than once: objects which contain other objects as parameters internally increment/decrement ref counts and should not be explicitly done by the application.</p>
-<section id="parameters">
+<div class="section" id="parameters">
 <h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
 <p>Parameters allow to configure the behavior of and to pass data to objects. However, objects do <em>not</em> have an explicit interface for reasons of high flexibility and a more stable compile-time API. Instead, parameters are passed separately to objects in an arbitrary order, and unknown parameters will simply be ignored (though a warning message will be posted). The following function allows adding various types of parameters with name <code class="docutils literal notranslate"><span class="pre">id</span></code> to a given object:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">ospSetParam</span><span class="p">(</span><span class="n">OSPObject</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">id</span><span class="p">,</span> <span class="n">OSPDataType</span> <span class="n">type</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">mem</span><span class="p">);</span>
@@ -5337,8 +5336,8 @@ SPDX-License-Identifier: MIT
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">ospRemoveParam</span><span class="p">(</span><span class="n">OSPObject</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">id</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="data">
+</div>
+<div class="section" id="data">
 <h3>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
 <p>OSPRay consumes data arrays from the application using a specific object type, <code class="docutils literal notranslate"><span class="pre">OSPData</span></code>. There are several components to describing a data array: element type, 1/2/3 dimensional striding, and whether the array is shared with the application or copied into opaque, OSPRay-owned memory.</p>
 <p>Shared data arrays require that the application’s array memory outlives the lifetime of the created <code class="docutils literal notranslate"><span class="pre">OSPData</span></code>, as OSPRay is referring to application memory. Where this is not preferable, applications use opaque arrays to allow the <code class="docutils literal notranslate"><span class="pre">OSPData</span></code> to own the lifetime of the array memory. However, opaque arrays dictate the cost of copying data into it, which should be kept in mind.</p>
@@ -5485,16 +5484,16 @@ SPDX-License-Identifier: MIT
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">ospSetObject</span><span class="p">(</span><span class="n">OSPObject</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">id</span><span class="p">,</span> <span class="n">OSPData</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="volumes">
+</div>
+</div>
+<div class="section" id="volumes">
 <h2>Volumes<a class="headerlink" href="#volumes" title="Permalink to this headline">¶</a></h2>
 <p>Volumes are volumetric data sets with discretely sampled values in 3D space, typically a 3D scalar field. To create a new volume object of given type <code class="docutils literal notranslate"><span class="pre">type</span></code> use</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">OSPVolume</span> <span class="nf">ospNewVolume</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">type</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Note that OSPRay’s implementation forwards <code class="docutils literal notranslate"><span class="pre">type</span></code> directly to Open VKL, allowing new Open VKL volume types to be usable within OSPRay without the need to change (or even recompile) OSPRay.</p>
-<section id="structured-regular-volume">
+<div class="section" id="structured-regular-volume">
 <h3>Structured Regular Volume<a class="headerlink" href="#structured-regular-volume" title="Permalink to this headline">¶</a></h3>
 <p>Structured volumes only need to store the values of the samples, because their addresses in memory can be easily computed from a 3D position. A common type of structured volumes are regular grids.</p>
 <p>Structured regular volumes are created by passing the type string “<code class="docutils literal notranslate"><span class="pre">structuredRegular</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewVolume</span></code>. Structured volumes are represented through an <code class="docutils literal notranslate"><span class="pre">OSPData</span></code> 3D array <code class="docutils literal notranslate"><span class="pre">data</span></code> (which may or may not be shared with the application). The voxel data must be laid out in xyz-order <a class="footnote-reference brackets" href="#id9" id="id2">2</a> and can be compact (best for performance) or can have a stride between voxels, specified through the <code class="docutils literal notranslate"><span class="pre">byteStride1</span></code> parameter when creating the <code class="docutils literal notranslate"><span class="pre">OSPData</span></code>. Only 1D strides are supported, additional strides between scanlines (2D, <code class="docutils literal notranslate"><span class="pre">byteStride2</span></code>) and slices (3D, <code class="docutils literal notranslate"><span class="pre">byteStride3</span></code>) are not.</p>
@@ -5543,16 +5542,14 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>The size of the volume is inferred from the size of the 3D array <code class="docutils literal notranslate"><span class="pre">data</span></code>, as is the type of the voxel values (currently supported are: <code class="docutils literal notranslate"><span class="pre">OSP_UCHAR</span></code>, <code class="docutils literal notranslate"><span class="pre">OSP_SHORT</span></code>, <code class="docutils literal notranslate"><span class="pre">OSP_USHORT</span></code>, <code class="docutils literal notranslate"><span class="pre">OSP_FLOAT</span></code>, and <code class="docutils literal notranslate"><span class="pre">OSP_DOUBLE</span></code>).</p>
-</section>
-<section id="structured-spherical-volume">
+</div>
+<div class="section" id="structured-spherical-volume">
 <h3>Structured Spherical Volume<a class="headerlink" href="#structured-spherical-volume" title="Permalink to this headline">¶</a></h3>
 <p>Structured spherical volumes are also supported, which are created by passing a type string of “<code class="docutils literal notranslate"><span class="pre">structuredSpherical</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewVolume</span></code>. The grid dimensions and parameters are defined in terms of radial distance <span class="math notranslate nohighlight">\(r\)</span>, inclination angle <span class="math notranslate nohighlight">\(\theta\)</span>, and azimuthal angle <span class="math notranslate nohighlight">\(\phi\)</span>, conforming with the ISO convention for spherical coordinate systems. The coordinate system and parameters understood by structured spherical volumes are summarized below.</p>
-<figure class="align-default" id="id21">
+<div class="figure align-default" id="id21">
 <a class="reference internal image-reference" href="../../../_images/structured_spherical_coords.svg"><img alt="Coordinate system of structured spherical volumes." src="../../../_images/structured_spherical_coords.svg" width="60.0%" /></a>
-<figcaption>
-<p><span class="caption-text">Coordinate system of structured spherical volumes.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">Coordinate system of structured spherical volumes.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
 <table class="table" id="id22">
 <caption><span class="caption-text">Configuration parameters for structured spherical volumes.</span><a class="headerlink" href="#id22" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -5603,8 +5600,8 @@ SPDX-License-Identifier: MIT
 <li><p><span class="math notranslate nohighlight">\(0 \leq \theta \leq 180\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(0 \leq \phi \leq 360\)</span></p></li>
 </ul>
-</section>
-<section id="adaptive-mesh-refinement-amr-volume">
+</div>
+<div class="section" id="adaptive-mesh-refinement-amr-volume">
 <h3>Adaptive Mesh Refinement (AMR) Volume<a class="headerlink" href="#adaptive-mesh-refinement-amr-volume" title="Permalink to this headline">¶</a></h3>
 <p>OSPRay currently supports block-structured (Berger-Colella) AMR volumes. Volumes are specified as a list of blocks, which exist at levels of refinement in potentially overlapping regions. Blocks exist in a tree structure, with coarser refinement level blocks containing finer blocks. The cell width is equal for all blocks at the same refinement level, though blocks at a coarser level have a larger cell width than finer levels.</p>
 <p>There can be any number of refinement levels and any number of blocks at any level of refinement. An AMR volume type is created by passing the type string “<code class="docutils literal notranslate"><span class="pre">amr</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewVolume</span></code>.</p>
@@ -5700,8 +5697,8 @@ SPDX-License-Identifier: MIT
 </ol>
 </li>
 </ol>
-</section>
-<section id="unstructured-volume">
+</div>
+<div class="section" id="unstructured-volume">
 <h3>Unstructured Volume<a class="headerlink" href="#unstructured-volume" title="Permalink to this headline">¶</a></h3>
 <p>Unstructured volumes can have their topology and geometry freely defined. Geometry can be composed of tetrahedral, hexahedral, wedge or pyramid cell types. The data format used is compatible with VTK and consists of multiple arrays: vertex positions and values, vertex indices, cell start indices, cell types, and cell values. An unstructured volume type is created by passing the type string “<code class="docutils literal notranslate"><span class="pre">unstructured</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewVolume</span></code>.</p>
 <p>Sampled cell values can be specified either per-vertex (<code class="docutils literal notranslate"><span class="pre">vertex.data</span></code>) or per-cell (<code class="docutils literal notranslate"><span class="pre">cell.data</span></code>). If both arrays are set, <code class="docutils literal notranslate"><span class="pre">cell.data</span></code> takes precedence.</p>
@@ -5798,17 +5795,15 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-</section>
-<section id="vdb-volume">
+</div>
+<div class="section" id="vdb-volume">
 <h3>VDB Volume<a class="headerlink" href="#vdb-volume" title="Permalink to this headline">¶</a></h3>
 <p>VDB volumes implement a data structure that is very similar to the data structure outlined in Museth [1], they are created by passing the type string “<code class="docutils literal notranslate"><span class="pre">vdb</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewVolume</span></code>.</p>
 <p>The data structure is a hierarchical regular grid at its core: Nodes are regular grids, and each grid cell may either store a constant value (this is called a tile), or child pointers. Nodes in VDB trees are wide: Nodes on the first level have a resolution of 32<sup>3</sup> voxels, on the next level 16<sup>3</sup>, and on the leaf level 8<sup>3</sup> voxels. All nodes on a given level have the same resolution. This makes it easy to find the node containing a coordinate using shift operations (see [1]). VDB leaf nodes are implicit in OSPRay / Open VKL: they are stored as pointers to user-provided data.</p>
-<figure class="align-default" id="id25">
+<div class="figure align-default" id="id25">
 <a class="reference internal image-reference" href="../../../_images/vdb_structure.png"><img alt="Topology of VDB volumes." src="../../../_images/vdb_structure.png" style="width: 80.0%;" /></a>
-<figcaption>
-<p><span class="caption-text">Topology of VDB volumes.</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">Topology of VDB volumes.</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
 <p>VDB volumes interpret input data as constant cells (which are then potentially filtered). This is in contrast to <code class="docutils literal notranslate"><span class="pre">structuredRegular</span></code> volumes, which have a vertex-centered interpretation.</p>
 <p>The VDB implementation in OSPRay / Open VKL follows the following goals:</p>
 <ul class="simple">
@@ -5864,8 +5859,8 @@ SPDX-License-Identifier: MIT
 <ol class="arabic simple">
 <li><p>Museth, K. VDB: High-Resolution Sparse Volumes with Dynamic Topology. ACM Transactions on Graphics 32(3), 2013. DOI: 10.1145/2487228.2487235</p></li>
 </ol>
-</section>
-<section id="particle-volume">
+</div>
+<div class="section" id="particle-volume">
 <h3>Particle Volume<a class="headerlink" href="#particle-volume" title="Permalink to this headline">¶</a></h3>
 <p>Particle volumes consist of a set of points in space. Each point has a position, a radius, and a weight typically associated with an attribute. Particle volumes are created by passing the type string “<code class="docutils literal notranslate"><span class="pre">particle</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewVolume</span></code>.</p>
 <p>A radial basis function defines the contribution of that particle. Currently, we use the Gaussian radial basis function</p>
@@ -5936,8 +5931,8 @@ SPDX-License-Identifier: MIT
 </ol>
 </li>
 </ol>
-</section>
-<section id="transfer-function">
+</div>
+<div class="section" id="transfer-function">
 <h3>Transfer Function<a class="headerlink" href="#transfer-function" title="Permalink to this headline">¶</a></h3>
 <p>Transfer functions map the scalar values of volumes to color and opacity and thus they can be used to visually emphasize certain features of the volume. To create a new transfer function of given type <code class="docutils literal notranslate"><span class="pre">type</span></code> use</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">OSPTransferFunction</span> <span class="nf">ospNewTransferFunction</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">type</span><span class="p">);</span>
@@ -5974,8 +5969,8 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>The arrays <code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">opacity</span></code> can be of different length.</p>
-</section>
-<section id="volumetricmodels">
+</div>
+<div class="section" id="volumetricmodels">
 <h3>VolumetricModels<a class="headerlink" href="#volumetricmodels" title="Permalink to this headline">¶</a></h3>
 <p>Volumes in OSPRay are given volume rendering appearance information through VolumetricModels. This decouples the physical representation of the volume (and possible acceleration structures it contains) to rendering-specific parameters (where more than one set may exist concurrently). To create a volume instance, call</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">OSPVolumetricModel</span> <span class="nf">ospNewVolumetricModel</span><span class="p">(</span><span class="n">OSPVolume</span> <span class="n">volume</span><span class="p">);</span>
@@ -6020,16 +6015,16 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="geometries">
+</div>
+</div>
+<div class="section" id="geometries">
 <h2>Geometries<a class="headerlink" href="#geometries" title="Permalink to this headline">¶</a></h2>
 <p>Geometries in OSPRay are objects that describe intersectable surfaces. To create a new geometry object of given type <code class="docutils literal notranslate"><span class="pre">type</span></code> use</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">OSPGeometry</span> <span class="nf">ospNewGeometry</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">type</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Note that in the current implementation geometries are limited to a maximum of 2<sup>32</sup> primitives.</p>
-<section id="mesh">
+<div class="section" id="mesh">
 <h3>Mesh<a class="headerlink" href="#mesh" title="Permalink to this headline">¶</a></h3>
 <p>A mesh consisting of either triangles or quads is created by calling <code class="docutils literal notranslate"><span class="pre">ospNewGeometry</span></code> with type string “<code class="docutils literal notranslate"><span class="pre">mesh</span></code>”. Once created, a mesh recognizes the following parameters:</p>
 <table class="table" id="id30">
@@ -6070,8 +6065,8 @@ SPDX-License-Identifier: MIT
 </table>
 <p>The data type of index arrays differentiates between the underlying geometry, triangles are used for a index with <code class="docutils literal notranslate"><span class="pre">vec3ui</span></code> type and quads for <code class="docutils literal notranslate"><span class="pre">vec4ui</span></code> type. Quads are internally handled as a pair of two triangles, thus mixing triangles and quads is supported by encoding some triangle as a quad with the last two vertex indices being identical (<code class="docutils literal notranslate"><span class="pre">w=z</span></code>).</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">vertex.position</span></code> and <code class="docutils literal notranslate"><span class="pre">index</span></code> arrays are mandatory to create a valid mesh.</p>
-</section>
-<section id="subdivision">
+</div>
+<div class="section" id="subdivision">
 <h3>Subdivision<a class="headerlink" href="#subdivision" title="Permalink to this headline">¶</a></h3>
 <p>A mesh consisting of subdivision surfaces, created by specifying a geometry of type “<code class="docutils literal notranslate"><span class="pre">subdivision</span></code>”. Once created, a subdivision recognizes the following parameters:</p>
 <table class="table" id="id31">
@@ -6159,8 +6154,8 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>The <code class="docutils literal notranslate"><span class="pre">vertex</span></code> and <code class="docutils literal notranslate"><span class="pre">index</span></code> arrays are mandatory to create a valid subdivision surface. If no <code class="docutils literal notranslate"><span class="pre">face</span></code> array is present then a pure quad mesh is assumed (the number of indices must be a multiple of 4). Optionally supported are edge and vertex creases.</p>
-</section>
-<section id="spheres">
+</div>
+<div class="section" id="spheres">
 <h3>Spheres<a class="headerlink" href="#spheres" title="Permalink to this headline">¶</a></h3>
 <p>A geometry consisting of individual spheres, each of which can have an own radius, is created by calling <code class="docutils literal notranslate"><span class="pre">ospNewGeometry</span></code> with type string “<code class="docutils literal notranslate"><span class="pre">sphere</span></code>”. The spheres will not be tessellated but rendered procedurally and are thus perfectly round. To allow a variety of sphere representations in the application this geometry allows a flexible way of specifying the data of center position and radius within a <a class="reference external" href="#data">data</a> array:</p>
 <table class="table" id="id32">
@@ -6201,8 +6196,8 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-</section>
-<section id="curves">
+</div>
+<div class="section" id="curves">
 <h3>Curves<a class="headerlink" href="#curves" title="Permalink to this headline">¶</a></h3>
 <p>A geometry consisting of multiple curves is created by calling <code class="docutils literal notranslate"><span class="pre">ospNewGeometry</span></code> with type string “<code class="docutils literal notranslate"><span class="pre">curve</span></code>”. The parameters defining this geometry are listed in the table below.</p>
 <table class="table" id="id33">
@@ -6314,8 +6309,8 @@ SPDX-License-Identifier: MIT
 <dt>OSP_DISJOINT</dt><dd><p>Only supported for basis <code class="docutils literal notranslate"><span class="pre">OSP_LINEAR</span></code>; the segments are open and not connected at the joints, i.e., the curve segments are either individual cones or cylinders.</p>
 </dd>
 </dl>
-</section>
-<section id="boxes">
+</div>
+<div class="section" id="boxes">
 <h3>Boxes<a class="headerlink" href="#boxes" title="Permalink to this headline">¶</a></h3>
 <p>OSPRay can directly render axis-aligned bounding boxes without the need to convert them to quads or triangles. To do so create a boxes geometry by calling <code class="docutils literal notranslate"><span class="pre">ospNewGeometry</span></code> with type string “<code class="docutils literal notranslate"><span class="pre">box</span></code>”.</p>
 <table class="table" id="id34">
@@ -6338,8 +6333,8 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-</section>
-<section id="planes">
+</div>
+<div class="section" id="planes">
 <h3>Planes<a class="headerlink" href="#planes" title="Permalink to this headline">¶</a></h3>
 <p>OSPRay can directly render planes defined by plane equation coefficients in its implicit form <span class="math notranslate nohighlight">\(ax + by + cz + d = 0\)</span>. By default planes are infinite but their extents can be limited by defining optional bounding boxes. A planes geometry can be created by calling <code class="docutils literal notranslate"><span class="pre">ospNewGeometry</span></code> with type string “<code class="docutils literal notranslate"><span class="pre">plane</span></code>”.</p>
 <table class="table" id="id35">
@@ -6366,8 +6361,8 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-</section>
-<section id="isosurfaces">
+</div>
+<div class="section" id="isosurfaces">
 <h3>Isosurfaces<a class="headerlink" href="#isosurfaces" title="Permalink to this headline">¶</a></h3>
 <p>OSPRay can directly render multiple isosurfaces of a volume without first tessellating them. To do so create an isosurfaces geometry by calling <code class="docutils literal notranslate"><span class="pre">ospNewGeometry</span></code> with type string “<code class="docutils literal notranslate"><span class="pre">isosurface</span></code>”. The appearance information of the surfaces is set through the Geometric Model. Per-isosurface colors can be set by passing per-primitive colors to the Geometric Model, in order of the isosurface array.</p>
 <table class="table" id="id36">
@@ -6398,8 +6393,8 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-</section>
-<section id="geometricmodels">
+</div>
+<div class="section" id="geometricmodels">
 <h3>GeometricModels<a class="headerlink" href="#geometricmodels" title="Permalink to this headline">¶</a></h3>
 <p>Geometries are matched with surface appearance information through GeometricModels. These take a geometry, which defines the surface representation, and applies either full-object or per-primitive color and material information. To create a geometric model, call</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">OSPGeometricModel</span> <span class="nf">ospNewGeometricModel</span><span class="p">(</span><span class="n">OSPGeometry</span> <span class="n">geometry</span><span class="p">);</span>
@@ -6452,9 +6447,9 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="lights">
+</div>
+</div>
+<div class="section" id="lights">
 <h2>Lights<a class="headerlink" href="#lights" title="Permalink to this headline">¶</a></h2>
 <p>To create a new light source of given type <code class="docutils literal notranslate"><span class="pre">type</span></code> use</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">OSPLight</span> <span class="nf">ospNewLight</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">type</span><span class="p">);</span>
@@ -6527,7 +6522,7 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>The following light types are supported by most OSPRay renderers.</p>
-<section id="directional-light-distant-light">
+<div class="section" id="directional-light-distant-light">
 <h3>Directional Light / Distant Light<a class="headerlink" href="#directional-light-distant-light" title="Permalink to this headline">¶</a></h3>
 <p>The distant light (or traditionally the directional light) is thought to be far away (outside of the scene), thus its light arrives (almost) as parallel rays. It is created by passing the type string “<code class="docutils literal notranslate"><span class="pre">distant</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewLight</span></code>. The distant light supports <code class="docutils literal notranslate"><span class="pre">OSP_INTENSITY_QUANTITY_RADIANCE</span></code> and <code class="docutils literal notranslate"><span class="pre">OSP_INTENSITY_QUANTITY_IRRADIANCE</span></code> (default) as <code class="docutils literal notranslate"><span class="pre">intensityQuantity</span></code> parameter value. In addition to the <a class="reference external" href="#lights">general parameters</a> understood by all lights the distant light supports the following special parameters:</p>
 <table class="table" id="id40">
@@ -6555,8 +6550,8 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>Setting the angular diameter to a value greater than zero will result in soft shadows when the renderer uses stochastic sampling (like the <a class="reference external" href="#path-tracer">path tracer</a>). For instance, the apparent size of the sun is about 0.53°.</p>
-</section>
-<section id="point-light-sphere-light">
+</div>
+<div class="section" id="point-light-sphere-light">
 <h3>Point Light / Sphere Light<a class="headerlink" href="#point-light-sphere-light" title="Permalink to this headline">¶</a></h3>
 <p>The sphere light (or the special case point light) is a light emitting uniformly in all directions from the surface toward the outside. It does not emit any light toward the inside of the sphere. It is created by passing the type string “<code class="docutils literal notranslate"><span class="pre">sphere</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewLight</span></code>. The point light supports <code class="docutils literal notranslate"><span class="pre">OSP_INTENSITY_QUANTITY_POWER</span></code>, <code class="docutils literal notranslate"><span class="pre">OSP_INTENSITY_QUANTITY_INTENSITY</span></code> (default) and <code class="docutils literal notranslate"><span class="pre">OSP_INTENSITY_QUANTITY_RADIANCE</span></code> as <code class="docutils literal notranslate"><span class="pre">intensityQuantity</span></code> parameter value. In addition to the <a class="reference external" href="#lights">general parameters</a> understood by all lights the sphere light supports the following special parameters:</p>
 <table class="table" id="id41">
@@ -6584,8 +6579,8 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>Setting the radius to a value greater than zero will result in soft shadows when the renderer uses stochastic sampling (like the <a class="reference external" href="#path-tracer">path tracer</a>).</p>
-</section>
-<section id="spotlight-photometric-light">
+</div>
+<div class="section" id="spotlight-photometric-light">
 <h3>Spotlight / Photometric Light<a class="headerlink" href="#spotlight-photometric-light" title="Permalink to this headline">¶</a></h3>
 <p>The spotlight is a light emitting into a cone of directions. It is created by passing the type string “<code class="docutils literal notranslate"><span class="pre">spot</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewLight</span></code>. The spotlight supports <code class="docutils literal notranslate"><span class="pre">OSP_INTENSITY_QUANTITY_POWER</span></code>, <code class="docutils literal notranslate"><span class="pre">OSP_INTENSITY_QUANTITY_INTENSITY</span></code> (default) and <code class="docutils literal notranslate"><span class="pre">OSP_INTENSITY_QUANTITY_RADIANCE</span></code> as <code class="docutils literal notranslate"><span class="pre">intensityQuantity</span></code> parameter value. In addition to the <a class="reference external" href="#lights">general parameters</a> understood by all lights the spotlight supports the special parameters listed in the table.</p>
 <table class="table" id="id42">
@@ -6646,22 +6641,18 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-<figure class="align-default" id="id43">
+<div class="figure align-default" id="id43">
 <img alt="Angles used by the spotlight." src="../../../_images/spot_light.png" />
-<figcaption>
-<p><span class="caption-text">Angles used by the spotlight.</span><a class="headerlink" href="#id43" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">Angles used by the spotlight.</span><a class="headerlink" href="#id43" title="Permalink to this image">¶</a></p>
+</div>
 <p>Setting the radius to a value greater than zero will result in soft shadows when the renderer uses stochastic sampling (like the <a class="reference external" href="#path-tracer">path tracer</a>). Additionally setting the inner radius will result in a ring instead of a disk emitting the light.</p>
 <p>Measured light sources (IES, EULUMDAT, …) are supported by providing an <code class="docutils literal notranslate"><span class="pre">intensityDistribution</span></code> <a class="reference external" href="#data">data</a> array to modulate the intensity per direction. The mapping is using the C-γ coordinate system (see also below figure): the values of the first (or only) dimension of <code class="docutils literal notranslate"><span class="pre">intensityDistribution</span></code> are uniformly mapped to γ in [0–π]; the first intensity value to 0, the last value to π, thus at least two values need to be present. If the array has a second dimension then the intensities are not rotational symmetric around <code class="docutils literal notranslate"><span class="pre">direction</span></code>, but are accordingly mapped to the C-halfplanes in [0–2π]; the first “row” of values to 0 and 2π, the other rows such that they have uniform distance to its neighbors. The orientation of the C0-plane is specified via <code class="docutils literal notranslate"><span class="pre">c0</span></code>. A combination of using an <code class="docutils literal notranslate"><span class="pre">intensityDistribution</span></code> and <code class="docutils literal notranslate"><span class="pre">OSP_INTENSITY_QUANTITY_POWER</span></code> as <code class="docutils literal notranslate"><span class="pre">intensityQuantity</span></code> is not supported at the moment.</p>
-<figure class="align-default" id="id44">
+<div class="figure align-default" id="id44">
 <img alt="C-γ coordinate system for the mapping of ``intensityDistribution`` to the spotlight." src="../../../_images/spot_coords.png" />
-<figcaption>
-<p><span class="caption-text">C-γ coordinate system for the mapping of <code class="docutils literal notranslate"><span class="pre">intensityDistribution</span></code> to the spotlight.</span><a class="headerlink" href="#id44" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="quad-light">
+<p class="caption"><span class="caption-text">C-γ coordinate system for the mapping of <code class="docutils literal notranslate"><span class="pre">intensityDistribution</span></code> to the spotlight.</span><a class="headerlink" href="#id44" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="quad-light">
 <h3>Quad Light<a class="headerlink" href="#quad-light" title="Permalink to this headline">¶</a></h3>
 <p>The quad <a class="footnote-reference brackets" href="#id10" id="id3">3</a> light is a planar, procedural area light source emitting uniformly on one side into the half-space. It is created by passing the type string “<code class="docutils literal notranslate"><span class="pre">quad</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewLight</span></code>. The quad light supports <code class="docutils literal notranslate"><span class="pre">OSP_INTENSITY_QUANTITY_POWER</span></code>, <code class="docutils literal notranslate"><span class="pre">OSP_INTENSITY_QUANTITY_INTENSITY</span></code> and <code class="docutils literal notranslate"><span class="pre">OSP_INTENSITY_QUANTITY_RADIANCE</span></code> (default) as <code class="docutils literal notranslate"><span class="pre">intensityQuantity</span></code> parameter. In addition to the <a class="reference external" href="#lights">general parameters</a> understood by all lights the quad light supports the following special parameters:</p>
 <table class="table" id="id45">
@@ -6692,15 +6683,13 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-<figure class="align-default" id="id46">
+<div class="figure align-default" id="id46">
 <img alt="Defining a quad light which emits toward the reader." src="../../../_images/quad_light.png" />
-<figcaption>
-<p><span class="caption-text">Defining a quad light which emits toward the reader.</span><a class="headerlink" href="#id46" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">Defining a quad light which emits toward the reader.</span><a class="headerlink" href="#id46" title="Permalink to this image">¶</a></p>
+</div>
 <p>The emission side is determined by the cross product of <code class="docutils literal notranslate"><span class="pre">edge1</span></code>×<code class="docutils literal notranslate"><span class="pre">edge2</span></code>. Note that only renderers that use stochastic sampling (like the path tracer) will compute soft shadows from the quad light. Other renderers will just sample the center of the quad light, which results in hard shadows.</p>
-</section>
-<section id="hdri-light">
+</div>
+<div class="section" id="hdri-light">
 <h3>HDRI Light<a class="headerlink" href="#hdri-light" title="Permalink to this headline">¶</a></h3>
 <p>The HDRI light is a textured light source surrounding the scene and illuminating it from infinity. It is created by passing the type string “<code class="docutils literal notranslate"><span class="pre">hdri</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewLight</span></code>. The HDRI light only accepts <code class="docutils literal notranslate"><span class="pre">OSP_INTENSITY_QUANTITY_RADIANCE</span></code> as <code class="docutils literal notranslate"><span class="pre">intensityQuantity</span></code> parameter value. In addition to the <a class="reference external" href="#lights">general parameters</a> the HDRI light supports the following special parameters:</p>
 <table class="table" id="id47">
@@ -6731,20 +6720,18 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-<figure class="align-default" id="id48">
+<div class="figure align-default" id="id48">
 <img alt="Orientation and Mapping of an HDRI Light." src="../../../_images/hdri_light.png" />
-<figcaption>
-<p><span class="caption-text">Orientation and Mapping of an HDRI Light.</span><a class="headerlink" href="#id48" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">Orientation and Mapping of an HDRI Light.</span><a class="headerlink" href="#id48" title="Permalink to this image">¶</a></p>
+</div>
 <p>Note that the <a class="reference external" href="#scivis-renderer">SciVis renderer</a> only shows the HDRI light in the background (like an environment map) without computing illumination of the scene.</p>
-</section>
-<section id="ambient-light">
+</div>
+<div class="section" id="ambient-light">
 <h3>Ambient Light<a class="headerlink" href="#ambient-light" title="Permalink to this headline">¶</a></h3>
 <p>The ambient light surrounds the scene and illuminates it from infinity with constant radiance (determined by combining the <cite>parameters ``color`</cite> and <code class="docutils literal notranslate"><span class="pre">intensity</span></code> &lt;#lights&gt;`__). It is created by passing the type string “<code class="docutils literal notranslate"><span class="pre">ambient</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewLight</span></code>. The ambient light supports <code class="docutils literal notranslate"><span class="pre">OSP_INTENSITY_QUANTITY_RADIANCE</span></code> and <code class="docutils literal notranslate"><span class="pre">OSP_INTENSITY_QUANTITY_IRRADIANCE</span></code> (default) as <code class="docutils literal notranslate"><span class="pre">intensityQuantity</span></code> parameter value.</p>
 <p>Note that the <a class="reference external" href="#scivis-renderer">SciVis renderer</a> uses ambient lights to control the color and intensity of the computed ambient occlusion (AO).</p>
-</section>
-<section id="sun-sky-light">
+</div>
+<div class="section" id="sun-sky-light">
 <h3>Sun-Sky Light<a class="headerlink" href="#sun-sky-light" title="Permalink to this headline">¶</a></h3>
 <p>The sun-sky light is a combination of a <code class="docutils literal notranslate"><span class="pre">distant</span></code> light for the sun and a procedural <code class="docutils literal notranslate"><span class="pre">hdri</span></code> light for the sky. It is created by passing the type string “<code class="docutils literal notranslate"><span class="pre">sunSky</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewLight</span></code>. The sun-sky light surrounds the scene and illuminates it from infinity and can be used for rendering outdoor scenes. The radiance values are calculated using the Hošek-Wilkie sky model and solar radiance function. The sun-sky light only accepts <code class="docutils literal notranslate"><span class="pre">OSP_INTENSITY_QUANTITY_RADIANCE</span></code> as <code class="docutils literal notranslate"><span class="pre">intensityQuantity</span></code> parameter value. In addition to the <a class="reference external" href="#lights">general parameters</a> the following special parameters are supported:</p>
 <table class="table" id="id49">
@@ -6792,15 +6779,15 @@ SPDX-License-Identifier: MIT
 </table>
 <p>The lowest elevation for the sun is restricted to the horizon.</p>
 <p>Note that the <a class="reference external" href="#scivis-renderer">SciVis renderer</a> only computes illumination from the sun (yet the sky is still shown in the background, like an environment map).</p>
-</section>
-<section id="emissive-objects">
+</div>
+<div class="section" id="emissive-objects">
 <h3>Emissive Objects<a class="headerlink" href="#emissive-objects" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="#path-tracer">path tracer</a> will consider illumination by <a class="reference external" href="#geometries">geometries</a> which have a light emitting material assigned (for example the <a class="reference external" href="#luminous">Luminous</a> material).</p>
-</section>
-</section>
-<section id="scene-hierarchy">
+</div>
+</div>
+<div class="section" id="scene-hierarchy">
 <h2>Scene Hierarchy<a class="headerlink" href="#scene-hierarchy" title="Permalink to this headline">¶</a></h2>
-<section id="groups">
+<div class="section" id="groups">
 <h3>Groups<a class="headerlink" href="#groups" title="Permalink to this headline">¶</a></h3>
 <p>Groups in OSPRay represent collections of GeometricModels and VolumetricModels which share a common local-space coordinate system. To create a group call</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">OSPGroup</span> <span class="nf">ospNewGroup</span><span class="p">();</span>
@@ -6857,8 +6844,8 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>Note that groups only need to re re-committed if a geometry or volume changes (surface/scalar field representation). Appearance information on <code class="docutils literal notranslate"><span class="pre">OSPGeometricModel</span></code> and <code class="docutils literal notranslate"><span class="pre">OSPVolumetricModel</span></code> can be changed freely, as internal acceleration structures do not need to be reconstructed.</p>
-</section>
-<section id="instances">
+</div>
+<div class="section" id="instances">
 <h3>Instances<a class="headerlink" href="#instances" title="Permalink to this headline">¶</a></h3>
 <p>Instances in OSPRay represent a single group’s placement into the world via a transform. To create and instance call</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">OSPInstance</span> <span class="nf">ospNewInstance</span><span class="p">(</span><span class="n">OSPGroup</span><span class="p">);</span>
@@ -6887,8 +6874,8 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-</section>
-<section id="world">
+</div>
+<div class="section" id="world">
 <h3>World<a class="headerlink" href="#world" title="Permalink to this headline">¶</a></h3>
 <p>Worlds are a container of scene data represented by <a class="reference external" href="#instances">instances</a>. To create an (empty) world call</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">OSPWorld</span> <span class="nf">ospNewWorld</span><span class="p">();</span>
@@ -6951,9 +6938,9 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="renderers">
+</div>
+</div>
+<div class="section" id="renderers">
 <h2>Renderers<a class="headerlink" href="#renderers" title="Permalink to this headline">¶</a></h2>
 <p>A renderer is the central object for rendering in OSPRay. Different renderers implement different features and support different materials. To create a new renderer of given type <code class="docutils literal notranslate"><span class="pre">type</span></code> use</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">OSPRenderer</span> <span class="nf">ospNewRenderer</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">type</span><span class="p">);</span>
@@ -7056,7 +7043,7 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-<section id="scivis-renderer">
+<div class="section" id="scivis-renderer">
 <h3>SciVis Renderer<a class="headerlink" href="#scivis-renderer" title="Permalink to this headline">¶</a></h3>
 <p>The SciVis renderer is a fast ray tracer for scientific visualization which supports volume rendering and ambient occlusion (AO). It is created by passing the type string “<code class="docutils literal notranslate"><span class="pre">scivis</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewRenderer</span></code>. In addition to the <a class="reference external" href="#renderer">general parameters</a> understood by all renderers, the SciVis renderer supports the following parameters:</p>
 <table class="table" id="id55">
@@ -7103,8 +7090,8 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>Note that the intensity (and color) of AO is deduced from an <a class="reference external" href="#ambient-light">ambient light</a> in the <code class="docutils literal notranslate"><span class="pre">lights</span></code> array. <a class="footnote-reference brackets" href="#id12" id="id5">5</a> If <code class="docutils literal notranslate"><span class="pre">aoSamples</span></code> is zero (the default) then ambient lights cause ambient illumination (without occlusion).</p>
-</section>
-<section id="ambient-occlusion-renderer">
+</div>
+<div class="section" id="ambient-occlusion-renderer">
 <h3>Ambient Occlusion Renderer<a class="headerlink" href="#ambient-occlusion-renderer" title="Permalink to this headline">¶</a></h3>
 <p>This renderer supports only a subset of the features of the <a class="reference external" href="#scivis-renderer">SciVis renderer</a> to gain performance. As the name suggest its main shading method is ambient occlusion (AO), <a class="reference external" href="#lights">lights</a> are <em>not</em> considered at all and , Volume rendering is supported. The Ambient Occlusion renderer is created by passing the type string “<code class="docutils literal notranslate"><span class="pre">ao</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewRenderer</span></code>. In addition to the <a class="reference external" href="#renderer">general parameters</a> understood by all renderers the following parameters are supported as well:</p>
 <table class="table" id="id56">
@@ -7145,8 +7132,8 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-</section>
-<section id="path-tracer">
+</div>
+<div class="section" id="path-tracer">
 <h3>Path Tracer<a class="headerlink" href="#path-tracer" title="Permalink to this headline">¶</a></h3>
 <p>The path tracer supports soft shadows, indirect illumination and realistic materials. This renderer is created by passing the type string “<code class="docutils literal notranslate"><span class="pre">pathtracer</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewRenderer</span></code>. In addition to the <a class="reference external" href="#renderer">general parameters</a> understood by all renderers the path tracer supports the following special parameters:</p>
 <table class="table" id="id57">
@@ -7189,8 +7176,8 @@ SPDX-License-Identifier: MIT
 </table>
 <p>The path tracer requires that <a class="reference external" href="#materials">materials</a> are assigned to <a class="reference external" href="#geometries">geometries</a>, otherwise surfaces are treated as completely black.</p>
 <p>The path tracer supports <a class="reference external" href="#volumes">volumes</a> with multiple scattering. The scattering albedo can be specified using the <a class="reference external" href="#transfer-function">transfer function</a>. Extinction is assumed to be spectrally constant.</p>
-</section>
-<section id="materials">
+</div>
+<div class="section" id="materials">
 <h3>Materials<a class="headerlink" href="#materials" title="Permalink to this headline">¶</a></h3>
 <p>Materials describe how light interacts with surfaces, they give objects their distinctive look. To let the given renderer create a new material of given type <code class="docutils literal notranslate"><span class="pre">type</span></code> call</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">OSPMaterial</span> <span class="nf">ospNewMaterial</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">renderer_type</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">material_type</span><span class="p">);</span>
@@ -7200,7 +7187,7 @@ SPDX-License-Identifier: MIT
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">ospSetObject</span><span class="p">(</span><span class="n">OSPGeometricModel</span><span class="p">,</span> <span class="s">&quot;material&quot;</span><span class="p">,</span> <span class="n">OSPMaterial</span><span class="p">);</span>
 </pre></div>
 </div>
-<section id="obj-material">
+<div class="section" id="obj-material">
 <h4>OBJ Material<a class="headerlink" href="#obj-material" title="Permalink to this headline">¶</a></h4>
 <p>The OBJ material is the workhorse material supported by both the <a class="reference external" href="#scivis-renderer">SciVis renderer</a> and the <a class="reference external" href="#path-tracer">path tracer</a> (the <a class="reference external" href="#ambient-occlusion-renderer">Ambient Occlusion renderer</a> only uses the <code class="docutils literal notranslate"><span class="pre">kd</span></code> and <code class="docutils literal notranslate"><span class="pre">d</span></code> parameter). It offers widely used common properties like diffuse and specular reflection and is based on the <a class="reference external" href="http://paulbourke.net/dataformats/mtl/">MTL material format</a> of Lightwave’s OBJ scene files. To create an OBJ material pass the type string “<code class="docutils literal notranslate"><span class="pre">obj</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewMaterial</span></code>. Its main parameters are</p>
 <table class="table" id="id58">
@@ -7252,30 +7239,24 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>In particular when using the path tracer it is important to adhere to the principle of energy conservation, i.e., that the amount of light reflected by a surface is not larger than the light arriving. Therefore the path tracer issues a warning and renormalizes the color parameters if the sum of <code class="docutils literal notranslate"><span class="pre">Kd</span></code>, <code class="docutils literal notranslate"><span class="pre">Ks</span></code>, and <code class="docutils literal notranslate"><span class="pre">Tf</span></code> is larger than one in any color channel. Similarly important to mention is that almost all materials of the real world reflect at most only about 80% of the incoming light. So even for a white sheet of paper or white wall paint do better not set <code class="docutils literal notranslate"><span class="pre">Kd</span></code> larger than 0.8; otherwise rendering times are unnecessary long and the contrast in the final images is low (for example, the corners of a white room would hardly be discernible, as can be seen in the figure below).</p>
-<figure class="align-default" id="id59">
+<div class="figure align-default" id="id59">
 <a class="reference internal image-reference" href="../../../_images/diffuse_rooms.png"><img alt="Comparison of diffuse rooms with 100% reflecting white paint (left) and realistic 80% reflecting white paint (right), which leads to higher overall contrast. Note that exposure has been adjusted to achieve similar brightness levels." src="../../../_images/diffuse_rooms.png" style="width: 80.0%;" /></a>
-<figcaption>
-<p><span class="caption-text">Comparison of diffuse rooms with 100% reflecting white paint (left) and realistic 80% reflecting white paint (right), which leads to higher overall contrast. Note that exposure has been adjusted to achieve similar brightness levels.</span><a class="headerlink" href="#id59" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">Comparison of diffuse rooms with 100% reflecting white paint (left) and realistic 80% reflecting white paint (right), which leads to higher overall contrast. Note that exposure has been adjusted to achieve similar brightness levels.</span><a class="headerlink" href="#id59" title="Permalink to this image">¶</a></p>
+</div>
 <p>If present, the color component of <a class="reference external" href="#geometries">geometries</a> is also used for the diffuse color <code class="docutils literal notranslate"><span class="pre">Kd</span></code> and the alpha component is also used for the opacity <code class="docutils literal notranslate"><span class="pre">d</span></code>.</p>
 <p>Normal mapping can simulate small geometric features via the texture <code class="docutils literal notranslate"><span class="pre">map_Bump</span></code>. The normals <span class="math notranslate nohighlight">\(n\)</span> in the normal map are with respect to the local tangential shading coordinate system and are encoded as <span class="math notranslate nohighlight">\(\frac{1}{2}(n+1)\)</span>, thus a texel <span class="math notranslate nohighlight">\((0.5, 0.5, 1)\)</span> <a class="footnote-reference brackets" href="#id13" id="id6">6</a> represents the unperturbed shading normal <span class="math notranslate nohighlight">\((0, 0, 1)\)</span>. Because of this encoding an sRGB gamma <a class="reference external" href="#texture">texture</a> format is ignored and normals are always fetched as linear from a normal map. Note that the orientation of normal maps is important for a visually consistent look: by convention OSPRay uses a coordinate system with the origin in the lower left corner; thus a convexity will look green toward the top of the texture image (see also the example image of a normal map). If this is not the case flip the normal map vertically or invert its green channel.</p>
-<figure class="align-default" id="id60">
+<div class="figure align-default" id="id60">
 <a class="reference internal image-reference" href="../../../_images/normalmap_frustum.png"><img alt="Normal map representing an exalted square pyramidal frustum." src="../../../_images/normalmap_frustum.png" style="width: 60.0%;" /></a>
-<figcaption>
-<p><span class="caption-text">Normal map representing an exalted square pyramidal frustum.</span><a class="headerlink" href="#id60" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">Normal map representing an exalted square pyramidal frustum.</span><a class="headerlink" href="#id60" title="Permalink to this image">¶</a></p>
+</div>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">Tf</span></code> colored transparency is implemented in the SciVis and the path tracer but normal mapping with <code class="docutils literal notranslate"><span class="pre">map_Bump</span></code> is currently supported in the path tracer only.</p>
 <p>All parameters (except <code class="docutils literal notranslate"><span class="pre">Tf</span></code>) can be textured by passing a <a class="reference external" href="#texture">texture</a> handle, prefixed with “<code class="docutils literal notranslate"><span class="pre">map_</span></code>”. The fetched texels are multiplied by the respective parameter value. If only the texture is given (but not the corresponding parameter), only the texture is used (the default value of the parameter is <em>not</em> multiplied). The color textures <code class="docutils literal notranslate"><span class="pre">map_Kd</span></code> and <code class="docutils literal notranslate"><span class="pre">map_Ks</span></code> are typically in one of the sRGB gamma encoded formats, whereas textures <code class="docutils literal notranslate"><span class="pre">map_Ns</span></code> and <code class="docutils literal notranslate"><span class="pre">map_d</span></code> are usually in a linear format (and only the first component is used). Additionally, all textures support <a class="reference external" href="#texture-transformations">texture transformations</a>.</p>
-<figure class="align-default" id="id61">
+<div class="figure align-default" id="id61">
 <a class="reference internal image-reference" href="../../../_images/material_OBJ.jpg"><img alt="Rendering of a OBJ material with wood textures." src="../../../_images/material_OBJ.jpg" style="width: 60.0%;" /></a>
-<figcaption>
-<p><span class="caption-text">Rendering of a OBJ material with wood textures.</span><a class="headerlink" href="#id61" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="principled">
+<p class="caption"><span class="caption-text">Rendering of a OBJ material with wood textures.</span><a class="headerlink" href="#id61" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="principled">
 <h4>Principled<a class="headerlink" href="#principled" title="Permalink to this headline">¶</a></h4>
 <p>The Principled material is the most complex material offered by the <a class="reference external" href="#path-tracer">path tracer</a>, which is capable of producing a wide variety of materials (e.g., plastic, metal, wood, glass) by combining multiple different layers and lobes. It uses the GGX microfacet distribution with approximate multiple scattering for dielectrics and metals, uses the Oren-Nayar model for diffuse reflection, and is energy conserving. To create a Principled material, pass the type string “<code class="docutils literal notranslate"><span class="pre">principled</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewMaterial</span></code>. Its parameters are listed in the table below.</p>
 <table class="table" id="id62">
@@ -7437,14 +7418,12 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>All parameters can be textured by passing a <a class="reference external" href="#texture">texture</a> handle, prefixed with “<code class="docutils literal notranslate"><span class="pre">map_</span></code>” (e.g., “<code class="docutils literal notranslate"><span class="pre">map_baseColor</span></code>”). <a class="reference external" href="#texture-transformations">texture transformations</a> are supported as well.</p>
-<figure class="align-default" id="id63">
+<div class="figure align-default" id="id63">
 <a class="reference internal image-reference" href="../../../_images/material_Principled.jpg"><img alt="Rendering of a Principled coated brushed metal material with textured anisotropic rotation and a dust layer (sheen) on top." src="../../../_images/material_Principled.jpg" style="width: 60.0%;" /></a>
-<figcaption>
-<p><span class="caption-text">Rendering of a Principled coated brushed metal material with textured anisotropic rotation and a dust layer (sheen) on top.</span><a class="headerlink" href="#id63" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="carpaint">
+<p class="caption"><span class="caption-text">Rendering of a Principled coated brushed metal material with textured anisotropic rotation and a dust layer (sheen) on top.</span><a class="headerlink" href="#id63" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="carpaint">
 <h4>CarPaint<a class="headerlink" href="#carpaint" title="Permalink to this headline">¶</a></h4>
 <p>The CarPaint material is a specialized version of the Principled material for rendering different types of car paints. To create a CarPaint material, pass the type string “<code class="docutils literal notranslate"><span class="pre">carPaint</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewMaterial</span></code>. Its parameters are listed in the table below.</p>
 <table class="table" id="id64">
@@ -7551,14 +7530,12 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>All parameters can be textured by passing a <a class="reference external" href="#texture">texture</a> handle, prefixed with “<code class="docutils literal notranslate"><span class="pre">map_</span></code>” (e.g., “<code class="docutils literal notranslate"><span class="pre">map_baseColor</span></code>”). <a class="reference external" href="#texture-transformations">texture transformations</a> are supported as well.</p>
-<figure class="align-default" id="id65">
+<div class="figure align-default" id="id65">
 <a class="reference internal image-reference" href="../../../_images/material_CarPaint.jpg"><img alt="Rendering of a pearlescent CarPaint material." src="../../../_images/material_CarPaint.jpg" style="width: 60.0%;" /></a>
-<figcaption>
-<p><span class="caption-text">Rendering of a pearlescent CarPaint material.</span><a class="headerlink" href="#id65" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="metal">
+<p class="caption"><span class="caption-text">Rendering of a pearlescent CarPaint material.</span><a class="headerlink" href="#id65" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="metal">
 <h4>Metal<a class="headerlink" href="#metal" title="Permalink to this headline">¶</a></h4>
 <p>The <a class="reference external" href="#path-tracer">path tracer</a> offers a physical metal, supporting changing roughness and realistic color shifts at edges. To create a Metal material pass the type string “<code class="docutils literal notranslate"><span class="pre">metal</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewMaterial</span></code>. Its parameters are</p>
 <table class="table" id="id66">
@@ -7637,14 +7614,12 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>The <code class="docutils literal notranslate"><span class="pre">roughness</span></code> parameter controls the variation of microfacets and thus how polished the metal will look. The roughness can be modified by a <a class="reference external" href="#texture">texture</a> <code class="docutils literal notranslate"><span class="pre">map_roughness</span></code> (<a class="reference external" href="#texture-transformations">texture transformations</a> are supported as well) to create notable edging effects.</p>
-<figure class="align-default" id="id68">
+<div class="figure align-default" id="id68">
 <a class="reference internal image-reference" href="../../../_images/material_Metal.jpg"><img alt="Rendering of golden Metal material with textured roughness." src="../../../_images/material_Metal.jpg" style="width: 60.0%;" /></a>
-<figcaption>
-<p><span class="caption-text">Rendering of golden Metal material with textured roughness.</span><a class="headerlink" href="#id68" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="alloy">
+<p class="caption"><span class="caption-text">Rendering of golden Metal material with textured roughness.</span><a class="headerlink" href="#id68" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="alloy">
 <h4>Alloy<a class="headerlink" href="#alloy" title="Permalink to this headline">¶</a></h4>
 <p>The <a class="reference external" href="#path-tracer">path tracer</a> offers an alloy material, which behaves similar to <a class="reference external" href="#metal">Metal</a>, but allows for more intuitive and flexible control of the color. To create an Alloy material pass the type string “<code class="docutils literal notranslate"><span class="pre">alloy</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewMaterial</span></code>. Its parameters are</p>
 <table class="table" id="id69">
@@ -7681,14 +7656,12 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>The main appearance of the Alloy material is controlled by the parameter <code class="docutils literal notranslate"><span class="pre">color</span></code>, while <code class="docutils literal notranslate"><span class="pre">edgeColor</span></code> influences the tint of reflections when seen at grazing angles (for real metals this is always 100% white). If present, the color component of <a class="reference external" href="#geometries">geometries</a> is also used for reflectivity at normal incidence <code class="docutils literal notranslate"><span class="pre">color</span></code>. As in <a class="reference external" href="#metal">Metal</a> the <code class="docutils literal notranslate"><span class="pre">roughness</span></code> parameter controls the variation of microfacets and thus how polished the alloy will look. All parameters can be textured by passing a <a class="reference external" href="#texture">texture</a> handle, prefixed with “<code class="docutils literal notranslate"><span class="pre">map_</span></code>”; <a class="reference external" href="#texture-transformations">texture transformations</a> are supported as well.</p>
-<figure class="align-default" id="id70">
+<div class="figure align-default" id="id70">
 <a class="reference internal image-reference" href="../../../_images/material_Alloy.jpg"><img alt="Rendering of a fictional Alloy material with textured color." src="../../../_images/material_Alloy.jpg" style="width: 60.0%;" /></a>
-<figcaption>
-<p><span class="caption-text">Rendering of a fictional Alloy material with textured color.</span><a class="headerlink" href="#id70" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="glass">
+<p class="caption"><span class="caption-text">Rendering of a fictional Alloy material with textured color.</span><a class="headerlink" href="#id70" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="glass">
 <h4>Glass<a class="headerlink" href="#glass" title="Permalink to this headline">¶</a></h4>
 <p>The <a class="reference external" href="#path-tracer">path tracer</a> offers a realistic a glass material, supporting refraction and volumetric attenuation (i.e., the transparency color varies with the geometric thickness). To create a Glass material pass the type string “<code class="docutils literal notranslate"><span class="pre">glass</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewMaterial</span></code>. Its parameters are</p>
 <table class="table" id="id71">
@@ -7725,14 +7698,12 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>For convenience, the rather counter-intuitive physical attenuation coefficients will be calculated from the user inputs in such a way, that the <code class="docutils literal notranslate"><span class="pre">attenuationColor</span></code> will be the result when white light traveled trough a glass of thickness <code class="docutils literal notranslate"><span class="pre">attenuationDistance</span></code>.</p>
-<figure class="align-default" id="id72">
+<div class="figure align-default" id="id72">
 <a class="reference internal image-reference" href="../../../_images/material_Glass.jpg"><img alt="Rendering of a Glass material with orange attenuation." src="../../../_images/material_Glass.jpg" style="width: 60.0%;" /></a>
-<figcaption>
-<p><span class="caption-text">Rendering of a Glass material with orange attenuation.</span><a class="headerlink" href="#id72" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="thinglass">
+<p class="caption"><span class="caption-text">Rendering of a Glass material with orange attenuation.</span><a class="headerlink" href="#id72" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="thinglass">
 <h4>ThinGlass<a class="headerlink" href="#thinglass" title="Permalink to this headline">¶</a></h4>
 <p>The <a class="reference external" href="#path-tracer">path tracer</a> offers a thin glass material useful for objects with just a single surface, most prominently windows. It models a thin, transparent slab, i.e., it behaves as if a second, virtual surface is parallel to the real geometric surface. The implementation accounts for multiple internal reflections between the interfaces (including attenuation), but neglects parallax effects due to its (virtual) thickness. To create a such a thin glass material pass the type string “<code class="docutils literal notranslate"><span class="pre">thinGlass</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewMaterial</span></code>. Its parameters are</p>
 <table class="table" id="id73">
@@ -7774,20 +7745,16 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>For convenience the attenuation is controlled the same way as with the <a class="reference external" href="#glass">Glass</a> material. Additionally, the color due to attenuation can be modulated with a <a class="reference external" href="#texture">texture</a> <code class="docutils literal notranslate"><span class="pre">map_attenuationColor</span></code> (<a class="reference external" href="#texture-transformations">texture transformations</a> are supported as well). If present, the color component of <a class="reference external" href="#geometries">geometries</a> is also used for the attenuation color. The <code class="docutils literal notranslate"><span class="pre">thickness</span></code> parameter sets the (virtual) thickness and allows for easy exchange of parameters with the (real) <a class="reference external" href="#glass">Glass</a> material; internally just the ratio between <code class="docutils literal notranslate"><span class="pre">attenuationDistance</span></code> and <code class="docutils literal notranslate"><span class="pre">thickness</span></code> is used to calculate the resulting attenuation and thus the material appearance.</p>
-<figure class="align-default" id="id74">
+<div class="figure align-default" id="id74">
 <a class="reference internal image-reference" href="../../../_images/material_ThinGlass.jpg"><img alt="Rendering of a ThinGlass material with red attenuation." src="../../../_images/material_ThinGlass.jpg" style="width: 60.0%;" /></a>
-<figcaption>
-<p><span class="caption-text">Rendering of a ThinGlass material with red attenuation.</span><a class="headerlink" href="#id74" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id75">
+<p class="caption"><span class="caption-text">Rendering of a ThinGlass material with red attenuation.</span><a class="headerlink" href="#id74" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id75">
 <a class="reference internal image-reference" href="../../../_images/ColoredWindow.jpg"><img alt="Example image of a colored window made with textured attenuation of the ThinGlass material." src="../../../_images/ColoredWindow.jpg" style="width: 60.0%;" /></a>
-<figcaption>
-<p><span class="caption-text">Example image of a colored window made with textured attenuation of the ThinGlass material.</span><a class="headerlink" href="#id75" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="metallicpaint">
+<p class="caption"><span class="caption-text">Example image of a colored window made with textured attenuation of the ThinGlass material.</span><a class="headerlink" href="#id75" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="metallicpaint">
 <h4>MetallicPaint<a class="headerlink" href="#metallicpaint" title="Permalink to this headline">¶</a></h4>
 <p>The <a class="reference external" href="#path-tracer">path tracer</a> offers a metallic paint material, consisting of a base coat with optional flakes and a clear coat. To create a MetallicPaint material pass the type string “<code class="docutils literal notranslate"><span class="pre">metallicPaint</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewMaterial</span></code>. Its parameters are listed in the table below.</p>
 <table class="table" id="id76">
@@ -7834,14 +7801,12 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>The color of the base coat <code class="docutils literal notranslate"><span class="pre">baseColor</span></code> can be textured by a <a class="reference external" href="#texture">texture</a> <code class="docutils literal notranslate"><span class="pre">map_baseColor</span></code>, which also supports <a class="reference external" href="#texture-transformations">texture transformations</a>. If present, the color component of <a class="reference external" href="#geometries">geometries</a> is also used for the color of the base coat. Parameter <code class="docutils literal notranslate"><span class="pre">flakeAmount</span></code> controls the proportion of flakes in the base coat, so when setting it to 1 the <code class="docutils literal notranslate"><span class="pre">baseColor</span></code> will not be visible. The shininess of the metallic component is governed by <code class="docutils literal notranslate"><span class="pre">flakeSpread</span></code>, which controls the variation of the orientation of the flakes, similar to the <code class="docutils literal notranslate"><span class="pre">roughness</span></code> parameter of <a class="reference external" href="#metal">Metal</a>. Note that the effect of the metallic flakes is currently only computed on average, thus individual flakes are not visible.</p>
-<figure class="align-default" id="id77">
+<div class="figure align-default" id="id77">
 <a class="reference internal image-reference" href="../../../_images/material_MetallicPaint.jpg"><img alt="Rendering of a MetallicPaint material." src="../../../_images/material_MetallicPaint.jpg" style="width: 60.0%;" /></a>
-<figcaption>
-<p><span class="caption-text">Rendering of a MetallicPaint material.</span><a class="headerlink" href="#id77" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="luminous">
+<p class="caption"><span class="caption-text">Rendering of a MetallicPaint material.</span><a class="headerlink" href="#id77" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="luminous">
 <h4>Luminous<a class="headerlink" href="#luminous" title="Permalink to this headline">¶</a></h4>
 <p>The <a class="reference external" href="#path-tracer">path tracer</a> supports the Luminous material which emits light uniformly in all directions and which can thus be used to turn any geometric object into a light source <a class="footnote-reference brackets" href="#id14" id="id7">7</a>. It is created by passing the type string “<code class="docutils literal notranslate"><span class="pre">luminous</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewMaterial</span></code>. The amount of constant radiance that is emitted is determined by combining the general parameters of lights: <code class="docutils literal notranslate"><span class="pre">`color</span></code> and <code class="docutils literal notranslate"><span class="pre">intensity</span></code> &lt;#lights&gt;`__ (which essentially means that parameter <code class="docutils literal notranslate"><span class="pre">intensityQuantity</span></code> is not needed because it is always <code class="docutils literal notranslate"><span class="pre">OSP_INTENSITY_QUANTITY_RADIANCE</span></code>).</p>
 <table class="table" id="id78">
@@ -7877,22 +7842,20 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-<figure class="align-default" id="id79">
+<div class="figure align-default" id="id79">
 <a class="reference internal image-reference" href="../../../_images/material_Luminous.jpg"><img alt="Rendering of a yellow Luminous material." src="../../../_images/material_Luminous.jpg" style="width: 60.0%;" /></a>
-<figcaption>
-<p><span class="caption-text">Rendering of a yellow Luminous material.</span><a class="headerlink" href="#id79" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-</section>
-<section id="texture">
+<p class="caption"><span class="caption-text">Rendering of a yellow Luminous material.</span><a class="headerlink" href="#id79" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="texture">
 <h3>Texture<a class="headerlink" href="#texture" title="Permalink to this headline">¶</a></h3>
 <p>OSPRay currently implements two texture types (<code class="docutils literal notranslate"><span class="pre">texture2d</span></code> and <code class="docutils literal notranslate"><span class="pre">volume</span></code>) and is open for extension to other types by applications. More types may be added in future releases.</p>
 <p>To create a new texture use</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">OSPTexture</span> <span class="nf">ospNewTexture</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">type</span><span class="p">);</span>
 </pre></div>
 </div>
-<section id="texture2d">
+<div class="section" id="texture2d">
 <h4>Texture2D<a class="headerlink" href="#texture2d" title="Permalink to this headline">¶</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">texture2d</span></code> texture type implements an image-based texture, where its parameters are as follows</p>
 <table class="table" id="id80">
@@ -7985,8 +7948,8 @@ SPDX-License-Identifier: MIT
 </table>
 <p>The size of the texture is inferred from the size of the 2D array <code class="docutils literal notranslate"><span class="pre">data</span></code>, which also needs have a compatible type to <code class="docutils literal notranslate"><span class="pre">format</span></code>. The texel data in <code class="docutils literal notranslate"><span class="pre">data</span></code> starts with the texels in the lower left corner of the texture image, like in OpenGL. Per default a texture fetch is filtered by performing bi-linear interpolation of the nearest 2×2 texels; if instead fetching only the nearest texel is desired (i.e., no filtering) then pass the <code class="docutils literal notranslate"><span class="pre">OSP_TEXTURE_FILTER_NEAREST</span></code> flag.</p>
 <p>Texturing with <code class="docutils literal notranslate"><span class="pre">texture2d</span></code> image textures requires <a class="reference external" href="#geometries">geometries</a> with texture coordinates, e.g., a <a class="reference external" href="#mesh">mesh</a> with <code class="docutils literal notranslate"><span class="pre">vertex.texcoord</span></code> provided.</p>
-</section>
-<section id="volume-texture">
+</div>
+<div class="section" id="volume-texture">
 <h4>Volume Texture<a class="headerlink" href="#volume-texture" title="Permalink to this headline">¶</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">volume</span></code> texture type implements texture lookups based on 3D object coordinates of the surface hit point on the associated geometry. If the given hit point is within the attached volume, the volume is sampled and classified with the transfer function attached to the volume. This implements the ability to visualize volume values (as colored by a transfer function) on arbitrary surfaces inside the volume (as opposed to an isosurface showing a particular value in the volume). Its parameters are as follows</p>
 <table class="table" id="id82">
@@ -8014,8 +7977,8 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>TextureVolume can be used for implementing slicing of volumes with any geometry type. It enables coloring of the slicing geometry with a different transfer function than that of the sliced volume.</p>
-</section>
-<section id="texture-transformations">
+</div>
+<div class="section" id="texture-transformations">
 <h4>Texture Transformations<a class="headerlink" href="#texture-transformations" title="Permalink to this headline">¶</a></h4>
 <p>All materials with textures also offer to manipulate the placement of these textures with the help of texture transformations. If so, this convention shall be used: the following parameters are prefixed with “<code class="docutils literal notranslate"><span class="pre">texture_name.</span></code>”).</p>
 <table class="table" id="id83">
@@ -8072,9 +8035,9 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>Similarly, volume texture placement can also be modified by an <code class="docutils literal notranslate"><span class="pre">affine3f</span></code> transformation matrix.</p>
-</section>
-</section>
-<section id="cameras">
+</div>
+</div>
+<div class="section" id="cameras">
 <h3>Cameras<a class="headerlink" href="#cameras" title="Permalink to this headline">¶</a></h3>
 <p>To create a new camera of given type <code class="docutils literal notranslate"><span class="pre">type</span></code> use</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">OSPCamera</span> <span class="nf">ospNewCamera</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">type</span><span class="p">);</span>
@@ -8122,7 +8085,7 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>The camera is placed and oriented in the world with <code class="docutils literal notranslate"><span class="pre">position</span></code>, <code class="docutils literal notranslate"><span class="pre">direction</span></code> and <code class="docutils literal notranslate"><span class="pre">up</span></code>. OSPRay uses a right-handed coordinate system. The region of the camera sensor that is rendered to the image can be specified in normalized screen-space coordinates with <code class="docutils literal notranslate"><span class="pre">imageStart</span></code> (lower left corner) and <code class="docutils literal notranslate"><span class="pre">imageEnd</span></code> (upper right corner). This can be used, for example, to crop the image, to achieve asymmetrical view frusta, or to horizontally flip the image to view scenes which are specified in a left-handed coordinate system. Note that values outside the default range of [0–1] are valid, which is useful to easily realize overscan or film gate, or to emulate a shifted sensor.</p>
-<section id="perspective-camera">
+<div class="section" id="perspective-camera">
 <h4>Perspective Camera<a class="headerlink" href="#perspective-camera" title="Permalink to this headline">¶</a></h4>
 <p>The perspective camera implements a simple thin lens camera for perspective rendering, supporting optionally depth of field and stereo rendering, but no motion blur. It is created by passing the type string “<code class="docutils literal notranslate"><span class="pre">perspective</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewCamera</span></code>. In addition to the <a class="reference external" href="#cameras">general parameters</a> understood by all cameras the perspective camera supports the special parameters listed in the table below.</p>
 <table class="table" id="id86">
@@ -8191,26 +8154,20 @@ SPDX-License-Identifier: MIT
 </table>
 <p>Note that when computing the <code class="docutils literal notranslate"><span class="pre">aspect</span></code> ratio a potentially set image region (using <code class="docutils literal notranslate"><span class="pre">imageStart</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">imageEnd</span></code>) needs to be regarded as well.</p>
 <p>In architectural photography it is often desired for aesthetic reasons to display the vertical edges of buildings or walls vertically in the image as well, regardless of how the camera is tilted. Enabling the <code class="docutils literal notranslate"><span class="pre">architectural</span></code> mode achieves this by internally leveling the camera parallel to the ground (based on the <code class="docutils literal notranslate"><span class="pre">up</span></code> direction) and then shifting the lens such that the objects in direction <code class="docutils literal notranslate"><span class="pre">dir</span></code> are centered in the image. If finer control of the lens shift is needed use <code class="docutils literal notranslate"><span class="pre">imageStart</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">imageEnd</span></code>. Because the camera is now effectively leveled its image plane and thus the plane of focus is oriented parallel to the front of buildings, the whole façade appears sharp, as can be seen in the example images below. The resolution of the <a class="reference external" href="#framebuffer">framebuffer</a> is not altered by <code class="docutils literal notranslate"><span class="pre">imageStart</span></code>/<code class="docutils literal notranslate"><span class="pre">imageEnd</span></code>.</p>
-<figure class="align-default" id="id87">
+<div class="figure align-default" id="id87">
 <a class="reference internal image-reference" href="../../../_images/camera_perspective.jpg"><img alt="Example image created with the perspective camera, featuring depth of field." src="../../../_images/camera_perspective.jpg" style="width: 60.0%;" /></a>
-<figcaption>
-<p><span class="caption-text">Example image created with the perspective camera, featuring depth of field.</span><a class="headerlink" href="#id87" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id88">
+<p class="caption"><span class="caption-text">Example image created with the perspective camera, featuring depth of field.</span><a class="headerlink" href="#id87" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id88">
 <a class="reference internal image-reference" href="../../../_images/camera_architectural.jpg"><img alt="Enabling the ``architectural`` flag corrects the perspective projection distortion, resulting in parallel vertical edges." src="../../../_images/camera_architectural.jpg" style="width: 60.0%;" /></a>
-<figcaption>
-<p><span class="caption-text">Enabling the <code class="docutils literal notranslate"><span class="pre">architectural</span></code> flag corrects the perspective projection distortion, resulting in parallel vertical edges.</span><a class="headerlink" href="#id88" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id89">
+<p class="caption"><span class="caption-text">Enabling the <code class="docutils literal notranslate"><span class="pre">architectural</span></code> flag corrects the perspective projection distortion, resulting in parallel vertical edges.</span><a class="headerlink" href="#id88" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id89">
 <a class="reference internal image-reference" href="../../../_images/camera_stereo.jpg"><img alt="Example 3D stereo image using ``stereoMode = OSP_STEREO_SIDE_BY_SIDE``." src="../../../_images/camera_stereo.jpg" style="width: 90.0%;" /></a>
-<figcaption>
-<p><span class="caption-text">Example 3D stereo image using <code class="docutils literal notranslate"><span class="pre">stereoMode</span> <span class="pre">=</span> <span class="pre">OSP_STEREO_SIDE_BY_SIDE</span></code>.</span><a class="headerlink" href="#id89" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="orthographic-camera">
+<p class="caption"><span class="caption-text">Example 3D stereo image using <code class="docutils literal notranslate"><span class="pre">stereoMode</span> <span class="pre">=</span> <span class="pre">OSP_STEREO_SIDE_BY_SIDE</span></code>.</span><a class="headerlink" href="#id89" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="orthographic-camera">
 <h4>Orthographic Camera<a class="headerlink" href="#orthographic-camera" title="Permalink to this headline">¶</a></h4>
 <p>The orthographic camera implements a simple camera with orthographic projection, without support for depth of field or motion blur. It is created by passing the type string “<code class="docutils literal notranslate"><span class="pre">orthographic</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewCamera</span></code>. In addition to the <a class="reference external" href="#cameras">general parameters</a> understood by all cameras the orthographic camera supports the following special parameters:</p>
 <table class="table" id="id90">
@@ -8238,14 +8195,12 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>For convenience the size of the camera sensor, and thus the extent of the scene that is captured in the image, can be controlled with the <code class="docutils literal notranslate"><span class="pre">height</span></code> parameter. The same effect can be achieved with <code class="docutils literal notranslate"><span class="pre">imageStart</span></code> and <code class="docutils literal notranslate"><span class="pre">imageEnd</span></code>, and both methods can be combined. In any case, the <code class="docutils literal notranslate"><span class="pre">aspect</span></code> ratio needs to be set accordingly to get an undistorted image.</p>
-<figure class="align-default" id="id91">
+<div class="figure align-default" id="id91">
 <a class="reference internal image-reference" href="../../../_images/camera_orthographic.jpg"><img alt="Example image created with the orthographic camera." src="../../../_images/camera_orthographic.jpg" style="width: 60.0%;" /></a>
-<figcaption>
-<p><span class="caption-text">Example image created with the orthographic camera.</span><a class="headerlink" href="#id91" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="panoramic-camera">
+<p class="caption"><span class="caption-text">Example image created with the orthographic camera.</span><a class="headerlink" href="#id91" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="panoramic-camera">
 <h4>Panoramic Camera<a class="headerlink" href="#panoramic-camera" title="Permalink to this headline">¶</a></h4>
 <p>The panoramic camera implements a simple camera with support for stereo rendering. It captures the complete surrounding with a latitude / longitude mapping and thus the rendered images should best have a ratio of 2:1. A panoramic camera is created by passing the type string “<code class="docutils literal notranslate"><span class="pre">panoramic</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewCamera</span></code>. It is placed and oriented in the scene by using the <a class="reference external" href="#cameras">general parameters</a> understood by all cameras.</p>
 <table class="table" id="id92">
@@ -8292,15 +8247,13 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-<figure class="align-default" id="id93">
+<div class="figure align-default" id="id93">
 <a class="reference internal image-reference" href="../../../_images/camera_panoramic.jpg"><img alt="Latitude / longitude map created with the panoramic camera." src="../../../_images/camera_panoramic.jpg" style="width: 90.0%;" /></a>
-<figcaption>
-<p><span class="caption-text">Latitude / longitude map created with the panoramic camera.</span><a class="headerlink" href="#id93" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-</section>
-<section id="picking">
+<p class="caption"><span class="caption-text">Latitude / longitude map created with the panoramic camera.</span><a class="headerlink" href="#id93" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="picking">
 <h3>Picking<a class="headerlink" href="#picking" title="Permalink to this headline">¶</a></h3>
 <p>To get the world-space position of the geometry (if any) seen at [0–1] normalized screen-space pixel coordinates <code class="docutils literal notranslate"><span class="pre">screenPos_x</span></code> and <code class="docutils literal notranslate"><span class="pre">screenPos_y</span></code> use</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">ospPick</span><span class="p">(</span><span class="n">OSPPickResult</span> <span class="o">*</span><span class="p">,</span>
@@ -8323,9 +8276,9 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">ospPick</span></code> considers exactly the same camera of the given renderer that is used to render an image, thus matching results can be expected. If the camera supports depth of field then the center of the lens and thus the center of the circle of confusion is used for picking. Note that the caller needs to <code class="docutils literal notranslate"><span class="pre">ospRelease</span></code> the <code class="docutils literal notranslate"><span class="pre">instance</span></code> and <code class="docutils literal notranslate"><span class="pre">model</span></code> handles of <code class="docutils literal notranslate"><span class="pre">OSPPickResult</span></code> once the information is not needed anymore.</p>
-</section>
-</section>
-<section id="framebuffer">
+</div>
+</div>
+<div class="section" id="framebuffer">
 <h2>Framebuffer<a class="headerlink" href="#framebuffer" title="Permalink to this headline">¶</a></h2>
 <p>The framebuffer holds the rendered 2D image (and optionally auxiliary information associated with pixels). To create a new framebuffer object of given size <code class="docutils literal notranslate"><span class="pre">size</span></code> (in pixels), color format, and channels use</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">OSPFrameBuffer</span> <span class="nf">ospNewFrameBuffer</span><span class="p">(</span><span class="kt">int</span> <span class="n">size_x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size_y</span><span class="p">,</span>
@@ -8435,13 +8388,13 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-<section id="image-operation">
+<div class="section" id="image-operation">
 <h3>Image Operation<a class="headerlink" href="#image-operation" title="Permalink to this headline">¶</a></h3>
 <p>Image operations are functions that are applied to every pixel of a frame. Examples include post-processing, filtering, blending, tone mapping, or sending tiles to a display wall. To create a new pixel operation of given type <code class="docutils literal notranslate"><span class="pre">type</span></code> use</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">OSPImageOperation</span> <span class="nf">ospNewImageOperation</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">type</span><span class="p">);</span>
 </pre></div>
 </div>
-<section id="tone-mapper">
+<div class="section" id="tone-mapper">
 <h4>Tone Mapper<a class="headerlink" href="#tone-mapper" title="Permalink to this headline">¶</a></h4>
 <p>The tone mapper is a pixel operation which implements a generic filmic tone mapping operator. Using the default parameters it approximates the Academy Color Encoding System (ACES). The tone mapper is created by passing the type string “<code class="docutils literal notranslate"><span class="pre">tonemapper</span></code>” to <code class="docutils literal notranslate"><span class="pre">ospNewImageOperation</span></code>. The tone mapping curve can be customized using the parameters listed in the table below.</p>
 <table class="table" id="id97">
@@ -8530,16 +8483,16 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-</section>
-<section id="denoiser">
+</div>
+<div class="section" id="denoiser">
 <h4>Denoiser<a class="headerlink" href="#denoiser" title="Permalink to this headline">¶</a></h4>
 <p>OSPRay comes with a module that adds support for Intel® Open Image Denoise. This is provided as an optional module as it creates an additional project dependency at compile time. The module implements a “<code class="docutils literal notranslate"><span class="pre">denoiser</span></code>” frame operation, which denoises the entire frame before the frame is completed.</p>
-</section>
-</section>
-</section>
-<section id="rendering">
+</div>
+</div>
+</div>
+<div class="section" id="rendering">
 <h2>Rendering<a class="headerlink" href="#rendering" title="Permalink to this headline">¶</a></h2>
-<section id="asynchronous-rendering">
+<div class="section" id="asynchronous-rendering">
 <h3>Asynchronous Rendering<a class="headerlink" href="#asynchronous-rendering" title="Permalink to this headline">¶</a></h3>
 <p>Rendering is by default asynchronous (non-blocking), and is done by combining a framebuffer, renderer, camera, and world.</p>
 <p>What to render and how to render it depends on the renderer’s parameters. If the framebuffer supports accumulation (i.e., it was created with <code class="docutils literal notranslate"><span class="pre">OSP_FB_ACCUM</span></code>) then successive calls to <code class="docutils literal notranslate"><span class="pre">ospRenderFrame</span></code> will progressively refine the rendered image.</p>
@@ -8602,12 +8555,12 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p>This returns the wall clock execution time of the task in seconds. If the task is still running, this will block until the task is completed. This is useful for applications to query exactly how long an asynchronous task executed without the overhead of measuring both task execution + synchronization by the calling application.</p>
-</section>
-<section id="asynchronously-rendering-and-ospcommit">
+</div>
+<div class="section" id="asynchronously-rendering-and-ospcommit">
 <h3>Asynchronously Rendering and ospCommit()<a class="headerlink" href="#asynchronously-rendering-and-ospcommit" title="Permalink to this headline">¶</a></h3>
 <p>The use of either <code class="docutils literal notranslate"><span class="pre">ospRenderFrame</span></code> or <code class="docutils literal notranslate"><span class="pre">ospRenderFrame</span></code> requires that all objects in the scene being rendered have been committed before rendering occurs. If a call to <code class="docutils literal notranslate"><span class="pre">ospCommit()</span></code> happens while a frame is rendered, the result is undefined behavior and should be avoided.</p>
-</section>
-<section id="synchronous-rendering">
+</div>
+<div class="section" id="synchronous-rendering">
 <h3>Synchronous Rendering<a class="headerlink" href="#synchronous-rendering" title="Permalink to this headline">¶</a></h3>
 <p>For convenience in certain use cases, <code class="docutils literal notranslate"><span class="pre">ospray_util.h</span></code> provides a synchronous version of <code class="docutils literal notranslate"><span class="pre">ospRenderFrame</span></code>:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span> <span class="nf">ospRenderFrameBlocking</span><span class="p">(</span><span class="n">OSPFrameBuffer</span><span class="p">,</span> <span class="n">OSPRenderer</span><span class="p">,</span> <span class="n">OSPCamera</span><span class="p">,</span> <span class="n">OSPWorld</span><span class="p">);</span>
@@ -8620,14 +8573,14 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p>This version is closest to <code class="docutils literal notranslate"><span class="pre">ospRenderFrame</span></code> from OSPRay v1.x.</p>
-</section>
-</section>
-</section>
-<section id="distributed-rendering-with-mpi">
+</div>
+</div>
+</div>
+<div class="section" id="distributed-rendering-with-mpi">
 <h1>Distributed Rendering with MPI<a class="headerlink" href="#distributed-rendering-with-mpi" title="Permalink to this headline">¶</a></h1>
 <p>The purpose of the MPI module for OSPRay is to provide distributed rendering capabilities for OSPRay. The module enables image- and data-parallel rendering across HPC clusters using MPI, allowing applications to transparently distribute rendering work, or to render data sets which are too large to fit in memory on a single machine.</p>
 <p>The MPI module provides two OSPRay devices to allow applications to leverage distributed rendering capabilities. The <code class="docutils literal notranslate"><span class="pre">mpiOffload</span></code> device provides transparent image-parallel rendering, where the same OSPRay application written for local rendering can be replicated across multiple nodes to distribute the rendering work. The <code class="docutils literal notranslate"><span class="pre">mpiDistributed</span></code> device allows MPI distributed applications to use OSPRay for distributed rendering, where each rank can render and independent piece of a global data set, or hybrid rendering where ranks partially or completely share data.</p>
-<section id="mpi-offload-rendering">
+<div class="section" id="mpi-offload-rendering">
 <h2>MPI Offload Rendering<a class="headerlink" href="#mpi-offload-rendering" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">mpiOffload</span></code> device can be used to distribute image rendering tasks across a cluster without requiring modifications to the application itself. Existing applications using OSPRay for local rendering simply be passed command line arguments to load the module and indicate that the <code class="docutils literal notranslate"><span class="pre">mpiOffload</span></code> device should be used for image-parallel rendering. To load the module, pass <code class="docutils literal notranslate"><span class="pre">--osp:load-modules=mpi</span></code>, to select the MPIOffloadDevice, pass <code class="docutils literal notranslate"><span class="pre">--osp:device=mpiOffload</span></code>. For example, the <code class="docutils literal notranslate"><span class="pre">ospExamples</span></code> application can be run as:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mpirun -n &lt;N&gt; ./ospExamples --osp:load-modules<span class="o">=</span>mpi --osp:device<span class="o">=</span>mpiOffload
@@ -8679,8 +8632,8 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>The <code class="docutils literal notranslate"><span class="pre">maxCommandBufferEntries</span></code>, <code class="docutils literal notranslate"><span class="pre">commandBufferSize</span></code>, and <code class="docutils literal notranslate"><span class="pre">maxInlineDataSize</span></code> can also be set via the environment variables: <code class="docutils literal notranslate"><span class="pre">OSPRAY_MPI_MAX_COMMAND_BUFFER_ENTRIES</span></code>, <code class="docutils literal notranslate"><span class="pre">OSPRAY_MPI_COMMAND_BUFFER_SIZE</span></code>, and <code class="docutils literal notranslate"><span class="pre">OSPRAY_MPI_MAX_INLINE_DATA_SIZE</span></code>, respectively.</p>
-</section>
-<section id="mpi-distributed-rendering">
+</div>
+<div class="section" id="mpi-distributed-rendering">
 <h2>MPI Distributed Rendering<a class="headerlink" href="#mpi-distributed-rendering" title="Permalink to this headline">¶</a></h2>
 <p>While MPI Offload rendering is used to transparently distribute rendering work without requiring modification to the application, MPI Distributed rendering is targetted at use of OSPRay within MPI-parallel applications. The MPI distributed device can be selected by loading the <code class="docutils literal notranslate"><span class="pre">mpi</span></code> module, and manually creating and using an instance of the <code class="docutils literal notranslate"><span class="pre">mpiDistributed</span></code> device:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ospLoadModule</span><span class="p">(</span><span class="s">&quot;mpi&quot;</span><span class="p">);</span>
@@ -8765,18 +8718,18 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-<section id="image-parallel-rendering-in-the-mpi-distributed-device">
+<div class="section" id="image-parallel-rendering-in-the-mpi-distributed-device">
 <h3>Image Parallel Rendering in the MPI Distributed Device<a class="headerlink" href="#image-parallel-rendering-in-the-mpi-distributed-device" title="Permalink to this headline">¶</a></h3>
 <p>If all ranks specify exactly the same data, the distributed device can be used for image-parallel rendering. This works identical to the offload device, except that the MPI-aware application is able to load data in parallel on each rank rather than loading on the master and shipping data out to the workers. When a parallel file system is available, this can improve data load times. Image-parallel rendering is selected by specifying the same data on each rank, and using any of the existing local renderers (e.g., <code class="docutils literal notranslate"><span class="pre">scivis</span></code>, <code class="docutils literal notranslate"><span class="pre">pathtracer</span></code>). See <a class="reference external" href="https://github.com/ospray/ospray/blob/master/modules/mpi/tutorials/ospMPIDistributedTutorialReplicatedData.cpp">ospMPIDistributedTutorialReplicatedData</a> for an example.</p>
-</section>
-<section id="data-parallel-rendering-in-the-mpi-distributed-device">
+</div>
+<div class="section" id="data-parallel-rendering-in-the-mpi-distributed-device">
 <h3>Data Parallel Rendering in the MPI Distributed Device<a class="headerlink" href="#data-parallel-rendering-in-the-mpi-distributed-device" title="Permalink to this headline">¶</a></h3>
 <p>The MPI Distributed device also supports data-parallel rendering with sort-last compositing. Each rank can specify a different piece of data, as long as the bounding boxes of each rank’s data are non-overlapping. The rest of the scene setup is similar to local rendering; however, for distributed rendering only the <code class="docutils literal notranslate"><span class="pre">mpiRaycast</span></code> renderer is supported. This renderer implements a subset of the <code class="docutils literal notranslate"><span class="pre">scivis</span></code> rendering features which are suitable for implementation in a distributed environment.</p>
 <p>By default the aggregate bounding box of the instances in the local world will be used as the bounds of that rank’s data. However, when using ghost zones for volume interpolation, geometry or ambient occlusion, each rank’s data can overlap. To clip these non-owned overlap regions out a set of regions (the <code class="docutils literal notranslate"><span class="pre">region</span></code> parameter) can pass as a parameter to the <code class="docutils literal notranslate"><span class="pre">OSPWorld</span></code> being rendered. Each rank can specify one or more non-overlapping <code class="docutils literal notranslate"><span class="pre">box3f</span></code>’s which bound the portions of its local data which it is reponsible for rendering. See the <a class="reference external" href="https://github.com/ospray/ospray/blob/master/modules/mpi/tutorials/ospMPIDistributedTutorialStructuredVolume.cpp">ospMPIDistributedTutorialStructuredVolume</a> for an example.</p>
 <p>Finally, the MPI distributed device also supports hybrid-parallel rendering, where multiple ranks can share a single piece of data. For each shared piece of data the rendering work will be assigned image-parallel among the ranks. Partially-shared regions are determined by finding those ranks specifying data with the same bounds (matching regions) and merging them. See the <a class="reference external" href="https://github.com/ospray/ospray/blob/master/modules/mpi/tutorials/ospMPIDistributedTutorialPartiallyReplicatedData.cpp">ospMPIDistributedTutorialPartiallyReplicatedData</a> for an example.</p>
-</section>
-</section>
-<section id="interaction-with-user-modules">
+</div>
+</div>
+<div class="section" id="interaction-with-user-modules">
 <h2>Interaction With User Modules<a class="headerlink" href="#interaction-with-user-modules" title="Permalink to this headline">¶</a></h2>
 <p>The MPI Offload rendering mode trivially supports user modules, with the caveat that attempting to share data directly with the application (e.g., passing a <code class="docutils literal notranslate"><span class="pre">void\</span> <span class="pre">*</span></code> or other tricks to the module) will not work in a distributed environment. Instead, use the <code class="docutils literal notranslate"><span class="pre">ospNewSharedData</span></code> API to share data from the application with OSPRay, which will in turn be copied over the network to the workers.</p>
 <p>The MPI Distributed device also supports user modules, as all that is required for compositing the distributed data are the bounds of each rank’s local data.</p>
@@ -8803,8 +8756,8 @@ SPDX-License-Identifier: MIT
 <dd><p>If <code class="docutils literal notranslate"><span class="pre">geometryLights</span></code> is enabled in the <a class="reference external" href="#path-tracer">path tracer</a>.</p>
 </dd>
 </dl>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

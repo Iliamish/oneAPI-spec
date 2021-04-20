@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Parallel iteration &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4594,7 +4593,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="parallel-iteration">
+  <div class="section" id="parallel-iteration">
 <h1>Parallel iteration<a class="headerlink" href="#parallel-iteration" title="Permalink to this headline">¶</a></h1>
 <p>Member types <code class="docutils literal notranslate"><span class="pre">concurrent_hash_map::range_type</span></code> and <code class="docutils literal notranslate"><span class="pre">concurrent_hash_map::const_range_type</span></code>
 meet the <a class="reference internal" href="../../named_requirements/containers/container_range.html"><span class="doc">ContainerRange requirements</span></a>.</p>
@@ -4603,7 +4602,7 @@ are of type <code class="docutils literal notranslate"><span class="pre">concurr
 are of type <code class="docutils literal notranslate"><span class="pre">concurrent_hash_map::iterator</span></code>.</p>
 <p>Traversing the <code class="docutils literal notranslate"><span class="pre">concurrent_hash_map</span></code> is not thread safe. The behavior is undefined in case of concurrent execution of any
 member functions while traversing the <code class="docutils literal notranslate"><span class="pre">range_type</span></code> or <code class="docutils literal notranslate"><span class="pre">const_range_type</span></code>.</p>
-<section id="range-member-function">
+<div class="section" id="range-member-function">
 <h2>range member function<a class="headerlink" href="#range-member-function" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">range_type</span> <span class="nf">range</span><span class="p">(</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">grainsize</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">);</span>
@@ -4613,8 +4612,8 @@ member functions while traversing the <code class="docutils literal notranslate"
 </div>
 <p><strong>Returns</strong>: a range object representing all elements in the container.</p>
 </div></blockquote>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

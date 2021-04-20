@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sobol &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4595,7 +4594,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="sobol">
+  <div class="section" id="sobol">
 <span id="onemkl-rng-sobol"></span><h1>sobol<a class="headerlink" href="#sobol" title="Permalink to this headline">¶</a></h1>
 <p>The sobol is a 32-bit Gray code-based quasi-random number generator.</p>
 <p class="rubric" id="onemkl-rng-sobol-description">Description</p>
@@ -4606,7 +4605,7 @@ SPDX-License-Identifier: MIT
 <p><span class="math notranslate nohighlight">\(u_n=x_n / 2 ^ {32}\)</span></p>
 <p>The value <span class="math notranslate nohighlight">\(c\)</span> is the right-most zero bit in <span class="math notranslate nohighlight">\(n-1\)</span>; <span class="math notranslate nohighlight">\(x_n\)</span> is s-dimensional vector of 32-bit values. The s-dimensional vectors (calculated during engine initialization) <span class="math notranslate nohighlight">\(v_i, i = 1, 32\)</span> are called direction numbers. The vector <span class="math notranslate nohighlight">\(u_n\)</span> is the generator output normalized to the unit hypercube <span class="math notranslate nohighlight">\((0, 1) ^ s\)</span>.</p>
 </div>
-<section id="class-sobol">
+<div class="section" id="class-sobol">
 <span id="onemkl-rng-sobol-description-syntax"></span><h2>class sobol<a class="headerlink" href="#class-sobol" title="Permalink to this headline">¶</a></h2>
 <p class="rubric">Syntax</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span> <span class="p">{</span>
@@ -4733,8 +4732,8 @@ SPDX-License-Identifier: MIT
 </div>
 </div>
 <p><strong>Parent topic:</strong> <a class="reference internal" href="engines-basic-random-number-generators.html#onemkl-rng-engines-basic-random-number-generators"><span class="std std-ref">Engines (Basic Random Number Generators)</span></a></p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

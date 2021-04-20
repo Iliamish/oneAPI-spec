@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Post-ops &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4624,7 +4623,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="post-ops">
+  <div class="section" id="post-ops">
 <span id="post-ops-label"></span><h1>Post-ops<a class="headerlink" href="#post-ops" title="Permalink to this headline">¶</a></h1>
 <p><em>Post-ops</em> are operations that are appended after a primitive.  They are
 implemented using the <a class="reference internal" href="index.html#attributes-link"><span class="std std-ref">Attributes</span></a> mechanism. If there are multiple
@@ -4664,9 +4663,9 @@ object.</p>
 <p>The post-op objects can be inspected using the <a class="reference internal" href="#_CPPv4NK4dnnl8post_ops4kindEi" title="dnnl::post_ops::kind"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::post_ops::kind()</span></code></a>
 function that takes an index of the post-op to inspect (that must be less than
 the value returned by <a class="reference internal" href="#_CPPv4NK4dnnl8post_ops3lenEv" title="dnnl::post_ops::len"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::post_ops::len()</span></code></a>), and returns its kind.</p>
-<section id="supported-post-ops">
+<div class="section" id="supported-post-ops">
 <h2>Supported Post-ops<a class="headerlink" href="#supported-post-ops" title="Permalink to this headline">¶</a></h2>
-<section id="eltwise-post-op">
+<div class="section" id="eltwise-post-op">
 <span id="post-ops-eltwise-label"></span><h3>Eltwise Post-op<a class="headerlink" href="#eltwise-post-op" title="Permalink to this headline">¶</a></h3>
 <p>The eltwise post-op is appended using <a class="reference internal" href="#_CPPv4N4dnnl8post_ops14append_eltwiseEf9algorithmff" title="dnnl::post_ops::append_eltwise"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::post_ops::append_eltwise()</span></code></a>
 function. The <a class="reference internal" href="#_CPPv4NK4dnnl8post_ops4kindEi" title="dnnl::post_ops::kind"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::post_ops::kind()</span></code></a> returns
@@ -4681,8 +4680,8 @@ function. The <a class="reference internal" href="#_CPPv4NK4dnnl8post_ops4kindEi
 preserved.</p>
 <p>The <span class="math notranslate nohighlight">\(scale\)</span> factor is supported in <a class="reference internal" href="index.html#attributes-quantization-label"><span class="std std-ref">int8</span></a> inference only. For all other cases the scale
 must be <cite>1.0</cite>.</p>
-</section>
-<section id="sum-post-op">
+</div>
+<div class="section" id="sum-post-op">
 <span id="post-ops-sum-label"></span><h3>Sum Post-op<a class="headerlink" href="#sum-post-op" title="Permalink to this headline">¶</a></h3>
 <p>The sum post-op accumulates the result of a primitive with the existing data
 and is appended using <a class="reference internal" href="#_CPPv4N4dnnl8post_ops10append_sumEfN6memory9data_typeE" title="dnnl::post_ops::append_sum"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::post_ops::append_sum()</span></code></a> function. The
@@ -4703,12 +4702,12 @@ values fall within a common range to work).</p>
 <p>with</p>
 <div class="math notranslate nohighlight">
 \[\dst[:] = scale \cdot as_data_type(\dst[:]) + \operatorname{Op}(...)\]</div>
-</section>
-<section id="examples-of-chained-post-ops">
+</div>
+<div class="section" id="examples-of-chained-post-ops">
 <h3>Examples of Chained Post-ops<a class="headerlink" href="#examples-of-chained-post-ops" title="Permalink to this headline">¶</a></h3>
 <p>Post-ops can be chained together by appending one after another. Note that the
 order matters: the post-ops are executed in the order they have been appended.</p>
-<section id="sum-relu">
+<div class="section" id="sum-relu">
 <span id="post-ops-sum-relu-label"></span><h4>Sum -&gt; ReLU<a class="headerlink" href="#sum-relu" title="Permalink to this headline">¶</a></h4>
 <p>This pattern is pretty common for the CNN topologies of the ResNet family.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">dnnl</span><span class="o">::</span><span class="n">post_ops</span> <span class="n">po</span><span class="p">;</span>
@@ -4729,10 +4728,10 @@ order matters: the post-ops are executed in the order they have been appended.</
 <p>This will lead to the following computations:</p>
 <div class="math notranslate nohighlight">
 \[\dst[:] = \operatorname{ReLU}(\dst[:] + \operatorname{conv}(\src[:], \weights[:])\]</div>
-</section>
-</section>
-</section>
-<section id="api">
+</div>
+</div>
+</div>
+<div class="section" id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp struct">
 <dt id="_CPPv4N4dnnl8post_opsE">
@@ -4756,15 +4755,15 @@ order matters: the post-ops are executed in the order they have been appended.</
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl8post_ops4kindEi">
 <span id="_CPPv3NK4dnnl8post_ops4kindEi"></span><span id="_CPPv2NK4dnnl8post_ops4kindEi"></span><span id="dnnl::post_ops::kind__iC"></span><span class="target" id="structdnnl_1_1post__ops_1a454acad1a18f2763f07b42912778c0f8"></span><a class="reference internal" href="../general.html#_CPPv4N4dnnl9primitiveE" title="dnnl::primitive"><span class="pre">primitive</span></a><span class="pre">::</span><a class="reference internal" href="../general.html#_CPPv4N4dnnl9primitive4kindE" title="dnnl::primitive::kind"><span class="pre">kind</span></a> <code class="sig-name descname"><span class="pre">kind</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">index</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl8post_ops4kindEi" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the primitive kind of post-op at entry with a certain index. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Primitive kind of the post-op at the specified index. </p>
+<dd><p>Returns the primitive kind of post-op at entry with a certain index. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> – Index of the post-op to return the kind for. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: Index of the post-op to return the kind for. </p></li>
-</ul>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Primitive kind of the post-op at the specified index. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -4775,45 +4774,47 @@ order matters: the post-ops are executed in the order they have been appended.</
 <p>This feature may improve performance for cases like residual learning blocks, where the result of convolution is accumulated to the previously computed activations. The parameter <code class="docutils literal notranslate"><span class="pre">scale</span></code> may be used for the integer-based computations when the result and previous activations have different logical scaling factors.</p>
 <p>In the simplest case when the accumulation is the only post-op, the computations would be <code class="docutils literal notranslate"><span class="pre">dst[:]</span> <span class="pre">:=</span> <span class="pre">scale</span> <span class="pre">*</span> <span class="pre">dst[:]</span> <span class="pre">+</span> <span class="pre">op(...)</span></code> instead of <code class="docutils literal notranslate"><span class="pre">dst[:]</span> <span class="pre">:=</span> <span class="pre">op(...)</span></code>.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">data_type</span></code> is specified, the original dst tensor will be reinterpreted as a tensor with the provided data type. Because it is a reinterpretation, data_type and dst data type should have the same size. As a result, computations would be <code class="docutils literal notranslate"><span class="pre">dst[:]</span> <span class="pre">&lt;-</span> <span class="pre">scale</span> <span class="pre">*</span> <span class="pre">as_data_type(dst[:])</span> <span class="pre">+</span> <span class="pre">op(...)</span></code> instead of <code class="docutils literal notranslate"><span class="pre">dst[:]</span> <span class="pre">&lt;-</span> <span class="pre">op(...)</span></code>.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>This post-op executes in-place and does not change the destination layout.</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">scale</span></code>: Scaling factor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">data_type</span></code>: Data type. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This post-op executes in-place and does not change the destination layout.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scale</strong> – Scaling factor. </p></li>
+<li><p><strong>data_type</strong> – Data type. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl8post_ops14get_params_sumEiRf">
 <span id="_CPPv3NK4dnnl8post_ops14get_params_sumEiRf"></span><span id="_CPPv2NK4dnnl8post_ops14get_params_sumEiRf"></span><span id="dnnl::post_ops::get_params_sum__i.floatRC"></span><span class="target" id="structdnnl_1_1post__ops_1aaeb404084e7f9c65e8e266acca2ea6ac"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">get_params_sum</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">index</span></em>, <span class="pre">float</span> <span class="pre">&amp;</span><em><span class="pre">scale</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl8post_ops14get_params_sumEiRf" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the parameters of an accumulation (sum) post-op.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: Index of the sum post-op. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scale</span></code>: Scaling factor of the sum post-op. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> – Index of the sum post-op. </p></li>
+<li><p><strong>scale</strong> – Scaling factor of the sum post-op. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl8post_ops14get_params_sumEiRfRN6memory9data_typeE">
 <span id="_CPPv3NK4dnnl8post_ops14get_params_sumEiRfRN6memory9data_typeE"></span><span id="_CPPv2NK4dnnl8post_ops14get_params_sumEiRfRN6memory9data_typeE"></span><span id="dnnl::post_ops::get_params_sum__i.floatR.memory::data_typeRC"></span><span class="target" id="structdnnl_1_1post__ops_1a19a49b0e1c5b2ce4f38d7774a50b0824"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">get_params_sum</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">index</span></em>, <span class="pre">float</span> <span class="pre">&amp;</span><em><span class="pre">scale</span></em>, <a class="reference internal" href="../../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../../data_model/data_types/index.html#_CPPv4N4dnnl6memory9data_typeE" title="dnnl::memory::data_type"><span class="pre">data_type</span></a> <span class="pre">&amp;</span><em><span class="pre">data_type</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl8post_ops14get_params_sumEiRfRN6memory9data_typeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the parameters of an accumulation (sum) post-op.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: Index of the sum post-op. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scale</span></code>: Scaling factor of the sum post-op. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">data_type</span></code>: Data type of the sum post-op. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> – Index of the sum post-op. </p></li>
+<li><p><strong>scale</strong> – Scaling factor of the sum post-op. </p></li>
+<li><p><strong>data_type</strong> – Data type of the sum post-op. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -4822,40 +4823,40 @@ order matters: the post-ops are executed in the order they have been appended.</
 <dd><p>Appends an elementwise post-op.</p>
 <p>The kind of this post-op is <a class="reference internal" href="../general.html#structdnnl_1_1primitive_1ad1ec93215a0cf3aa0a32bae0c2cd9169a98b908c7d0339bb6a4832db44fc2c8da"><span class="std std-ref">dnnl::primitive::kind::eltwise</span></a>.</p>
 <p>In the simplest case when the elementwise is the only post-op, the computations would be <code class="docutils literal notranslate"><span class="pre">dst[:]</span> <span class="pre">:=</span> <span class="pre">scale</span> <span class="pre">*</span> <span class="pre">eltwise_op</span> <span class="pre">(op(...))</span></code> instead of <code class="docutils literal notranslate"><span class="pre">dst[:]</span> <span class="pre">&lt;-</span> <span class="pre">op(...)</span></code>, where eltwise_op is configured with the given parameters.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">scale</span></code>: Scaling factor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aalgorithm</span></code>: Elementwise algorithm. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">alpha</span></code>: Alpha parameter for the elementwise algorithm. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">beta</span></code>: Beta parameter for the elementwise algorithm. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scale</strong> – Scaling factor. </p></li>
+<li><p><strong>aalgorithm</strong> – Elementwise algorithm. </p></li>
+<li><p><strong>alpha</strong> – Alpha parameter for the elementwise algorithm. </p></li>
+<li><p><strong>beta</strong> – Beta parameter for the elementwise algorithm. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl8post_ops18get_params_eltwiseEiRfR9algorithmRfRf">
 <span id="_CPPv3NK4dnnl8post_ops18get_params_eltwiseEiRfR9algorithmRfRf"></span><span id="_CPPv2NK4dnnl8post_ops18get_params_eltwiseEiRfR9algorithmRfRf"></span><span id="dnnl::post_ops::get_params_eltwise__i.floatR.algorithmR.floatR.floatRC"></span><span class="target" id="structdnnl_1_1post__ops_1aacdd5699855516a79903e4fb416e0710"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">get_params_eltwise</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">index</span></em>, <span class="pre">float</span> <span class="pre">&amp;</span><em><span class="pre">scale</span></em>, <a class="reference internal" href="../general.html#_CPPv4N4dnnl9algorithmE" title="dnnl::algorithm"><span class="pre">algorithm</span></a> <span class="pre">&amp;</span><em><span class="pre">aalgorithm</span></em>, <span class="pre">float</span> <span class="pre">&amp;</span><em><span class="pre">alpha</span></em>, <span class="pre">float</span> <span class="pre">&amp;</span><em><span class="pre">beta</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl8post_ops18get_params_eltwiseEiRfR9algorithmRfRf" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns parameters of an elementwise post-up.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: Index of the post-op. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scale</span></code>: Output scaling factor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aalgorithm</span></code>: Output elementwise algorithm kind. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">alpha</span></code>: Output alpha parameter for the elementwise algorithm. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">beta</span></code>: Output beta parameter for the elementwise algorithm. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> – Index of the post-op. </p></li>
+<li><p><strong>scale</strong> – Output scaling factor. </p></li>
+<li><p><strong>aalgorithm</strong> – Output elementwise algorithm kind. </p></li>
+<li><p><strong>alpha</strong> – Output alpha parameter for the elementwise algorithm. </p></li>
+<li><p><strong>beta</strong> – Output beta parameter for the elementwise algorithm. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

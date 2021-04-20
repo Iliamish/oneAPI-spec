@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Matrix Multiplication &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4620,7 +4619,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="matrix-multiplication">
+  <div class="section" id="matrix-multiplication">
 <h1>Matrix Multiplication<a class="headerlink" href="#matrix-multiplication" title="Permalink to this headline">¶</a></h1>
 <p>The matrix multiplication (MatMul) primitive computes the product of two 2D
 tensors with optional bias addition. Variable names follow the standard
@@ -4643,7 +4642,7 @@ multiplication operations, in which case the tensors must be 3D:</p>
 its dimensions can be 1 and the same value would be used across the
 corresponding dimension. However, <span class="math notranslate nohighlight">\(\bias\)</span> must have the same number of
 dimensions as the <span class="math notranslate nohighlight">\(\dst\)</span>.</p>
-<section id="execution-arguments">
+<div class="section" id="execution-arguments">
 <h2>Execution Arguments<a class="headerlink" href="#execution-arguments" title="Permalink to this headline">¶</a></h2>
 <p>When executed, the inputs and outputs should be mapped to an execution
 argument index as specified by the following table.</p>
@@ -4672,8 +4671,8 @@ argument index as specified by the following table.</p>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="operation-details">
+</div>
+<div class="section" id="operation-details">
 <h2>Operation Details<a class="headerlink" href="#operation-details" title="Permalink to this headline">¶</a></h2>
 <p>The MatMul primitive supports input and output tensors with run-time specified
 shapes and memory formats. The run-time specified dimensions or strides are
@@ -4687,8 +4686,8 @@ special format tag <a class="reference internal" href="../data_model/memory/form
 appropriate memory format for the corresponding input or output shapes. On the
 other hand, run-time specified shapes enable users to create a primitive once
 and use it in different situations.</p>
-</section>
-<section id="data-types-support">
+</div>
+<div class="section" id="data-types-support">
 <h2>Data Types Support<a class="headerlink" href="#data-types-support" title="Permalink to this headline">¶</a></h2>
 <p>The MatMul primitive supports the following combinations of data types for
 source, destination, weights, and bias tensors.</p>
@@ -4734,8 +4733,8 @@ abbreviated to <a class="reference internal" href="../data_model/data_types/inde
 </tr>
 </tbody>
 </table>
-</section>
-<section id="data-representation">
+</div>
+<div class="section" id="data-representation">
 <h2>Data Representation<a class="headerlink" href="#data-representation" title="Permalink to this headline">¶</a></h2>
 <p>The MatMul primitive expects the following tensors:</p>
 <table class="table">
@@ -4802,8 +4801,8 @@ always be <a class="reference internal" href="../data_model/memory/formats.html#
 </tr>
 </tbody>
 </table>
-</section>
-<section id="attributes-and-post-ops">
+</div>
+<div class="section" id="attributes-and-post-ops">
 <h2>Attributes and Post-ops<a class="headerlink" href="#attributes-and-post-ops" title="Permalink to this headline">¶</a></h2>
 <p>Attributes and post-ops enable modifying the behavior of the MatMul primitive.
 The following attributes and post-ops are supported:</p>
@@ -4856,8 +4855,8 @@ the execution stage, the corresponding memory object needs to be passed in the
 argument with index set to (<code class="docutils literal notranslate"><span class="pre">DNNL_ARG_ATTR_ZERO_POINTS</span> <span class="pre">|</span>
 <span class="pre">DNNL_ARG_${MEMORY}</span></code>). For instance, source tensor zero points memory argument
 would be passed with index (<code class="docutils literal notranslate"><span class="pre">DNNL_ARG_ATTR_ZERO_POINTS</span> <span class="pre">|</span> <span class="pre">DNNL_ARG_SRC</span></code>).</p>
-</section>
-<section id="api">
+</div>
+<div class="section" id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp struct">
 <dt id="_CPPv4N4dnnl6matmulE">
@@ -4874,13 +4873,12 @@ would be passed with index (<code class="docutils literal notranslate"><span cla
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl6matmul6matmulERK14primitive_desc">
 <span id="_CPPv3N4dnnl6matmul6matmulERK14primitive_desc"></span><span id="_CPPv2N4dnnl6matmul6matmulERK14primitive_desc"></span><span id="dnnl::matmul::matmul__primitive_descCR"></span><span class="target" id="structdnnl_1_1matmul_1aa1052f851d887db245f58f014cd6b0f5"></span><code class="sig-name descname"><span class="pre">matmul</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl6matmul14primitive_descE" title="dnnl::matmul::primitive_desc"><span class="pre">primitive_desc</span></a> <span class="pre">&amp;</span><em><span class="pre">pd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl6matmul6matmulERK14primitive_desc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Constructs a matmul primitive. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pd</span></code>: Primitive descriptor for a matmul primitive. </p></li>
-</ul>
+<dd><p>Constructs a matmul primitive. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pd</strong> – Primitive descriptor for a matmul primitive. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -4894,31 +4892,31 @@ would be passed with index (<code class="docutils literal notranslate"><span cla
 <dt id="_CPPv4N4dnnl6matmul4desc4descERKN6memory4descERKN6memory4descERKN6memory4descE">
 <span id="_CPPv3N4dnnl6matmul4desc4descERKN6memory4descERKN6memory4descERKN6memory4descE"></span><span id="_CPPv2N4dnnl6matmul4desc4descERKN6memory4descERKN6memory4descERKN6memory4descE"></span><span id="dnnl::matmul::desc::desc__memory::descCR.memory::descCR.memory::descCR"></span><span class="target" id="structdnnl_1_1matmul_1_1desc_1a44e9e36ad615dc438fc96c74317fe487"></span><code class="sig-name descname"><span class="pre">desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">src_desc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">weights_desc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">dst_desc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl6matmul4desc4descERKN6memory4descERKN6memory4descERKN6memory4descE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a descriptor for a matmul primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">src_desc</span></code>: Memory descriptor for source (matrix A). </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">weights_desc</span></code>: Memory descriptor for weights (matrix B). </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dst_desc</span></code>: Memory descriptor for destination (matrix C). </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src_desc</strong> – Memory descriptor for source (matrix A). </p></li>
+<li><p><strong>weights_desc</strong> – Memory descriptor for weights (matrix B). </p></li>
+<li><p><strong>dst_desc</strong> – Memory descriptor for destination (matrix C). </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl6matmul4desc4descERKN6memory4descERKN6memory4descERKN6memory4descERKN6memory4descE">
 <span id="_CPPv3N4dnnl6matmul4desc4descERKN6memory4descERKN6memory4descERKN6memory4descERKN6memory4descE"></span><span id="_CPPv2N4dnnl6matmul4desc4descERKN6memory4descERKN6memory4descERKN6memory4descERKN6memory4descE"></span><span id="dnnl::matmul::desc::desc__memory::descCR.memory::descCR.memory::descCR.memory::descCR"></span><span class="target" id="structdnnl_1_1matmul_1_1desc_1a6c302d130aa85dc058f3f19a2612bcd3"></span><code class="sig-name descname"><span class="pre">desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">src_desc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">weights_desc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">bias_desc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">dst_desc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl6matmul4desc4descERKN6memory4descERKN6memory4descERKN6memory4descERKN6memory4descE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a descriptor for a matmul primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">src_desc</span></code>: Memory descriptor for source (matrix A). </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">weights_desc</span></code>: Memory descriptor for weights (matrix B). </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dst_desc</span></code>: Memory descriptor for destination (matrix C). </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">bias_desc</span></code>: Memory descriptor for bias. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src_desc</strong> – Memory descriptor for source (matrix A). </p></li>
+<li><p><strong>weights_desc</strong> – Memory descriptor for weights (matrix B). </p></li>
+<li><p><strong>dst_desc</strong> – Memory descriptor for destination (matrix C). </p></li>
+<li><p><strong>bias_desc</strong> – Memory descriptor for bias. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -4940,79 +4938,87 @@ would be passed with index (<code class="docutils literal notranslate"><span cla
 <dt id="_CPPv4N4dnnl6matmul14primitive_desc14primitive_descERK4descRK6engineb">
 <span id="_CPPv3N4dnnl6matmul14primitive_desc14primitive_descERK4descRK6engineb"></span><span id="_CPPv2N4dnnl6matmul14primitive_desc14primitive_descERK4descRK6engineb"></span><span id="dnnl::matmul::primitive_desc::primitive_desc__descCR.engineCR.b"></span><span class="target" id="structdnnl_1_1matmul_1_1primitive__desc_1af50fbacab651bc7a0f8e0cbda5c7f45b"></span><code class="sig-name descname"><span class="pre">primitive_desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl6matmul4descE" title="dnnl::matmul::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl6matmul14primitive_desc14primitive_descERK4descRK6engineb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a primitive descriptor for a matmul primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Descriptor for a matmul primitive. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adesc</strong> – Descriptor for a matmul primitive. </p></li>
+<li><p><strong>aengine</strong> – Engine to use. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N4dnnl6matmul14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb">
 <span id="_CPPv3N4dnnl6matmul14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb"></span><span id="_CPPv2N4dnnl6matmul14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb"></span><span id="dnnl::matmul::primitive_desc::primitive_desc__descCR.primitive_attrCR.engineCR.b"></span><span class="target" id="structdnnl_1_1matmul_1_1primitive__desc_1a0334c890688b86e4ec2324128247b7f9"></span><code class="sig-name descname"><span class="pre">primitive_desc</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N4dnnl6matmul4descE" title="dnnl::matmul::desc"><span class="pre">desc</span></a> <span class="pre">&amp;</span><em><span class="pre">adesc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="attributes/index.html#_CPPv4N4dnnl14primitive_attrE" title="dnnl::primitive_attr"><span class="pre">primitive_attr</span></a> <span class="pre">&amp;</span><em><span class="pre">attr</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../execution_model/index.html#_CPPv4N4dnnl6engineE" title="dnnl::engine"><span class="pre">engine</span></a> <span class="pre">&amp;</span><em><span class="pre">aengine</span></em>, <span class="pre">bool</span> <em><span class="pre">allow_empty</span></em> <span class="pre">=</span> <span class="pre">false</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4dnnl6matmul14primitive_desc14primitive_descERK4descRK14primitive_attrRK6engineb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a primitive descriptor for a matmul primitive.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adesc</span></code>: Descriptor for a matmul primitive. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">attr</span></code>: Primitive attributes to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">aengine</span></code>: Engine to use. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_empty</span></code>: A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adesc</strong> – Descriptor for a matmul primitive. </p></li>
+<li><p><strong>attr</strong> – Primitive attributes to use. </p></li>
+<li><p><strong>aengine</strong> – Engine to use. </p></li>
+<li><p><strong>allow_empty</strong> – A flag signifying whether construction is allowed to fail without throwing an exception. In this case an empty object will be produced. This flag is optional and defaults to false. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl6matmul14primitive_desc8src_descEv">
 <span id="_CPPv3NK4dnnl6matmul14primitive_desc8src_descEv"></span><span id="_CPPv2NK4dnnl6matmul14primitive_desc8src_descEv"></span><span id="dnnl::matmul::primitive_desc::src_descC"></span><span class="target" id="structdnnl_1_1matmul_1_1primitive__desc_1a9b9fc61ab0fe6354dd96757ede7b92dc"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">src_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl6matmul14primitive_desc8src_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a source memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Source memory descriptor. </p>
+<dd><p>Returns a source memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Source memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a source parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a source parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl6matmul14primitive_desc12weights_descEv">
 <span id="_CPPv3NK4dnnl6matmul14primitive_desc12weights_descEv"></span><span id="_CPPv2NK4dnnl6matmul14primitive_desc12weights_descEv"></span><span id="dnnl::matmul::primitive_desc::weights_descC"></span><span class="target" id="structdnnl_1_1matmul_1_1primitive__desc_1a0be2d3c1fd1674bd6808c0e82c035c2f"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">weights_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl6matmul14primitive_desc12weights_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a weights memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Weights memory descriptor. </p>
+<dd><p>Returns a weights memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Weights memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a weights parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a weights parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl6matmul14primitive_desc9bias_descEv">
 <span id="_CPPv3NK4dnnl6matmul14primitive_desc9bias_descEv"></span><span id="_CPPv2NK4dnnl6matmul14primitive_desc9bias_descEv"></span><span id="dnnl::matmul::primitive_desc::bias_descC"></span><span class="target" id="structdnnl_1_1matmul_1_1primitive__desc_1a8158f4a37657da12ee8cfa59e2929583"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">bias_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl6matmul14primitive_desc9bias_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the bias memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>The bias memory descriptor. </p>
+<dd><p>Returns the bias memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The bias memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a bias parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a bias parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4dnnl6matmul14primitive_desc8dst_descEv">
 <span id="_CPPv3NK4dnnl6matmul14primitive_desc8dst_descEv"></span><span id="_CPPv2NK4dnnl6matmul14primitive_desc8dst_descEv"></span><span id="dnnl::matmul::primitive_desc::dst_descC"></span><span class="target" id="structdnnl_1_1matmul_1_1primitive__desc_1ad35cf09a2aaf3cd7db751b6c01d44f80"></span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><span class="pre">::</span><a class="reference internal" href="../data_model/memory/objects.html#_CPPv4N4dnnl6memory4descE" title="dnnl::memory::desc"><span class="pre">desc</span></a> <code class="sig-name descname"><span class="pre">dst_desc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4dnnl6matmul14primitive_desc8dst_descEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a destination memory descriptor. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Destination memory descriptor. </p>
+<dd><p>Returns a destination memory descriptor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Destination memory descriptor. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A zero memory descriptor if the primitive does not have a destination parameter. </p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A zero memory descriptor if the primitive does not have a destination parameter. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -5020,8 +5026,8 @@ would be passed with index (<code class="docutils literal notranslate"><span cla
 
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

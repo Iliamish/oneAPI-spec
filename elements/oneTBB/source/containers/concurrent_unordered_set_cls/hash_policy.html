@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hash policy &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4599,12 +4598,12 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="hash-policy">
+  <div class="section" id="hash-policy">
 <h1>Hash policy<a class="headerlink" href="#hash-policy" title="Permalink to this headline">¶</a></h1>
 <p>Hash policy of <code class="docutils literal notranslate"><span class="pre">concurrent_unordered_set</span></code> manages the number of buckets in the container and
 the allowed maximum number of elements per bucket (load factor). If the maximum load factor is exceeded,
 the container can automatically increase the number of buckets.</p>
-<section id="load-factor">
+<div class="section" id="load-factor">
 <h2>Load factor<a class="headerlink" href="#load-factor" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span> <span class="nf">load_factor</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
@@ -4626,8 +4625,8 @@ the container can automatically increase the number of buckets.</p>
 </div>
 <p>Sets the maximum number of elements per bucket to <code class="docutils literal notranslate"><span class="pre">ml</span></code>.</p>
 </div></blockquote>
-</section>
-<section id="manual-rehashing">
+</div>
+<div class="section" id="manual-rehashing">
 <h2>Manual rehashing<a class="headerlink" href="#manual-rehashing" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">rehash</span><span class="p">(</span> <span class="n">size_type</span> <span class="n">n</span> <span class="p">);</span>
@@ -4642,8 +4641,8 @@ the container can automatically increase the number of buckets.</p>
 </div>
 <p>Sets the number of buckets to the value that is needed to store <code class="docutils literal notranslate"><span class="pre">n</span></code> elements.</p>
 </div></blockquote>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

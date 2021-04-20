@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Software Architecture &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -4604,7 +4603,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="software-architecture">
+  <div class="section" id="software-architecture">
 <h1>Software Architecture<a class="headerlink" href="#software-architecture" title="Permalink to this headline">¶</a></h1>
 <p>oneAPI provides a common developer interface across a range of data
 parallel accelerators (see the figure below).  Programmers use DPC++
@@ -4612,7 +4611,7 @@ for both API programming and direct programming.  The capabilities of
 a oneAPI platform are determined by the Level Zero interface, which
 provides system software a common abstraction for a oneAPI device.</p>
 <img alt="_images/oneapi-architecture.png" src="_images/oneapi-architecture.png" />
-<section id="oneapi-platform">
+<div class="section" id="oneapi-platform">
 <h2>oneAPI Platform<a class="headerlink" href="#oneapi-platform" title="Permalink to this headline">¶</a></h2>
 <p>A oneAPI platform is comprised of a <em>host</em> and a collection of
 <em>devices</em>.  The host is typically a multi-core CPU, and the devices
@@ -4699,8 +4698,8 @@ execution.  If the buffer-accessor mechanism
 is used, the application and device can also synchronize through a
 <em>host accessor</em>, through the destruction of a buffer object, or
 through other more advanced mechanisms.</p>
-</section>
-<section id="api-programming-example">
+</div>
+<div class="section" id="api-programming-example">
 <h2>API Programming Example<a class="headerlink" href="#api-programming-example" title="Permalink to this headline">¶</a></h2>
 <p>API programming requires the programmer to specify the target device and the
 memory communication strategy.  In the following example, we call the
@@ -4741,8 +4740,8 @@ Otherwise this is the standard GEMM C++ interface.</p>
 <span class="c1">// when we exit the block, the buffer destructor will write result back to C.</span>
 </pre></div>
 </div>
-</section>
-<section id="direct-programming-example">
+</div>
+<div class="section" id="direct-programming-example">
 <h2>Direct Programming Example<a class="headerlink" href="#direct-programming-example" title="Permalink to this headline">¶</a></h2>
 <p>With direct programming, we specify the target device and the memory
 communication strategy, as we do for API programming.  In addition, we
@@ -4807,8 +4806,8 @@ we leave the scope, the destructor for the buffer object holding
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

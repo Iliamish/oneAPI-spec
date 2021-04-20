@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>join_node &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4609,7 +4608,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="join-node">
+  <div class="section" id="join-node">
 <h1>join_node<a class="headerlink" href="#join-node" title="Permalink to this headline">¶</a></h1>
 <p><strong>[flow_graph.join_node]</strong></p>
 <p>A node that creates a tuple from a set of messages received at its input ports and broadcasts the
@@ -4695,11 +4694,11 @@ buffering policy.</p>
 <p>The function template <a class="reference internal" href="input_port_func.html"><span class="doc">input_port</span></a> simplifies the syntax for getting a
 reference to a specific input port.</p>
 <p><code class="docutils literal notranslate"><span class="pre">join_node</span></code> has a <cite>buffering</cite> and <cite>broadcast-push</cite> <a class="reference internal" href="forwarding_and_buffering.html"><span class="doc">properties</span></a>.</p>
-<section id="member-types">
+<div class="section" id="member-types">
 <h2>Member types<a class="headerlink" href="#member-types" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">input_ports_type</span></code> is an alias to a tuple of input ports.</p>
-</section>
-<section id="member-functions">
+</div>
+<div class="section" id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">explicit</span> <span class="nf">join_node</span><span class="p">(</span> <span class="n">graph</span> <span class="o">&amp;</span><span class="n">g</span> <span class="p">);</span>
 </pre></div>
@@ -4758,15 +4757,15 @@ other <code class="docutils literal notranslate"><span class="pre">receiver&lt;T
 <p>Attempts to generate a tuple based on the buffering policy of the <code class="docutils literal notranslate"><span class="pre">join_node</span></code>.</p>
 <p>If it can successfully generate a tuple, it copies it to <code class="docutils literal notranslate"><span class="pre">v</span></code> and returns <code class="docutils literal notranslate"><span class="pre">true</span></code>.
 Otherwise, it returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
-</section>
-<section id="non-member-types">
+</div>
+<div class="section" id="non-member-types">
 <h2>Non-Member Types<a class="headerlink" href="#non-member-types" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">tag_value</span> <span class="o">=</span> <span class="cm">/*implementation-specific*/</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">tag_value</span></code> is an unsigned integral type for defining the <code class="docutils literal notranslate"><span class="pre">tag_matching</span></code> policy.</p>
-</section>
-<section id="deduction-guides">
+</div>
+<div class="section" id="deduction-guides">
 <h2>Deduction Guides<a class="headerlink" href="#deduction-guides" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Body</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Bodies</span><span class="o">&gt;</span>
 <span class="n">join_node</span><span class="p">(</span><span class="n">graph</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">Body</span><span class="p">,</span> <span class="n">Bodies</span><span class="p">...)</span>
@@ -4778,8 +4777,8 @@ Otherwise, it returns <code class="docutils literal notranslate"><span class="pr
 <li><p><code class="docutils literal notranslate"><span class="pre">input_t</span></code> is an alias to the input argument type of the passed function object.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">output_t</span></code> is an alias to the return type of the passed function object.</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

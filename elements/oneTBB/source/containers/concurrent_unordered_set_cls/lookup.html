@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lookup &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4609,11 +4608,11 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="lookup">
+  <div class="section" id="lookup">
 <h1>Lookup<a class="headerlink" href="#lookup" title="Permalink to this headline">¶</a></h1>
 <p>All methods in this section can be executed concurrently with each other,
 concurrently-safe modifiers and while traversing the container.</p>
-<section id="count">
+<div class="section" id="count">
 <h2>count<a class="headerlink" href="#count" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">size_type</span> <span class="nf">count</span><span class="p">(</span> <span class="k">const</span> <span class="n">key_type</span><span class="o">&amp;</span> <span class="n">key</span> <span class="p">);</span>
@@ -4631,8 +4630,8 @@ concurrently-safe modifiers and while traversing the container.</p>
 <p>This overload only participates in overload resolution if qualified-id
 <code class="docutils literal notranslate"><span class="pre">hasher::transparent_key_equal</span></code> is valid and denotes a type.</p>
 </div></blockquote>
-</section>
-<section id="find">
+</div>
+<div class="section" id="find">
 <h2>find<a class="headerlink" href="#find" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">iterator</span> <span class="nf">find</span><span class="p">(</span> <span class="k">const</span> <span class="n">key_type</span><span class="o">&amp;</span> <span class="n">key</span> <span class="p">);</span>
@@ -4656,8 +4655,8 @@ if no such element exists.</p>
 <p>These overloads only participates in overload resolution if qualified-id
 <code class="docutils literal notranslate"><span class="pre">hasher::transparent_key_equal</span></code> is valid and denotes a type.</p>
 </div></blockquote>
-</section>
-<section id="contains">
+</div>
+<div class="section" id="contains">
 <h2>contains<a class="headerlink" href="#contains" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="nf">contains</span><span class="p">(</span> <span class="k">const</span> <span class="n">key_type</span><span class="o">&amp;</span> <span class="n">key</span> <span class="p">)</span> <span class="k">const</span><span class="p">;</span>
@@ -4676,8 +4675,8 @@ in the container; <code class="docutils literal notranslate"><span class="pre">f
 <p>This overload only participates in overload resolution if qualified-id
 <code class="docutils literal notranslate"><span class="pre">hasher::transparent_key_equal</span></code> is valid and denotes a type.</p>
 </div></blockquote>
-</section>
-<section id="equal-range">
+</div>
+<div class="section" id="equal-range">
 <h2>equal_range<a class="headerlink" href="#equal-range" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">iterator</span><span class="p">,</span> <span class="n">iterator</span><span class="o">&gt;</span> <span class="n">equal_range</span><span class="p">(</span> <span class="k">const</span> <span class="n">key_type</span><span class="o">&amp;</span> <span class="n">key</span> <span class="p">);</span>
@@ -4703,8 +4702,8 @@ Otherwise, <code class="docutils literal notranslate"><span class="pre">{end(),<
 <p>These overloads participate in overload resolution only if qualified-id
 <code class="docutils literal notranslate"><span class="pre">hasher::transparent_key_equal</span></code> is valid and denotes a type.</p>
 </div></blockquote>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

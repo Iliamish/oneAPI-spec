@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>oneMKL Architecture &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4725,7 +4724,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="onemkl-architecture">
+  <div class="section" id="onemkl-architecture">
 <span id="id1"></span><h1>oneMKL Architecture<a class="headerlink" href="#onemkl-architecture" title="Permalink to this headline">¶</a></h1>
 <p>The oneMKL element of oneAPI has several general assumptions, requirements and recommendations for all domains contained therein.  These will be addressed in this architecture section.
 In particular, DPC++ allows for a great control over the execution of kernels on the various devices.  We discuss the supported execution models of oneMKL APIs in <a class="reference internal" href="#onemkl-execution-model"><span class="std std-ref">Execution Model</span></a>.
@@ -4734,13 +4733,13 @@ The general structure and design of oneMKL APIs including namespaces and common 
 The exceptions and error handling are described in <a class="reference internal" href="#onemkl-exceptions"><span class="std std-ref">Exceptions and Error Handling</span></a>.
 Finally all the other necessary aspects related to oneMKL architecture can be found in <a class="reference internal" href="#onemkl-arch-other"><span class="std std-ref">Other Features</span></a> including versioning and discussion of pre and post conditions.
 Other nonessential, but useful aspects of the oneMKL architecture and design may also be found in the <a class="reference internal" href="../appendix/appendix.html#onemkl-appendix"><span class="std std-ref">oneMKL Appendix</span></a>.</p>
-<section id="execution-model">
+<div class="section" id="execution-model">
 <span id="onemkl-execution-model"></span><h2>Execution Model<a class="headerlink" href="#execution-model" title="Permalink to this headline">¶</a></h2>
 <p>This section describes the execution environment common to all oneMKL functionality. The execution environment includes how data is provided to computational routines in <a class="reference internal" href="#onemkl-queues"><span class="std std-ref">Use of Queues</span></a>, support for several devices in <a class="reference internal" href="#onemkl-device-usage"><span class="std std-ref">Device Usage</span></a>, synchronous and asynchronous execution models in <a class="reference internal" href="#onemkl-asynchronous-synchronous-execution"><span class="std std-ref">Asynchronous Execution</span></a> and <a class="reference internal" href="#onemkl-host-thread-safety"><span class="std std-ref">Host Thread Safety</span></a>.</p>
-<section id="use-of-queues">
+<div class="section" id="use-of-queues">
 <span id="onemkl-queues"></span><h3>Use of Queues<a class="headerlink" href="#use-of-queues" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">sycl::queue</span></code> defined in the oneAPI DPC++ specification is used to specify the device and features enabled on that device on which a task will be enqueued.  There are two forms of computational routines in oneMKL: class based <a class="reference internal" href="#onemkl-member-functions"><span class="std std-ref">Member Functions</span></a> and standalone <a class="reference internal" href="#onemkl-nonmember-functions"><span class="std std-ref">Non-Member Functions</span></a>.  As these may interact with the <code class="docutils literal notranslate"><span class="pre">sycl::queue</span></code> in different ways, we provide a section for each one to describe assumptions.</p>
-<section id="non-member-functions">
+<div class="section" id="non-member-functions">
 <span id="onemkl-nonmember-functions"></span><h4>Non-Member Functions<a class="headerlink" href="#non-member-functions" title="Permalink to this headline">¶</a></h4>
 <p>Each oneMKL non-member computational routine takes a <code class="docutils literal notranslate"><span class="pre">sycl::queue</span></code> reference as its first parameter:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkl</span><span class="p">::</span><span class="n">domain</span><span class="p">::</span><span class="n">routine</span><span class="p">(</span><span class="n">sycl</span><span class="p">::</span><span class="n">queue</span> <span class="o">&amp;</span><span class="n">q</span><span class="p">,</span> <span class="o">...</span><span class="p">);</span>
@@ -4749,29 +4748,29 @@ Other nonessential, but useful aspects of the oneMKL architecture and design may
 <p>All computation performed by the routine shall be done on the hardware device(s) associated with this queue, with possible aid from the host, unless otherwise specified.
 In the case of an ordered queue, all computation shall also be ordered with respect to other kernels as if enqueued on that queue.</p>
 <p>A particular oneMKL implementation may not support the execution of a given oneMKL routine on the specified device(s). In this case, the implementation may either perform the computation on the host or throw an exception.  See <a class="reference internal" href="#onemkl-exceptions"><span class="std std-ref">Exceptions and Error Handling</span></a> for the possible exceptions.</p>
-</section>
-<section id="member-functions">
+</div>
+<div class="section" id="member-functions">
 <span id="onemkl-member-functions"></span><h4>Member Functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h4>
 <p>oneMKL class-based APIs, such as those in the RNG and DFT domains, require a <code class="docutils literal notranslate"><span class="pre">sycl::queue</span></code> as an argument to the constructor or another setup routine.
 The execution requirements for computational routines from the previous section also apply to computational class methods.</p>
-</section>
-</section>
-<section id="device-usage">
+</div>
+</div>
+<div class="section" id="device-usage">
 <span id="onemkl-device-usage"></span><h3>Device Usage<a class="headerlink" href="#device-usage" title="Permalink to this headline">¶</a></h3>
 <p>oneMKL itself does not currently provide any interfaces for controlling device usage: for instance, controlling the number of cores used on the CPU, or the number of execution units on a GPU. However, such functionality may be available by partitioning a <code class="docutils literal notranslate"><span class="pre">sycl::device</span></code> instance into subdevices, when supported by the device.</p>
 <p>When given a queue associated with such a subdevice, a oneMKL implementation shall only perform computation on that subdevice.</p>
-</section>
-<section id="asynchronous-execution">
+</div>
+<div class="section" id="asynchronous-execution">
 <span id="onemkl-asynchronous-synchronous-execution"></span><h3>Asynchronous Execution<a class="headerlink" href="#asynchronous-execution" title="Permalink to this headline">¶</a></h3>
 <p>The oneMKL API is designed to allow asynchronous execution of computational routines, to facilitate concurrent usage of multiple devices in the system. Each computational routine enqueues work to be performed on the selected device, and may (but is not required to) return before execution completes.</p>
 <p>Hence, it is the calling application’s responsibility to ensure that any inputs are valid until computation is complete, and likewise to wait for computation completion before reading any outputs. This can be done automatically when using DPC++ buffers, or manually when using Unified Shared Memory (USM) pointers, as described in the sections below.</p>
 <p>Unless otherwise specified, asynchronous execution is <em>allowed</em>, but not <em>guaranteed</em>, by any oneMKL computational routine, and may vary between implementations and/or versions. oneMKL implementations must clearly document whether execution is guaranteed to be asynchronous for each supported routine. Regardless, calling applications shall not launch any oneMKL computational routine with a dependency on a future oneMKL API call, even if this computational routine executes asynchronously (i.e. a oneMKL implementation may assume no antidependencies are present). This guarantee allows oneMKL implementations to reserve resources for execution without risking deadlock.</p>
-<section id="synchronization-when-using-buffers">
+<div class="section" id="synchronization-when-using-buffers">
 <span id="onemkl-synchronization-with-buffers"></span><h4>Synchronization When Using Buffers<a class="headerlink" href="#synchronization-when-using-buffers" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">sycl::buffer</span></code> objects automatically manage synchronization between kernel launches linked by a data dependency (either read-after-write, write-after-write, or write-after-read).</p>
 <p>oneMKL routines are not required to perform any additional synchronization of <code class="docutils literal notranslate"><span class="pre">sycl::buffer</span></code> arguments.</p>
-</section>
-<section id="synchronization-when-using-usm-apis">
+</div>
+<div class="section" id="synchronization-when-using-usm-apis">
 <span id="onemkl-synchronization-with-usm"></span><h4>Synchronization When Using USM APIs<a class="headerlink" href="#synchronization-when-using-usm-apis" title="Permalink to this headline">¶</a></h4>
 <p>When USM pointers are used as input to, or output from, a oneMKL routine, it becomes the calling application’s responsibility to manage possible asynchronicity.</p>
 <p>To help the calling application, all oneMKL routines with at least one USM pointer argument also take an optional reference to a list of <em>input events</em>, of type <code class="docutils literal notranslate"><span class="pre">sycl::vector_class&lt;sycl::event&gt;</span></code>, and have a return value of type <code class="docutils literal notranslate"><span class="pre">sycl::event</span></code> representing computation completion:</p>
@@ -4780,32 +4779,32 @@ The execution requirements for computational routines from the previous section 
 </div>
 <p>The routine shall ensure that all input events (if the list is present and non-empty) have occurred before any USM pointers are accessed. Likewise, the routine’s output event shall not be complete until the routine has finished accessing all USM pointer arguments.</p>
 <p>For class methods, “argument” includes any USM pointers previously provided to the object via the class constructor or other class methods.</p>
-</section>
-</section>
-<section id="host-thread-safety">
+</div>
+</div>
+<div class="section" id="host-thread-safety">
 <span id="onemkl-host-thread-safety"></span><h3>Host Thread Safety<a class="headerlink" href="#host-thread-safety" title="Permalink to this headline">¶</a></h3>
 <p>All oneMKL member and non-member functions shall be <em>host thread safe</em>. That is, they may be safely called simultaneously from concurrent host threads. However, oneMKL objects in class-based APIs may not be shared between concurrent host threads unless otherwise specified.</p>
-</section>
-</section>
-<section id="memory-model">
+</div>
+</div>
+<div class="section" id="memory-model">
 <span id="onemkl-memory-model"></span><h2>Memory Model<a class="headerlink" href="#memory-model" title="Permalink to this headline">¶</a></h2>
 <p>The oneMKL memory model shall follow directly from the oneAPI memory model.  Mainly, oneMKL shall support two modes of encapsulating data for consumption on the device: the buffer memory abstraction model and the pointer-based memory model using Unified Shared Memory (USM).  These two paradigms shall also support both synchronous and asynchronous execution models as described in <a class="reference internal" href="#onemkl-asynchronous-synchronous-execution"><span class="std std-ref">Asynchronous Execution</span></a>.</p>
-<section id="the-buffer-memory-model">
+<div class="section" id="the-buffer-memory-model">
 <span id="onemkl-buffers"></span><h3>The Buffer Memory Model<a class="headerlink" href="#the-buffer-memory-model" title="Permalink to this headline">¶</a></h3>
 <p>The SYCL 1.2.1 specification defines the buffer container templated on the provided data type which encapsulates the data in a SYCL application across both host and devices.  It provides the concept of accessors as the mechanism to access the buffer data with different modes to read and or write into that data. These accessors allow SYCL to create and manage the data dependencies in the SYCL graph that order the kernel executions.  With the buffer model, all data movement is handled by the SYCL runtime supporting both synchronous and asynchronous execution.</p>
 <p>oneMKL provides APIs where buffers (in particular 1D buffers, <code class="docutils literal notranslate"><span class="pre">sycl::buffer&lt;T,1&gt;</span></code>) contain the memory for all non scalar input and output data arguments. See <a class="reference internal" href="#onemkl-synchronization-with-buffers"><span class="std std-ref">Synchronization When Using Buffers</span></a> for details on how oneMKL routines manage any data dependencies with buffer arguments.  Any higher dimensional buffer must be converted to a 1D buffer prior to use in oneMKL APIs, e.g., via <code class="docutils literal notranslate"><span class="pre">buffer::reinterpret</span></code>.</p>
-</section>
-<section id="unified-shared-memory-model">
+</div>
+<div class="section" id="unified-shared-memory-model">
 <span id="onemkl-usm"></span><h3>Unified Shared Memory Model<a class="headerlink" href="#unified-shared-memory-model" title="Permalink to this headline">¶</a></h3>
 <p>While the buffer model is powerful and elegantly expresses data dependencies, it can be a burden for programmers to replace all pointers and arrays by buffers in their C++ applications. DPC++ also provides pointer-based addressing for device-accessible data, using the Unified Shared Memory (USM) model. Correspondingly, oneMKL provides USM APIs in which non-scalar input and output data arguments are passed by USM pointer.</p>
 <p>USM devices and system configurations vary in their ability to share data between devices and between a device and the host. oneMKL implementations may only assume that user-provided USM pointers are accessible by the device associated with the user-provided queue. In particular, an implementation must not assume that USM pointers can be accessed by any other device, or by the host, without querying the DPC++ runtime. An implementation must accept any device-accessible USM pointer regardless of how it was created (<cite>sycl::malloc_device</cite>, <cite>sycl::malloc_shared</cite>, etc.).</p>
 <p>Unlike buffers, USM pointers cannot automatically manage data dependencies between kernels. Users may use in-order queues to ensure ordered execution, or explicitly manage dependencies with <code class="docutils literal notranslate"><span class="pre">sycl::event</span></code> objects. To support the second use case, oneMKL USM APIs accept input events (prerequisites before computation can begin) and return an output event (indicating computation is complete). See <a class="reference internal" href="#onemkl-synchronization-with-usm"><span class="std std-ref">Synchronization When Using USM APIs</span></a> for details.</p>
-</section>
-</section>
-<section id="api-design">
+</div>
+</div>
+<div class="section" id="api-design">
 <span id="onemkl-api-design"></span><h2>API Design<a class="headerlink" href="#api-design" title="Permalink to this headline">¶</a></h2>
 <p>This section discusses the general features of oneMKL API design. In particular, it covers the use of namespaces and data types from C++, from DPC++ and new ones introduced for oneMKL APIs.</p>
-<section id="onemkl-namespaces">
+<div class="section" id="onemkl-namespaces">
 <span id="id2"></span><h3>oneMKL namespaces<a class="headerlink" href="#onemkl-namespaces" title="Permalink to this headline">¶</a></h3>
 <p>The oneMKL library uses C++ namespaces to organize routines by mathematical domain.  All oneMKL objects and routines shall be contained within the <code class="docutils literal notranslate"><span class="pre">oneapi::mkl</span></code> base namespace.  The individual oneMKL domains use a secondary namespace layer as follows:</p>
 <table class="table">
@@ -4850,8 +4849,8 @@ It is permitted for a library implementation of the oneMKL specification to impl
 For instance, a library may choose to implement the oneMKL BLAS functionality and in particular may choose to implement only the <a class="reference internal" href="../domains/blas/gemm.html#onemkl-blas-gemm"><span class="std std-ref">gemm</span></a> api for their library, in which case they must also include all the other blas namespaced routines and throw the <a class="reference internal" href="#onemkl-exception-unimplemented"><span class="std std-ref">oneapi::mkl::unimplemented</span></a> exception inside all the others.</p>
 <p>In such a case, the implemented routines in such a library should be communicated clearly and easily understood by users of that library.</p>
 </div>
-</section>
-<section id="standard-c-datatype-usage">
+</div>
+<div class="section" id="standard-c-datatype-usage">
 <span id="onemkl-cpp-datatypes"></span><h3>Standard C++ datatype usage<a class="headerlink" href="#standard-c-datatype-usage" title="Permalink to this headline">¶</a></h3>
 <p>oneMKL uses C++ STL data types for scalars where applicable:</p>
 <ul class="simple">
@@ -4859,8 +4858,8 @@ For instance, a library may choose to implement the oneMKL BLAS functionality an
 <li><p>Complex numbers are represented by C++ <code class="docutils literal notranslate"><span class="pre">std::complex</span></code> types.</p></li>
 </ul>
 <p>In general, scalar integer arguments to oneMKL routines are 64-bit integers (<code class="docutils literal notranslate"><span class="pre">std::int64_t</span></code> or <code class="docutils literal notranslate"><span class="pre">std::uint64_t</span></code>). Integer vectors and matrices may have varying bit widths, defined on a per-routine basis.</p>
-</section>
-<section id="dpc-datatype-usage">
+</div>
+<div class="section" id="dpc-datatype-usage">
 <span id="onemkl-dpcpp-datatypes"></span><h3>DPC++ datatype usage<a class="headerlink" href="#dpc-datatype-usage" title="Permalink to this headline">¶</a></h3>
 <p>oneMKL uses the following DPC++ data types:</p>
 <ul class="simple">
@@ -4870,8 +4869,8 @@ For instance, a library may choose to implement the oneMKL BLAS functionality an
 <li><p>SYCL event <code class="docutils literal notranslate"><span class="pre">sycl::event</span></code> for output event synchronization in oneMKL routines with USM pointers. See <a class="reference internal" href="#onemkl-synchronization-with-usm"><span class="std std-ref">Synchronization When Using USM APIs</span></a> for more details.</p></li>
 <li><p>Vector of SYCL events <code class="docutils literal notranslate"><span class="pre">sycl::vector_class&lt;sycl::event&gt;</span></code> for input events synchronization in oneMKL routines with USM pointers. See <a class="reference internal" href="#onemkl-synchronization-with-usm"><span class="std std-ref">Synchronization When Using USM APIs</span></a> for more details.</p></li>
 </ul>
-</section>
-<section id="onemkl-defined-datatypes">
+</div>
+<div class="section" id="onemkl-defined-datatypes">
 <span id="onemkl-datatypes"></span><h3>oneMKL defined datatypes<a class="headerlink" href="#onemkl-defined-datatypes" title="Permalink to this headline">¶</a></h3>
 <p>oneMKL dense and sparse linear algebra routines use scoped enum types as type-safe replacements for the traditional character arguments used in C/Fortran implementations of BLAS and LAPACK. These types all belong to the <code class="docutils literal notranslate"><span class="pre">oneapi::mkl</span></code> namespace.</p>
 <p>Each enumeration value comes with two names: A single-character name (the traditional BLAS/LAPACK character) and a longer, more descriptive name. The two names are exactly equivalent and may be used interchangeably.</p>
@@ -5059,17 +5058,17 @@ indices, or Fortran-style using one-based indices. The <code class="docutils lit
 <p class="admonition-title">Note</p>
 <p><a class="reference internal" href="../appendix/appendix.html#onemkl-appendix"><span class="std std-ref">oneMKL Appendix</span></a> may contain other API design decisions or recommendations that may be of use to the general developer of oneMKL, but which may not necessarily be part of the oneMKL specification.</p>
 </div>
-</section>
-</section>
-<section id="exceptions-and-error-handling">
+</div>
+</div>
+<div class="section" id="exceptions-and-error-handling">
 <span id="onemkl-exceptions"></span><h2>Exceptions and Error Handling<a class="headerlink" href="#exceptions-and-error-handling" title="Permalink to this headline">¶</a></h2>
 <p>oneMKL error handling relies on the mechanism of C++ exceptions. Should error occur, it will be propagated at the point of a function call where it is caught using standard C++ error handling mechanism.</p>
-<section id="exception-classification">
+<div class="section" id="exception-classification">
 <span id="onemkl-exception-classification"></span><h3>Exception classification<a class="headerlink" href="#exception-classification" title="Permalink to this headline">¶</a></h3>
 <p>Exception classification in oneMKL is aligned with C++ Standard Library classification. oneMKL introduces class that defines the base class in the hierarchy of oneMKL exception classes. All oneMKL routines throw exceptions inherited from this base class.
 In the hierarchy of oneMKL exceptions, <code class="docutils literal notranslate"><span class="pre">oneapi::mkl::exception</span></code> is the base class inherited from <code class="docutils literal notranslate"><span class="pre">std::exception</span></code> class. All other oneMKL exception classes are derived from this base class.</p>
 <p>This specification does not require implementations to perform error-checking. However, if an implementation does provide error-checking, it shall use the following exception classes. Additional implementation-specific exception classes can be used for exceptional conditions not fitting any of these classes.</p>
-<section id="common-exceptions">
+<div class="section" id="common-exceptions">
 <span id="onemkl-common-exceptions"></span><h4>Common exceptions<a class="headerlink" href="#common-exceptions" title="Permalink to this headline">¶</a></h4>
 <table class="colwidths-given table">
 <colgroup>
@@ -5120,8 +5119,8 @@ In the hierarchy of oneMKL exceptions, <code class="docutils literal notranslate
 </tr>
 </tbody>
 </table>
-</section>
-<section id="lapack-specific-exceptions">
+</div>
+<div class="section" id="lapack-specific-exceptions">
 <span id="onemkl-lapack-specific-exceptions"></span><h4>LAPACK specific exceptions<a class="headerlink" href="#lapack-specific-exceptions" title="Permalink to this headline">¶</a></h4>
 <table class="colwidths-given table">
 <colgroup>
@@ -5152,22 +5151,22 @@ In the hierarchy of oneMKL exceptions, <code class="docutils literal notranslate
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-</section>
-<section id="other-features">
+</div>
+</div>
+</div>
+<div class="section" id="other-features">
 <span id="onemkl-arch-other"></span><h2>Other Features<a class="headerlink" href="#other-features" title="Permalink to this headline">¶</a></h2>
 <p>This section covers all other features in the design of oneMKL architecture.</p>
-<section id="current-version-of-this-onemkl-specification">
+<div class="section" id="current-version-of-this-onemkl-specification">
 <span id="onemkl-spec-current-version"></span><h3>Current Version of this oneMKL Specification<a class="headerlink" href="#current-version-of-this-onemkl-specification" title="Permalink to this headline">¶</a></h3>
 <p>This is the oneMKL specification which is part of the oneAPI specification version 1.0.0.</p>
-</section>
-<section id="pre-post-condition-checking">
+</div>
+<div class="section" id="pre-post-condition-checking">
 <span id="onemkl-pre-post-conditions"></span><h3>Pre/Post Condition Checking<a class="headerlink" href="#pre-post-condition-checking" title="Permalink to this headline">¶</a></h3>
 <p>The individual oneMKL computational routines will define any preconditions and postconditions and will define in this specification any specific checks or verifications that should be enabled for all implementations.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

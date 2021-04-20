@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Memory &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4616,10 +4615,10 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="memory">
+  <div class="section" id="memory">
 <span id="func-memory"></span><h1>Memory<a class="headerlink" href="#memory" title="Permalink to this headline">¶</a></h1>
 <p id="func-mem-begin">Functions for internal memory allocation and management.</p>
-<section id="api">
+<div class="section" id="api">
 <span id="func-mem-end"></span><h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -4629,7 +4628,7 @@ SPDX-License-Identifier: MIT
 <li><p><a class="reference internal" href="#mfxmemory-getsurfacefordecode" id="id4">MFXMemory_GetSurfaceForDecode</a></p></li>
 </ul>
 </div>
-<section id="mfxmemory-getsurfaceforvpp">
+<div class="section" id="mfxmemory-getsurfaceforvpp">
 <h3><a class="toc-backref" href="#id1">MFXMemory_GetSurfaceForVPP</a><a class="headerlink" href="#mfxmemory-getsurfaceforvpp" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv426MFXMemory_GetSurfaceForVPP10mfxSessionPP16mfxFrameSurface1">
@@ -4637,21 +4636,25 @@ SPDX-License-Identifier: MIT
 <dd><p>Returns surface which can be used as input for VPP. </p>
 <p>VPP should be initialized before this call. Surface should be released with mfxFrameSurface1::FrameInterface.Release(…) after usage. The value of mfxFrameSurface1::Data.Locked for the returned surface is 0.</p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_NULL_PTR If double-pointer to the </p>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] session</strong> – Session handle. </p></li>
+<li><p><strong>[out] surface</strong> – Pointer is set to valid <a class="reference internal" href="VPL_structs_memory.html#structmfx_frame_surface1"><span class="std std-ref">mfxFrameSurface1</span></a> object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_NULL_PTR If double-pointer to the </p>
 <code class="docutils literal notranslate"><span class="pre">surface</span></code> is NULL. <p>MFX_ERR_INVALID_HANDLE If </p>
 <code class="docutils literal notranslate"><span class="pre">session</span></code> was not initialized. <p>MFX_ERR_NOT_INITIALIZED If VPP was not initialized (allocator needs to know surface size from somewhere). </p>
 <p>MFX_ERR_MEMORY_ALLOC In case of any other internal allocation error.</p>
 </p>
 </dd>
-<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">surface</span></code>: Pointer is set to valid <a class="reference internal" href="VPL_structs_memory.html#structmfx_frame_surface1"><span class="std std-ref">mfxFrameSurface1</span></a> object.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
 <p>Alias below, can be used as well:</p>
@@ -4661,8 +4664,8 @@ SPDX-License-Identifier: MIT
 <dd><p>Alias for MFXMemory_GetSurfaceForVPP function. </p>
 </dd></dl>
 
-</section>
-<section id="mfxmemory-getsurfaceforvppout">
+</div>
+<div class="section" id="mfxmemory-getsurfaceforvppout">
 <h3><a class="toc-backref" href="#id2">MFXMemory_GetSurfaceForVPPOut</a><a class="headerlink" href="#mfxmemory-getsurfaceforvppout" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv429MFXMemory_GetSurfaceForVPPOut10mfxSessionPP16mfxFrameSurface1">
@@ -4670,25 +4673,29 @@ SPDX-License-Identifier: MIT
 <dd><p>Returns surface which can be used as output of VPP. </p>
 <p>VPP should be initialized before this call. Surface should be released with mfxFrameSurface1::FrameInterface.Release(…) after usage. The value of mfxFrameSurface1::Data.Locked for the returned surface is 0.</p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_NULL_PTR If double-pointer to the </p>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.1. </p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] session</strong> – Session handle. </p></li>
+<li><p><strong>[out] surface</strong> – Pointer is set to valid <a class="reference internal" href="VPL_structs_memory.html#structmfx_frame_surface1"><span class="std std-ref">mfxFrameSurface1</span></a> object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_NULL_PTR If double-pointer to the </p>
 <code class="docutils literal notranslate"><span class="pre">surface</span></code> is NULL. <p>MFX_ERR_INVALID_HANDLE If </p>
 <code class="docutils literal notranslate"><span class="pre">session</span></code> was not initialized. <p>MFX_ERR_NOT_INITIALIZED If VPP was not initialized (allocator needs to know surface size from somewhere). </p>
 <p>MFX_ERR_MEMORY_ALLOC In case of any other internal allocation error.</p>
 </p>
 </dd>
-<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.1. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">surface</span></code>: Pointer is set to valid <a class="reference internal" href="VPL_structs_memory.html#structmfx_frame_surface1"><span class="std std-ref">mfxFrameSurface1</span></a> object.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
-</section>
-<section id="mfxmemory-getsurfaceforencode">
+</div>
+<div class="section" id="mfxmemory-getsurfaceforencode">
 <h3><a class="toc-backref" href="#id3">MFXMemory_GetSurfaceForEncode</a><a class="headerlink" href="#mfxmemory-getsurfaceforencode" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv429MFXMemory_GetSurfaceForEncode10mfxSessionPP16mfxFrameSurface1">
@@ -4696,25 +4703,29 @@ SPDX-License-Identifier: MIT
 <dd><p>Returns a surface which can be used as input for the encoder. </p>
 <p>Encoder should be initialized before this call. Surface should be released with mfxFrameSurface1::FrameInterface.Release(…) after usage. The value of mfxFrameSurface1::Data.Locked for the returned surface is 0.</p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully.<p>MFX_ERR_NULL_PTR If surface is NULL.</p>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] session</strong> – Session handle. </p></li>
+<li><p><strong>[out] surface</strong> – Pointer is set to valid <a class="reference internal" href="VPL_structs_memory.html#structmfx_frame_surface1"><span class="std std-ref">mfxFrameSurface1</span></a> object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully.<p>MFX_ERR_NULL_PTR If surface is NULL.</p>
 <p>MFX_ERR_INVALID_HANDLE If session was not initialized.</p>
 <p>MFX_ERR_NOT_INITIALIZED If the encoder was not initialized (allocator needs to know surface size from somewhere).</p>
 <p>MFX_ERR_MEMORY_ALLOC In case of any other internal allocation error.</p>
 </p>
 </dd>
-<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">surface</span></code>: Pointer is set to valid <a class="reference internal" href="VPL_structs_memory.html#structmfx_frame_surface1"><span class="std std-ref">mfxFrameSurface1</span></a> object.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
-</section>
-<section id="mfxmemory-getsurfacefordecode">
+</div>
+<div class="section" id="mfxmemory-getsurfacefordecode">
 <h3><a class="toc-backref" href="#id4">MFXMemory_GetSurfaceForDecode</a><a class="headerlink" href="#mfxmemory-getsurfacefordecode" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv429MFXMemory_GetSurfaceForDecode10mfxSessionPP16mfxFrameSurface1">
@@ -4722,28 +4733,34 @@ SPDX-License-Identifier: MIT
 <dd><p>Returns a surface which can be used as output of the decoder. </p>
 <p>Decoder should be initialized before this call. Surface should be released with mfxFrameSurface1::FrameInterface.Release(…) after usage. The value of mfxFrameSurface1::Data.Locked for the returned surface is 0.’</p>
 <p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>This function was added to simplify transition from legacy surface management to the proposed internal allocation approach. Previously, the user allocated surfaces for the working pool and fed them to the decoder using DecodeFrameAsync calls. With MFXMemory_GetSurfaceForDecode it is possible to change the existing pipeline by just changing the source of work surfaces. Newly developed applications should prefer direct usage of DecodeFrameAsync with internal allocation.</p>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully.<p>MFX_ERR_NULL_PTR If surface is NULL.</p>
+</dl>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function was added to simplify transition from legacy surface management to the proposed internal allocation approach. Previously, the user allocated surfaces for the working pool and fed them to the decoder using DecodeFrameAsync calls. With MFXMemory_GetSurfaceForDecode it is possible to change the existing pipeline by just changing the source of work surfaces. Newly developed applications should prefer direct usage of DecodeFrameAsync with internal allocation.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] session</strong> – Session handle. </p></li>
+<li><p><strong>[out] surface</strong> – Pointer is set to valid <a class="reference internal" href="VPL_structs_memory.html#structmfx_frame_surface1"><span class="std std-ref">mfxFrameSurface1</span></a> object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully.<p>MFX_ERR_NULL_PTR If surface is NULL.</p>
 <p>MFX_ERR_INVALID_HANDLE If session was not initialized.</p>
 <p>MFX_ERR_NOT_INITIALIZED If the decoder was not initialized (allocator needs to know surface size from somewhere).</p>
 <p>MFX_ERR_MEMORY_ALLOC Other internal allocation error.</p>
 </p>
 </dd>
-<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">surface</span></code>: Pointer is set to valid <a class="reference internal" href="VPL_structs_memory.html#structmfx_frame_surface1"><span class="std std-ref">mfxFrameSurface1</span></a> object.</p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

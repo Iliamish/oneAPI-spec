@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Enumerator Reference &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -5093,9 +5092,9 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="enumerator-reference">
+  <div class="section" id="enumerator-reference">
 <h1>Enumerator Reference<a class="headerlink" href="#enumerator-reference" title="Permalink to this headline">¶</a></h1>
-<section id="angle">
+<div class="section" id="angle">
 <h2>Angle<a class="headerlink" href="#angle" title="Permalink to this headline">¶</a></h2>
 <p>The Angle enumerator itemizes valid rotation angles.</p>
 <dl class="cpp enumerator">
@@ -5122,8 +5121,8 @@ SPDX-License-Identifier: MIT
 <dd><p>270 degrees. </p>
 </dd></dl>
 
-</section>
-<section id="bitstreamdataflag">
+</div>
+<div class="section" id="bitstreamdataflag">
 <h2>BitstreamDataFlag<a class="headerlink" href="#bitstreamdataflag" title="Permalink to this headline">¶</a></h2>
 <p>The BitstreamDataFlag enumerator uses bit-ORed values to itemize additional
 information about the bitstream buffer.</p>
@@ -5145,8 +5144,8 @@ information about the bitstream buffer.</p>
 <dd><p>The bitstream buffer contains the end of the stream. For decoding, this means that the application does not have any additional bitstream data to send to decoder. </p>
 </dd></dl>
 
-</section>
-<section id="bpseicontrol">
+</div>
+<div class="section" id="bpseicontrol">
 <h2>BPSEIControl<a class="headerlink" href="#bpseicontrol" title="Permalink to this headline">¶</a></h2>
 <p>The BPSEIControl enumerator is used to control insertion of buffering period SEI
 in the encoded bitstream.</p>
@@ -5162,8 +5161,8 @@ in the encoded bitstream.</p>
 <dd><p>BP SEI should be inserted with every I-frame </p>
 </dd></dl>
 
-</section>
-<section id="brcstatus">
+</div>
+<div class="section" id="brcstatus">
 <h2>BRCStatus<a class="headerlink" href="#brcstatus" title="Permalink to this headline">¶</a></h2>
 <p>The BRCStatus enumerator itemizes instructions to the encoder by
 <code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">mfxExtBrc::Update</span></code>.</p>
@@ -5197,8 +5196,8 @@ in the encoded bitstream.</p>
 <dd><p>Coded frame is too small, no further recoding possible - required padding to <a class="reference internal" href="VPL_structs_encode.html#structmfx_b_r_c_frame_status_1a385b129c69e06e00316ed93767c9a36f"><span class="std std-ref">mfxBRCFrameStatus::MinFrameSize</span></a>. </p>
 </dd></dl>
 
-</section>
-<section id="brefcontrol">
+</div>
+<div class="section" id="brefcontrol">
 <h2>BRefControl<a class="headerlink" href="#brefcontrol" title="Permalink to this headline">¶</a></h2>
 <p>The BRefControl enumerator is used to control usage of B frames as reference in
 AVC encoder.</p>
@@ -5220,8 +5219,8 @@ AVC encoder.</p>
 <dd><p>Arrange B-frames in so-called “B pyramid” reference structure. </p>
 </dd></dl>
 
-</section>
-<section id="chromaformateidc">
+</div>
+<div class="section" id="chromaformateidc">
 <h2>ChromaFormateIdc<a class="headerlink" href="#chromaformateidc" title="Permalink to this headline">¶</a></h2>
 <p>The ChromaFormatIdc enumerator itemizes color-sampling formats.</p>
 <dl class="cpp enumerator">
@@ -5284,8 +5283,8 @@ AVC encoder.</p>
 <dd><p>Color sampling specified via <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_info_m_f_x_1a3cda61b3b9ef02cd572f6df71d935cba"><span class="std std-ref">mfxInfoMFX::SamplingFactorH</span></a> and SamplingFactorV. </p>
 </dd></dl>
 
-</section>
-<section id="chromasiting">
+</div>
+<div class="section" id="chromasiting">
 <h2>ChromaSiting<a class="headerlink" href="#chromasiting" title="Permalink to this headline">¶</a></h2>
 <p>The ChromaSiting enumerator defines chroma location. Use bit-OR’ed values to
 specify the desired location.</p>
@@ -5325,8 +5324,8 @@ specify the desired location.</p>
 <dd><p>Chroma samples are not co-sited horizontally with the luma samples. </p>
 </dd></dl>
 
-</section>
-<section id="codecformatfourcc">
+</div>
+<div class="section" id="codecformatfourcc">
 <span id="codec-format-fourcc"></span><h2>CodecFormatFourCC<a class="headerlink" href="#codecformatfourcc" title="Permalink to this headline">¶</a></h2>
 <p>The CodecFormatFourCC enumerator itemizes codecs in the FourCC format.</p>
 <dl class="cpp enumerator">
@@ -5371,8 +5370,8 @@ specify the desired location.</p>
 <dd><p>JPEG codec </p>
 </dd></dl>
 
-</section>
-<section id="codeclevel">
+</div>
+<div class="section" id="codeclevel">
 <h2>CodecLevel<a class="headerlink" href="#codeclevel" title="Permalink to this headline">¶</a></h2>
 <p>The CodecLevel enumerator itemizes codec levels for all codecs.</p>
 <dl class="cpp enumerator">
@@ -5381,7 +5380,7 @@ specify the desired location.</p>
 <dd><p>Unspecified level. </p>
 </dd></dl>
 
-<section id="h-264-level-1-1-3">
+<div class="section" id="h-264-level-1-1-3">
 <h3>H.264 Level 1-1.3<a class="headerlink" href="#h-264-level-1-1-3" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp enumerator">
 <dt id="_CPPv415MFX_LEVEL_AVC_1">
@@ -5408,8 +5407,8 @@ specify the desired location.</p>
 <span id="_CPPv316MFX_LEVEL_AVC_13"></span><span id="_CPPv216MFX_LEVEL_AVC_13"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77dac45a54ecb1291dbd59af510b6b6e346a"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_LEVEL_AVC_13</span></code><a class="headerlink" href="#_CPPv416MFX_LEVEL_AVC_13" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="h-264-level-2-2-2">
+</div>
+<div class="section" id="h-264-level-2-2-2">
 <h3>H.264 Level 2-2.2<a class="headerlink" href="#h-264-level-2-2-2" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp enumerator">
 <dt id="_CPPv415MFX_LEVEL_AVC_2">
@@ -5426,8 +5425,8 @@ specify the desired location.</p>
 <span id="_CPPv316MFX_LEVEL_AVC_22"></span><span id="_CPPv216MFX_LEVEL_AVC_22"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77da96e3e8307b2a73086b83163c3ba2fea4"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_LEVEL_AVC_22</span></code><a class="headerlink" href="#_CPPv416MFX_LEVEL_AVC_22" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="h-264-level-3-3-2">
+</div>
+<div class="section" id="h-264-level-3-3-2">
 <h3>H.264 Level 3-3.2<a class="headerlink" href="#h-264-level-3-3-2" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp enumerator">
 <dt id="_CPPv415MFX_LEVEL_AVC_3">
@@ -5444,8 +5443,8 @@ specify the desired location.</p>
 <span id="_CPPv316MFX_LEVEL_AVC_32"></span><span id="_CPPv216MFX_LEVEL_AVC_32"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77dacfe9f36733cc64cc5cf5ae4f6dc60f1e"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_LEVEL_AVC_32</span></code><a class="headerlink" href="#_CPPv416MFX_LEVEL_AVC_32" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="h-264-level-4-4-2">
+</div>
+<div class="section" id="h-264-level-4-4-2">
 <h3>H.264 Level 4-4.2<a class="headerlink" href="#h-264-level-4-4-2" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp enumerator">
 <dt id="_CPPv415MFX_LEVEL_AVC_4">
@@ -5462,8 +5461,8 @@ specify the desired location.</p>
 <span id="_CPPv316MFX_LEVEL_AVC_42"></span><span id="_CPPv216MFX_LEVEL_AVC_42"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77dabaa81552e63aeef97d3ff5286b5fe65d"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_LEVEL_AVC_42</span></code><a class="headerlink" href="#_CPPv416MFX_LEVEL_AVC_42" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="h-264-level-5-5-2">
+</div>
+<div class="section" id="h-264-level-5-5-2">
 <h3>H.264 Level 5-5.2<a class="headerlink" href="#h-264-level-5-5-2" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp enumerator">
 <dt id="_CPPv415MFX_LEVEL_AVC_5">
@@ -5480,8 +5479,8 @@ specify the desired location.</p>
 <span id="_CPPv316MFX_LEVEL_AVC_52"></span><span id="_CPPv216MFX_LEVEL_AVC_52"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77daa2d0ff233342d81c3c5511fab8f63895"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_LEVEL_AVC_52</span></code><a class="headerlink" href="#_CPPv416MFX_LEVEL_AVC_52" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="h-264-level-6-6-2">
+</div>
+<div class="section" id="h-264-level-6-6-2">
 <h3>H.264 Level 6-6.2<a class="headerlink" href="#h-264-level-6-6-2" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp enumerator">
 <dt id="_CPPv415MFX_LEVEL_AVC_6">
@@ -5498,8 +5497,8 @@ specify the desired location.</p>
 <span id="_CPPv316MFX_LEVEL_AVC_62"></span><span id="_CPPv216MFX_LEVEL_AVC_62"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77da8ea569d7101719b57c8ad685f3355aaa"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_LEVEL_AVC_62</span></code><a class="headerlink" href="#_CPPv416MFX_LEVEL_AVC_62" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="mpeg2-levels">
+</div>
+<div class="section" id="mpeg2-levels">
 <h3>MPEG2 Levels<a class="headerlink" href="#mpeg2-levels" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp enumerator">
 <dt id="_CPPv419MFX_LEVEL_MPEG2_LOW">
@@ -5521,8 +5520,8 @@ specify the desired location.</p>
 <span id="_CPPv324MFX_LEVEL_MPEG2_HIGH1440"></span><span id="_CPPv224MFX_LEVEL_MPEG2_HIGH1440"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77daacc23ee847f22b760cc83e822de3db57"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_LEVEL_MPEG2_HIGH1440</span></code><a class="headerlink" href="#_CPPv424MFX_LEVEL_MPEG2_HIGH1440" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="vc-1-level-low-simple-and-main-profiles">
+</div>
+<div class="section" id="vc-1-level-low-simple-and-main-profiles">
 <h3>VC-1 Level Low (Simple and Main Profiles)<a class="headerlink" href="#vc-1-level-low-simple-and-main-profiles" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp enumerator">
 <dt id="_CPPv417MFX_LEVEL_VC1_LOW">
@@ -5539,8 +5538,8 @@ specify the desired location.</p>
 <span id="_CPPv318MFX_LEVEL_VC1_HIGH"></span><span id="_CPPv218MFX_LEVEL_VC1_HIGH"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77dad62d63cab6aa4d32db6872a02d29ca98"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_LEVEL_VC1_HIGH</span></code><a class="headerlink" href="#_CPPv418MFX_LEVEL_VC1_HIGH" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="vc-1-advanced-profile-levels">
+</div>
+<div class="section" id="vc-1-advanced-profile-levels">
 <h3>VC-1 Advanced Profile Levels<a class="headerlink" href="#vc-1-advanced-profile-levels" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp enumerator">
 <dt id="_CPPv415MFX_LEVEL_VC1_0">
@@ -5567,8 +5566,8 @@ specify the desired location.</p>
 <span id="_CPPv315MFX_LEVEL_VC1_4"></span><span id="_CPPv215MFX_LEVEL_VC1_4"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77dabe2a322326f1604a124e2eb74dde62d2"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_LEVEL_VC1_4</span></code><a class="headerlink" href="#_CPPv415MFX_LEVEL_VC1_4" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="hevc-levels">
+</div>
+<div class="section" id="hevc-levels">
 <h3>HEVC Levels<a class="headerlink" href="#hevc-levels" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp enumerator">
 <dt id="_CPPv416MFX_LEVEL_HEVC_1">
@@ -5635,8 +5634,8 @@ specify the desired location.</p>
 <span id="_CPPv317MFX_LEVEL_HEVC_62"></span><span id="_CPPv217MFX_LEVEL_HEVC_62"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77daef8e27176a9967ff929d37112fe9b46e"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_LEVEL_HEVC_62</span></code><a class="headerlink" href="#_CPPv417MFX_LEVEL_HEVC_62" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="av1-levels">
+</div>
+<div class="section" id="av1-levels">
 <span id="codec-profile"></span><h3>AV1 Levels<a class="headerlink" href="#av1-levels" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp enumerator">
 <dt id="_CPPv415MFX_LEVEL_AV1_2">
@@ -5758,9 +5757,9 @@ specify the desired location.</p>
 <span id="_CPPv316MFX_LEVEL_AV1_73"></span><span id="_CPPv216MFX_LEVEL_AV1_73"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77da70a42958fdaac925622511b40c10d4f6"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_LEVEL_AV1_73</span></code><a class="headerlink" href="#_CPPv416MFX_LEVEL_AV1_73" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-</section>
-<section id="codecprofile">
+</div>
+</div>
+<div class="section" id="codecprofile">
 <h2>CodecProfile<a class="headerlink" href="#codecprofile" title="Permalink to this headline">¶</a></h2>
 <p>The CodecProfile enumerator itemizes codec profiles for all codecs.</p>
 <dl class="cpp enumerator">
@@ -5769,7 +5768,7 @@ specify the desired location.</p>
 <dd><p>Unspecified profile. </p>
 </dd></dl>
 
-<section id="h-264-profiles">
+<div class="section" id="h-264-profiles">
 <h3>H.264 Profiles<a class="headerlink" href="#h-264-profiles" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp enumerator">
 <dt id="_CPPv424MFX_PROFILE_AVC_BASELINE">
@@ -5811,8 +5810,8 @@ specify the desired location.</p>
 <span id="_CPPv332MFX_PROFILE_AVC_CONSTRAINED_HIGH"></span><span id="_CPPv232MFX_PROFILE_AVC_CONSTRAINED_HIGH"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77da43fb9b9ffbc6c78efee5842b96fed34c"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_PROFILE_AVC_CONSTRAINED_HIGH</span></code><a class="headerlink" href="#_CPPv432MFX_PROFILE_AVC_CONSTRAINED_HIGH" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="av1-profiles">
+</div>
+<div class="section" id="av1-profiles">
 <h3>AV1 Profiles<a class="headerlink" href="#av1-profiles" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp enumerator">
 <dt id="_CPPv420MFX_PROFILE_AV1_MAIN">
@@ -5829,8 +5828,8 @@ specify the desired location.</p>
 <span id="_CPPv319MFX_PROFILE_AV1_PRO"></span><span id="_CPPv219MFX_PROFILE_AV1_PRO"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77da5093036d46285fda5998ee1bc0ae6f9d"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_PROFILE_AV1_PRO</span></code><a class="headerlink" href="#_CPPv419MFX_PROFILE_AV1_PRO" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="vc-1-profiles">
+</div>
+<div class="section" id="vc-1-profiles">
 <h3>VC-1 Profiles<a class="headerlink" href="#vc-1-profiles" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp enumerator">
 <dt id="_CPPv422MFX_PROFILE_VC1_SIMPLE">
@@ -5847,8 +5846,8 @@ specify the desired location.</p>
 <span id="_CPPv324MFX_PROFILE_VC1_ADVANCED"></span><span id="_CPPv224MFX_PROFILE_VC1_ADVANCED"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77da3a5c1a5f10cc3dc1be310c40d5e26e22"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_PROFILE_VC1_ADVANCED</span></code><a class="headerlink" href="#_CPPv424MFX_PROFILE_VC1_ADVANCED" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="vp8-profiles">
+</div>
+<div class="section" id="vp8-profiles">
 <h3>VP8 Profiles<a class="headerlink" href="#vp8-profiles" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp enumerator">
 <dt id="_CPPv417MFX_PROFILE_VP8_0">
@@ -5870,8 +5869,8 @@ specify the desired location.</p>
 <span id="_CPPv317MFX_PROFILE_VP8_3"></span><span id="_CPPv217MFX_PROFILE_VP8_3"></span><span class="target" id="mfxvp8_8h_1a282841548f1d79a386bbeb4172ebf942a6be16e7ab3fe42945abcfc5a451700dd"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_PROFILE_VP8_3</span></code><a class="headerlink" href="#_CPPv417MFX_PROFILE_VP8_3" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="vp9-profiles">
+</div>
+<div class="section" id="vp9-profiles">
 <h3>VP9 Profiles<a class="headerlink" href="#vp9-profiles" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp enumerator">
 <dt id="_CPPv417MFX_PROFILE_VP9_0">
@@ -5893,8 +5892,8 @@ specify the desired location.</p>
 <span id="_CPPv317MFX_PROFILE_VP9_3"></span><span id="_CPPv217MFX_PROFILE_VP9_3"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77daee61a6da3e6a6d80a0acd469ab8a66ba"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_PROFILE_VP9_3</span></code><a class="headerlink" href="#_CPPv417MFX_PROFILE_VP9_3" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="h-264-constraints">
+</div>
+<div class="section" id="h-264-constraints">
 <h3>H.264 Constraints<a class="headerlink" href="#h-264-constraints" title="Permalink to this headline">¶</a></h3>
 <p>Combined with H.264 profile, these flags impose additional constraints. See the
 H.264 specification for the list of constraints.</p>
@@ -5928,8 +5927,8 @@ H.264 specification for the list of constraints.</p>
 <span id="_CPPv331MFX_PROFILE_AVC_CONSTRAINT_SET5"></span><span id="_CPPv231MFX_PROFILE_AVC_CONSTRAINT_SET5"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77da76f25bbc14857060919cab77523e8a6f"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_PROFILE_AVC_CONSTRAINT_SET5</span></code><a class="headerlink" href="#_CPPv431MFX_PROFILE_AVC_CONSTRAINT_SET5" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="jpeg-profiles">
+</div>
+<div class="section" id="jpeg-profiles">
 <h3>JPEG Profiles<a class="headerlink" href="#jpeg-profiles" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp enumerator">
 <dt id="_CPPv425MFX_PROFILE_JPEG_BASELINE">
@@ -5937,9 +5936,9 @@ H.264 specification for the list of constraints.</p>
 <dd><p>Baseline JPEG profile. </p>
 </dd></dl>
 
-</section>
-</section>
-<section id="codingoptionvalue">
+</div>
+</div>
+<div class="section" id="codingoptionvalue">
 <h2>CodingOptionValue<a class="headerlink" href="#codingoptionvalue" title="Permalink to this headline">¶</a></h2>
 <p>The CodingOptionValue enumerator defines a three-state coding option setting.</p>
 <dl class="cpp enumerator">
@@ -5966,8 +5965,8 @@ H.264 specification for the list of constraints.</p>
 <dd><p>Reserved. </p>
 </dd></dl>
 
-</section>
-<section id="colorfourcc">
+</div>
+<div class="section" id="colorfourcc">
 <h2>ColorFourCC<a class="headerlink" href="#colorfourcc" title="Permalink to this headline">¶</a></h2>
 <p>The ColorFourCC enumerator itemizes color formats.</p>
 <dl class="cpp enumerator">
@@ -6148,8 +6147,8 @@ H.264 specification for the list of constraints.</p>
 <dd><p>16 bit per sample 4:4:4 packed color format. This format should be mapped to DXGI_FORMAT_Y416. </p>
 </dd></dl>
 
-</section>
-<section id="contentinfo">
+</div>
+<div class="section" id="contentinfo">
 <h2>ContentInfo<a class="headerlink" href="#contentinfo" title="Permalink to this headline">¶</a></h2>
 <p>The ContentInfo enumerator itemizes content types for the encoding session.</p>
 <dl class="cpp enumerator">
@@ -6167,8 +6166,8 @@ H.264 specification for the list of constraints.</p>
 <span id="_CPPv328MFX_CONTENT_NON_VIDEO_SCREEN"></span><span id="_CPPv228MFX_CONTENT_NON_VIDEO_SCREEN"></span><span class="target" id="mfxstructures_8h_1ac9420823bfeba78fce625fc105e3b01dae4768ae8ba11ad06922e7de782db34fa"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_CONTENT_NON_VIDEO_SCREEN</span></code><a class="headerlink" href="#_CPPv428MFX_CONTENT_NON_VIDEO_SCREEN" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="corruption">
+</div>
+<div class="section" id="corruption">
 <h2>Corruption<a class="headerlink" href="#corruption" title="Permalink to this headline">¶</a></h2>
 <p>The Corruption enumerator itemizes the decoding corruption types. It is a
 bit-OR’ed value of the following.</p>
@@ -6221,8 +6220,8 @@ is set by the AVC decoder when it detects that one of fields is not
 present in the bitstream. Which field is absent depends on value of
 bottom_field_flag (ITU-T* H.264 7.4.3).</p>
 </div>
-</section>
-<section id="deinterlacingmode">
+</div>
+<div class="section" id="deinterlacingmode">
 <h2>DeinterlacingMode<a class="headerlink" href="#deinterlacingmode" title="Permalink to this headline">¶</a></h2>
 <p>The DeinterlacingMode enumerator itemizes VPP deinterlacing modes.</p>
 <dl class="cpp enumerator">
@@ -6303,8 +6302,8 @@ bottom_field_flag (ITU-T* H.264 7.4.3).</p>
 <dd><p>Field weaving. </p>
 </dd></dl>
 
-</section>
-<section id="errortypes">
+</div>
+<div class="section" id="errortypes">
 <h2>ErrorTypes<a class="headerlink" href="#errortypes" title="Permalink to this headline">¶</a></h2>
 <p>The ErrorTypes enumerator uses bit-ORed values to itemize bitstream error types.</p>
 <dl class="cpp enumerator">
@@ -6343,8 +6342,8 @@ bottom_field_flag (ITU-T* H.264 7.4.3).</p>
 <dd><p>Missed frames. </p>
 </dd></dl>
 
-</section>
-<section id="extendedbufferid">
+</div>
+<div class="section" id="extendedbufferid">
 <span id="id1"></span><h2>ExtendedBufferID<a class="headerlink" href="#extendedbufferid" title="Permalink to this headline">¶</a></h2>
 <p>The ExtendedBufferID enumerator itemizes and defines identifiers (BufferId) for
 extended buffers or video processing algorithm identifiers.</p>
@@ -6790,8 +6789,8 @@ extended buffers or video processing algorithm identifiers.</p>
 <dd><p>See the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_ext_a_v1_film_grain_param"><span class="std std-ref">mfxExtAV1FilmGrainParam</span></a> structure for more details. </p>
 </dd></dl>
 
-</section>
-<section id="extmembuffertype">
+</div>
+<div class="section" id="extmembuffertype">
 <h2>ExtMemBufferType<a class="headerlink" href="#extmembuffertype" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enumerator">
 <dt id="_CPPv429MFX_MEMTYPE_PERSISTENT_MEMORY">
@@ -6799,8 +6798,8 @@ extended buffers or video processing algorithm identifiers.</p>
 <dd><p>Memory page for persistent use. </p>
 </dd></dl>
 
-</section>
-<section id="extmemframetype">
+</div>
+<div class="section" id="extmemframetype">
 <span id="id2"></span><h2>ExtMemFrameType<a class="headerlink" href="#extmemframetype" title="Permalink to this headline">¶</a></h2>
 <p>The ExtMemFrameType enumerator specifies the memory type of frame. It is a
 bit-ORed value of one of the following. For information on working with video
@@ -6900,8 +6899,8 @@ memory surfaces, see the <a class="reference internal" href="../programming_guid
 <dd><p>Frames are in video memory and belong to video encoder render targets. </p>
 </dd></dl>
 
-</section>
-<section id="frame-data-flags">
+</div>
+<div class="section" id="frame-data-flags">
 <h2>Frame Data Flags<a class="headerlink" href="#frame-data-flags" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enumerator">
 <dt id="_CPPv421MFX_TIMESTAMP_UNKNOWN">
@@ -6927,8 +6926,8 @@ memory surfaces, see the <a class="reference internal" href="../programming_guid
 <dd><p>Indicates the time stamp of this frame is not calculated and is a pass-through of the original time stamp. </p>
 </dd></dl>
 
-</section>
-<section id="frametype">
+</div>
+<div class="section" id="frametype">
 <h2>FrameType<a class="headerlink" href="#frametype" title="Permalink to this headline">¶</a></h2>
 <p>The FrameType enumerator itemizes frame types. Use bit-ORed values to specify
 all that apply.</p>
@@ -7010,8 +7009,8 @@ all that apply.</p>
 <dd><p>The second field is encoded as an IDR. </p>
 </dd></dl>
 
-</section>
-<section id="frcalgm">
+</div>
+<div class="section" id="frcalgm">
 <h2>FrcAlgm<a class="headerlink" href="#frcalgm" title="Permalink to this headline">¶</a></h2>
 <p>The FrcAlgm enumerator itemizes frame rate conversion algorithms. See description
 of mfxExtVPPFrameRateConversion structure for more details.</p>
@@ -7033,8 +7032,8 @@ of mfxExtVPPFrameRateConversion structure for more details.</p>
 <dd><p>Frame rate conversion algorithm based on frame interpolation. This flag may be combined with MFX_FRCALGM_PRESERVE_TIMESTAMP or MFX_FRCALGM_DISTRIBUTED_TIMESTAMP flags. </p>
 </dd></dl>
 
-</section>
-<section id="generalconstraintflags">
+</div>
+<div class="section" id="generalconstraintflags">
 <h2>GeneralConstraintFlags<a class="headerlink" href="#generalconstraintflags" title="Permalink to this headline">¶</a></h2>
 <p>The GeneralConstraintFlags enumerator uses bit-ORed values to itemize HEVC
 bitstream indications for specific profiles. Each value indicates for format
@@ -7084,8 +7083,8 @@ range extensions profiles.</p>
 <span id="_CPPv335MFX_HEVC_CONSTR_REXT_LOWER_BIT_RATE"></span><span id="_CPPv235MFX_HEVC_CONSTR_REXT_LOWER_BIT_RATE"></span><span class="target" id="mfxstructures_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80abefc8b6b39b6e3c7a75eeff0c1ad79c7"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_HEVC_CONSTR_REXT_LOWER_BIT_RATE</span></code><a class="headerlink" href="#_CPPv435MFX_HEVC_CONSTR_REXT_LOWER_BIT_RATE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="gopoptflag">
+</div>
+<div class="section" id="gopoptflag">
 <h2>GopOptFlag<a class="headerlink" href="#gopoptflag" title="Permalink to this headline">¶</a></h2>
 <p>The GopOptFlag enumerator itemizes special properties in the GOP (Group of
 Pictures) sequence.</p>
@@ -7104,8 +7103,8 @@ Pictures) sequence.</p>
 <dd><p>The encoder must strictly follow the given GOP structure as defined by parameter GopPicSize, GopRefDist etc in the <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_video_param"><span class="std std-ref">mfxVideoParam</span></a> structure. Otherwise, the encoder can adapt the GOP structure for better efficiency, whose range is constrained by parameter GopPicSize and GopRefDist etc. See also description of AdaptiveI and AdaptiveB fields in the <a class="reference internal" href="VPL_structs_encode.html#structmfx_ext_coding_option2"><span class="std std-ref">mfxExtCodingOption2</span></a> structure. </p>
 </dd></dl>
 
-</section>
-<section id="gpucopy">
+</div>
+<div class="section" id="gpucopy">
 <h2>GPUCopy<a class="headerlink" href="#gpucopy" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enumerator">
 <dt id="_CPPv419MFX_GPUCOPY_DEFAULT">
@@ -7125,8 +7124,8 @@ Pictures) sequence.</p>
 <dd><p>Disable GPU accelerated copying. </p>
 </dd></dl>
 
-</section>
-<section id="hevc-profiles">
+</div>
+<div class="section" id="hevc-profiles">
 <h2>HEVC Profiles<a class="headerlink" href="#hevc-profiles" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enumerator">
 <dt id="_CPPv421MFX_PROFILE_HEVC_MAIN">
@@ -7153,8 +7152,8 @@ Pictures) sequence.</p>
 <span id="_CPPv320MFX_PROFILE_HEVC_SCC"></span><span id="_CPPv220MFX_PROFILE_HEVC_SCC"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77daeef663ff03e5a2211872578a18048843"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_PROFILE_HEVC_SCC</span></code><a class="headerlink" href="#_CPPv420MFX_PROFILE_HEVC_SCC" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="hevc-tiers">
+</div>
+<div class="section" id="hevc-tiers">
 <h2>HEVC Tiers<a class="headerlink" href="#hevc-tiers" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enumerator">
 <dt id="_CPPv418MFX_TIER_HEVC_MAIN">
@@ -7166,8 +7165,8 @@ Pictures) sequence.</p>
 <span id="_CPPv318MFX_TIER_HEVC_HIGH"></span><span id="_CPPv218MFX_TIER_HEVC_HIGH"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77da8159755ed12d7403e1e6fff07971fb70"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_TIER_HEVC_HIGH</span></code><a class="headerlink" href="#_CPPv418MFX_TIER_HEVC_HIGH" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="hevcregionencoding">
+</div>
+<div class="section" id="hevcregionencoding">
 <h2>HEVCRegionEncoding<a class="headerlink" href="#hevcregionencoding" title="Permalink to this headline">¶</a></h2>
 <p>The HEVCRegionEncoding enumerator itemizes HEVC region’s encoding.</p>
 <dl class="cpp enumerator">
@@ -7180,8 +7179,8 @@ Pictures) sequence.</p>
 <span id="_CPPv328MFX_HEVC_REGION_ENCODING_OFF"></span><span id="_CPPv228MFX_HEVC_REGION_ENCODING_OFF"></span><span class="target" id="mfxstructures_8h_1a634f9f55e799f3052a34590f08100017a37b148639e80bc96db3653511fea2d98"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_HEVC_REGION_ENCODING_OFF</span></code><a class="headerlink" href="#_CPPv428MFX_HEVC_REGION_ENCODING_OFF" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="hevcregiontype">
+</div>
+<div class="section" id="hevcregiontype">
 <h2>HEVCRegionType<a class="headerlink" href="#hevcregiontype" title="Permalink to this headline">¶</a></h2>
 <p>The HEVCRegionType enumerator itemizes type of HEVC region.</p>
 <dl class="cpp enumerator">
@@ -7190,8 +7189,8 @@ Pictures) sequence.</p>
 <dd><p>Slice type. </p>
 </dd></dl>
 
-</section>
-<section id="imagestabmode">
+</div>
+<div class="section" id="imagestabmode">
 <h2>ImageStabMode<a class="headerlink" href="#imagestabmode" title="Permalink to this headline">¶</a></h2>
 <p>The ImageStabMode enumerator itemizes image stabilization modes. See description
 of mfxExtVPPImageStab structure for more details.</p>
@@ -7207,8 +7206,8 @@ of mfxExtVPPImageStab structure for more details.</p>
 <dd><p>Boxing mode. </p>
 </dd></dl>
 
-</section>
-<section id="inserthdrpayload">
+</div>
+<div class="section" id="inserthdrpayload">
 <h2>InsertHDRPayload<a class="headerlink" href="#inserthdrpayload" title="Permalink to this headline">¶</a></h2>
 <p>The InsertHDRPayload enumerator itemizes HDR payloads insertion rules.</p>
 <dl class="cpp enumerator">
@@ -7223,8 +7222,8 @@ of mfxExtVPPImageStab structure for more details.</p>
 <dd><p>Insert payload on IDR frames. </p>
 </dd></dl>
 
-</section>
-<section id="interpolationmode">
+</div>
+<div class="section" id="interpolationmode">
 <h2>InterpolationMode<a class="headerlink" href="#interpolationmode" title="Permalink to this headline">¶</a></h2>
 <p>The InterpolationMode enumerator specifies type of interpolation method used by
 VPP scaling filter.</p>
@@ -7252,8 +7251,8 @@ VPP scaling filter.</p>
 <dd><p>Advanced interpolation method is defined by each implementation and usually gives best quality. </p>
 </dd></dl>
 
-</section>
-<section id="intrapredblocksize-interpredblocksize">
+</div>
+<div class="section" id="intrapredblocksize-interpredblocksize">
 <h2>IntraPredBlockSize/InterPredBlockSize<a class="headerlink" href="#intrapredblocksize-interpredblocksize" title="Permalink to this headline">¶</a></h2>
 <p>IntraPredBlockSize/InterPredBlockSize specifies minimum block size of inter-prediction.</p>
 <dl class="cpp enumerator">
@@ -7280,8 +7279,8 @@ VPP scaling filter.</p>
 <dd><p>4x4 minimum block size. May be 16x16, 8x8, or 4x4. </p>
 </dd></dl>
 
-</section>
-<section id="intrarefreshtypes">
+</div>
+<div class="section" id="intrarefreshtypes">
 <h2>IntraRefreshTypes<a class="headerlink" href="#intrarefreshtypes" title="Permalink to this headline">¶</a></h2>
 <p>The IntraRefreshTypes enumerator itemizes types of intra refresh.</p>
 <dl class="cpp enumerator">
@@ -7308,8 +7307,8 @@ VPP scaling filter.</p>
 <dd><p>Horizontal refresh by slices without overlapping. </p>
 </dd></dl>
 
-</section>
-<section id="iopattern">
+</div>
+<div class="section" id="iopattern">
 <h2>IOPattern<a class="headerlink" href="#iopattern" title="Permalink to this headline">¶</a></h2>
 <p>The IOPattern enumerator itemizes memory access patterns for API functions.
 Use bit-ORed values to specify input and output access patterns.</p>
@@ -7337,8 +7336,8 @@ Use bit-ORed values to specify input and output access patterns.</p>
 <dd><p>Output to functions is a linear buffer directly in system memory or in system memory through an external allocator. </p>
 </dd></dl>
 
-</section>
-<section id="jpegcolorformat">
+</div>
+<div class="section" id="jpegcolorformat">
 <h2>JPEGColorFormat<a class="headerlink" href="#jpegcolorformat" title="Permalink to this headline">¶</a></h2>
 <p>The JPEGColorFormat enumerator itemizes the JPEG color format options.</p>
 <dl class="cpp enumerator">
@@ -7358,8 +7357,8 @@ Use bit-ORed values to specify input and output access patterns.</p>
 <dd><p>Bitstream contains Y, Cb and Cr components. </p>
 </dd></dl>
 
-</section>
-<section id="jpegscantype">
+</div>
+<div class="section" id="jpegscantype">
 <h2>JPEGScanType<a class="headerlink" href="#jpegscantype" title="Permalink to this headline">¶</a></h2>
 <p>The JPEGScanType enumerator itemizes the JPEG scan types.</p>
 <dl class="cpp enumerator">
@@ -7380,8 +7379,8 @@ Use bit-ORed values to specify input and output access patterns.</p>
 <dd><p>Non-interleaved scan. </p>
 </dd></dl>
 
-</section>
-<section id="longtermidx">
+</div>
+<div class="section" id="longtermidx">
 <h2>LongTermIdx<a class="headerlink" href="#longtermidx" title="Permalink to this headline">¶</a></h2>
 <p>The LongTermIdx specifies long term index of picture control</p>
 <dl class="cpp enumerator">
@@ -7390,8 +7389,8 @@ Use bit-ORed values to specify input and output access patterns.</p>
 <dd><p>Long term index of picture is undefined. </p>
 </dd></dl>
 
-</section>
-<section id="lookaheaddownsampling">
+</div>
+<div class="section" id="lookaheaddownsampling">
 <h2>LookAheadDownSampling<a class="headerlink" href="#lookaheaddownsampling" title="Permalink to this headline">¶</a></h2>
 <p>The LookAheadDownSampling enumerator is used to control down sampling in look
 ahead bitrate control mode in AVC encoder.</p>
@@ -7419,8 +7418,8 @@ ahead bitrate control mode in AVC encoder.</p>
 <dd><p>Down sample frames four times before estimation. This option may significantly degrade quality. </p>
 </dd></dl>
 
-</section>
-<section id="mbqpmode">
+</div>
+<div class="section" id="mbqpmode">
 <h2>MBQPMode<a class="headerlink" href="#mbqpmode" title="Permalink to this headline">¶</a></h2>
 <p>The MBQPMode enumerator itemizes QP update modes.</p>
 <dl class="cpp enumerator">
@@ -7441,8 +7440,8 @@ ahead bitrate control mode in AVC encoder.</p>
 <dd><p>QP array contains deltas for QP or absolute QP values. </p>
 </dd></dl>
 
-</section>
-<section id="mfxcomponenttype">
+</div>
+<div class="section" id="mfxcomponenttype">
 <h2>mfxComponentType<a class="headerlink" href="#mfxcomponenttype" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enum">
 <dt id="_CPPv416mfxComponentType">
@@ -7469,8 +7468,8 @@ ahead bitrate control mode in AVC encoder.</p>
 
 </dd></dl>
 
-</section>
-<section id="mfxhandletype">
+</div>
+<div class="section" id="mfxhandletype">
 <h2>mfxHandleType<a class="headerlink" href="#mfxhandletype" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enum">
 <dt id="_CPPv413mfxHandleType">
@@ -7537,17 +7536,17 @@ ahead bitrate control mode in AVC encoder.</p>
 
 </dd></dl>
 
-</section>
-<section id="mfximpl">
+</div>
+<div class="section" id="mfximpl">
 <h2>mfxIMPL<a class="headerlink" href="#mfximpl" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp type">
 <dt id="_CPPv47mfxIMPL">
 <span id="_CPPv37mfxIMPL"></span><span id="_CPPv27mfxIMPL"></span><span id="mfxIMPL"></span><span class="target" id="mfxcommon_8h_1a094ec622be2f7b2c5a42b6cb4824dcb7"></span><em class="property"><span class="pre">typedef</span> </em><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxI32" title="mfxI32"><span class="pre">mfxI32</span></a> <code class="sig-name descname"><span class="pre">mfxIMPL</span></code><a class="headerlink" href="#_CPPv47mfxIMPL" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>This enumerator itemizes implementation types. The implementation type is a bit OR’ed value of the base type and any decorative flags. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>This enumerator is for legacy dispatcher compatibility only. The new dispatcher does not use it. </p>
-</dd>
-</dl>
-</p>
+<dd><p>This enumerator itemizes implementation types. The implementation type is a bit OR’ed value of the base type and any decorative flags. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This enumerator is for legacy dispatcher compatibility only. The new dispatcher does not use it. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp enumerator">
@@ -7646,8 +7645,8 @@ ahead bitrate control mode in AVC encoder.</p>
 <dd><p>The application can use the macro MFX_IMPL_BASETYPE(x) to obtain the base implementation type. </p>
 </dd></dl>
 
-</section>
-<section id="mfximplcapsdeliveryformat">
+</div>
+<div class="section" id="mfximplcapsdeliveryformat">
 <h2>mfxImplCapsDeliveryFormat<a class="headerlink" href="#mfximplcapsdeliveryformat" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enum">
 <dt id="_CPPv425mfxImplCapsDeliveryFormat">
@@ -7667,8 +7666,8 @@ ahead bitrate control mode in AVC encoder.</p>
 
 </dd></dl>
 
-</section>
-<section id="mfxmediaadaptertype">
+</div>
+<div class="section" id="mfxmediaadaptertype">
 <h2>mfxMediaAdapterType<a class="headerlink" href="#mfxmediaadaptertype" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enum">
 <dt id="_CPPv419mfxMediaAdapterType">
@@ -7695,8 +7694,8 @@ ahead bitrate control mode in AVC encoder.</p>
 
 </dd></dl>
 
-</section>
-<section id="mfxmemoryflags">
+</div>
+<div class="section" id="mfxmemoryflags">
 <h2>mfxMemoryFlags<a class="headerlink" href="#mfxmemoryflags" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enum">
 <dt id="_CPPv414mfxMemoryFlags">
@@ -7733,8 +7732,8 @@ ahead bitrate control mode in AVC encoder.</p>
 
 </dd></dl>
 
-</section>
-<section id="mfxnalunittype">
+</div>
+<div class="section" id="mfxnalunittype">
 <h2>MfxNalUnitType<a class="headerlink" href="#mfxnalunittype" title="Permalink to this headline">¶</a></h2>
 <p>Specifies NAL unit types supported by the HEVC encoder.</p>
 <dl class="cpp enumerator">
@@ -7797,8 +7796,8 @@ ahead bitrate control mode in AVC encoder.</p>
 <dd><p>See Table 7-1 of the ITU-T H.265 specification for the definition of these type. </p>
 </dd></dl>
 
-</section>
-<section id="mfxpriority">
+</div>
+<div class="section" id="mfxpriority">
 <h2>mfxPriority<a class="headerlink" href="#mfxpriority" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enum">
 <dt id="_CPPv411mfxPriority">
@@ -7825,8 +7824,8 @@ ahead bitrate control mode in AVC encoder.</p>
 
 </dd></dl>
 
-</section>
-<section id="mfxresourcetype">
+</div>
+<div class="section" id="mfxresourcetype">
 <h2>mfxResourceType<a class="headerlink" href="#mfxresourcetype" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enum">
 <dt id="_CPPv415mfxResourceType">
@@ -7882,8 +7881,8 @@ ahead bitrate control mode in AVC encoder.</p>
 
 </dd></dl>
 
-</section>
-<section id="mfxskipmode">
+</div>
+<div class="section" id="mfxskipmode">
 <h2>mfxSkipMode<a class="headerlink" href="#mfxskipmode" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enum">
 <dt id="_CPPv411mfxSkipMode">
@@ -7909,8 +7908,8 @@ ahead bitrate control mode in AVC encoder.</p>
 
 </dd></dl>
 
-</section>
-<section id="mfxstatus">
+</div>
+<div class="section" id="mfxstatus">
 <h2>mfxStatus<a class="headerlink" href="#mfxstatus" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enum">
 <dt id="_CPPv49mfxStatus">
@@ -8135,8 +8134,8 @@ ahead bitrate control mode in AVC encoder.</p>
 
 </dd></dl>
 
-</section>
-<section id="mirroringtype">
+</div>
+<div class="section" id="mirroringtype">
 <h2>MirroringType<a class="headerlink" href="#mirroringtype" title="Permalink to this headline">¶</a></h2>
 <p>The MirroringType enumerator itemizes mirroring types.</p>
 <dl class="cpp enumerator">
@@ -8154,8 +8153,8 @@ ahead bitrate control mode in AVC encoder.</p>
 <span id="_CPPv322MFX_MIRRORING_VERTICAL"></span><span id="_CPPv222MFX_MIRRORING_VERTICAL"></span><span class="target" id="mfxstructures_8h_1a5a77d65f4abba81d4456fa6ba8136e24abd27df1126d5d0bf32b39d1a3a8585e1"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_MIRRORING_VERTICAL</span></code><a class="headerlink" href="#_CPPv422MFX_MIRRORING_VERTICAL" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="denoisemode">
+</div>
+<div class="section" id="denoisemode">
 <h2>DenoiseMode<a class="headerlink" href="#denoisemode" title="Permalink to this headline">¶</a></h2>
 <p>The mfxDenoiseMode enumerator itemizes denoise modes.</p>
 <dl class="cpp enum">
@@ -8207,8 +8206,8 @@ ahead bitrate control mode in AVC encoder.</p>
 
 </dd></dl>
 
-</section>
-<section id="mpeg-2-profiles">
+</div>
+<div class="section" id="mpeg-2-profiles">
 <h2>MPEG-2 Profiles<a class="headerlink" href="#mpeg-2-profiles" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enumerator">
 <dt id="_CPPv424MFX_PROFILE_MPEG2_SIMPLE">
@@ -8225,8 +8224,8 @@ ahead bitrate control mode in AVC encoder.</p>
 <span id="_CPPv322MFX_PROFILE_MPEG2_HIGH"></span><span id="_CPPv222MFX_PROFILE_MPEG2_HIGH"></span><span class="target" id="mfxstructures_8h_1a157d5577a5b2f5986037d0d09c7dc77da3fed3bd0a2fc88191f3f62399c51a31e"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_PROFILE_MPEG2_HIGH</span></code><a class="headerlink" href="#_CPPv422MFX_PROFILE_MPEG2_HIGH" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="multi-view-video-coding-extension-profiles">
+</div>
+<div class="section" id="multi-view-video-coding-extension-profiles">
 <h2>Multi-view Video Coding Extension Profiles<a class="headerlink" href="#multi-view-video-coding-extension-profiles" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enumerator">
 <dt id="_CPPv430MFX_PROFILE_AVC_MULTIVIEW_HIGH">
@@ -8240,8 +8239,8 @@ ahead bitrate control mode in AVC encoder.</p>
 <dd><p>Stereo high profile. </p>
 </dd></dl>
 
-</section>
-<section id="mvprecision">
+</div>
+<div class="section" id="mvprecision">
 <h2>MVPrecision<a class="headerlink" href="#mvprecision" title="Permalink to this headline">¶</a></h2>
 <p>The MVPrecision enumerator specifies the motion estimation precision</p>
 <dl class="cpp enumerator">
@@ -8264,8 +8263,8 @@ ahead bitrate control mode in AVC encoder.</p>
 <span id="_CPPv326MFX_MVPRECISION_QUARTERPEL"></span><span id="_CPPv226MFX_MVPRECISION_QUARTERPEL"></span><span class="target" id="mfxstructures_8h_1a56a0f36da7f9eaaf54bd05cc2bf49173a53dcc47cdc3d461db9496cebe43ee4fd"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_MVPRECISION_QUARTERPEL</span></code><a class="headerlink" href="#_CPPv426MFX_MVPRECISION_QUARTERPEL" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="nominalrange">
+</div>
+<div class="section" id="nominalrange">
 <h2>NominalRange<a class="headerlink" href="#nominalrange" title="Permalink to this headline">¶</a></h2>
 <p>The NominalRange enumerator itemizes pixel’s value nominal range.</p>
 <dl class="cpp enumerator">
@@ -8286,8 +8285,8 @@ ahead bitrate control mode in AVC encoder.</p>
 <dd><p>Range is from 16 to 235. </p>
 </dd></dl>
 
-</section>
-<section id="partialbitstreamoutput">
+</div>
+<div class="section" id="partialbitstreamoutput">
 <h2>PartialBitstreamOutput<a class="headerlink" href="#partialbitstreamoutput" title="Permalink to this headline">¶</a></h2>
 <p>The PartialBitstreamOutput enumerator indicates flags of partial bitstream output
 type.</p>
@@ -8315,8 +8314,8 @@ type.</p>
 <dd><p>Partial bitstream output will be return any coded data available at the end of SyncOperation timeout </p>
 </dd></dl>
 
-</section>
-<section id="payloadctrlflags">
+</div>
+<div class="section" id="payloadctrlflags">
 <h2>PayloadCtrlFlags<a class="headerlink" href="#payloadctrlflags" title="Permalink to this headline">¶</a></h2>
 <p>The PayloadCtrlFlags enumerator itemizes additional payload properties.</p>
 <dl class="cpp enumerator">
@@ -8325,8 +8324,8 @@ type.</p>
 <dd><p>Insert this payload into HEVC Suffix SEI NAL-unit. </p>
 </dd></dl>
 
-</section>
-<section id="picstruct">
+</div>
+<div class="section" id="picstruct">
 <span id="id3"></span><h2>PicStruct<a class="headerlink" href="#picstruct" title="Permalink to this headline">¶</a></h2>
 <p>The PicStruct enumerator itemizes picture structure. Use bit-OR’ed values to
 specify the desired picture type.</p>
@@ -8402,8 +8401,8 @@ specify the desired picture type.</p>
 <dd><p>Paired with next field: pic_struct = 11 or 12 in H.265 </p>
 </dd></dl>
 
-</section>
-<section id="pictype">
+</div>
+<div class="section" id="pictype">
 <h2>PicType<a class="headerlink" href="#pictype" title="Permalink to this headline">¶</a></h2>
 <p>The PicType enumerator itemizes picture type.</p>
 <dl class="cpp enumerator">
@@ -8430,8 +8429,8 @@ specify the desired picture type.</p>
 <dd><p>Picture is a bottom field. </p>
 </dd></dl>
 
-</section>
-<section id="platformcodename">
+</div>
+<div class="section" id="platformcodename">
 <h2>PlatformCodeName<a class="headerlink" href="#platformcodename" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enumerator">
 <dt id="_CPPv420MFX_PLATFORM_UNKNOWN">
@@ -8565,8 +8564,8 @@ specify the desired picture type.</p>
 <dd><p>Code name Keem Bay. </p>
 </dd></dl>
 
-</section>
-<section id="preftype">
+</div>
+<div class="section" id="preftype">
 <h2>PRefType<a class="headerlink" href="#preftype" title="Permalink to this headline">¶</a></h2>
 <p>The PRefType enumerator itemizes models of reference list construction and DPB
 management when GopRefDist=1.</p>
@@ -8588,8 +8587,8 @@ management when GopRefDist=1.</p>
 <dd><p>Let N be the max reference list’s size. Encoder treats each N’s frame as a ‘strong’ reference and the others as ‘weak’ references. The encoder uses a ‘weak’ reference only for prediction of the next frame and removes it from DPB immediately after use. ‘Strong’ references are removed from DPB by a sliding window. </p>
 </dd></dl>
 
-</section>
-<section id="protected">
+</div>
+<div class="section" id="protected">
 <h2>Protected<a class="headerlink" href="#protected" title="Permalink to this headline">¶</a></h2>
 <p>The Protected enumerator describes the protection schemes.</p>
 <dl class="cpp enumerator">
@@ -8604,8 +8603,8 @@ management when GopRefDist=1.</p>
 <dd><p>The protection scheme is based on the Widevine* Modular DRM* from Google*. </p>
 </dd></dl>
 
-</section>
-<section id="ratecontrolmethod">
+</div>
+<div class="section" id="ratecontrolmethod">
 <span id="id4"></span><h2>RateControlMethod<a class="headerlink" href="#ratecontrolmethod" title="Permalink to this headline">¶</a></h2>
 <p>The RateControlMethod enumerator itemizes bitrate control methods.</p>
 <dl class="cpp enumerator">
@@ -8672,8 +8671,8 @@ management when GopRefDist=1.</p>
 <dd><p>Use the variable bitrate control algorithm with constant quality. This algorithm trying to achieve the target subjective quality with the minimum number of bits, while the bitrate constraint and HRD compliance are satisfied. It uses the same set of parameters as VBR and quality factor specified by <a class="reference internal" href="VPL_structs_encode.html#structmfx_ext_coding_option3_1a6ee759017eee959547fa539ec8a55ae6"><span class="std std-ref">mfxExtCodingOption3::QVBRQuality</span></a>. </p>
 </dd></dl>
 
-</section>
-<section id="roimode">
+</div>
+<div class="section" id="roimode">
 <h2>ROImode<a class="headerlink" href="#roimode" title="Permalink to this headline">¶</a></h2>
 <p>The ROImode enumerator itemizes QP adjustment mode for ROIs.</p>
 <dl class="cpp enumerator">
@@ -8694,8 +8693,8 @@ management when GopRefDist=1.</p>
 <dd><p>Absolute QP </p>
 </dd></dl>
 
-</section>
-<section id="rotation">
+</div>
+<div class="section" id="rotation">
 <h2>Rotation<a class="headerlink" href="#rotation" title="Permalink to this headline">¶</a></h2>
 <p>The Rotation enumerator itemizes the JPEG rotation options.</p>
 <dl class="cpp enumerator">
@@ -8722,8 +8721,8 @@ management when GopRefDist=1.</p>
 <dd><p>270 degree rotation. </p>
 </dd></dl>
 
-</section>
-<section id="sampleadaptiveoffset">
+</div>
+<div class="section" id="sampleadaptiveoffset">
 <h2>SampleAdaptiveOffset<a class="headerlink" href="#sampleadaptiveoffset" title="Permalink to this headline">¶</a></h2>
 <p>The SampleAdaptiveOffset enumerator uses bit-ORed values to itemize corresponding
 HEVC encoding feature.</p>
@@ -8751,8 +8750,8 @@ HEVC encoding feature.</p>
 <dd><p>Enable SAO for chroma (slice_sao_chroma_flag = 1). </p>
 </dd></dl>
 
-</section>
-<section id="scalingmode">
+</div>
+<div class="section" id="scalingmode">
 <h2>ScalingMode<a class="headerlink" href="#scalingmode" title="Permalink to this headline">¶</a></h2>
 <p>The ScalingMode enumerator itemizes variants of scaling filter implementation.</p>
 <dl class="cpp enumerator">
@@ -8796,8 +8795,8 @@ HEVC encoding feature.</p>
 <dd><p>The special optimization mode where scaling operation running on SFC (Scaler &amp; Format Converter) is coupled with VDBOX (also known as Multi-Format Codec fixed-function engine). This mode is applicable for DECODE_VPP domain functions. </p>
 </dd></dl>
 
-</section>
-<section id="scenarioinfo">
+</div>
+<div class="section" id="scenarioinfo">
 <h2>ScenarioInfo<a class="headerlink" href="#scenarioinfo" title="Permalink to this headline">¶</a></h2>
 <p>The ScenarioInfo enumerator itemizes scenarios for the encoding session.</p>
 <dl class="cpp enumerator">
@@ -8845,8 +8844,8 @@ HEVC encoding feature.</p>
 <span id="_CPPv326MFX_SCENARIO_REMOTE_GAMING"></span><span id="_CPPv226MFX_SCENARIO_REMOTE_GAMING"></span><span class="target" id="mfxstructures_8h_1a1be3860693af99a6c1da72580097294caf7fa92f9486f77560ba47bf4341cbe6c"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_SCENARIO_REMOTE_GAMING</span></code><a class="headerlink" href="#_CPPv426MFX_SCENARIO_REMOTE_GAMING" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-</section>
-<section id="segmentfeature">
+</div>
+<div class="section" id="segmentfeature">
 <h2>SegmentFeature<a class="headerlink" href="#segmentfeature" title="Permalink to this headline">¶</a></h2>
 <p>The SegmentFeature enumerator indicates features enabled for the segment.
 These values are used with the mfxVP9SegmentParam::FeatureEnabled parameter.</p>
@@ -8874,8 +8873,8 @@ These values are used with the mfxVP9SegmentParam::FeatureEnabled parameter.</p>
 <dd><p>Skip. </p>
 </dd></dl>
 
-</section>
-<section id="segmentidblocksize">
+</div>
+<div class="section" id="segmentidblocksize">
 <h2>SegmentIdBlockSize<a class="headerlink" href="#segmentidblocksize" title="Permalink to this headline">¶</a></h2>
 <p>The SegmentIdBlockSize enumerator indicates the block size represented by each
 segment_id in segmentation map. These values are used with the
@@ -8910,8 +8909,8 @@ mfxExtVP9Segmentation::SegmentIdBlockSize parameter.</p>
 <dd><p>64x64 block size. </p>
 </dd></dl>
 
-</section>
-<section id="skipframe">
+</div>
+<div class="section" id="skipframe">
 <h2>SkipFrame<a class="headerlink" href="#skipframe" title="Permalink to this headline">¶</a></h2>
 <p>The SkipFrame enumerator is used to define usage of mfxEncodeCtrl::SkipFrame
 parameter.</p>
@@ -8939,8 +8938,8 @@ parameter.</p>
 <dd><p><a class="reference internal" href="VPL_structs_encode.html#structmfx_encode_ctrl_1af2701aa02b1abfc1cc580edd97ab1912"><span class="std std-ref">mfxEncodeCtrl::SkipFrame</span></a> indicates number of missed frames before the current frame. Affects only BRC, current frame will be encoded as usual. </p>
 </dd></dl>
 
-</section>
-<section id="targetusage">
+</div>
+<div class="section" id="targetusage">
 <h2>TargetUsage<a class="headerlink" href="#targetusage" title="Permalink to this headline">¶</a></h2>
 <p>The TargetUsage enumerator itemizes a range of numbers from MFX_TARGETUSAGE_1,
 best quality, to MFX_TARGETUSAGE_7, best speed. It indicates trade-offs between
@@ -9009,8 +9008,8 @@ target usage is not supported, the encoder will use the closest supported value.
 <dd><p>Best speed. </p>
 </dd></dl>
 
-</section>
-<section id="telecinepattern">
+</div>
+<div class="section" id="telecinepattern">
 <h2>TelecinePattern<a class="headerlink" href="#telecinepattern" title="Permalink to this headline">¶</a></h2>
 <p>The TelecinePattern enumerator itemizes telecine patterns.</p>
 <dl class="cpp enumerator">
@@ -9043,8 +9042,8 @@ target usage is not supported, the encoder will use the closest supported value.
 <dd><p>User must provide position inside a sequence of 5 frames where the artifacts start. </p>
 </dd></dl>
 
-</section>
-<section id="timestampcalc">
+</div>
+<div class="section" id="timestampcalc">
 <h2>TimeStampCalc<a class="headerlink" href="#timestampcalc" title="Permalink to this headline">¶</a></h2>
 <p>The TimeStampCalc enumerator itemizes time-stamp calculation methods.</p>
 <dl class="cpp enumerator">
@@ -9059,8 +9058,8 @@ target usage is not supported, the encoder will use the closest supported value.
 <dd><p>Adjust time stamp to 29.97fps on 24fps progressively encoded sequences if telecine attributes are available in the bitstream and time stamp is not explicitly specified. The input frame rate must be specified. </p>
 </dd></dl>
 
-</section>
-<section id="transfermatrix">
+</div>
+<div class="section" id="transfermatrix">
 <h2>TransferMatrix<a class="headerlink" href="#transfermatrix" title="Permalink to this headline">¶</a></h2>
 <p>The TransferMatrix enumerator itemizes color transfer matrices.</p>
 <dl class="cpp enumerator">
@@ -9081,8 +9080,8 @@ target usage is not supported, the encoder will use the closest supported value.
 <dd><p>Transfer matrix from ITU-R BT.601 standard. </p>
 </dd></dl>
 
-</section>
-<section id="trelliscontrol">
+</div>
+<div class="section" id="trelliscontrol">
 <h2>TrellisControl<a class="headerlink" href="#trelliscontrol" title="Permalink to this headline">¶</a></h2>
 <p>The TrellisControl enumerator is used to control trellis quantization in AVC
 encoder. The application can turn it on or off for any combination of I, P, and
@@ -9118,8 +9117,8 @@ MFX_TRELLIS_I | MFX_TRELLIS_B turns it on for I and B frames.</p>
 <dd><p>Turn trellis quantization on for B-frames. </p>
 </dd></dl>
 
-</section>
-<section id="vp9referenceframe">
+</div>
+<div class="section" id="vp9referenceframe">
 <h2>VP9ReferenceFrame<a class="headerlink" href="#vp9referenceframe" title="Permalink to this headline">¶</a></h2>
 <p>The VP9ReferenceFrame enumerator itemizes reference frame type by
 the mfxVP9SegmentParam::ReferenceFrame parameter.</p>
@@ -9147,8 +9146,8 @@ the mfxVP9SegmentParam::ReferenceFrame parameter.</p>
 <dd><p>Alternative reference. </p>
 </dd></dl>
 
-</section>
-<section id="vppfieldprocessingmode">
+</div>
+<div class="section" id="vppfieldprocessingmode">
 <h2>VPPFieldProcessingMode<a class="headerlink" href="#vppfieldprocessingmode" title="Permalink to this headline">¶</a></h2>
 <p>The VPPFieldProcessingMode enumerator is used to control VPP field processing
 algorithm.</p>
@@ -9170,8 +9169,8 @@ algorithm.</p>
 <dd><p>Swap top and bottom fields. </p>
 </dd></dl>
 
-</section>
-<section id="weightedpred">
+</div>
+<div class="section" id="weightedpred">
 <h2>WeightedPred<a class="headerlink" href="#weightedpred" title="Permalink to this headline">¶</a></h2>
 <p>The WeightedPred enumerator itemizes weighted prediction modes.</p>
 <dl class="cpp enumerator">
@@ -9198,8 +9197,8 @@ algorithm.</p>
 <dd><p>Use implicit weighted prediction (for B-frames only). </p>
 </dd></dl>
 
-</section>
-<section id="filmgrainflags">
+</div>
+<div class="section" id="filmgrainflags">
 <h2>FilmGrainFlags<a class="headerlink" href="#filmgrainflags" title="Permalink to this headline">¶</a></h2>
 <p>The FilmGrainFlags enumerator itemizes flags in AV1 film grain parameters.</p>
 <dl class="cpp enumerator">
@@ -9238,8 +9237,8 @@ algorithm.</p>
 <dd><p>Clipping to the restricted (studio) range is applied after adding the film grain. </p>
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

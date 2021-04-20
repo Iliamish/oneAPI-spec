@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>split_node &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4594,7 +4593,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="split-node">
+  <div class="section" id="split-node">
 <h1>split_node<a class="headerlink" href="#split-node" title="Permalink to this headline">¶</a></h1>
 <p><strong>[flow_graph.split_node]</strong></p>
 <p>A <code class="docutils literal notranslate"><span class="pre">split_node</span></code> sends each element of the incoming tuple to the output port that matches the element index
@@ -4630,7 +4629,7 @@ ports is specified by corresponding tuple element type. This node receives a tup
 port and generates a message from each element of the tuple, passing each to the corresponding output port.</p>
 <p><code class="docutils literal notranslate"><span class="pre">split_node</span></code> has a <cite>discarding</cite> and <cite>broadcast-push</cite> <a class="reference internal" href="forwarding_and_buffering.html"><span class="doc">properties</span></a>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">split_node</span></code> has unlimited concurrency, and behaves as a <code class="docutils literal notranslate"><span class="pre">broadcast_node</span></code> with multiple output ports.</p>
-<section id="member-functions">
+<div class="section" id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb4flow10split_node10split_nodeER5graph">
@@ -4669,8 +4668,8 @@ to the <code class="docutils literal notranslate"><span class="pre">split_node</
 <dd><p><strong>Returns</strong>: a tuple of output ports.</p>
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

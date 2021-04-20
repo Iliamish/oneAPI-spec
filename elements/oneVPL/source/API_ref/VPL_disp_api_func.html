@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dispatcher API Function Reference &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4631,9 +4630,9 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="dispatcher-api-function-reference">
+  <div class="section" id="dispatcher-api-function-reference">
 <span id="disp-api-func"></span><h1>Dispatcher API Function Reference<a class="headerlink" href="#dispatcher-api-function-reference" title="Permalink to this headline">¶</a></h1>
-<section id="api">
+<div class="section" id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -4646,7 +4645,7 @@ SPDX-License-Identifier: MIT
 <li><p><a class="reference internal" href="#mfxunload" id="id7">MFXUnload</a></p></li>
 </ul>
 </div>
-<section id="mfxcreateconfig">
+<div class="section" id="mfxcreateconfig">
 <h3><a class="toc-backref" href="#id1">MFXCreateConfig</a><a class="headerlink" href="#mfxcreateconfig" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv415MFXCreateConfig9mfxLoader">
@@ -4660,20 +4659,22 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
  <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Config handle or NULL pointer is failed.</p>
-</dd>
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">loader</span></code>: Loader handle. </p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>[in] loader</strong> – Loader handle. </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Config handle or NULL pointer is failed.</p>
+</dd>
+</dl>
 </dd></dl>
 
-</section>
-<section id="mfxcreatesession">
+</div>
+<div class="section" id="mfxcreatesession">
 <h3><a class="toc-backref" href="#id2">MFXCreateSession</a><a class="headerlink" href="#mfxcreatesession" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv416MFXCreateSession9mfxLoader6mfxU32P10mfxSession">
@@ -4698,91 +4699,106 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
  <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. The session contains a pointer to the session handle.<p> MFX_ERR_NULL_PTR If loader is NULL. </p>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] loader</strong> – Loader handle. </p></li>
+<li><p><strong>[in] i</strong> – Index of the implementation. </p></li>
+<li><p><strong>[out] session</strong> – Pointer to the session handle. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. The session contains a pointer to the session handle.<p> MFX_ERR_NULL_PTR If loader is NULL. </p>
 <p> MFX_ERR_NULL_PTR If session is NULL. </p>
 <p> MFX_ERR_NOT_FOUND Provided index is out of possible range.</p>
 </p>
 </dd>
-<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">loader</span></code>: Loader handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">i</span></code>: Index of the implementation. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">session</span></code>: Pointer to the session handle. </p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
-</section>
-<section id="mfxdispreleaseimpldescription">
+</div>
+<div class="section" id="mfxdispreleaseimpldescription">
 <h3><a class="toc-backref" href="#id3">MFXDispReleaseImplDescription</a><a class="headerlink" href="#mfxdispreleaseimpldescription" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv429MFXDispReleaseImplDescription9mfxLoader6mfxHDL">
 <span id="_CPPv329MFXDispReleaseImplDescription9mfxLoader6mfxHDL"></span><span id="_CPPv229MFXDispReleaseImplDescription9mfxLoader6mfxHDL"></span><span id="MFXDispReleaseImplDescription__mfxLoader.mfxHDL"></span><span class="target" id="mfxdispatcher_8h_1a604a8a4638b2218450eda5f5e521742e"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <code class="sig-name descname"><span class="pre">MFXDispReleaseImplDescription</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv49mfxLoader" title="mfxLoader"><span class="pre">mfxLoader</span></a> <em><span class="pre">loader</span></em>, <a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxHDL" title="mfxHDL"><span class="pre">mfxHDL</span></a> <em><span class="pre">hdl</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429MFXDispReleaseImplDescription9mfxLoader6mfxHDL" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Destroys handle allocated by the MFXEnumImplementations function. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p> MFX_ERR_NULL_PTR If loader is NULL. </p>
-<p> MFX_ERR_INVALID_HANDLE Provided hdl handle is not associated with this loader.</p>
-</p>
-</dd>
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">loader</span></code>: Loader handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">hdl</span></code>: Handle to destroy. Can be equal to NULL.</p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] loader</strong> – Loader handle. </p></li>
+<li><p><strong>[in] hdl</strong> – Handle to destroy. Can be equal to NULL.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. <p> MFX_ERR_NULL_PTR If loader is NULL. </p>
+<p> MFX_ERR_INVALID_HANDLE Provided hdl handle is not associated with this loader.</p>
+</p>
+</dd>
+</dl>
 </dd></dl>
 
-</section>
-<section id="mfxenumimplementations">
+</div>
+<div class="section" id="mfxenumimplementations">
 <h3><a class="toc-backref" href="#id4">MFXEnumImplementations</a><a class="headerlink" href="#mfxenumimplementations" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv422MFXEnumImplementations9mfxLoader6mfxU3225mfxImplCapsDeliveryFormatP6mfxHDL">
 <span id="_CPPv322MFXEnumImplementations9mfxLoader6mfxU3225mfxImplCapsDeliveryFormatP6mfxHDL"></span><span id="_CPPv222MFXEnumImplementations9mfxLoader6mfxU3225mfxImplCapsDeliveryFormatP6mfxHDL"></span><span id="MFXEnumImplementations__mfxLoader.mfxU32.mfxImplCapsDeliveryFormat.mfxHDLP"></span><span class="target" id="mfxdispatcher_8h_1a0d5d1acc6a0030a2cb8e4a6b655a5528"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <code class="sig-name descname"><span class="pre">MFXEnumImplementations</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv49mfxLoader" title="mfxLoader"><span class="pre">mfxLoader</span></a> <em><span class="pre">loader</span></em>, <a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU32" title="mfxU32"><span class="pre">mfxU32</span></a> <em><span class="pre">i</span></em>, <a class="reference internal" href="VPL_enums.html#_CPPv425mfxImplCapsDeliveryFormat" title="mfxImplCapsDeliveryFormat"><span class="pre">mfxImplCapsDeliveryFormat</span></a> <em><span class="pre">format</span></em>, <a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxHDL" title="mfxHDL"><span class="pre">mfxHDL</span></a> <span class="pre">*</span><em><span class="pre">idesc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422MFXEnumImplementations9mfxLoader6mfxU3225mfxImplCapsDeliveryFormatP6mfxHDL" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Iterates over filtered out implementations to gather their details. This function allocates memory to store <a class="reference internal" href="VPL_disp_api_struct.html#structmfx_impl_description"><span class="std std-ref">mfxImplDescription</span></a> structure instance. Use the MFXDispReleaseImplDescription function to free memory allocated to the <a class="reference internal" href="VPL_disp_api_struct.html#structmfx_impl_description"><span class="std std-ref">mfxImplDescription</span></a> structure. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. The idesc contains valid information.<p> MFX_ERR_NULL_PTR If loader is NULL. </p>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] loader</strong> – Loader handle. </p></li>
+<li><p><strong>[in] i</strong> – Index of the implementation. </p></li>
+<li><p><strong>[in] format</strong> – Format in which capabilities need to be delivered. See the mfxImplCapsDeliveryFormat enumerator for more details. </p></li>
+<li><p><strong>[out] idesc</strong> – Pointer to the <a class="reference internal" href="VPL_disp_api_struct.html#structmfx_impl_description"><span class="std std-ref">mfxImplDescription</span></a> structure. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. The idesc contains valid information.<p> MFX_ERR_NULL_PTR If loader is NULL. </p>
 <p> MFX_ERR_NULL_PTR If idesc is NULL. </p>
 <p> MFX_ERR_NOT_FOUND Provided index is out of possible range. </p>
 <p> MFX_ERR_UNSUPPORTED If requested format is not supported.</p>
 </p>
 </dd>
-<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">loader</span></code>: Loader handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">i</span></code>: Index of the implementation. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">format</span></code>: Format in which capabilities need to be delivered. See the mfxImplCapsDeliveryFormat enumerator for more details. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">idesc</span></code>: Pointer to the <a class="reference internal" href="VPL_disp_api_struct.html#structmfx_impl_description"><span class="std std-ref">mfxImplDescription</span></a> structure. </p></li>
-</ul>
-</dd>
 </dl>
-</p>
 </dd></dl>
 
-</section>
-<section id="mfxload">
+</div>
+<div class="section" id="mfxload">
 <h3><a class="toc-backref" href="#id5">MFXLoad</a><a class="headerlink" href="#mfxload" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv47MFXLoadv">
 <span id="_CPPv37MFXLoadv"></span><span id="_CPPv27MFXLoadv"></span><span id="MFXLoad"></span><span class="target" id="mfxdispatcher_8h_1a8b69c6591d6d2c879192ef579a9b4660"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv49mfxLoader" title="mfxLoader"><span class="pre">mfxLoader</span></a> <code class="sig-name descname"><span class="pre">MFXLoad</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47MFXLoadv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Creates the loader. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Loader Loader handle or NULL if failed.</p>
-</dd>
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Loader Loader handle or NULL if failed.</p>
+</dd>
+</dl>
 </dd></dl>
 
-</section>
-<section id="mfxsetconfigfilterproperty">
+</div>
+<div class="section" id="mfxsetconfigfilterproperty">
 <h3><a class="toc-backref" href="#id6">MFXSetConfigFilterProperty</a><a class="headerlink" href="#mfxsetconfigfilterproperty" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv426MFXSetConfigFilterProperty9mfxConfigPK5mfxU810mfxVariant">
@@ -4798,12 +4814,6 @@ SPDX-License-Identifier: MIT
 <span class="n">MFXCreateSession</span><span class="p">(</span><span class="n">loader</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">&amp;</span><span class="n">session</span><span class="p">);</span>
 </pre></div>
 </div>
-<dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Each new call with the same parameter name will overwrite the previously set value. This may invalidate other properties. </p>
-</dd>
-<dt><strong>Note</strong></dt><dd><p>Each new call with another parameter name will delete the previous property and create a new property based on new name’s value.</p>
-</dd>
-</dl>
 </p>
 <p>Usage example with two sessions (multiple loaders): <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Create</span> <span class="n">session</span> <span class="k">with</span> <span class="n">software</span> <span class="n">based</span> <span class="n">implementation</span>
 <span class="n">mfxLoader</span> <span class="n">loader1</span> <span class="o">=</span> <span class="n">MFXLoad</span><span class="p">();</span>
@@ -4853,24 +4863,36 @@ SPDX-License-Identifier: MIT
 </div>
 </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. MFX_ERR_NULL_PTR If config is NULL. <p> MFX_ERR_NULL_PTR If name is NULL. </p>
-<p> MFX_ERR_NOT_FOUND If name contains unknown parameter name. MFX_ERR_UNSUPPORTED If value data type does not equal the parameter with provided name.</p>
-</p>
-</dd>
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">config</span></code>: Config handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">name</span></code>: Name of the parameter (see <a class="reference internal" href="VPL_disp_api_struct.html#structmfx_impl_description"><span class="std std-ref">mfxImplDescription</span></a> structure and example). </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">value</span></code>: Value of the parameter. </p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each new call with the same parameter name will overwrite the previously set value. This may invalidate other properties. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each new call with another parameter name will delete the previous property and create a new property based on new name’s value.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] config</strong> – Config handle. </p></li>
+<li><p><strong>[in] name</strong> – Name of the parameter (see <a class="reference internal" href="VPL_disp_api_struct.html#structmfx_impl_description"><span class="std std-ref">mfxImplDescription</span></a> structure and example). </p></li>
+<li><p><strong>[in] value</strong> – Value of the parameter. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. MFX_ERR_NULL_PTR If config is NULL. <p> MFX_ERR_NULL_PTR If name is NULL. </p>
+<p> MFX_ERR_NOT_FOUND If name contains unknown parameter name. MFX_ERR_UNSUPPORTED If value data type does not equal the parameter with provided name.</p>
+</p>
+</dd>
+</dl>
 </dd></dl>
 
-</section>
-<section id="mfxunload">
+</div>
+<div class="section" id="mfxunload">
 <h3><a class="toc-backref" href="#id7">MFXUnload</a><a class="headerlink" href="#mfxunload" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv49MFXUnload9mfxLoader">
@@ -4879,17 +4901,18 @@ SPDX-License-Identifier: MIT
 <p><dl class="simple">
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">loader</span></code>: Loader handle.</p></li>
-</ul>
-</dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>[in] loader</strong> – Loader handle.</p>
+</dd>
+</dl>
 </dd></dl>
 
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

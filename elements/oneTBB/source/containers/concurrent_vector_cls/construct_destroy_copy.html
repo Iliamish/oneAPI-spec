@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Construction, destruction, copying &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4629,9 +4628,9 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="construction-destruction-copying">
+  <div class="section" id="construction-destruction-copying">
 <h1>Construction, destruction, copying<a class="headerlink" href="#construction-destruction-copying" title="Permalink to this headline">¶</a></h1>
-<section id="empty-container-constructors">
+<div class="section" id="empty-container-constructors">
 <h2>Empty container constructors<a class="headerlink" href="#empty-container-constructors" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">concurrent_vector</span><span class="p">();</span>
@@ -4642,8 +4641,8 @@ SPDX-License-Identifier: MIT
 <p>Constructs an empty <code class="docutils literal notranslate"><span class="pre">concurrent_vector</span></code>.</p>
 <p>If provided, uses the allocator <code class="docutils literal notranslate"><span class="pre">alloc</span></code> to allocate the memory.</p>
 </div></blockquote>
-</section>
-<section id="constructors-from-the-sequence-of-elements">
+</div>
+<div class="section" id="constructors-from-the-sequence-of-elements">
 <h2>Constructors from the sequence of elements<a class="headerlink" href="#constructors-from-the-sequence-of-elements" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">explicit</span> <span class="nf">concurrent_vector</span><span class="p">(</span> <span class="n">size_type</span> <span class="n">count</span><span class="p">,</span> <span class="k">const</span> <span class="n">value_type</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">,</span>
@@ -4680,8 +4679,8 @@ from the [input.iterators] ISO C++ Standard section.</p>
 </div>
 <p>Equivalent to <code class="docutils literal notranslate"><span class="pre">concurrent_vector(init.begin(),</span> <span class="pre">init.end(),</span> <span class="pre">alloc)</span></code>.</p>
 </div></blockquote>
-</section>
-<section id="copying-constructors">
+</div>
+<div class="section" id="copying-constructors">
 <h2>Copying constructors<a class="headerlink" href="#copying-constructors" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">concurrent_vector</span><span class="p">(</span> <span class="k">const</span> <span class="n">concurrent_vector</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">);</span>
@@ -4695,8 +4694,8 @@ from the [input.iterators] ISO C++ Standard section.</p>
 <code class="docutils literal notranslate"><span class="pre">std::allocator_traits&lt;allocator_type&gt;::select_on_container_copy_construction(other.get_allocator())</span></code>.</p>
 <p>The behavior is undefined in case of concurrent operations with <code class="docutils literal notranslate"><span class="pre">other</span></code>.</p>
 </div></blockquote>
-</section>
-<section id="moving-constructors">
+</div>
+<div class="section" id="moving-constructors">
 <h2>Moving constructors<a class="headerlink" href="#moving-constructors" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">concurrent_vector</span><span class="p">(</span> <span class="n">concurrent_vector</span><span class="o">&amp;&amp;</span> <span class="n">other</span> <span class="p">);</span>
@@ -4710,8 +4709,8 @@ from the [input.iterators] ISO C++ Standard section.</p>
 <p>If the allocator argument is not provided, it is obtained by calling <code class="docutils literal notranslate"><span class="pre">std::move(other.get_allocator())</span></code>.</p>
 <p>The behavior is undefined in case of concurrent operations with <code class="docutils literal notranslate"><span class="pre">other</span></code>.</p>
 </div></blockquote>
-</section>
-<section id="destructor">
+</div>
+<div class="section" id="destructor">
 <h2>Destructor<a class="headerlink" href="#destructor" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">concurrent_vector</span><span class="p">();</span>
@@ -4721,8 +4720,8 @@ from the [input.iterators] ISO C++ Standard section.</p>
 deallocates the used storage.</p>
 <p>The behavior is undefined in case of concurrent operations with <code class="docutils literal notranslate"><span class="pre">*this</span></code>.</p>
 </div></blockquote>
-</section>
-<section id="assignment-operators">
+</div>
+<div class="section" id="assignment-operators">
 <h2>Assignment operators<a class="headerlink" href="#assignment-operators" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">concurrent_vector</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span> <span class="k">const</span> <span class="n">concurrent_vector</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">);</span>
@@ -4762,8 +4761,8 @@ is <code class="docutils literal notranslate"><span class="pre">true</span></cod
 <p>The behavior is undefined in case of concurrent operations with <code class="docutils literal notranslate"><span class="pre">*this</span></code>.</p>
 <p><strong>Returns</strong>: a reference to <code class="docutils literal notranslate"><span class="pre">*this</span></code>.</p>
 </div></blockquote>
-</section>
-<section id="assign">
+</div>
+<div class="section" id="assign">
 <h2>assign<a class="headerlink" href="#assign" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">assign</span><span class="p">(</span> <span class="n">size_type</span> <span class="n">count</span><span class="p">,</span> <span class="k">const</span> <span class="n">value_type</span><span class="o">&amp;</span> <span class="n">value</span> <span class="p">);</span>
@@ -4788,8 +4787,8 @@ meets the requirements of <cite>InputIterator</cite> from the [input.iterators] 
 </div>
 <p>Equivalent to <code class="docutils literal notranslate"><span class="pre">assign(init.begin(),</span> <span class="pre">init.end())</span></code>.</p>
 </div></blockquote>
-</section>
-<section id="get-allocator">
+</div>
+<div class="section" id="get-allocator">
 <h2>get_allocator<a class="headerlink" href="#get-allocator" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">allocator_type</span> <span class="nf">get_allocator</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
@@ -4797,8 +4796,8 @@ meets the requirements of <cite>InputIterator</cite> from the [input.iterators] 
 </div>
 <p><strong>Returns</strong>: a copy of the allocator associated with <code class="docutils literal notranslate"><span class="pre">*this</span></code>.</p>
 </div></blockquote>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

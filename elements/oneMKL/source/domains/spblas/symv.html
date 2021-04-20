@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>symv &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4600,7 +4599,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="symv">
+  <div class="section" id="symv">
 <span id="onemkl-sparse-symv"></span><h1>symv<a class="headerlink" href="#symv" title="Permalink to this headline">¶</a></h1>
 <p>Computes a sparse matrix-dense vector product for a symmetric part of the sparse matrix.</p>
 <p class="rubric">Description and Assumptions</p>
@@ -4612,7 +4611,7 @@ product over a symmetric part defined as</p>
 \[y \leftarrow \alpha A x + \beta y\]</div>
 <p>where:</p>
 <p><span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are scalars, <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are dense vectors, <code class="docutils literal notranslate"><span class="pre">A</span></code> is a sparse matrix.</p>
-<section id="symv-buffer-version">
+<div class="section" id="symv-buffer-version">
 <span id="onemkl-sparse-symv-buffer"></span><h2>symv (Buffer version)<a class="headerlink" href="#symv-buffer-version" title="Permalink to this headline">¶</a></h2>
 <p class="rubric">Syntax</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">sparse</span> <span class="p">{</span>
@@ -4674,8 +4673,8 @@ in case of error conditions not covered here.</p>
 <div class="line"><a class="reference internal" href="../../architecture/architecture.html#onemkl-exception-unsupported-device"><span class="std std-ref">oneapi::mkl::unsupported_device</span></a></div>
 </div>
 </div>
-</section>
-<section id="symv-usm-version">
+</div>
+<div class="section" id="symv-usm-version">
 <span id="onemkl-sparse-symv-usm"></span><h2>symv (USM version)<a class="headerlink" href="#symv-usm-version" title="Permalink to this headline">¶</a></h2>
 <p class="rubric">Syntax</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">sparse</span> <span class="p">{</span>
@@ -4751,8 +4750,8 @@ dependency for the completion of symv routine.</p>
 <p><strong>Parent topic:</strong> <a class="reference internal" href="spblas.html#onemkl-spblas"><span class="std std-ref">Sparse BLAS</span></a></p>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

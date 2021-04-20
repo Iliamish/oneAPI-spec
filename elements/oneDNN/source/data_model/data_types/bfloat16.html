@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bfloat16 &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4599,7 +4598,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="bfloat16">
+  <div class="section" id="bfloat16">
 <h1>Bfloat16<a class="headerlink" href="#bfloat16" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -4619,7 +4618,7 @@ type, <a class="reference internal" href="index.html#_CPPv4N4dnnl6memory9data_ty
 <p>More details of the bfloat16 data type can be found <a class="reference external" href="https://en.wikipedia.org/wiki/Bfloat16_floating-point_format">here</a>.</p>
 <p>One of the advantages of using <a class="reference internal" href="index.html#_CPPv4N4dnnl6memory9data_type4bf16E" title="dnnl::memory::data_type::bf16"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">bf16</span></code></a> versus <a class="reference internal" href="index.html#_CPPv4N4dnnl6memory9data_type3f32E" title="dnnl::memory::data_type::f32"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">f32</span></code></a> is reduced memory footprint
 and, hence, increased memory access throughput.</p>
-<section id="workflow">
+<div class="section" id="workflow">
 <h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
 <p>The main difference between implementing training with the <a class="reference internal" href="index.html#_CPPv4N4dnnl6memory9data_type3f32E" title="dnnl::memory::data_type::f32"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">f32</span></code></a> data type and
 with the <a class="reference internal" href="index.html#_CPPv4N4dnnl6memory9data_type4bf16E" title="dnnl::memory::data_type::bf16"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">bf16</span></code></a> data type is the way the weights updates are treated. With the
@@ -4628,15 +4627,15 @@ themselves. This is not necessarily the case with the <a class="reference intern
 allows some flexibility here. For example, one could maintain a master copy of
 all the weights, computing weights gradients in <a class="reference internal" href="index.html#_CPPv4N4dnnl6memory9data_type3f32E" title="dnnl::memory::data_type::f32"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">f32</span></code></a> and converting the result
 to <a class="reference internal" href="index.html#_CPPv4N4dnnl6memory9data_type4bf16E" title="dnnl::memory::data_type::bf16"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">bf16</span></code></a> afterwards.</p>
-</section>
-<section id="support">
+</div>
+<div class="section" id="support">
 <h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
 <p>Most of the primitives can support the <a class="reference internal" href="index.html#_CPPv4N4dnnl6memory9data_type4bf16E" title="dnnl::memory::data_type::bf16"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">bf16</span></code></a> data type for source and weights
 tensors. Destination tensors can be specified to have either the <a class="reference internal" href="index.html#_CPPv4N4dnnl6memory9data_type4bf16E" title="dnnl::memory::data_type::bf16"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">bf16</span></code></a> or <a class="reference internal" href="index.html#_CPPv4N4dnnl6memory9data_type3f32E" title="dnnl::memory::data_type::f32"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">f32</span></code></a>
 data type. The latter is intended for cases in which the output is to be fed to
 operations that do not support bfloat16 or require higher precision.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

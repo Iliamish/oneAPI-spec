@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>limiter_node &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4594,7 +4593,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="limiter-node">
+  <div class="section" id="limiter-node">
 <h1>limiter_node<a class="headerlink" href="#limiter-node" title="Permalink to this headline">¶</a></h1>
 <p><strong>[flow_graph.limiter_node]</strong></p>
 <p>A node that counts and limits the number of messages that pass through it.</p>
@@ -4645,7 +4644,7 @@ the new value of the counter of broadcasts to be less than the
 <code class="docutils literal notranslate"><span class="pre">threshold</span></code>, the <code class="docutils literal notranslate"><span class="pre">limiter_node</span></code> tries to get a message from one
 of its known predecessors and forward that message to all its
 successors. If it cannot obtain a message from a predecessor, it decrements the counter of broadcasts.</p>
-<section id="member-functions">
+<div class="section" id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb4flow12limiter_node12limiter_nodeER5graph6size_t">
@@ -4686,8 +4685,8 @@ is not broadcast because the threshold has been reached.</p>
 <dd><p><strong>Returns</strong>: <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

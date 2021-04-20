@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Collective Operations &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4624,7 +4623,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="collective-operations">
+  <div class="section" id="collective-operations">
 <h1>Collective Operations<a class="headerlink" href="#collective-operations" title="Permalink to this headline">¶</a></h1>
 <p>oneCCL specification defines the following collective communication operations:</p>
 <ul class="simple">
@@ -4655,7 +4654,7 @@ The order of collective operation calls should be the same across all ranks.</p>
 <p>See also: <a class="reference internal" href="operation_attributes.html"><span class="doc">Operation Attributes</span></a></p>
 </div>
 <p>If the arguments provided to a communication operation call do not comply to the requirements of the operation, the behavior is undefined unless it is specified otherwise.</p>
-<section id="allgatherv">
+<div class="section" id="allgatherv">
 <span id="id1"></span><h2>Allgatherv<a class="headerlink" href="#allgatherv" title="Permalink to this headline">¶</a></h2>
 <p>Allgatherv is a collective communication operation that collects data from all the ranks within a communicator into a single buffer. Different ranks may contribute segments of different sizes. The resulting data in the output buffer must be the same for each rank.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
@@ -4710,8 +4709,8 @@ The order of collective operation calls should be the same across all ranks.</p>
 <dt>return <code class="docutils literal notranslate"><span class="pre">event</span></code></dt><dd><p>an object to track the progress of the operation</p>
 </dd>
 </dl>
-</section>
-<section id="allreduce">
+</div>
+<div class="section" id="allreduce">
 <span id="id2"></span><h2>Allreduce<a class="headerlink" href="#allreduce" title="Permalink to this headline">¶</a></h2>
 <p>Allreduce is a collective communication operation that performs the global reduction operation on values from all ranks of communicator and distributes the result back to all ranks.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
@@ -4761,8 +4760,8 @@ The order of collective operation calls should be the same across all ranks.</p>
 <dt>return <code class="docutils literal notranslate"><span class="pre">event</span></code></dt><dd><p>an object to track the progress of the operation</p>
 </dd>
 </dl>
-</section>
-<section id="alltoallv">
+</div>
+<div class="section" id="alltoallv">
 <span id="id3"></span><h2>Alltoallv<a class="headerlink" href="#alltoallv" title="Permalink to this headline">¶</a></h2>
 <p>Alltoall is a collective communication operation in which each rank
 sends separate blocks of data to each rank. Block sizes may differ.
@@ -4823,8 +4822,8 @@ and is placed in the i-th block of receive buffer.</p>
 <dt>return <code class="docutils literal notranslate"><span class="pre">event</span></code></dt><dd><p>an object to track the progress of the operation</p>
 </dd>
 </dl>
-</section>
-<section id="barrier">
+</div>
+<div class="section" id="barrier">
 <span id="id4"></span><h2>Barrier<a class="headerlink" href="#barrier" title="Permalink to this headline">¶</a></h2>
 <p>Barrier synchronization is performed across all ranks of the communicator
 and it is completed only after all the ranks in the communicator have called it.</p>
@@ -4846,8 +4845,8 @@ and it is completed only after all the ranks in the communicator have called it.
 <dt>return <code class="docutils literal notranslate"><span class="pre">event</span></code></dt><dd><p>an object to track the progress of the operation</p>
 </dd>
 </dl>
-</section>
-<section id="broadcast">
+</div>
+<div class="section" id="broadcast">
 <span id="id5"></span><h2>Broadcast<a class="headerlink" href="#broadcast" title="Permalink to this headline">¶</a></h2>
 <p>Broadcast is a collective communication operation that broadcasts data
 from one rank of communicator (denoted as root) to all other ranks.</p>
@@ -4897,8 +4896,8 @@ from one rank of communicator (denoted as root) to all other ranks.</p>
 <dt>return <code class="docutils literal notranslate"><span class="pre">event</span></code></dt><dd><p>an object to track the progress of the operation</p>
 </dd>
 </dl>
-</section>
-<section id="reduce">
+</div>
+<div class="section" id="reduce">
 <span id="id6"></span><h2>Reduce<a class="headerlink" href="#reduce" title="Permalink to this headline">¶</a></h2>
 <p>Reduce is a collective communication operation that performs the global reduction operation
 on values from all ranks of the communicator and returns the result to the root rank.</p>
@@ -4956,8 +4955,8 @@ on values from all ranks of the communicator and returns the result to the root 
 <dt>return <code class="docutils literal notranslate"><span class="pre">event</span></code></dt><dd><p>an object to track the progress of the operation</p>
 </dd>
 </dl>
-</section>
-<section id="reducescatter">
+</div>
+<div class="section" id="reducescatter">
 <span id="id7"></span><h2>ReduceScatter<a class="headerlink" href="#reducescatter" title="Permalink to this headline">¶</a></h2>
 <p>Reduce-scatter is a collective communication operation that performs the global reduction operation
 on values from all ranks of the communicator and scatters the result in blocks back to all ranks.</p>
@@ -5018,8 +5017,8 @@ on values from all ranks of the communicator and scatters the result in blocks b
 <li><p><a class="reference internal" href="operation_progress.html"><span class="doc">Operation Progress Tracking</span></a></p></li>
 </ul>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Iterators &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4599,13 +4598,13 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="iterators">
+  <div class="section" id="iterators">
 <h1>Iterators<a class="headerlink" href="#iterators" title="Permalink to this headline">¶</a></h1>
 <p>The types <code class="docutils literal notranslate"><span class="pre">concurrent_queue::iterator</span></code> and <code class="docutils literal notranslate"><span class="pre">concurrent_queue::const_iterator</span></code>
 meet the requirements of <code class="docutils literal notranslate"><span class="pre">ForwardIterator</span></code> from the [forward.iterators] ISO C++ Standard section.</p>
 <p>All member functions in this section can only be performed serially. The behavior is undefined in
 case of concurrent execution of these methods with other (either concurrently safe) methods.</p>
-<section id="unsafe-begin-and-unsafe-cbegin">
+<div class="section" id="unsafe-begin-and-unsafe-cbegin">
 <h2>unsafe_begin and unsafe_cbegin<a class="headerlink" href="#unsafe-begin-and-unsafe-cbegin" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">iterator</span> <span class="nf">unsafe_begin</span><span class="p">();</span>
@@ -4617,8 +4616,8 @@ case of concurrent execution of these methods with other (either concurrently sa
 </div>
 <p><strong>Returns</strong>: an iterator to the first element in the container.</p>
 </div></blockquote>
-</section>
-<section id="unsafe-end-and-unsafe-cend">
+</div>
+<div class="section" id="unsafe-end-and-unsafe-cend">
 <h2>unsafe_end and unsafe_cend<a class="headerlink" href="#unsafe-end-and-unsafe-cend" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">iterator</span> <span class="nf">unsafe_end</span><span class="p">();</span>
@@ -4630,8 +4629,8 @@ case of concurrent execution of these methods with other (either concurrently sa
 </div>
 <p><strong>Returns</strong>: an iterator to the element that follows the last element in the container.</p>
 </div></blockquote>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

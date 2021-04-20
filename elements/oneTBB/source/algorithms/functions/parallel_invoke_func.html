@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>parallel_invoke &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4594,7 +4593,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="parallel-invoke">
+  <div class="section" id="parallel-invoke">
 <h1>parallel_invoke<a class="headerlink" href="#parallel-invoke" title="Permalink to this headline">¶</a></h1>
 <p><strong>[algortihms.parallel_invoke]</strong></p>
 <p>Function template that evaluates several functions in parallel.</p>
@@ -4617,7 +4616,7 @@ requirements from the [function.objects] ISO C++ Standard section or be a pointe
 <p>Evaluates each member passed to <code class="docutils literal notranslate"><span class="pre">parallel_invoke</span></code> possibly in parallel. Return values are ignored.</p>
 <p>The algorithm can accept a <a class="reference internal" href="../../task_scheduler/scheduling_controls/task_group_context_cls.html"><span class="doc">task_group_context</span></a> object
 so that the algorithm’s tasks are executed in this group. By default, the algorithm is executed in a bound group of its own.</p>
-<section id="example">
+<div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>The following example evaluates <code class="docutils literal notranslate"><span class="pre">f()</span></code>, <code class="docutils literal notranslate"><span class="pre">g()</span></code>, <code class="docutils literal notranslate"><span class="pre">h()</span></code>, and <code class="docutils literal notranslate"><span class="pre">bar(1)</span></code> in parallel.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;tbb/parallel_invoke.h&quot;</span><span class="cp"></span>
@@ -4640,8 +4639,8 @@ so that the algorithm’s tasks are executed in this group. By default, the algo
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

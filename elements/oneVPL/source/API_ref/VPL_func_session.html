@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Session Management &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4651,10 +4650,10 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="session-management">
+  <div class="section" id="session-management">
 <span id="func-session-mgmt"></span><h1>Session Management<a class="headerlink" href="#session-management" title="Permalink to this headline">¶</a></h1>
 <p id="func-session-begin">Functions to manage sessions.</p>
-<section id="api">
+<div class="section" id="api">
 <span id="func-session-end"></span><h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -4671,7 +4670,7 @@ SPDX-License-Identifier: MIT
 <li><p><a class="reference internal" href="#mfxgetpriority" id="id11">MFXGetPriority</a></p></li>
 </ul>
 </div>
-<section id="mfxinit">
+<div class="section" id="mfxinit">
 <h3><a class="toc-backref" href="#id1">MFXInit</a><a class="headerlink" href="#mfxinit" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv47MFXInit7mfxIMPLP10mfxVersionP10mfxSession">
@@ -4687,23 +4686,27 @@ SPDX-License-Identifier: MIT
 </dd></dl>
 
 <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. The output parameter contains the handle of the session.<p> MFX_ERR_UNSUPPORTED The function cannot find the desired legacy Intel(r) Media SDK implementation or version.</p>
-</p>
-</dd>
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0.</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">impl</span></code>: mfxIMPL enumerator that indicates the desired legacy Intel(r) Media SDK implementation. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">ver</span></code>: Pointer to the minimum library version or zero, if not specified. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">session</span></code>: Pointer to the legacy Intel(r) Media SDK session handle.</p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] impl</strong> – mfxIMPL enumerator that indicates the desired legacy Intel(r) Media SDK implementation. </p></li>
+<li><p><strong>[in] ver</strong> – Pointer to the minimum library version or zero, if not specified. </p></li>
+<li><p><strong>[out] session</strong> – Pointer to the legacy Intel(r) Media SDK session handle.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. The output parameter contains the handle of the session.<p> MFX_ERR_UNSUPPORTED The function cannot find the desired legacy Intel(r) Media SDK implementation or version.</p>
+</p>
+</dd>
+</dl>
 </dd></dl>
 
-</section>
-<section id="mfxinitex">
+</div>
+<div class="section" id="mfxinitex">
 <h3><a class="toc-backref" href="#id2">MFXInitEx</a><a class="headerlink" href="#mfxinitex" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv49MFXInitEx12mfxInitParamP10mfxSession">
@@ -4720,114 +4723,132 @@ SPDX-License-Identifier: MIT
 </dd></dl>
 
 <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. The output parameter contains the handle of the session.<p> MFX_ERR_UNSUPPORTED The function cannot find the desired implementation or version.</p>
-</p>
-</dd>
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.14.</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">par</span></code>: <a class="reference internal" href="VPL_structs_impl_manage.html#structmfx_init_param"><span class="std std-ref">mfxInitParam</span></a> structure that indicates the desired implementation, minimum library version and desired threading mode. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">session</span></code>: Pointer to the session handle.</p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] par</strong> – <a class="reference internal" href="VPL_structs_impl_manage.html#structmfx_init_param"><span class="std std-ref">mfxInitParam</span></a> structure that indicates the desired implementation, minimum library version and desired threading mode. </p></li>
+<li><p><strong>[out] session</strong> – Pointer to the session handle.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. The output parameter contains the handle of the session.<p> MFX_ERR_UNSUPPORTED The function cannot find the desired implementation or version.</p>
+</p>
+</dd>
+</dl>
 </dd></dl>
 
-</section>
-<section id="mfxinitialize">
+</div>
+<div class="section" id="mfxinitialize">
 <h3><a class="toc-backref" href="#id3">MFXInitialize</a><a class="headerlink" href="#mfxinitialize" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv413MFXInitialize22mfxInitializationParamP10mfxSession">
 <span id="_CPPv313MFXInitialize22mfxInitializationParamP10mfxSession"></span><span id="_CPPv213MFXInitialize22mfxInitializationParamP10mfxSession"></span><span id="MFXInitialize__mfxInitializationParam.mfxSessionP"></span><span class="target" id="mfxsession_8h_1a47528500d2ebf6b842b28379ff94473f"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <code class="sig-name descname"><span class="pre">MFXInitialize</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_structs_impl_manage.html#_CPPv422mfxInitializationParam" title="mfxInitializationParam"><span class="pre">mfxInitializationParam</span></a> <em><span class="pre">par</span></em>, <a class="reference internal" href="VPL_ref_types.html#_CPPv410mfxSession" title="mfxSession"><span class="pre">mfxSession</span></a> <span class="pre">*</span><em><span class="pre">session</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413MFXInitialize22mfxInitializationParamP10mfxSession" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Creates and initializes a session starting from API version 2.0. This function is used by the dispatcher. The dispatcher creates and fills the <a class="reference internal" href="VPL_structs_impl_manage.html#structmfx_initialization_param"><span class="std std-ref">mfxInitializationParam</span></a> structure according to mfxConfig values set by an application. Calling this function directly is not recommended. Instead, applications must call the mfxCreateSession function. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. The output parameter contains the handle of the session.<p> MFX_ERR_UNSUPPORTED The function cannot find the desired implementation or version.</p>
-</p>
-</dd>
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">par</span></code>: <a class="reference internal" href="VPL_structs_impl_manage.html#structmfx_initialization_param"><span class="std std-ref">mfxInitializationParam</span></a> structure that indicates the minimum library version and acceleration type. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">session</span></code>: Pointer to the session handle.</p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] par</strong> – <a class="reference internal" href="VPL_structs_impl_manage.html#structmfx_initialization_param"><span class="std std-ref">mfxInitializationParam</span></a> structure that indicates the minimum library version and acceleration type. </p></li>
+<li><p><strong>[out] session</strong> – Pointer to the session handle.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. The output parameter contains the handle of the session.<p> MFX_ERR_UNSUPPORTED The function cannot find the desired implementation or version.</p>
+</p>
+</dd>
+</dl>
 </dd></dl>
 
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The <a class="reference internal" href="#_CPPv413MFXInitialize22mfxInitializationParamP10mfxSession" title="MFXInitialize"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInitialize()</span></code></a> function is mandatory for any implementation.</p>
 </div>
-</section>
-<section id="mfxclose">
+</div>
+<div class="section" id="mfxclose">
 <h3><a class="toc-backref" href="#id4">MFXClose</a><a class="headerlink" href="#mfxclose" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv48MFXClose10mfxSession">
 <span id="_CPPv38MFXClose10mfxSession"></span><span id="_CPPv28MFXClose10mfxSession"></span><span id="MFXClose__mfxSession"></span><span class="target" id="mfxsession_8h_1a603ef4a2f5f47e5991c3e9b4445c9117"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <code class="sig-name descname"><span class="pre">MFXClose</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv410mfxSession" title="mfxSession"><span class="pre">mfxSession</span></a> <em><span class="pre">session</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48MFXClose10mfxSession" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Completes and deinitializes a session. Any active tasks in execution or in queue are aborted. The application cannot call any API function after calling this function. </p>
 <p>All child sessions must be disjoined before closing a parent session. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully.</p>
-</dd>
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: session handle.</p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>[in] session</strong> – session handle.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The <a class="reference internal" href="#_CPPv48MFXClose10mfxSession" title="MFXClose"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXClose()</span></code></a> function is mandatory for any implementation.</p>
 </div>
-</section>
-<section id="mfxqueryimpl">
+</div>
+<div class="section" id="mfxqueryimpl">
 <h3><a class="toc-backref" href="#id5">MFXQueryIMPL</a><a class="headerlink" href="#mfxqueryimpl" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv412MFXQueryIMPL10mfxSessionP7mfxIMPL">
 <span id="_CPPv312MFXQueryIMPL10mfxSessionP7mfxIMPL"></span><span id="_CPPv212MFXQueryIMPL10mfxSessionP7mfxIMPL"></span><span id="MFXQueryIMPL__mfxSession.mfxIMPLP"></span><span class="target" id="mfxsession_8h_1ad163169a5b881a46ec36936e9396d0dd"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <code class="sig-name descname"><span class="pre">MFXQueryIMPL</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv410mfxSession" title="mfxSession"><span class="pre">mfxSession</span></a> <em><span class="pre">session</span></em>, <a class="reference internal" href="VPL_enums.html#_CPPv47mfxIMPL" title="mfxIMPL"><span class="pre">mfxIMPL</span></a> <span class="pre">*</span><em><span class="pre">impl</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412MFXQueryIMPL10mfxSessionP7mfxIMPL" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the implementation type of a given session. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully.</p>
-</dd>
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">impl</span></code>: Pointer to the implementation type</p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] session</strong> – Session handle. </p></li>
+<li><p><strong>[out] impl</strong> – Pointer to the implementation type</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully.</p>
+</dd>
+</dl>
 </dd></dl>
 
-</section>
-<section id="mfxqueryversion">
+</div>
+<div class="section" id="mfxqueryversion">
 <h3><a class="toc-backref" href="#id6">MFXQueryVersion</a><a class="headerlink" href="#mfxqueryversion" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv415MFXQueryVersion10mfxSessionP10mfxVersion">
 <span id="_CPPv315MFXQueryVersion10mfxSessionP10mfxVersion"></span><span id="_CPPv215MFXQueryVersion10mfxSessionP10mfxVersion"></span><span id="MFXQueryVersion__mfxSession.mfxVersionP"></span><span class="target" id="mfxsession_8h_1a3186cb792429766b7627b7cc22d52229"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <code class="sig-name descname"><span class="pre">MFXQueryVersion</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv410mfxSession" title="mfxSession"><span class="pre">mfxSession</span></a> <em><span class="pre">session</span></em>, <a class="reference internal" href="VPL_structs_impl_manage.html#_CPPv410mfxVersion" title="mfxVersion"><span class="pre">mfxVersion</span></a> <span class="pre">*</span><em><span class="pre">version</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415MFXQueryVersion10mfxSessionP10mfxVersion" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the implementation version. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully.</p>
-</dd>
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">version</span></code>: Pointer to the returned implementation version.</p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] session</strong> – Session handle. </p></li>
+<li><p><strong>[out] version</strong> – Pointer to the returned implementation version.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully.</p>
+</dd>
+</dl>
 </dd></dl>
 
-</section>
-<section id="mfxjoinsession">
+</div>
+<div class="section" id="mfxjoinsession">
 <h3><a class="toc-backref" href="#id7">MFXJoinSession</a><a class="headerlink" href="#mfxjoinsession" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv414MFXJoinSession10mfxSession10mfxSession">
@@ -4837,23 +4858,27 @@ SPDX-License-Identifier: MIT
 <p>The application can join multiple sessions by calling this function multiple times. When joining the first two sessions, the current session becomes the parent responsible for thread and resource scheduling of any later joined sessions.</p>
 <p>Joining of two parent sessions is not supported.</p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p> MFX_WRN_IN_EXECUTION Active tasks are executing or in queue in one of the sessions. Call this function again after all tasks are completed. </p>
-<p> MFX_ERR_UNSUPPORTED The child session cannot be joined with the current session.</p>
-</p>
-</dd>
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.1. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">session</span></code>: The current session handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">child</span></code>: The child session handle to be joined</p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[inout] session</strong> – The current session handle. </p></li>
+<li><p><strong>[in] child</strong> – The child session handle to be joined</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. <p> MFX_WRN_IN_EXECUTION Active tasks are executing or in queue in one of the sessions. Call this function again after all tasks are completed. </p>
+<p> MFX_ERR_UNSUPPORTED The child session cannot be joined with the current session.</p>
+</p>
+</dd>
+</dl>
 </dd></dl>
 
-</section>
-<section id="mfxdisjoinsession">
+</div>
+<div class="section" id="mfxdisjoinsession">
 <h3><a class="toc-backref" href="#id8">MFXDisjoinSession</a><a class="headerlink" href="#mfxdisjoinsession" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv417MFXDisjoinSession10mfxSession">
@@ -4864,22 +4889,24 @@ SPDX-License-Identifier: MIT
 </div>
 </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p> MFX_WRN_IN_EXECUTION Active tasks are executing or in queue in one of the sessions. Call this function again after all tasks are completed. </p>
-<p> MFX_ERR_UNDEFINED_BEHAVIOR The session is independent, or this session is the parent of all joined sessions.</p>
-</p>
-</dd>
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.1. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">session</span></code>: The current session handle.</p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>[inout] session</strong> – The current session handle.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully. <p> MFX_WRN_IN_EXECUTION Active tasks are executing or in queue in one of the sessions. Call this function again after all tasks are completed. </p>
+<p> MFX_ERR_UNDEFINED_BEHAVIOR The session is independent, or this session is the parent of all joined sessions.</p>
+</p>
+</dd>
+</dl>
 </dd></dl>
 
-</section>
-<section id="mfxclonesession">
+</div>
+<div class="section" id="mfxclonesession">
 <h3><a class="toc-backref" href="#id9">MFXCloneSession</a><a class="headerlink" href="#mfxclonesession" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv415MFXCloneSession10mfxSessionP10mfxSession">
@@ -4891,64 +4918,76 @@ SPDX-License-Identifier: MIT
 </div>
 </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully.</p>
-</dd>
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.1. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: The current session handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">clone</span></code>: Pointer to the cloned session handle.</p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] session</strong> – The current session handle. </p></li>
+<li><p><strong>[out] clone</strong> – Pointer to the cloned session handle.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully.</p>
+</dd>
+</dl>
 </dd></dl>
 
-</section>
-<section id="mfxsetpriority">
+</div>
+<div class="section" id="mfxsetpriority">
 <h3><a class="toc-backref" href="#id10">MFXSetPriority</a><a class="headerlink" href="#mfxsetpriority" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv414MFXSetPriority10mfxSession11mfxPriority">
 <span id="_CPPv314MFXSetPriority10mfxSession11mfxPriority"></span><span id="_CPPv214MFXSetPriority10mfxSession11mfxPriority"></span><span id="MFXSetPriority__mfxSession.mfxPriority"></span><span class="target" id="mfxsession_8h_1a61e630cb226e3342d7550c1a12e3ac7f"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <code class="sig-name descname"><span class="pre">MFXSetPriority</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv410mfxSession" title="mfxSession"><span class="pre">mfxSession</span></a> <em><span class="pre">session</span></em>, <a class="reference internal" href="VPL_enums.html#_CPPv411mfxPriority" title="mfxPriority"><span class="pre">mfxPriority</span></a> <em><span class="pre">priority</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414MFXSetPriority10mfxSession11mfxPriority" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the current session priority. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully.</p>
-</dd>
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.1. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: The current session handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">priority</span></code>: Priority value.</p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] session</strong> – The current session handle. </p></li>
+<li><p><strong>[in] priority</strong> – Priority value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully.</p>
+</dd>
+</dl>
 </dd></dl>
 
-</section>
-<section id="mfxgetpriority">
+</div>
+<div class="section" id="mfxgetpriority">
 <h3><a class="toc-backref" href="#id11">MFXGetPriority</a><a class="headerlink" href="#mfxgetpriority" title="Permalink to this headline">¶</a></h3>
 <dl class="cpp function">
 <dt id="_CPPv414MFXGetPriority10mfxSessionP11mfxPriority">
 <span id="_CPPv314MFXGetPriority10mfxSessionP11mfxPriority"></span><span id="_CPPv214MFXGetPriority10mfxSessionP11mfxPriority"></span><span id="MFXGetPriority__mfxSession.mfxPriorityP"></span><span class="target" id="mfxsession_8h_1a0282ad27cd2ead0b046000fd8f5370b7"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <code class="sig-name descname"><span class="pre">MFXGetPriority</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv410mfxSession" title="mfxSession"><span class="pre">mfxSession</span></a> <em><span class="pre">session</span></em>, <a class="reference internal" href="VPL_enums.html#_CPPv411mfxPriority" title="mfxPriority"><span class="pre">mfxPriority</span></a> <span class="pre">*</span><em><span class="pre">priority</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414MFXGetPriority10mfxSessionP11mfxPriority" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the current session priority. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully.</p>
-</dd>
 <dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.1. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: The current session handle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">priority</span></code>: Pointer to the priority value.</p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] session</strong> – The current session handle. </p></li>
+<li><p><strong>[out] priority</strong> – Pointer to the priority value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MFX_ERR_NONE The function completed successfully.</p>
+</dd>
+</dl>
 </dd></dl>
 
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

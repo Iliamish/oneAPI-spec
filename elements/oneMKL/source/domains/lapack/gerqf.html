@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>gerqf &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4600,7 +4599,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="gerqf">
+  <div class="section" id="gerqf">
 <span id="onemkl-lapack-gerqf"></span><h1>gerqf<a class="headerlink" href="#gerqf" title="Permalink to this headline">¶</a></h1>
 <p>Computes the RQ factorization of a general <span class="math notranslate nohighlight">\(m \times n\)</span> matrix.</p>
 <div class="section docutils container">
@@ -4630,7 +4629,7 @@ SPDX-License-Identifier: MIT
 </div></blockquote>
 <p>The routine forms the RQ factorization of a general <span class="math notranslate nohighlight">\(m \times n\)</span> matrix <span class="math notranslate nohighlight">\(A\)</span>. No pivoting is performed.
 The routine does not form the matrix <span class="math notranslate nohighlight">\(Q\)</span> explicitly. Instead, <span class="math notranslate nohighlight">\(Q\)</span> is represented as a product of <span class="math notranslate nohighlight">\(\min(m, n)\)</span> elementary reflectors. Routines are provided to work with <span class="math notranslate nohighlight">\(Q\)</span> in this representation</p>
-<section id="gerqf-buffer-version">
+<div class="section" id="gerqf-buffer-version">
 <h2>gerqf (Buffer Version)<a class="headerlink" href="#gerqf-buffer-version" title="Permalink to this headline">¶</a></h2>
 <div class="section docutils container">
 <p class="rubric">Syntax</p>
@@ -4686,8 +4685,8 @@ The routine does not form the matrix <span class="math notranslate nohighlight">
 <p>If <code class="docutils literal notranslate"><span class="pre">info</span> <span class="pre">=</span> <span class="pre">-i</span></code>, the <span class="math notranslate nohighlight">\(i\)</span>-th parameter had an illegal value.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">info</span></code> equals to value passed as scratchpad size, and <cite>detail()</cite> returns non zero, then passed scratchpad is of insufficient size, and required size should not be less than value return by <cite>detail()</cite> method of exception object.</p>
 </div></blockquote>
-</section>
-<section id="gerqf-usm-version">
+</div>
+<div class="section" id="gerqf-usm-version">
 <h2>gerqf (USM Version)<a class="headerlink" href="#gerqf-usm-version" title="Permalink to this headline">¶</a></h2>
 <div class="section docutils container">
 <p class="rubric">Syntax</p>
@@ -4750,8 +4749,8 @@ The routine does not form the matrix <span class="math notranslate nohighlight">
 </div>
 <p>Output event to wait on to ensure computation is complete.</p>
 <p><strong>Parent topic:</strong> <a class="reference internal" href="lapack.html#onemkl-lapack-linear-equation-routines"><span class="std std-ref">LAPACK Linear Equation Routines</span></a></p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

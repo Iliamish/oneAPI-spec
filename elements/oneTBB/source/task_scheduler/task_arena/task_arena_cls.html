@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>task_arena &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4604,7 +4603,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="task-arena">
+  <div class="section" id="task-arena">
 <h1>task_arena<a class="headerlink" href="#task-arena" title="Permalink to this headline">¶</a></h1>
 <p><strong>[scheduler.task_arena]</strong></p>
 <p>A class that represents an explicit, user-managed task scheduler arena.</p>
@@ -4669,7 +4668,7 @@ a precedence in execution over the tasks from <code class="docutils literal notr
 It may already exist in case of the “attaching” constructor; otherwise, it is created
 by an explicit call to <code class="docutils literal notranslate"><span class="pre">task_arena::initialize</span></code> or lazily on first use.</p>
 </div>
-<section id="member-types-and-constants">
+<div class="section" id="member-types-and-constants">
 <h2>Member types and constants<a class="headerlink" href="#member-types-and-constants" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp member">
 <dt id="_CPPv49automatic">
@@ -4726,8 +4725,8 @@ All threads joining the <code class="docutils literal notranslate"><span class="
 within the <code class="docutils literal notranslate"><span class="pre">task_arena</span></code> at the same time.</p>
 </dd></dl>
 
-</section>
-<section id="member-functions">
+</div>
+<div class="section" id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv410task_arenaij8priority">
@@ -4879,8 +4878,8 @@ However, only the maximal number of threads specified for the arena can particip
 </div>
 </dd></dl>
 
-</section>
-<section id="example">
+</div>
+<div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>The example demonstrates <code class="docutils literal notranslate"><span class="pre">task_arena</span></code> NUMA support API. Each constructed <code class="docutils literal notranslate"><span class="pre">task_arena</span></code> is pinned
 to the corresponding NUMA node.</p>
@@ -4921,8 +4920,8 @@ to the corresponding NUMA node.</p>
 <li><p><a class="reference internal" href="../task_group/task_group_cls.html"><span class="doc">task_group</span></a></p></li>
 <li><p><a class="reference internal" href="task_scheduler_observer_cls.html"><span class="doc">task_scheduler_observer</span></a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

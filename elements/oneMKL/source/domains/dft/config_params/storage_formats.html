@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Storage Formats &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4605,12 +4604,12 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="storage-formats">
+  <div class="section" id="storage-formats">
 <span id="onemkl-dft-config-storage-formats"></span><h1>Storage Formats<a class="headerlink" href="#storage-formats" title="Permalink to this headline">¶</a></h1>
 <p>Depending on the value of the <a class="reference internal" href="../enums_and_config_params.html#onemkl-dft-enum-domain"><span class="std std-ref">domain</span></a> template value, the implementation of the DFT supports several storage schemes for input and output data. (See <code class="docutils literal notranslate"><span class="pre">Charles</span> <span class="pre">Van</span> <span class="pre">Loan,</span> <span class="pre">Computational</span> <span class="pre">Frameworks</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">Fast</span> <span class="pre">Fourier</span> <span class="pre">Transform</span> <span class="pre">,</span> <span class="pre">SIAM,</span> <span class="pre">Philadelphia,</span> <span class="pre">1992</span></code> for motivation of these schemes).</p>
 <p>The data elements are placed within contiguous memory blocks, defined with generalized strides (see <a class="reference internal" href="strides.html#onemkl-dft-config-strides"><span class="std std-ref">INPUT_STRIDES and OUTPUT_STRIDES</span></a>). For multiple transforms, all sets of data should be located within the same memory block, and the data sets should be placed at the same distance from each other (see <a class="reference internal" href="number_of_transforms.html#onemkl-dft-config-number-of-transforms"><span class="std std-ref">NUMBER_OF TRANSFORMS</span></a> and <code class="docutils literal notranslate"><span class="pre">:config_param::FWD_DISTANCE</span></code>, <code class="docutils literal notranslate"><span class="pre">config_param::BWD_DISTANCE</span></code> ).</p>
 <p>The input data and strides sizes are stored and offsets counted in terms of elements of the data type (complex or real) based on the storage format and <a class="reference internal" href="../enums_and_config_params.html#onemkl-dft-enum-domain"><span class="std std-ref">forward domain</span></a> as seen in <a class="reference internal" href="strides.html#onemkl-dft-config-data-element-types-complex"><span class="std std-ref">Element types for complex-to-complex transformation and COMPLEX_STORAGE</span></a>, <a class="reference internal" href="strides.html#onemkl-dft-config-data-element-types-real"><span class="std std-ref">Element types for real-to-complex transformations and REAL_STORAGE</span></a> and <a class="reference internal" href="strides.html#onemkl-dft-config-data-element-types-conjugate-even"><span class="std std-ref">Element types for real-to-complex transformations and CONJUGATE_EVEN_STORAGE</span></a>.</p>
-<section id="complex-storage">
+<div class="section" id="complex-storage">
 <span id="onemkl-dft-complex-storage"></span><h2>COMPLEX_STORAGE<a class="headerlink" href="#complex-storage" title="Permalink to this headline">¶</a></h2>
 <p>For the <a class="reference internal" href="../enums_and_config_params.html#onemkl-dft-enum-domain"><span class="std std-ref">domain</span></a> template parameter with value <code class="docutils literal notranslate"><span class="pre">COMPLEX</span></code>, both input and output sequences belong to the complex domain. In this case, the configuration parameter COMPLEX_STORAGE can have one of the two values:<code class="docutils literal notranslate"><span class="pre">COMPLEX_COMPLEX</span></code> (default) or <code class="docutils literal notranslate"><span class="pre">REAL_REAL</span></code> .</p>
 <p class="rubric" id="onemkl-dft-complex-storage-complex-complex">COMPLEX_COMPLEX</p>
@@ -4646,8 +4645,8 @@ SPDX-License-Identifier: MIT
 <span class="c1">//   + i*AI[ ios[0] + k1*ios[1] + k2*ios[2] + k3*ios[3] + m*iodist ]</span>
 </pre></div>
 </div>
-</section>
-<section id="real-storage">
+</div>
+<div class="section" id="real-storage">
 <span id="onemkl-dft-real-storage"></span><h2>REAL_STORAGE<a class="headerlink" href="#real-storage" title="Permalink to this headline">¶</a></h2>
 <p>For the <a class="reference internal" href="../enums_and_config_params.html#onemkl-dft-enum-domain"><span class="std std-ref">domain</span></a> template parameter with value <code class="docutils literal notranslate"><span class="pre">REAL</span></code>, only the value of <code class="docutils literal notranslate"><span class="pre">REAL_REAL</span></code> is supported.</p>
 <p class="rubric" id="onemkl-dft-real-storage-real-real">REAL_REAL</p>
@@ -4667,8 +4666,8 @@ SPDX-License-Identifier: MIT
 <span class="c1">//   + i*AI[ ios[0] + k1*ios[1] + k2*ios[2] + k3*ios[3] + m*iodist ]</span>
 </pre></div>
 </div>
-</section>
-<section id="conjugate-even-storage">
+</div>
+<div class="section" id="conjugate-even-storage">
 <span id="onemkl-dft-conjugate-even-storage"></span><h2>CONJUGATE_EVEN_STORAGE<a class="headerlink" href="#conjugate-even-storage" title="Permalink to this headline">¶</a></h2>
 <p>For the <a class="reference internal" href="../enums_and_config_params.html#onemkl-dft-enum-domain"><span class="std std-ref">domain</span></a> template parameter with value <code class="docutils literal notranslate"><span class="pre">REAL</span></code> and considered as a conjugate-even domain, the value of <code class="docutils literal notranslate"><span class="pre">config_value::COMPLEX_COMPLEX</span></code> is supported. The conjugate-even symmetry of the data enables storing only about a half of the whole mathematical result, so that one part of it can be directly referenced in the memory while the other part can be reconstructed depending on the selected storage configuration. The <code class="docutils literal notranslate"><span class="pre">config_param::PACKED_FORMAT</span></code> configuration parameter defines how the data is packed.  Possible values for <code class="docutils literal notranslate"><span class="pre">config_param::PACKED_FORMAT</span></code> depend on the values of the <code class="docutils literal notranslate"><span class="pre">config_param::CONJUGATE_EVEN_STORAGE</span></code> configuration parameter.</p>
 <table class="longtable table">
@@ -4842,8 +4841,8 @@ With the conjugate-even symmetry, approximately a half of the result suffices to
 </pre></div>
 </div>
 <p><strong>Parent topic</strong> <a class="reference internal" href="../enums_and_config_params.html#onemkl-dft-enums"><span class="std std-ref">Configuration Parameters and Enums</span></a></p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

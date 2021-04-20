@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>parallel_for_each &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4599,7 +4598,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="parallel-for-each">
+  <div class="section" id="parallel-for-each">
 <h1>parallel_for_each<a class="headerlink" href="#parallel-for-each" title="Permalink to this headline">¶</a></h1>
 <p><strong>[algorithms.parallel_for_each]</strong></p>
 <p>Function template that processes work items in parallel.</p>
@@ -4637,7 +4636,7 @@ sequence [<code class="docutils literal notranslate"><span class="pre">first,las
 <p>The container form <code class="docutils literal notranslate"><span class="pre">parallel_for_each(c,</span> <span class="pre">body)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">parallel_for_each(std::begin(c),</span> <span class="pre">std::end(c),</span> <span class="pre">body)</span></code>.</p>
 <p>All overloads can accept a <a class="reference internal" href="../../task_scheduler/scheduling_controls/task_group_context_cls.html"><span class="doc">task_group_context</span></a> object
 so that the algorithm’s tasks are executed in this group. By default, the algorithm is executed in a bound group of its own.</p>
-<section id="feeder-class">
+<div class="section" id="feeder-class">
 <h2>feeder Class<a class="headerlink" href="#feeder-class" title="Permalink to this headline">¶</a></h2>
 <p>Additional work items can be added by <code class="docutils literal notranslate"><span class="pre">body</span></code> if it has a second argument of type <code class="docutils literal notranslate"><span class="pre">feeder</span></code>.
 The function terminates when <code class="docutils literal notranslate"><span class="pre">body(x)</span></code> returns for all items <code class="docutils literal notranslate"><span class="pre">x</span></code> that were in the input
@@ -4647,8 +4646,8 @@ sequence or added by method <code class="docutils literal notranslate"><span cla
 <li class="toctree-l1"><a class="reference internal" href="feeder.html">feeder</a></li>
 </ul>
 </div>
-</section>
-<section id="example">
+</div>
+<div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>The following code sketches a body with the two-argument form of <code class="docutils literal notranslate"><span class="pre">operator()</span></code>.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">MyBody</span> <span class="p">{</span>
@@ -4661,8 +4660,8 @@ sequence or added by method <code class="docutils literal notranslate"><span cla
 <span class="p">};</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Number of Transforms &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4581,7 +4580,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="number-of-transforms">
+  <div class="section" id="number-of-transforms">
 <span id="onemkl-dft-config-number-of-transforms"></span><h1>Number of Transforms<a class="headerlink" href="#number-of-transforms" title="Permalink to this headline">¶</a></h1>
 <p>If you need to perform a large number of identical DFTs, you can do this in a single call to a compute* function with the value of this configuration parameter equal to the actual number of the transforms. The default value is 1. You can set this parameter to a positive integer value using the <code class="docutils literal notranslate"><span class="pre">std::int64_t</span></code> data type.</p>
 <p>When setting the number of transforms to a value greater than one, you also need to specify the distance between the forward data sets and the distance between the backward data sets using the <code class="docutils literal notranslate"><span class="pre">config_param::FWD_DISTANCE</span></code> and <code class="docutils literal notranslate"><span class="pre">config_param::BWD_DISTANCE</span></code> configuration parameters corresponding to the specified <a class="reference internal" href="../enums_and_config_params.html#onemkl-dft-enum-domain"><span class="std std-ref">domain</span></a>.</p>
@@ -4593,7 +4592,7 @@ SPDX-License-Identifier: MIT
 </ul>
 </div>
 <p><strong>Parent topic</strong> <a class="reference internal" href="../enums_and_config_params.html#onemkl-dft-enums"><span class="std std-ref">Configuration Parameters and Enums</span></a></p>
-</section>
+</div>
 
 
               </div>

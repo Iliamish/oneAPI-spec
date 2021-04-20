@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>oneVPL Session &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4650,13 +4649,13 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="onevpl-session">
+  <div class="section" id="onevpl-session">
 <span id="sdk-session"></span><h1>oneVPL Session<a class="headerlink" href="#onevpl-session" title="Permalink to this headline">¶</a></h1>
 <p>Before calling any oneVPL functions, the application must initialize the
 library and create a oneVPL session. A oneVPL session maintains context for the
 use of any of <a class="reference internal" href="../architecture/index.html#term-DECODE"><span class="xref std std-term">DECODE</span></a>, <a class="reference internal" href="../architecture/index.html#term-ENCODE"><span class="xref std std-term">ENCODE</span></a>, <a class="reference internal" href="../architecture/index.html#term-VPP"><span class="xref std std-term">VPP</span></a>, <a class="reference internal" href="../architecture/index.html#term-DECODE_VPP"><span class="xref std std-term">DECODE_VPP</span></a>
 functions.</p>
-<section id="msdk-full-name-dispatcher-legacy">
+<div class="section" id="msdk-full-name-dispatcher-legacy">
 <h2>Intel<sup>®</sup> Media Software Development Kit Dispatcher (Legacy)<a class="headerlink" href="#msdk-full-name-dispatcher-legacy" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv47MFXInit7mfxIMPLP10mfxVersionP10mfxSession" title="MFXInit"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInit()</span></code></a> or <a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv49MFXInitEx12mfxInitParamP10mfxSession" title="MFXInitEx"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInitEx()</span></code></a> function starts (initializes)
 a session. The <a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv48MFXClose10mfxSession" title="MFXClose"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXClose()</span></code></a> function closes (de-initializes) the
@@ -4785,8 +4784,8 @@ order, to find the correct implementation library:</p>
 </ol>
 </li>
 </ul>
-</section>
-<section id="onevpl-dispatcher">
+</div>
+<div class="section" id="onevpl-dispatcher">
 <h2>oneVPL Dispatcher<a class="headerlink" href="#onevpl-dispatcher" title="Permalink to this headline">¶</a></h2>
 <p>The oneVPL dispatcher extends the legacy dispatcher by providing additional
 ability to select the appropriate implementation based on the implementation
@@ -4897,8 +4896,8 @@ first try to load Intel<sup>®</sup> Media Software Development Kit if API versi
 If loading fails, the dispatcher will search for the implementation with
 highest 2.x API version and load that version.</p>
 </div>
-</section>
-<section id="onevpl-dispatcher-configuration-properties">
+</div>
+<div class="section" id="onevpl-dispatcher-configuration-properties">
 <h2>oneVPL Dispatcher Configuration Properties<a class="headerlink" href="#onevpl-dispatcher-configuration-properties" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="#dsp-conf-prop-table"><span class="std std-ref">Dispatcher Configuration Properties Table</span></a> shows property strings
 supported by the dispatcher. Table organized in the hierarchy way, to create the string, go from the
@@ -5324,8 +5323,8 @@ influence on the implementation selection. They are used during the
 </tr>
 </tbody>
 </table>
-</section>
-<section id="onevpl-dispatcher-interactions">
+</div>
+<div class="section" id="onevpl-dispatcher-interactions">
 <h2>oneVPL Dispatcher Interactions<a class="headerlink" href="#onevpl-dispatcher-interactions" title="Permalink to this headline">¶</a></h2>
 <p>This sequence diagram visualize how application communcates with implementations
 via the dispacher.</p>
@@ -5504,8 +5503,8 @@ deactivate D
 Intel<sup>®</sup> Media Software Development Kit implementation. Once Intel<sup>®</sup> Media Software Development Kit is loaded
 applications have to use legacy approach to query capabilities.</p>
 </div>
-</section>
-<section id="how-to-check-if-function-is-implemented">
+</div>
+<div class="section" id="how-to-check-if-function-is-implemented">
 <h2>How To Check If Function is Implemented<a class="headerlink" href="#how-to-check-if-function-is-implemented" title="Permalink to this headline">¶</a></h2>
 <p>There are two ways to check if particular function is implemented or not by the
 implementation.</p>
@@ -5597,8 +5596,8 @@ implemented:</p>
 <span class="n">MFXCreateSession</span><span class="p">(</span><span class="n">loader</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">session_handle</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-</section>
-<section id="how-to-search-for-the-avialable-encoder-decoder-implementation">
+</div>
+<div class="section" id="how-to-search-for-the-avialable-encoder-decoder-implementation">
 <h2>How To Search For The Avialable encoder/decoder implementation<a class="headerlink" href="#how-to-search-for-the-avialable-encoder-decoder-implementation" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="../API_ref/VPL_enums.html#codec-format-fourcc"><span class="std std-ref">CodecFormatFourCC</span></a> enum specifies codec’s FourCC
 values. Application needs to assign this value to the field of
@@ -5641,8 +5640,8 @@ encoder.</p>
 <span class="n">MFXCreateSession</span><span class="p">(</span><span class="n">loader</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hevc_session_handle</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-</section>
-<section id="how-to-search-for-the-avialable-vpp-filter-implementation">
+</div>
+<div class="section" id="how-to-search-for-the-avialable-vpp-filter-implementation">
 <h2>How To Search For The Avialable VPP Filter implementation<a class="headerlink" href="#how-to-search-for-the-avialable-vpp-filter-implementation" title="Permalink to this headline">¶</a></h2>
 <p>Each VPP filter identified by the filter ID. Filter ID is defined by
 corresponding to the filter extension buffer ID value which is defined in a form
@@ -5747,8 +5746,8 @@ VPP filter.</p>
 <span class="n">MFXCreateSession</span><span class="p">(</span><span class="n">loader</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">mirror_session_handle</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-</section>
-<section id="onevpl-implementation-on-intel-r-platforms-with-xe-architecture-and-msdk-full-name-coexistence">
+</div>
+<div class="section" id="onevpl-implementation-on-intel-r-platforms-with-xe-architecture-and-msdk-full-name-coexistence">
 <h2>oneVPL implementation on Intel<sup>®</sup> platforms with X<sup>e</sup> architecture and Intel<sup>®</sup> Media Software Development Kit Coexistence<a class="headerlink" href="#onevpl-implementation-on-intel-r-platforms-with-xe-architecture-and-msdk-full-name-coexistence" title="Permalink to this headline">¶</a></h2>
 <p>oneVPL supersedes Intel<sup>®</sup> Media Software Development Kit and partially binary compartible with
 Intel<sup>®</sup> Media Software Development Kit. Both oneVPL and Intel<sup>®</sup> Media Software Development Kit includes own dispatcher and
@@ -5830,8 +5829,8 @@ API version. This is subset of oneVPL API.</p>
 <p>if system has multiple devices the logic of selection and loading implementations
 will be applied to each device accordingly to the system enumeration.</p>
 </div>
-</section>
-<section id="multiple-sessions">
+</div>
+<div class="section" id="multiple-sessions">
 <h2>Multiple Sessions<a class="headerlink" href="#multiple-sessions" title="Permalink to this headline">¶</a></h2>
 <p>Each oneVPL session can run exactly one instance of the DECODE, ENCODE, and
 VPP functions. This is adequate for a simple transcoding operation. If the
@@ -5862,8 +5861,8 @@ processing.</p>
 <a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv417MFXDisjoinSession10mfxSession" title="MFXDisjoinSession"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXDisjoinSession()</span></code></a> function to remove the joined state of a session.
 Do not close the parent session until all child sessions are disjoined or
 closed.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

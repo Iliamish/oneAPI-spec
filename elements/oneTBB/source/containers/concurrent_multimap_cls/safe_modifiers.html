@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Concurrently safe modifiers &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4614,11 +4613,11 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="concurrently-safe-modifiers">
+  <div class="section" id="concurrently-safe-modifiers">
 <h1>Concurrently safe modifiers<a class="headerlink" href="#concurrently-safe-modifiers" title="Permalink to this headline">¶</a></h1>
 <p>All member functions in this section can be performed concurrently with each other,
 lookup methods and while traversing the container.</p>
-<section id="emplacing-elements">
+<div class="section" id="emplacing-elements">
 <h2>Emplacing elements<a class="headerlink" href="#emplacing-elements" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
@@ -4643,8 +4642,8 @@ from [container.requirements] ISO C++ section.</p>
 <p><strong>Requirements</strong>: the type <code class="docutils literal notranslate"><span class="pre">value_type</span></code> must meet the <code class="docutils literal notranslate"><span class="pre">EmplaceConstructible</span></code> requirements
 from the [container.requirements] ISO C++ section.</p>
 </div></blockquote>
-</section>
-<section id="inserting-values">
+</div>
+<div class="section" id="inserting-values">
 <h2>Inserting values<a class="headerlink" href="#inserting-values" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">iterator</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&gt;</span> <span class="n">insert</span><span class="p">(</span> <span class="k">const</span> <span class="n">value_type</span><span class="o">&amp;</span> <span class="n">value</span> <span class="p">);</span>
@@ -4711,8 +4710,8 @@ Boolean value is always <code class="docutils literal notranslate"><span class="
 <p><strong>Requirements</strong>: the type <code class="docutils literal notranslate"><span class="pre">value_type</span></code> must meet the <code class="docutils literal notranslate"><span class="pre">MoveInsertable</span></code> requirements from the
 [container.requirements] ISO C++ Standard section.</p>
 </div></blockquote>
-</section>
-<section id="inserting-sequences-of-elements">
+</div>
+<div class="section" id="inserting-sequences-of-elements">
 <h2>Inserting sequences of elements<a class="headerlink" href="#inserting-sequences-of-elements" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">InputIterator</span><span class="o">&gt;</span>
@@ -4731,8 +4730,8 @@ from <code class="docutils literal notranslate"><span class="pre">[input.iterato
 </div>
 <p>Equivalent to <code class="docutils literal notranslate"><span class="pre">insert(init.begin(),</span> <span class="pre">init.end())</span></code>.</p>
 </div></blockquote>
-</section>
-<section id="inserting-nodes">
+</div>
+<div class="section" id="inserting-nodes">
 <h2>Inserting nodes<a class="headerlink" href="#inserting-nodes" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">iterator</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&gt;</span> <span class="n">insert</span><span class="p">(</span> <span class="n">node_type</span><span class="o">&amp;&amp;</span> <span class="n">nh</span> <span class="p">);</span>
@@ -4759,8 +4758,8 @@ Boolean value is always <code class="docutils literal notranslate"><span class="
 <p>The behavior is undefined if <code class="docutils literal notranslate"><span class="pre">nh</span></code> is not empty and <code class="docutils literal notranslate"><span class="pre">get_allocator()</span> <span class="pre">!=</span> <span class="pre">nh.get_allocator()</span></code>.</p>
 <p><strong>Returns</strong>: an iterator pointing to the inserted element.</p>
 </div></blockquote>
-</section>
-<section id="merging-containers">
+</div>
+<div class="section" id="merging-containers">
 <h2>Merging containers<a class="headerlink" href="#merging-containers" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">SrcCompare</span><span class="o">&gt;</span>
@@ -4780,8 +4779,8 @@ Boolean value is always <code class="docutils literal notranslate"><span class="
 <p>No copy or move constructors of <code class="docutils literal notranslate"><span class="pre">value_type</span></code> are performed.</p>
 <p>The behavior is undefined if <code class="docutils literal notranslate"><span class="pre">get_allocator()</span> <span class="pre">!=</span> <span class="pre">source.get_allocator()</span></code>.</p>
 </div></blockquote>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

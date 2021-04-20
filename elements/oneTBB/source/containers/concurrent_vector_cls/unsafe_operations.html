@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Concurrently unsafe operations &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4614,12 +4613,12 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="concurrently-unsafe-operations">
+  <div class="section" id="concurrently-unsafe-operations">
 <h1>Concurrently unsafe operations<a class="headerlink" href="#concurrently-unsafe-operations" title="Permalink to this headline">¶</a></h1>
 <p>All member functions in this section can only be performed serially.
 The behavior is undefined in case of concurrent execution of these member functions
 with other (either concurrently safe) methods.</p>
-<section id="reserving">
+<div class="section" id="reserving">
 <h2>Reserving<a class="headerlink" href="#reserving" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">reserve</span><span class="p">(</span> <span class="n">size_type</span> <span class="n">n</span> <span class="p">);</span>
@@ -4628,8 +4627,8 @@ with other (either concurrently safe) methods.</p>
 <p>Reserves memory for at least <code class="docutils literal notranslate"><span class="pre">n</span></code> elements.</p>
 <p><strong>Throws</strong>: <code class="docutils literal notranslate"><span class="pre">std::length_error</span></code> if <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">max_size()</span></code>.</p>
 </div></blockquote>
-</section>
-<section id="resizing">
+</div>
+<div class="section" id="resizing">
 <h2>Resizing<a class="headerlink" href="#resizing" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">resize</span><span class="p">(</span> <span class="n">size_type</span> <span class="n">n</span> <span class="p">);</span>
@@ -4648,8 +4647,8 @@ the end of the vector.</p>
 <p>Otherwise, appends <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">-</span> <span class="pre">size()</span></code> copies of <code class="docutils literal notranslate"><span class="pre">value</span></code> to
 the end of the vector.</p>
 </div></blockquote>
-</section>
-<section id="shrink-to-fit">
+</div>
+<div class="section" id="shrink-to-fit">
 <h2>shrink_to_fit<a class="headerlink" href="#shrink-to-fit" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">shrink_to_fit</span><span class="p">();</span>
@@ -4658,8 +4657,8 @@ the end of the vector.</p>
 <p>Removes the unused capacity of the vector.</p>
 <p>Call for this method can also reorganize the internal vector representation in the memory.</p>
 </div></blockquote>
-</section>
-<section id="clear">
+</div>
+<div class="section" id="clear">
 <h2>clear<a class="headerlink" href="#clear" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">clear</span><span class="p">();</span>
@@ -4667,8 +4666,8 @@ the end of the vector.</p>
 </div>
 <p>Removes all elements from the container.</p>
 </div></blockquote>
-</section>
-<section id="swap">
+</div>
+<div class="section" id="swap">
 <h2>swap<a class="headerlink" href="#swap" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span> <span class="n">concurrent_vector</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span> <span class="k">noexcept</span><span class="p">(</span><span class="cm">/*See below*/</span><span class="p">);</span>
@@ -4685,8 +4684,8 @@ the end of the vector.</p>
 </div>
 </div></blockquote>
 </div></blockquote>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

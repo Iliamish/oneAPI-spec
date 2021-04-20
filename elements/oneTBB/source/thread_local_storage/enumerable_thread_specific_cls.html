@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>enumerable_thread_specific &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
@@ -4599,7 +4598,7 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <section id="enumerable-thread-specific">
+  <div class="section" id="enumerable-thread-specific">
 <h1>enumerable_thread_specific<a class="headerlink" href="#enumerable-thread-specific" title="Permalink to this headline">¶</a></h1>
 <p><strong>[tls.enumerable_thread_specific]</strong></p>
 <p>A class template for thread local storage (TLS).</p>
@@ -4708,7 +4707,7 @@ The number of elements of the <code class="docutils literal notranslate"><span c
 that have called <code class="docutils literal notranslate"><span class="pre">local()</span></code>, and the element returned by the first reference
 by a thread to the <code class="docutils literal notranslate"><span class="pre">enumerable_thread_specific</span></code> may not be newly-constructed.</p>
 </div>
-<section id="member-functions">
+<div class="section" id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -4720,8 +4719,8 @@ by a thread to the <code class="docutils literal notranslate"><span class="pre">
 <li class="toctree-l1"><a class="reference internal" href="enumerable_thread_specific_cls/combining.html">Combining</a></li>
 </ul>
 </div>
-</section>
-<section id="non-member-types-and-constants">
+</div>
+<div class="section" id="non-member-types-and-constants">
 <h2>Non-member types and constants<a class="headerlink" href="#non-member-types-and-constants" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enum">
 <dt id="_CPPv4N18ets_key_usage_type20ets_key_per_instanceE">
@@ -4745,8 +4744,8 @@ If no <code class="docutils literal notranslate"><span class="pre">ETS_key_usage
 <p>The <code class="docutils literal notranslate"><span class="pre">tbb::task::suspend</span></code> function can change the value of the <code class="docutils literal notranslate"><span class="pre">enumerable_thread_specific</span></code> object. To avoid this problem,
 use the <code class="docutils literal notranslate"><span class="pre">ets_suspend_aware</span></code> enumeration parameter type.
 The <code class="docutils literal notranslate"><span class="pre">local()</span></code> value can be the same for different threads, but no two distinct threads can access the same value simultaneously.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>
