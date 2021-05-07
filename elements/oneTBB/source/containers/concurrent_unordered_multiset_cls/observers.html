@@ -14,7 +14,7 @@ SPDX-License-Identifier: MIT
     <title>Observers &#8212; oneAPI Specification 1.1-provisional-rev-1 documentation</title>
     
   <link href="../../../../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../../../../_static/css/index.f6b7ca918bee2f46fd9abac01cfb07d5.css" rel="stylesheet" />
+  <link href="../../../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -29,18 +29,18 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.ff71f0c119730445d1ea81d8ac423bad.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
     
-  <link rel="preload" as="script" href="../../../../../_static/js/index.1e043a052b0af929e4d8.js">
+  <link rel="preload" as="script" href="../../../../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
-    <script src="../../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../../../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="../../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
@@ -49,8 +49,12 @@ SPDX-License-Identifier: MIT
     <link rel="prev" title="Hash policy" href="hash_policy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -59,20 +63,20 @@ SPDX-License-Identifier: MIT
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../../../../index.html">
-  
-  <img src="../../../../../_static/oneAPI-rgb-rev-100.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">oneAPI Specification 1.1-provisional-rev-1 documentation</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../../../../../index.html">
+      
+      <img src="../../../../../_static/oneAPI-rgb-rev-100.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">oneAPI Specification 1.1-provisional-rev-1 documentation</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the spec..." aria-label="Search the spec..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="current nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../../../introduction.html">
    Introduction
@@ -88,11 +92,16 @@ SPDX-License-Identifier: MIT
    DPC++
   </a>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../../../oneDPL/source/index.html">
    oneDPL
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../../../oneDPL/source/common.html">
      Namespaces
@@ -114,14 +123,17 @@ SPDX-License-Identifier: MIT
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../../../oneDNN/source/index.html">
    oneDNN
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../../../oneDNN/source/introduction.html">
      Introduction
@@ -137,16 +149,26 @@ SPDX-License-Identifier: MIT
      Execution Model
     </a>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../../../oneDNN/source/data_model/index.html">
      Data model
     </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3 collapsible-parent">
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneDNN/source/data_model/data_types/index.html">
        Data types
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneDNN/source/data_model/data_types/bfloat16.html">
          Bfloat16
@@ -158,14 +180,17 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneDNN/source/data_model/memory/index.html">
        Memory
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneDNN/source/data_model/memory/formats.html">
          Memory Formats
@@ -177,36 +202,40 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../../../oneDNN/source/primitives/index.html">
      Primitives
     </a>
-    <ul class="collapse-ul">
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneDNN/source/primitives/general.html">
        Common Definitions
       </a>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneDNN/source/primitives/attributes/index.html">
        Attributes
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneDNN/source/primitives/attributes/post-ops.html">
          Post-ops
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneDNN/source/primitives/batch_normalization.html">
@@ -294,18 +323,19 @@ SPDX-License-Identifier: MIT
       </a>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../../../oneCCL/source/index.html">
    oneCCL
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../../../oneCCL/source/introduction.html">
      Introduction
@@ -321,21 +351,31 @@ SPDX-License-Identifier: MIT
      Current Version of this oneCCL Specification
     </a>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../../../oneCCL/source/definitions.html">
      Definitions
     </a>
-    <ul class="collapse-ul">
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneCCL/source/spec/main_objects.html">
        oneCCL Concepts
       </a>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneCCL/source/spec/operations.html">
        Communication Operations
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneCCL/source/spec/datatypes.html">
          Datatypes
@@ -362,8 +402,6 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneCCL/source/spec/error_handling.html">
@@ -371,37 +409,41 @@ SPDX-License-Identifier: MIT
       </a>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../../../oneCCL/source/programming_model.html">
      Programming Model
     </a>
-    <ul class="collapse-ul">
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneCCL/source/spec/generic_workflow.html">
        Generic Workflow
       </a>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../../../l0/source/index.html">
    Level Zero
   </a>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../../../oneDAL/source/index.html">
    oneDAL
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../../../oneDAL/source/introduction.html">
      Introduction
@@ -417,11 +459,16 @@ SPDX-License-Identifier: MIT
      Mathematical Notations
     </a>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../../../oneDAL/source/programming_model/index.html">
      Programming model
     </a>
-    <ul class="collapse-ul">
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneDAL/source/programming_model/end_to_end_example.html">
        End-to-end example
@@ -432,19 +479,22 @@ SPDX-License-Identifier: MIT
        Descriptors
       </a>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneDAL/source/programming_model/operations/index.html">
        Operations
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneDAL/source/programming_model/operations/support.html">
          Supported operations
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneDAL/source/programming_model/computational_modes.html">
@@ -452,14 +502,17 @@ SPDX-License-Identifier: MIT
       </a>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../../../oneDAL/source/common_interface/index.html">
      Common Interface
     </a>
-    <ul class="collapse-ul">
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneDAL/source/common_interface/spec_version.html">
        Current Version of this oneDAL Specification
@@ -468,11 +521,6 @@ SPDX-License-Identifier: MIT
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneDAL/source/common_interface/header_files_and_namespaces.html">
        Header files
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../../../oneDAL/source/common_interface/header_files_and_namespaces.html#namespaces">
-       Namespaces
       </a>
      </li>
      <li class="toctree-l3">
@@ -486,24 +534,32 @@ SPDX-License-Identifier: MIT
       </a>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../../../oneDAL/source/data_management/index.html">
      Data management
     </a>
-    <ul class="collapse-ul">
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneDAL/source/data_management/array.html">
        Array
       </a>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneDAL/source/data_management/accessors.html">
        Accessors
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+      <label for="toctree-checkbox-17">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneDAL/source/data_management/accessor/column.html">
          Column accessor
@@ -515,51 +571,63 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneDAL/source/data_management/data_sources.html">
        Data Sources
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+      <label for="toctree-checkbox-18">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneDAL/source/data_management/csv_data_source.html">
          CSV data source
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneDAL/source/data_management/tables.html">
        Tables
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+      <label for="toctree-checkbox-19">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneDAL/source/data_management/table/homogen.html">
          Homogeneous table
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../../../oneDAL/source/algorithms/index.html">
      Algorithms
     </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3 collapsible-parent">
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneDAL/source/algorithms/clustering/index.html">
        Clustering
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneDAL/source/algorithms/clustering/kmeans.html">
          K-Means
@@ -571,54 +639,59 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneDAL/source/algorithms/nearest_neighbors/index.html">
        Nearest Neighbors (kNN)
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneDAL/source/algorithms/nearest_neighbors/knn_classification.html">
          k-Nearest Neighbors Classification (k-NN)
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneDAL/source/algorithms/decomposition/index.html">
        Decomposition
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+      <label for="toctree-checkbox-23">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneDAL/source/algorithms/decomposition/pca.html">
          Principal Components Analysis (PCA)
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../../../oneDAL/source/appendix/index.html">
      Appendix
     </a>
-    <ul class="collapse-ul">
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneDAL/source/appendix/kd_tree.html">
        k-d Tree
       </a>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../../../oneDAL/source/bibliography.html">
@@ -626,19 +699,27 @@ SPDX-License-Identifier: MIT
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../../nested-index.html">
    oneTBB
   </a>
-  <ul class="current collapse-ul">
-   <li class="toctree-l2 collapsible-parent">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+  <label for="toctree-checkbox-25">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../nested-gen-info.html">
      General Information
     </a>
-    <ul class="collapse-ul">
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../intro.html">
        Introduction
@@ -654,11 +735,16 @@ SPDX-License-Identifier: MIT
        Identifiers
       </a>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../named_requirements.html">
        Named Requirements
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+      <label for="toctree-checkbox-27">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../named_requirements/algorithms/range.html">
          Range
@@ -800,8 +886,6 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../thread_safety.html">
@@ -809,19 +893,27 @@ SPDX-License-Identifier: MIT
       </a>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
-   <li class="toctree-l2 current active collapsible-parent">
+   <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="../../nested-interfaces.html">
      oneTBB Interfaces
     </a>
-    <ul class="current collapse-ul">
-     <li class="toctree-l3 collapsible-parent">
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../configuration.html">
        Configuration
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+      <label for="toctree-checkbox-29">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../configuration/namespaces.html">
          Namespaces
@@ -843,14 +935,17 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../algorithms.html">
        Algorithms
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+      <label for="toctree-checkbox-30">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../algorithms/functions/parallel_for_func.html">
          parallel_for
@@ -866,66 +961,25 @@ SPDX-License-Identifier: MIT
          parallel_deterministic_reduce
         </a>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../../algorithms/functions/parallel_scan_func.html">
          parallel_scan
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../algorithms/functions/pre_scan_tag_and_final_scan_tag_clses.html">
-           pre_scan_tag and final_scan_tag
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../../algorithms/functions/parallel_for_each_func.html">
          parallel_for_each
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../algorithms/functions/feeder.html">
-           feeder
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../algorithms/functions/parallel_invoke_func.html">
          parallel_invoke
         </a>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../../algorithms/functions/parallel_pipeline_func.html">
          parallel_pipeline
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5 collapsible-parent">
-          <a class="reference internal" href="../../algorithms/functions/parallel_pipeline_func/filter_cls.html">
-           filter
-          </a>
-          <ul class="collapse-ul">
-           <li class="toctree-l6">
-            <a class="reference internal" href="../../algorithms/functions/parallel_pipeline_func/filter_mode_enum.html">
-             filter_mode
-            </a>
-           </li>
-          </ul>
-          <i class="fas fa-chevron-down">
-          </i>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../algorithms/functions/parallel_pipeline_func/flow_control_cls.html">
-           flow_control
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../algorithms/functions/parallel_sort_func.html">
@@ -978,27 +1032,21 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../flow_graph.html">
        Flow Graph
       </a>
-      <ul class="collapse-ul">
-       <li class="toctree-l4 collapsible-parent">
+      <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+      <label for="toctree-checkbox-31">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
         <a class="reference internal" href="../../flow_graph/graph_cls.html">
          graph
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../flow_graph/reset_flags_enum.html">
-           reset_flags Enumeration
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../flow_graph/graph_node_cls.html">
@@ -1105,19 +1153,10 @@ SPDX-License-Identifier: MIT
          broadcast_node
         </a>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../../flow_graph/join_node_cls.html">
          join_node
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../flow_graph/join_node_policies.html">
-           join_node Policies
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../flow_graph/split_node_cls.html">
@@ -1175,14 +1214,17 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../task_scheduler.html">
        Task Scheduler
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+      <label for="toctree-checkbox-32">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../task_scheduler/scheduling_controls/task_group_context_cls.html">
          task_group_context
@@ -1224,850 +1266,81 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 current active collapsible-parent">
+     <li class="toctree-l3 current active has-children">
       <a class="reference internal" href="../../containers.html">
        Containers
       </a>
-      <ul class="current collapse-ul">
-       <li class="toctree-l4 collapsible-parent">
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+      <label for="toctree-checkbox-33">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="current">
+       <li class="toctree-l4">
         <a class="reference internal" href="../concurrent_vector_cls.html">
          concurrent_vector
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_vector_cls/construct_destroy_copy.html">
-           Construction, destruction, copying
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_vector_cls/concurrent_growth.html">
-           Concurrent growth
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_vector_cls/element_access.html">
-           Element access
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_vector_cls/iterators.html">
-           Iterators
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_vector_cls/size_and_capacity.html">
-           Size and capacity
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_vector_cls/unsafe_operations.html">
-           Concurrently unsafe operations
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_vector_cls/parallel_iteration.html">
-           Parallel iteration
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_vector_cls/non_member_binary_comparisons.html">
-           Non-member binary comparisons
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_vector_cls/non_member_lexicographical_comparisons.html">
-           Non-member lexicographical comparisons
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_vector_cls/non_member_swap.html">
-           Non-member swap
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_vector_cls/deduction_guides.html">
-           Deduction guides
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../concurrent_queue_cls.html">
          concurrent_queue
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_queue_cls/construct_destroy_copy.html">
-           Construction, destruction, copying
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_queue_cls/safe_member_functions.html">
-           Concurrently safe member functions
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_queue_cls/unsafe_member_functions.html">
-           Concurrently unsafe member functions
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_queue_cls/iterators.html">
-           Iterators
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_queue_cls/deduction_guides.html">
-           Deduction guides
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../concurrent_bounded_queue_cls.html">
          concurrent_bounded_queue
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_bounded_queue_cls/construct_destroy_copy.html">
-           Construction, destruction, copying
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_bounded_queue_cls/safe_member_functions.html">
-           Concurrently safe member functions
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_bounded_queue_cls/unsafe_member_functions.html">
-           Concurrently unsafe member functions
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_bounded_queue_cls/iterators.html">
-           Iterators
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_bounded_queue_cls/deduction_guides.html">
-           Deduction guides
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../concurrent_priority_queue_cls.html">
          concurrent_priority_queue
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_priority_queue_cls/construct_destroy_copy.html">
-           Construction, destruction, copying
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_priority_queue_cls/size_and_capacity.html">
-           Size and capacity
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_priority_queue_cls/safe_modifiers.html">
-           Concurrently safe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_priority_queue_cls/unsafe_modifiers.html">
-           Concurrently unsafe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_priority_queue_cls/non_member_swap.html">
-           Non-member swap
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_priority_queue_cls/non_member_binary_comparisons.html">
-           Non-member binary comparisons
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_priority_queue_cls/deduction_guides.html">
-           Deduction guides
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../concurrent_hash_map_cls.html">
          concurrent_hash_map
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_hash_map_cls/accessors.html">
-           accessor and const_accessor
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_hash_map_cls/construct_destroy_copy.html">
-           Construction, destruction, copying
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_hash_map_cls/unsafe_modifiers.html">
-           Concurrently unsafe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_hash_map_cls/hash_policy.html">
-           Hash policy
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_hash_map_cls/size_and_capacity.html">
-           Size and capacity
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_hash_map_cls/lookup.html">
-           Lookup
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_hash_map_cls/modifiers.html">
-           Concurrently safe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_hash_map_cls/iterators.html">
-           Iterators
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_hash_map_cls/parallel_iteration.html">
-           Parallel iteration
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_hash_map_cls/non_member_swap.html">
-           Non-member swap
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_hash_map_cls/non_member_binary_comparisons.html">
-           Non-member binary comparisons
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_hash_map_cls/deduction_guides.html">
-           Deduction guides
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../concurrent_unordered_map_cls.html">
          concurrent_unordered_map
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_map_cls/construction_destruction_copying.html">
-           Construction, destruction, copying
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_map_cls/iterators.html">
-           Iterators
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_map_cls/size_and_capacity.html">
-           Size and capacity
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_map_cls/safe_modifiers.html">
-           Concurrently safe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_map_cls/unsafe_modifiers.html">
-           Concurrently unsafe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_map_cls/element_access.html">
-           Element access
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_map_cls/lookup.html">
-           Lookup
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_map_cls/bucket_interface.html">
-           Bucket interface
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_map_cls/hash_policy.html">
-           Hash policy
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_map_cls/observers.html">
-           Observers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_map_cls/parallel_iteration.html">
-           Parallel iteration
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_map_cls/non_member_swap.html">
-           Non-member swap
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_map_cls/non_member_binary_comparisons.html">
-           Non-member binary comparisons
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_map_cls/deduction_guides.html">
-           Deduction guides
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../concurrent_unordered_multimap.html">
          concurrent_unordered_multimap
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_multimap_cls/construction_destruction_copying.html">
-           Construction, destruction, copying
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_multimap_cls/iterators.html">
-           Iterators
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_multimap_cls/size_and_capacity.html">
-           Size and capacity
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_multimap_cls/safe_modifiers.html">
-           Concurrently safe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_multimap_cls/unsafe_modifiers.html">
-           Concurrently unsafe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_multimap_cls/lookup.html">
-           Lookup
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_multimap_cls/bucket_interface.html">
-           Bucket interface
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_multimap_cls/hash_policy.html">
-           Hash policy
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_multimap_cls/observers.html">
-           Observers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_multimap_cls/parallel_iteration.html">
-           Parallel iteration
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_multimap_cls/non_member_swap.html">
-           Non-member swap
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_multimap_cls/non_member_binary_comparisons.html">
-           Non-member binary comparisons
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_multimap_cls/deduction_guides.html">
-           Deduction guides
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../concurrent_unordered_set_cls.html">
          concurrent_unordered_set
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_set_cls/construction_destruction_copying.html">
-           Construction, destruction, copying
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_set_cls/iterators.html">
-           Iterators
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_set_cls/size_and_capacity.html">
-           Size and capacity
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_set_cls/safe_modifiers.html">
-           Concurrently safe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_set_cls/unsafe_modifiers.html">
-           Concurrently unsafe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_set_cls/lookup.html">
-           Lookup
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_set_cls/bucket_interface.html">
-           Bucket interface
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_set_cls/hash_policy.html">
-           Hash policy
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_set_cls/observers.html">
-           Observers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_set_cls/parallel_iteration.html">
-           Parallel iteration
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_set_cls/non_member_swap.html">
-           Non-member swap
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_set_cls/non_member_binary_comparisons.html">
-           Non-member binary comparisons
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_unordered_set_cls/deduction_guides.html">
-           Deduction guides
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
-       <li class="toctree-l4 current active collapsible-parent">
+       <li class="toctree-l4 current active">
         <a class="reference internal" href="../concurrent_unordered_multiset.html">
          concurrent_unordered_multiset
         </a>
-        <ul class="current collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="construction_destruction_copying.html">
-           Construction, destruction, copying
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="iterators.html">
-           Iterators
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="size_and_capacity.html">
-           Size and capacity
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="safe_modifiers.html">
-           Concurrently safe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="unsafe_modifiers.html">
-           Concurrently unsafe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="lookup.html">
-           Lookup
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="bucket_interface.html">
-           Bucket interface
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="hash_policy.html">
-           Hash policy
-          </a>
-         </li>
-         <li class="toctree-l5 current active">
-          <a class="current reference internal" href="#">
-           Observers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="parallel_iteration.html">
-           Parallel iteration
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="non_member_swap.html">
-           Non-member swap
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="non_member_binary_comparisons.html">
-           Non-member binary comparisons
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="deduction_guides.html">
-           Deduction guides
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../concurrent_map_cls.html">
          concurrent_map
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_map_cls/value_compare_cls.html">
-           value_compare
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_map_cls/construction_destruction_copying.html">
-           Construction, destruction, copying
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_map_cls/element_access.html">
-           Element access
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_map_cls/iterators.html">
-           Iterators
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_map_cls/size_and_capacity.html">
-           Size and capacity
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_map_cls/safe_modifiers.html">
-           Concurrently safe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_map_cls/unsafe_modifiers.html">
-           Concurrently unsafe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_map_cls/lookup.html">
-           Lookup
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_map_cls/observers.html">
-           Observers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_map_cls/parallel_iteration.html">
-           Parallel iteration
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_map_cls/non_member_swap.html">
-           Non-member swap
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_map_cls/non_member_binary_comparisons.html">
-           Non-member binary comparisons
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_map_cls/non_member_lexicographical_comparisons.html">
-           Non-member lexicographical comparisons
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_map_cls/deduction_guides.html">
-           Deduction guides
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../concurrent_multimap_cls.html">
          concurrent_multimap
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multimap_cls/value_compare_cls.html">
-           value_compare
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multimap_cls/construction_destruction_copying.html">
-           Construction, destruction, copying
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multimap_cls/iterators.html">
-           Iterators
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multimap_cls/size_and_capacity.html">
-           Size and capacity
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multimap_cls/safe_modifiers.html">
-           Concurrently safe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multimap_cls/unsafe_modifiers.html">
-           Concurrently unsafe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multimap_cls/lookup.html">
-           Lookup
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multimap_cls/observers.html">
-           Observers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multimap_cls/parallel_iteration.html">
-           Parallel iteration
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multimap_cls/non_member_swap.html">
-           Non-member swap
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multimap_cls/non_member_binary_comparisons.html">
-           Non-member binary comparisons
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multimap_cls/non_member_lexicographical_comparisons.html">
-           Non-member lexicographical comparisons
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multimap_cls/deduction_guides.html">
-           Deduction guides
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../concurrent_set_cls.html">
          concurrent_set
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_set_cls/construction_destruction_copying.html">
-           Construction, destruction, copying
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_set_cls/iterators.html">
-           Iterators
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_set_cls/size_and_capacity.html">
-           Size and capacity
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_set_cls/safe_modifiers.html">
-           Concurrently safe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_set_cls/unsafe_modifiers.html">
-           Concurrently unsafe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_set_cls/lookup.html">
-           Lookup
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_set_cls/observers.html">
-           Observers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_set_cls/parallel_iteration.html">
-           Parallel iteration
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_set_cls/non_member_swap.html">
-           Non-member swap
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_set_cls/non_member_binary_comparisons.html">
-           Non-member binary comparisons
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_set_cls/non_member_lexicographical_comparisons.html">
-           Non-member lexicographical comparisons
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_set_cls/deduction_guides.html">
-           Deduction guides
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../concurrent_multiset_cls.html">
          concurrent_multiset
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multiset_cls/construction_destruction_copying.html">
-           Construction, destruction, copying
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multiset_cls/iterators.html">
-           Iterators
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multiset_cls/size_and_capacity.html">
-           Size and capacity
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multiset_cls/safe_modifiers.html">
-           Concurrently safe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multiset_cls/unsafe_modifiers.html">
-           Concurrently unsafe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multiset_cls/lookup.html">
-           Lookup
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multiset_cls/observers.html">
-           Observers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multiset_cls/parallel_iteration.html">
-           Parallel iteration
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multiset_cls/non_member_swap.html">
-           Non-member swap
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multiset_cls/non_member_binary_comparisons.html">
-           Non-member binary comparisons
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multiset_cls/non_member_lexicographical_comparisons.html">
-           Non-member lexicographical comparisons
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../concurrent_multiset_cls/deduction_guides.html">
-           Deduction guides
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../auxiliary/tbb_hash_compare_cls.html">
@@ -2080,57 +1353,26 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../thread_local_storage.html">
        Thread Local Storage
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+      <label for="toctree-checkbox-34">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../thread_local_storage/combinable_cls.html">
          combinable
         </a>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../../thread_local_storage/enumerable_thread_specific_cls.html">
          enumerable_thread_specific
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../thread_local_storage/enumerable_thread_specific_cls/construct_destroy_copy.html">
-           Construction, destruction, copying
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../thread_local_storage/enumerable_thread_specific_cls/safe_modifiers.html">
-           Concurrently safe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../thread_local_storage/enumerable_thread_specific_cls/unsafe_modifiers.html">
-           Concurrently unsafe modifiers
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../thread_local_storage/enumerable_thread_specific_cls/size_and_capacity.html">
-           Size and capacity
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../thread_local_storage/enumerable_thread_specific_cls/iteration.html">
-           Iteration
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../thread_local_storage/enumerable_thread_specific_cls/combining.html">
-           Combining
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../thread_local_storage/flattened2d_cls.html">
@@ -2138,23 +1380,29 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../nested-aux-interfaces.html">
      oneTBB Auxiliary Interfaces
     </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3 collapsible-parent">
+    <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+    <label for="toctree-checkbox-35">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../memory_allocation.html">
        Memory Allocation
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+      <label for="toctree-checkbox-36">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../memory_allocation/tbb_allocator_cls.html">
          tbb_allocator
@@ -2186,14 +1434,17 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../mutual_exclusion.html">
        Mutual Exclusion
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+      <label for="toctree-checkbox-37">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../mutual_exclusion/spin_mutex_cls.html">
          spin_mutex
@@ -2235,32 +1486,23 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../timing.html">
        Timing
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+      <label for="toctree-checkbox-38">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../timing/tick_count_cls.html">
          tick_count class
         </a>
        </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../../timing/tick_count_cls.html#tick-count-interval-t-class">
-         tick_count::interval_t class
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../../timing/tick_count_cls.html#non-member-functions">
-         Non-member functions
-        </a>
-       </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../info_namespace.html">
@@ -2268,18 +1510,19 @@ SPDX-License-Identifier: MIT
       </a>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../../../oneVPL/source/index.html">
    oneVPL
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+  <label for="toctree-checkbox-39">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../../../oneVPL/source/VPL_intel_media_sdk.html">
      oneVPL for Intel
@@ -2289,11 +1532,16 @@ SPDX-License-Identifier: MIT
      Media Software Development Kit Users
     </a>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../../../oneVPL/source/architecture/index.html">
      Architecture
     </a>
-    <ul class="collapse-ul">
+    <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+    <label for="toctree-checkbox-40">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneVPL/source/architecture/VPL_decoding.html">
        Video Decoding
@@ -2315,14 +1563,17 @@ SPDX-License-Identifier: MIT
       </a>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../../../oneVPL/source/programming_guide/index.html">
      Programming Guide
     </a>
-    <ul class="collapse-ul">
+    <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+    <label for="toctree-checkbox-41">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneVPL/source/programming_guide/VPL_prg_stc.html">
        Status Codes
@@ -2374,24 +1625,32 @@ SPDX-License-Identifier: MIT
       </a>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../../../oneVPL/source/VPL_summary.html">
      Mandatory APIs and Functions
     </a>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../../../oneVPL/source/API_ref/VPL_api_ref.html">
      oneVPL API Reference
     </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3 collapsible-parent">
+    <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+    <label for="toctree-checkbox-42">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneVPL/source/API_ref/VPL_functions.html">
        Function Reference
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+      <label for="toctree-checkbox-43">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneVPL/source/API_ref/VPL_func_vid_decode.html">
          VideoDECODE
@@ -2438,14 +1697,17 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneVPL/source/API_ref/VPL_structs.html">
        Structure Reference
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+      <label for="toctree-checkbox-44">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneVPL/source/API_ref/VPL_structs_type.html">
          Type Definitions
@@ -2492,8 +1754,6 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneVPL/source/API_ref/VPL_enums.html">
@@ -2510,11 +1770,16 @@ SPDX-License-Identifier: MIT
        Type Reference
       </a>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneVPL/source/API_ref/VPL_disp_api.html">
        Dispatcher API
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+      <label for="toctree-checkbox-45">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneVPL/source/API_ref/VPL_disp_api_func.html">
          Dispatcher API Function Reference
@@ -2536,23 +1801,24 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../../../oneVPL/source/Versioning.html">
      oneVPL API Versioning
     </a>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../../../oneVPL/source/appendix/index.html">
      Appendices
     </a>
-    <ul class="collapse-ul">
+    <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+    <label for="toctree-checkbox-46">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneVPL/source/appendix/VPL_apnds_a.html">
        Configuration Parameter Constraints
@@ -2584,8 +1850,6 @@ SPDX-License-Identifier: MIT
       </a>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../../../oneVPL/source/VPL_acronyms.html">
@@ -2598,354 +1862,79 @@ SPDX-License-Identifier: MIT
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../../../oneMKL/source/index.html">
    oneMKL
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+  <label for="toctree-checkbox-47">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../../../oneMKL/source/architecture/architecture.html">
      oneMKL Architecture
     </a>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../../../oneMKL/source/domains/domains.html">
      oneMKL Domains
     </a>
-    <ul class="collapse-ul">
+    <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+    <label for="toctree-checkbox-48">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneMKL/source/domains/matrix-storage.html">
        Matrix Storage
       </a>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneMKL/source/domains/blas/blas.html">
        BLAS Routines
       </a>
-      <ul class="collapse-ul">
-       <li class="toctree-l4 collapsible-parent">
+      <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+      <label for="toctree-checkbox-49">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneMKL/source/domains/blas/blas-level-1-routines.html">
          BLAS Level 1 Routines
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/asum.html">
-           asum
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/axpy.html">
-           axpy
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/copy.html">
-           copy
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/dot.html">
-           dot
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/sdsdot.html">
-           sdsdot
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/dotc.html">
-           dotc
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/dotu.html">
-           dotu
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/nrm2.html">
-           nrm2
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/rot.html">
-           rot
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/rotg.html">
-           rotg
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/rotm.html">
-           rotm
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/rotmg.html">
-           rotmg
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/scal.html">
-           scal
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/swap.html">
-           swap
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/iamax.html">
-           iamax
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/iamin.html">
-           iamin
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneMKL/source/domains/blas/blas-level-2-routines.html">
          BLAS Level 2 Routines
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/gbmv.html">
-           gbmv
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/gemv.html">
-           gemv
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/ger.html">
-           ger
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/gerc.html">
-           gerc
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/geru.html">
-           geru
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/hbmv.html">
-           hbmv
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/hemv.html">
-           hemv
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/her.html">
-           her
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/her2.html">
-           her2
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/hpmv.html">
-           hpmv
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/hpr.html">
-           hpr
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/hpr2.html">
-           hpr2
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/sbmv.html">
-           sbmv
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/spmv.html">
-           spmv
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/spr.html">
-           spr
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/spr2.html">
-           spr2
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/symv.html">
-           symv
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/syr.html">
-           syr
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/syr2.html">
-           syr2
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/tbmv.html">
-           tbmv
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/tbsv.html">
-           tbsv
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/tpmv.html">
-           tpmv
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/tpsv.html">
-           tpsv
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/trmv.html">
-           trmv
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/trsv.html">
-           trsv
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneMKL/source/domains/blas/blas-level-3-routines.html">
          BLAS Level 3 Routines
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/gemm.html">
-           gemm
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/hemm.html">
-           hemm
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/herk.html">
-           herk
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/her2k.html">
-           her2k
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/symm.html">
-           symm
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/syrk.html">
-           syrk
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/syr2k.html">
-           syr2k
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/trmm.html">
-           trmm
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/trsm.html">
-           trsm
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
-       <li class="toctree-l4 collapsible-parent">
+       <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneMKL/source/domains/blas/blas-like-extensions.html">
          BLAS-like Extensions
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/axpy_batch.html">
-           axpy_batch
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/gemm_batch.html">
-           gemm_batch
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/trsm_batch.html">
-           trsm_batch
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/gemmt.html">
-           gemmt
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/blas/gemm_bias.html">
-           gemm_bias
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneMKL/source/domains/lapack/lapack.html">
        LAPACK Routines
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+      <label for="toctree-checkbox-50">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneMKL/source/domains/lapack/geqrf.html">
          geqrf
@@ -3337,14 +2326,17 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneMKL/source/domains/spblas/spblas.html">
        Sparse BLAS
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+      <label for="toctree-checkbox-51">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneMKL/source/domains/spblas/matrixinit.html">
          init_matrix_handle
@@ -3416,47 +2408,21 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneMKL/source/domains/dft/dft.html">
        Discrete Fourier Transform Functions
       </a>
-      <ul class="collapse-ul">
-       <li class="toctree-l4 collapsible-parent">
+      <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+      <label for="toctree-checkbox-52">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneMKL/source/domains/dft/enums_and_config_params.html">
          Configuration Parameters and Enums
         </a>
-        <ul class="collapse-ul">
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/dft/config_params/scaling_factor.html">
-           Forward and Backward Scale
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/dft/config_params/number_of_transforms.html">
-           Number of Transforms
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/dft/config_params/storage_formats.html">
-           Storage Formats
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/dft/config_params/strides.html">
-           INPUT_STRIDES and OUTPUT_STRIDES
-          </a>
-         </li>
-         <li class="toctree-l5">
-          <a class="reference internal" href="../../../../oneMKL/source/domains/dft/config_params/distance.html">
-           FORWARD_DISTANCE and BACKWARD_DISTANCE
-          </a>
-         </li>
-        </ul>
-        <i class="fas fa-chevron-down">
-        </i>
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneMKL/source/domains/dft/descriptor.html">
@@ -3474,8 +2440,6 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneMKL/source/domains/rng/overview.html">
@@ -3487,25 +2451,33 @@ SPDX-License-Identifier: MIT
        oneMKL RNG Usage Model
       </a>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneMKL/source/domains/rng/generate-routine.html">
        Generate Routine
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+      <label for="toctree-checkbox-53">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneMKL/source/domains/rng/mkl-rng-generate.html">
          generate
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneMKL/source/domains/rng/engines-basic-random-number-generators.html">
        Engines (Basic Random Number Generators)
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+      <label for="toctree-checkbox-54">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneMKL/source/domains/rng/mkl-rng-default_engine.html">
          default_engine
@@ -3577,14 +2549,17 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneMKL/source/domains/rng/service-routines.html">
        Service Routines
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+      <label for="toctree-checkbox-55">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneMKL/source/domains/rng/mkl-rng-leapfrog.html">
          leapfrog
@@ -3596,14 +2571,17 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneMKL/source/domains/rng/distributions.html">
        Distributions
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+      <label for="toctree-checkbox-56">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneMKL/source/domains/rng/distributions-template-parameter-mkl-rng-method-values.html">
          Distributions Template Parameter Method
@@ -3730,8 +2708,6 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneMKL/source/domains/rng/bibliography.html">
@@ -3753,11 +2729,16 @@ SPDX-License-Identifier: MIT
        dataset
       </a>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneMKL/source/domains/stats/stats_routines.html">
        Summary Statistics Routines
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+      <label for="toctree-checkbox-57">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneMKL/source/domains/stats/onemkl_stats_raw_sum.html">
          raw_sum
@@ -3839,33 +2820,39 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneMKL/source/domains/stats/stats_service_routines.html">
        Service Routines
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+      <label for="toctree-checkbox-58">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneMKL/source/domains/stats/onemkl_stats_make_dataset.html">
          make_dataset
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneMKL/source/domains/vm/special-value-notations.html">
        Special Value Notations
       </a>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneMKL/source/domains/vm/vm-mathematical-functions.html">
        VM Mathematical Functions
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+      <label for="toctree-checkbox-59">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneMKL/source/domains/vm/abs.html">
          abs
@@ -4272,14 +3259,17 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneMKL/source/domains/vm/vm-service-functions.html">
        VM Service Functions
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
+      <label for="toctree-checkbox-60">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneMKL/source/domains/vm/setmode.html">
          set_mode
@@ -4311,8 +3301,6 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneMKL/source/domains/vm/vm-exceptions.html">
@@ -4325,8 +3313,6 @@ SPDX-License-Identifier: MIT
       </a>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../../../oneMKL/source/appendix/appendix.html">
@@ -4334,43 +3320,54 @@ SPDX-License-Identifier: MIT
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../../../oneART/source/nested-index.html">
    Advanced Ray Tracing
   </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2 collapsible-parent">
+  <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
+  <label for="toctree-checkbox-61">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../../../oneART/source/component-libraries.html">
      Component Libraries
     </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3 collapsible-parent">
+    <input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" type="checkbox"/>
+    <label for="toctree-checkbox-62">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneART/source/embree.html">
        Embree
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-63" name="toctree-checkbox-63" type="checkbox"/>
+      <label for="toctree-checkbox-63">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneART/source/embree-spec.html">
          Introduction
         </a>
        </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../../../../oneART/source/embree-spec.html#embree-api">
-         Embree API
-        </a>
-       </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneART/source/openvkl.html">
        Open VKL
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-64" name="toctree-checkbox-64" type="checkbox"/>
+      <label for="toctree-checkbox-64">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneART/source/openvkl-intro.html">
          Introduction
@@ -4381,20 +3378,18 @@ SPDX-License-Identifier: MIT
          Open VKL API
         </a>
        </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../../../../oneART/source/openvkl-spec.html#performance-recommendations">
-         Performance Recommendations
-        </a>
-       </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneART/source/oidn.html">
        Open Image Denoise
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-65" name="toctree-checkbox-65" type="checkbox"/>
+      <label for="toctree-checkbox-65">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneART/source/oidn-intro.html">
          Introduction
@@ -4405,20 +3400,18 @@ SPDX-License-Identifier: MIT
          Open Image Denoise API
         </a>
        </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../../../../oneART/source/oidn-spec.html#training">
-         Training
-        </a>
-       </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
-     <li class="toctree-l3 collapsible-parent">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../../oneART/source/ospray.html">
        OSPRay
       </a>
-      <ul class="collapse-ul">
+      <input class="toctree-checkbox" id="toctree-checkbox-66" name="toctree-checkbox-66" type="checkbox"/>
+      <label for="toctree-checkbox-66">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneART/source/ospray-intro.html">
          Introduction
@@ -4429,24 +3422,20 @@ SPDX-License-Identifier: MIT
          OSPRay API
         </a>
        </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../../../../oneART/source/ospray-spec.html#distributed-rendering-with-mpi">
-         Distributed Rendering with MPI
-        </a>
-       </li>
       </ul>
-      <i class="fas fa-chevron-down">
-      </i>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../../../oneART/source/appendices.html">
      Appendices
     </a>
-    <ul class="collapse-ul">
+    <input class="toctree-checkbox" id="toctree-checkbox-67" name="toctree-checkbox-67" type="checkbox"/>
+    <label for="toctree-checkbox-67">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../oneART/source/ospray-studio.html">
        OSPRay Studio
@@ -4473,18 +3462,12 @@ SPDX-License-Identifier: MIT
       </a>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference external" href="https://spec.oneapi.com/releases/index.html">
    Releases
-   <i class="fas fa-external-link-alt">
-   </i>
   </a>
  </li>
  <li class="toctree-l1">
@@ -4494,6 +3477,7 @@ SPDX-License-Identifier: MIT
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -4558,12 +3542,12 @@ SPDX-License-Identifier: MIT
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -4662,11 +3646,9 @@ SPDX-License-Identifier: MIT
 
       </div>
     </div>
+  
+  <script src="../../../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../../../../../_static/js/index.1e043a052b0af929e4d8.js"></script>
-
-
-    
+  
   </body>
 </html>
