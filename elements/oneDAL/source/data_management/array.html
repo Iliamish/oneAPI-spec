@@ -4045,6 +4045,24 @@ memory or by allocating it within a new object.</p></li>
 </dd></dl>
 
 <dl class="cpp function">
+<dt id="_CPPv4NK6oneapi3dal5array16get_mutable_dataEv">
+<span id="_CPPv3NK6oneapi3dal5array16get_mutable_dataEv"></span><span id="_CPPv2NK6oneapi3dal5array16get_mutable_dataEv"></span><span id="oneapi::dal::array::get_mutable_dataC"></span><span class="pre">Data</span> <span class="pre">*</span><code class="sig-name descname"><span class="pre">get_mutable_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK6oneapi3dal5array16get_mutable_dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The pointer to the memory block holding mutable data.</p>
+<dl>
+<dt>Preconditions</dt><dd><div class="line-block">
+<div class="line"><code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4NK6oneapi3dal5array16has_mutable_dataEv" title="oneapi::dal::array::has_mutable_data"><span class="pre">has_mutable_data</span></a><span class="pre">(</span><span class="pre">)</span> <span class="pre">==</span> <span class="pre">true</span></code>, othewise throws <cite>domain_error</cite></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6oneapi3dal5array8get_dataEv">
+<span id="_CPPv3NK6oneapi3dal5array8get_dataEv"></span><span id="_CPPv2NK6oneapi3dal5array8get_dataEv"></span><span id="oneapi::dal::array::get_dataC"></span><em class="property"><span class="pre">const</span></em> <span class="pre">Data</span> <span class="pre">*</span><code class="sig-name descname"><span class="pre">get_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em> <em class="property"><span class="pre">noexcept</span></em><a class="headerlink" href="#_CPPv4NK6oneapi3dal5array8get_dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The pointer to the memory block holding immutable data.</p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt id="_CPPv4NK6oneapi3dal5array16has_mutable_dataEv">
 <span id="_CPPv3NK6oneapi3dal5array16has_mutable_dataEv"></span><span id="_CPPv2NK6oneapi3dal5array16has_mutable_dataEv"></span><span id="oneapi::dal::array::has_mutable_dataC"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">has_mutable_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em> <em class="property"><span class="pre">noexcept</span></em><a class="headerlink" href="#_CPPv4NK6oneapi3dal5array16has_mutable_dataEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns whether array contains <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">mutable_data</span></code> or not.</p>
@@ -4068,6 +4086,18 @@ memory or by allocating it within a new object.</p></li>
 </div>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6oneapi3dal5array9get_countEv">
+<span id="_CPPv3NK6oneapi3dal5array9get_countEv"></span><span id="_CPPv2NK6oneapi3dal5array9get_countEv"></span><span id="oneapi::dal::array::get_countC"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">int64_t</span> <code class="sig-name descname"><span class="pre">get_count</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em> <em class="property"><span class="pre">noexcept</span></em><a class="headerlink" href="#_CPPv4NK6oneapi3dal5array9get_countEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The number of elements of type <span class="math notranslate nohighlight">\(Data\)</span> in a memory block.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6oneapi3dal5array8get_sizeEv">
+<span id="_CPPv3NK6oneapi3dal5array8get_sizeEv"></span><span id="_CPPv2NK6oneapi3dal5array8get_sizeEv"></span><span id="oneapi::dal::array::get_sizeC"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">int64_t</span> <code class="sig-name descname"><span class="pre">get_size</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em> <em class="property"><span class="pre">noexcept</span></em><a class="headerlink" href="#_CPPv4NK6oneapi3dal5array8get_sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The size of memory block in bytes.</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -4169,68 +4199,6 @@ memory or by allocating it within a new object.</p></li>
 <dt id="_CPPv4NK6oneapi3dal5arrayixENSt7int64_tE">
 <span id="_CPPv3NK6oneapi3dal5arrayixENSt7int64_tE"></span><span id="_CPPv2NK6oneapi3dal5arrayixENSt7int64_tE"></span><span id="oneapi::dal::array::subscript-operator__std::int64_tC"></span><em class="property"><span class="pre">const</span></em> <span class="pre">Data</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">operator[]</span></code><span class="sig-paren">(</span><span class="pre">std</span><span class="pre">::</span><span class="pre">int64_t</span> <em><span class="pre">index</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em> <em class="property"><span class="pre">noexcept</span></em><a class="headerlink" href="#_CPPv4NK6oneapi3dal5arrayixENSt7int64_tE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Provides a read-only access to the elements of array. Shall not perform boundary checks.</p>
-</dd></dl>
-
-<p><strong>Properties</strong></p>
-<dl class="cpp member">
-<dt id="_CPPv4N27oneapi_dal_array_properties12mutable_dataE">
-<span id="_CPPv3N27oneapi_dal_array_properties12mutable_dataE"></span><span id="_CPPv2N27oneapi_dal_array_properties12mutable_dataE"></span><span id="oneapi_dal_array_properties::mutable_data__DataP"></span><span class="pre">Data</span> <span class="pre">*</span><code class="sig-name descname"><span class="pre">mutable_data</span></code><a class="headerlink" href="#_CPPv4N27oneapi_dal_array_properties12mutable_dataE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The pointer to the memory block holding mutable data.</p>
-<dl>
-<dt>Getter &amp; Setter</dt><dd><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">*</span> <span class="pre">get_mutable_data()</span> <span class="pre">const</span></code></div>
-</div>
-</dd>
-<dt>Invariants</dt><dd><div class="line-block">
-<div class="line"><code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N27oneapi_dal_array_properties12mutable_dataE" title="oneapi_dal_array_properties::mutable_data"><span class="pre">mutable_data</span></a> <span class="pre">!=</span> <span class="pre">nullptr</span></code> if <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">has_mutable_data</span><span class="pre">(</span><span class="pre">)</span> <span class="pre">&amp;&amp;</span> <a class="reference internal" href="#_CPPv4N27oneapi_dal_array_properties5countE" title="oneapi_dal_array_properties::count"><span class="pre">count</span></a> <span class="pre">&gt;</span> <span class="pre">0</span></code></div>
-</div>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp member">
-<dt id="_CPPv4N27oneapi_dal_array_properties4dataE">
-<span id="_CPPv3N27oneapi_dal_array_properties4dataE"></span><span id="_CPPv2N27oneapi_dal_array_properties4dataE"></span><span id="oneapi_dal_array_properties::data__DataCP"></span><em class="property"><span class="pre">const</span></em> <span class="pre">Data</span> <span class="pre">*</span><code class="sig-name descname"><span class="pre">data</span></code><a class="headerlink" href="#_CPPv4N27oneapi_dal_array_properties4dataE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The pointer to the memory block holding immutable data.</p>
-<dl>
-<dt>Getter &amp; Setter</dt><dd><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">Data</span> <span class="pre">*</span> <span class="pre">get_data()</span> <span class="pre">const</span> <span class="pre">noexcept</span></code></div>
-</div>
-</dd>
-<dt>Invariants</dt><dd><div class="line-block">
-<div class="line"><code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N27oneapi_dal_array_properties4dataE" title="oneapi_dal_array_properties::data"><span class="pre">data</span></a> <span class="pre">!=</span> <span class="pre">nullptr</span></code> if <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N27oneapi_dal_array_properties5countE" title="oneapi_dal_array_properties::count"><span class="pre">count</span></a> <span class="pre">&gt;</span> <span class="pre">0</span></code></div>
-<div class="line">if <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">has_mutable_data</span><span class="pre">(</span><span class="pre">)</span> <span class="pre">==</span> <span class="pre">true</span></code> then <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N27oneapi_dal_array_properties4dataE" title="oneapi_dal_array_properties::data"><span class="pre">data</span></a> <span class="pre">==</span> <a class="reference internal" href="#_CPPv4N27oneapi_dal_array_properties12mutable_dataE" title="oneapi_dal_array_properties::mutable_data"><span class="pre">mutable_data</span></a></code></div>
-</div>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp member">
-<dt id="_CPPv4N27oneapi_dal_array_properties5countE">
-<span id="_CPPv3N27oneapi_dal_array_properties5countE"></span><span id="_CPPv2N27oneapi_dal_array_properties5countE"></span><span id="oneapi_dal_array_properties::count__std::int64_t"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">int64_t</span> <code class="sig-name descname"><span class="pre">count</span></code><a class="headerlink" href="#_CPPv4N27oneapi_dal_array_properties5countE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The number of elements of type <span class="math notranslate nohighlight">\(Data\)</span> in a memory block.</p>
-<dl>
-<dt>Getter &amp; Setter</dt><dd><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">std::int64_t</span> <span class="pre">get_count()</span> <span class="pre">const</span> <span class="pre">noexcept</span></code></div>
-</div>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp member">
-<dt id="_CPPv4N27oneapi_dal_array_properties4sizeE">
-<span id="_CPPv3N27oneapi_dal_array_properties4sizeE"></span><span id="_CPPv2N27oneapi_dal_array_properties4sizeE"></span><span id="oneapi_dal_array_properties::size__std::int64_t"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">int64_t</span> <code class="sig-name descname"><span class="pre">size</span></code><a class="headerlink" href="#_CPPv4N27oneapi_dal_array_properties4sizeE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The size of memory block in bytes.</p>
-<dl>
-<dt>Getter &amp; Setter</dt><dd><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">std::int64_t</span> <span class="pre">get_size()</span> <span class="pre">const</span> <span class="pre">noexcept</span></code></div>
-</div>
-</dd>
-<dt>Invariants</dt><dd><div class="line-block">
-<div class="line"><code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N27oneapi_dal_array_properties4sizeE" title="oneapi_dal_array_properties::size"><span class="pre">size</span></a> <span class="pre">==</span> <a class="reference internal" href="#_CPPv4N27oneapi_dal_array_properties5countE" title="oneapi_dal_array_properties::count"><span class="pre">count</span></a> <span class="pre">*</span> <span class="pre">sizeof(</span><span class="pre">Data</span><span class="pre">)</span></code></div>
-</div>
-</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>

@@ -3767,9 +3767,9 @@ problem is to find a set <span class="math notranslate nohighlight">\(C = \{ c_1
 
 <p><strong>Properties</strong></p>
 <dl class="cpp member">
-<dt id="_CPPv4N44oneapi_dal_kmeans_init_descriptor_properties13cluster_countE">
-<span id="_CPPv3N44oneapi_dal_kmeans_init_descriptor_properties13cluster_countE"></span><span id="_CPPv2N44oneapi_dal_kmeans_init_descriptor_properties13cluster_countE"></span><span id="oneapi_dal_kmeans_init_descriptor_properties::cluster_count__std::int64_t"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">int64_t</span> <code class="sig-name descname"><span class="pre">cluster_count</span></code> <span class="pre">=</span> <span class="pre">2</span><a class="headerlink" href="#_CPPv4N44oneapi_dal_kmeans_init_descriptor_properties13cluster_countE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The number of clusters <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<dt id="_CPPv4N6oneapi3dal11kmeans_init10descriptor13cluster_countE">
+<span id="_CPPv3N6oneapi3dal11kmeans_init10descriptor13cluster_countE"></span><span id="_CPPv2N6oneapi3dal11kmeans_init10descriptor13cluster_countE"></span><span id="oneapi::dal::kmeans_init::descriptor::cluster_count__std::int64_t"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">int64_t</span> <code class="sig-name descname"><span class="pre">cluster_count</span></code><a class="headerlink" href="#_CPPv4N6oneapi3dal11kmeans_init10descriptor13cluster_countE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The number of clusters <span class="math notranslate nohighlight">\(k\)</span>. <strong>Default value</strong>: 2.</p>
 <dl>
 <dt>Getter &amp; Setter</dt><dd><div class="line-block">
 <div class="line"><code class="docutils literal notranslate"><span class="pre">std::int64_t</span> <span class="pre">get_cluster_count()</span> <span class="pre">const</span></code></div>
@@ -3777,7 +3777,7 @@ problem is to find a set <span class="math notranslate nohighlight">\(C = \{ c_1
 </div>
 </dd>
 <dt>Invariants</dt><dd><div class="line-block">
-<div class="line"><code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N44oneapi_dal_kmeans_init_descriptor_properties13cluster_countE" title="oneapi_dal_kmeans_init_descriptor_properties::cluster_count"><span class="pre">cluster_count</span></a> <span class="pre">&gt;</span> <span class="pre">0</span></code></div>
+<div class="line"><code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N6oneapi3dal11kmeans_init10descriptor13cluster_countE" title="oneapi::dal::kmeans_init::descriptor::cluster_count"><span class="pre">cluster_count</span></a> <span class="pre">&gt;</span> <span class="pre">0</span></code></div>
 </div>
 </dd>
 </dl>
@@ -3859,9 +3859,9 @@ problem is to find a set <span class="math notranslate nohighlight">\(C = \{ c_1
 
 <p><strong>Properties</strong></p>
 <dl class="cpp member">
-<dt id="_CPPv4N47oneapi_dal_kmeans_init_compute_input_properties4dataE">
-<span id="_CPPv3N47oneapi_dal_kmeans_init_compute_input_properties4dataE"></span><span id="_CPPv2N47oneapi_dal_kmeans_init_compute_input_properties4dataE"></span><span id="oneapi_dal_kmeans_init_compute_input_properties::data__tableCR"></span><em class="property"><span class="pre">const</span></em> <span class="pre">table</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">data</span></code> <span class="pre">=</span> <span class="pre">table</span><span class="pre">{</span><span class="pre">}</span><a class="headerlink" href="#_CPPv4N47oneapi_dal_kmeans_init_compute_input_properties4dataE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>An <span class="math notranslate nohighlight">\(n \times p\)</span> table with the data to be clustered, where each row stores one feature vector.</p>
+<dt id="_CPPv4N6oneapi3dal11kmeans_init13compute_input4dataE">
+<span id="_CPPv3N6oneapi3dal11kmeans_init13compute_input4dataE"></span><span id="_CPPv2N6oneapi3dal11kmeans_init13compute_input4dataE"></span><span id="oneapi::dal::kmeans_init::compute_input::data__tableCR"></span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../../data_management/tables.html#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table"><span class="pre">table</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">data</span></code><a class="headerlink" href="#_CPPv4N6oneapi3dal11kmeans_init13compute_input4dataE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>An <span class="math notranslate nohighlight">\(n \times p\)</span> table with the data to be clustered, where each row stores one feature vector. <strong>Default value</strong>: table{}.</p>
 <dl>
 <dt>Getter &amp; Setter</dt><dd><div class="line-block">
 <div class="line"><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">table</span> <span class="pre">&amp;</span> <span class="pre">get_data()</span> <span class="pre">const</span></code></div>
@@ -3901,17 +3901,11 @@ problem is to find a set <span class="math notranslate nohighlight">\(C = \{ c_1
 <dd><p>Creates a new instance of the class with the default property values.</p>
 </dd></dl>
 
-<p><strong>Properties</strong></p>
-<dl class="cpp member">
-<dt id="_CPPv4N48oneapi_dal_kmeans_init_compute_result_properties9centroidsE">
-<span id="_CPPv3N48oneapi_dal_kmeans_init_compute_result_properties9centroidsE"></span><span id="_CPPv2N48oneapi_dal_kmeans_init_compute_result_properties9centroidsE"></span><span id="oneapi_dal_kmeans_init_compute_result_properties::centroids__tableCR"></span><em class="property"><span class="pre">const</span></em> <span class="pre">table</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">centroids</span></code> <span class="pre">=</span> <span class="pre">table</span><span class="pre">{</span><span class="pre">}</span><a class="headerlink" href="#_CPPv4N48oneapi_dal_kmeans_init_compute_result_properties9centroidsE" title="Permalink to this definition">¶</a><br /></dt>
+<p><strong>Public Methods</strong></p>
+<dl class="cpp function">
+<dt id="_CPPv4NK6oneapi3dal11kmeans_init14compute_result13get_centroidsEv">
+<span id="_CPPv3NK6oneapi3dal11kmeans_init14compute_result13get_centroidsEv"></span><span id="_CPPv2NK6oneapi3dal11kmeans_init14compute_result13get_centroidsEv"></span><span id="oneapi::dal::kmeans_init::compute_result::get_centroidsC"></span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../../data_management/tables.html#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table"><span class="pre">table</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">get_centroids</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK6oneapi3dal11kmeans_init14compute_result13get_centroidsEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>A <span class="math notranslate nohighlight">\(k \times p\)</span> table with the initial centroids. Each row of the table stores one centroid.</p>
-<dl>
-<dt>Getter &amp; Setter</dt><dd><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">table</span> <span class="pre">&amp;</span> <span class="pre">get_centroids()</span> <span class="pre">const</span></code></div>
-</div>
-</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>
@@ -3919,6 +3913,11 @@ problem is to find a set <span class="math notranslate nohighlight">\(C = \{ c_1
 </div>
 <div class="section" id="operation">
 <span id="kmeans-init-c-api"></span><h4>Operation<a class="headerlink" href="#operation" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Float</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Method</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Task</span><span class="o">&gt;</span>
+<span class="n">compute_result</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;</span> <span class="n">compute</span><span class="p">(</span><span class="k">const</span> <span class="n">descriptor</span><span class="o">&lt;</span><span class="n">Float</span><span class="p">,</span> <span class="n">Method</span><span class="p">,</span> <span class="n">Task</span><span class="o">&gt;&amp;</span> <span class="n">desc</span><span class="p">,</span>
+                   <span class="k">const</span> <span class="n">compute_input</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;&amp;</span> <span class="n">input</span><span class="p">);</span>
+</pre></div>
+</div>
 <dl class="cpp function">
 <dt id="_CPPv4I000EN6oneapi3dal11kmeans_init7computeE14compute_resultI4TaskERK10descriptorI5Float6Method4TaskERK13compute_inputI4TaskE">
 <span id="_CPPv3I000EN6oneapi3dal11kmeans_init7computeERK10descriptorI5Float6Method4TaskERK13compute_inputI4TaskE"></span><span id="_CPPv2I000EN6oneapi3dal11kmeans_init7computeERK10descriptorI5Float6Method4TaskERK13compute_inputI4TaskE"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">Float</span></code><span class="pre">,</span> <span class="pre">typename</span> <code class="sig-name descname"><span class="pre">Method</span></code><span class="pre">,</span> <span class="pre">typename</span> <code class="sig-name descname"><span class="pre">Task</span></code><span class="pre">&gt;</span><br /><a class="reference internal" href="#_CPPv4I0EN6oneapi3dal11kmeans_init14compute_resultE" title="oneapi::dal::kmeans_init::compute_result"><span class="pre">compute_result</span></a><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I000EN6oneapi3dal11kmeans_init7computeE14compute_resultI4TaskERK10descriptorI5Float6Method4TaskERK13compute_inputI4TaskE" title="oneapi::dal::kmeans_init::compute::Task"><span class="pre">Task</span></a><span class="pre">&gt;</span> <code class="sig-name descname"><span class="pre">compute</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4I000EN6oneapi3dal11kmeans_init10descriptorE" title="oneapi::dal::kmeans_init::descriptor"><span class="pre">descriptor</span></a><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I000EN6oneapi3dal11kmeans_init7computeE14compute_resultI4TaskERK10descriptorI5Float6Method4TaskERK13compute_inputI4TaskE" title="oneapi::dal::kmeans_init::compute::Float"><span class="pre">Float</span></a><span class="pre">,</span> <a class="reference internal" href="#_CPPv4I000EN6oneapi3dal11kmeans_init7computeE14compute_resultI4TaskERK10descriptorI5Float6Method4TaskERK13compute_inputI4TaskE" title="oneapi::dal::kmeans_init::compute::Method"><span class="pre">Method</span></a><span class="pre">,</span> <a class="reference internal" href="#_CPPv4I000EN6oneapi3dal11kmeans_init7computeE14compute_resultI4TaskERK10descriptorI5Float6Method4TaskERK13compute_inputI4TaskE" title="oneapi::dal::kmeans_init::compute::Task"><span class="pre">Task</span></a><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">desc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4I0EN6oneapi3dal11kmeans_init13compute_inputE" title="oneapi::dal::kmeans_init::compute_input"><span class="pre">compute_input</span></a><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I000EN6oneapi3dal11kmeans_init7computeE14compute_resultI4TaskERK10descriptorI5Float6Method4TaskERK13compute_inputI4TaskE" title="oneapi::dal::kmeans_init::compute::Task"><span class="pre">Task</span></a><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">input</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I000EN6oneapi3dal11kmeans_init7computeE14compute_resultI4TaskERK10descriptorI5Float6Method4TaskERK13compute_inputI4TaskE" title="Permalink to this definition">¶</a><br /></dt>

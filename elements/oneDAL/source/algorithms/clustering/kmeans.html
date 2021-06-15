@@ -3907,26 +3907,9 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 
 <p><strong>Properties</strong></p>
 <dl class="cpp member">
-<dt id="_CPPv4N39oneapi_dal_kmeans_descriptor_properties13cluster_countE">
-<span id="_CPPv3N39oneapi_dal_kmeans_descriptor_properties13cluster_countE"></span><span id="_CPPv2N39oneapi_dal_kmeans_descriptor_properties13cluster_countE"></span><span id="oneapi_dal_kmeans_descriptor_properties::cluster_count__int64_t"></span><span class="pre">int64_t</span> <code class="sig-name descname"><span class="pre">cluster_count</span></code> <span class="pre">=</span> <span class="pre">2</span><a class="headerlink" href="#_CPPv4N39oneapi_dal_kmeans_descriptor_properties13cluster_countE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The number of clusters <span class="math notranslate nohighlight">\(k\)</span>.</p>
-<dl>
-<dt>Getter &amp; Setter</dt><dd><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">int64_t</span> <span class="pre">get_cluster_count()</span> <span class="pre">const</span></code></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">descriptor</span> <span class="pre">&amp;</span> <span class="pre">set_cluster_count(int64_t)</span></code></div>
-</div>
-</dd>
-<dt>Invariants</dt><dd><div class="line-block">
-<div class="line"><code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N39oneapi_dal_kmeans_descriptor_properties13cluster_countE" title="oneapi_dal_kmeans_descriptor_properties::cluster_count"><span class="pre">cluster_count</span></a> <span class="pre">&gt;</span> <span class="pre">0</span></code></div>
-</div>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp member">
-<dt id="_CPPv4N39oneapi_dal_kmeans_descriptor_properties19max_iteration_countE">
-<span id="_CPPv3N39oneapi_dal_kmeans_descriptor_properties19max_iteration_countE"></span><span id="_CPPv2N39oneapi_dal_kmeans_descriptor_properties19max_iteration_countE"></span><span id="oneapi_dal_kmeans_descriptor_properties::max_iteration_count__int64_t"></span><span class="pre">int64_t</span> <code class="sig-name descname"><span class="pre">max_iteration_count</span></code> <span class="pre">=</span> <span class="pre">100</span><a class="headerlink" href="#_CPPv4N39oneapi_dal_kmeans_descriptor_properties19max_iteration_countE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The maximum number of iterations <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<dt id="_CPPv4N6oneapi3dal6kmeans10descriptor19max_iteration_countE">
+<span id="_CPPv3N6oneapi3dal6kmeans10descriptor19max_iteration_countE"></span><span id="_CPPv2N6oneapi3dal6kmeans10descriptor19max_iteration_countE"></span><span id="oneapi::dal::kmeans::descriptor::max_iteration_count__int64_t"></span><span class="pre">int64_t</span> <code class="sig-name descname"><span class="pre">max_iteration_count</span></code><a class="headerlink" href="#_CPPv4N6oneapi3dal6kmeans10descriptor19max_iteration_countE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The maximum number of iterations <span class="math notranslate nohighlight">\(T\)</span>. <strong>Default value</strong>: 100.</p>
 <dl>
 <dt>Getter &amp; Setter</dt><dd><div class="line-block">
 <div class="line"><code class="docutils literal notranslate"><span class="pre">int64_t</span> <span class="pre">get_max_iteration_count()</span> <span class="pre">const</span></code></div>
@@ -3934,16 +3917,33 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 </div>
 </dd>
 <dt>Invariants</dt><dd><div class="line-block">
-<div class="line"><code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N39oneapi_dal_kmeans_descriptor_properties19max_iteration_countE" title="oneapi_dal_kmeans_descriptor_properties::max_iteration_count"><span class="pre">max_iteration_count</span></a> <span class="pre">&gt;=</span> <span class="pre">0</span></code></div>
+<div class="line"><code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N6oneapi3dal6kmeans10descriptor19max_iteration_countE" title="oneapi::dal::kmeans::descriptor::max_iteration_count"><span class="pre">max_iteration_count</span></a> <span class="pre">&gt;=</span> <span class="pre">0</span></code></div>
 </div>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp member">
-<dt id="_CPPv4N39oneapi_dal_kmeans_descriptor_properties18accuracy_thresholdE">
-<span id="_CPPv3N39oneapi_dal_kmeans_descriptor_properties18accuracy_thresholdE"></span><span id="_CPPv2N39oneapi_dal_kmeans_descriptor_properties18accuracy_thresholdE"></span><span id="oneapi_dal_kmeans_descriptor_properties::accuracy_threshold__double"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">accuracy_threshold</span></code> <span class="pre">=</span> <span class="pre">0.0</span><a class="headerlink" href="#_CPPv4N39oneapi_dal_kmeans_descriptor_properties18accuracy_thresholdE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The threshold <span class="math notranslate nohighlight">\(\varepsilon\)</span> for the stop condition.</p>
+<dt id="_CPPv4N6oneapi3dal6kmeans10descriptor13cluster_countE">
+<span id="_CPPv3N6oneapi3dal6kmeans10descriptor13cluster_countE"></span><span id="_CPPv2N6oneapi3dal6kmeans10descriptor13cluster_countE"></span><span id="oneapi::dal::kmeans::descriptor::cluster_count__int64_t"></span><span class="pre">int64_t</span> <code class="sig-name descname"><span class="pre">cluster_count</span></code><a class="headerlink" href="#_CPPv4N6oneapi3dal6kmeans10descriptor13cluster_countE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The number of clusters <span class="math notranslate nohighlight">\(k\)</span>. <strong>Default value</strong>: 2.</p>
+<dl>
+<dt>Getter &amp; Setter</dt><dd><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">int64_t</span> <span class="pre">get_cluster_count()</span> <span class="pre">const</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">descriptor</span> <span class="pre">&amp;</span> <span class="pre">set_cluster_count(int64_t)</span></code></div>
+</div>
+</dd>
+<dt>Invariants</dt><dd><div class="line-block">
+<div class="line"><code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N6oneapi3dal6kmeans10descriptor13cluster_countE" title="oneapi::dal::kmeans::descriptor::cluster_count"><span class="pre">cluster_count</span></a> <span class="pre">&gt;</span> <span class="pre">0</span></code></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp member">
+<dt id="_CPPv4N6oneapi3dal6kmeans10descriptor18accuracy_thresholdE">
+<span id="_CPPv3N6oneapi3dal6kmeans10descriptor18accuracy_thresholdE"></span><span id="_CPPv2N6oneapi3dal6kmeans10descriptor18accuracy_thresholdE"></span><span id="oneapi::dal::kmeans::descriptor::accuracy_threshold__double"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">accuracy_threshold</span></code><a class="headerlink" href="#_CPPv4N6oneapi3dal6kmeans10descriptor18accuracy_thresholdE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The threshold <span class="math notranslate nohighlight">\(\varepsilon\)</span> for the stop condition. <strong>Default value</strong>: 0.0.</p>
 <dl>
 <dt>Getter &amp; Setter</dt><dd><div class="line-block">
 <div class="line"><code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">get_accuracy_threshold()</span> <span class="pre">const</span></code></div>
@@ -3951,7 +3951,7 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 </div>
 </dd>
 <dt>Invariants</dt><dd><div class="line-block">
-<div class="line"><code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N39oneapi_dal_kmeans_descriptor_properties18accuracy_thresholdE" title="oneapi_dal_kmeans_descriptor_properties::accuracy_threshold"><span class="pre">accuracy_threshold</span></a> <span class="pre">&gt;=</span> <span class="pre">0.0</span></code></div>
+<div class="line"><code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N6oneapi3dal6kmeans10descriptor18accuracy_thresholdE" title="oneapi::dal::kmeans::descriptor::accuracy_threshold"><span class="pre">accuracy_threshold</span></a> <span class="pre">&gt;=</span> <span class="pre">0.0</span></code></div>
 </div>
 </dd>
 </dl>
@@ -4030,33 +4030,17 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 <dd><p>Creates a new instance of the class with the default property values.</p>
 </dd></dl>
 
-<p><strong>Properties</strong></p>
-<dl class="cpp member">
-<dt id="_CPPv4N34oneapi_dal_kmeans_model_properties9centroidsE">
-<span id="_CPPv3N34oneapi_dal_kmeans_model_properties9centroidsE"></span><span id="_CPPv2N34oneapi_dal_kmeans_model_properties9centroidsE"></span><span id="oneapi_dal_kmeans_model_properties::centroids__tableCR"></span><em class="property"><span class="pre">const</span></em> <span class="pre">table</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">centroids</span></code> <span class="pre">=</span> <span class="pre">table</span><span class="pre">{</span><span class="pre">}</span><a class="headerlink" href="#_CPPv4N34oneapi_dal_kmeans_model_properties9centroidsE" title="Permalink to this definition">¶</a><br /></dt>
+<p><strong>Public Methods</strong></p>
+<dl class="cpp function">
+<dt id="_CPPv4NK6oneapi3dal6kmeans5model13get_centroidsEv">
+<span id="_CPPv3NK6oneapi3dal6kmeans5model13get_centroidsEv"></span><span id="_CPPv2NK6oneapi3dal6kmeans5model13get_centroidsEv"></span><span id="oneapi::dal::kmeans::model::get_centroidsC"></span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../../data_management/tables.html#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table"><span class="pre">table</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">get_centroids</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK6oneapi3dal6kmeans5model13get_centroidsEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>A <span class="math notranslate nohighlight">\(k \times p\)</span> table with the cluster centroids. Each row of the table stores one centroid.</p>
-<dl>
-<dt>Getter &amp; Setter</dt><dd><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">table</span> <span class="pre">&amp;</span> <span class="pre">get_centroids()</span> <span class="pre">const</span></code></div>
-</div>
-</dd>
-</dl>
 </dd></dl>
 
-<dl class="cpp member">
-<dt id="_CPPv4N34oneapi_dal_kmeans_model_properties13cluster_countE">
-<span id="_CPPv3N34oneapi_dal_kmeans_model_properties13cluster_countE"></span><span id="_CPPv2N34oneapi_dal_kmeans_model_properties13cluster_countE"></span><span id="oneapi_dal_kmeans_model_properties::cluster_count__int64_t"></span><span class="pre">int64_t</span> <code class="sig-name descname"><span class="pre">cluster_count</span></code> <span class="pre">=</span> <span class="pre">0</span><a class="headerlink" href="#_CPPv4N34oneapi_dal_kmeans_model_properties13cluster_countE" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv4NK6oneapi3dal6kmeans5model17get_cluster_countEv">
+<span id="_CPPv3NK6oneapi3dal6kmeans5model17get_cluster_countEv"></span><span id="_CPPv2NK6oneapi3dal6kmeans5model17get_cluster_countEv"></span><span id="oneapi::dal::kmeans::model::get_cluster_countC"></span><span class="pre">int64_t</span> <code class="sig-name descname"><span class="pre">get_cluster_count</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK6oneapi3dal6kmeans5model17get_cluster_countEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Number of clusters <span class="math notranslate nohighlight">\(k\)</span> in the trained model.</p>
-<dl>
-<dt>Getter &amp; Setter</dt><dd><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">int64_t</span> <span class="pre">get_cluster_count()</span> <span class="pre">const</span></code></div>
-</div>
-</dd>
-<dt>Invariants</dt><dd><div class="line-block">
-<div class="line"><code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N34oneapi_dal_kmeans_model_properties13cluster_countE" title="oneapi_dal_kmeans_model_properties::cluster_count"><span class="pre">cluster_count</span></a> <span class="pre">==</span> <a class="reference internal" href="#_CPPv4N34oneapi_dal_kmeans_model_properties9centroidsE" title="oneapi_dal_kmeans_model_properties::centroids"><span class="pre">centroids</span></a><span class="pre">.</span><span class="pre">row_count</span></code></div>
-</div>
-</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>
@@ -4097,26 +4081,26 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 
 <p><strong>Properties</strong></p>
 <dl class="cpp member">
-<dt id="_CPPv4N40oneapi_dal_kmeans_train_input_properties4dataE">
-<span id="_CPPv3N40oneapi_dal_kmeans_train_input_properties4dataE"></span><span id="_CPPv2N40oneapi_dal_kmeans_train_input_properties4dataE"></span><span id="oneapi_dal_kmeans_train_input_properties::data__tableCR"></span><em class="property"><span class="pre">const</span></em> <span class="pre">table</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">data</span></code><a class="headerlink" href="#_CPPv4N40oneapi_dal_kmeans_train_input_properties4dataE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>An <span class="math notranslate nohighlight">\(n \times p\)</span> table with the data to be clustered, where each row stores one feature vector.</p>
+<dt id="_CPPv4N6oneapi3dal6kmeans11train_input17initial_centroidsE">
+<span id="_CPPv3N6oneapi3dal6kmeans11train_input17initial_centroidsE"></span><span id="_CPPv2N6oneapi3dal6kmeans11train_input17initial_centroidsE"></span><span id="oneapi::dal::kmeans::train_input::initial_centroids__tableCR"></span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../../data_management/tables.html#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table"><span class="pre">table</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">initial_centroids</span></code><a class="headerlink" href="#_CPPv4N6oneapi3dal6kmeans11train_input17initial_centroidsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A <span class="math notranslate nohighlight">\(k \times p\)</span> table with the initial centroids, where each row stores one centroid.</p>
 <dl>
 <dt>Getter &amp; Setter</dt><dd><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">table</span> <span class="pre">&amp;</span> <span class="pre">get_data()</span> <span class="pre">const</span></code></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">train_input</span> <span class="pre">&amp;</span> <span class="pre">set_data(const</span> <span class="pre">table</span> <span class="pre">&amp;)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">table</span> <span class="pre">&amp;</span> <span class="pre">get_initial_centroids()</span> <span class="pre">const</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">train_input</span> <span class="pre">&amp;</span> <span class="pre">set_initial_centroids(const</span> <span class="pre">table</span> <span class="pre">&amp;)</span></code></div>
 </div>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp member">
-<dt id="_CPPv4N40oneapi_dal_kmeans_train_input_properties17initial_centroidsE">
-<span id="_CPPv3N40oneapi_dal_kmeans_train_input_properties17initial_centroidsE"></span><span id="_CPPv2N40oneapi_dal_kmeans_train_input_properties17initial_centroidsE"></span><span id="oneapi_dal_kmeans_train_input_properties::initial_centroids__tableCR"></span><em class="property"><span class="pre">const</span></em> <span class="pre">table</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">initial_centroids</span></code><a class="headerlink" href="#_CPPv4N40oneapi_dal_kmeans_train_input_properties17initial_centroidsE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>A <span class="math notranslate nohighlight">\(k \times p\)</span> table with the initial centroids, where each row stores one centroid.</p>
+<dt id="_CPPv4N6oneapi3dal6kmeans11train_input4dataE">
+<span id="_CPPv3N6oneapi3dal6kmeans11train_input4dataE"></span><span id="_CPPv2N6oneapi3dal6kmeans11train_input4dataE"></span><span id="oneapi::dal::kmeans::train_input::data__tableCR"></span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../../data_management/tables.html#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table"><span class="pre">table</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">data</span></code><a class="headerlink" href="#_CPPv4N6oneapi3dal6kmeans11train_input4dataE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>An <span class="math notranslate nohighlight">\(n \times p\)</span> table with the data to be clustered, where each row stores one feature vector.</p>
 <dl>
 <dt>Getter &amp; Setter</dt><dd><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">table</span> <span class="pre">&amp;</span> <span class="pre">get_initial_centroids()</span> <span class="pre">const</span></code></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">train_input</span> <span class="pre">&amp;</span> <span class="pre">set_initial_centroids(const</span> <span class="pre">table</span> <span class="pre">&amp;)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">table</span> <span class="pre">&amp;</span> <span class="pre">get_data()</span> <span class="pre">const</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">train_input</span> <span class="pre">&amp;</span> <span class="pre">set_data(const</span> <span class="pre">table</span> <span class="pre">&amp;)</span></code></div>
 </div>
 </dd>
 </dl>
@@ -4157,61 +4141,29 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 <dd><p>Creates a new instance of the class with the default property values.</p>
 </dd></dl>
 
-<p><strong>Properties</strong></p>
-<dl class="cpp member">
-<dt id="_CPPv4N41oneapi_dal_kmeans_train_result_properties5modelE">
-<span id="_CPPv3N41oneapi_dal_kmeans_train_result_properties5modelE"></span><span id="_CPPv2N41oneapi_dal_kmeans_train_result_properties5modelE"></span><span id="oneapi_dal_kmeans_train_result_properties::model__model:Task:CR"></span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N41oneapi_dal_kmeans_train_result_properties5modelE" title="oneapi_dal_kmeans_train_result_properties::model"><span class="pre">model</span></a><span class="pre">&lt;</span><span class="pre">Task</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">model</span></code> <span class="pre">=</span> <a class="reference internal" href="#_CPPv4N41oneapi_dal_kmeans_train_result_properties5modelE" title="oneapi_dal_kmeans_train_result_properties::model"><span class="pre">model</span></a><span class="pre">&lt;</span><span class="pre">Task</span><span class="pre">&gt;</span><span class="pre">{</span><span class="pre">}</span><a class="headerlink" href="#_CPPv4N41oneapi_dal_kmeans_train_result_properties5modelE" title="Permalink to this definition">¶</a><br /></dt>
+<p><strong>Public Methods</strong></p>
+<dl class="cpp function">
+<dt id="_CPPv4NK6oneapi3dal6kmeans12train_result9get_modelEv">
+<span id="_CPPv3NK6oneapi3dal6kmeans12train_result9get_modelEv"></span><span id="_CPPv2NK6oneapi3dal6kmeans12train_result9get_modelEv"></span><span id="oneapi::dal::kmeans::train_result::get_modelC"></span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4I0EN6oneapi3dal6kmeans5modelE" title="oneapi::dal::kmeans::model"><span class="pre">model</span></a><span class="pre">&lt;</span><span class="pre">Task</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">get_model</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK6oneapi3dal6kmeans12train_result9get_modelEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The trained K-means model.</p>
-<dl>
-<dt>Getter &amp; Setter</dt><dd><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">model&lt;</span> <span class="pre">Task</span> <span class="pre">&gt;</span> <span class="pre">&amp;</span> <span class="pre">get_model()</span> <span class="pre">const</span></code></div>
-</div>
-</dd>
-</dl>
 </dd></dl>
 
-<dl class="cpp member">
-<dt id="_CPPv4N41oneapi_dal_kmeans_train_result_properties6labelsE">
-<span id="_CPPv3N41oneapi_dal_kmeans_train_result_properties6labelsE"></span><span id="_CPPv2N41oneapi_dal_kmeans_train_result_properties6labelsE"></span><span id="oneapi_dal_kmeans_train_result_properties::labels__tableCR"></span><em class="property"><span class="pre">const</span></em> <span class="pre">table</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">labels</span></code> <span class="pre">=</span> <span class="pre">table</span><span class="pre">{</span><span class="pre">}</span><a class="headerlink" href="#_CPPv4N41oneapi_dal_kmeans_train_result_properties6labelsE" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv4NK6oneapi3dal6kmeans12train_result10get_labelsEv">
+<span id="_CPPv3NK6oneapi3dal6kmeans12train_result10get_labelsEv"></span><span id="_CPPv2NK6oneapi3dal6kmeans12train_result10get_labelsEv"></span><span id="oneapi::dal::kmeans::train_result::get_labelsC"></span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../../data_management/tables.html#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table"><span class="pre">table</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">get_labels</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK6oneapi3dal6kmeans12train_result10get_labelsEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>An <span class="math notranslate nohighlight">\(n \times 1\)</span> table with the labels <span class="math notranslate nohighlight">\(y_i\)</span> assigned to the samples <span class="math notranslate nohighlight">\(x_i\)</span> in the input data, <span class="math notranslate nohighlight">\(1 \leq 1 \leq n\)</span>.</p>
-<dl>
-<dt>Getter &amp; Setter</dt><dd><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">table</span> <span class="pre">&amp;</span> <span class="pre">get_labels()</span> <span class="pre">const</span></code></div>
-</div>
-</dd>
-</dl>
 </dd></dl>
 
-<dl class="cpp member">
-<dt id="_CPPv4N41oneapi_dal_kmeans_train_result_properties15iteration_countE">
-<span id="_CPPv3N41oneapi_dal_kmeans_train_result_properties15iteration_countE"></span><span id="_CPPv2N41oneapi_dal_kmeans_train_result_properties15iteration_countE"></span><span id="oneapi_dal_kmeans_train_result_properties::iteration_count__int64_t"></span><span class="pre">int64_t</span> <code class="sig-name descname"><span class="pre">iteration_count</span></code> <span class="pre">=</span> <span class="pre">0</span><a class="headerlink" href="#_CPPv4N41oneapi_dal_kmeans_train_result_properties15iteration_countE" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv4NK6oneapi3dal6kmeans12train_result19get_iteration_countEv">
+<span id="_CPPv3NK6oneapi3dal6kmeans12train_result19get_iteration_countEv"></span><span id="_CPPv2NK6oneapi3dal6kmeans12train_result19get_iteration_countEv"></span><span id="oneapi::dal::kmeans::train_result::get_iteration_countC"></span><span class="pre">int64_t</span> <code class="sig-name descname"><span class="pre">get_iteration_count</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK6oneapi3dal6kmeans12train_result19get_iteration_countEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The number of iterations performed by the algorithm.</p>
-<dl>
-<dt>Getter &amp; Setter</dt><dd><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">int64_t</span> <span class="pre">get_iteration_count()</span> <span class="pre">const</span></code></div>
-</div>
-</dd>
-<dt>Invariants</dt><dd><div class="line-block">
-<div class="line"><code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N41oneapi_dal_kmeans_train_result_properties15iteration_countE" title="oneapi_dal_kmeans_train_result_properties::iteration_count"><span class="pre">iteration_count</span></a> <span class="pre">&gt;=</span> <span class="pre">0</span></code></div>
-</div>
-</dd>
-</dl>
 </dd></dl>
 
-<dl class="cpp member">
-<dt id="_CPPv4N41oneapi_dal_kmeans_train_result_properties24objective_function_valueE">
-<span id="_CPPv3N41oneapi_dal_kmeans_train_result_properties24objective_function_valueE"></span><span id="_CPPv2N41oneapi_dal_kmeans_train_result_properties24objective_function_valueE"></span><span id="oneapi_dal_kmeans_train_result_properties::objective_function_value__double"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">objective_function_value</span></code><a class="headerlink" href="#_CPPv4N41oneapi_dal_kmeans_train_result_properties24objective_function_valueE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The value of the objective function <span class="math notranslate nohighlight">\(\Phi_X(C)\)</span>, where <span class="math notranslate nohighlight">\(C\)</span> is <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N41oneapi_dal_kmeans_train_result_properties5modelE" title="oneapi_dal_kmeans_train_result_properties::model"><span class="pre">model</span></a><span class="pre">.</span><span class="pre">centroids</span></code> (see <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">kmeans</span><span class="pre">::</span><span class="pre">model</span><span class="pre">::</span><span class="pre">centroids</span></code>).</p>
-<dl>
-<dt>Getter &amp; Setter</dt><dd><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">get_objective_function_value()</span> <span class="pre">const</span></code></div>
-</div>
-</dd>
-<dt>Invariants</dt><dd><div class="line-block">
-<div class="line"><code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N41oneapi_dal_kmeans_train_result_properties24objective_function_valueE" title="oneapi_dal_kmeans_train_result_properties::objective_function_value"><span class="pre">objective_function_value</span></a> <span class="pre">&gt;=</span> <span class="pre">0.0</span></code></div>
-</div>
-</dd>
-</dl>
+<dl class="cpp function">
+<dt id="_CPPv4NK6oneapi3dal6kmeans12train_result28get_objective_function_valueEv">
+<span id="_CPPv3NK6oneapi3dal6kmeans12train_result28get_objective_function_valueEv"></span><span id="_CPPv2NK6oneapi3dal6kmeans12train_result28get_objective_function_valueEv"></span><span id="oneapi::dal::kmeans::train_result::get_objective_function_valueC"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">get_objective_function_value</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK6oneapi3dal6kmeans12train_result28get_objective_function_valueEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The value of the objective function <span class="math notranslate nohighlight">\(\Phi_X(C)\)</span>, where <span class="math notranslate nohighlight">\(C\)</span> is <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4I0EN6oneapi3dal6kmeans5modelE" title="oneapi::dal::kmeans::model"><span class="pre">model</span></a><span class="pre">.</span><span class="pre">centroids</span></code> (see <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">kmeans</span><span class="pre">::</span><a class="reference internal" href="#_CPPv4I0EN6oneapi3dal6kmeans5modelE" title="oneapi::dal::kmeans::model"><span class="pre">model</span></a><span class="pre">::</span><span class="pre">centroids</span></code>).</p>
 </dd></dl>
 
 </dd></dl>
@@ -4219,6 +4171,11 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 </div>
 <div class="section" id="operation">
 <h4>Operation<a class="headerlink" href="#operation" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Float</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Method</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Task</span><span class="o">&gt;</span>
+<span class="n">train_result</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;</span> <span class="n">train</span><span class="p">(</span><span class="k">const</span> <span class="n">descriptor</span><span class="o">&lt;</span><span class="n">Float</span><span class="p">,</span> <span class="n">Method</span><span class="p">,</span> <span class="n">Task</span><span class="o">&gt;&amp;</span> <span class="n">desc</span><span class="p">,</span>
+                         <span class="k">const</span> <span class="n">train_input</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;&amp;</span> <span class="n">input</span><span class="p">);</span>
+</pre></div>
+</div>
 <dl class="cpp function">
 <dt id="_CPPv4I000EN6oneapi3dal6kmeans5trainE12train_resultI4TaskERK10descriptorI5Float6Method4TaskERK11train_inputI4TaskE">
 <span id="_CPPv3I000EN6oneapi3dal6kmeans5trainERK10descriptorI5Float6Method4TaskERK11train_inputI4TaskE"></span><span id="_CPPv2I000EN6oneapi3dal6kmeans5trainERK10descriptorI5Float6Method4TaskERK11train_inputI4TaskE"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">Float</span></code><span class="pre">,</span> <span class="pre">typename</span> <code class="sig-name descname"><span class="pre">Method</span></code><span class="pre">,</span> <span class="pre">typename</span> <code class="sig-name descname"><span class="pre">Task</span></code><span class="pre">&gt;</span><br /><a class="reference internal" href="#_CPPv4I0EN6oneapi3dal6kmeans12train_resultE" title="oneapi::dal::kmeans::train_result"><span class="pre">train_result</span></a><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans5trainE12train_resultI4TaskERK10descriptorI5Float6Method4TaskERK11train_inputI4TaskE" title="oneapi::dal::kmeans::train::Task"><span class="pre">Task</span></a><span class="pre">&gt;</span> <code class="sig-name descname"><span class="pre">train</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans10descriptorE" title="oneapi::dal::kmeans::descriptor"><span class="pre">descriptor</span></a><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans5trainE12train_resultI4TaskERK10descriptorI5Float6Method4TaskERK11train_inputI4TaskE" title="oneapi::dal::kmeans::train::Float"><span class="pre">Float</span></a><span class="pre">,</span> <a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans5trainE12train_resultI4TaskERK10descriptorI5Float6Method4TaskERK11train_inputI4TaskE" title="oneapi::dal::kmeans::train::Method"><span class="pre">Method</span></a><span class="pre">,</span> <a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans5trainE12train_resultI4TaskERK10descriptorI5Float6Method4TaskERK11train_inputI4TaskE" title="oneapi::dal::kmeans::train::Task"><span class="pre">Task</span></a><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">desc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4I0EN6oneapi3dal6kmeans11train_inputE" title="oneapi::dal::kmeans::train_input"><span class="pre">train_input</span></a><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans5trainE12train_resultI4TaskERK10descriptorI5Float6Method4TaskERK11train_inputI4TaskE" title="oneapi::dal::kmeans::train::Task"><span class="pre">Task</span></a><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">input</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I000EN6oneapi3dal6kmeans5trainE12train_resultI4TaskERK10descriptorI5Float6Method4TaskERK11train_inputI4TaskE" title="Permalink to this definition">¶</a><br /></dt>
@@ -4289,15 +4246,15 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 <p><strong>Constructors</strong></p>
 <dl class="cpp function">
 <dt id="_CPPv4N6oneapi3dal6kmeans11infer_input11infer_inputERK5modelI4TaskERK5table">
-<span id="_CPPv3N6oneapi3dal6kmeans11infer_input11infer_inputERK5modelI4TaskERK5table"></span><span id="_CPPv2N6oneapi3dal6kmeans11infer_input11infer_inputERK5modelI4TaskERK5table"></span><span id="oneapi::dal::kmeans::infer_input::infer_input__model:Task:CR.tableCR"></span><code class="sig-name descname"><span class="pre">infer_input</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4I0EN6oneapi3dal6kmeans5modelE" title="oneapi::dal::kmeans::model"><span class="pre">model</span></a><span class="pre">&lt;</span><span class="pre">Task</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">m</span></em> <span class="pre">=</span> <a class="reference internal" href="#_CPPv4I0EN6oneapi3dal6kmeans5modelE" title="oneapi::dal::kmeans::model"><span class="pre">model</span></a><span class="pre">&lt;</span><span class="pre">Task</span><span class="pre">&gt;</span><span class="pre">{</span><span class="pre">}</span>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../../data_management/tables.html#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table"><span class="pre">table</span></a> <span class="pre">&amp;</span><em><span class="pre">data</span></em> <span class="pre">=</span> <a class="reference internal" href="../../data_management/tables.html#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table"><span class="pre">table</span></a><span class="pre">{</span><span class="pre">}</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6oneapi3dal6kmeans11infer_input11infer_inputERK5modelI4TaskERK5table" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6oneapi3dal6kmeans11infer_input11infer_inputERK5modelI4TaskERK5table"></span><span id="_CPPv2N6oneapi3dal6kmeans11infer_input11infer_inputERK5modelI4TaskERK5table"></span><span id="oneapi::dal::kmeans::infer_input::infer_input__model:Task:CR.tableCR"></span><code class="sig-name descname"><span class="pre">infer_input</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N6oneapi3dal6kmeans11infer_input5modelE" title="oneapi::dal::kmeans::infer_input::model"><span class="pre">model</span></a><span class="pre">&lt;</span><span class="pre">Task</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">m</span></em> <span class="pre">=</span> <a class="reference internal" href="#_CPPv4N6oneapi3dal6kmeans11infer_input5modelE" title="oneapi::dal::kmeans::infer_input::model"><span class="pre">model</span></a><span class="pre">&lt;</span><span class="pre">Task</span><span class="pre">&gt;</span><span class="pre">{</span><span class="pre">}</span>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../../data_management/tables.html#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table"><span class="pre">table</span></a> <span class="pre">&amp;</span><em><span class="pre">data</span></em> <span class="pre">=</span> <a class="reference internal" href="../../data_management/tables.html#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table"><span class="pre">table</span></a><span class="pre">{</span><span class="pre">}</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6oneapi3dal6kmeans11infer_input11infer_inputERK5modelI4TaskERK5table" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Creates a new instance of the class with the given <code class="docutils literal notranslate"><span class="pre">model</span></code> and <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
 </dd></dl>
 
 <p><strong>Properties</strong></p>
 <dl class="cpp member">
-<dt id="_CPPv4N40oneapi_dal_kmeans_infer_input_properties5modelE">
-<span id="_CPPv3N40oneapi_dal_kmeans_infer_input_properties5modelE"></span><span id="_CPPv2N40oneapi_dal_kmeans_infer_input_properties5modelE"></span><span id="oneapi_dal_kmeans_infer_input_properties::model__model:Task:CR"></span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N40oneapi_dal_kmeans_infer_input_properties5modelE" title="oneapi_dal_kmeans_infer_input_properties::model"><span class="pre">model</span></a><span class="pre">&lt;</span><span class="pre">Task</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">model</span></code> <span class="pre">=</span> <a class="reference internal" href="#_CPPv4N40oneapi_dal_kmeans_infer_input_properties5modelE" title="oneapi_dal_kmeans_infer_input_properties::model"><span class="pre">model</span></a><span class="pre">&lt;</span><span class="pre">Task</span><span class="pre">&gt;</span><span class="pre">{</span><span class="pre">}</span><a class="headerlink" href="#_CPPv4N40oneapi_dal_kmeans_infer_input_properties5modelE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>An <span class="math notranslate nohighlight">\(n \times p\)</span> table with the data to be assigned to the clusters, where each row stores one feature vector.</p>
+<dt id="_CPPv4N6oneapi3dal6kmeans11infer_input5modelE">
+<span id="_CPPv3N6oneapi3dal6kmeans11infer_input5modelE"></span><span id="_CPPv2N6oneapi3dal6kmeans11infer_input5modelE"></span><span id="oneapi::dal::kmeans::infer_input::model__model:Task:CR"></span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N6oneapi3dal6kmeans11infer_input5modelE" title="oneapi::dal::kmeans::infer_input::model"><span class="pre">model</span></a><span class="pre">&lt;</span><span class="pre">Task</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#_CPPv4N6oneapi3dal6kmeans11infer_input5modelE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>An <span class="math notranslate nohighlight">\(n \times p\)</span> table with the data to be assigned to the clusters, where each row stores one feature vector. <strong>Default value</strong>: model&lt;Task&gt;{}.</p>
 <dl>
 <dt>Getter &amp; Setter</dt><dd><div class="line-block">
 <div class="line"><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">model&lt;</span> <span class="pre">Task</span> <span class="pre">&gt;</span> <span class="pre">&amp;</span> <span class="pre">get_model()</span> <span class="pre">const</span></code></div>
@@ -4308,9 +4265,9 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 </dd></dl>
 
 <dl class="cpp member">
-<dt id="_CPPv4N40oneapi_dal_kmeans_infer_input_properties4dataE">
-<span id="_CPPv3N40oneapi_dal_kmeans_infer_input_properties4dataE"></span><span id="_CPPv2N40oneapi_dal_kmeans_infer_input_properties4dataE"></span><span id="oneapi_dal_kmeans_infer_input_properties::data__tableCR"></span><em class="property"><span class="pre">const</span></em> <span class="pre">table</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">data</span></code> <span class="pre">=</span> <span class="pre">table</span><span class="pre">{</span><span class="pre">}</span><a class="headerlink" href="#_CPPv4N40oneapi_dal_kmeans_infer_input_properties4dataE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The trained K-Means model.</p>
+<dt id="_CPPv4N6oneapi3dal6kmeans11infer_input4dataE">
+<span id="_CPPv3N6oneapi3dal6kmeans11infer_input4dataE"></span><span id="_CPPv2N6oneapi3dal6kmeans11infer_input4dataE"></span><span id="oneapi::dal::kmeans::infer_input::data__tableCR"></span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../../data_management/tables.html#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table"><span class="pre">table</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">data</span></code><a class="headerlink" href="#_CPPv4N6oneapi3dal6kmeans11infer_input4dataE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The trained K-Means model. <strong>Default value</strong>: table{}.</p>
 <dl>
 <dt>Getter &amp; Setter</dt><dd><div class="line-block">
 <div class="line"><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">table</span> <span class="pre">&amp;</span> <span class="pre">get_data()</span> <span class="pre">const</span></code></div>
@@ -4351,33 +4308,17 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 <dd><p>Creates a new instance of the class with the default property values.</p>
 </dd></dl>
 
-<p><strong>Properties</strong></p>
-<dl class="cpp member">
-<dt id="_CPPv4N41oneapi_dal_kmeans_infer_result_properties6labelsE">
-<span id="_CPPv3N41oneapi_dal_kmeans_infer_result_properties6labelsE"></span><span id="_CPPv2N41oneapi_dal_kmeans_infer_result_properties6labelsE"></span><span id="oneapi_dal_kmeans_infer_result_properties::labels__tableCR"></span><em class="property"><span class="pre">const</span></em> <span class="pre">table</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">labels</span></code> <span class="pre">=</span> <span class="pre">table</span><span class="pre">{</span><span class="pre">}</span><a class="headerlink" href="#_CPPv4N41oneapi_dal_kmeans_infer_result_properties6labelsE" title="Permalink to this definition">¶</a><br /></dt>
+<p><strong>Public Methods</strong></p>
+<dl class="cpp function">
+<dt id="_CPPv4NK6oneapi3dal6kmeans12infer_result10get_labelsEv">
+<span id="_CPPv3NK6oneapi3dal6kmeans12infer_result10get_labelsEv"></span><span id="_CPPv2NK6oneapi3dal6kmeans12infer_result10get_labelsEv"></span><span id="oneapi::dal::kmeans::infer_result::get_labelsC"></span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="../../data_management/tables.html#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table"><span class="pre">table</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">get_labels</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK6oneapi3dal6kmeans12infer_result10get_labelsEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>An <span class="math notranslate nohighlight">\(n \times 1\)</span> table with assignments labels to feature vectors in the input data.</p>
-<dl>
-<dt>Getter &amp; Setter</dt><dd><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">table</span> <span class="pre">&amp;</span> <span class="pre">get_labels()</span> <span class="pre">const</span></code></div>
-</div>
-</dd>
-</dl>
 </dd></dl>
 
-<dl class="cpp member">
-<dt id="_CPPv4N41oneapi_dal_kmeans_infer_result_properties24objective_function_valueE">
-<span id="_CPPv3N41oneapi_dal_kmeans_infer_result_properties24objective_function_valueE"></span><span id="_CPPv2N41oneapi_dal_kmeans_infer_result_properties24objective_function_valueE"></span><span id="oneapi_dal_kmeans_infer_result_properties::objective_function_value__double"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">objective_function_value</span></code> <span class="pre">=</span> <span class="pre">0.0</span><a class="headerlink" href="#_CPPv4N41oneapi_dal_kmeans_infer_result_properties24objective_function_valueE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The value of the objective function <span class="math notranslate nohighlight">\(\Phi_X(C)\)</span>, where <span class="math notranslate nohighlight">\(C\)</span> is defined by the corresponding <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">infer_input</span><span class="pre">::</span><span class="pre">model</span><span class="pre">::</span><span class="pre">centroids</span></code>.</p>
-<dl>
-<dt>Getter &amp; Setter</dt><dd><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">get_objective_function_value()</span> <span class="pre">const</span></code></div>
-</div>
-</dd>
-<dt>Invariants</dt><dd><div class="line-block">
-<div class="line"><code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N41oneapi_dal_kmeans_infer_result_properties24objective_function_valueE" title="oneapi_dal_kmeans_infer_result_properties::objective_function_value"><span class="pre">objective_function_value</span></a> <span class="pre">&gt;=</span> <span class="pre">0.0</span></code></div>
-</div>
-</dd>
-</dl>
+<dl class="cpp function">
+<dt id="_CPPv4NK6oneapi3dal6kmeans12infer_result28get_objective_function_valueEv">
+<span id="_CPPv3NK6oneapi3dal6kmeans12infer_result28get_objective_function_valueEv"></span><span id="_CPPv2NK6oneapi3dal6kmeans12infer_result28get_objective_function_valueEv"></span><span id="oneapi::dal::kmeans::infer_result::get_objective_function_valueC"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">get_objective_function_value</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK6oneapi3dal6kmeans12infer_result28get_objective_function_valueEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The value of the objective function <span class="math notranslate nohighlight">\(\Phi_X(C)\)</span>, where <span class="math notranslate nohighlight">\(C\)</span> is defined by the corresponding <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4I0EN6oneapi3dal6kmeans11infer_inputE" title="oneapi::dal::kmeans::infer_input"><span class="pre">infer_input</span></a><span class="pre">::</span><span class="pre">model</span><span class="pre">::</span><span class="pre">centroids</span></code>.</p>
 </dd></dl>
 
 </dd></dl>
@@ -4385,6 +4326,11 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 </div>
 <div class="section" id="id6">
 <h4>Operation<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Float</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Method</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Task</span><span class="o">&gt;</span>
+<span class="n">infer_result</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;</span> <span class="n">infer</span><span class="p">(</span><span class="k">const</span> <span class="n">descriptor</span><span class="o">&lt;</span><span class="n">Float</span><span class="p">,</span> <span class="n">Method</span><span class="p">,</span> <span class="n">Task</span><span class="o">&gt;&amp;</span> <span class="n">desc</span><span class="p">,</span>
+                         <span class="k">const</span> <span class="n">infer_input</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;&amp;</span> <span class="n">input</span><span class="p">);</span>
+</pre></div>
+</div>
 <dl class="cpp function">
 <dt id="_CPPv4I000EN6oneapi3dal6kmeans5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE">
 <span id="_CPPv3I000EN6oneapi3dal6kmeans5inferERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE"></span><span id="_CPPv2I000EN6oneapi3dal6kmeans5inferERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">Float</span></code><span class="pre">,</span> <span class="pre">typename</span> <code class="sig-name descname"><span class="pre">Method</span></code><span class="pre">,</span> <span class="pre">typename</span> <code class="sig-name descname"><span class="pre">Task</span></code><span class="pre">&gt;</span><br /><a class="reference internal" href="#_CPPv4I0EN6oneapi3dal6kmeans12infer_resultE" title="oneapi::dal::kmeans::infer_result"><span class="pre">infer_result</span></a><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::kmeans::infer::Task"><span class="pre">Task</span></a><span class="pre">&gt;</span> <code class="sig-name descname"><span class="pre">infer</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans10descriptorE" title="oneapi::dal::kmeans::descriptor"><span class="pre">descriptor</span></a><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::kmeans::infer::Float"><span class="pre">Float</span></a><span class="pre">,</span> <a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::kmeans::infer::Method"><span class="pre">Method</span></a><span class="pre">,</span> <a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::kmeans::infer::Task"><span class="pre">Task</span></a><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">desc</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4I0EN6oneapi3dal6kmeans11infer_inputE" title="oneapi::dal::kmeans::infer_input"><span class="pre">infer_input</span></a><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::kmeans::infer::Task"><span class="pre">Task</span></a><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">input</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I000EN6oneapi3dal6kmeans5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="Permalink to this definition">¶</a><br /></dt>
